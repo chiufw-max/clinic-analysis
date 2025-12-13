@@ -183,7 +183,6 @@ if not st.session_state.password_correct:
         else:
             c_input, c_suffix = st.columns([3, 1.5]) 
             with c_input:
-                # 修正：移除 placeholder 文字，保持欄位空白
                 username = st.text_input("請輸入帳號") 
             with c_suffix:
                 st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
@@ -261,14 +260,15 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-    title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=18),
-    height=500
+        title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=10), 
+        height=450
     )
     
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    return chart.configure(padding={'top': 130, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+    # 修正：增加上方的 padding 到 100，解決標題被切到的問題
+    return chart.configure(padding={'top': 100, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
 with st.sidebar:
@@ -397,4 +397,3 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
-
