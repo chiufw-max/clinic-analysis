@@ -115,25 +115,6 @@ def save_cache(df):
         "text/csv"
     )
 
-
-# =========================
-# 登入驗證
-# =========================
-if "password_correct" not in st.session_state:
-    st.session_state.password_correct = False
-
-if not st.session_state.password_correct:
-    st.title("🔐 系統登入")
-
-    pwd = st.text_input("請輸入密碼", type="password")
-    if st.button("登入"):
-        if pwd == st.secrets.get("APP_PASSWORD", "1234"):
-            st.session_state.password_correct = True
-            st.rerun()
-        else:
-            st.error("密碼錯誤")
-    st.stop()
-
 # =========================
 # ⭐⭐⭐ 主程式開始 ⭐⭐⭐
 # =========================
@@ -195,3 +176,4 @@ if main_df.empty:
     st.info("目前尚無資料")
 else:
     st.dataframe(main_df, use_container_width=True)
+
