@@ -138,7 +138,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (自動補全 @gmail.com) ---
+# --- 🔐 登入驗證 ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -149,26 +149,19 @@ if not st.session_state.password_correct:
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
         
-        # 1. 先試著自動抓
         detected_email = try_auto_detect_email()
         final_email = ""
         
-        # 2. 如果抓不到，顯示簡化版手動輸入框
         if not detected_email:
-            # 視覺上使用 Columns 呈現 (帳號輸入框 + 固定文字)
             c_input, c_suffix = st.columns([3, 1.5]) 
             with c_input:
                 username = st.text_input("請輸入 Google 帳號", placeholder="例如：ming")
             with c_suffix:
-                # 調整 padding 讓文字垂直置中對齊輸入框
                 st.markdown("<div style='padding-top: 55px; font-size: 22px; color: #aaa; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
             
-            # 邏輯處理：自動加上後綴
             if username:
-                if "@" in username:
-                    final_email = username # 防呆：如果使用者自己打了 @gmail.com
-                else:
-                    final_email = f"{username.strip()}@gmail.com"
+                if "@" in username: final_email = username 
+                else: final_email = f"{username.strip()}@gmail.com"
         else:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
@@ -182,8 +175,7 @@ if not st.session_state.password_correct:
                     st.session_state.confirmed_email = final_email
                     log_access_to_drive(final_email, "Login Success")
                     st.rerun()
-                else:
-                    st.toast("❌ 請輸入帳號")
+                else: st.toast("❌ 請輸入帳號")
             else:
                 st.error("❌ 密碼錯誤")
                 if final_email: log_access_to_drive(final_email, "Login Failed")
@@ -330,15 +322,14 @@ if not main_df.empty:
                 if st.button(g, key=f"b_{g}", type="primary" if st.session_state.active_group_view==g else "secondary", use_container_width=True): st.session_state.active_group_view = g; st.rerun()
         st.divider()
         cv, ce = st.columns([2, 1])
+        
+        # 修正：左側只顯示標題與圖表
         with cv:
             tg = st.session_state.active_group_view
             gt = st.radio("圖", ["直方圖", "折線圖"], horizontal=True, key="gr", label_visibility="collapsed")
             if gt!=st.session_state.chart_type_pref: st.session_state.chart_type_pref=gt; st.rerun()
             if tg and tg in st.session_state.saved_groups:
-                c1, c2 = st.columns([3, 1])
-                with c1: st.markdown(f"### {tg}")
-                with c2:
-                    if st.button("✏️ 編輯", key="eb", type="secondary"): st.session_state.new_group_name_input=tg; st.session_state.new_group_items_input=st.session_state.saved_groups[tg]; st.rerun()
+                st.markdown(f"### {tg}")
                 gis = st.session_state.saved_groups[tg]
                 gdf = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(gis)]
                 if not gdf.empty:
@@ -346,8 +337,17 @@ if not main_df.empty:
                     st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tg} 趨勢"), use_container_width=True)
                     with st.expander("數據"): st.dataframe(gdf.reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
                 else: st.warning("無數據")
+        
+        # 修正：右側放置按鈕與輸入框
         with ce:
             st.markdown("##### ➕ / ✏️")
+            # 載入編輯按鈕
+            if tg and tg in st.session_state.saved_groups:
+                if st.button(f"✏️ 載入「{tg}」", key="load_edit_btn", type="secondary", use_container_width=True):
+                    st.session_state.new_group_name_input = tg
+                    st.session_state.new_group_items_input = st.session_state.saved_groups[tg]
+                    st.rerun()
+            
             nn = st.text_input("名稱", placeholder="...", key="new_group_name_input")
             ni = st.multiselect("藥品", item_options, placeholder="...", key="new_group_items_input")
             def scb():
