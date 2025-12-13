@@ -26,13 +26,12 @@ COLORS = {
 # 注入 CSS (大方視覺調整)
 st.markdown(f"""
     <style>
-    /* === 全站字體加大 === */
     html, body, [class*="css"] {{ font-family: "Microsoft JhengHei", sans-serif; font-size: 20px; }}
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
     
-    /* === 頁籤 (Tab) 加大 === */
+    /* 頁籤加大 */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
     .stTabs [data-baseweb="tab"] {{ 
         background-color: {COLORS['tab_bg']}; border-radius: 12px; color: #AEAEB2; border: none !important; 
@@ -45,7 +44,7 @@ st.markdown(f"""
     .main h1, .main h2, .main h3, .main p, .main span, .main label, .main div, [data-testid="stSidebar"] * {{ color: {COLORS['text']} !important; }}
     [data-testid="stSidebar"] {{ background-color: {COLORS['sidebar_bg']}; border-right: 1px solid #333; }}
     
-    /* === 輸入框與下拉選單加大 === */
+    /* 輸入框加大 */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
         background-color: {COLORS['input_bg']} !important; color: white !important; border-radius: 12px; 
         border: 1px solid #444; min-height: 50px !important; font-size: 20px !important;
@@ -54,7 +53,7 @@ st.markdown(f"""
     ul[data-baseweb="menu"] li {{ color: white !important; font-size: 20px !important; }}
     span[data-baseweb="tag"] {{ background-color: #3A3A3C !important; font-size: 18px !important; }}
     
-    /* === 按鈕樣式 (加大) === */
+    /* 按鈕加大 */
     div.stButton > button {{
         border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 700 !important;
         transition: all 0.2s ease !important; padding: 16px 32px !important; font-size: 22px !important;
@@ -71,7 +70,7 @@ st.markdown(f"""
     </style>
     """, unsafe_allow_html=True)
 
-# --- Google Drive 連線與資料同步邏輯 ---
+# --- Google Drive 連線 ---
 CACHE_FILE = "clinic_cache.csv"
 GROUPS_FILE_NAME = "clinic_groups.json"
 LOG_FILE_NAME = "access_log.csv"
@@ -125,36 +124,24 @@ def log_access_to_drive(email, action="Login"):
         upload_to_drive(LOG_FILE_NAME, final_df.to_csv(index=False).encode('utf-8'), 'text/csv')
     except Exception as e: print(f"Log Error: {e}")
 
-# --- 🔥 強力身分抓取函數 (v19.3 重點修正) ---
-def get_current_user_email():
-    """嘗試 3 種方式抓取 Email，直到成功為止"""
-    
-    # 方法 1: 嘗試 HTTP Headers (Streamlit Cloud 專用 - 最穩定)
+def try_auto_detect_email():
+    """嘗試自動抓取，失敗回傳 None"""
     try:
         if hasattr(st, "context") and hasattr(st.context, "headers"):
-            # 嘗試不同的大小寫組合
-            email = st.context.headers.get("X-Streamlit-User-Email")
-            if email: return email
-            email = st.context.headers.get("x-streamlit-user-email")
+            email = st.context.headers.get("X-Streamlit-User-Email") or st.context.headers.get("x-streamlit-user-email")
             if email: return email
     except: pass
-
-    # 方法 2: 嘗試最新的 st.user (v1.40+)
     try:
-        if hasattr(st, "user") and st.user and hasattr(st.user, "email"):
-            if st.user.email: return st.user.email
+        if hasattr(st, "user") and st.user and st.user.email: return st.user.email
     except: pass
-
-    # 方法 3: 嘗試舊版 st.experimental_user
     try:
-        if hasattr(st, "experimental_user") and hasattr(st.experimental_user, "email"):
-            if st.experimental_user.email: return st.experimental_user.email
+        if hasattr(st, "experimental_user") and st.experimental_user.email: return st.experimental_user.email
     except: pass
-    
-    return "Local User"
+    return None
 
-# --- 🔐 登入驗證 ---
+# --- 🔐 登入驗證 (改良版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
+if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -163,24 +150,33 @@ if not st.session_state.password_correct:
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
         
-        # 抓取身分
-        user_email = get_current_user_email()
+        # 1. 先試著自動抓
+        detected_email = try_auto_detect_email()
         
-        # 顯示歡迎訊息或身分
-        if user_email != "Local User":
-            st.success(f"👋 歡迎，{user_email}")
+        final_email = ""
+        
+        # 2. 如果抓不到，顯示手動輸入框
+        if not detected_email:
+            st.warning("⚠️ 系統無法自動辨識您的 Google 帳號")
+            final_email = st.text_input("請輸入您的 Email (以供記錄)", placeholder="例如：ming@gmail.com")
         else:
-            st.info("無法辨識身分 (Local User)，請確認已從 Private 連結登入")
+            final_email = detected_email
+            st.success(f"👋 歡迎，{final_email}")
             
         pwd = st.text_input("請輸入密碼", type="password")
+        
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
-                st.session_state.password_correct = True
-                log_access_to_drive(user_email, "Login Success")
-                st.rerun()
+                if final_email:
+                    st.session_state.password_correct = True
+                    st.session_state.confirmed_email = final_email
+                    log_access_to_drive(final_email, "Login Success")
+                    st.rerun()
+                else:
+                    st.toast("❌ 請填寫 Email 才能登入")
             else:
                 st.error("❌ 密碼錯誤")
-                log_access_to_drive(user_email, "Login Failed")
+                if final_email: log_access_to_drive(final_email, "Login Failed")
     st.stop()
 
 # --- 主邏輯 ---
