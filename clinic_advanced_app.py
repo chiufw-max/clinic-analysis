@@ -265,15 +265,16 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=10), 
+        # 修正：字體大小從 24 改為 20
+        title=alt.TitleParams(text=title, fontSize=20, anchor='middle', offset=10), 
         height=450
     )
     
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 圖表內部也保留 50 padding 作為雙重保險
-    return chart.configure(padding={'top': 50, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+    # 保持上方的 padding 為 100
+    return chart.configure(padding={'top': 100, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
 with st.sidebar:
