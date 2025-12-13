@@ -240,39 +240,24 @@ if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
-        if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
-        st.title("🔒 診所系統登入")
-        
-        # 呼叫我們的新函數
-        detected_email = google_login_get_email()
-        
-        # 只有在抓到 Email 時才顯示密碼框
-        if detected_email:
-            # 檢查白名單
-            if detected_email.lower() in [u.lower() for u in ALLOWED_USERS]:
-                st.success(f"👋 歡迎，{detected_email}")
-                pwd = st.text_input("請輸入診所密碼", type="password")
-                
-                if st.button("驗證進入", type="primary", use_container_width=True):
-                    if pwd == "8888":
-                        st.session_state.password_correct = True
-                        st.session_state.confirmed_email = detected_email
-                        log_access_to_drive(detected_email, "Login Success (OAuth)")
-                        st.rerun()
-                    else:
-                        st.error("❌ 密碼錯誤")
-                        log_access_to_drive(detected_email, "Login Failed (Pwd)")
-            else:
-                st.error("⛔ 此 Google 帳號未在允許清單中")
-                st.info("請登出 Google 或聯繫管理員。")
-                
-                # 登出按鈕 (清除 session 並清除 query params)
-                if st.button("更換帳號 / 登出"):
-                    del st.session_state["google_email"]
-                    st.query_params.clear()
-                    st.rerun()
-                    
-    st.stop()
+        st.title("🔒 診所系統登入（Google 驗證）")
+
+        email = google_login_get_email()
+        if not email:
+            st.stop()
+
+        st.success(f"👋 已登入：{email}")
+
+        # 白名單檢查
+        if email.lower() in [u.lower() for u in ALLOWED_USERS]:
+            st.session_state.password_correct = True
+            st.session_state.confirmed_email = email
+            log_access_to_drive(email, "Login Success (Google OAuth)")
+            st.rerun()
+        else:
+            st.error("⛔ 此 Google 帳號未獲授權")
+            log_access_to_drive(email, "Login Denied (Whitelist, Google OAuth)")
+            st.stop()
 
 # --- 主邏輯 ---
 def load_groups():
@@ -457,3 +442,4 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
