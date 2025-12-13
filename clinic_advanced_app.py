@@ -16,12 +16,10 @@ from googleapiclient.http import MediaIoBaseUpload
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
 # === 🛡️ 安全設定：白名單 ===
-# 系統會先自動抓取 Google 帳號，若失敗則比對手動輸入的帳號
 ALLOWED_USERS = [
     "chiufw@gmail.com",
     "mmday11200518@gmail.com",
     "oyclinic@gmail.com",
-    # 您可以在這裡繼續新增...
 ]
 
 # 顏色配置
@@ -165,7 +163,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (白名單優先) ---
+# --- 🔐 登入驗證 ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -176,19 +174,17 @@ if not st.session_state.password_correct:
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
         
-        # 1. 嘗試自動偵測
         detected_email = try_auto_detect_email()
         final_email = ""
         
         if detected_email:
-            # 有抓到身分，直接使用
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 沒抓到身分，顯示手動輸入框
             c_input, c_suffix = st.columns([3, 1.5]) 
             with c_input:
-                username = st.text_input("請輸入帳號", placeholder="例如：chiufw")
+                # 修正：移除 placeholder 文字，保持欄位空白
+                username = st.text_input("請輸入帳號") 
             with c_suffix:
                 st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
             
@@ -201,7 +197,6 @@ if not st.session_state.password_correct:
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
                 if final_email:
-                    # 檢查白名單 (不分大小寫)
                     if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
                         st.session_state.password_correct = True
                         st.session_state.confirmed_email = final_email
@@ -366,7 +361,6 @@ if not main_df.empty:
         
         with cv:
             tg = st.session_state.active_group_view
-            # 強制綁定記憶
             type_idx = 0 if st.session_state.chart_type_pref == "直方圖" else 1
             gt = st.radio("圖", ["直方圖", "折線圖"], index=type_idx, horizontal=True, key="group_chart_radio", label_visibility="collapsed")
             if gt != st.session_state.chart_type_pref:
