@@ -28,82 +28,43 @@ st.markdown(f"""
     <style>
     /* === 全站字體加大 === */
     html, body, [class*="css"] {{ font-family: "Microsoft JhengHei", sans-serif; font-size: 20px; }}
-    
-    /* === 側邊欄圖片置中 === */
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
-    
-    /* === 隱藏上傳區提示文字 === */
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
     
     /* === 頁籤 (Tab) 加大 === */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
     .stTabs [data-baseweb="tab"] {{ 
-        background-color: {COLORS['tab_bg']}; 
-        border-radius: 12px; 
-        color: #AEAEB2; 
-        border: none !important; 
-        padding: 12px 32px !important; /* 加寬 */
-        font-size: 22px !important;    /* 字變大 */
+        background-color: {COLORS['tab_bg']}; border-radius: 12px; color: #AEAEB2; border: none !important; 
+        padding: 12px 32px !important; font-size: 22px !important;
     }}
     .stTabs [aria-selected="true"] {{ background-color: {COLORS['main']} !important; color: white !important; font-weight: bold; }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
     
-    /* === 背景與文字顏色 === */
     .stApp {{ background-color: {COLORS['bg']} !important; }}
     .main h1, .main h2, .main h3, .main p, .main span, .main label, .main div, [data-testid="stSidebar"] * {{ color: {COLORS['text']} !important; }}
     [data-testid="stSidebar"] {{ background-color: {COLORS['sidebar_bg']}; border-right: 1px solid #333; }}
     
     /* === 輸入框與下拉選單加大 === */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
-        background-color: {COLORS['input_bg']} !important; 
-        color: white !important; 
-        border-radius: 12px; 
-        border: 1px solid #444; 
-        min-height: 50px !important; /* 增高 */
-        font-size: 20px !important;
+        background-color: {COLORS['input_bg']} !important; color: white !important; border-radius: 12px; 
+        border: 1px solid #444; min-height: 50px !important; font-size: 20px !important;
     }}
     ul[data-baseweb="menu"] {{ background-color: {COLORS['input_bg']} !important; }}
     ul[data-baseweb="menu"] li {{ color: white !important; font-size: 20px !important; }}
     span[data-baseweb="tag"] {{ background-color: #3A3A3C !important; font-size: 18px !important; }}
     
-    /* === 按鈕樣式 (加大、加寬、加高) === */
+    /* === 按鈕樣式 (加大) === */
     div.stButton > button {{
-        border-radius: 16px !important;
-        border: 1px solid transparent !important;
-        font-weight: 700 !important;
-        transition: all 0.2s ease !important;
-        padding: 16px 32px !important;  /* 內距加大 */
-        font-size: 22px !important;     /* 字體加大 */
-        line-height: 1.5 !important;
-        min-height: 60px !important;    /* 最小高度 */
+        border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 700 !important;
+        transition: all 0.2s ease !important; padding: 16px 32px !important; font-size: 22px !important;
+        line-height: 1.5 !important; min-height: 60px !important;
     }}
+    div.stButton > button[kind="secondary"] {{ background-color: {COLORS['tab_bg']} !important; color: #AEAEB2 !important; border: 2px solid #444 !important; }}
+    div.stButton > button[kind="secondary"]:hover {{ background-color: {COLORS['tab_hover']} !important; color: white !important; border-color: #888 !important; transform: scale(1.01); }}
+    div.stButton > button[kind="primary"] {{ background-color: {COLORS['main']} !important; color: white !important; box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4) !important; }}
+    div.stButton > button[kind="primary"]:hover {{ background-color: #007AFF !important; transform: scale(1.01); }}
     
-    /* Secondary 按鈕 (未選中/功能鍵) */
-    div.stButton > button[kind="secondary"] {{
-        background-color: {COLORS['tab_bg']} !important;
-        color: #AEAEB2 !important;
-        border: 2px solid #444 !important; /* 邊框加粗 */
-    }}
-    div.stButton > button[kind="secondary"]:hover {{
-        background-color: {COLORS['tab_hover']} !important;
-        color: white !important;
-        border-color: #888 !important;
-        transform: scale(1.01);
-    }}
-
-    /* Primary 按鈕 (選中/確認鍵) */
-    div.stButton > button[kind="primary"] {{
-        background-color: {COLORS['main']} !important;
-        color: white !important;
-        box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4) !important;
-    }}
-    div.stButton > button[kind="primary"]:hover {{
-        background-color: #007AFF !important;
-        transform: scale(1.01);
-    }}
-
-    /* === 表格樣式 === */
     .stDataFrame {{ font-size: 20px !important; }}
     [data-testid="stDataFrame"] {{ background-color: {COLORS['sidebar_bg']}; border-radius: 10px; padding: 10px; }}
     thead tr th:first-child, tbody th {{ display: none; }}
@@ -151,33 +112,45 @@ def download_from_drive(filename):
     return None
 
 def log_access_to_drive(email, action="Login"):
-    """記錄使用者登入資訊"""
     service = get_drive_service()
     if not service: return
     tw_time = datetime.utcnow() + timedelta(hours=8)
     new_entry = pd.DataFrame([{'Time': tw_time.strftime("%Y-%m-%d %H:%M:%S"), 'User': email, 'Action': action}])
-    
     try:
         content = download_from_drive(LOG_FILE_NAME)
         if content:
             old_df = pd.read_csv(StringIO(content.decode('utf-8')))
             final_df = pd.concat([old_df, new_entry], ignore_index=True)
-        else:
-            final_df = new_entry
+        else: final_df = new_entry
         upload_to_drive(LOG_FILE_NAME, final_df.to_csv(index=False).encode('utf-8'), 'text/csv')
     except Exception as e: print(f"Log Error: {e}")
 
+# --- 🔥 強力身分抓取函數 (v19.2 重點修正) ---
 def get_current_user_email():
-    """安全抓取使用者 Email"""
+    """嘗試 3 種方式抓取 Email，直到成功為止"""
+    
+    # 方法 1: 嘗試最新的 st.user (v1.40+)
+    try:
+        if hasattr(st, "user") and st.user and hasattr(st.user, "email"):
+            if st.user.email: return st.user.email
+    except: pass
+    
+    # 方法 2: 嘗試 HTTP Headers (Streamlit Cloud 專用)
     try:
         if hasattr(st, "context") and hasattr(st.context, "headers"):
+            # 嘗試不同的大小寫組合
             email = st.context.headers.get("X-Streamlit-User-Email")
             if email: return email
+            email = st.context.headers.get("x-streamlit-user-email")
+            if email: return email
     except: pass
+
+    # 方法 3: 嘗試舊版 st.experimental_user
     try:
         if hasattr(st, "experimental_user") and hasattr(st.experimental_user, "email"):
-            return st.experimental_user.email
+            if st.experimental_user.email: return st.experimental_user.email
     except: pass
+    
     return "Local User"
 
 # --- 🔐 登入驗證 ---
@@ -189,8 +162,16 @@ if not st.session_state.password_correct:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
+        
+        # 抓取身分
         user_email = get_current_user_email()
-        st.info(f"您目前的身份：{user_email}")
+        
+        # 顯示歡迎訊息或身分
+        if user_email != "Local User":
+            st.success(f"👋 歡迎，{user_email}")
+        else:
+            st.info("無法辨識身分 (Local User)，請確認已從 Private 連結登入")
+            
         pwd = st.text_input("請輸入密碼", type="password")
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
@@ -203,7 +184,6 @@ if not st.session_state.password_correct:
     st.stop()
 
 # --- 主邏輯 ---
-
 def load_groups():
     content = download_from_drive(GROUPS_FILE_NAME)
     if content: return json.loads(content.decode('utf-8'))
@@ -217,10 +197,8 @@ def save_groups(groups):
 
 def load_data_cache():
     content = download_from_drive(CACHE_FILE)
-    if content:
-        return pd.read_csv(StringIO(content.decode('utf-8')))
-    if os.path.exists(CACHE_FILE):
-        return pd.read_csv(CACHE_FILE)
+    if content: return pd.read_csv(StringIO(content.decode('utf-8')))
+    if os.path.exists(CACHE_FILE): return pd.read_csv(CACHE_FILE)
     return pd.DataFrame()
 
 def save_data_cache(df):
@@ -253,7 +231,7 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         x=alt.X(x_col, title=None, axis=alt.Axis(labelColor='white', labelAngle=0, domainColor='#555')),
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(labelColor='white', gridColor='#333', domainColor='#555'), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
-    ).properties(title=alt.TitleParams(text=title, color='white', fontSize=24, anchor='middle', offset=30), height=450) # 圖表高度增加，字體加大
+    ).properties(title=alt.TitleParams(text=title, color='white', fontSize=24, anchor='middle', offset=30), height=450)
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
     return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20})
