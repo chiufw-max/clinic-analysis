@@ -157,8 +157,8 @@ if not st.session_state.password_correct:
         
         # 2. 如果抓不到，顯示手動輸入框
         if not detected_email:
-            st.warning("⚠️ 系統無法自動辨識您的 Google 帳號")
-            final_email = st.text_input("請輸入您的 Email (以供記錄)", placeholder="例如：ming@gmail.com")
+            # 修正處：移除 (以供記錄) 文字
+            final_email = st.text_input("請輸入您的 Email", placeholder="例如：ming@gmail.com")
         else:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
