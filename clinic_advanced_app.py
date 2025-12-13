@@ -265,7 +265,7 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        # 修正：字體大小從 24 改為 20
+        # 修正：字體大小 20，Offset 10
         title=alt.TitleParams(text=title, fontSize=20, anchor='middle', offset=10), 
         height=450
     )
@@ -297,14 +297,31 @@ with st.sidebar:
 
 main_df = load_data_cache() 
 
+# 🔥 核心修正：數據不重複邏輯 🔥
 if uploaded_files:
-    new_dfs = [parse_usage_file(f) for f in uploaded_files if not parse_usage_file(f).empty]
+    new_dfs = []
+    # 讀取所有上傳的檔案
+    for f in uploaded_files:
+        df = parse_usage_file(f)
+        if not df.empty:
+            new_dfs.append(df)
+            
     if new_dfs:
         new_data = pd.concat(new_dfs, ignore_index=True)
+        
         if not main_df.empty:
-            main_df = pd.concat([main_df, new_data], ignore_index=True).drop_duplicates()
+            # 1. 找出新資料包含哪些月份 (例如: 114-08)
+            new_months = new_data['月份'].unique()
+            
+            # 2. 從舊資料中，剔除掉這些月份的資料 (舊換新)
+            # 這樣如果使用者重新上傳 8 月的檔案，舊的 8 月資料就會被刪掉，不會疊加
+            main_df = main_df[~main_df['月份'].isin(new_months)]
+            
+            # 3. 合併 (舊資料剩餘月份 + 新資料)
+            main_df = pd.concat([main_df, new_data], ignore_index=True)
         else:
             main_df = new_data
+            
         save_data_cache(main_df)
 
 st.title("歐葉豐原診所品項分析")
