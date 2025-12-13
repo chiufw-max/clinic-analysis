@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格: 莫蘭迪/Apple)
+# 注入 CSS (雙風格 + 圖表下移修正)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -56,6 +56,11 @@ st.markdown(f"""
     
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
+
+    /* 🔥 強制將圖表區塊往下移 50px，避免標題被切到 🔥 */
+    [data-testid="stAltairChart"] {{
+        padding-top: 50px !important;
+    }}
 
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
@@ -267,8 +272,8 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 修正：增加上方的 padding 到 100，解決標題被切到的問題
-    return chart.configure(padding={'top': 100, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+    # 圖表內部也保留 50 padding 作為雙重保險
+    return chart.configure(padding={'top': 50, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
 with st.sidebar:
