@@ -224,59 +224,37 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (先自動 -> 後手動) ---
-if "password_correct" not in st.session_state: st.session_state.password_correct = False
-if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
+# --- 🔐 登入驗證：Google OAuth + 白名單 ---
+if "password_correct" not in st.session_state:
+    st.session_state.password_correct = False
+if "confirmed_email" not in st.session_state:
+    st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
-        if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
-        st.title("🔒 診所系統登入")
-        
-        # 1. 嘗試自動偵測
-        detected_email = try_auto_detect_email()
-        final_email = ""
-        is_manual_input = False
-        
-        if detected_email:
-            # 有抓到身分，直接顯示
-            final_email = detected_email
-            st.success(f"👋 歡迎，{final_email}")
-        else:
-            # 沒抓到身分，顯示手動輸入框
-            is_manual_input = True
-            c_input, c_suffix = st.columns([3, 1.5]) 
-            with c_input:
-                username = st.text_input("請輸入帳號", placeholder="例如：chiufw")
-            with c_suffix:
-                st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
-            
-            if username:
-                if "@" in username: final_email = username 
-                else: final_email = f"{username.strip()}@gmail.com"
+        if os.path.exists("logo.png"):
+            st.image(Image.open("logo.png"), width=200)
 
-        pwd = st.text_input("請輸入密碼", type="password")
-        
-        if st.button("登入系統", type="primary", use_container_width=True):
-            if pwd == "8888":
-                if final_email:
-                    # 檢查白名單 (不分大小寫)
-                    if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
-                        st.session_state.password_correct = True
-                        st.session_state.confirmed_email = final_email
-                        log_access_to_drive(final_email, "Login Success")
-                        st.rerun()
-                    else:
-                        st.error("⛔ 此帳號未獲授權")
-                        log_access_to_drive(final_email, "Login Denied (Whitelist)")
-                else:
-                    st.toast("❌ 請輸入帳號")
-            else:
-                st.error("❌ 密碼錯誤")
-                if final_email: log_access_to_drive(final_email, "Login Failed")
-    st.stop()
+        st.title("🔒 診所系統登入（Google 驗證）")
+
+        email = google_login_get_email()
+        if not email:
+            st.stop()
+
+        st.success(f"👋 已登入：{email}")
+
+        if email.lower() in [u.lower() for u in ALLOWED_USERS]:
+            st.session_state.password_correct = True
+            st.session_state.confirmed_email = email
+            log_access_to_drive(email, "Login Success (Google OAuth)")
+            st.rerun()
+        else:
+            st.error("⛔ 此 Google 帳號未獲授權")
+            log_access_to_drive(email, "Login Denied (Whitelist, Google OAuth)")
+            st.stop()
+
 
 # --- 主邏輯 ---
 def load_groups():
@@ -324,38 +302,68 @@ def parse_usage_file(file):
 def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, color_range=CHART_COLORS):
     base = alt.Chart(data_df).encode(
         x=alt.X(x_col, title=None, axis=alt.Axis(labelAngle=0)),
-        y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
-        tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
+        y=alt.Y(
+            y_col,
+            title=None,
+            type='quantitative',
+            axis=alt.Axis(),
+            scale=alt.Scale(nice=True, zero=True)
+        ),
+        tooltip=[
+            alt.Tooltip(x_col, title='月份'),
+            alt.Tooltip(color_col, title='品項'),
+            alt.Tooltip(y_col, title='數量', format=',')
+        ]
     ).properties(
-        # 修正1: 減少 offset，讓標題貼近圖表，避免被上方切掉
-        title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=10), 
-        height=450
+        # ✅ 第 1 個地方：這裡
+        title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=18),
+        height=500
     )
-    
-    if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
-    else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
-    
-    # 修正1: 增加上方的 padding 留白，從 120 改為 80 (配合 offset 調整)
-    return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+
+    if "直方圖" in chart_type:
+        chart = base.mark_bar().encode(
+            color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None))
+        )
+    else:
+        chart = base.mark_line(point=True, strokeWidth=4).encode(
+            color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None))
+        )
+
+    # ✅ 第 2 個地方：這裡
+    return chart.configure(
+        padding={'top': 130, 'left': 20, 'right': 20, 'bottom': 20},
+        background='transparent'
+    )
+
 
 # --- 介面開始 ---
-with st.sidebar:
-    if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=280)
-    else: st.header("🏥 歐葉豐原診所")
-    st.markdown("---")
-    if "gcp_service_account" in st.secrets: st.success("🟢 已連線至雲端硬碟")
-    else: st.info("⚪ 本機模式")
-    
-    uploaded_files = st.file_uploader("拖曳檔案至此", type=['txt', 'TXT'], accept_multiple_files=True)
-    if st.button("🗑️ 清除所有資料"): 
-        if os.path.exists(CACHE_FILE): os.remove(CACHE_FILE)
-        service = get_drive_service()
-        if service:
-            try:
-                service.files().delete(fileId=download_from_drive(CACHE_FILE).decode('utf-8')).execute() 
-                upload_to_drive(CACHE_FILE, b"", 'text/csv') 
-            except: pass
-        st.rerun()
+if st.button("🗑️ 清除所有資料"):
+    # 刪本機 cache
+    if os.path.exists(CACHE_FILE):
+        os.remove(CACHE_FILE)
+
+    # 刪雲端 Drive 檔案（用檔名找 id）
+    delete_drive_file_by_name(CACHE_FILE)
+    delete_drive_file_by_name(GROUPS_FILE_NAME)
+    delete_drive_file_by_name(LOG_FILE_NAME)
+
+    st.rerun()
+
+        
+    def delete_drive_file_by_name(filename):
+    service = get_drive_service()
+    if not service:
+        return
+    try:
+        results = service.files().list(
+            q=f"name='{filename}' and trashed=false",
+            fields="files(id)"
+        ).execute()
+        for f in results.get("files", []):
+            service.files().delete(fileId=f["id"]).execute()
+    except Exception as e:
+        print(f"Delete Error: {e}")
+
 
 main_df = load_data_cache() 
 
@@ -471,4 +479,5 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
 
