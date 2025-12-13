@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格 + 圖表下移 + 懸停特效)
+# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -34,6 +34,7 @@ st.markdown(f"""
         --primary-color: #7A8B99; --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
         --border-color: #D1D1D1; --tab-bg: #E0E0E0; --tab-active: #8F9E8B;
         --shadow: 0 4px 12px rgba(0,0,0,0.05);
+        --hover-shadow: 0 8px 20px rgba(0,0,0,0.15); /* 懸停時的深陰影 */
     }}
     @media (prefers-color-scheme: dark) {{
         :root {{
@@ -41,6 +42,7 @@ st.markdown(f"""
             --primary-color: #0A84FF; --secondary-bg: #1C1C1E; --input-bg: #2C2C2E;
             --border-color: #3A3A3C; --tab-bg: #2C2C2E; --tab-active: #0A84FF;
             --shadow: 0 4px 15px rgba(0,0,0,0.4);
+            --hover-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }}
     }}
 
@@ -70,18 +72,21 @@ st.markdown(f"""
         background-color: var(--tab-bg); 
         border-radius: 12px; 
         color: var(--text-color); 
-        border: 1px solid transparent !important; 
-        padding: 12px 32px !important; 
+        border: 2px solid transparent !important; /* 預留邊框空間防止跳動 */
+        padding: 10px 30px !important; /* 微調內距適應邊框 */
         font-size: 20px !important; 
-        transition: all 0.3s ease; /* 平滑過渡 */
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* 更有彈性的動畫 */
+        font-weight: 500;
     }}
     
-    /* 🔥 新增：滑鼠移上去的特效 (Hover) 🔥 */
+    /* 🔥 修改：更有份量的 Hover 特效 🔥 */
     .stTabs [data-baseweb="tab"]:hover {{
-        background-color: var(--bg-color) !important;
+        background-color: var(--secondary-bg) !important; /* 變為亮色背景 */
         color: var(--primary-color) !important;
-        border-color: var(--primary-color) !important;
-        transform: translateY(-2px); /* 微微上浮 */
+        border-color: var(--primary-color) !important; /* 邊框顯色 */
+        box-shadow: var(--hover-shadow) !important;    /* 扎實的陰影 */
+        transform: translateY(-4px);                   /* 明顯上浮 */
+        font-weight: 900 !important;                   /* 字體變粗 */
         cursor: pointer;
     }}
 
@@ -89,8 +94,9 @@ st.markdown(f"""
     .stTabs [aria-selected="true"] {{ 
         background-color: var(--tab-active) !important; 
         color: white !important; 
-        font-weight: 600; 
+        font-weight: 700; 
         box-shadow: var(--shadow);
+        border-color: transparent !important;
     }}
     
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
