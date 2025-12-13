@@ -15,12 +15,13 @@ from googleapiclient.http import MediaIoBaseUpload
 # --- 1. 頁面設定 ---
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
-# === 🛡️ 安全設定：白名單 ===
-# 系統會先自動抓取 Google 帳號，若失敗才會比對這裡的輸入
+# === 🛡️ 安全設定：Google OAuth 白名單 ===
+# 只有這些 Google 帳號能看到密碼輸入框
 ALLOWED_USERS = [
     "chiufw@gmail.com",
     "mmday11200518@gmail.com",
-    # "ming@gmail.com", # 開發測試用，上線可註解掉
+    "oyclinic@gmail.com", 
+    # "ming@gmail.com", 
 ]
 
 # 顏色配置
@@ -150,21 +151,26 @@ def log_access_to_drive(email, action="Login"):
         upload_to_drive(LOG_FILE_NAME, final_df.to_csv(index=False).encode('utf-8'), 'text/csv')
     except Exception as e: print(f"Log Error: {e}")
 
-def try_auto_detect_email():
+def get_current_user_email():
+    """只抓取真正通過 OAuth 驗證的 Email"""
     try:
+        # 優先抓取 Streamlit Cloud 的 Header (這是最準的)
         if hasattr(st, "context") and hasattr(st.context, "headers"):
             email = st.context.headers.get("X-Streamlit-User-Email") or st.context.headers.get("x-streamlit-user-email")
             if email: return email
     except: pass
+    
     try:
-        if hasattr(st, "user") and st.user and st.user.email: return st.user.email
+        # 其次抓取 st.user (本機開發有時會用到，或新版功能)
+        if hasattr(st, "user") and st.user and st.user.email: 
+            # 排除本機開發的假 Email
+            if "test@localhost" not in st.user.email:
+                return st.user.email
     except: pass
-    try:
-        if hasattr(st, "experimental_user") and st.experimental_user.email: return st.experimental_user.email
-    except: pass
+    
     return None
 
-# --- 🔐 登入驗證 (先自動 -> 後手動) ---
+# --- 🔐 登入驗證 (OAuth 強制版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -175,47 +181,44 @@ if not st.session_state.password_correct:
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
         
-        # 1. 嘗試自動偵測
-        detected_email = try_auto_detect_email()
-        final_email = ""
-        is_manual_input = False
+        # 1. 自動抓取 Google OAuth 身分
+        detected_email = get_current_user_email()
         
+        # 2. 判斷邏輯
         if detected_email:
-            # 有抓到身分，直接顯示
-            final_email = detected_email
-            st.success(f"👋 歡迎，{final_email}")
-        else:
-            # 沒抓到身分，顯示手動輸入框
-            is_manual_input = True
-            c_input, c_suffix = st.columns([3, 1.5]) 
-            with c_input:
-                username = st.text_input("請輸入帳號", placeholder="例如：chiufw")
-            with c_suffix:
-                st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
-            
-            if username:
-                if "@" in username: final_email = username 
-                else: final_email = f"{username.strip()}@gmail.com"
-
-        pwd = st.text_input("請輸入密碼", type="password")
-        
-        if st.button("登入系統", type="primary", use_container_width=True):
-            if pwd == "8888":
-                if final_email:
-                    # 檢查白名單 (不分大小寫)
-                    if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
+            # === 有抓到身分，檢查白名單 ===
+            if detected_email.lower() in [u.lower() for u in ALLOWED_USERS]:
+                st.success(f"✅ 已驗證 Google 身分：{detected_email}")
+                
+                # 雖然身分對了，還是要求輸入一個共用密碼當作雙重確認 (防止電腦沒登出被誤用)
+                pwd = st.text_input("請輸入診所密碼", type="password")
+                
+                if st.button("登入系統", type="primary", use_container_width=True):
+                    if pwd == "8888":
                         st.session_state.password_correct = True
-                        st.session_state.confirmed_email = final_email
-                        log_access_to_drive(final_email, "Login Success")
+                        st.session_state.confirmed_email = detected_email
+                        log_access_to_drive(detected_email, "Login Success (OAuth)")
                         st.rerun()
                     else:
-                        st.error("⛔ 此帳號未獲授權")
-                        log_access_to_drive(final_email, "Login Denied (Whitelist)")
-                else:
-                    st.toast("❌ 請輸入帳號")
+                        st.error("❌ 密碼錯誤")
+                        log_access_to_drive(detected_email, "Login Failed (Pwd Error)")
             else:
-                st.error("❌ 密碼錯誤")
-                if final_email: log_access_to_drive(final_email, "Login Failed")
+                # 身分存在但不在白名單
+                st.error(f"⛔ 您的帳號 ({detected_email}) 未在授權名單中。")
+                st.info("請聯繫管理員新增權限。")
+                log_access_to_drive(detected_email, "Login Denied (Whitelist)")
+        else:
+            # === 沒抓到身分 (Local User) ===
+            st.warning("⚠️ 未偵測到 Google 登入資訊")
+            st.markdown("""
+            <div style="background-color: var(--sidebar-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);">
+                <strong>如何解決？</strong><br><br>
+                此系統僅允許授權的 Google 帳號存取。<br>
+                請確認您是透過 <strong>Streamlit 的 Google 登入按鈕</strong> 進入系統。<br><br>
+                <small>如果您是管理員：請確認 App Settings > Sharing 已設定為 "Private"。</small>
+            </div>
+            """, unsafe_allow_html=True)
+            
     st.stop()
 
 # --- 主邏輯 ---
@@ -267,7 +270,6 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        # 修正1: 減少 offset，讓標題貼近圖表，避免被上方切掉
         title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=10), 
         height=450
     )
@@ -275,7 +277,6 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 修正1: 增加上方的 padding 留白，從 120 改為 80 (配合 offset 調整)
     return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
@@ -317,7 +318,6 @@ if not main_df.empty:
     pivot_df = pivot_df.sort_values(by=last_month, ascending=False)
     item_options = pivot_df.index.get_level_values('顯示名稱').tolist()
 
-    # 初始化 State
     if 'saved_groups' not in st.session_state: st.session_state.saved_groups = load_groups()
     if 'active_group_view' not in st.session_state: st.session_state.active_group_view = None
     if 'new_group_name_input' not in st.session_state: st.session_state.new_group_name_input = ""
@@ -370,11 +370,9 @@ if not main_df.empty:
         
         with cv:
             tg = st.session_state.active_group_view
-            # 修正2: 強制綁定 index 以記憶選擇，避免切換群組後跳回預設
+            # 強制綁定記憶
             type_idx = 0 if st.session_state.chart_type_pref == "直方圖" else 1
             gt = st.radio("圖", ["直方圖", "折線圖"], index=type_idx, horizontal=True, key="group_chart_radio", label_visibility="collapsed")
-            
-            # 當使用者手動切換時，更新 session_state
             if gt != st.session_state.chart_type_pref:
                 st.session_state.chart_type_pref = gt
                 st.rerun()
