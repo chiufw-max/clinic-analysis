@@ -125,7 +125,6 @@ def log_access_to_drive(email, action="Login"):
     except Exception as e: print(f"Log Error: {e}")
 
 def try_auto_detect_email():
-    """嘗試自動抓取，失敗回傳 None"""
     try:
         if hasattr(st, "context") and hasattr(st.context, "headers"):
             email = st.context.headers.get("X-Streamlit-User-Email") or st.context.headers.get("x-streamlit-user-email")
@@ -139,7 +138,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (改良版) ---
+# --- 🔐 登入驗證 (自動補全 @gmail.com) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -152,13 +151,24 @@ if not st.session_state.password_correct:
         
         # 1. 先試著自動抓
         detected_email = try_auto_detect_email()
-        
         final_email = ""
         
-        # 2. 如果抓不到，顯示手動輸入框
+        # 2. 如果抓不到，顯示簡化版手動輸入框
         if not detected_email:
-            # 修正處：移除 (以供記錄) 文字
-            final_email = st.text_input("請輸入您的 Email", placeholder="例如：ming@gmail.com")
+            # 視覺上使用 Columns 呈現 (帳號輸入框 + 固定文字)
+            c_input, c_suffix = st.columns([3, 1.5]) 
+            with c_input:
+                username = st.text_input("請輸入 Google 帳號", placeholder="例如：ming")
+            with c_suffix:
+                # 調整 padding 讓文字垂直置中對齊輸入框
+                st.markdown("<div style='padding-top: 55px; font-size: 22px; color: #aaa; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
+            
+            # 邏輯處理：自動加上後綴
+            if username:
+                if "@" in username:
+                    final_email = username # 防呆：如果使用者自己打了 @gmail.com
+                else:
+                    final_email = f"{username.strip()}@gmail.com"
         else:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
@@ -173,7 +183,7 @@ if not st.session_state.password_correct:
                     log_access_to_drive(final_email, "Login Success")
                     st.rerun()
                 else:
-                    st.toast("❌ 請填寫 Email 才能登入")
+                    st.toast("❌ 請輸入帳號")
             else:
                 st.error("❌ 密碼錯誤")
                 if final_email: log_access_to_drive(final_email, "Login Failed")
