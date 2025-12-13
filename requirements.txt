@@ -5,3 +5,5 @@ openpyxl
 pillow
 google-api-python-client
 google-auth
+matplotlib
+
