@@ -8,23 +8,29 @@ import math
 import altair as alt
 from PIL import Image
 from datetime import datetime, timedelta
-import requests
-
-# OAuth & Drive 相關套件
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseUpload
-from google_auth_oauthlib.flow import Flow
 
 # --- 1. 頁面設定 ---
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
+# === 🛡️ 安全設定：白名單 ===
+# 系統會先自動抓取 Google 帳號，若失敗則比對手動輸入的帳號
+ALLOWED_USERS = [
+    "chiufw@gmail.com",
+    "mmday11200518@gmail.com",
+    "oyclinic@gmail.com",
+    # 您可以在這裡繼續新增...
+]
+
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS
+# 注入 CSS (雙風格: 莫蘭迪/Apple)
 st.markdown(f"""
     <style>
+    /* === 核心變數定義 === */
     :root {{
         --bg-color: #F5F5F7; --sidebar-bg: #EAEAEA; --text-color: #4A4A4A;
         --primary-color: #7A8B99; --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
@@ -39,6 +45,8 @@ st.markdown(f"""
             --shadow: 0 4px 15px rgba(0,0,0,0.4);
         }}
     }}
+
+    /* === 全站樣式 === */
     html, body, [class*="css"] {{ 
         font-family: -apple-system, "Microsoft JhengHei", sans-serif; font-size: 20px; 
         color: var(--text-color) !important; background-color: var(--bg-color) !important;
@@ -47,8 +55,10 @@ st.markdown(f"""
     [data-testid="stSidebar"] {{ background-color: var(--sidebar-bg) !important; border-right: 1px solid var(--border-color); }}
     [data-testid="stSidebar"] * {{ color: var(--text-color) !important; }}
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
+    
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
+
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
     .stTabs [data-baseweb="tab"] {{ 
@@ -57,6 +67,7 @@ st.markdown(f"""
     }}
     .stTabs [aria-selected="true"] {{ background-color: var(--tab-active) !important; color: white !important; font-weight: 600; box-shadow: var(--shadow); }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
+
     /* Inputs */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
         background-color: var(--input-bg) !important; color: var(--text-color) !important; border-radius: 12px; 
@@ -65,6 +76,7 @@ st.markdown(f"""
     ul[data-baseweb="menu"] {{ background-color: var(--sidebar-bg) !important; }}
     ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 20px !important; }}
     span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 18px !important; }}
+
     /* Buttons */
     div.stButton > button {{
         border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 600 !important;
@@ -75,15 +87,17 @@ st.markdown(f"""
     div.stButton > button[kind="secondary"]:hover {{ filter: brightness(0.9); transform: scale(1.01); }}
     div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
     div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
+
     /* DataFrame */
     .stDataFrame {{ font-size: 20px !important; }}
     [data-testid="stDataFrame"] {{ background-color: var(--sidebar-bg); border-radius: 12px; padding: 10px; border: 1px solid var(--border-color); }}
     thead tr th:first-child, tbody th {{ display: none; }}
+    
     h1, h2, h3, p, span, label, div {{ color: var(--text-color) !important; }}
     </style>
     """, unsafe_allow_html=True)
 
-# --- Drive 連線 ---
+# --- Google Drive 連線 ---
 CACHE_FILE = "clinic_cache.csv"
 GROUPS_FILE_NAME = "clinic_groups.json"
 LOG_FILE_NAME = "access_log.csv"
@@ -137,95 +151,21 @@ def log_access_to_drive(email, action="Login"):
         upload_to_drive(LOG_FILE_NAME, final_df.to_csv(index=False).encode('utf-8'), 'text/csv')
     except Exception as e: print(f"Log Error: {e}")
 
-# --- 🔥 新增：Google OAuth 登入函數 ---
-def google_login_get_email():
-    """使用 Google OAuth 2.0 取得使用者 Email"""
-    
-    # 0. 如果 secrets 沒設定好，直接回傳 None (避免報錯)
-    if "google_oauth" not in st.secrets:
-        st.error("❌ 未設定 Google OAuth Secrets，請聯繫管理員")
-        return None
-
-    # 1. 如果已經登入過，直接回傳 session 中的 email
-    if "google_email" in st.session_state:
-        return st.session_state["google_email"]
-
-    client_id = st.secrets["google_oauth"]["client_id"]
-    client_secret = st.secrets["google_oauth"]["client_secret"]
-    redirect_uri = st.secrets["google_oauth"]["redirect_uri"]
-
-    flow = Flow.from_client_config(
-        {
-            "web": {
-                "client_id": client_id,
-                "client_secret": client_secret,
-                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-                "token_uri": "https://oauth2.googleapis.com/token",
-                "redirect_uris": [redirect_uri],
-            }
-        },
-        scopes=[
-            "openid",
-            "https://www.googleapis.com/auth/userinfo.email",
-            "https://www.googleapis.com/auth/userinfo.profile",
-        ],
-        redirect_uri=redirect_uri,
-    )
-
-    # 2. 檢查網址參數是否有 code (Google 登入後跳轉回來會帶 code)
-    # Streamlit 1.30+ 使用 st.query_params
-    qp = st.query_params 
-    
-    if "code" not in qp:
-        # A. 沒有 code -> 顯示登入按鈕
-        auth_url, _ = flow.authorization_url(
-            prompt="select_account",
-            include_granted_scopes="true",
-        )
-        st.markdown(f'''
-            <a href="{auth_url}" target="_self">
-                <button style="
-                    background-color: #4285F4; color: white; border: none; 
-                    padding: 12px 24px; font-size: 18px; border-radius: 8px; 
-                    cursor: pointer; width: 100%; font-weight: bold;
-                    display: flex; align-items: center; justify-content: center; gap: 10px;">
-                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" style="width: 20px; height: 20px; background: white; border-radius: 50%; padding: 2px;">
-                    使用 Google 帳號登入
-                </button>
-            </a>
-            ''', unsafe_allow_html=True)
-        return None
-
+def try_auto_detect_email():
     try:
-        # B. 有 code -> 交換 Token 並取得 User Info
-        code = qp["code"]
-        flow.fetch_token(code=code)
-        creds = flow.credentials
-        
-        resp = requests.get(
-            "https://www.googleapis.com/oauth2/v2/userinfo",
-            headers={"Authorization": f"Bearer {creds.token}"},
-            timeout=10,
-        )
-        resp.raise_for_status()
-        user_info = resp.json()
-        email = user_info.get("email")
+        if hasattr(st, "context") and hasattr(st.context, "headers"):
+            email = st.context.headers.get("X-Streamlit-User-Email") or st.context.headers.get("x-streamlit-user-email")
+            if email: return email
+    except: pass
+    try:
+        if hasattr(st, "user") and st.user and st.user.email: return st.user.email
+    except: pass
+    try:
+        if hasattr(st, "experimental_user") and st.experimental_user.email: return st.experimental_user.email
+    except: pass
+    return None
 
-        if email:
-            st.session_state["google_email"] = email
-            # 清除網址參數，避免重新整理時重複換 code 導致錯誤
-            st.query_params.clear()
-            st.rerun() # 重新整理頁面以顯示內容
-            
-        return email
-        
-    except Exception as e:
-        st.error(f"登入失敗，請重新嘗試。錯誤資訊: {e}")
-        # 出錯時清除參數重來
-        st.query_params.clear()
-        return None
-
-# --- 🔐 登入驗證 (OAuth 版) ---
+# --- 🔐 登入驗證 (白名單優先) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -233,19 +173,49 @@ if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
-        st.title("🔒 診所系統登入（Google 驗證）")
+        if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
+        st.title("🔒 診所系統登入")
+        
+        # 1. 嘗試自動偵測
+        detected_email = try_auto_detect_email()
+        final_email = ""
+        
+        if detected_email:
+            # 有抓到身分，直接使用
+            final_email = detected_email
+            st.success(f"👋 歡迎，{final_email}")
+        else:
+            # 沒抓到身分，顯示手動輸入框
+            c_input, c_suffix = st.columns([3, 1.5]) 
+            with c_input:
+                username = st.text_input("請輸入帳號", placeholder="例如：chiufw")
+            with c_suffix:
+                st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
+            
+            if username:
+                if "@" in username: final_email = username 
+                else: final_email = f"{username.strip()}@gmail.com"
 
-        email = google_login_get_email()
-        if not email:
-            st.stop()
-
-        st.success(f"👋 已登入：{email}")
-
-# ✅ 不做白名單，Google 登入成功即放行
-st.session_state.password_correct = True
-st.session_state.confirmed_email = email
-log_access_to_drive(email, "Login Success (Google OAuth)")
-st.rerun()
+        pwd = st.text_input("請輸入密碼", type="password")
+        
+        if st.button("登入系統", type="primary", use_container_width=True):
+            if pwd == "8888":
+                if final_email:
+                    # 檢查白名單 (不分大小寫)
+                    if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
+                        st.session_state.password_correct = True
+                        st.session_state.confirmed_email = final_email
+                        log_access_to_drive(final_email, "Login Success")
+                        st.rerun()
+                    else:
+                        st.error("⛔ 此帳號未獲授權")
+                        log_access_to_drive(final_email, "Login Denied (Whitelist)")
+                else:
+                    st.toast("❌ 請輸入帳號")
+            else:
+                st.error("❌ 密碼錯誤")
+                if final_email: log_access_to_drive(final_email, "Login Failed")
+    st.stop()
 
 # --- 主邏輯 ---
 def load_groups():
@@ -299,8 +269,10 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=10), 
         height=450
     )
+    
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
+    
     return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
@@ -394,6 +366,7 @@ if not main_df.empty:
         
         with cv:
             tg = st.session_state.active_group_view
+            # 強制綁定記憶
             type_idx = 0 if st.session_state.chart_type_pref == "直方圖" else 1
             gt = st.radio("圖", ["直方圖", "折線圖"], index=type_idx, horizontal=True, key="group_chart_radio", label_visibility="collapsed")
             if gt != st.session_state.chart_type_pref:
@@ -430,5 +403,3 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
-
-
