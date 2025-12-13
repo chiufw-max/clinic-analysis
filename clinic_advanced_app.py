@@ -16,65 +16,152 @@ from googleapiclient.http import MediaIoBaseUpload
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
 # === 🛡️ 安全設定：允許登入的帳號清單 (白名單) ===
-# 請在此輸入所有允許登入的完整 Email，不在名單內的人就算密碼正確也無法登入
 ALLOWED_USERS = [
-    "chiufw@gmail.com",      # 範例 (請修改為您的真實帳號)
-    "mmday11200518@gmail.com",  # 範例
-    # 您可以在這裡繼續加... "user3@gmail.com",
+    "ming@gmail.com",      # 請修改為您的真實帳號
+    "oyclinic@gmail.com",
 ]
 
-# 顏色配置
-COLORS = {
-    "bg": "#000000", "sidebar_bg": "#1C1C1E", "main": "#0A84FF",
-    "tab_bg": "#2C2C2E", "tab_hover": "#3A3A3C", "text": "#FFFFFF",
-    "input_bg": "#1C1C1E",
-    "chart": ["#CD5C5C", "#DAA520", "#4682B4", "#6A5ACD", "#2E8B57", "#D2691E", "#708090", "#FF69B4", "#00CED1"]
-}
+# 顏色配置 (圖表線條顏色)
+# 莫蘭迪/Apple 風格共用這組柔和但清晰的圖表色
+CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (大方視覺調整)
+# 注入 CSS (雙風格核心代碼)
 st.markdown(f"""
     <style>
-    html, body, [class*="css"] {{ font-family: "Microsoft JhengHei", sans-serif; font-size: 20px; }}
+    /* === 核心變數定義 (CSS Variables) === */
+    :root {{
+        /* 預設: 淺色模式 (莫蘭迪 Morandi Style) */
+        --bg-color: #F5F5F7;          /* 溫潤的米灰白 */
+        --sidebar-bg: #EAEAEA;        /* 淺灰側邊欄 */
+        --text-color: #4A4A4A;        /* 深灰字體 (不須全黑) */
+        --primary-color: #7A8B99;     /* 莫蘭迪-霧霾藍 (主按鈕) */
+        --secondary-bg: #FFFFFF;      /* 純白區塊 */
+        --input-bg: #FFFFFF;          /* 輸入框白底 */
+        --border-color: #D1D1D1;      /* 柔和邊框 */
+        --tab-bg: #E0E0E0;            /* 頁籤未選中 */
+        --tab-active: #8F9E8B;        /* 頁籤選中-灰豆綠 */
+        --chart-text: #4A4A4A;        /* 圖表文字色 */
+        --shadow: 0 4px 12px rgba(0,0,0,0.05); /* 柔和陰影 */
+    }}
+
+    @media (prefers-color-scheme: dark) {{
+        :root {{
+            /* 深色模式 (Apple Dark Style) */
+            --bg-color: #000000;          /* 純黑背景 */
+            --sidebar-bg: #1C1C1E;        /* 深灰側邊欄 */
+            --text-color: #F5F5F7;        /* 亮白字體 */
+            --primary-color: #0A84FF;     /* Apple System Blue */
+            --secondary-bg: #1C1C1E;      /* 深灰區塊 */
+            --input-bg: #2C2C2E;          /* 輸入框深灰 */
+            --border-color: #3A3A3C;      /* 深色邊框 */
+            --tab-bg: #2C2C2E;            /* 頁籤未選中 */
+            --tab-active: #0A84FF;        /* 頁籤選中-Apple Blue */
+            --chart-text: #FFFFFF;        /* 圖表文字色 */
+            --shadow: 0 4px 15px rgba(0,0,0,0.4); /* 深邃陰影 */
+        }}
+    }}
+
+    /* === 全站字體與背景應用 === */
+    html, body, [class*="css"] {{ 
+        font-family: -apple-system, "Microsoft JhengHei", sans-serif; 
+        font-size: 20px; 
+        color: var(--text-color) !important;
+        background-color: var(--bg-color) !important;
+    }}
+    
+    .stApp {{ background-color: var(--bg-color) !important; }}
+    
+    /* 側邊欄樣式 */
+    [data-testid="stSidebar"] {{ 
+        background-color: var(--sidebar-bg) !important; 
+        border-right: 1px solid var(--border-color); 
+    }}
+    [data-testid="stSidebar"] * {{ color: var(--text-color) !important; }}
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
+
+    /* 隱藏上傳區提示小字 */
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
     
-    /* 頁籤加大 */
+    /* === 頁籤 (Tabs) === */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
     .stTabs [data-baseweb="tab"] {{ 
-        background-color: {COLORS['tab_bg']}; border-radius: 12px; color: #AEAEB2; border: none !important; 
-        padding: 12px 32px !important; font-size: 22px !important;
+        background-color: var(--tab-bg); 
+        border-radius: 12px; 
+        color: var(--text-color); 
+        border: none !important; 
+        padding: 12px 32px !important; 
+        font-size: 20px !important;
+        transition: all 0.3s ease;
     }}
-    .stTabs [aria-selected="true"] {{ background-color: {COLORS['main']} !important; color: white !important; font-weight: bold; }}
+    .stTabs [aria-selected="true"] {{ 
+        background-color: var(--tab-active) !important; 
+        color: white !important; 
+        font-weight: 600; 
+        box-shadow: var(--shadow);
+    }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
     
-    .stApp {{ background-color: {COLORS['bg']} !important; }}
-    .main h1, .main h2, .main h3, .main p, .main span, .main label, .main div, [data-testid="stSidebar"] * {{ color: {COLORS['text']} !important; }}
-    [data-testid="stSidebar"] {{ background-color: {COLORS['sidebar_bg']}; border-right: 1px solid #333; }}
-    
-    /* 輸入框加大 */
+    /* === 輸入框 (Input) === */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
-        background-color: {COLORS['input_bg']} !important; color: white !important; border-radius: 12px; 
-        border: 1px solid #444; min-height: 50px !important; font-size: 20px !important;
+        background-color: var(--input-bg) !important; 
+        color: var(--text-color) !important; 
+        border-radius: 12px; 
+        border: 1px solid var(--border-color) !important; 
+        min-height: 50px !important; 
+        font-size: 20px !important;
     }}
-    ul[data-baseweb="menu"] {{ background-color: {COLORS['input_bg']} !important; }}
-    ul[data-baseweb="menu"] li {{ color: white !important; font-size: 20px !important; }}
-    span[data-baseweb="tag"] {{ background-color: #3A3A3C !important; font-size: 18px !important; }}
+    /* 下拉選單 */
+    ul[data-baseweb="menu"] {{ background-color: var(--sidebar-bg) !important; }}
+    ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 20px !important; }}
+    span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 18px !important; }}
     
-    /* 按鈕加大 */
+    /* === 按鈕 (Buttons) === */
     div.stButton > button {{
-        border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 700 !important;
-        transition: all 0.2s ease !important; padding: 16px 32px !important; font-size: 22px !important;
-        line-height: 1.5 !important; min-height: 60px !important;
+        border-radius: 16px !important; 
+        border: 1px solid transparent !important; 
+        font-weight: 600 !important;
+        transition: all 0.2s ease !important; 
+        padding: 16px 32px !important; 
+        font-size: 20px !important;
+        line-height: 1.5 !important; 
+        min-height: 60px !important;
     }}
-    div.stButton > button[kind="secondary"] {{ background-color: {COLORS['tab_bg']} !important; color: #AEAEB2 !important; border: 2px solid #444 !important; }}
-    div.stButton > button[kind="secondary"]:hover {{ background-color: {COLORS['tab_hover']} !important; color: white !important; border-color: #888 !important; transform: scale(1.01); }}
-    div.stButton > button[kind="primary"] {{ background-color: {COLORS['main']} !important; color: white !important; box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4) !important; }}
-    div.stButton > button[kind="primary"]:hover {{ background-color: #007AFF !important; transform: scale(1.01); }}
     
+    /* 次要按鈕 (Secondary) */
+    div.stButton > button[kind="secondary"] {{ 
+        background-color: var(--tab-bg) !important; 
+        color: var(--text-color) !important; 
+    }}
+    div.stButton > button[kind="secondary"]:hover {{ 
+        filter: brightness(0.9);
+        transform: scale(1.01); 
+    }}
+
+    /* 主要按鈕 (Primary) */
+    div.stButton > button[kind="primary"] {{ 
+        background-color: var(--primary-color) !important; 
+        color: white !important; 
+        box-shadow: var(--shadow) !important; 
+    }}
+    div.stButton > button[kind="primary"]:hover {{ 
+        filter: brightness(1.1);
+        transform: scale(1.02); 
+    }}
+
+    /* === 表格 (DataFrame) === */
     .stDataFrame {{ font-size: 20px !important; }}
-    [data-testid="stDataFrame"] {{ background-color: {COLORS['sidebar_bg']}; border-radius: 10px; padding: 10px; }}
+    [data-testid="stDataFrame"] {{ 
+        background-color: var(--sidebar-bg); 
+        border-radius: 12px; 
+        padding: 10px; 
+        border: 1px solid var(--border-color);
+    }}
     thead tr th:first-child, tbody th {{ display: none; }}
+    
+    /* 文字顏色強制繼承 */
+    h1, h2, h3, p, span, label, div {{ color: var(--text-color) !important; }}
+    
     </style>
     """, unsafe_allow_html=True)
 
@@ -146,7 +233,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (含白名單檢查) ---
+# --- 🔐 登入驗證 ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -165,7 +252,7 @@ if not st.session_state.password_correct:
             with c_input:
                 username = st.text_input("請輸入 Google 帳號", placeholder="例如：ming")
             with c_suffix:
-                st.markdown("<div style='padding-top: 55px; font-size: 22px; color: #aaa; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
+                st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
             
             if username:
                 if "@" in username: final_email = username 
@@ -179,21 +266,18 @@ if not st.session_state.password_correct:
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
                 if final_email:
-                    # === 🛡️ 檢查是否在白名單中 ===
-                    # 為了避免大小寫問題，全部轉小寫比對
                     if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
                         st.session_state.password_correct = True
                         st.session_state.confirmed_email = final_email
                         log_access_to_drive(final_email, "Login Success")
                         st.rerun()
                     else:
-                        st.error("⛔ 此帳號未獲授權，請聯繫管理員")
-                        log_access_to_drive(final_email, "Login Denied (Not in Whitelist)")
-                else:
-                    st.toast("❌ 請輸入帳號")
+                        st.error("⛔ 此帳號未獲授權")
+                        log_access_to_drive(final_email, "Login Denied (Whitelist)")
+                else: st.toast("❌ 請輸入帳號")
             else:
                 st.error("❌ 密碼錯誤")
-                if final_email: log_access_to_drive(final_email, "Login Failed (Wrong Password)")
+                if final_email: log_access_to_drive(final_email, "Login Failed")
     st.stop()
 
 # --- 主邏輯 ---
@@ -239,18 +323,22 @@ def parse_usage_file(file):
             parsed_data.append({'代碼':code, '健保碼':nhi, '名稱':name, '顯示名稱':f"{code} {name}", '單位':unit, '數量':math.ceil(qty), '月份':month_label})
     return pd.DataFrame(parsed_data)
 
-def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, color_range=COLORS['chart']):
+def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, color_range=CHART_COLORS):
+    # 設定圖表背景透明，讓 Streamlit 自動處理文字顏色
     base = alt.Chart(data_df).encode(
-        x=alt.X(x_col, title=None, axis=alt.Axis(labelColor='white', labelAngle=0, domainColor='#555')),
-        y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(labelColor='white', gridColor='#333', domainColor='#555'), scale=alt.Scale(nice=True, zero=True)),
+        x=alt.X(x_col, title=None, axis=alt.Axis(labelAngle=0)),
+        y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
-    ).properties(title=alt.TitleParams(text=title, color='white', fontSize=24, anchor='middle', offset=30), height=450)
+    ).properties(
+        title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=30), 
+        height=450
+    )
     
-    if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
-    else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
+    if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
+    else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 修正圖表上方被切到的問題：增加 padding top 到 120
-    return chart.configure(padding={'top': 120, 'left': 20, 'right': 20, 'bottom': 20})
+    # 圖表邊距設定
+    return chart.configure(padding={'top': 120, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
 with st.sidebar:
@@ -304,6 +392,8 @@ if not main_df.empty:
         output = BytesIO()
         with pd.ExcelWriter(output, engine='openpyxl') as writer: pivot_df.reset_index().drop(columns=['顯示名稱']).set_index(['代碼', '名稱', '單位']).to_excel(writer, sheet_name='用量')
         st.download_button("📥 下載 Excel", data=output.getvalue(), file_name='report.xlsx', mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        
+        # 表格底色漸層 (自動適應深淺)
         st.dataframe(pivot_df.reset_index().drop(columns=['顯示名稱']).style.background_gradient(cmap="Blues", subset=months).format(precision=0), use_container_width=True, height=600, hide_index=True)
 
     with tab2:
@@ -356,8 +446,8 @@ if not main_df.empty:
                 else: st.warning("無數據")
         
         with ce:
-            # 修正：使用 HTML 強制渲染標題文字，確保顏色和大小正確顯示
-            st.markdown("<h3 style='color: #0A84FF; margin-top: 0px;'>➕ 新增 / ✏️ 編輯群組</h3>", unsafe_allow_html=True)
+            # 使用 CSS class 來讓標題隨模式變色
+            st.markdown("<h3>➕ 新增 / ✏️ 編輯</h3>", unsafe_allow_html=True)
             
             if tg and tg in st.session_state.saved_groups:
                 if st.button(f"✏️ 載入「{tg}」", key="load_edit_btn", type="secondary", use_container_width=True):
