@@ -19,13 +19,6 @@ from google_auth_oauthlib.flow import Flow
 # --- 1. 頁面設定 ---
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
-# === 🛡️ 安全設定：白名單 ===
-ALLOWED_USERS = [
-    "chiufw@gmail.com",
-    "mmday11200518@gmail.com",
-    "oyclinic@gmail.com",
-]
-
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
@@ -248,16 +241,11 @@ if not st.session_state.password_correct:
 
         st.success(f"👋 已登入：{email}")
 
-        # 白名單檢查
-        if email.lower() in [u.lower() for u in ALLOWED_USERS]:
-            st.session_state.password_correct = True
-            st.session_state.confirmed_email = email
-            log_access_to_drive(email, "Login Success (Google OAuth)")
-            st.rerun()
-        else:
-            st.error("⛔ 此 Google 帳號未獲授權")
-            log_access_to_drive(email, "Login Denied (Whitelist, Google OAuth)")
-            st.stop()
+# ✅ 不做白名單，Google 登入成功即放行
+st.session_state.password_correct = True
+st.session_state.confirmed_email = email
+log_access_to_drive(email, "Login Success (Google OAuth)")
+st.rerun()
 
 # --- 主邏輯 ---
 def load_groups():
@@ -442,4 +430,5 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
 
