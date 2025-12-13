@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (移除無效的圖表 CSS，保留風格設定)
+# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停 + 字體 18px)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -46,9 +46,10 @@ st.markdown(f"""
         }}
     }}
 
-    /* === 全站樣式 === */
+    /* === 全站樣式 (調整為 18px) === */
     html, body, [class*="css"] {{ 
-        font-family: -apple-system, "Microsoft JhengHei", sans-serif; font-size: 20px; 
+        font-family: -apple-system, "Microsoft JhengHei", sans-serif; 
+        font-size: 18px; /* 原 20px -> 18px */
         color: var(--text-color) !important; background-color: var(--bg-color) !important;
     }}
     .stApp {{ background-color: var(--bg-color) !important; }}
@@ -59,12 +60,18 @@ st.markdown(f"""
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
 
-    /* Tabs (扎實懸停特效) */
+    /* 強制將圖表區塊往下移 50px */
+    [data-testid="stAltairChart"] {{
+        padding-top: 50px !important;
+    }}
+
+    /* Tabs (18px) */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
     .stTabs [data-baseweb="tab"] {{ 
         background-color: var(--tab-bg); border-radius: 12px; color: var(--text-color); 
-        border: 2px solid transparent !important; padding: 10px 30px !important; 
-        font-size: 20px !important; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); font-weight: 500;
+        border: 2px solid transparent !important; padding: 10px 24px !important; 
+        font-size: 18px !important; /* 原 20px -> 18px */
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); font-weight: 500;
     }}
     .stTabs [data-baseweb="tab"]:hover {{
         background-color: var(--secondary-bg) !important; color: var(--primary-color) !important;
@@ -77,28 +84,30 @@ st.markdown(f"""
     }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
 
-    /* Inputs */
+    /* Inputs (18px) */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
         background-color: var(--input-bg) !important; color: var(--text-color) !important; border-radius: 12px; 
-        border: 1px solid var(--border-color) !important; min-height: 50px !important; font-size: 20px !important;
+        border: 1px solid var(--border-color) !important; min-height: 45px !important; 
+        font-size: 18px !important; /* 原 20px -> 18px */
     }}
     ul[data-baseweb="menu"] {{ background-color: var(--sidebar-bg) !important; }}
-    ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 20px !important; }}
-    span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 18px !important; }}
+    ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 18px !important; }}
+    span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 16px !important; }}
 
-    /* Buttons */
+    /* Buttons (18px) */
     div.stButton > button {{
         border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 600 !important;
-        transition: all 0.2s ease !important; padding: 16px 32px !important; font-size: 20px !important;
-        line-height: 1.5 !important; min-height: 60px !important;
+        transition: all 0.2s ease !important; padding: 12px 24px !important; 
+        font-size: 18px !important; /* 原 20px -> 18px */
+        line-height: 1.5 !important; min-height: 50px !important;
     }}
     div.stButton > button[kind="secondary"] {{ background-color: var(--tab-bg) !important; color: var(--text-color) !important; }}
     div.stButton > button[kind="secondary"]:hover {{ filter: brightness(0.9); transform: scale(1.01); }}
     div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
     div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
 
-    /* DataFrame */
-    .stDataFrame {{ font-size: 20px !important; }}
+    /* DataFrame (18px) */
+    .stDataFrame {{ font-size: 18px !important; }}
     [data-testid="stDataFrame"] {{ background-color: var(--sidebar-bg); border-radius: 12px; padding: 10px; border: 1px solid var(--border-color); }}
     thead tr th:first-child, tbody th {{ display: none; }}
     
@@ -271,15 +280,16 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        title=alt.TitleParams(text=title, fontSize=22, anchor='middle', offset=20), 
+        # 修正：字體大小 18，Offset 20
+        title=alt.TitleParams(text=title, fontSize=18, anchor='middle', offset=20, dy=20), 
         height=450
     )
     
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 🔥 關鍵修正：透過 configure(padding=...) 強制增加畫布內部留白，解決切頭問題 🔥
-    return chart.configure(padding={'top': 60, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+    # 保持上方的 padding 為 100
+    return chart.configure(padding={'top': 100, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
 with st.sidebar:
