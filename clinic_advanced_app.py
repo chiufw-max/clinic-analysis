@@ -72,21 +72,21 @@ st.markdown(f"""
         background-color: var(--tab-bg); 
         border-radius: 12px; 
         color: var(--text-color); 
-        border: 2px solid transparent !important; /* 預留邊框空間防止跳動 */
-        padding: 10px 30px !important; /* 微調內距適應邊框 */
+        border: 2px solid transparent !important; 
+        padding: 10px 30px !important; 
         font-size: 20px !important; 
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* 更有彈性的動畫 */
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
         font-weight: 500;
     }}
     
-    /* 🔥 修改：更有份量的 Hover 特效 🔥 */
+    /* 🔥 扎實 Hover 特效 🔥 */
     .stTabs [data-baseweb="tab"]:hover {{
-        background-color: var(--secondary-bg) !important; /* 變為亮色背景 */
+        background-color: var(--secondary-bg) !important; 
         color: var(--primary-color) !important;
-        border-color: var(--primary-color) !important; /* 邊框顯色 */
-        box-shadow: var(--hover-shadow) !important;    /* 扎實的陰影 */
-        transform: translateY(-4px);                   /* 明顯上浮 */
-        font-weight: 900 !important;                   /* 字體變粗 */
+        border-color: var(--primary-color) !important; 
+        box-shadow: var(--hover-shadow) !important;    
+        transform: translateY(-4px);                   
+        font-weight: 900 !important;                   
         cursor: pointer;
     }}
 
@@ -295,7 +295,8 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        title=alt.TitleParams(text=title, fontSize=20, anchor='middle', offset=10), 
+        # 修正：字體大小 20，Offset 20 (增加往下壓的力道)
+        title=alt.TitleParams(text=title, fontSize=20, anchor='middle', offset=20, dy=20), 
         height=450
     )
     
