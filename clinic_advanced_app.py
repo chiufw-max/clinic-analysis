@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格 + 圖表下移修正)
+# 注入 CSS (雙風格 + 圖表下移 + 懸停特效)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -62,13 +62,37 @@ st.markdown(f"""
         padding-top: 50px !important;
     }}
 
-    /* Tabs */
+    /* === Tabs (頁籤樣式與懸停特效) === */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
+    
+    /* 未選中的 Tab */
     .stTabs [data-baseweb="tab"] {{ 
-        background-color: var(--tab-bg); border-radius: 12px; color: var(--text-color); border: none !important; 
-        padding: 12px 32px !important; font-size: 20px !important; transition: all 0.3s ease;
+        background-color: var(--tab-bg); 
+        border-radius: 12px; 
+        color: var(--text-color); 
+        border: 1px solid transparent !important; 
+        padding: 12px 32px !important; 
+        font-size: 20px !important; 
+        transition: all 0.3s ease; /* 平滑過渡 */
     }}
-    .stTabs [aria-selected="true"] {{ background-color: var(--tab-active) !important; color: white !important; font-weight: 600; box-shadow: var(--shadow); }}
+    
+    /* 🔥 新增：滑鼠移上去的特效 (Hover) 🔥 */
+    .stTabs [data-baseweb="tab"]:hover {{
+        background-color: var(--bg-color) !important;
+        color: var(--primary-color) !important;
+        border-color: var(--primary-color) !important;
+        transform: translateY(-2px); /* 微微上浮 */
+        cursor: pointer;
+    }}
+
+    /* 已選中的 Tab */
+    .stTabs [aria-selected="true"] {{ 
+        background-color: var(--tab-active) !important; 
+        color: white !important; 
+        font-weight: 600; 
+        box-shadow: var(--shadow);
+    }}
+    
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
 
     /* Inputs */
@@ -265,7 +289,6 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        # 修正：字體大小 20，Offset 10
         title=alt.TitleParams(text=title, fontSize=20, anchor='middle', offset=10), 
         height=450
     )
@@ -297,10 +320,8 @@ with st.sidebar:
 
 main_df = load_data_cache() 
 
-# 🔥 核心修正：數據不重複邏輯 🔥
 if uploaded_files:
     new_dfs = []
-    # 讀取所有上傳的檔案
     for f in uploaded_files:
         df = parse_usage_file(f)
         if not df.empty:
@@ -308,20 +329,12 @@ if uploaded_files:
             
     if new_dfs:
         new_data = pd.concat(new_dfs, ignore_index=True)
-        
         if not main_df.empty:
-            # 1. 找出新資料包含哪些月份 (例如: 114-08)
             new_months = new_data['月份'].unique()
-            
-            # 2. 從舊資料中，剔除掉這些月份的資料 (舊換新)
-            # 這樣如果使用者重新上傳 8 月的檔案，舊的 8 月資料就會被刪掉，不會疊加
             main_df = main_df[~main_df['月份'].isin(new_months)]
-            
-            # 3. 合併 (舊資料剩餘月份 + 新資料)
             main_df = pd.concat([main_df, new_data], ignore_index=True)
         else:
             main_df = new_data
-            
         save_data_cache(main_df)
 
 st.title("歐葉豐原診所品項分析")
