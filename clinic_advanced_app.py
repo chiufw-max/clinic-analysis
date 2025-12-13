@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停)
+# 注入 CSS (移除無效的圖表 CSS，保留風格設定)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -34,7 +34,7 @@ st.markdown(f"""
         --primary-color: #7A8B99; --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
         --border-color: #D1D1D1; --tab-bg: #E0E0E0; --tab-active: #8F9E8B;
         --shadow: 0 4px 12px rgba(0,0,0,0.05);
-        --hover-shadow: 0 8px 20px rgba(0,0,0,0.15); /* 懸停時的深陰影 */
+        --hover-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }}
     @media (prefers-color-scheme: dark) {{
         :root {{
@@ -59,46 +59,22 @@ st.markdown(f"""
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
 
-    /* 🔥 強制將圖表區塊往下移 50px，避免標題被切到 🔥 */
-    [data-testid="stAltairChart"] {{
-        padding-top: 50px !important;
-    }}
-
-    /* === Tabs (頁籤樣式與懸停特效) === */
+    /* Tabs (扎實懸停特效) */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
-    
-    /* 未選中的 Tab */
     .stTabs [data-baseweb="tab"] {{ 
-        background-color: var(--tab-bg); 
-        border-radius: 12px; 
-        color: var(--text-color); 
-        border: 2px solid transparent !important; 
-        padding: 10px 30px !important; 
-        font-size: 20px !important; 
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-        font-weight: 500;
+        background-color: var(--tab-bg); border-radius: 12px; color: var(--text-color); 
+        border: 2px solid transparent !important; padding: 10px 30px !important; 
+        font-size: 20px !important; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); font-weight: 500;
     }}
-    
-    /* 🔥 扎實 Hover 特效 🔥 */
     .stTabs [data-baseweb="tab"]:hover {{
-        background-color: var(--secondary-bg) !important; 
-        color: var(--primary-color) !important;
-        border-color: var(--primary-color) !important; 
-        box-shadow: var(--hover-shadow) !important;    
-        transform: translateY(-4px);                   
-        font-weight: 900 !important;                   
-        cursor: pointer;
+        background-color: var(--secondary-bg) !important; color: var(--primary-color) !important;
+        border-color: var(--primary-color) !important; box-shadow: var(--hover-shadow) !important;    
+        transform: translateY(-4px); font-weight: 900 !important; cursor: pointer;
     }}
-
-    /* 已選中的 Tab */
     .stTabs [aria-selected="true"] {{ 
-        background-color: var(--tab-active) !important; 
-        color: white !important; 
-        font-weight: 700; 
-        box-shadow: var(--shadow);
-        border-color: transparent !important;
+        background-color: var(--tab-active) !important; color: white !important; 
+        font-weight: 700; box-shadow: var(--shadow); border-color: transparent !important;
     }}
-    
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
 
     /* Inputs */
@@ -295,16 +271,15 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        # 修正：字體大小 20，Offset 20 (增加往下壓的力道)
-        title=alt.TitleParams(text=title, fontSize=20, anchor='middle', offset=20, dy=20), 
+        title=alt.TitleParams(text=title, fontSize=22, anchor='middle', offset=20), 
         height=450
     )
     
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 保持上方的 padding 為 100
-    return chart.configure(padding={'top': 100, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+    # 🔥 關鍵修正：透過 configure(padding=...) 強制增加畫布內部留白，解決切頭問題 🔥
+    return chart.configure(padding={'top': 60, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
 with st.sidebar:
