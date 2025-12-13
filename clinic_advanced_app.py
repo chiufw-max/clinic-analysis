@@ -12,6 +12,66 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseUpload
 
+import requests
+from google_auth_oauthlib.flow import Flow
+
+def google_login_get_email():
+    if "google_email" in st.session_state:
+        return st.session_state["google_email"]
+
+    client_id = st.secrets["google_oauth"]["client_id"]
+    client_secret = st.secrets["google_oauth"]["client_secret"]
+    redirect_uri = st.secrets["google_oauth"]["redirect_uri"]
+
+    flow = Flow.from_client_config(
+        {
+            "web": {
+                "client_id": client_id,
+                "client_secret": client_secret,
+                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                "token_uri": "https://oauth2.googleapis.com/token",
+                "redirect_uris": [redirect_uri],
+            }
+        },
+        scopes=[
+            "openid",
+            "https://www.googleapis.com/auth/userinfo.email",
+            "https://www.googleapis.com/auth/userinfo.profile",
+        ],
+        redirect_uri=redirect_uri,
+    )
+
+    qp = st.query_params
+
+    # 沒帶 code：顯示登入按鈕
+    if "code" not in qp:
+        auth_url, _ = flow.authorization_url(
+            prompt="select_account",
+            include_granted_scopes="true",
+        )
+        st.link_button("使用 Google 登入", auth_url, type="primary", use_container_width=True)
+        return None
+
+    # 帶 code：換 token
+    code = qp["code"]
+    flow.fetch_token(code=code)
+
+    creds = flow.credentials
+    resp = requests.get(
+        "https://www.googleapis.com/oauth2/v2/userinfo",
+        headers={"Authorization": f"Bearer {creds.token}"},
+        timeout=10,
+    )
+    resp.raise_for_status()
+    email = resp.json().get("email")
+
+    if email:
+        st.session_state["google_email"] = email
+        st.query_params.clear()  # 清掉網址上的 code，避免重整時重跑
+
+    return email
+
+
 # --- 1. 頁面設定 ---
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
@@ -411,3 +471,4 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
