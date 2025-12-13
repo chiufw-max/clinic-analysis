@@ -15,6 +15,14 @@ from googleapiclient.http import MediaIoBaseUpload
 # --- 1. 頁面設定 ---
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
+# === 🛡️ 安全設定：允許登入的帳號清單 (白名單) ===
+# 請在此輸入所有允許登入的完整 Email，不在名單內的人就算密碼正確也無法登入
+ALLOWED_USERS = [
+    "chiufw@gmail.com",      # 範例 (請修改為您的真實帳號)
+    "mmday11200518@gmail.com",  # 範例
+    # 您可以在這裡繼續加... "user3@gmail.com",
+]
+
 # 顏色配置
 COLORS = {
     "bg": "#000000", "sidebar_bg": "#1C1C1E", "main": "#0A84FF",
@@ -138,7 +146,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 ---
+# --- 🔐 登入驗證 (含白名單檢查) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -171,14 +179,21 @@ if not st.session_state.password_correct:
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
                 if final_email:
-                    st.session_state.password_correct = True
-                    st.session_state.confirmed_email = final_email
-                    log_access_to_drive(final_email, "Login Success")
-                    st.rerun()
-                else: st.toast("❌ 請輸入帳號")
+                    # === 🛡️ 檢查是否在白名單中 ===
+                    # 為了避免大小寫問題，全部轉小寫比對
+                    if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
+                        st.session_state.password_correct = True
+                        st.session_state.confirmed_email = final_email
+                        log_access_to_drive(final_email, "Login Success")
+                        st.rerun()
+                    else:
+                        st.error("⛔ 此帳號未獲授權，請聯繫管理員")
+                        log_access_to_drive(final_email, "Login Denied (Not in Whitelist)")
+                else:
+                    st.toast("❌ 請輸入帳號")
             else:
                 st.error("❌ 密碼錯誤")
-                if final_email: log_access_to_drive(final_email, "Login Failed")
+                if final_email: log_access_to_drive(final_email, "Login Failed (Wrong Password)")
     st.stop()
 
 # --- 主邏輯 ---
@@ -230,9 +245,12 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(labelColor='white', gridColor='#333', domainColor='#555'), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(title=alt.TitleParams(text=title, color='white', fontSize=24, anchor='middle', offset=30), height=450)
+    
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
-    return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20})
+    
+    # 修正圖表上方被切到的問題：增加 padding top 到 120
+    return chart.configure(padding={'top': 120, 'left': 20, 'right': 20, 'bottom': 20})
 
 # --- 介面開始 ---
 with st.sidebar:
@@ -323,7 +341,6 @@ if not main_df.empty:
         st.divider()
         cv, ce = st.columns([2, 1])
         
-        # 修正：左側只顯示標題與圖表
         with cv:
             tg = st.session_state.active_group_view
             gt = st.radio("圖", ["直方圖", "折線圖"], horizontal=True, key="gr", label_visibility="collapsed")
@@ -338,10 +355,10 @@ if not main_df.empty:
                     with st.expander("數據"): st.dataframe(gdf.reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
                 else: st.warning("無數據")
         
-        # 修正：右側放置按鈕與輸入框
         with ce:
-            st.markdown("##### ➕ / ✏️")
-            # 載入編輯按鈕
+            # 修正：使用 HTML 強制渲染標題文字，確保顏色和大小正確顯示
+            st.markdown("<h3 style='color: #0A84FF; margin-top: 0px;'>➕ 新增 / ✏️ 編輯群組</h3>", unsafe_allow_html=True)
+            
             if tg and tg in st.session_state.saved_groups:
                 if st.button(f"✏️ 載入「{tg}」", key="load_edit_btn", type="secondary", use_container_width=True):
                     st.session_state.new_group_name_input = tg
@@ -361,4 +378,3 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
-
