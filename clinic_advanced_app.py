@@ -125,17 +125,11 @@ def log_access_to_drive(email, action="Login"):
         upload_to_drive(LOG_FILE_NAME, final_df.to_csv(index=False).encode('utf-8'), 'text/csv')
     except Exception as e: print(f"Log Error: {e}")
 
-# --- 🔥 強力身分抓取函數 (v19.2 重點修正) ---
+# --- 🔥 強力身分抓取函數 (v19.3 重點修正) ---
 def get_current_user_email():
     """嘗試 3 種方式抓取 Email，直到成功為止"""
     
-    # 方法 1: 嘗試最新的 st.user (v1.40+)
-    try:
-        if hasattr(st, "user") and st.user and hasattr(st.user, "email"):
-            if st.user.email: return st.user.email
-    except: pass
-    
-    # 方法 2: 嘗試 HTTP Headers (Streamlit Cloud 專用)
+    # 方法 1: 嘗試 HTTP Headers (Streamlit Cloud 專用 - 最穩定)
     try:
         if hasattr(st, "context") and hasattr(st.context, "headers"):
             # 嘗試不同的大小寫組合
@@ -143,6 +137,12 @@ def get_current_user_email():
             if email: return email
             email = st.context.headers.get("x-streamlit-user-email")
             if email: return email
+    except: pass
+
+    # 方法 2: 嘗試最新的 st.user (v1.40+)
+    try:
+        if hasattr(st, "user") and st.user and hasattr(st.user, "email"):
+            if st.user.email: return st.user.email
     except: pass
 
     # 方法 3: 嘗試舊版 st.experimental_user
