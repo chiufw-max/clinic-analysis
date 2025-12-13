@@ -54,7 +54,7 @@ st.markdown(f"""
 # --- Google Drive 連線邏輯 ---
 CACHE_FILE = "clinic_cache.csv"
 GROUPS_FILE_NAME = "clinic_groups.json"
-LOG_FILE_NAME = "access_log.csv"  # 記錄檔名
+LOG_FILE_NAME = "access_log.csv"
 
 def get_drive_service():
     if "gcp_service_account" in st.secrets:
@@ -70,16 +70,14 @@ def get_drive_service():
 def log_access_to_drive(email, action="Login"):
     """記錄使用者登入資訊到 Google Drive"""
     service = get_drive_service()
-    if not service: return # 本機模式不記錄
+    if not service: return 
     
-    # 台灣時間
     tw_time = datetime.utcnow() + timedelta(hours=8)
     time_str = tw_time.strftime("%Y-%m-%d %H:%M:%S")
     
     new_entry = pd.DataFrame([{'Time': time_str, 'User': email, 'Action': action}])
     
     try:
-        # 1. 尋找現有的 Log 檔
         results = service.files().list(q=f"name='{LOG_FILE_NAME}' and trashed=false", fields="files(id, name)").execute()
         items = results.get('files', [])
         
@@ -88,12 +86,10 @@ def log_access_to_drive(email, action="Login"):
         
         if items:
             file_id = items[0]['id']
-            # 讀取舊資料
             content = service.files().get_media(fileId=file_id).execute().decode('utf-8')
             old_df = pd.read_csv(StringIO(content))
             final_df = pd.concat([old_df, new_entry], ignore_index=True)
         
-        # 2. 上傳更新
         media = MediaIoBaseUpload(BytesIO(final_df.to_csv(index=False).encode('utf-8')), mimetype='text/csv')
         
         if file_id:
@@ -101,9 +97,27 @@ def log_access_to_drive(email, action="Login"):
         else:
             file_metadata = {'name': LOG_FILE_NAME}
             service.files().create(body=file_metadata, media_body=media).execute()
-            
     except Exception as e:
         print(f"Log Error: {e}")
+
+# --- 安全抓取 Email 的函數 (修復錯誤的核心) ---
+def get_current_user_email():
+    """嘗試多種方式抓取使用者 Email，失敗則回傳 Local User"""
+    try:
+        # 方法 1: 新版 Streamlit Context (v1.39+)
+        if hasattr(st, "context") and hasattr(st.context, "headers"):
+            email = st.context.headers.get("X-Streamlit-User-Email")
+            if email: return email
+    except: pass
+    
+    try:
+        # 方法 2: 舊版 Experimental User
+        if hasattr(st, "experimental_user") and hasattr(st.experimental_user, "email"):
+            return st.experimental_user.email
+    except: pass
+
+    # 方法 3: 回傳預設值
+    return "Local User"
 
 # --- 🔐 登入驗證與記錄 ---
 if "password_correct" not in st.session_state:
@@ -116,9 +130,8 @@ if not st.session_state.password_correct:
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
         
-        # 抓取 Google 帳號 (Streamlit Cloud 專屬功能)
-        # 如果是本機測試，會顯示 None，我們預設為 Local Admin
-        user_email = st.experimental_user.email if st.experimental_user.email else "Local User"
+        # 使用修復後的函數抓取 Email
+        user_email = get_current_user_email()
         
         st.info(f"您目前的身份：{user_email}")
         
@@ -126,7 +139,6 @@ if not st.session_state.password_correct:
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
                 st.session_state.password_correct = True
-                # 記錄登入
                 log_access_to_drive(user_email, "Login Success")
                 st.rerun()
             else:
@@ -134,7 +146,7 @@ if not st.session_state.password_correct:
                 log_access_to_drive(user_email, "Login Failed (Wrong Password)")
     st.stop()
 
-# --- (以下為原本的程式邏輯，完全沒變) ---
+# --- (以下為系統主邏輯) ---
 
 def load_groups():
     service = get_drive_service()
@@ -279,7 +291,7 @@ if not main_df.empty:
                 gdf = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(gis)]
                 if not gdf.empty:
                     gp = gdf[months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
-                    st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tg} 趨勢"), use_container_width=True)
+                    st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tgt} 趨勢"), use_container_width=True)
                     with st.expander("數據"): st.dataframe(gdf.reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
                 else: st.warning("無數據")
         with ce:
