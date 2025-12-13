@@ -23,11 +23,11 @@ COLORS = {
     "chart": ["#CD5C5C", "#DAA520", "#4682B4", "#6A5ACD", "#2E8B57", "#D2691E", "#708090", "#FF69B4", "#00CED1"]
 }
 
-# 注入 CSS (強力修復按鈕樣式)
+# 注入 CSS (大方視覺調整)
 st.markdown(f"""
     <style>
-    /* === 全站字體 === */
-    html, body, [class*="css"] {{ font-family: "Microsoft JhengHei", sans-serif; font-size: 18px; }}
+    /* === 全站字體加大 === */
+    html, body, [class*="css"] {{ font-family: "Microsoft JhengHei", sans-serif; font-size: 20px; }}
     
     /* === 側邊欄圖片置中 === */
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
@@ -36,9 +36,16 @@ st.markdown(f"""
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
     
-    /* === 頁籤樣式 === */
-    .stTabs [data-baseweb="tab-list"] {{ gap: 8px; background-color: transparent; }}
-    .stTabs [data-baseweb="tab"] {{ background-color: {COLORS['tab_bg']}; border-radius: 12px; color: #AEAEB2; border: none !important; }}
+    /* === 頁籤 (Tab) 加大 === */
+    .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
+    .stTabs [data-baseweb="tab"] {{ 
+        background-color: {COLORS['tab_bg']}; 
+        border-radius: 12px; 
+        color: #AEAEB2; 
+        border: none !important; 
+        padding: 12px 32px !important; /* 加寬 */
+        font-size: 22px !important;    /* 字變大 */
+    }}
     .stTabs [aria-selected="true"] {{ background-color: {COLORS['main']} !important; color: white !important; font-weight: bold; }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
     
@@ -47,46 +54,57 @@ st.markdown(f"""
     .main h1, .main h2, .main h3, .main p, .main span, .main label, .main div, [data-testid="stSidebar"] * {{ color: {COLORS['text']} !important; }}
     [data-testid="stSidebar"] {{ background-color: {COLORS['sidebar_bg']}; border-right: 1px solid #333; }}
     
-    /* === 輸入框樣式 === */
-    .stSelectbox div[data-baseweb="select"], .stTextInput input {{ background-color: {COLORS['input_bg']} !important; color: white !important; border-radius: 12px; border: 1px solid #444; }}
+    /* === 輸入框與下拉選單加大 === */
+    .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
+        background-color: {COLORS['input_bg']} !important; 
+        color: white !important; 
+        border-radius: 12px; 
+        border: 1px solid #444; 
+        min-height: 50px !important; /* 增高 */
+        font-size: 20px !important;
+    }}
     ul[data-baseweb="menu"] {{ background-color: {COLORS['input_bg']} !important; }}
-    ul[data-baseweb="menu"] li {{ color: white !important; }}
-    span[data-baseweb="tag"] {{ background-color: #3A3A3C !important; }}
+    ul[data-baseweb="menu"] li {{ color: white !important; font-size: 20px !important; }}
+    span[data-baseweb="tag"] {{ background-color: #3A3A3C !important; font-size: 18px !important; }}
     
-    /* === 按鈕樣式 (強制覆蓋雲端預設值) === */
+    /* === 按鈕樣式 (加大、加寬、加高) === */
     div.stButton > button {{
-        border-radius: 20px !important;
+        border-radius: 16px !important;
         border: 1px solid transparent !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         transition: all 0.2s ease !important;
+        padding: 16px 32px !important;  /* 內距加大 */
+        font-size: 22px !important;     /* 字體加大 */
+        line-height: 1.5 !important;
+        min-height: 60px !important;    /* 最小高度 */
     }}
     
-    /* Secondary 按鈕 (未選中/功能鍵) - 深灰色 */
+    /* Secondary 按鈕 (未選中/功能鍵) */
     div.stButton > button[kind="secondary"] {{
         background-color: {COLORS['tab_bg']} !important;
         color: #AEAEB2 !important;
-        border: 1px solid #444 !important;
+        border: 2px solid #444 !important; /* 邊框加粗 */
     }}
     div.stButton > button[kind="secondary"]:hover {{
         background-color: {COLORS['tab_hover']} !important;
         color: white !important;
-        border-color: #666 !important;
-        transform: scale(1.02);
+        border-color: #888 !important;
+        transform: scale(1.01);
     }}
 
-    /* Primary 按鈕 (選中/確認鍵) - 亮藍色 */
+    /* Primary 按鈕 (選中/確認鍵) */
     div.stButton > button[kind="primary"] {{
         background-color: {COLORS['main']} !important;
         color: white !important;
-        box-shadow: 0 0 10px rgba(10, 132, 255, 0.4) !important;
+        box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4) !important;
     }}
     div.stButton > button[kind="primary"]:hover {{
         background-color: #007AFF !important;
-        transform: scale(1.02);
+        transform: scale(1.01);
     }}
 
     /* === 表格樣式 === */
-    .stDataFrame {{ font-size: 18px !important; }}
+    .stDataFrame {{ font-size: 20px !important; }}
     [data-testid="stDataFrame"] {{ background-color: {COLORS['sidebar_bg']}; border-radius: 10px; padding: 10px; }}
     thead tr th:first-child, tbody th {{ display: none; }}
     </style>
@@ -108,7 +126,6 @@ def get_drive_service():
         except Exception: return None
     return None
 
-# 通用函數：上傳檔案到 Drive
 def upload_to_drive(filename, content, mime_type):
     service = get_drive_service()
     if not service: return
@@ -122,7 +139,6 @@ def upload_to_drive(filename, content, mime_type):
             service.files().create(body={'name': filename}, media_body=media).execute()
     except Exception as e: print(f"Upload Error: {e}")
 
-# 通用函數：從 Drive 下載檔案
 def download_from_drive(filename):
     service = get_drive_service()
     if not service: return None
@@ -188,25 +204,18 @@ if not st.session_state.password_correct:
 
 # --- 主邏輯 ---
 
-# 1. 處理群組資料 (同步)
 def load_groups():
-    # 先試雲端
     content = download_from_drive(GROUPS_FILE_NAME)
     if content: return json.loads(content.decode('utf-8'))
-    # 再試本機
     if os.path.exists(GROUPS_FILE_NAME):
         with open(GROUPS_FILE_NAME, "r", encoding="utf-8") as f: return json.load(f)
     return {}
 
 def save_groups(groups):
-    # 存本機
     with open(GROUPS_FILE_NAME, "w", encoding="utf-8") as f: json.dump(groups, f, ensure_ascii=False, indent=2)
-    # 存雲端
     upload_to_drive(GROUPS_FILE_NAME, json.dumps(groups, ensure_ascii=False).encode('utf-8'), 'application/json')
 
-# 2. 處理使用量資料 (新增：快取同步)
 def load_data_cache():
-    # 嘗試從雲端下載快取
     content = download_from_drive(CACHE_FILE)
     if content:
         return pd.read_csv(StringIO(content.decode('utf-8')))
@@ -216,9 +225,7 @@ def load_data_cache():
 
 def save_data_cache(df):
     csv_bytes = df.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
-    # 存本機
     with open(CACHE_FILE, "wb") as f: f.write(csv_bytes)
-    # 存雲端
     upload_to_drive(CACHE_FILE, csv_bytes, 'text/csv')
 
 def parse_usage_file(file):
@@ -246,7 +253,7 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         x=alt.X(x_col, title=None, axis=alt.Axis(labelColor='white', labelAngle=0, domainColor='#555')),
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(labelColor='white', gridColor='#333', domainColor='#555'), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
-    ).properties(title=alt.TitleParams(text=title, color='white', fontSize=22, anchor='middle', offset=30), height=400)
+    ).properties(title=alt.TitleParams(text=title, color='white', fontSize=24, anchor='middle', offset=30), height=450) # 圖表高度增加，字體加大
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
     return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20})
@@ -262,30 +269,24 @@ with st.sidebar:
     uploaded_files = st.file_uploader("拖曳檔案至此", type=['txt', 'TXT'], accept_multiple_files=True)
     if st.button("🗑️ 清除所有資料"): 
         if os.path.exists(CACHE_FILE): os.remove(CACHE_FILE)
-        # 清除雲端快取 (Optional: if user wants to wipe drive data too)
         service = get_drive_service()
         if service:
             try:
-                service.files().delete(fileId=download_from_drive(CACHE_FILE).decode('utf-8')).execute() # Note: this logic is simplified
-                # For simplicity, we just overwrite with empty later if needed, or user manually deletes in Drive
+                service.files().delete(fileId=download_from_drive(CACHE_FILE).decode('utf-8')).execute() 
                 upload_to_drive(CACHE_FILE, b"", 'text/csv') 
             except: pass
         st.rerun()
 
-# 資料載入流程 (優先從雲端載入舊資料)
-main_df = load_data_cache() # 載入歷史資料
+main_df = load_data_cache() 
 
 if uploaded_files:
-    # 解析新上傳的
     new_dfs = [parse_usage_file(f) for f in uploaded_files if not parse_usage_file(f).empty]
     if new_dfs:
         new_data = pd.concat(new_dfs, ignore_index=True)
-        # 合併舊資料與新資料
         if not main_df.empty:
             main_df = pd.concat([main_df, new_data], ignore_index=True).drop_duplicates()
         else:
             main_df = new_data
-        # 儲存合併後的結果到雲端
         save_data_cache(main_df)
 
 st.title("歐葉豐原診所品項分析")
