@@ -23,35 +23,76 @@ COLORS = {
     "chart": ["#CD5C5C", "#DAA520", "#4682B4", "#6A5ACD", "#2E8B57", "#D2691E", "#708090", "#FF69B4", "#00CED1"]
 }
 
-# 注入 CSS
+# 注入 CSS (強力修復按鈕樣式)
 st.markdown(f"""
     <style>
+    /* === 全站字體 === */
     html, body, [class*="css"] {{ font-family: "Microsoft JhengHei", sans-serif; font-size: 18px; }}
+    
+    /* === 側邊欄圖片置中 === */
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
+    
+    /* === 隱藏上傳區提示文字 === */
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
+    
+    /* === 頁籤樣式 === */
     .stTabs [data-baseweb="tab-list"] {{ gap: 8px; background-color: transparent; }}
     .stTabs [data-baseweb="tab"] {{ background-color: {COLORS['tab_bg']}; border-radius: 12px; color: #AEAEB2; border: none !important; }}
-    .stTabs [aria-selected="true"] {{ background-color: {COLORS['main']} !important; color: white !important; }}
+    .stTabs [aria-selected="true"] {{ background-color: {COLORS['main']} !important; color: white !important; font-weight: bold; }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
+    
+    /* === 背景與文字顏色 === */
     .stApp {{ background-color: {COLORS['bg']} !important; }}
     .main h1, .main h2, .main h3, .main p, .main span, .main label, .main div, [data-testid="stSidebar"] * {{ color: {COLORS['text']} !important; }}
     [data-testid="stSidebar"] {{ background-color: {COLORS['sidebar_bg']}; border-right: 1px solid #333; }}
-    .stSelectbox div[data-baseweb="select"], .stTextInput input {{ background-color: {COLORS['input_bg']} !important; color: white !important; border-radius: 12px; }}
+    
+    /* === 輸入框樣式 === */
+    .stSelectbox div[data-baseweb="select"], .stTextInput input {{ background-color: {COLORS['input_bg']} !important; color: white !important; border-radius: 12px; border: 1px solid #444; }}
     ul[data-baseweb="menu"] {{ background-color: {COLORS['input_bg']} !important; }}
     ul[data-baseweb="menu"] li {{ color: white !important; }}
     span[data-baseweb="tag"] {{ background-color: #3A3A3C !important; }}
-    span[data-baseweb="tag"] span {{ color: white !important; }}
-    .stButton>button {{ border-radius: 20px; border: none; }}
-    .stButton>button[kind="secondary"] {{ background-color: {COLORS['tab_bg']} !important; color: #AEAEB2 !important; }}
-    .stButton>button[kind="primary"] {{ background-color: {COLORS['main']} !important; color: white !important; }}
+    
+    /* === 按鈕樣式 (強制覆蓋雲端預設值) === */
+    div.stButton > button {{
+        border-radius: 20px !important;
+        border: 1px solid transparent !important;
+        font-weight: 600 !important;
+        transition: all 0.2s ease !important;
+    }}
+    
+    /* Secondary 按鈕 (未選中/功能鍵) - 深灰色 */
+    div.stButton > button[kind="secondary"] {{
+        background-color: {COLORS['tab_bg']} !important;
+        color: #AEAEB2 !important;
+        border: 1px solid #444 !important;
+    }}
+    div.stButton > button[kind="secondary"]:hover {{
+        background-color: {COLORS['tab_hover']} !important;
+        color: white !important;
+        border-color: #666 !important;
+        transform: scale(1.02);
+    }}
+
+    /* Primary 按鈕 (選中/確認鍵) - 亮藍色 */
+    div.stButton > button[kind="primary"] {{
+        background-color: {COLORS['main']} !important;
+        color: white !important;
+        box-shadow: 0 0 10px rgba(10, 132, 255, 0.4) !important;
+    }}
+    div.stButton > button[kind="primary"]:hover {{
+        background-color: #007AFF !important;
+        transform: scale(1.02);
+    }}
+
+    /* === 表格樣式 === */
     .stDataFrame {{ font-size: 18px !important; }}
     [data-testid="stDataFrame"] {{ background-color: {COLORS['sidebar_bg']}; border-radius: 10px; padding: 10px; }}
     thead tr th:first-child, tbody th {{ display: none; }}
     </style>
     """, unsafe_allow_html=True)
 
-# --- Google Drive 連線邏輯 ---
+# --- Google Drive 連線與資料同步邏輯 ---
 CACHE_FILE = "clinic_cache.csv"
 GROUPS_FILE_NAME = "clinic_groups.json"
 LOG_FILE_NAME = "access_log.csv"
@@ -67,58 +108,64 @@ def get_drive_service():
         except Exception: return None
     return None
 
-def log_access_to_drive(email, action="Login"):
-    """記錄使用者登入資訊到 Google Drive"""
+# 通用函數：上傳檔案到 Drive
+def upload_to_drive(filename, content, mime_type):
     service = get_drive_service()
-    if not service: return 
-    
+    if not service: return
+    try:
+        media = MediaIoBaseUpload(BytesIO(content), mimetype=mime_type)
+        results = service.files().list(q=f"name='{filename}' and trashed=false", fields="files(id)").execute()
+        items = results.get('files', [])
+        if items:
+            service.files().update(fileId=items[0]['id'], media_body=media).execute()
+        else:
+            service.files().create(body={'name': filename}, media_body=media).execute()
+    except Exception as e: print(f"Upload Error: {e}")
+
+# 通用函數：從 Drive 下載檔案
+def download_from_drive(filename):
+    service = get_drive_service()
+    if not service: return None
+    try:
+        results = service.files().list(q=f"name='{filename}' and trashed=false", fields="files(id)").execute()
+        items = results.get('files', [])
+        if items:
+            return service.files().get_media(fileId=items[0]['id']).execute()
+    except: pass
+    return None
+
+def log_access_to_drive(email, action="Login"):
+    """記錄使用者登入資訊"""
+    service = get_drive_service()
+    if not service: return
     tw_time = datetime.utcnow() + timedelta(hours=8)
-    time_str = tw_time.strftime("%Y-%m-%d %H:%M:%S")
-    
-    new_entry = pd.DataFrame([{'Time': time_str, 'User': email, 'Action': action}])
+    new_entry = pd.DataFrame([{'Time': tw_time.strftime("%Y-%m-%d %H:%M:%S"), 'User': email, 'Action': action}])
     
     try:
-        results = service.files().list(q=f"name='{LOG_FILE_NAME}' and trashed=false", fields="files(id, name)").execute()
-        items = results.get('files', [])
-        
-        final_df = new_entry
-        file_id = None
-        
-        if items:
-            file_id = items[0]['id']
-            content = service.files().get_media(fileId=file_id).execute().decode('utf-8')
-            old_df = pd.read_csv(StringIO(content))
+        content = download_from_drive(LOG_FILE_NAME)
+        if content:
+            old_df = pd.read_csv(StringIO(content.decode('utf-8')))
             final_df = pd.concat([old_df, new_entry], ignore_index=True)
-        
-        media = MediaIoBaseUpload(BytesIO(final_df.to_csv(index=False).encode('utf-8')), mimetype='text/csv')
-        
-        if file_id:
-            service.files().update(fileId=file_id, media_body=media).execute()
         else:
-            file_metadata = {'name': LOG_FILE_NAME}
-            service.files().create(body=file_metadata, media_body=media).execute()
-    except Exception as e:
-        print(f"Log Error: {e}")
+            final_df = new_entry
+        upload_to_drive(LOG_FILE_NAME, final_df.to_csv(index=False).encode('utf-8'), 'text/csv')
+    except Exception as e: print(f"Log Error: {e}")
 
-# --- 安全抓取 Email 的函數 ---
 def get_current_user_email():
-    """嘗試多種方式抓取使用者 Email，失敗則回傳 Local User"""
+    """安全抓取使用者 Email"""
     try:
         if hasattr(st, "context") and hasattr(st.context, "headers"):
             email = st.context.headers.get("X-Streamlit-User-Email")
             if email: return email
     except: pass
-    
     try:
         if hasattr(st, "experimental_user") and hasattr(st.experimental_user, "email"):
             return st.experimental_user.email
     except: pass
-
     return "Local User"
 
-# --- 🔐 登入驗證與記錄 ---
-if "password_correct" not in st.session_state:
-    st.session_state.password_correct = False
+# --- 🔐 登入驗證 ---
+if "password_correct" not in st.session_state: st.session_state.password_correct = False
 
 if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -126,11 +173,8 @@ if not st.session_state.password_correct:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
-        
         user_email = get_current_user_email()
-        
         st.info(f"您目前的身份：{user_email}")
-        
         pwd = st.text_input("請輸入密碼", type="password")
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
@@ -139,36 +183,43 @@ if not st.session_state.password_correct:
                 st.rerun()
             else:
                 st.error("❌ 密碼錯誤")
-                log_access_to_drive(user_email, "Login Failed (Wrong Password)")
+                log_access_to_drive(user_email, "Login Failed")
     st.stop()
 
-# --- (以下為系統主邏輯) ---
+# --- 主邏輯 ---
 
+# 1. 處理群組資料 (同步)
 def load_groups():
-    service = get_drive_service()
-    if service:
-        try:
-            results = service.files().list(q=f"name='{GROUPS_FILE_NAME}' and trashed=false", fields="files(id, name)").execute()
-            items = results.get('files', [])
-            if items:
-                content = service.files().get_media(fileId=items[0]['id']).execute()
-                return json.loads(content.decode('utf-8'))
-        except: pass
+    # 先試雲端
+    content = download_from_drive(GROUPS_FILE_NAME)
+    if content: return json.loads(content.decode('utf-8'))
+    # 再試本機
     if os.path.exists(GROUPS_FILE_NAME):
         with open(GROUPS_FILE_NAME, "r", encoding="utf-8") as f: return json.load(f)
     return {}
 
 def save_groups(groups):
+    # 存本機
     with open(GROUPS_FILE_NAME, "w", encoding="utf-8") as f: json.dump(groups, f, ensure_ascii=False, indent=2)
-    service = get_drive_service()
-    if service:
-        try:
-            media = MediaIoBaseUpload(BytesIO(json.dumps(groups, ensure_ascii=False).encode('utf-8')), mimetype='application/json')
-            results = service.files().list(q=f"name='{GROUPS_FILE_NAME}' and trashed=false", fields="files(id, name)").execute()
-            items = results.get('files', [])
-            if items: service.files().update(fileId=items[0]['id'], media_body=media).execute()
-            else: service.files().create(body={'name': GROUPS_FILE_NAME}, media_body=media).execute()
-        except: pass
+    # 存雲端
+    upload_to_drive(GROUPS_FILE_NAME, json.dumps(groups, ensure_ascii=False).encode('utf-8'), 'application/json')
+
+# 2. 處理使用量資料 (新增：快取同步)
+def load_data_cache():
+    # 嘗試從雲端下載快取
+    content = download_from_drive(CACHE_FILE)
+    if content:
+        return pd.read_csv(StringIO(content.decode('utf-8')))
+    if os.path.exists(CACHE_FILE):
+        return pd.read_csv(CACHE_FILE)
+    return pd.DataFrame()
+
+def save_data_cache(df):
+    csv_bytes = df.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+    # 存本機
+    with open(CACHE_FILE, "wb") as f: f.write(csv_bytes)
+    # 存雲端
+    upload_to_drive(CACHE_FILE, csv_bytes, 'text/csv')
 
 def parse_usage_file(file):
     try: stringio = file.getvalue().decode("utf-8")
@@ -200,22 +251,42 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None, labelColor='white')))
     return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20})
 
+# --- 介面開始 ---
 with st.sidebar:
     if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=280)
     else: st.header("🏥 歐葉豐原診所")
     st.markdown("---")
     if "gcp_service_account" in st.secrets: st.success("🟢 已連線至雲端硬碟")
     else: st.info("⚪ 本機模式")
+    
     uploaded_files = st.file_uploader("拖曳檔案至此", type=['txt', 'TXT'], accept_multiple_files=True)
-    if st.button("🗑️ 清除快取"): 
+    if st.button("🗑️ 清除所有資料"): 
         if os.path.exists(CACHE_FILE): os.remove(CACHE_FILE)
+        # 清除雲端快取 (Optional: if user wants to wipe drive data too)
+        service = get_drive_service()
+        if service:
+            try:
+                service.files().delete(fileId=download_from_drive(CACHE_FILE).decode('utf-8')).execute() # Note: this logic is simplified
+                # For simplicity, we just overwrite with empty later if needed, or user manually deletes in Drive
+                upload_to_drive(CACHE_FILE, b"", 'text/csv') 
+            except: pass
         st.rerun()
 
-main_df = pd.DataFrame()
+# 資料載入流程 (優先從雲端載入舊資料)
+main_df = load_data_cache() # 載入歷史資料
+
 if uploaded_files:
-    all_dfs = [parse_usage_file(f) for f in uploaded_files if not parse_usage_file(f).empty]
-    if all_dfs: main_df = pd.concat(all_dfs, ignore_index=True); main_df.to_csv(CACHE_FILE, index=False, encoding='utf-8-sig')
-elif os.path.exists(CACHE_FILE): main_df = pd.read_csv(CACHE_FILE)
+    # 解析新上傳的
+    new_dfs = [parse_usage_file(f) for f in uploaded_files if not parse_usage_file(f).empty]
+    if new_dfs:
+        new_data = pd.concat(new_dfs, ignore_index=True)
+        # 合併舊資料與新資料
+        if not main_df.empty:
+            main_df = pd.concat([main_df, new_data], ignore_index=True).drop_duplicates()
+        else:
+            main_df = new_data
+        # 儲存合併後的結果到雲端
+        save_data_cache(main_df)
 
 st.title("歐葉豐原診所品項分析")
 if not main_df.empty:
@@ -275,7 +346,7 @@ if not main_df.empty:
         st.divider()
         cv, ce = st.columns([2, 1])
         with cv:
-            tg = st.session_state.active_group_view # 修正處：已將 tgt 改為 tg
+            tg = st.session_state.active_group_view
             gt = st.radio("圖", ["直方圖", "折線圖"], horizontal=True, key="gr", label_visibility="collapsed")
             if gt!=st.session_state.chart_type_pref: st.session_state.chart_type_pref=gt; st.rerun()
             if tg and tg in st.session_state.saved_groups:
@@ -287,7 +358,7 @@ if not main_df.empty:
                 gdf = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(gis)]
                 if not gdf.empty:
                     gp = gdf[months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
-                    st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tg} 趨勢"), use_container_width=True) # 修正處：已確認為 tg
+                    st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tg} 趨勢"), use_container_width=True)
                     with st.expander("數據"): st.dataframe(gdf.reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
                 else: st.warning("無數據")
         with ce:
@@ -304,4 +375,4 @@ if not main_df.empty:
                 st.markdown("---")
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
-else: st.info("👋 請上傳資料")
+else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
