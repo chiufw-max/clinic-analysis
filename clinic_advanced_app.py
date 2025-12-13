@@ -350,7 +350,7 @@ if st.button("🗑️ 清除所有資料"):
     st.rerun()
 
         
-    def delete_drive_file_by_name(filename):
+def delete_drive_file_by_name(filename):
     service = get_drive_service()
     if not service:
         return
@@ -363,6 +363,7 @@ if st.button("🗑️ 清除所有資料"):
             service.files().delete(fileId=f["id"]).execute()
     except Exception as e:
         print(f"Delete Error: {e}")
+
 
 
 main_df = load_data_cache() 
@@ -479,5 +480,6 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
 
 
