@@ -15,153 +15,84 @@ from googleapiclient.http import MediaIoBaseUpload
 # --- 1. 頁面設定 ---
 st.set_page_config(page_title="歐葉豐原診所品項分析", layout="wide", page_icon="🏥")
 
-# === 🛡️ 安全設定：允許登入的帳號清單 (白名單) ===
+# === 🛡️ 安全設定：白名單 ===
+# 系統會先自動抓取 Google 帳號，若失敗才會比對這裡的輸入
 ALLOWED_USERS = [
-    "ming@gmail.com",      # 請修改為您的真實帳號
-    "oyclinic@gmail.com",
+    "chiufw@gmail.com",
+    "mmday11200518@gmail.com",
+    # "ming@gmail.com", # 開發測試用，上線可註解掉
 ]
 
-# 顏色配置 (圖表線條顏色)
-# 莫蘭迪/Apple 風格共用這組柔和但清晰的圖表色
+# 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格核心代碼)
+# 注入 CSS (雙風格: 莫蘭迪/Apple)
 st.markdown(f"""
     <style>
-    /* === 核心變數定義 (CSS Variables) === */
+    /* === 核心變數定義 === */
     :root {{
-        /* 預設: 淺色模式 (莫蘭迪 Morandi Style) */
-        --bg-color: #F5F5F7;          /* 溫潤的米灰白 */
-        --sidebar-bg: #EAEAEA;        /* 淺灰側邊欄 */
-        --text-color: #4A4A4A;        /* 深灰字體 (不須全黑) */
-        --primary-color: #7A8B99;     /* 莫蘭迪-霧霾藍 (主按鈕) */
-        --secondary-bg: #FFFFFF;      /* 純白區塊 */
-        --input-bg: #FFFFFF;          /* 輸入框白底 */
-        --border-color: #D1D1D1;      /* 柔和邊框 */
-        --tab-bg: #E0E0E0;            /* 頁籤未選中 */
-        --tab-active: #8F9E8B;        /* 頁籤選中-灰豆綠 */
-        --chart-text: #4A4A4A;        /* 圖表文字色 */
-        --shadow: 0 4px 12px rgba(0,0,0,0.05); /* 柔和陰影 */
+        --bg-color: #F5F5F7; --sidebar-bg: #EAEAEA; --text-color: #4A4A4A;
+        --primary-color: #7A8B99; --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
+        --border-color: #D1D1D1; --tab-bg: #E0E0E0; --tab-active: #8F9E8B;
+        --shadow: 0 4px 12px rgba(0,0,0,0.05);
     }}
-
     @media (prefers-color-scheme: dark) {{
         :root {{
-            /* 深色模式 (Apple Dark Style) */
-            --bg-color: #000000;          /* 純黑背景 */
-            --sidebar-bg: #1C1C1E;        /* 深灰側邊欄 */
-            --text-color: #F5F5F7;        /* 亮白字體 */
-            --primary-color: #0A84FF;     /* Apple System Blue */
-            --secondary-bg: #1C1C1E;      /* 深灰區塊 */
-            --input-bg: #2C2C2E;          /* 輸入框深灰 */
-            --border-color: #3A3A3C;      /* 深色邊框 */
-            --tab-bg: #2C2C2E;            /* 頁籤未選中 */
-            --tab-active: #0A84FF;        /* 頁籤選中-Apple Blue */
-            --chart-text: #FFFFFF;        /* 圖表文字色 */
-            --shadow: 0 4px 15px rgba(0,0,0,0.4); /* 深邃陰影 */
+            --bg-color: #000000; --sidebar-bg: #1C1C1E; --text-color: #F5F5F7;
+            --primary-color: #0A84FF; --secondary-bg: #1C1C1E; --input-bg: #2C2C2E;
+            --border-color: #3A3A3C; --tab-bg: #2C2C2E; --tab-active: #0A84FF;
+            --shadow: 0 4px 15px rgba(0,0,0,0.4);
         }}
     }}
 
-    /* === 全站字體與背景應用 === */
+    /* === 全站樣式 === */
     html, body, [class*="css"] {{ 
-        font-family: -apple-system, "Microsoft JhengHei", sans-serif; 
-        font-size: 20px; 
-        color: var(--text-color) !important;
-        background-color: var(--bg-color) !important;
+        font-family: -apple-system, "Microsoft JhengHei", sans-serif; font-size: 20px; 
+        color: var(--text-color) !important; background-color: var(--bg-color) !important;
     }}
-    
     .stApp {{ background-color: var(--bg-color) !important; }}
-    
-    /* 側邊欄樣式 */
-    [data-testid="stSidebar"] {{ 
-        background-color: var(--sidebar-bg) !important; 
-        border-right: 1px solid var(--border-color); 
-    }}
+    [data-testid="stSidebar"] {{ background-color: var(--sidebar-bg) !important; border-right: 1px solid var(--border-color); }}
     [data-testid="stSidebar"] * {{ color: var(--text-color) !important; }}
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
-
-    /* 隱藏上傳區提示小字 */
+    
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
-    
-    /* === 頁籤 (Tabs) === */
+
+    /* Tabs */
     .stTabs [data-baseweb="tab-list"] {{ gap: 12px; background-color: transparent; }}
     .stTabs [data-baseweb="tab"] {{ 
-        background-color: var(--tab-bg); 
-        border-radius: 12px; 
-        color: var(--text-color); 
-        border: none !important; 
-        padding: 12px 32px !important; 
-        font-size: 20px !important;
-        transition: all 0.3s ease;
+        background-color: var(--tab-bg); border-radius: 12px; color: var(--text-color); border: none !important; 
+        padding: 12px 32px !important; font-size: 20px !important; transition: all 0.3s ease;
     }}
-    .stTabs [aria-selected="true"] {{ 
-        background-color: var(--tab-active) !important; 
-        color: white !important; 
-        font-weight: 600; 
-        box-shadow: var(--shadow);
-    }}
+    .stTabs [aria-selected="true"] {{ background-color: var(--tab-active) !important; color: white !important; font-weight: 600; box-shadow: var(--shadow); }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
-    
-    /* === 輸入框 (Input) === */
+
+    /* Inputs */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
-        background-color: var(--input-bg) !important; 
-        color: var(--text-color) !important; 
-        border-radius: 12px; 
-        border: 1px solid var(--border-color) !important; 
-        min-height: 50px !important; 
-        font-size: 20px !important;
+        background-color: var(--input-bg) !important; color: var(--text-color) !important; border-radius: 12px; 
+        border: 1px solid var(--border-color) !important; min-height: 50px !important; font-size: 20px !important;
     }}
-    /* 下拉選單 */
     ul[data-baseweb="menu"] {{ background-color: var(--sidebar-bg) !important; }}
     ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 20px !important; }}
     span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 18px !important; }}
-    
-    /* === 按鈕 (Buttons) === */
+
+    /* Buttons */
     div.stButton > button {{
-        border-radius: 16px !important; 
-        border: 1px solid transparent !important; 
-        font-weight: 600 !important;
-        transition: all 0.2s ease !important; 
-        padding: 16px 32px !important; 
-        font-size: 20px !important;
-        line-height: 1.5 !important; 
-        min-height: 60px !important;
+        border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 600 !important;
+        transition: all 0.2s ease !important; padding: 16px 32px !important; font-size: 20px !important;
+        line-height: 1.5 !important; min-height: 60px !important;
     }}
-    
-    /* 次要按鈕 (Secondary) */
-    div.stButton > button[kind="secondary"] {{ 
-        background-color: var(--tab-bg) !important; 
-        color: var(--text-color) !important; 
-    }}
-    div.stButton > button[kind="secondary"]:hover {{ 
-        filter: brightness(0.9);
-        transform: scale(1.01); 
-    }}
+    div.stButton > button[kind="secondary"] {{ background-color: var(--tab-bg) !important; color: var(--text-color) !important; }}
+    div.stButton > button[kind="secondary"]:hover {{ filter: brightness(0.9); transform: scale(1.01); }}
+    div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
+    div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
 
-    /* 主要按鈕 (Primary) */
-    div.stButton > button[kind="primary"] {{ 
-        background-color: var(--primary-color) !important; 
-        color: white !important; 
-        box-shadow: var(--shadow) !important; 
-    }}
-    div.stButton > button[kind="primary"]:hover {{ 
-        filter: brightness(1.1);
-        transform: scale(1.02); 
-    }}
-
-    /* === 表格 (DataFrame) === */
+    /* DataFrame */
     .stDataFrame {{ font-size: 20px !important; }}
-    [data-testid="stDataFrame"] {{ 
-        background-color: var(--sidebar-bg); 
-        border-radius: 12px; 
-        padding: 10px; 
-        border: 1px solid var(--border-color);
-    }}
+    [data-testid="stDataFrame"] {{ background-color: var(--sidebar-bg); border-radius: 12px; padding: 10px; border: 1px solid var(--border-color); }}
     thead tr th:first-child, tbody th {{ display: none; }}
     
-    /* 文字顏色強制繼承 */
     h1, h2, h3, p, span, label, div {{ color: var(--text-color) !important; }}
-    
     </style>
     """, unsafe_allow_html=True)
 
@@ -233,7 +164,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 ---
+# --- 🔐 登入驗證 (先自動 -> 後手動) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -244,28 +175,34 @@ if not st.session_state.password_correct:
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
         
+        # 1. 嘗試自動偵測
         detected_email = try_auto_detect_email()
         final_email = ""
+        is_manual_input = False
         
-        if not detected_email:
+        if detected_email:
+            # 有抓到身分，直接顯示
+            final_email = detected_email
+            st.success(f"👋 歡迎，{final_email}")
+        else:
+            # 沒抓到身分，顯示手動輸入框
+            is_manual_input = True
             c_input, c_suffix = st.columns([3, 1.5]) 
             with c_input:
-                username = st.text_input("請輸入 Google 帳號", placeholder="例如：ming")
+                username = st.text_input("請輸入帳號", placeholder="例如：chiufw")
             with c_suffix:
                 st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
             
             if username:
                 if "@" in username: final_email = username 
                 else: final_email = f"{username.strip()}@gmail.com"
-        else:
-            final_email = detected_email
-            st.success(f"👋 歡迎，{final_email}")
-            
+
         pwd = st.text_input("請輸入密碼", type="password")
         
         if st.button("登入系統", type="primary", use_container_width=True):
             if pwd == "8888":
                 if final_email:
+                    # 檢查白名單 (不分大小寫)
                     if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
                         st.session_state.password_correct = True
                         st.session_state.confirmed_email = final_email
@@ -274,7 +211,8 @@ if not st.session_state.password_correct:
                     else:
                         st.error("⛔ 此帳號未獲授權")
                         log_access_to_drive(final_email, "Login Denied (Whitelist)")
-                else: st.toast("❌ 請輸入帳號")
+                else:
+                    st.toast("❌ 請輸入帳號")
             else:
                 st.error("❌ 密碼錯誤")
                 if final_email: log_access_to_drive(final_email, "Login Failed")
@@ -324,21 +262,21 @@ def parse_usage_file(file):
     return pd.DataFrame(parsed_data)
 
 def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, color_range=CHART_COLORS):
-    # 設定圖表背景透明，讓 Streamlit 自動處理文字顏色
     base = alt.Chart(data_df).encode(
         x=alt.X(x_col, title=None, axis=alt.Axis(labelAngle=0)),
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=30), 
+        # 修正1: 減少 offset，讓標題貼近圖表，避免被上方切掉
+        title=alt.TitleParams(text=title, fontSize=24, anchor='middle', offset=10), 
         height=450
     )
     
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 圖表邊距設定
-    return chart.configure(padding={'top': 120, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+    # 修正1: 增加上方的 padding 留白，從 120 改為 80 (配合 offset 調整)
+    return chart.configure(padding={'top': 80, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
 
 # --- 介面開始 ---
 with st.sidebar:
@@ -379,6 +317,7 @@ if not main_df.empty:
     pivot_df = pivot_df.sort_values(by=last_month, ascending=False)
     item_options = pivot_df.index.get_level_values('顯示名稱').tolist()
 
+    # 初始化 State
     if 'saved_groups' not in st.session_state: st.session_state.saved_groups = load_groups()
     if 'active_group_view' not in st.session_state: st.session_state.active_group_view = None
     if 'new_group_name_input' not in st.session_state: st.session_state.new_group_name_input = ""
@@ -392,8 +331,6 @@ if not main_df.empty:
         output = BytesIO()
         with pd.ExcelWriter(output, engine='openpyxl') as writer: pivot_df.reset_index().drop(columns=['顯示名稱']).set_index(['代碼', '名稱', '單位']).to_excel(writer, sheet_name='用量')
         st.download_button("📥 下載 Excel", data=output.getvalue(), file_name='report.xlsx', mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        
-        # 表格底色漸層 (自動適應深淺)
         st.dataframe(pivot_df.reset_index().drop(columns=['顯示名稱']).style.background_gradient(cmap="Blues", subset=months).format(precision=0), use_container_width=True, height=600, hide_index=True)
 
     with tab2:
@@ -433,8 +370,15 @@ if not main_df.empty:
         
         with cv:
             tg = st.session_state.active_group_view
-            gt = st.radio("圖", ["直方圖", "折線圖"], horizontal=True, key="gr", label_visibility="collapsed")
-            if gt!=st.session_state.chart_type_pref: st.session_state.chart_type_pref=gt; st.rerun()
+            # 修正2: 強制綁定 index 以記憶選擇，避免切換群組後跳回預設
+            type_idx = 0 if st.session_state.chart_type_pref == "直方圖" else 1
+            gt = st.radio("圖", ["直方圖", "折線圖"], index=type_idx, horizontal=True, key="group_chart_radio", label_visibility="collapsed")
+            
+            # 當使用者手動切換時，更新 session_state
+            if gt != st.session_state.chart_type_pref:
+                st.session_state.chart_type_pref = gt
+                st.rerun()
+
             if tg and tg in st.session_state.saved_groups:
                 st.markdown(f"### {tg}")
                 gis = st.session_state.saved_groups[tg]
@@ -446,7 +390,6 @@ if not main_df.empty:
                 else: st.warning("無數據")
         
         with ce:
-            # 使用 CSS class 來讓標題隨模式變色
             st.markdown("<h3>➕ 新增 / ✏️ 編輯</h3>", unsafe_allow_html=True)
             
             if tg and tg in st.session_state.saved_groups:
