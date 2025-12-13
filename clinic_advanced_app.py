@@ -100,23 +100,20 @@ def log_access_to_drive(email, action="Login"):
     except Exception as e:
         print(f"Log Error: {e}")
 
-# --- 安全抓取 Email 的函數 (修復錯誤的核心) ---
+# --- 安全抓取 Email 的函數 ---
 def get_current_user_email():
     """嘗試多種方式抓取使用者 Email，失敗則回傳 Local User"""
     try:
-        # 方法 1: 新版 Streamlit Context (v1.39+)
         if hasattr(st, "context") and hasattr(st.context, "headers"):
             email = st.context.headers.get("X-Streamlit-User-Email")
             if email: return email
     except: pass
     
     try:
-        # 方法 2: 舊版 Experimental User
         if hasattr(st, "experimental_user") and hasattr(st.experimental_user, "email"):
             return st.experimental_user.email
     except: pass
 
-    # 方法 3: 回傳預設值
     return "Local User"
 
 # --- 🔐 登入驗證與記錄 ---
@@ -130,7 +127,6 @@ if not st.session_state.password_correct:
         if os.path.exists("logo.png"): st.image(Image.open("logo.png"), width=200)
         st.title("🔒 診所系統登入")
         
-        # 使用修復後的函數抓取 Email
         user_email = get_current_user_email()
         
         st.info(f"您目前的身份：{user_email}")
@@ -279,7 +275,7 @@ if not main_df.empty:
         st.divider()
         cv, ce = st.columns([2, 1])
         with cv:
-            tg = st.session_state.active_group_view
+            tg = st.session_state.active_group_view # 修正處：已將 tgt 改為 tg
             gt = st.radio("圖", ["直方圖", "折線圖"], horizontal=True, key="gr", label_visibility="collapsed")
             if gt!=st.session_state.chart_type_pref: st.session_state.chart_type_pref=gt; st.rerun()
             if tg and tg in st.session_state.saved_groups:
@@ -291,7 +287,7 @@ if not main_df.empty:
                 gdf = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(gis)]
                 if not gdf.empty:
                     gp = gdf[months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
-                    st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tgt} 趨勢"), use_container_width=True)
+                    st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tg} 趨勢"), use_container_width=True) # 修正處：已確認為 tg
                     with st.expander("數據"): st.dataframe(gdf.reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
                 else: st.warning("無數據")
         with ce:
