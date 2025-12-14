@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停 + 字體 18px)
+# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停 + 字體 18px + 頁籤不被切)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -46,10 +46,10 @@ st.markdown(f"""
         }}
     }}
 
-    /* === 全站樣式 (調整為 18px) === */
+    /* === 全站樣式 (18px) === */
     html, body, [class*="css"] {{ 
         font-family: -apple-system, "Microsoft JhengHei", sans-serif; 
-        font-size: 18px; /* 原 20px -> 18px */
+        font-size: 18px; 
         color: var(--text-color) !important; background-color: var(--bg-color) !important;
     }}
     .stApp {{ background-color: var(--bg-color) !important; }}
@@ -65,75 +65,67 @@ st.markdown(f"""
         padding-top: 50px !important;
     }}
 
-    /* Tabs (18px) */
-    .stTabs [data-baseweb="tab-list"] {
-    gap: 12px;
-    background-color: transparent;
-    }
-
-    /* Tab 本體 */
-    .stTabs [data-baseweb="tab"] { 
-    background-color: var(--tab-bg);
-    border-radius: 12px;
-    color: var(--text-color); 
-    border: 2px solid transparent !important;
-    padding: 10px 24px !important; 
-    font-size: 18px !important;
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-weight: 500;
-    }
-
-/* Hover 效果 */
-    .stTabs [data-baseweb="tab"]:hover {
-    background-color: var(--secondary-bg) !important;
-    color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    box-shadow: var(--hover-shadow) !important;    
-    transform: translateY(-4px);
-    font-weight: 900 !important;
-    cursor: pointer;
-    }
-
-/* Active tab */
-.stTabs [aria-selected="true"] { 
-    background-color: var(--tab-active) !important;
-    color: white !important;
-    font-weight: 700;
-    box-shadow: var(--shadow);
-    border-color: transparent !important;
-}
-
-/* === 修正 Tabs hover 上緣被裁切（一定要獨立寫） === */
-.stTabs,
-.stTabs [data-baseweb="tab-list"] {
-    overflow: visible !important;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    padding-top: 8px;
-}
+    /* === Tabs (頁籤樣式修復) === */
     
-    .stTabs [aria-selected="true"] {{ 
-        background-color: var(--tab-active) !important; color: white !important; 
-        font-weight: 700; box-shadow: var(--shadow); border-color: transparent !important;
+    /* 設定 Tab 容器：加上 padding-top 避免 hover 上浮時被切掉 */
+    .stTabs [data-baseweb="tab-list"] {{ 
+        gap: 12px; 
+        background-color: transparent;
+        overflow: visible !important; 
+        padding-top: 10px !important;
+        padding-bottom: 2px;
     }}
+    
+    /* 未選中的 Tab */
+    .stTabs [data-baseweb="tab"] {{ 
+        background-color: var(--tab-bg); 
+        border-radius: 12px; 
+        color: var(--text-color); 
+        border: 2px solid transparent !important; 
+        padding: 10px 24px !important; 
+        font-size: 18px !important; 
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+        font-weight: 500;
+    }}
+    
+    /* Hover 特效 */
+    .stTabs [data-baseweb="tab"]:hover {{
+        background-color: var(--secondary-bg) !important; 
+        color: var(--primary-color) !important;
+        border-color: var(--primary-color) !important; 
+        box-shadow: var(--hover-shadow) !important;    
+        transform: translateY(-4px); 
+        font-weight: 900 !important; 
+        cursor: pointer;
+        z-index: 99; /* 確保浮起來在最上層 */
+    }}
+
+    /* 已選中的 Tab */
+    .stTabs [aria-selected="true"] {{ 
+        background-color: var(--tab-active) !important; 
+        color: white !important; 
+        font-weight: 700; 
+        box-shadow: var(--shadow); 
+        border-color: transparent !important;
+    }}
+    
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
 
-    /* Inputs (18px) */
+    /* Inputs */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
         background-color: var(--input-bg) !important; color: var(--text-color) !important; border-radius: 12px; 
         border: 1px solid var(--border-color) !important; min-height: 45px !important; 
-        font-size: 18px !important; /* 原 20px -> 18px */
+        font-size: 18px !important;
     }}
     ul[data-baseweb="menu"] {{ background-color: var(--sidebar-bg) !important; }}
     ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 18px !important; }}
     span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 16px !important; }}
 
-    /* Buttons (18px) */
+    /* Buttons */
     div.stButton > button {{
         border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 600 !important;
         transition: all 0.2s ease !important; padding: 12px 24px !important; 
-        font-size: 18px !important; /* 原 20px -> 18px */
+        font-size: 18px !important;
         line-height: 1.5 !important; min-height: 50px !important;
     }}
     div.stButton > button[kind="secondary"] {{ background-color: var(--tab-bg) !important; color: var(--text-color) !important; }}
@@ -141,7 +133,7 @@ st.markdown(f"""
     div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
     div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
 
-    /* DataFrame (18px) */
+    /* DataFrame */
     .stDataFrame {{ font-size: 18px !important; }}
     [data-testid="stDataFrame"] {{ background-color: var(--sidebar-bg); border-radius: 12px; padding: 10px; border: 1px solid var(--border-color); }}
     thead tr th:first-child, tbody th {{ display: none; }}
@@ -315,7 +307,6 @@ def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, 
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
     ).properties(
-        # 修正：字體大小 18，Offset 20
         title=alt.TitleParams(text=title, fontSize=18, anchor='middle', offset=20, dy=20), 
         height=450
     )
@@ -377,7 +368,7 @@ if not main_df.empty:
     if 'new_group_name_input' not in st.session_state: st.session_state.new_group_name_input = ""
     if 'new_group_items_input' not in st.session_state: st.session_state.new_group_items_input = []
     if 'chart_type_pref' not in st.session_state: st.session_state.chart_type_pref = "直方圖"
-        
+
     tab1, tab2, tab3, tab4 = st.tabs(["📊 總表", "🔍 單品", "⚔️ 比較", "📑 群組"])
 
     with tab1:
@@ -403,7 +394,7 @@ if not main_df.empty:
     with tab3:
         c1, c2 = st.columns([1, 2])
         with c1:
-            ms = st.multiselect("比較", item_options, placeholder="...")
+            ms = st.multiselect("比較", item_options, placeholder="...", label_visibility="collapsed")
             mt = st.radio("圖", ["直方圖 (堆疊)", "折線圖 (比較)"], horizontal=True)
         with c2:
             if ms:
@@ -460,11 +451,3 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
-
-
-
-
-
-
-
-
