@@ -330,6 +330,7 @@ if uploaded_files:
         save_data_cache(main_df)
 
 st.title("歐葉豐原診所品項分析")
+st.markdown("<div style='margin-top:24px'></div>", unsafe_allow_html=True)
 if not main_df.empty:
     months = sorted(main_df['月份'].unique())
     pivot_df = main_df.pivot_table(index=['代碼', '名稱', '顯示名稱', '單位'], columns='月份', values='數量', aggfunc='sum').fillna(0).astype(int)
@@ -425,3 +426,4 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
