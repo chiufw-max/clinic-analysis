@@ -187,7 +187,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (精修版) ---
+# --- 🔐 登入驗證 (金框版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -215,24 +215,24 @@ if not st.session_state.password_correct:
             color: rgba(255, 255, 255, 0.7) !important;
         }}
         
-        /* --- 🔥 調整按鈕樣式 (解決懸停看不清問題) 🔥 --- */
-        /* 預設狀態：白底，深青色文字 */
+        /* --- 🔥 調整按鈕樣式 (白底 + 金框) 🔥 --- */
         div.stButton > button {{
             background-color: #FFFFFF !important;
-            border: none !important;
+            border: 1px solid #D4AF37 !important; /* 新增細金框 */
         }}
         div.stButton > button > div > p {{
              color: #1b5a72 !important; 
              font-weight: 800 !important;
         }}
         
-        /* 懸停狀態 (Hover)：深青色底，白色文字 (高對比) */
+        /* 懸停狀態 (Hover)：深青色底 + 白字 */
         div.stButton > button:hover {{
-            background-color: #1b5a72 !important; /* 變為品牌色背景 */
+            background-color: #1b5a72 !important; 
+            border-color: #D4AF37 !important; /* 保持金框 */
             transform: scale(1.02);
         }}
         div.stButton > button:hover > div > p {{
-            color: #FFFFFF !important; /* 文字變為白色 */
+            color: #FFFFFF !important; 
         }}
         </style>
     """, unsafe_allow_html=True)
@@ -242,9 +242,9 @@ if not st.session_state.password_correct:
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         
-        # 🔥 顯示 Logo (移除內部 columns 限制，放大至 500px) 🔥
+        # 顯示 Logo (280px)
         if os.path.exists("logo.png"): 
-            st.image(Image.open("logo.png"), width=500) 
+            st.image(Image.open("logo.png"), width=280) 
         
         # 顯示標題
         st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
@@ -256,7 +256,7 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 輸入框 (比例調整為 [0.8, 1.4, 0.8])
+            # 輸入框 (比例 [0.8, 1.4, 0.8])
             ic1, ic2, ic3 = st.columns([0.8, 1.4, 0.8])
             with ic2:
                 username = st.text_input("請輸入帳號")
