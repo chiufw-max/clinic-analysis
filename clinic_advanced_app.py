@@ -26,51 +26,23 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 🔥 核心功能：圖片轉 Base64 🔥
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-# 準備背景圖的 CSS
-page_bg_img = ""
-if os.path.exists("background.png"):
-    bin_str = get_base64_of_bin_file("background.png")
-    page_bg_img = f"""
-    <style>
-    .stApp {{
-        background-image: url("data:image/png;base64,{bin_str}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-    </style>
-    """
-else:
-    page_bg_img = """
-    <style>
-    .stApp { background-color: #2C3E50; }
-    </style>
-    """
-
-# 注入 CSS (包含背景圖 + 介面樣式)
-st.markdown(page_bg_img, unsafe_allow_html=True)
+# 注入 CSS (全站通用樣式 - 登入後會看到這些)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
     :root {{
         --bg-color: #F5F5F7; --sidebar-bg: #EAEAEA; --text-color: #4A4A4A;
-        --primary-color: #7A8B99; --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
-        --border-color: #D1D1D1; --tab-bg: #E0E0E0; --tab-active: #8F9E8B;
+        --primary-color: #1b5a72; /* 將主題色也微調為品牌色 */
+        --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
+        --border-color: #D1D1D1; --tab-bg: #E0E0E0; --tab-active: #1b5a72;
         --shadow: 0 4px 12px rgba(0,0,0,0.05);
         --hover-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }}
     @media (prefers-color-scheme: dark) {{
         :root {{
             --bg-color: #000000; --sidebar-bg: #1C1C1E; --text-color: #F5F5F7;
-            --primary-color: #0A84FF; --secondary-bg: #1C1C1E; --input-bg: #2C2C2E;
-            --border-color: #3A3A3C; --tab-bg: #2C2C2E; --tab-active: #0A84FF;
+            --primary-color: #4A90E2; --secondary-bg: #1C1C1E; --input-bg: #2C2C2E;
+            --border-color: #3A3A3C; --tab-bg: #2C2C2E; --tab-active: #4A90E2;
             --shadow: 0 4px 15px rgba(0,0,0,0.4);
             --hover-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }}
@@ -215,43 +187,50 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (置底版) ---
+# --- 🔐 登入驗證 (品牌色版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
-    # 登入介面專用樣式
+    # 登入介面專用 CSS (覆蓋全站設定)
     st.markdown(f"""
         <style>
+        /* 🔥 設定背景色為品牌色 #1b5a72 🔥 */
+        .stApp {{
+            background-color: #1b5a72 !important;
+            background-image: none !important;
+        }}
+        
+        /* 強制將登入介面的文字設為白色 */
         .stApp h1, .stApp h3, .stApp p, .stApp span, .stApp label, .stApp div {{
             color: #FFFFFF !important;
         }}
-        [data-testid="stImage"], .stApp h3 {{
-            display: none !important;
-        }}
+        
+        /* 輸入框樣式：半透明白底 */
         .stTextInput input {{
-            background-color: rgba(0, 0, 0, 0.4) !important; /* 加深背景 */
+            background-color: rgba(255, 255, 255, 0.1) !important;
             border-color: rgba(255, 255, 255, 0.4) !important;
             color: #FFFFFF !important;
         }}
         .stTextInput input:focus {{
             border-color: #FFFFFF !important;
-            background-color: rgba(0, 0, 0, 0.6) !important;
+            background-color: rgba(255, 255, 255, 0.2) !important;
         }}
         
-        /* 🔥 修正：使用 margin-top: auto 將內容推到最底 🔥 */
-        .stApp [data-testid="stVerticalBlock"] {{
-            gap: 0 !important;
-        }}
-        [data-testid="column"]:nth-child(2) {{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* 內容對齊底部 */
-            height: 85vh; /* 佔據大部分高度 */
-        }}
-        
+        /* 提示字微調 */
         .gmail-suffix {{
             color: rgba(255, 255, 255, 0.7) !important;
+        }}
+        
+        /* 調整按鈕樣式以適應深色背景 */
+        div.stButton > button {{
+            background-color: #FFFFFF !important;
+            color: #1b5a72 !important; /* 按鈕文字用品牌色 */
+            border: none !important;
+        }}
+        div.stButton > button:hover {{
+            background-color: #E0E0E0 !important;
+            transform: scale(1.02);
         }}
         </style>
     """, unsafe_allow_html=True)
@@ -259,10 +238,16 @@ if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        # 這些會被隱藏，但保留結構
-        if os.path.exists("logo.png"): 
-            st.image(Image.open("logo.png"), width=180) 
-        st.markdown("<h3 style='text-align: center;'>系統登入</h3>", unsafe_allow_html=True)
+        st.markdown("<br><br><br>", unsafe_allow_html=True)
+        
+        # 顯示 Logo (放大至 180px)
+        lc1, lc2, lc3 = st.columns([1, 2, 1])
+        with lc2:
+            if os.path.exists("logo.png"): 
+                st.image(Image.open("logo.png"), width=180) 
+        
+        # 顯示標題
+        st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
         
         detected_email = try_auto_detect_email()
         final_email = ""
@@ -271,6 +256,7 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
+            # 縮短輸入框 (中間 2 等份)
             ic1, ic2, ic3 = st.columns([0.5, 2, 0.5])
             with ic2:
                 username = st.text_input("請輸入帳號")
@@ -282,7 +268,7 @@ if not st.session_state.password_correct:
 
                 pwd = st.text_input("請輸入密碼", type="password")
                 
-                # 按鈕文字恢復
+                # 登入按鈕
                 if st.button("登入系統", type="primary", use_container_width=True):
                     if pwd == "8888":
                         if final_email:
