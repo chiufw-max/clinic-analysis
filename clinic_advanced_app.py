@@ -26,13 +26,13 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (全站通用樣式 - 登入後會看到這些)
+# 注入 CSS (全站通用樣式)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
     :root {{
         --bg-color: #F5F5F7; --sidebar-bg: #EAEAEA; --text-color: #4A4A4A;
-        --primary-color: #1b5a72; /* 將主題色也微調為品牌色 */
+        --primary-color: #1b5a72;
         --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
         --border-color: #D1D1D1; --tab-bg: #E0E0E0; --tab-active: #1b5a72;
         --shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -94,7 +94,7 @@ st.markdown(f"""
     ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 18px !important; }}
     span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 16px !important; }}
 
-    /* Buttons */
+    /* Buttons (全站通用) */
     div.stButton > button {{
         border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 600 !important;
         transition: all 0.2s ease !important; padding: 12px 24px !important; font-size: 18px !important;
@@ -187,7 +187,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (品牌色版) ---
+# --- 🔐 登入驗證 (精修版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -195,18 +195,13 @@ if not st.session_state.password_correct:
     # 登入介面專用 CSS (覆蓋全站設定)
     st.markdown(f"""
         <style>
-        /* 🔥 設定背景色為品牌色 #1b5a72 🔥 */
         .stApp {{
             background-color: #1b5a72 !important;
             background-image: none !important;
         }}
-        
-        /* 強制將登入介面的文字設為白色 */
         .stApp h1, .stApp h3, .stApp p, .stApp span, .stApp label, .stApp div {{
             color: #FFFFFF !important;
         }}
-        
-        /* 輸入框樣式：半透明白底 */
         .stTextInput input {{
             background-color: rgba(255, 255, 255, 0.1) !important;
             border-color: rgba(255, 255, 255, 0.4) !important;
@@ -216,17 +211,18 @@ if not st.session_state.password_correct:
             border-color: #FFFFFF !important;
             background-color: rgba(255, 255, 255, 0.2) !important;
         }}
-        
-        /* 提示字微調 */
         .gmail-suffix {{
             color: rgba(255, 255, 255, 0.7) !important;
         }}
         
-        /* 調整按鈕樣式以適應深色背景 */
+        /* 🔥 調整按鈕樣式以適應深色背景 (高對比) 🔥 */
         div.stButton > button {{
-            background-color: #FFFFFF !important;
-            color: #1b5a72 !important; /* 按鈕文字用品牌色 */
+            background-color: #FFFFFF !important; /* 白底 */
             border: none !important;
+        }}
+        div.stButton > button > div > p {{
+             color: #1b5a72 !important; /* 深青色文字 */
+             font-weight: 800 !important; /* 加粗 */
         }}
         div.stButton > button:hover {{
             background-color: #E0E0E0 !important;
@@ -240,11 +236,11 @@ if not st.session_state.password_correct:
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         
-        # 顯示 Logo (放大至 180px)
+        # 顯示 Logo (放大至 250px)
         lc1, lc2, lc3 = st.columns([1, 2, 1])
         with lc2:
             if os.path.exists("logo.png"): 
-                st.image(Image.open("logo.png"), width=180) 
+                st.image(Image.open("logo.png"), width=250) 
         
         # 顯示標題
         st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
@@ -256,8 +252,8 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 縮短輸入框 (中間 2 等份)
-            ic1, ic2, ic3 = st.columns([0.5, 2, 0.5])
+            # 🔥 縮短輸入框 (比例調整為 [0.8, 1.4, 0.8]) 🔥
+            ic1, ic2, ic3 = st.columns([0.8, 1.4, 0.8])
             with ic2:
                 username = st.text_input("請輸入帳號")
                 st.markdown("<div class='gmail-suffix' style='text-align: right; font-size: 14px; margin-top: -10px; margin-bottom: 10px;'>@gmail.com</div>", unsafe_allow_html=True)
