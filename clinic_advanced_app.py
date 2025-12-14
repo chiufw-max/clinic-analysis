@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格 + 扎實懸停 + 字體 18px + 表格優化)
+# 注入 CSS (整合您的表格修正代碼)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -60,43 +60,24 @@ st.markdown(f"""
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
 
-    /* Tabs (頁籤樣式修復) */
+    /* Tabs */
     .stTabs [data-baseweb="tab-list"] {{ 
-        gap: 12px; 
-        background-color: transparent;
-        overflow: visible !important; 
-        padding-top: 10px !important;
-        padding-bottom: 2px;
+        gap: 12px; background-color: transparent; overflow: visible !important; 
+        padding-top: 10px !important; padding-bottom: 2px;
     }}
-    
     .stTabs [data-baseweb="tab"] {{ 
-        background-color: var(--tab-bg); 
-        border-radius: 12px; 
-        color: var(--text-color); 
-        border: 2px solid transparent !important; 
-        padding: 10px 24px !important; 
-        font-size: 18px !important; 
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-        font-weight: 500;
+        background-color: var(--tab-bg); border-radius: 12px; color: var(--text-color); 
+        border: 2px solid transparent !important; padding: 10px 24px !important; 
+        font-size: 18px !important; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); font-weight: 500;
     }}
-    
     .stTabs [data-baseweb="tab"]:hover {{
-        background-color: var(--secondary-bg) !important; 
-        color: var(--primary-color) !important;
-        border-color: var(--primary-color) !important; 
-        box-shadow: var(--hover-shadow) !important;    
-        transform: translateY(-4px); 
-        font-weight: 900 !important; 
-        cursor: pointer;
-        z-index: 99;
+        background-color: var(--secondary-bg) !important; color: var(--primary-color) !important;
+        border-color: var(--primary-color) !important; box-shadow: var(--hover-shadow) !important;    
+        transform: translateY(-4px); font-weight: 900 !important; cursor: pointer; z-index: 99;
     }}
-
     .stTabs [aria-selected="true"] {{ 
-        background-color: var(--tab-active) !important; 
-        color: white !important; 
-        font-weight: 700; 
-        box-shadow: var(--shadow); 
-        border-color: transparent !important;
+        background-color: var(--tab-active) !important; color: white !important; 
+        font-weight: 700; box-shadow: var(--shadow); border-color: transparent !important;
     }}
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
 
@@ -120,15 +101,23 @@ st.markdown(f"""
     div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
     div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
 
-    /* DataFrame */
-    .stDataFrame {{ font-size: 18px !important; }}
-    [data-testid="stDataFrame"] {{ 
-        background-color: var(--sidebar-bg); 
+    /* === 🔥 DataFrame 表格樣式修正 (您提供的代碼) 🔥 === */
+    [data-testid="stDataFrame"] {{
+        overflow: visible !important;
+        background-color: var(--sidebar-bg); /* 維持原本背景色設定 */
         border-radius: 12px; 
-        padding: 20px 10px 10px 10px !important; 
-        border: 1px solid var(--border-color); 
+        padding: 10px;
+        border: 1px solid var(--border-color);
     }}
-    thead tr th {{ padding-top: 15px !important; padding-bottom: 10px !important; }}
+
+    [data-testid="stDataFrame"] thead th {{
+        padding-top: 12px !important;
+        padding-bottom: 10px !important;
+        line-height: 1.4 !important;
+        vertical-align: middle !important;
+    }}
+    
+    /* 隱藏索引欄 */
     thead tr th:first-child, tbody th {{ display: none; }}
     
     h1, h2, h3, p, span, label, div {{ color: var(--text-color) !important; }}
@@ -294,23 +283,21 @@ def parse_usage_file(file):
             parsed_data.append({'代碼':code, '健保碼':nhi, '名稱':name, '顯示名稱':f"{code} {name}", '單位':unit, '數量':math.ceil(qty), '月份':month_label})
     return pd.DataFrame(parsed_data)
 
-# 🔥 改寫：只產生圖表物件，不包含標題 (解決標題被切問題) 🔥
+# 圖表物件生成 (不含標題)
 def make_chart_object(data_df, x_col, y_col, color_col, chart_type, color_range=CHART_COLORS):
     base = alt.Chart(data_df).encode(
         x=alt.X(x_col, title=None, axis=alt.Axis(labelAngle=0)),
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
-    ).properties(height=450) # 這裡不設定 title，讓外面處理
+    ).properties(height=450)
     
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 回復正常的 Padding (因為標題在外面，不用怕被切)
     return chart.configure(background='transparent')
 
-# 🔥 新增：渲染帶有外部標題的圖表 🔥
+# 外部標題渲染
 def render_chart_with_title(chart, title_text):
-    # 使用 HTML 渲染標題，確保絕對不會被切到
     st.markdown(f"<h3 style='text-align: center; margin-bottom: 10px; color: var(--text-color); font-size: 20px;'>{title_text}</h3>", unsafe_allow_html=True)
     st.altair_chart(chart, use_container_width=True)
 
