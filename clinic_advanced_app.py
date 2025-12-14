@@ -25,10 +25,9 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (整合您的表格修正代碼)
+# 注入 CSS
 st.markdown(f"""
     <style>
-    /* === 核心變數定義 === */
     :root {{
         --bg-color: #F5F5F7; --sidebar-bg: #EAEAEA; --text-color: #4A4A4A;
         --primary-color: #7A8B99; --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
@@ -45,8 +44,6 @@ st.markdown(f"""
             --hover-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }}
     }}
-
-    /* === 全站樣式 (18px) === */
     html, body, [class*="css"] {{ 
         font-family: -apple-system, "Microsoft JhengHei", sans-serif; 
         font-size: 18px; 
@@ -56,9 +53,9 @@ st.markdown(f"""
     [data-testid="stSidebar"] {{ background-color: var(--sidebar-bg) !important; border-right: 1px solid var(--border-color); }}
     [data-testid="stSidebar"] * {{ color: var(--text-color) !important; }}
     [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
-    
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
+    [data-testid="stAltairChart"] {{ padding-top: 50px !important; }}
 
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {{ 
@@ -101,30 +98,21 @@ st.markdown(f"""
     div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
     div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
 
-    /* === 🔥 DataFrame 表格樣式修正 (您提供的代碼) 🔥 === */
-    [data-testid="stDataFrame"] {{
+    /* DataFrame */
+    .stDataFrame {{ font-size: 18px !important; }}
+    [data-testid="stDataFrame"] {{ 
         overflow: visible !important;
-        background-color: var(--sidebar-bg); /* 維持原本背景色設定 */
-        border-radius: 12px; 
-        padding: 10px;
-        border: 1px solid var(--border-color);
+        background-color: var(--sidebar-bg); border-radius: 12px; padding: 10px; border: 1px solid var(--border-color); 
     }}
-
     [data-testid="stDataFrame"] thead th {{
-        padding-top: 12px !important;
-        padding-bottom: 10px !important;
-        line-height: 1.4 !important;
-        vertical-align: middle !important;
+        padding-top: 12px !important; padding-bottom: 10px !important; line-height: 1.4 !important; vertical-align: middle !important;
     }}
-    
-    /* 隱藏索引欄 */
     thead tr th:first-child, tbody th {{ display: none; }}
-    
     h1, h2, h3, p, span, label, div {{ color: var(--text-color) !important; }}
     </style>
     """, unsafe_allow_html=True)
 
-# --- Google Drive 連線 ---
+# --- Google Drive ---
 CACHE_FILE = "clinic_cache.csv"
 GROUPS_FILE_NAME = "clinic_groups.json"
 LOG_FILE_NAME = "access_log.csv"
@@ -192,7 +180,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 ---
+# --- Login ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -215,7 +203,6 @@ if not st.session_state.password_correct:
                 username = st.text_input("請輸入帳號") 
             with c_suffix:
                 st.markdown("<div style='padding-top: 55px; font-size: 22px; opacity: 0.6; font-weight: bold;'>@gmail.com</div>", unsafe_allow_html=True)
-            
             if username:
                 if "@" in username: final_email = username 
                 else: final_email = f"{username.strip()}@gmail.com"
@@ -233,14 +220,13 @@ if not st.session_state.password_correct:
                     else:
                         st.error("⛔ 此帳號未獲授權")
                         log_access_to_drive(final_email, "Login Denied (Whitelist)")
-                else:
-                    st.toast("❌ 請輸入帳號")
+                else: st.toast("❌ 請輸入帳號")
             else:
                 st.error("❌ 密碼錯誤")
                 if final_email: log_access_to_drive(final_email, "Login Failed")
     st.stop()
 
-# --- 主邏輯 ---
+# --- Logic ---
 def load_groups():
     content = download_from_drive(GROUPS_FILE_NAME)
     if content: return json.loads(content.decode('utf-8'))
@@ -283,22 +269,36 @@ def parse_usage_file(file):
             parsed_data.append({'代碼':code, '健保碼':nhi, '名稱':name, '顯示名稱':f"{code} {name}", '單位':unit, '數量':math.ceil(qty), '月份':month_label})
     return pd.DataFrame(parsed_data)
 
-# 圖表物件生成 (不含標題)
-def make_chart_object(data_df, x_col, y_col, color_col, chart_type, color_range=CHART_COLORS):
+# 🔥 支援自訂排序 (sort_order) 🔥
+def make_chart_object(data_df, x_col, y_col, color_col, chart_type, sort_order=None, color_range=CHART_COLORS):
+    # 如果沒有指定順序，就用資料裡的順序
+    if sort_order is None:
+        sort_order = data_df[color_col].unique().tolist()
+
     base = alt.Chart(data_df).encode(
         x=alt.X(x_col, title=None, axis=alt.Axis(labelAngle=0)),
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
-        tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
+        # 在 Color 和 Tooltip 都強制指定 sort
+        color=alt.Color(color_col, scale=alt.Scale(range=color_range), sort=sort_order, legend=alt.Legend(title=None)),
+        tooltip=[
+            alt.Tooltip(x_col, title='月份'), 
+            alt.Tooltip(color_col, title='品項'), 
+            alt.Tooltip(y_col, title='數量', format=',')
+        ]
     ).properties(height=450)
     
-    if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
-    else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
+    if "直方圖" in chart_type: 
+        chart = base.mark_bar().encode(
+            # 在直方圖的 X 軸排序也加上 sort，確保堆疊順序正確 (這在 Comparison 很重要)
+            order=alt.Order(color_col, sort='ascending') # 這裡使用 ascending 是為了讓它依照 color 的 domain 順序
+        )
+    else: 
+        chart = base.mark_line(point=True, strokeWidth=4)
     
     return chart.configure(background='transparent')
 
-# 外部標題渲染
 def render_chart_with_title(chart, title_text):
-    st.markdown(f"<h3 style='text-align: center; margin-bottom: 10px; color: var(--text-color); font-size: 20px;'>{title_text}</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center; margin-bottom: 10px; color: var(--text-color); font-size: 18px;'>{title_text}</h3>", unsafe_allow_html=True)
     st.altair_chart(chart, use_container_width=True)
 
 # --- 介面開始 ---
@@ -326,8 +326,7 @@ if uploaded_files:
     new_dfs = []
     for f in uploaded_files:
         df = parse_usage_file(f)
-        if not df.empty:
-            new_dfs.append(df)
+        if not df.empty: new_dfs.append(df)
             
     if new_dfs:
         new_data = pd.concat(new_dfs, ignore_index=True)
@@ -335,8 +334,7 @@ if uploaded_files:
             new_months = new_data['月份'].unique()
             main_df = main_df[~main_df['月份'].isin(new_months)]
             main_df = pd.concat([main_df, new_data], ignore_index=True)
-        else:
-            main_df = new_data
+        else: main_df = new_data
         save_data_cache(main_df)
 
 st.title("歐葉豐原診所品項分析")
@@ -380,14 +378,29 @@ if not main_df.empty:
     with tab3:
         c1, c2 = st.columns([1, 2])
         with c1:
+            # 加入提示
+            st.caption("ℹ️ 藥品順序將依照您**點選加入的順序**排列")
             ms = st.multiselect("比較", item_options, placeholder="...", label_visibility="collapsed")
             mt = st.radio("圖", ["直方圖 (堆疊)", "折線圖 (比較)"], horizontal=True)
         with c2:
             if ms:
-                md = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(ms)][months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
-                chart = make_chart_object(md, '月份', '數量', '名稱', mt)
+                # 🔥 這裡保留 ms 的順序，不重新排序 🔥
+                valid_ms = [x for x in ms if x in item_options] 
+                
+                md = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(valid_ms)][months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
+                
+                # 傳入 sort_order=valid_ms，讓圖表照順序畫
+                chart = make_chart_object(md, '月份', '數量', '名稱', mt, sort_order=[x.split(' ', 1)[1] for x in valid_ms])
                 render_chart_with_title(chart, "比較")
-                with st.expander("數據"): st.dataframe(pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(ms)].reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
+                
+                # 🔥 讓 DataFrame 也依照 valid_ms 的順序排列 🔥
+                # 1. 重設 index 為顯示名稱以便排序
+                temp_df = pivot_df.reset_index().set_index('顯示名稱')
+                # 2. 依照 list 順序選取 (reindex)
+                sorted_df = temp_df.loc[valid_ms].reset_index()
+                
+                with st.expander("數據"): 
+                    st.dataframe(sorted_df.drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
             else: st.info("請選兩個以上")
 
     with tab4:
@@ -410,13 +423,22 @@ if not main_df.empty:
 
             if tg and tg in st.session_state.saved_groups:
                 st.markdown(f"### {tg}")
+                # 🔥 從儲存的設定中讀取順序 (JSON 會保留 list 順序) 🔥
                 gis = st.session_state.saved_groups[tg]
-                gdf = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(gis)]
-                if not gdf.empty:
-                    gp = gdf[months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
-                    chart = make_chart_object(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref)
+                valid_gis = [x for x in gis if x in item_options]
+                
+                if valid_gis:
+                    gp = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(valid_gis)][months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
+                    
+                    # 傳入 sort_order=valid_gis
+                    chart = make_chart_object(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, sort_order=[x.split(' ', 1)[1] for x in valid_gis])
                     render_chart_with_title(chart, f"{tg} 趨勢")
-                    with st.expander("數據"): st.dataframe(gdf.reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
+                    
+                    # 🔥 讓表格也依照儲存的順序排列 🔥
+                    temp_df = pivot_df.reset_index().set_index('顯示名稱')
+                    sorted_gdf = temp_df.loc[valid_gis].reset_index()
+                    
+                    with st.expander("數據"): st.dataframe(sorted_gdf.drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
                 else: st.warning("無數據")
         
         with ce:
@@ -424,12 +446,16 @@ if not main_df.empty:
             if tg and tg in st.session_state.saved_groups:
                 if st.button(f"✏️ 載入「{tg}」", key="load_edit_btn", type="secondary", use_container_width=True):
                     st.session_state.new_group_name_input = tg
+                    # 🔥 載入時，直接把儲存的有序 list 丟回去，選單就會照順序顯示 🔥
                     st.session_state.new_group_items_input = st.session_state.saved_groups[tg]
                     st.rerun()
+            
+            st.caption("💡 小撇步：若要調整順序，請將藥品**刪除後，再依正確順序重新加入**。")
             nn = st.text_input("名稱", placeholder="...", key="new_group_name_input")
             ni = st.multiselect("藥品", item_options, placeholder="...", key="new_group_items_input")
             def scb():
                 if st.session_state.new_group_name_input and st.session_state.new_group_items_input:
+                    # 儲存時，ni (list) 本身就是依照使用者選擇順序排列的，直接存就好
                     st.session_state.saved_groups[st.session_state.new_group_name_input] = st.session_state.new_group_items_input
                     save_groups(st.session_state.saved_groups)
                     st.toast("已儲存！"); st.session_state.active_group_view = st.session_state.new_group_name_input; st.session_state.new_group_name_input = ""; st.session_state.new_group_items_input = []
