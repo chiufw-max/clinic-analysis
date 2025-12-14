@@ -56,8 +56,8 @@ st.markdown(f"""
     [data-testid="stSidebar"] {{ background-color: var(--sidebar-bg) !important; border-right: 1px solid var(--border-color); }}
     [data-testid="stSidebar"] * {{ color: var(--text-color) !important; }}
     
-    /* 讓 Sidebar 和 Login 的圖片都自動置中 */
-    [data-testid="stSidebar"] img, [data-testid="stImage"] img {{ 
+    /* 讓 Sidebar 的圖片自動置中 */
+    [data-testid="stSidebar"] img {{ 
         display: block; margin-left: auto; margin-right: auto; 
     }}
     
@@ -192,22 +192,25 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (精緻化版) ---
+# --- 🔐 登入驗證 (視覺微調版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
-    # 調整佈局：左右留白，中間縮小 (1 : 0.6 : 1 的比例)
-    col1, col2, col3 = st.columns([1, 0.6, 1])
+    # 調整佈局：左右留白加大 (1 : 2 : 1) -> 讓中間操作區變窄，約佔 50%
+    col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         
-        # Logo 縮小並透過 CSS 置中
-        if os.path.exists("logo.png"): 
-            st.image(Image.open("logo.png"), width=120) 
+        # Logo 透過內部的 column 再做一次置中，確保真的在中間
+        # 放大至 180px
+        lc1, lc2, lc3 = st.columns([1, 2, 1])
+        with lc2:
+            if os.path.exists("logo.png"): 
+                st.image(Image.open("logo.png"), width=180) 
         
-        # 標題縮小並置中
+        # 標題置中
         st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>🔒 歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
         
         detected_email = try_auto_detect_email()
@@ -217,33 +220,35 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 移除 column 內部切分，直接使用窄欄位
-            username = st.text_input("請輸入帳號")
-            st.markdown("<div style='text-align: right; font-size: 14px; opacity: 0.6; margin-top: -10px; margin-bottom: 10px;'>@gmail.com</div>", unsafe_allow_html=True)
+            # 輸入框再切分，讓它只佔中間的一半
+            ic1, ic2, ic3 = st.columns([0.5, 2, 0.5])
+            with ic2:
+                username = st.text_input("請輸入帳號")
+                st.markdown("<div style='text-align: right; font-size: 14px; opacity: 0.6; margin-top: -10px; margin-bottom: 10px;'>@gmail.com</div>", unsafe_allow_html=True)
             
-            if username:
-                if "@" in username: final_email = username 
-                else: final_email = f"{username.strip()}@gmail.com"
+                if username:
+                    if "@" in username: final_email = username 
+                    else: final_email = f"{username.strip()}@gmail.com"
 
-        pwd = st.text_input("請輸入密碼", type="password")
-        
-        # 按鈕自動會填滿這個窄欄位
-        if st.button("登入系統", type="primary", use_container_width=True):
-            if pwd == "8888":
-                if final_email:
-                    if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
-                        st.session_state.password_correct = True
-                        st.session_state.confirmed_email = final_email
-                        log_access_to_drive(final_email, "Login Success")
-                        st.rerun()
+                pwd = st.text_input("請輸入密碼", type="password")
+                
+                # 按鈕
+                if st.button("登入系統", type="primary", use_container_width=True):
+                    if pwd == "8888":
+                        if final_email:
+                            if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
+                                st.session_state.password_correct = True
+                                st.session_state.confirmed_email = final_email
+                                log_access_to_drive(final_email, "Login Success")
+                                st.rerun()
+                            else:
+                                st.error("⛔ 此帳號未獲授權")
+                                log_access_to_drive(final_email, "Login Denied (Whitelist)")
+                        else:
+                            st.toast("❌ 請輸入帳號")
                     else:
-                        st.error("⛔ 此帳號未獲授權")
-                        log_access_to_drive(final_email, "Login Denied (Whitelist)")
-                else:
-                    st.toast("❌ 請輸入帳號")
-            else:
-                st.error("❌ 密碼錯誤")
-                if final_email: log_access_to_drive(final_email, "Login Failed")
+                        st.error("❌ 密碼錯誤")
+                        if final_email: log_access_to_drive(final_email, "Login Failed")
     st.stop()
 
 # --- 主邏輯 ---
@@ -437,7 +442,6 @@ if not main_df.empty:
                     st.session_state.new_group_items_input = st.session_state.saved_groups[tg]
                     st.rerun()
             
-            # 🔥 縮小的小撇步文字 🔥
             st.markdown("<div style='font-size: 13px; color: #888; margin-bottom: 10px;'>💡 小撇步：若要調整順序，請將藥品<b>刪除後，再依正確順序重新加入</b>。</div>", unsafe_allow_html=True)
             
             nn = st.text_input("名稱", placeholder="...", key="new_group_name_input")
