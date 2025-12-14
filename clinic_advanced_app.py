@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停 + 字體 18px + 頁籤不被切)
+# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停 + 字體 18px + 頁籤不被切 + 表格留白)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -66,8 +66,6 @@ st.markdown(f"""
     }}
 
     /* === Tabs (頁籤樣式修復) === */
-    
-    /* 設定 Tab 容器：加上 padding-top 避免 hover 上浮時被切掉 */
     .stTabs [data-baseweb="tab-list"] {{ 
         gap: 12px; 
         background-color: transparent;
@@ -76,7 +74,6 @@ st.markdown(f"""
         padding-bottom: 2px;
     }}
     
-    /* 未選中的 Tab */
     .stTabs [data-baseweb="tab"] {{ 
         background-color: var(--tab-bg); 
         border-radius: 12px; 
@@ -88,7 +85,6 @@ st.markdown(f"""
         font-weight: 500;
     }}
     
-    /* Hover 特效 */
     .stTabs [data-baseweb="tab"]:hover {{
         background-color: var(--secondary-bg) !important; 
         color: var(--primary-color) !important;
@@ -97,10 +93,9 @@ st.markdown(f"""
         transform: translateY(-4px); 
         font-weight: 900 !important; 
         cursor: pointer;
-        z-index: 99; /* 確保浮起來在最上層 */
+        z-index: 99;
     }}
 
-    /* 已選中的 Tab */
     .stTabs [aria-selected="true"] {{ 
         background-color: var(--tab-active) !important; 
         color: white !important; 
@@ -133,9 +128,22 @@ st.markdown(f"""
     div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
     div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
 
-    /* DataFrame */
+    /* === 🔥 DataFrame 表格樣式修正 🔥 === */
     .stDataFrame {{ font-size: 18px !important; }}
-    [data-testid="stDataFrame"] {{ background-color: var(--sidebar-bg); border-radius: 12px; padding: 10px; border: 1px solid var(--border-color); }}
+    [data-testid="stDataFrame"] {{ 
+        background-color: var(--sidebar-bg); 
+        border-radius: 12px; 
+        padding: 20px 10px 10px 10px !important; /* 上方增加 Padding: 20px */
+        border: 1px solid var(--border-color); 
+    }}
+    
+    /* 針對表格內的標題列 (Header) 增加上方空白 */
+    thead tr th {{ 
+        padding-top: 15px !important; /* 標題文字上方多留 15px */
+        padding-bottom: 10px !important;
+    }}
+    
+    /* 隱藏預設的索引欄 */
     thead tr th:first-child, tbody th {{ display: none; }}
     
     h1, h2, h3, p, span, label, div {{ color: var(--text-color) !important; }}
