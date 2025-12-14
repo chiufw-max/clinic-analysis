@@ -193,7 +193,7 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-# --- 🔐 登入驗證 (RWD 完美置中版) ---
+# --- 🔐 登入驗證 (配色修正版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -208,19 +208,28 @@ if not st.session_state.password_correct:
         .stApp h1, .stApp h3, .stApp p, .stApp span, .stApp label, .stApp div {{
             color: #FFFFFF !important;
         }}
+        
+        /* 🔥 輸入框樣式：白底 + 歐葉青字 🔥 */
         .stTextInput input {{
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            border-color: rgba(255, 255, 255, 0.4) !important;
-            color: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            color: #1b5a72 !important; /* 文字顏色：歐葉青 */
+            font-weight: 500;
         }}
         .stTextInput input:focus {{
-            border-color: #FFFFFF !important;
-            background-color: rgba(255, 255, 255, 0.2) !important;
+            border-color: #D4AF37 !important; /* 聚焦金框 */
+            box-shadow: 0 0 0 1px #D4AF37;
         }}
+        /* 調整 placeholder 顏色 */
+        .stTextInput input::placeholder {{
+            color: rgba(27, 90, 114, 0.5) !important;
+        }}
+        
         .gmail-suffix {{
             color: rgba(255, 255, 255, 0.7) !important;
         }}
         
+        /* 按鈕樣式：白底金框 */
         div.stButton > button {{
             background-color: #FFFFFF !important;
             border: 1px solid #D4AF37 !important;
@@ -238,7 +247,7 @@ if not st.session_state.password_correct:
             color: #FFFFFF !important; 
         }}
         
-        /* 🔥 新增：圖片置中專用 CSS Class 🔥 */
+        /* RWD 圖片置中 */
         .centered-logo-container {{
             display: flex;
             justify-content: center;
@@ -247,8 +256,8 @@ if not st.session_state.password_correct:
             margin-bottom: 20px;
         }}
         .centered-logo-container img {{
-            max-width: 280px;  /* 電腦版最大寬度 */
-            width: 80%;        /* 手機版會自動縮小 */
+            max-width: 280px; 
+            width: 80%; 
             height: auto;
         }}
         </style>
@@ -259,7 +268,7 @@ if not st.session_state.password_correct:
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         
-        # 🔥 使用 HTML Flexbox 實現完美的 RWD 置中圖片 🔥
+        # 顯示 Logo (Flexbox 置中)
         if os.path.exists("logo.png"): 
             logo_base64 = get_base64_of_bin_file("logo.png")
             st.markdown(
@@ -281,6 +290,7 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
+            # 輸入框 (比例 [0.8, 1.4, 0.8])
             ic1, ic2, ic3 = st.columns([0.8, 1.4, 0.8])
             with ic2:
                 username = st.text_input("請輸入帳號")
