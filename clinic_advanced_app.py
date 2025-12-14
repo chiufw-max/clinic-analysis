@@ -215,18 +215,24 @@ if not st.session_state.password_correct:
             color: rgba(255, 255, 255, 0.7) !important;
         }}
         
-        /* 🔥 調整按鈕樣式以適應深色背景 (高對比) 🔥 */
+        /* --- 🔥 調整按鈕樣式 (解決懸停看不清問題) 🔥 --- */
+        /* 預設狀態：白底，深青色文字 */
         div.stButton > button {{
-            background-color: #FFFFFF !important; /* 白底 */
+            background-color: #FFFFFF !important;
             border: none !important;
         }}
         div.stButton > button > div > p {{
-             color: #1b5a72 !important; /* 深青色文字 */
-             font-weight: 800 !important; /* 加粗 */
+             color: #1b5a72 !important; 
+             font-weight: 800 !important;
         }}
+        
+        /* 懸停狀態 (Hover)：深青色底，白色文字 (高對比) */
         div.stButton > button:hover {{
-            background-color: #E0E0E0 !important;
+            background-color: #1b5a72 !important; /* 變為品牌色背景 */
             transform: scale(1.02);
+        }}
+        div.stButton > button:hover > div > p {{
+            color: #FFFFFF !important; /* 文字變為白色 */
         }}
         </style>
     """, unsafe_allow_html=True)
@@ -236,11 +242,9 @@ if not st.session_state.password_correct:
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         
-        # 顯示 Logo (放大至 250px)
-        lc1, lc2, lc3 = st.columns([1, 2, 1])
-        with lc2:
-            if os.path.exists("logo.png"): 
-                st.image(Image.open("logo.png"), width=250) 
+        # 🔥 顯示 Logo (移除內部 columns 限制，放大至 500px) 🔥
+        if os.path.exists("logo.png"): 
+            st.image(Image.open("logo.png"), width=500) 
         
         # 顯示標題
         st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
@@ -252,7 +256,7 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 🔥 縮短輸入框 (比例調整為 [0.8, 1.4, 0.8]) 🔥
+            # 輸入框 (比例調整為 [0.8, 1.4, 0.8])
             ic1, ic2, ic3 = st.columns([0.8, 1.4, 0.8])
             with ic2:
                 username = st.text_input("請輸入帳號")
