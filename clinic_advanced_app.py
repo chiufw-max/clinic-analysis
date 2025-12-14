@@ -215,7 +215,7 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (修正位置版) ---
+# --- 🔐 登入驗證 (置底版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -230,18 +230,24 @@ if not st.session_state.password_correct:
             display: none !important;
         }}
         .stTextInput input {{
-            background-color: rgba(255, 255, 255, 0.15) !important;
+            background-color: rgba(0, 0, 0, 0.4) !important; /* 加深背景 */
             border-color: rgba(255, 255, 255, 0.4) !important;
             color: #FFFFFF !important;
         }}
         .stTextInput input:focus {{
             border-color: #FFFFFF !important;
-            background-color: rgba(255, 255, 255, 0.25) !important;
+            background-color: rgba(0, 0, 0, 0.6) !important;
         }}
         
-        /* 🔥 修正：增加 padding-top 到 40vh，讓輸入框往下移，避開背景圖文字 🔥 */
-        [data-testid="column"]:nth-child(2) > div {{
-            padding-top: 40vh !important;
+        /* 🔥 修正：使用 margin-top: auto 將內容推到最底 🔥 */
+        .stApp [data-testid="stVerticalBlock"] {{
+            gap: 0 !important;
+        }}
+        [data-testid="column"]:nth-child(2) {{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* 內容對齊底部 */
+            height: 85vh; /* 佔據大部分高度 */
         }}
         
         .gmail-suffix {{
@@ -276,7 +282,7 @@ if not st.session_state.password_correct:
 
                 pwd = st.text_input("請輸入密碼", type="password")
                 
-                # 🔥 修正：恢復按鈕文字 "登入系統" 🔥
+                # 按鈕文字恢復
                 if st.button("登入系統", type="primary", use_container_width=True):
                     if pwd == "8888":
                         if final_email:
