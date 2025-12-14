@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (雙風格 + 圖表下移 + 扎實懸停 + 字體 18px + 頁籤不被切 + 表格留白)
+# 注入 CSS (雙風格 + 扎實懸停 + 字體 18px + 表格優化)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -60,12 +60,7 @@ st.markdown(f"""
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
 
-    /* 強制將圖表區塊往下移 50px */
-    [data-testid="stAltairChart"] {{
-        padding-top: 50px !important;
-    }}
-
-    /* === Tabs (頁籤樣式修復) === */
+    /* Tabs (頁籤樣式修復) */
     .stTabs [data-baseweb="tab-list"] {{ 
         gap: 12px; 
         background-color: transparent;
@@ -103,14 +98,12 @@ st.markdown(f"""
         box-shadow: var(--shadow); 
         border-color: transparent !important;
     }}
-    
     div[data-baseweb="tab-highlight"] {{ display: none !important; }}
 
     /* Inputs */
     .stSelectbox div[data-baseweb="select"], .stTextInput input {{ 
         background-color: var(--input-bg) !important; color: var(--text-color) !important; border-radius: 12px; 
-        border: 1px solid var(--border-color) !important; min-height: 45px !important; 
-        font-size: 18px !important;
+        border: 1px solid var(--border-color) !important; min-height: 45px !important; font-size: 18px !important;
     }}
     ul[data-baseweb="menu"] {{ background-color: var(--sidebar-bg) !important; }}
     ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 18px !important; }}
@@ -119,8 +112,7 @@ st.markdown(f"""
     /* Buttons */
     div.stButton > button {{
         border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 600 !important;
-        transition: all 0.2s ease !important; padding: 12px 24px !important; 
-        font-size: 18px !important;
+        transition: all 0.2s ease !important; padding: 12px 24px !important; font-size: 18px !important;
         line-height: 1.5 !important; min-height: 50px !important;
     }}
     div.stButton > button[kind="secondary"] {{ background-color: var(--tab-bg) !important; color: var(--text-color) !important; }}
@@ -128,22 +120,15 @@ st.markdown(f"""
     div.stButton > button[kind="primary"] {{ background-color: var(--primary-color) !important; color: white !important; box-shadow: var(--shadow) !important; }}
     div.stButton > button[kind="primary"]:hover {{ filter: brightness(1.1); transform: scale(1.02); }}
 
-    /* === 🔥 DataFrame 表格樣式修正 🔥 === */
+    /* DataFrame */
     .stDataFrame {{ font-size: 18px !important; }}
     [data-testid="stDataFrame"] {{ 
         background-color: var(--sidebar-bg); 
         border-radius: 12px; 
-        padding: 20px 10px 10px 10px !important; /* 上方增加 Padding: 20px */
+        padding: 20px 10px 10px 10px !important; 
         border: 1px solid var(--border-color); 
     }}
-    
-    /* 針對表格內的標題列 (Header) 增加上方空白 */
-    thead tr th {{ 
-        padding-top: 15px !important; /* 標題文字上方多留 15px */
-        padding-bottom: 10px !important;
-    }}
-    
-    /* 隱藏預設的索引欄 */
+    thead tr th {{ padding-top: 15px !important; padding-bottom: 10px !important; }}
     thead tr th:first-child, tbody th {{ display: none; }}
     
     h1, h2, h3, p, span, label, div {{ color: var(--text-color) !important; }}
@@ -309,21 +294,25 @@ def parse_usage_file(file):
             parsed_data.append({'代碼':code, '健保碼':nhi, '名稱':name, '顯示名稱':f"{code} {name}", '單位':unit, '數量':math.ceil(qty), '月份':month_label})
     return pd.DataFrame(parsed_data)
 
-def make_interactive_chart(data_df, x_col, y_col, color_col, chart_type, title, color_range=CHART_COLORS):
+# 🔥 改寫：只產生圖表物件，不包含標題 (解決標題被切問題) 🔥
+def make_chart_object(data_df, x_col, y_col, color_col, chart_type, color_range=CHART_COLORS):
     base = alt.Chart(data_df).encode(
         x=alt.X(x_col, title=None, axis=alt.Axis(labelAngle=0)),
         y=alt.Y(y_col, title=None, type='quantitative', axis=alt.Axis(), scale=alt.Scale(nice=True, zero=True)),
         tooltip=[alt.Tooltip(x_col, title='月份'), alt.Tooltip(color_col, title='品項'), alt.Tooltip(y_col, title='數量', format=',')]
-    ).properties(
-        title=alt.TitleParams(text=title, fontSize=18, anchor='middle', offset=20, dy=20), 
-        height=450
-    )
+    ).properties(height=450) # 這裡不設定 title，讓外面處理
     
     if "直方圖" in chart_type: chart = base.mark_bar().encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     else: chart = base.mark_line(point=True, strokeWidth=4).encode(color=alt.Color(color_col, scale=alt.Scale(range=color_range), legend=alt.Legend(title=None)))
     
-    # 保持上方的 padding 為 100
-    return chart.configure(padding={'top': 100, 'left': 20, 'right': 20, 'bottom': 20}, background='transparent')
+    # 回復正常的 Padding (因為標題在外面，不用怕被切)
+    return chart.configure(background='transparent')
+
+# 🔥 新增：渲染帶有外部標題的圖表 🔥
+def render_chart_with_title(chart, title_text):
+    # 使用 HTML 渲染標題，確保絕對不會被切到
+    st.markdown(f"<h3 style='text-align: center; margin-bottom: 10px; color: var(--text-color); font-size: 20px;'>{title_text}</h3>", unsafe_allow_html=True)
+    st.altair_chart(chart, use_container_width=True)
 
 # --- 介面開始 ---
 with st.sidebar:
@@ -396,7 +385,9 @@ if not main_df.empty:
                 curr, prev = v.iloc[-1], v.iloc[-2] if len(v)>1 else 0
                 st.metric(f"{months[-1]}", int(curr), f"{int(curr-prev)} ({(curr-prev)/prev:.1%})" if prev>0 else None)
         with c2:
-            if sel: st.altair_chart(make_interactive_chart(pd.DataFrame({'月份': months, '數量': v.values, '名稱': sel.split(' ', 1)[1]}), '月份', '數量', '名稱', c_type, f"趨勢：{sel.split(' ', 1)[1]}"), use_container_width=True)
+            if sel: 
+                chart = make_chart_object(pd.DataFrame({'月份': months, '數量': v.values, '名稱': sel.split(' ', 1)[1]}), '月份', '數量', '名稱', c_type)
+                render_chart_with_title(chart, f"趨勢：{sel.split(' ', 1)[1]}")
             else: st.info("👈 請選擇")
 
     with tab3:
@@ -407,7 +398,8 @@ if not main_df.empty:
         with c2:
             if ms:
                 md = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(ms)][months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
-                st.altair_chart(make_interactive_chart(md, '月份', '數量', '名稱', mt, "比較"), use_container_width=True)
+                chart = make_chart_object(md, '月份', '數量', '名稱', mt)
+                render_chart_with_title(chart, "比較")
                 with st.expander("數據"): st.dataframe(pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(ms)].reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
             else: st.info("請選兩個以上")
 
@@ -435,7 +427,8 @@ if not main_df.empty:
                 gdf = pivot_df[pivot_df.index.get_level_values('顯示名稱').isin(gis)]
                 if not gdf.empty:
                     gp = gdf[months].reset_index().melt(id_vars=['顯示名稱', '代碼', '名稱', '單位'], var_name='月份', value_name='數量')
-                    st.altair_chart(make_interactive_chart(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref, f"{tg} 趨勢"), use_container_width=True)
+                    chart = make_chart_object(gp, '月份', '數量', '名稱', st.session_state.chart_type_pref)
+                    render_chart_with_title(chart, f"{tg} 趨勢")
                     with st.expander("數據"): st.dataframe(gdf.reset_index().drop(columns=['顯示名稱', '代碼']).style.format(precision=0), hide_index=True)
                 else: st.warning("無數據")
         
