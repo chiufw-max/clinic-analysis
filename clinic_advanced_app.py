@@ -26,7 +26,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 🔥 核心功能：圖片轉 Base64 (解決 Private Repo 讀不到圖片的問題) 🔥
+# 🔥 核心功能：圖片轉 Base64 🔥
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -34,7 +34,6 @@ def get_base64_of_bin_file(bin_file):
 
 # 準備背景圖的 CSS
 page_bg_img = ""
-# 請確保 'background.png' 檔案確實在您的專案根目錄中
 if os.path.exists("background.png"):
     bin_str = get_base64_of_bin_file("background.png")
     page_bg_img = f"""
@@ -49,7 +48,6 @@ if os.path.exists("background.png"):
     </style>
     """
 else:
-    # 如果找不到圖片，使用預設深色背景以免太亮
     page_bg_img = """
     <style>
     .stApp { background-color: #2C3E50; }
@@ -83,24 +81,16 @@ st.markdown(f"""
         font-family: -apple-system, "Microsoft JhengHei", sans-serif; 
         font-size: 18px; 
         color: var(--text-color) !important; 
-        /* 注意：登入頁有背景圖，但登入後會恢復這些設定 */
     }}
     
     [data-testid="stSidebar"] {{ background-color: var(--sidebar-bg) !important; border-right: 1px solid var(--border-color); }}
     [data-testid="stSidebar"] * {{ color: var(--text-color) !important; }}
-    
-    /* 讓 Sidebar 的圖片自動置中 */
-    [data-testid="stSidebar"] img {{ 
-        display: block; margin-left: auto; margin-right: auto; 
-    }}
+    [data-testid="stSidebar"] img {{ display: block; margin: auto; }}
     
     [data-testid="stFileUploaderDropzoneInstructions"], section[data-testid="stFileUploader"] small {{ display: none; }}
     section[data-testid="stFileUploader"] {{ padding-top: 10px; }}
 
-    /* 強制將圖表區塊往下移 50px */
-    [data-testid="stAltairChart"] {{
-        padding-top: 50px !important;
-    }}
+    [data-testid="stAltairChart"] {{ padding-top: 50px !important; }}
 
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {{ 
@@ -225,25 +215,20 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (沉浸式+Base64版) ---
+# --- 🔐 登入驗證 (修正位置版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
-    # 登入介面專用樣式 (覆蓋前面的全站設定)
+    # 登入介面專用樣式
     st.markdown(f"""
         <style>
-        /* 強制將登入介面的文字設為白色 */
         .stApp h1, .stApp h3, .stApp p, .stApp span, .stApp label, .stApp div {{
             color: #FFFFFF !important;
         }}
-        
-        /* 隱藏預設 Logo 和 標題 (因為背景圖上有了) */
         [data-testid="stImage"], .stApp h3 {{
             display: none !important;
         }}
-        
-        /* 輸入框半透明 */
         .stTextInput input {{
             background-color: rgba(255, 255, 255, 0.15) !important;
             border-color: rgba(255, 255, 255, 0.4) !important;
@@ -254,12 +239,11 @@ if not st.session_state.password_correct:
             background-color: rgba(255, 255, 255, 0.25) !important;
         }}
         
-        /* 表單下移 */
+        /* 🔥 修正：增加 padding-top 到 40vh，讓輸入框往下移，避開背景圖文字 🔥 */
         [data-testid="column"]:nth-child(2) > div {{
-            padding-top: 25vh !important;
+            padding-top: 40vh !important;
         }}
         
-        /* 提示字微調 */
         .gmail-suffix {{
             color: rgba(255, 255, 255, 0.7) !important;
         }}
@@ -269,7 +253,7 @@ if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        # 這些元素會被 CSS 隱藏，但保留結構以免報錯
+        # 這些會被隱藏，但保留結構
         if os.path.exists("logo.png"): 
             st.image(Image.open("logo.png"), width=180) 
         st.markdown("<h3 style='text-align: center;'>系統登入</h3>", unsafe_allow_html=True)
@@ -292,8 +276,8 @@ if not st.session_state.password_correct:
 
                 pwd = st.text_input("請輸入密碼", type="password")
                 
-                # 按鈕文字留白
-                if st.button(" ", type="primary", use_container_width=True):
+                # 🔥 修正：恢復按鈕文字 "登入系統" 🔥
+                if st.button("登入系統", type="primary", use_container_width=True):
                     if pwd == "8888":
                         if final_email:
                             if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
