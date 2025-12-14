@@ -5,6 +5,7 @@ from io import BytesIO, StringIO
 import os
 import json
 import math
+import base64
 import altair as alt
 from PIL import Image
 from datetime import datetime, timedelta
@@ -25,7 +26,38 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (主介面樣式)
+# 🔥 核心功能：圖片轉 Base64 (解決 Private Repo 讀不到圖片的問題) 🔥
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+# 準備背景圖的 CSS
+page_bg_img = ""
+# 請確保 'background.png' 檔案確實在您的專案根目錄中
+if os.path.exists("background.png"):
+    bin_str = get_base64_of_bin_file("background.png")
+    page_bg_img = f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/png;base64,{bin_str}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    </style>
+    """
+else:
+    # 如果找不到圖片，使用預設深色背景以免太亮
+    page_bg_img = """
+    <style>
+    .stApp { background-color: #2C3E50; }
+    </style>
+    """
+
+# 注入 CSS (包含背景圖 + 介面樣式)
+st.markdown(page_bg_img, unsafe_allow_html=True)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -50,9 +82,10 @@ st.markdown(f"""
     html, body, [class*="css"] {{ 
         font-family: -apple-system, "Microsoft JhengHei", sans-serif; 
         font-size: 18px; 
-        color: var(--text-color) !important; background-color: var(--bg-color) !important;
+        color: var(--text-color) !important; 
+        /* 注意：登入頁有背景圖，但登入後會恢復這些設定 */
     }}
-    .stApp {{ background-color: var(--bg-color) !important; }}
+    
     [data-testid="stSidebar"] {{ background-color: var(--sidebar-bg) !important; border-right: 1px solid var(--border-color); }}
     [data-testid="stSidebar"] * {{ color: var(--text-color) !important; }}
     
@@ -192,31 +225,25 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (沉浸式版) ---
+# --- 🔐 登入驗證 (沉浸式+Base64版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
-    # 注入登入介面專用的 CSS
+    # 登入介面專用樣式 (覆蓋前面的全站設定)
     st.markdown(f"""
         <style>
-        /* 設定背景圖片 (使用 Raw URL) */
-        .stApp {{
-            background-image: url('https://raw.githubusercontent.com/chiufw-max/clinic-analysis/main/background.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }}
-        
-        /* 強制將登入介面的文字設為白色，並隱藏原本的 Logo 和標題 */
+        /* 強制將登入介面的文字設為白色 */
         .stApp h1, .stApp h3, .stApp p, .stApp span, .stApp label, .stApp div {{
             color: #FFFFFF !important;
         }}
+        
+        /* 隱藏預設 Logo 和 標題 (因為背景圖上有了) */
         [data-testid="stImage"], .stApp h3 {{
             display: none !important;
         }}
         
-        /* 將輸入框背景設為半透明 */
+        /* 輸入框半透明 */
         .stTextInput input {{
             background-color: rgba(255, 255, 255, 0.15) !important;
             border-color: rgba(255, 255, 255, 0.4) !important;
@@ -227,12 +254,12 @@ if not st.session_state.password_correct:
             background-color: rgba(255, 255, 255, 0.25) !important;
         }}
         
-        /* 將登入表單往下移，避開背景圖的 Logo */
+        /* 表單下移 */
         [data-testid="column"]:nth-child(2) > div {{
             padding-top: 25vh !important;
         }}
         
-        /* 調整 @gmail.com 的顏色 */
+        /* 提示字微調 */
         .gmail-suffix {{
             color: rgba(255, 255, 255, 0.7) !important;
         }}
@@ -242,10 +269,10 @@ if not st.session_state.password_correct:
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        # 這裡原本的 Logo 和標題會被 CSS 隱藏
+        # 這些元素會被 CSS 隱藏，但保留結構以免報錯
         if os.path.exists("logo.png"): 
             st.image(Image.open("logo.png"), width=180) 
-        st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>🔒 歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>系統登入</h3>", unsafe_allow_html=True)
         
         detected_email = try_auto_detect_email()
         final_email = ""
@@ -257,7 +284,6 @@ if not st.session_state.password_correct:
             ic1, ic2, ic3 = st.columns([0.5, 2, 0.5])
             with ic2:
                 username = st.text_input("請輸入帳號")
-                # 為 @gmail.com 加上特定 class 以便 CSS 控制
                 st.markdown("<div class='gmail-suffix' style='text-align: right; font-size: 14px; margin-top: -10px; margin-bottom: 10px;'>@gmail.com</div>", unsafe_allow_html=True)
             
                 if username:
@@ -266,7 +292,7 @@ if not st.session_state.password_correct:
 
                 pwd = st.text_input("請輸入密碼", type="password")
                 
-                # 🔥 按鈕 label 設為空白，移除文字 🔥
+                # 按鈕文字留白
                 if st.button(" ", type="primary", use_container_width=True):
                     if pwd == "8888":
                         if final_email:
