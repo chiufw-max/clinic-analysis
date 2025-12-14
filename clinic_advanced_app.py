@@ -25,7 +25,7 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS
+# 注入 CSS (主介面樣式)
 st.markdown(f"""
     <style>
     /* === 核心變數定義 === */
@@ -192,25 +192,59 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (視覺微調版) ---
+# --- 🔐 登入驗證 (沉浸式版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
-    # 調整佈局：左右留白加大 (1 : 2 : 1) -> 讓中間操作區變窄，約佔 50%
+    # 注入登入介面專用的 CSS
+    st.markdown(f"""
+        <style>
+        /* 設定背景圖片 (使用 Raw URL) */
+        .stApp {{
+            background-image: url('https://raw.githubusercontent.com/chiufw-max/clinic-analysis/main/background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }}
+        
+        /* 強制將登入介面的文字設為白色，並隱藏原本的 Logo 和標題 */
+        .stApp h1, .stApp h3, .stApp p, .stApp span, .stApp label, .stApp div {{
+            color: #FFFFFF !important;
+        }}
+        [data-testid="stImage"], .stApp h3 {{
+            display: none !important;
+        }}
+        
+        /* 將輸入框背景設為半透明 */
+        .stTextInput input {{
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            border-color: rgba(255, 255, 255, 0.4) !important;
+            color: #FFFFFF !important;
+        }}
+        .stTextInput input:focus {{
+            border-color: #FFFFFF !important;
+            background-color: rgba(255, 255, 255, 0.25) !important;
+        }}
+        
+        /* 將登入表單往下移，避開背景圖的 Logo */
+        [data-testid="column"]:nth-child(2) > div {{
+            padding-top: 25vh !important;
+        }}
+        
+        /* 調整 @gmail.com 的顏色 */
+        .gmail-suffix {{
+            color: rgba(255, 255, 255, 0.7) !important;
+        }}
+        </style>
+    """, unsafe_allow_html=True)
+
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        st.markdown("<br><br><br>", unsafe_allow_html=True)
-        
-        # Logo 透過內部的 column 再做一次置中，確保真的在中間
-        # 放大至 180px
-        lc1, lc2, lc3 = st.columns([1, 2, 1])
-        with lc2:
-            if os.path.exists("logo.png"): 
-                st.image(Image.open("logo.png"), width=180) 
-        
-        # 標題置中
+        # 這裡原本的 Logo 和標題會被 CSS 隱藏
+        if os.path.exists("logo.png"): 
+            st.image(Image.open("logo.png"), width=180) 
         st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>🔒 歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
         
         detected_email = try_auto_detect_email()
@@ -220,11 +254,11 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 輸入框再切分，讓它只佔中間的一半
             ic1, ic2, ic3 = st.columns([0.5, 2, 0.5])
             with ic2:
                 username = st.text_input("請輸入帳號")
-                st.markdown("<div style='text-align: right; font-size: 14px; opacity: 0.6; margin-top: -10px; margin-bottom: 10px;'>@gmail.com</div>", unsafe_allow_html=True)
+                # 為 @gmail.com 加上特定 class 以便 CSS 控制
+                st.markdown("<div class='gmail-suffix' style='text-align: right; font-size: 14px; margin-top: -10px; margin-bottom: 10px;'>@gmail.com</div>", unsafe_allow_html=True)
             
                 if username:
                     if "@" in username: final_email = username 
@@ -232,8 +266,8 @@ if not st.session_state.password_correct:
 
                 pwd = st.text_input("請輸入密碼", type="password")
                 
-                # 按鈕
-                if st.button("登入系統", type="primary", use_container_width=True):
+                # 🔥 按鈕 label 設為空白，移除文字 🔥
+                if st.button(" ", type="primary", use_container_width=True):
                     if pwd == "8888":
                         if final_email:
                             if final_email.lower() in [u.lower() for u in ALLOWED_USERS]:
