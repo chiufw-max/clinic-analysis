@@ -26,15 +26,16 @@ ALLOWED_USERS = [
 # 顏色配置
 CHART_COLORS = ["#7A8B99", "#A89B9D", "#8F9E8B", "#C6B2A2", "#6D8299", "#B58B8B", "#8C9E9E", "#D8A48F", "#5F7161"]
 
-# 注入 CSS (全站通用樣式)
+# 注入 CSS (全站通用樣式 - 內部系統)
 st.markdown(f"""
     <style>
-    /* === 核心變數定義 === */
+    /* === 核心變數定義 (還原為舒適的莫蘭迪色系) === */
     :root {{
         --bg-color: #F5F5F7; --sidebar-bg: #EAEAEA; --text-color: #4A4A4A;
-        --primary-color: #1b5a72;
+        --primary-color: #7A8B99;  /* 還原主色調 */
         --secondary-bg: #FFFFFF; --input-bg: #FFFFFF;
-        --border-color: #D1D1D1; --tab-bg: #E0E0E0; --tab-active: #1b5a72;
+        --border-color: #D1D1D1; --tab-bg: #E0E0E0; 
+        --tab-active: #8F9E8B;     /* 🔥 還原頁籤選取色為莫蘭迪綠 🔥 */
         --shadow: 0 4px 12px rgba(0,0,0,0.05);
         --hover-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }}
@@ -94,7 +95,7 @@ st.markdown(f"""
     ul[data-baseweb="menu"] li {{ color: var(--text-color) !important; font-size: 18px !important; }}
     span[data-baseweb="tag"] {{ background-color: var(--tab-bg) !important; font-size: 16px !important; }}
 
-    /* Buttons (全站通用) */
+    /* Buttons (全站通用 - 內部系統用) */
     div.stButton > button {{
         border-radius: 16px !important; border: 1px solid transparent !important; font-weight: 600 !important;
         transition: all 0.2s ease !important; padding: 12px 24px !important; font-size: 18px !important;
@@ -193,12 +194,12 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-# --- 🔐 登入驗證 (配色修正版) ---
+# --- 🔐 登入驗證 (頁籤配色回歸版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
 if not st.session_state.password_correct:
-    # 登入介面專用 CSS (覆蓋全站設定)
+    # 登入介面專用 CSS (覆蓋全站設定，保持深青色風格)
     st.markdown(f"""
         <style>
         .stApp {{
@@ -208,8 +209,6 @@ if not st.session_state.password_correct:
         .stApp h1, .stApp h3, .stApp p, .stApp span, .stApp label, .stApp div {{
             color: #FFFFFF !important;
         }}
-        
-        /* 🔥 輸入框樣式：白底 + 歐葉青字 🔥 */
         .stTextInput input {{
             background-color: #FFFFFF !important;
             border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -268,7 +267,7 @@ if not st.session_state.password_correct:
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         
-        # 顯示 Logo (Flexbox 置中)
+        # 顯示 Logo
         if os.path.exists("logo.png"): 
             logo_base64 = get_base64_of_bin_file("logo.png")
             st.markdown(
@@ -290,7 +289,7 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 輸入框 (比例 [0.8, 1.4, 0.8])
+            # 輸入框
             ic1, ic2, ic3 = st.columns([0.8, 1.4, 0.8])
             with ic2:
                 username = st.text_input("請輸入帳號")
