@@ -66,13 +66,13 @@ st.markdown(f"""
     }}
 
     /* Tabs (18px) */
-.stTabs [data-baseweb="tab-list"] {
+    .stTabs [data-baseweb="tab-list"] {
     gap: 12px;
     background-color: transparent;
-}
+    }
 
-/* Tab 本體 */
-.stTabs [data-baseweb="tab"] { 
+    /* Tab 本體 */
+    .stTabs [data-baseweb="tab"] { 
     background-color: var(--tab-bg);
     border-radius: 12px;
     color: var(--text-color); 
@@ -81,10 +81,10 @@ st.markdown(f"""
     font-size: 18px !important;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-weight: 500;
-}
+    }
 
 /* Hover 效果 */
-.stTabs [data-baseweb="tab"]:hover {
+    .stTabs [data-baseweb="tab"]:hover {
     background-color: var(--secondary-bg) !important;
     color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
@@ -92,7 +92,7 @@ st.markdown(f"""
     transform: translateY(-4px);
     font-weight: 900 !important;
     cursor: pointer;
-}
+    }
 
 /* Active tab */
 .stTabs [aria-selected="true"] { 
@@ -460,6 +460,7 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
 
 
 
