@@ -72,19 +72,21 @@ st.markdown(f"""
         border: 2px solid transparent !important; padding: 10px 24px !important; 
         font-size: 18px !important; /* 原 20px -> 18px */
         transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); font-weight: 500;
-    }}
+    /* === 修正 Tabs hover 上緣被裁切 === */
+   .stTabs,
+   .stTabs [data-baseweb="tab-list"] {
+    overflow: visible !important;
+   }
+
+   .stTabs [data-baseweb="tab-list"] {
+    padding-top: 8px;
+   }
+   }}
     .stTabs [data-baseweb="tab"]:hover {{
         background-color: var(--secondary-bg) !important; color: var(--primary-color) !important;
         border-color: var(--primary-color) !important; box-shadow: var(--hover-shadow) !important;    
         transform: translateY(-4px); font-weight: 900 !important; cursor: pointer;
-    .stTabs {
-    overflow: visible !important;
-    }
-    .stTabs [data-baseweb="tab-list"] {
-    overflow: visible !important;
-    padding-top: 8px;   /* 給 hover 上浮的緩衝空間 */
-    }
-    }}
+    
     .stTabs [aria-selected="true"] {{ 
         background-color: var(--tab-active) !important; color: white !important; 
         font-weight: 700; box-shadow: var(--shadow); border-color: transparent !important;
@@ -432,6 +434,7 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
 
 
 
