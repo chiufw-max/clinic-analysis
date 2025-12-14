@@ -187,7 +187,13 @@ def try_auto_detect_email():
     except: pass
     return None
 
-# --- 🔐 登入驗證 (金框版) ---
+# --- 🔥 核心功能：圖片轉 Base64 🔥 ---
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+# --- 🔐 登入驗證 (RWD 完美置中版) ---
 if "password_correct" not in st.session_state: st.session_state.password_correct = False
 if "confirmed_email" not in st.session_state: st.session_state.confirmed_email = None
 
@@ -215,24 +221,35 @@ if not st.session_state.password_correct:
             color: rgba(255, 255, 255, 0.7) !important;
         }}
         
-        /* --- 🔥 調整按鈕樣式 (白底 + 金框) 🔥 --- */
         div.stButton > button {{
             background-color: #FFFFFF !important;
-            border: 1px solid #D4AF37 !important; /* 新增細金框 */
+            border: 1px solid #D4AF37 !important;
         }}
         div.stButton > button > div > p {{
              color: #1b5a72 !important; 
              font-weight: 800 !important;
         }}
-        
-        /* 懸停狀態 (Hover)：深青色底 + 白字 */
         div.stButton > button:hover {{
             background-color: #1b5a72 !important; 
-            border-color: #D4AF37 !important; /* 保持金框 */
+            border-color: #D4AF37 !important;
             transform: scale(1.02);
         }}
         div.stButton > button:hover > div > p {{
             color: #FFFFFF !important; 
+        }}
+        
+        /* 🔥 新增：圖片置中專用 CSS Class 🔥 */
+        .centered-logo-container {{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }}
+        .centered-logo-container img {{
+            max-width: 280px;  /* 電腦版最大寬度 */
+            width: 80%;        /* 手機版會自動縮小 */
+            height: auto;
         }}
         </style>
     """, unsafe_allow_html=True)
@@ -242,9 +259,17 @@ if not st.session_state.password_correct:
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
         
-        # 顯示 Logo (280px)
+        # 🔥 使用 HTML Flexbox 實現完美的 RWD 置中圖片 🔥
         if os.path.exists("logo.png"): 
-            st.image(Image.open("logo.png"), width=280) 
+            logo_base64 = get_base64_of_bin_file("logo.png")
+            st.markdown(
+                f"""
+                <div class="centered-logo-container">
+                    <img src="data:image/png;base64,{logo_base64}">
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
         
         # 顯示標題
         st.markdown("<h3 style='text-align: center; margin-bottom: 20px;'>歐葉豐原診所系統登入</h3>", unsafe_allow_html=True)
@@ -256,7 +281,6 @@ if not st.session_state.password_correct:
             final_email = detected_email
             st.success(f"👋 歡迎，{final_email}")
         else:
-            # 輸入框 (比例 [0.8, 1.4, 0.8])
             ic1, ic2, ic3 = st.columns([0.8, 1.4, 0.8])
             with ic2:
                 username = st.text_input("請輸入帳號")
@@ -268,7 +292,6 @@ if not st.session_state.password_correct:
 
                 pwd = st.text_input("請輸入密碼", type="password")
                 
-                # 登入按鈕
                 if st.button("登入系統", type="primary", use_container_width=True):
                     if pwd == "8888":
                         if final_email:
