@@ -342,7 +342,8 @@ if not main_df.empty:
     if 'new_group_name_input' not in st.session_state: st.session_state.new_group_name_input = ""
     if 'new_group_items_input' not in st.session_state: st.session_state.new_group_items_input = []
     if 'chart_type_pref' not in st.session_state: st.session_state.chart_type_pref = "直方圖"
-
+        
+st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
     tab1, tab2, tab3, tab4 = st.tabs(["📊 總表", "🔍 單品", "⚔️ 比較", "📑 群組"])
 
     with tab1:
@@ -425,5 +426,6 @@ if not main_df.empty:
                 if st.button(f"🗑️ 刪除", type="secondary", use_container_width=True): del st.session_state.saved_groups[tg]; save_groups(st.session_state.saved_groups); st.session_state.active_group_view=None; st.rerun()
 
 else: st.info("👋 請上傳資料 (系統會自動載入上次上傳的資料)")
+
 
 
