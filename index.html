@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>🎌 九州福岡五日遊 2025</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--p1:#667eea;--p2:#764ba2;--dark:#2C3E50;--light:#F0F4F8;}
+html,body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC','Microsoft JhengHei',sans-serif;background:var(--light);color:var(--dark);max-width:480px;margin:0 auto;overflow-x:hidden;}
+.hero{background:linear-gradient(135deg,var(--p1) 0%,var(--p2) 100%);color:#fff;padding:24px 16px 20px;text-align:center;position:relative;overflow:hidden;}
+.hero-emoji{font-size:48px;display:block;margin-bottom:8px;animation:float 3s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.hero h1{font-size:22px;font-weight:900;letter-spacing:1px;}
+.hero-dates{font-size:14px;opacity:.9;margin-top:4px;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px;}
+.badge{background:rgba(255,255,255,.2);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;}
+.day-tabs-wrap{background:#fff;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.12);}
+.day-tabs{display:flex;overflow-x:auto;padding:8px 8px 4px;gap:6px;scrollbar-width:none;}
+.day-tabs::-webkit-scrollbar{display:none;}
+.day-tab{flex:0 0 auto;padding:7px 14px;border-radius:20px;border:none;cursor:pointer;font-size:12px;font-weight:700;transition:all .3s;background:#F0F4F8;color:#888;white-space:nowrap;}
+.day-tab.active{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;box-shadow:0 4px 14px rgba(102,126,234,.45);}
+.progress-dots{display:flex;justify-content:center;gap:5px;padding:6px 0 4px;background:#fff;}
+.dot{width:7px;height:7px;border-radius:50%;background:#ddd;transition:all .3s;}
+.dot.active{background:var(--p1);width:20px;border-radius:4px;}
+.tab-content{display:none;padding:14px 14px 80px;animation:fadeUp .4s ease;}
+.tab-content.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.day-hdr{border-radius:18px;padding:20px;margin-bottom:16px;color:#fff;position:relative;overflow:hidden;}
+.day-hdr::after{content:'';position:absolute;right:-20px;top:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.12);}
+.day-hdr h2{font-size:20px;font-weight:900;}
+.day-hdr .sub{font-size:13px;opacity:.9;margin-top:3px;}
+.day-hdr .type-badge{display:inline-block;background:rgba(255,255,255,.25);border-radius:12px;padding:4px 12px;font-size:11px;font-weight:700;margin-top:8px;}
+.hdr-d1{background:linear-gradient(135deg,#F093FB,#F5576C);}
+.hdr-d2{background:linear-gradient(135deg,#4FACFE,#00F2FE);}
+.hdr-d3{background:linear-gradient(135deg,#43E97B,#38F9D7);}
+.hdr-d4{background:linear-gradient(135deg,#FA709A,#FEE140);}
+.hdr-d5{background:linear-gradient(135deg,#A18CD1,#FBC2EB);}
+.timeline{position:relative;margin-bottom:16px;}
+.timeline::before{content:'';position:absolute;left:21px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--p1),var(--p2));border-radius:2px;}
+.tl-item{display:flex;gap:12px;margin-bottom:14px;position:relative;}
+.tl-icon{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 3px 10px rgba(0,0,0,.12);z-index:1;}
+.tl-card{flex:1;background:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 2px 10px rgba(0,0,0,.07);}
+.tl-time{font-size:11px;color:#aaa;font-weight:600;margin-bottom:2px;}
+.tl-title{font-size:15px;font-weight:800;color:var(--dark);margin-bottom:4px;}
+.tl-desc{font-size:12px;color:#666;line-height:1.55;}
+.tl-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px;}
+.tag{padding:3px 8px;border-radius:7px;font-size:10px;font-weight:600;}
+.tag-food{background:#FFF3E0;color:#E65100;}
+.tag-bus{background:#E3F2FD;color:#1565C0;}
+.tag-tip{background:#F3E5F5;color:#6A1B9A;}
+.tag-photo{background:#E8F5E9;color:#2E7D32;}
+.tag-fixed{background:#E3F2FD;color:#0D47A1;}
+.tag-elder{background:#FFF8E1;color:#F57F17;}
+.map-wrap{border-radius:16px;overflow:hidden;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,.1);}
+.map-hdr{background:var(--dark);color:#fff;padding:10px 14px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;}
+.map-div{height:230px;}
+.sec-title{font-size:15px;font-weight:800;color:var(--dark);margin:16px 0 10px;display:flex;align-items:center;gap:6px;}
+.att-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.att-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.att-img{height:86px;display:flex;align-items:center;justify-content:center;font-size:38px;}
+.att-body{padding:8px 10px 10px;}
+.att-name{font-size:12px;font-weight:800;color:var(--dark);margin-bottom:3px;}
+.att-desc{font-size:10px;color:#888;line-height:1.45;margin-bottom:6px;}
+.gmap-btn{display:block;width:100%;padding:5px 0;background:linear-gradient(135deg,#4285F4,#34A853);color:#fff;border:none;border-radius:8px;font-size:10px;font-weight:700;text-align:center;text-decoration:none;cursor:pointer;}
+.food-row{background:#fff;border-radius:14px;padding:12px;margin-bottom:10px;display:flex;gap:12px;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+.food-emoji{font-size:32px;flex-shrink:0;}
+.food-name{font-size:13px;font-weight:800;color:var(--dark);}
+.food-desc{font-size:11px;color:#888;margin-top:2px;line-height:1.4;}
+.notice{background:#FFF8E1;border-left:4px solid #FFB300;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:12px;color:#555;line-height:1.5;}
+.notice strong{color:#E65100;}
+.compare-wrap{background:#fff;border-radius:16px;padding:14px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.07);}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;}
+.cmp-card{border-radius:12px;padding:12px;}
+.cmp-charter{background:#E8F5E9;border:2px solid #4CAF50;}
+.cmp-self{background:#FFF3E0;border:2px solid #FF9800;}
+.cmp-title{font-size:14px;font-weight:800;margin-bottom:8px;}
+.cmp-item{font-size:11px;color:#555;margin-bottom:5px;line-height:1.4;}
+.verdict{background:linear-gradient(135deg,#43A047,#66BB6A);color:#fff;border-radius:12px;padding:12px 14px;font-size:13px;font-weight:700;text-align:center;margin-top:4px;}
+.ov-day-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.ov-day-card{border-radius:14px;padding:14px;color:#fff;position:relative;overflow:hidden;}
+.ov-day-card::after{content:'';position:absolute;right:-10px;bottom:-10px;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.12);}
+.ov-day-num{font-size:24px;font-weight:900;}
+.ov-day-date{font-size:11px;opacity:.9;margin-top:2px;}
+.ov-day-title{font-size:13px;font-weight:700;margin-top:6px;}
+.ov-day-badge{display:inline-block;background:rgba(255,255,255,.25);border-radius:10px;padding:3px 8px;font-size:10px;margin-top:6px;}
+.tips-wrap{background:#fff;border-radius:16px;padding:14px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.07);}
+.tip-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;}
+.tip-icon{font-size:22px;flex-shrink:0;margin-top:1px;}
+.tip-title{font-size:13px;font-weight:800;color:var(--dark);margin-bottom:2px;}
+.tip-text{font-size:12px;color:#666;line-height:1.5;}
+.trans-row{background:#E3F2FD;border-radius:10px;padding:9px 12px;margin-bottom:8px;font-size:12px;color:#1565C0;font-weight:600;}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid #eee;display:flex;padding:6px 0 10px;box-shadow:0 -4px 16px rgba(0,0,0,.1);z-index:300;}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;cursor:pointer;padding:4px 0;color:#bbb;transition:color .3s;}
+.nav-btn.active{color:var(--p1);}
+.nav-btn .ni{font-size:19px;line-height:1;}
+.nav-btn .nl{font-size:9px;font-weight:700;}
+.scroll-top{position:fixed;right:14px;bottom:80px;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:0 4px 14px rgba(102,126,234,.5);display:none;z-index:250;align-items:center;justify-content:center;}
+.scroll-top.show{display:flex;}
+@media(max-width:360px){.hero h1{font-size:19px;}.att-grid{grid-template-columns:1fr;}.compare-grid{grid-template-columns:1fr;}.ov-day-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <span class="hero-emoji">🎌</span>
+  <h1>九州福岡五日遊</h1>
+  <div class="hero-dates">📅 2025年6月21日（日）― 6月25日（四）</div>
+  <div class="hero-badges">
+    <span class="badge">👨‍👩‍👧‍👦 4大人 + 2孩童</span>
+    <span class="badge">🏨 柳橋飯店</span>
+    <span class="badge">✈️ 長榮 BR102/101</span>
+    <span class="badge">♿ 長輩友善</span>
+  </div>
+</div>
+<div class="day-tabs-wrap">
+  <div class="day-tabs">
+    <button class="day-tab active" data-tab="overview" onclick="switchTab('overview')">🗺️ 總覽</button>
+    <button class="day-tab" data-tab="day1" onclick="switchTab('day1')">Day1 ✈️</button>
+    <button class="day-tab" data-tab="day2" onclick="switchTab('day2')">Day2 🚌</button>
+    <button class="day-tab" data-tab="day3" onclick="switchTab('day3')">Day3 🌋</button>
+    <button class="day-tab" data-tab="day4" onclick="switchTab('day4')">Day4 🛍️</button>
+    <button class="day-tab" data-tab="day5" onclick="switchTab('day5')">Day5 🏠</button>
+  </div>
+  <div class="progress-dots">
+    <div class="dot active" id="pdot-0"></div><div class="dot" id="pdot-1"></div><div class="dot" id="pdot-2"></div><div class="dot" id="pdot-3"></div><div class="dot" id="pdot-4"></div><div class="dot" id="pdot-5"></div>
+  </div>
+</div>
+<div class="tab-content active" id="content-overview">
+  <div class="map-wrap"><div class="map-hdr">🗺️ 五日遊完整路線總覽</div><div class="map-div" id="map-overview"></div></div>
+  <div class="sec-title">📋 行程總覽</div>
+  <div class="ov-day-grid">
+    <div class="ov-day-card hdr-d1"><div class="ov-day-num">Day 1</div><div class="ov-day-date">6/21（日）</div><div class="ov-day-title">✈️ 出發抵達福岡</div><div class="ov-day-badge">自由行</div></div>
+    <div class="ov-day-card hdr-d2"><div class="ov-day-num">Day 2</div><div class="ov-day-date">6/22（一）</div><div class="ov-day-title">🚌 太宰府・由布院</div><div class="ov-day-badge">🔒 固定包車</div></div>
+    <div class="ov-day-card hdr-d3"><div class="ov-day-num">Day 3</div><div class="ov-day-date">6/23（二）</div><div class="ov-day-title">🌋 阿蘇・熊本城</div><div class="ov-day-badge">🔒 固定包車</div></div>
+    <div class="ov-day-card hdr-d4"><div class="ov-day-num">Day 4</div><div class="ov-day-date">6/24（三）</div><div class="ov-day-title">🛍️ 福岡市區自由行</div><div class="ov-day-badge">全員聚餐 🍲</div></div>
+    <div class="ov-day-card hdr-d5" style="grid-column:1/-1;"><div class="ov-day-num">Day 5</div><div class="ov-day-date">6/25（四）</div><div class="ov-day-title">🏠 柳橋市場→博多衝買→返台</div><div class="ov-day-badge">✈️ BR101 19:20起飛</div></div>
+  </div>
+  <div class="notice"><strong>👥 成員：</strong>4位大人（含2位長輩體力較差）+ 2位國小孩童<br><strong>🏨 住宿：</strong>Cross Life 博多柳橋（渡邊通站旁，博多・天神之間）<br><strong>💡 原則：</strong>長輩友善、孩童安全，景點以平坦動線、室內冷氣為優先</div>
+  <div class="sec-title">🚗 包車 vs 自駕 深度分析</div>
+  <div class="compare-wrap">
+    <div class="compare-grid">
+      <div class="cmp-card cmp-charter"><div class="cmp-title">🚌 包車</div><div class="cmp-item">✅ 司機熟悉路況</div><div class="cmp-item">✅ 長輩可隨時在車上休息</div><div class="cmp-item">✅ 停車全由司機處理</div><div class="cmp-item">✅ 費用固定，容易預算</div><div class="cmp-item">✅ 緊急狀況有人協助</div><div class="cmp-item">❌ 費用較高（約¥5-8萬/天）</div></div>
+      <div class="cmp-card cmp-self"><div class="cmp-title">🚗 自駕</div><div class="cmp-item">✅ 時間完全自由彈性</div><div class="cmp-item">❌ 日本靠左行駛</div><div class="cmp-item">❌ 6人需租大型廂型車</div><div class="cmp-item">❌ 停車費昂貴</div><div class="cmp-item">❌ 長途疲勞（→阿蘇2.5小時）</div><div class="cmp-item">❌ 孩童長輩突發狀況難應對</div></div>
+    </div>
+    <div class="verdict">🏆 結論：強烈建議「包車」</div>
+  </div>
+  <div class="sec-title">💡 行前必知</div>
+  <div class="tips-wrap">
+    <div class="tip-item"><div class="tip-icon">☔</div><div><div class="tip-title">6月梅雨季必備雨具</div><div class="tip-text">六月下旬為日本梅雨季，氣候悶熱潮濕，務必攜帶折疊傘。建議穿著透氣快乾衣物。</div></div></div>
+    <div class="tip-item"><div class="tip-icon">💴</div><div><div class="tip-title">現金不可少</div><div class="tip-text">柳橋市場、神社、屋台路邊攤以現金交易為主。建議每人準備 ¥15,000-20,000 現金。</div></div></div>
+    <div class="tip-item"><div class="tip-icon">🌋</div><div><div class="tip-title">阿蘇火山口開放不確定</div><div class="tip-text">阿蘇中岳火口能否靠近視當天火山氣體濃度而定，包車司機會確認最新管制狀況。</div></div></div>
+    <div class="tip-item"><div class="tip-icon">♿</div><div><div class="tip-title">長輩友善貼心提醒</div><div class="tip-text">太宰府石板路不平，建議穿防滑鞋。熊本城入城有電梯。Day4 規劃以平坦路線、冷氣室內為主。</div></div></div>
+    <div class="tip-item"><div class="tip-icon">🍲</div><div><div class="tip-title">Day4 聚餐務必提前預訂</div><div class="tip-text">推薦「博多華味鳥」水炊き，請提前1-2週預訂6人座位。</div></div></div>
+  </div>
+</div>
+<div class="tab-content" id="content-day1">
+  <div class="day-hdr hdr-d1"><h2>Day 1 ✈️ 初抵福岡</h2><div class="sub">6月21日（週日）</div><span class="type-badge">🛬 出發→入境→入住</span></div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-icon">🏥</div><div class="tl-card"><div class="tl-time">11:00</div><div class="tl-title">診所集合出發</div><div class="tl-desc">全員於診所集合上車，前往桃園國際機場。</div></div></div>
+    <div class="tl-item"><div class="tl-icon">✈️</div><div class="tl-card"><div class="tl-time">15:10 起飛</div><div class="tl-title">長榮航空 BR102　桃園→福岡</div><div class="tl-desc">飛行時間約3小時10分。</div><div class="tl-tags"><span class="tag tag-bus">✈️ 長榮 BR102</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🛬</div><div class="tl-card"><div class="tl-time">18:20 抵達</div><div class="tl-title">福岡機場（FUK）入境</div><div class="tl-desc">入境審查＋行李提取約1小時。福岡機場為日本入境速度最快的機場之一。</div><div class="tl-tags"><span class="tag tag-tip">💡 福岡機場距市區超近！</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🚖</div><div class="tl-card"><div class="tl-time">19:30→20:00</div><div class="tl-title">計程車前往飯店</div><div class="tl-desc">機場國際線出口搭計程車，約15-20分鐘，車資約¥2,000-2,500。行李多時最方便。</div><div class="tl-tags"><span class="tag tag-bus">🚖 計程車 ¥2,000-2,500</span><span class="tag tag-tip">💡 給司機看飯店日文地址</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🏨</div><div class="tl-card"><div class="tl-time">20:00</div><div class="tl-title">Check-in：Cross Life 博多柳橋</div><div class="tl-desc">飯店地址：福岡市中央區春吉3丁目12-1。地鐵「渡邊通站」步行3分鐘，介於博多站與天神之間。</div><div class="tl-tags"><span class="tag tag-photo">📍 柳橋聯合市場就在旁邊</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🍜</div><div class="tl-card"><div class="tl-time">20:30 晚餐</div><div class="tl-title">飯店周邊覓食</div><div class="tl-desc">到達較晚，柳橋市場已休市。建議步行至渡邊通大馬路，或短程計程車往博多站方向。</div><div class="tl-tags"><span class="tag tag-food">🍜 博多拉麵（一風堂）</span><span class="tag tag-food">🥟 博多一口餃子</span></div></div></div>
+  </div>
+  <div class="map-wrap"><div class="map-hdr">📍 Day1：機場→飯店→餐廳</div><div class="map-div" id="map-day1"></div></div>
+  <div class="sec-title">🍜 晚餐推薦</div>
+  <div class="food-row"><div class="food-emoji">🍜</div><div><div class="food-name">博多拉麵（一風堂）</div><div class="food-desc">濃郁豚骨湯底，博多必吃。博多站周邊多家分店，深夜仍有營業。</div></div></div>
+  <div class="food-row"><div class="food-emoji">🥟</div><div><div class="food-name">博多一口餃子</div><div class="food-desc">皮薄餡多的博多特色小餃子，孩童超愛，份量適中，可當宵夜輕食。</div></div></div>
+  <div class="food-row"><div class="food-emoji">🍻</div><div><div class="food-name">地雞居酒屋</div><div class="food-desc">博多站周邊居酒屋林立，多有適合孩童的軟飲料和豐富食物選擇。</div></div></div>
+</div>
+<div class="tab-content" id="content-day2">
+  <div class="day-hdr hdr-d2"><h2>Day 2 🚌 太宰府・由布院・別府</h2><div class="sub">6月22日（週一）</div><span class="type-badge">🔒 固定包車一日遊</span></div>
+  <div class="notice"><strong>🔒 本日為固定行程，不可更動。</strong><br>包車全天：太宰府天滿宮→由布院（金鱗湖散策）→別府纜車（備案）→返福岡</div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-icon">🚌</div><div class="tl-card"><div class="tl-time">08:00 準時出發</div><div class="tl-title">包車出發（飯店大廳）</div><div class="tl-desc">請務必準時集合，避免壓縮景點停留時間。</div><div class="tl-tags"><span class="tag tag-fixed">🔒 固定時間</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">⛩️</div><div class="tl-card"><div class="tl-time">08:45–10:15</div><div class="tl-title">太宰府天滿宮（1.5小時）</div><div class="tl-desc">祭祀學問之神菅原道真。必走太鼓橋，必看御神牛，必吃梅枝餅！星巴克表參道打卡。</div><div class="tl-tags"><span class="tag tag-food">🍡 梅枝餅 必吃</span><span class="tag tag-photo">📸 星巴克表參道打卡</span><span class="tag tag-elder">♿ 參道平坦好走</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🏡</div><div class="tl-card"><div class="tl-time">12:15–15:15</div><div class="tl-title">由布院・湯布院漫遊（3小時含午餐）</div><div class="tl-desc">散策：車站→湯之坪街道（史努比茶屋）→湯布院花卉村→金鱗湖（夢幻湖景）</div><div class="tl-tags"><span class="tag tag-food">🥩 豐後牛釜飯 午餐</span><span class="tag tag-food">🎂 B-speak 生乳捲</span><span class="tag tag-photo">📸 金鱗湖打卡</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🚡</div><div class="tl-card"><div class="tl-time">15:15–17:30（備案）</div><div class="tl-title">別府纜車（視體力決定）</div><div class="tl-desc">搭纜車眺望別府灣絕景。若長輩體力不足，可在由布院多待一會兒直接返程。</div><div class="tl-tags"><span class="tag tag-photo">📸 別府灣山頂絕景</span><span class="tag tag-elder">⚠️ 視長輩體力決定</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🏨</div><div class="tl-card"><div class="tl-time">17:30–19:30</div><div class="tl-title">返回福岡飯店</div><div class="tl-desc">長途返程，在車上休息。抵達後自行晚餐。</div><div class="tl-tags"><span class="tag tag-food">🍲 晚餐推薦：もつ鍋（牛腸鍋）</span></div></div></div>
+  </div>
+  <div class="map-wrap"><div class="map-hdr">📍 Day2 行程路線</div><div class="map-div" id="map-day2"></div></div>
+  <div class="sec-title">🗺️ 今日景點</div>
+  <div class="att-grid">
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#667eea,#764ba2)">⛩️</div><div class="att-body"><div class="att-name">太宰府天滿宮</div><div class="att-desc">學問之神，必吃梅枝餅，星巴克表參道著名打卡點。</div><a class="gmap-btn" href="https://maps.google.com/?q=太宰府天満宮" target="_blank">📍 Google Maps</a></div></div>
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#4FACFE,#00F2FE)">🏡</div><div class="att-body"><div class="att-name">由布院金鱗湖</div><div class="att-desc">早晨有神祕薄霧的夢幻湖泊，翠綠山嶺環繞。</div><a class="gmap-btn" href="https://maps.google.com/?q=金鱗湖+由布院" target="_blank">📍 Google Maps</a></div></div>
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#43E97B,#38F9D7)">🌺</div><div class="att-body"><div class="att-name">湯布院花卉村</div><div class="att-desc">童話歐洲風格小村落，孩童最愛的夢幻場所。</div><a class="gmap-btn" href="https://maps.google.com/?q=湯布院フローラルビレッジ" target="_blank">📍 Google Maps</a></div></div>
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#FA709A,#FEE140)">🚡</div><div class="att-body"><div class="att-name">別府纜車（備案）</div><div class="att-desc">搭纜車俯瞰別府灣，天氣好時景色壯觀。</div><a class="gmap-btn" href="https://maps.google.com/?q=別府ロープウェイ" target="_blank">📍 Google Maps</a></div></div>
+  </div>
+  <div class="sec-title">🚗 交通資訊</div>
+  <div class="trans-row">🚌 全日包車，無需自行安排交通</div>
+  <div class="trans-row">📏 福岡→太宰府 約45分 ｜ 太宰府→由布院 約1.5-2小時</div>
+  <div class="trans-row">📏 由布院→別府 約30分 ｜ 別府→福岡 約1.5小時</div>
+</div>
+<div class="tab-content" id="content-day3">
+  <div class="day-hdr hdr-d3"><h2>Day 3 🌋 壯觀阿蘇・熊本城</h2><div class="sub">6月23日（週二）</div><span class="type-badge">🔒 固定包車一日遊</span></div>
+  <div class="notice"><strong>🔒 本日為固定行程，不可更動。</strong><br>包車全天：大觀峰→草千里→阿蘇中岳火口→熊本城→城彩苑→返福岡</div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-icon">🚌</div><div class="tl-card"><div class="tl-time">08:00 準時出發</div><div class="tl-title">包車出發→阿蘇（2.5小時）</div><div class="tl-desc">今天行程最長，務必吃飽。前往阿蘇，車上可補眠。</div><div class="tl-tags"><span class="tag tag-fixed">🔒 固定時間</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🏔️</div><div class="tl-card"><div class="tl-time">10:30–13:30</div><div class="tl-title">阿蘇火山區域（3小時含午餐）</div><div class="tl-desc"><strong>①大觀峰：</strong>俯瞰世界最大破火山口，史詩壯觀。<br><strong>②草千里：</strong>無盡大草原＋馬兒悠遊，極為療癒。<br><strong>③中岳火口：</strong>視當天氣體濃度開放，翡翠綠火口湖。</div><div class="tl-tags"><span class="tag tag-food">🐄 阿蘇赤牛丼 必吃</span><span class="tag tag-photo">📸 大觀峰絕景</span><span class="tag tag-elder">♿ 大觀峰有觀景台</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🏯</div><div class="tl-card"><div class="tl-time">15:00–17:00</div><div class="tl-title">熊本城 &amp; 城彩苑（2小時）</div><div class="tl-desc">日本三大名城！震後修復的雄壯天守閣令人震撼。城彩苑熊本名產最齊全。</div><div class="tl-tags"><span class="tag tag-photo">📸 熊本城天守閣</span><span class="tag tag-food">🛍️ 芥末蓮藕・紅豆番薯糰子</span><span class="tag tag-elder">♿ 入城有電梯</span><span class="tag tag-tip">⚠️ 最後入場16:30</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🏨</div><div class="tl-card"><div class="tl-time">17:00–19:00</div><div class="tl-title">返回福岡飯店</div><div class="tl-desc">傍晚容易塞車。兩天包車圓滿結束！</div><div class="tl-tags"><span class="tag tag-food">🍲 晚餐推薦：もつ鍋補充精力</span></div></div></div>
+  </div>
+  <div class="map-wrap"><div class="map-hdr">📍 Day3 行程路線：阿蘇・熊本</div><div class="map-div" id="map-day3"></div></div>
+  <div class="sec-title">🗺️ 今日景點</div>
+  <div class="att-grid">
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#43E97B,#38F9D7)">🏔️</div><div class="att-body"><div class="att-name">阿蘇大觀峰</div><div class="att-desc">俯瞰世界最大破火山口，阿蘇五岳化身「涅槃大佛」。</div><a class="gmap-btn" href="https://maps.google.com/?q=大観峰+阿蘇" target="_blank">📍 Google Maps</a></div></div>
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#a8edea,#fed6e3)">🐎</div><div class="att-body"><div class="att-name">草千里浜</div><div class="att-desc">廣闊翠綠草原，馬匹自由漫步，背景冒煙火山如夢似幻。</div><a class="gmap-btn" href="https://maps.google.com/?q=草千里ヶ浜+阿蘇" target="_blank">📍 Google Maps</a></div></div>
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#f7971e,#ffd200)">🌋</div><div class="att-body"><div class="att-name">阿蘇中岳火口</div><div class="att-desc">翡翠綠火口湖，冒著硫磺氣，世界少數可近觀的活火山。</div><a class="gmap-btn" href="https://maps.google.com/?q=阿蘇中岳火口" target="_blank">📍 Google Maps</a></div></div>
+    <div class="att-card"><div class="att-img" style="background:linear-gradient(135deg,#667eea,#764ba2)">🏯</div><div class="att-body"><div class="att-name">熊本城</div><div class="att-desc">日本三大名城，地震後修復更顯歷史滄桑，城彩苑有熊本熊周邊。</div><a class="gmap-btn" href="https://maps.google.com/?q=熊本城" target="_blank">📍 Google Maps</a></div></div>
+  </div>
+  <div class="sec-title">🍽️ 今日美食</div>
+  <div class="food-row"><div class="food-emoji">🐄</div><div><div class="food-name">阿蘇赤牛丼</div><div class="food-desc">阿蘇名物，鮮嫩多汁的赤牛肉鋪滿熱飯，在阿蘇必吃！</div></div></div>
+  <div class="food-row"><div class="food-emoji">🪷</div><div><div class="food-name">熊本・芥末蓮藕</div><div class="food-desc">熊本最具代表性鄉土料理，蓮藕填入芥末味噌，口感獨特。</div></div></div>
+  <div class="food-row"><div class="food-emoji">🟣</div><div><div class="food-name">紅豆番薯糰子（いきなり団子）</div><div class="food-desc">熊本傳統甜點，外皮Q軟包裹番薯和紅豆，城彩苑內多店有賣。</div></div></div>
+</div>
+<div class="tab-content" id="content-day4">
+  <div class="day-hdr hdr-d4"><h2>Day 4 🛍️ 福岡市區自由行</h2><div class="sub">6月24日（週三）</div><span class="type-badge">🎉 自由行 + 全員聚餐</span></div>
+  <div class="notice"><strong>♿ 長輩友善規劃：</strong>全日以平坦路線、室內冷氣空間為主，隨時可彈性調整休息時間。孩童也有跑跳空間！</div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-icon">🐟</div><div class="tl-card"><div class="tl-time">09:30–10:30</div><div class="tl-title">柳橋聯合市場散步</div><div class="tl-desc">「博多的廚房」就在飯店旁步行3分鐘！早晨最熱鬧，有明太子試吃、魚板等在地美食。</div><div class="tl-tags"><span class="tag tag-elder">♿ 路面平坦，飯店旁3分鐘</span><span class="tag tag-food">🐟 明太子試吃</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🌿</div><div class="tl-card"><div class="tl-time">11:00–12:30</div><div class="tl-title">大濠公園（Ohori Park）</div><div class="tl-desc">福岡最美都市公園！環湖步道全程平坦，長輩悠閒散步，孩童可在草地奔跑玩耍、餵食野鴨。</div><div class="tl-tags"><span class="tag tag-elder">♿ 全程平坦，無障礙友善</span><span class="tag tag-photo">📸 湖景・小島</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🛍️</div><div class="tl-card"><div class="tl-time">12:30–16:30</div><div class="tl-title">天神商圈購物</div><div class="tl-desc">全冷氣室內空間，最適合長輩！天神地下街622公尺雙層商場、大丸・三越精品、PARCO年輕潮流。</div><div class="tl-tags"><span class="tag tag-elder">♿ 全室內冷氣，電梯完備</span><span class="tag tag-food">🍱 天神地下街午餐</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">⛲</div><div class="tl-card"><div class="tl-time">16:30–18:00</div><div class="tl-title">博多運河城 Canal City</div><div class="tl-desc">整點有音樂噴泉秀（孩童必看！），豐富美食街，無障礙設施完善。</div><div class="tl-tags"><span class="tag tag-photo">⛲ 整點音樂噴泉秀</span><span class="tag tag-elder">♿ 無障礙設施完善</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🍲</div><div class="tl-card"><div class="tl-time">18:30–20:30</div><div class="tl-title">🎉 全員聚餐</div><div class="tl-desc"><strong>推薦：博多水炊き（水炊雞肉鍋）</strong><br>白濁雞骨濃湯，老少咸宜。推薦餐廳：<strong>博多華味鳥</strong>（天神・博多各有分店）<br>⚠️ 請提前1-2週預訂6人座位！</div><div class="tl-tags"><span class="tag tag-food">🍲 水炊き雞肉鍋</span><span class="tag tag-tip">⚠️ 務必提前預訂！</span></div></div></div>
+  </div>
+  <div class="map-wrap"><div class="map-hdr">📍 Day4 福岡市區自由行路線</div><div class="map-div" id="map-day4"></div></div>
+  <div class="sec-title">🚇 Day4 交通建議</div>
+  <div class="trans-row">🚖 飯店→大濠公園：計程車約10分（¥700-900）</div>
+  <div class="trans-row">🚇 大濠公園→天神：地鐵七隈線 3站（¥200，5分鐘）</div>
+  <div class="trans-row">🚶 天神→運河城：步行約15分 或 計程車¥600</div>
+</div>
+<div class="tab-content" id="content-day5">
+  <div class="day-hdr hdr-d5"><h2>Day 5 🏠 最後衝刺，返台</h2><div class="sub">6月25日（週四）</div><span class="type-badge">✈️ BR101 19:20起飛</span></div>
+  <div class="notice"><strong>⏰ 17:00 機場集合！</strong>建議16:00離開博多站，16:30抵達機場，預留充足出境時間。</div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-icon">🍳</div><div class="tl-card"><div class="tl-time">08:00–09:00</div><div class="tl-title">飯店早餐 &amp; 退房</div><div class="tl-desc">辦理退房，行李寄存飯店前台（通常免費）。</div></div></div>
+    <div class="tl-item"><div class="tl-icon">🐟</div><div class="tl-card"><div class="tl-time">09:00–10:30</div><div class="tl-title">柳橋聯合市場（飯店旁！）</div><div class="tl-desc">把握最後機會感受「博多廚房」。明太子、魚板、玉子燒，帶回台灣的最後機會！</div><div class="tl-tags"><span class="tag tag-food">🐟 明太子帶回台灣</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🛒</div><div class="tl-card"><div class="tl-time">10:30–16:00</div><div class="tl-title">博多車站 最後衝刺購物</div><div class="tl-desc">JR博多城（AMU Plaza）頂樓景觀台・博多站地下街DEITOS（所有福岡名產一站買齊！）・博多拉麵小路午餐。</div><div class="tl-tags"><span class="tag tag-food">🍜 拉麵小路午餐</span><span class="tag tag-food">🎁 伴手禮一站買齊</span><span class="tag tag-elder">♿ 全部有電梯</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🧳</div><div class="tl-card"><div class="tl-time">16:00</div><div class="tl-title">返回飯店取行李</div><div class="tl-desc">到飯店前台取回寄存行李，確認所有物品齊全。</div></div></div>
+    <div class="tl-item"><div class="tl-icon">🚖</div><div class="tl-card"><div class="tl-time">16:30</div><div class="tl-title">前往福岡機場（國際線）</div><div class="tl-desc">搭計程車或Uber，約20分鐘，車費約¥2,000-2,500。</div><div class="tl-tags"><span class="tag tag-bus">🚖 計程車約¥2,000</span><span class="tag tag-tip">⚠️ 預留塞車時間</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">🛫</div><div class="tl-card"><div class="tl-time">17:00 機場集合</div><div class="tl-title">福岡機場國際線 出境</div><div class="tl-desc">辦理登機＋托運行李（起飛前2小時20分）。</div><div class="tl-tags"><span class="tag tag-fixed">✅ 全員17:00機場集合</span></div></div></div>
+    <div class="tl-item"><div class="tl-icon">✈️</div><div class="tl-card"><div class="tl-time">19:20–20:45</div><div class="tl-title">長榮航空 BR101 返回台北</div><div class="tl-desc">飛行約1小時25分。到台北桃園後，機場接駁車接送至診所，五日遊圓滿結束！</div><div class="tl-tags"><span class="tag tag-tip">🏠 21:30~ 診所接送</span></div></div></div>
+  </div>
+  <div class="map-wrap"><div class="map-hdr">📍 Day5 博多車站 &amp; 機場路線</div><div class="map-div" id="map-day5"></div></div>
+  <div class="sec-title">🎁 必買伴手禮</div>
+  <div class="food-row"><div class="food-emoji">🐟</div><div><div class="food-name">明太子（辛子明太子）</div><div class="food-desc">福岡第一名產！「ふくや」「海千」都是知名品牌，博多站地下街全有。</div></div></div>
+  <div class="food-row"><div class="food-emoji">🥐</div><div><div class="food-name">博多通饅頭</div><div class="food-desc">福岡代表性和菓子伴手禮，精美包裝，適合送禮。</div></div></div>
+  <div class="food-row"><div class="food-emoji">🍰</div><div><div class="food-name">福砂屋蜂蜜蛋糕（Castella）</div><div class="food-desc">長崎蜂蜜蛋糕老舖，底部砂糖口感獨特，自用送禮皆宜。</div></div></div>
+  <div class="food-row"><div class="food-emoji">🐻</div><div><div class="food-name">熊本熊（Kumamon）周邊</div><div class="food-desc">熊本城彩苑最齊全！孩童必定瘋搶。博多站也有販售。</div></div></div>
+</div>
+<div class="bottom-nav">
+  <button class="nav-btn active" id="nav-overview" onclick="switchTab('overview')"><span class="ni">🗺️</span><span class="nl">總覽</span></button>
+  <button class="nav-btn" id="nav-day1" onclick="switchTab('day1')"><span class="ni">✈️</span><span class="nl">Day1</span></button>
+  <button class="nav-btn" id="nav-day2" onclick="switchTab('day2')"><span class="ni">🚌</span><span class="nl">Day2</span></button>
+  <button class="nav-btn" id="nav-day3" onclick="switchTab('day3')"><span class="ni">🌋</span><span class="nl">Day3</span></button>
+  <button class="nav-btn" id="nav-day4" onclick="switchTab('day4')"><span class="ni">🛍️</span><span class="nl">Day4</span></button>
+  <button class="nav-btn" id="nav-day5" onclick="switchTab('day5')"><span class="ni">🏠</span><span class="nl">Day5</span></button>
+</div>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const TABS=['overview','day1','day2','day3','day4','day5'];
+const mapsInit={};
+let cur='overview';
+function switchTab(t){
+  if(cur===t)return;cur=t;
+  TABS.forEach(id=>{
+    document.getElementById('content-'+id).classList.toggle('active',id===t);
+    document.getElementById('nav-'+id).classList.toggle('active',id===t);
+  });
+  document.querySelectorAll('.day-tab').forEach(btn=>btn.classList.toggle('active',btn.dataset.tab===t));
+  const idx=TABS.indexOf(t);
+  for(let i=0;i<6;i++)document.getElementById('pdot-'+i).classList.toggle('active',i===idx);
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(()=>{if(!mapsInit[t]){mapsInit[t]=true;initMap(t);}},200);
+}
+const TILE='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const ATTR='© <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>';
+function mkIcon(e,c){return L.divIcon({html:'<div style="background:'+c+';width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3)">'+e+'</div>',iconSize:[34,34],iconAnchor:[17,17],popupAnchor:[0,-20],className:''});}
+function mk(map,lat,lng,e,c,name,info){return L.marker([lat,lng],{icon:mkIcon(e,c)}).addTo(map).bindPopup('<strong>'+name+'</strong>'+(info?'<br><small>'+info+'</small>':''));}
+function route(map,pts,c){L.polyline(pts,{color:c,weight:4,opacity:.7,dashArray:'8,6'}).addTo(map);}
+function initMap(t){
+  const el=document.getElementById('map-'+t);if(!el||el._leaflet_id)return;
+  let map;const hotel=[33.5826,130.3993];
+  if(t==='overview'){
+    map=L.map('map-overview',{scrollWheelZoom:false}).setView([33.1,130.9],8);
+    L.tileLayer(TILE,{attribution:ATTR,maxZoom:18}).addTo(map);
+    mk(map,33.5826,130.3993,'🏨','#667eea','飯店 Cross Life 柳橋','住宿5晚');
+    mk(map,33.5857,130.4508,'✈️','#F5576C','福岡機場','Day1/5');
+    mk(map,33.5131,130.5329,'⛩️','#4FACFE','太宰府天滿宮','Day2');
+    mk(map,33.2651,131.3626,'🏡','#43E97B','由布院金鱗湖','Day2');
+    mk(map,33.2913,131.5008,'🚡','#FA709A','別府纜車','Day2備案');
+    mk(map,33.0401,131.0100,'🏔️','#38F9D7','阿蘇大觀峰','Day3');
+    mk(map,32.9064,131.0416,'🐎','#FEE140','草千里','Day3');
+    mk(map,32.8838,131.1044,'🌋','#F5576C','阿蘇中岳火口','Day3');
+    mk(map,32.8063,130.7063,'🏯','#A18CD1','熊本城','Day3');
+    mk(map,33.5889,130.3716,'🌿','#4FACFE','大濠公園','Day4');
+    mk(map,33.5887,130.4115,'⛲','#FA709A','博多運河城','Day4');
+    route(map,[hotel,[33.5131,130.5329],[33.2651,131.3626],[33.2913,131.5008],hotel],'#4FACFE');
+    route(map,[hotel,[33.0401,131.0100],[32.9064,131.0416],[32.8838,131.1044],[32.8063,130.7063],hotel],'#43E97B');
+  }else if(t==='day1'){
+    map=L.map('map-day1',{scrollWheelZoom:false}).setView([33.587,130.415],13);
+    L.tileLayer(TILE,{attribution:ATTR,maxZoom:18}).addTo(map);
+    mk(map,33.5857,130.4508,'✈️','#F5576C','福岡機場','BR102 18:20到達');
+    mk(map,33.5826,130.3993,'🏨','#667eea','飯店 Cross Life 柳橋','計程車約15-20分');
+    route(map,[[33.5857,130.4508],[33.5826,130.3993]],'#F5576C');
+  }else if(t==='day2'){
+    map=L.map('map-day2',{scrollWheelZoom:false}).setView([33.2,131.0],9);
+    L.tileLayer(TILE,{attribution:ATTR,maxZoom:18}).addTo(map);
+    mk(map,33.5826,130.3993,'🏨','#667eea','飯店','08:00出發');
+    mk(map,33.5131,130.5329,'⛩️','#4FACFE','太宰府天滿宮','08:45-10:15');
+    mk(map,33.2651,131.3626,'🏡','#43E97B','由布院金鱗湖','12:15-15:15');
+    mk(map,33.2913,131.5008,'🚡','#FA709A','別府纜車','備案');
+    route(map,[hotel,[33.5131,130.5329],[33.2651,131.3626],[33.2913,131.5008],hotel],'#4FACFE');
+  }else if(t==='day3'){
+    map=L.map('map-day3',{scrollWheelZoom:false}).setView([32.95,130.9],9);
+    L.tileLayer(TILE,{attribution:ATTR,maxZoom:18}).addTo(map);
+    mk(map,33.5826,130.3993,'🏨','#667eea','飯店','08:00出發');
+    mk(map,33.0401,131.0100,'🏔️','#38F9D7','阿蘇大觀峰','10:30');
+    mk(map,32.9064,131.0416,'🐎','#FEE140','草千里','11:30');
+    mk(map,32.8838,131.1044,'🌋','#F5576C','阿蘇中岳火口','視開放');
+    mk(map,32.8063,130.7063,'🏯','#A18CD1','熊本城','15:00');
+    route(map,[hotel,[33.0401,131.0100],[32.9064,131.0416],[32.8838,131.1044],[32.8063,130.7063],hotel],'#43E97B');
+  }else if(t==='day4'){
+    map=L.map('map-day4',{scrollWheelZoom:false}).setView([33.587,130.393],14);
+    L.tileLayer(TILE,{attribution:ATTR,maxZoom:18}).addTo(map);
+    mk(map,33.5826,130.3993,'🏨','#667eea','飯店','出發點');
+    mk(map,33.5835,130.3989,'🐟','#f7971e','柳橋聯合市場','09:30');
+    mk(map,33.5889,130.3716,'🌿','#43E97B','大濠公園','11:00');
+    mk(map,33.5902,130.3987,'🛍️','#FA709A','天神商圈','12:30');
+    mk(map,33.5887,130.4115,'⛲','#4FACFE','博多運河城','16:30');
+    mk(map,33.5890,130.3997,'🍲','#A18CD1','聚餐 博多華味鳥','18:30');
+    route(map,[[33.5826,130.3993],[33.5835,130.3989],[33.5889,130.3716],[33.5902,130.3987],[33.5887,130.4115],[33.5890,130.3997]],'#FA709A');
+  }else if(t==='day5'){
+    map=L.map('map-day5',{scrollWheelZoom:false}).setView([33.592,130.420],13);
+    L.tileLayer(TILE,{attribution:ATTR,maxZoom:18}).addTo(map);
+    mk(map,33.5826,130.3993,'🏨','#667eea','飯店','退房+寄存行李');
+    mk(map,33.5835,130.3989,'🐟','#f7971e','柳橋市場','09:00');
+    mk(map,33.5899,130.4208,'🛒','#43E97B','博多車站 AMU Plaza','10:30');
+    mk(map,33.5857,130.4508,'✈️','#F5576C','福岡機場','17:00集合');
+    route(map,[[33.5826,130.3993],[33.5835,130.3989],[33.5899,130.4208],[33.5826,130.3993],[33.5857,130.4508]],'#A18CD1');
+  }
+}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTopBtn').classList.toggle('show',window.scrollY>200);});
+window.addEventListener('load',()=>{setTimeout(()=>{mapsInit['overview']=true;initMap('overview');},400);});
+</script>
+</body>
+</html>
