@@ -237,6 +237,60 @@
   }
   .highlight strong { color: var(--accent); }
 
+  /* Relations Graph */
+  #relations .graph-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+  #relations svg { display: block; width: 100%; }
+  .graph-tooltip {
+    position: absolute;
+    background: rgba(10,16,32,0.96);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--text);
+    pointer-events: none;
+    z-index: 100;
+    max-width: 240px;
+    line-height: 1.6;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .graph-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    background: rgba(0,0,0,0.1);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+  .graph-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: right;
+    padding: 5px 14px;
+    border-top: 1px solid var(--border);
+  }
+
   /* Rumor ticker */
   .rumor {
     border-left: 3px solid var(--orange);
@@ -268,6 +322,7 @@
   <a href="#cpo">💡 光通訊CPO</a>
   <a href="#chips">📈 籌碼面</a>
   <a href="#calendar">📅 行事曆</a>
+  <a href="#relations">🕸️ 關係圖</a>
 </nav>
 
 <!-- Quick Stats -->
@@ -698,6 +753,18 @@
   </div>
 </section>
 
+<!-- 公司關係圖 -->
+<section id="relations">
+  <h2 class="section-title"><span class="icon">🕸️</span>公司關係圖</h2>
+  <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px;">追蹤清單各公司的供應鏈與商業關係。節點可拖動，hover 查看詳情。</p>
+  <div class="graph-wrap" id="graph-container">
+    <svg id="relations-svg" height="520"></svg>
+    <div class="graph-tooltip" id="graph-tooltip" style="display:none;"></div>
+    <div class="graph-legend" id="graph-legend"></div>
+    <div class="graph-meta" id="graph-meta"></div>
+  </div>
+</section>
+
 <footer>
   <p>📈 每日科技股深度追蹤 · 由 Claude AI 每日自動更新</p>
   <p>更新時間：每日 07:00 (UTC+8) · <a href="#" onclick="location.reload();return false;">手動重整</a></p>
@@ -706,8 +773,9 @@
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
-  // Show last build time
+  // ── Stale-page banner ──────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     const buildTime = new Date('2026-05-08T07:00:00+08:00');
     const now = new Date();
@@ -719,6 +787,309 @@
       document.querySelector('.container').insertBefore(banner, document.querySelector('.hero').nextSibling);
     }
   });
+
+  // ── Relations Data ─────────────────────────────────────────────────────────
+  const RELATIONS_DATA = {
+    updatedAt: "2026-05-08",
+    nodes: [
+      { id: "TSMC",    label: "台積電\n2330",  sector: "foundry",     marketCap: "大" },
+      { id: "MTK",     label: "聯發科\n2454",  sector: "design" },
+      { id: "CKSYS",   label: "創意\n3443",    sector: "design" },
+      { id: "ALCHIP",  label: "世芯\n3661",    sector: "design" },
+      { id: "ASE",     label: "日月光\n3711",  sector: "osat" },
+      { id: "KINSUS",  label: "家登\n3680",    sector: "material" },
+      { id: "NANYA",   label: "南亞科\n2408",  sector: "memory" },
+      { id: "WINBOND", label: "華邦電\n2344",  sector: "memory" },
+      { id: "UPI",     label: "聯亞\n3081",    sector: "cpo" },
+      { id: "HGST",    label: "華星光\n4979",  sector: "cpo" },
+      { id: "PMPD",    label: "穩懋\n3105",    sector: "cpo" },
+      { id: "NVDA",    label: "Nvidia",         sector: "us_ai",       marketCap: "大" },
+      { id: "AMD",     label: "AMD",            sector: "us_chip" },
+      { id: "AVGO",    label: "Broadcom",       sector: "us_chip" },
+      { id: "MU",      label: "Micron",         sector: "memory" },
+      { id: "AAPL",    label: "Apple",          sector: "us_consumer", marketCap: "大" },
+      { id: "GOOGL",   label: "Google",         sector: "us_ai" },
+    ],
+    links: [
+      { source: "TSMC",   target: "NVDA",  type: "supplier", label: "N4/N3 代工",     strength: 3 },
+      { source: "TSMC",   target: "AMD",   type: "supplier", label: "N4 代工",         strength: 2 },
+      { source: "TSMC",   target: "AVGO",  type: "supplier", label: "N3 客製 ASIC",    strength: 2 },
+      { source: "TSMC",   target: "AAPL",  type: "supplier", label: "N3E 代工",        strength: 3 },
+      { source: "TSMC",   target: "MTK",   type: "supplier", label: "N4P/N3 代工",     strength: 2 },
+      { source: "ALCHIP", target: "TSMC",  type: "partner",  label: "ASIC 設計→代工", strength: 2 },
+      { source: "CKSYS",  target: "TSMC",  type: "partner",  label: "IP/設計服務",     strength: 2 },
+      { source: "ASE",    target: "NVDA",  type: "supplier", label: "先進封裝",        strength: 2 },
+      { source: "NVDA",   target: "MU",    type: "customer", label: "HBM 採購",        strength: 2 },
+      { source: "AVGO",   target: "AAPL",  type: "partner",  label: "ASIC 設計",       strength: 2 },
+      { source: "AVGO",   target: "GOOGL", type: "partner",  label: "TPU ASIC",        strength: 2 },
+      { source: "UPI",    target: "NVDA",  type: "supplier", label: "光收發",          strength: 1 },
+      { source: "HGST",   target: "NVDA",  type: "supplier", label: "光模組",          strength: 1 },
+      { source: "PMPD",   target: "UPI",   type: "supplier", label: "PA 晶片",         strength: 1 },
+      { source: "KINSUS", target: "TSMC",  type: "supplier", label: "載板/前段材料",   strength: 1 },
+      { source: "AMD",    target: "MU",    type: "customer", label: "記憶體採購",      strength: 1 },
+    ]
+  };
+
+  const SECTOR_COLOR = {
+    foundry:     "#00b4d8",
+    design:      "#22c55e",
+    osat:        "#f59e0b",
+    material:    "#a3a3a3",
+    memory:      "#fb923c",
+    cpo:         "#a78bfa",
+    us_ai:       "#f87171",
+    us_chip:     "#f97316",
+    us_consumer: "#94a3b8",
+  };
+
+  const SECTOR_LABEL = {
+    foundry:     "晶圓代工",
+    design:      "IC設計",
+    osat:        "封測",
+    material:    "材料/零組件",
+    memory:      "記憶體",
+    cpo:         "光通訊",
+    us_ai:       "美股AI",
+    us_chip:     "美股晶片",
+    us_consumer: "美股消費電子",
+  };
+
+  const LINK_COLOR = {
+    supplier: "#60a5fa",
+    customer: "#22c55e",
+    partner:  "#cbd5e1",
+    transfer: "#ef4444",
+    reduce:   "#f97316",
+  };
+
+  const LINK_TYPE_LABEL = {
+    supplier: "供應商",
+    customer: "客戶",
+    partner:  "合作夥伴",
+    transfer: "轉單",
+    reduce:   "縮減",
+  };
+
+  // ── D3 Force Graph ─────────────────────────────────────────────────────────
+  function initRelationsGraph() {
+    const container = document.getElementById('graph-container');
+    if (!container || typeof d3 === 'undefined') return;
+
+    const svgEl   = document.getElementById('relations-svg');
+    const tooltip = document.getElementById('graph-tooltip');
+    const legend  = document.getElementById('graph-legend');
+    const meta    = document.getElementById('graph-meta');
+
+    const width  = container.clientWidth || 800;
+    const height = 520;
+    svgEl.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+
+    const svg   = d3.select('#relations-svg');
+    const nodes = RELATIONS_DATA.nodes.map(d => Object.assign({}, d));
+    const links = RELATIONS_DATA.links.map(d => Object.assign({}, d));
+
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(d => 90 + (d.strength || 1) * 22))
+      .force('charge', d3.forceManyBody().strength(-380))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide(38));
+
+    const linkSel = svg.append('g').attr('class', 'links')
+      .selectAll('line').data(links).join('line')
+      .attr('stroke', d => d.status === 'ended' ? '#475569' : (LINK_COLOR[d.type] || '#94a3b8'))
+      .attr('stroke-width', d => d.strength || 1)
+      .attr('stroke-dasharray', d => {
+        if (d.type === 'partner')  return '5,4';
+        if (d.type === 'reduce')   return '4,3';
+        if (d.type === 'transfer') return '8,4';
+        if (d.status === 'ended')  return '3,5';
+        return 'none';
+      })
+      .attr('opacity', d => d.status === 'ended' ? 0.25 : 0.6)
+      .style('cursor', 'pointer');
+
+    const linkLabelSel = svg.append('g').attr('class', 'link-labels')
+      .selectAll('text').data(links).join('text')
+      .attr('fill', '#64748b')
+      .attr('font-size', '8px')
+      .attr('text-anchor', 'middle')
+      .attr('pointer-events', 'none')
+      .text(d => d.label || '');
+
+    const transferSel = svg.append('g').attr('class', 'xfer-labels')
+      .selectAll('text').data(links.filter(l => l.type === 'transfer')).join('text')
+      .attr('fill', '#ef4444')
+      .attr('font-size', '10px')
+      .attr('font-weight', '700')
+      .attr('text-anchor', 'middle')
+      .attr('pointer-events', 'none')
+      .text('⚡轉單');
+
+    const drag = d3.drag()
+      .on('start', (event, d) => {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+      })
+      .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+      .on('end',  (event, d) => {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null; d.fy = null;
+      });
+
+    const nodeSel = svg.append('g').attr('class', 'nodes')
+      .selectAll('g').data(nodes).join('g')
+      .style('cursor', 'grab')
+      .call(drag);
+
+    nodeSel.append('circle')
+      .attr('r', d => d.marketCap === '大' ? 28 : 20)
+      .attr('fill',         d => SECTOR_COLOR[d.sector] || '#94a3b8')
+      .attr('fill-opacity', 0.18)
+      .attr('stroke',       d => SECTOR_COLOR[d.sector] || '#94a3b8')
+      .attr('stroke-width', 2);
+
+    nodeSel.filter(d => d.isNew).append('circle')
+      .attr('r', d => (d.marketCap === '大' ? 28 : 20) + 6)
+      .attr('fill', 'none')
+      .attr('stroke', '#facc15')
+      .attr('stroke-width', 2)
+      .attr('stroke-dasharray', '4,3');
+
+    nodeSel.each(function(d) {
+      const g     = d3.select(this);
+      const parts = d.label.split('\n');
+      const col   = SECTOR_COLOR[d.sector] || '#e8eef9';
+      if (parts.length === 1) {
+        g.append('text')
+          .attr('text-anchor', 'middle').attr('dy', '0.35em')
+          .attr('fill', col).attr('font-size', '10px').attr('font-weight', '700')
+          .attr('pointer-events', 'none').text(parts[0]);
+      } else {
+        g.append('text')
+          .attr('text-anchor', 'middle').attr('dy', '-0.25em')
+          .attr('fill', col).attr('font-size', '10px').attr('font-weight', '700')
+          .attr('pointer-events', 'none').text(parts[0]);
+        g.append('text')
+          .attr('text-anchor', 'middle').attr('dy', '0.9em')
+          .attr('fill', col).attr('font-size', '8px').attr('font-weight', '400')
+          .attr('pointer-events', 'none').text(parts[1]);
+      }
+    });
+
+    function positionTooltip(event) {
+      const rect = container.getBoundingClientRect();
+      let x = event.clientX - rect.left + 14;
+      let y = event.clientY - rect.top  - 12;
+      if (x + 250 > rect.width) x = event.clientX - rect.left - 254;
+      if (y < 0)                 y = event.clientY - rect.top  + 14;
+      tooltip.style.left = x + 'px';
+      tooltip.style.top  = y + 'px';
+    }
+
+    function nodeLabel(idOrObj) {
+      const id = typeof idOrObj === 'object' ? idOrObj.id : idOrObj;
+      const n  = nodes.find(n => n.id === id);
+      return n ? n.label.replace('\n', ' ') : id;
+    }
+
+    nodeSel
+      .on('mouseover', function(event, d) {
+        const col  = SECTOR_COLOR[d.sector] || '#94a3b8';
+        const rels = links.filter(l =>
+          l.source === d || l.source.id === d.id ||
+          l.target === d || l.target.id === d.id
+        );
+        let html = '<strong style="color:' + col + '">' + d.label.replace('\n', ' ') + '</strong>';
+        html    += '<br><span style="color:#94a3b8">產業：' + (SECTOR_LABEL[d.sector] || d.sector) + '</span>';
+        if (rels.length) {
+          html += '<hr style="border:none;border-top:1px solid #1f2a44;margin:5px 0">';
+          rels.forEach(l => {
+            const arrow = l.type === 'customer' ? '←' : '→';
+            html += '<div style="margin-top:2px;font-size:11px;color:#94a3b8">' +
+                    nodeLabel(l.source) + ' ' + arrow + ' ' + nodeLabel(l.target) +
+                    '：' + l.label + '</div>';
+          });
+        }
+        tooltip.innerHTML     = html;
+        tooltip.style.display = 'block';
+        positionTooltip(event);
+        linkSel.attr('opacity', l =>
+          (l.source === d || l.source.id === d.id ||
+           l.target === d || l.target.id === d.id) ? 1 : 0.08
+        );
+      })
+      .on('mousemove', event => positionTooltip(event))
+      .on('mouseout', function() {
+        tooltip.style.display = 'none';
+        linkSel.attr('opacity', d => d.status === 'ended' ? 0.25 : 0.6);
+      });
+
+    linkSel
+      .on('mouseover', function(event, d) {
+        tooltip.innerHTML =
+          '<strong>' + nodeLabel(d.source) + ' → ' + nodeLabel(d.target) + '</strong><br>' +
+          '關係：' + (LINK_TYPE_LABEL[d.type] || d.type) + '<br>' +
+          '說明：' + d.label + '<br>' +
+          '權重：' + '■'.repeat(d.strength || 1);
+        tooltip.style.display = 'block';
+        positionTooltip(event);
+        d3.select(this).attr('opacity', 1).attr('stroke-width', (d.strength || 1) + 1.5);
+      })
+      .on('mousemove', event => positionTooltip(event))
+      .on('mouseout', function(event, d) {
+        tooltip.style.display = 'none';
+        d3.select(this)
+          .attr('opacity', d.status === 'ended' ? 0.25 : 0.6)
+          .attr('stroke-width', d.strength || 1);
+      });
+
+    const PAD = 32;
+    simulation.on('tick', () => {
+      linkSel
+        .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      linkLabelSel
+        .attr('x', d => (d.source.x + d.target.x) / 2)
+        .attr('y', d => (d.source.y + d.target.y) / 2 - 3);
+      transferSel
+        .attr('x', d => (d.source.x + d.target.x) / 2)
+        .attr('y', d => (d.source.y + d.target.y) / 2 + 10);
+      nodeSel.attr('transform', d =>
+        'translate(' + Math.max(PAD, Math.min(width - PAD, d.x)) + ',' +
+                       Math.max(PAD, Math.min(height - PAD, d.y)) + ')'
+      );
+    });
+
+    const usedSectors = [...new Set(RELATIONS_DATA.nodes.map(n => n.sector))];
+    usedSectors.forEach(key => {
+      if (!SECTOR_LABEL[key]) return;
+      const item = document.createElement('div');
+      item.className = 'legend-item';
+      item.innerHTML = '<div class="legend-dot" style="background:' + SECTOR_COLOR[key] + '"></div><span>' + SECTOR_LABEL[key] + '</span>';
+      legend.appendChild(item);
+    });
+
+    const sep = document.createElement('div');
+    sep.style.cssText = 'width:100%;border-top:1px solid var(--border);margin:2px 0;';
+    legend.appendChild(sep);
+
+    [
+      { color: '#60a5fa', dash: 'none', label: '供應商' },
+      { color: '#22c55e', dash: 'none', label: '客戶' },
+      { color: '#cbd5e1', dash: '5,4',  label: '合作夥伴' },
+      { color: '#ef4444', dash: '8,4',  label: '⚡轉單' },
+      { color: '#f97316', dash: '4,3',  label: '↓縮減' },
+    ].forEach(lt => {
+      const item = document.createElement('div');
+      item.className = 'legend-item';
+      item.innerHTML = '<svg width="22" height="10" style="flex-shrink:0"><line x1="0" y1="5" x2="22" y2="5" stroke="' + lt.color + '" stroke-width="2" stroke-dasharray="' + lt.dash + '"/></svg><span>' + lt.label + '</span>';
+      legend.appendChild(item);
+    });
+
+    if (meta) meta.textContent = '關係資料更新：' + RELATIONS_DATA.updatedAt;
+  }
+
+  document.addEventListener('DOMContentLoaded', initRelationsGraph);
 </script>
 </body>
 </html>
