@@ -301,6 +301,15 @@
     font-size: 13px;
   }
   .rumor .src { color: var(--text-muted); font-size: 11px; display: block; margin-top: 4px; }
+
+  /* Glossary */
+  #glossary { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
+  .glossary-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 0; }
+  .glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .glossary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; }
+  .glossary-card h3 { color: var(--accent); font-size: 0.95rem; margin: 0 0 0.5rem; letter-spacing: 0.03em; }
+  .glossary-card .term-en { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 0.4rem; }
+  .glossary-card p { color: var(--text); font-size: 0.82rem; line-height: 1.6; margin: 0; }
 </style>
 </head>
 <body>
@@ -323,6 +332,7 @@
   <a href="#chips">📈 籌碼面</a>
   <a href="#calendar">📅 行事曆</a>
   <a href="#relations">🕸️ 關係圖</a>
+  <a href="#glossary">📖 名詞</a>
 </nav>
 
 <!-- Quick Stats -->
@@ -765,6 +775,14 @@
   </div>
 </section>
 
+<section id="glossary">
+  <h2 class="section-title"><span class="icon">📖</span>技術名詞解釋</h2>
+  <p class="glossary-meta">依當日文章提及之名詞整理，按字母排列 · 更新：<span id="glossary-date"></span></p>
+  <div class="glossary-grid" id="glossary-grid">
+    <!-- 由 JS 從 GLOSSARY_DATA 渲染 -->
+  </div>
+</section>
+
 <footer>
   <p>📈 每日科技股深度追蹤 · 由 Claude AI 每日自動更新</p>
   <p>更新時間：每日 07:00 (UTC+8) · <a href="#" onclick="location.reload();return false;">手動重整</a></p>
@@ -1090,6 +1108,74 @@
   }
 
   document.addEventListener('DOMContentLoaded', initRelationsGraph);
+
+  // ── Glossary Data ──────────────────────────────────────────────────────────
+  const GLOSSARY_DATA = {
+    updatedAt: "2026-05-08",
+    terms: [
+      {
+        key: "ADR",
+        titleZh: "美國存託憑證",
+        titleEn: "American Depositary Receipt",
+        body: "外國公司在美國市場掛牌交易的憑證，代表一定數量的原股。台積電(TSM)、聯發科(MTC)等台灣公司均在紐約掛牌 ADR，供美國投資人交易。ADR 收盤價常作為台股隔日開盤的先行指標，漲跌反映海外法人對個股的即時看法。"
+      },
+      {
+        key: "ASIC",
+        titleZh: "特殊應用積體電路",
+        titleEn: "Application-Specific Integrated Circuit",
+        body: "針對特定用途客製化設計的晶片，相對於 CPU/GPU 等通用型處理器。Apple 的 A 系列、M 系列晶片，以及 Google TPU、Amazon Trainium 均屬 ASIC。Broadcom 是全球最大 ASIC 設計服務商之一，協助科技巨頭設計 AI 推論晶片，繞過對 Nvidia GPU 的依賴。"
+      },
+      {
+        key: "Capex",
+        titleZh: "資本支出",
+        titleEn: "Capital Expenditure",
+        body: "企業用於購置或升級固定資產（廠房、設備）的長期投資。台積電每年公布 Capex 指引備受市場關注，金額大小直接影響供應鏈訂單能見度。2025 年台積電 Capex 約 $38-42B，2026 年市場預期上修至 $56B，帶動家登、中砂等材料股上漲。"
+      },
+      {
+        key: "CPO",
+        titleZh: "共封裝光學",
+        titleEn: "Co-Packaged Optics",
+        body: "將光學收發器與交換晶片封裝在同一封裝體內的技術，大幅降低 AI 資料中心內部的連接功耗與延遲。隨 Nvidia Rubin 平台（2026 H2）啟用，CPO 需求爆發，帶動台股聯亞(3081)、華星光(4979)、穩懋(3105)等光通訊供應鏈。"
+      },
+      {
+        key: "DRAM",
+        titleZh: "動態隨機存取記憶體",
+        titleEn: "Dynamic Random-Access Memory",
+        body: "電腦和伺服器最主要的工作記憶體，需持續充電才能保存資料（動態）。AI 訓練對 DRAM 容量需求持續提升。台股南亞科(2408)、華邦電(2344)均為 DRAM 廠商；美股 Micron (MU) 是全球三大 DRAM 製造商之一，另外兩家是三星和 SK 海力士。"
+      },
+      {
+        key: "HBM",
+        titleZh: "高頻寬記憶體",
+        titleEn: "High Bandwidth Memory",
+        body: "專為 AI GPU 設計的 3D 堆疊記憶體，透過矽穿孔(TSV)技術將多顆 DRAM 垂直疊加，提供極高頻寬。Nvidia H100/H200 使用 HBM3，B200 使用 HBM3e，下一代 Vera Rubin 使用 HBM4。SK 海力士是 Nvidia HBM 主要供應商，三星積極追趕，Micron 為第三家。"
+      },
+      {
+        key: "N2/N3",
+        titleZh: "台積電 2/3 奈米製程",
+        titleEn: "TSMC N2/N3 Process Node",
+        body: "台積電的先進製程代號。N3（3奈米）於 2022 年量產，Apple A17 Pro 首用；N2（2奈米）預計 2025 年量產，採 Gate-All-Around（GAA）電晶體架構，效能大幅提升。N2P 為 N2 的效能增強版，傳 Apple iPhone 18 Pro 首發採用。製程越小，同面積內電晶體越多，效能越強。"
+      },
+      {
+        key: "TSV",
+        titleZh: "矽穿孔",
+        titleEn: "Through-Silicon Via",
+        body: "在矽晶片中垂直鑽孔並填入導電材料的技術，用於 3D 晶片堆疊。HBM 記憶體即透過 TSV 將多顆 DRAM 垂直串聯，實現超高頻寬。先進封裝（CoWoS、SoIC）大量使用 TSV，是台積電封裝競爭力的核心技術之一。"
+      }
+    ]
+  };
+
+  function renderGlossary() {
+    const sorted = [...GLOSSARY_DATA.terms].sort((a, b) => a.key.localeCompare(b.key));
+    document.getElementById('glossary-date').textContent = GLOSSARY_DATA.updatedAt;
+    document.getElementById('glossary-grid').innerHTML = sorted.map(t => `
+      <div class="glossary-card">
+        <h3>${t.key}　<span style="color:var(--text);font-weight:400">${t.titleZh}</span></h3>
+        <div class="term-en">${t.titleEn}</div>
+        <p>${t.body}</p>
+      </div>
+    `).join('');
+  }
+  document.addEventListener('DOMContentLoaded', renderGlossary);
 </script>
 </body>
 </html>
