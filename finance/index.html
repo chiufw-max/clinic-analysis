@@ -1257,4 +1257,62 @@
         key: "IFS",
         titleZh: "Intel 代工服務",
         titleEn: "Intel Foundry Services",
-        body: "Intel 於 2021 年�
+        body: "Intel 於 2021 年成立的代工事業，欲挑戰台積電與三星。5/8 Apple-Intel 達成代工協議是 IFS 重大轉折，Intel 股價單日 +13%、年初至今 +200%。先進製程主推 18A (採 PowerVia 背面供電與 RibbonFET GAA)，2026 上線。市場仍觀望良率與量產進度。"
+      },
+      {
+        key: "MI400",
+        titleZh: "AMD MI400 系列",
+        titleEn: "AMD Instinct MI400 Series",
+        body: "AMD 下世代 AI 加速器，採 HBM4 + 432GB（為 Nvidia GB200 的 1.6 倍記憶體）。透過收購 ZT Systems 切入機架級平台 Helios。與 OpenAI 簽訂 6GW 合作協議，首批 1GW MI450 預計 2026 H2 出貨。SK 海力士為 HBM4 主供應。"
+      },
+      {
+        key: "Rubin",
+        titleZh: "Nvidia Rubin 平台",
+        titleEn: "Nvidia Vera Rubin Platform",
+        body: "Nvidia 下世代 AI GPU 平台，預計 2026 H2 出貨，搭配 Vera CPU + HBM4 + ConnectX-9 SuperNIC (1.6 Tb/s)。Rubin Ultra 為「銅退光進」轉折點，啟動 CPO 光通訊供應鏈。台積電 CoWoS 與 ASE 封裝為主要外包夥伴。"
+      },
+      {
+        key: "TPU",
+        titleZh: "張量處理器",
+        titleEn: "Tensor Processing Unit",
+        body: "Google 自研 AI 加速器，由 Broadcom 設計服務 + 台積電代工。客製 ASIC 代表，已迭代至第 6 代。市場關注 OpenAI 「Jalapeno」推遲後是否將部分訂單轉向台廠創意 (3443)、世芯-KY (3661)。"
+      },
+      {
+        key: "ZT Systems",
+        titleZh: "ZT 系統公司",
+        titleEn: "ZT Systems",
+        body: "AMD 以 49 億美元收購的 AI 機架解決方案商，補足 AMD 在系統級設計能力。是 AMD 對抗 Nvidia GB200/Rubin 機架的關鍵布局，最終演化為 Helios 平台。鴻海亦為 AMD MI400 機櫃組裝合作夥伴。"
+      }
+    ]
+  };
+
+  // ── Glossary renderer (was missing — added by manual fix 2026-05-11) ─────
+  function renderGlossary() {
+    if (typeof GLOSSARY_DATA === 'undefined') return;
+    const grid = document.getElementById('glossary-grid');
+    const dateEl = document.getElementById('glossary-date');
+    if (!grid) return;
+    if (dateEl) dateEl.textContent = GLOSSARY_DATA.updatedAt || '';
+    grid.innerHTML = '';
+    const sorted = [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key));
+    sorted.forEach(t => {
+      const card = document.createElement('div');
+      card.className = 'glossary-card';
+      card.innerHTML = `
+        <h3>${t.key} · ${t.titleZh || ''}</h3>
+        <div class="term-en">${t.titleEn || ''}</div>
+        <p>${t.body || ''}</p>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderGlossary);
+  } else {
+    renderGlossary();
+  }
+</script>
+
+</body>
+</html>
