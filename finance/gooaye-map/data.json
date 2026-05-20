@@ -1,8 +1,54 @@
 {
   "updatedAt": "2026-05-20",
   "startDate": "2026-05-20",
-  "episodesCount": 0,
-  "episodes": [],
-  "nodes": [],
-  "links": []
+  "episodesCount": 1,
+  "episodes": [
+    {
+      "ep": 663,
+      "date": "2026-05-20",
+      "title": "🦘 被動元件大廠掃貨 · 台積電紀律擴產 · 愛普 Google TPU · Astera Labs 長線",
+      "url": "https://www.youtube.com/watch?v=wgd3AJ3Wuzk"
+    }
+  ],
+  "nodes": [
+    { "id": "tsmc",       "label": "台積電 2330",   "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "avgo",       "label": "博通 AVGO",     "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "mtk",        "label": "聯發科 2454",   "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "iap",        "label": "愛普 3504",     "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "mvi",        "label": "蜜望實 4153",   "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "panasonic",  "label": "Panasonic",     "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "alab",       "label": "Astera Labs",   "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "googl",      "label": "Google",        "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "passive",    "label": "被動元件",      "type": "industry", "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "ai-semi",    "label": "AI 半導體",     "type": "industry", "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "google-tpu", "label": "Google TPU",    "type": "industry", "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "asic",       "label": "ASIC",          "type": "industry", "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "menggon",    "label": "謝孟恭",        "type": "person",   "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "stockpile",  "label": "大廠現貨掃貨",  "type": "event",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "price-rise", "label": "漲價循環",      "type": "theme",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "discipline", "label": "紀律擴產",      "type": "theme",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "rotation",   "label": "資金輪動",      "type": "theme",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "faith-test", "label": "信仰測試",      "type": "theme",    "lastSeen": "2026-05-20", "episodes": [663] },
+    { "id": "uptrend",    "label": "上升循環邏輯",  "type": "theme",    "lastSeen": "2026-05-20", "episodes": [663] }
+  ],
+  "links": [
+    { "source": "menggon",    "target": "passive",    "label": "主推題材",          "episodes": [663], "type": "advocate" },
+    { "source": "menggon",    "target": "discipline", "label": "主推題材",          "episodes": [663], "type": "advocate" },
+    { "source": "panasonic",  "target": "passive",    "label": "大廠掃貨被動元件",  "episodes": [663], "type": "industry-of" },
+    { "source": "mvi",        "target": "passive",    "label": "漲價信號",          "episodes": [663], "type": "industry-of" },
+    { "source": "stockpile",  "target": "passive",    "label": "現貨市場掃貨現象",  "episodes": [663], "type": "drives" },
+    { "source": "price-rise", "target": "passive",    "label": "漲價循環啟動",      "episodes": [663], "type": "theme-of" },
+    { "source": "uptrend",    "target": "price-rise", "label": "上升循環＝漲價",    "episodes": [663], "type": "related" },
+    { "source": "tsmc",       "target": "discipline", "label": "紀律擴產代表",      "episodes": [663], "type": "embodies" },
+    { "source": "tsmc",       "target": "ai-semi",    "label": "AI 半導體供應鏈核心","episodes": [663], "type": "industry-of" },
+    { "source": "avgo",       "target": "asic",       "label": "ASIC 設計龍頭",     "episodes": [663], "type": "industry-of" },
+    { "source": "mtk",        "target": "asic",       "label": "ASIC 跟進",         "episodes": [663], "type": "industry-of" },
+    { "source": "iap",        "target": "google-tpu", "label": "主供應商",          "episodes": [663], "type": "supplier" },
+    { "source": "googl",      "target": "google-tpu", "label": "TPU 客戶",          "episodes": [663], "type": "customer" },
+    { "source": "google-tpu", "target": "ai-semi",    "label": "TPU 屬 AI 半導體",  "episodes": [663], "type": "category" },
+    { "source": "asic",       "target": "ai-semi",    "label": "ASIC 屬 AI 半導體", "episodes": [663], "type": "category" },
+    { "source": "alab",       "target": "ai-semi",    "label": "美股 AI 長線標的",  "episodes": [663], "type": "industry-of" },
+    { "source": "rotation",   "target": "passive",    "label": "資金輪動受惠",      "episodes": [663], "type": "benefit" },
+    { "source": "rotation",   "target": "faith-test", "label": "輪動中考驗信仰",    "episodes": [663], "type": "related" }
+  ]
 }
