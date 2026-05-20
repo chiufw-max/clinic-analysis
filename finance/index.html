@@ -322,16 +322,74 @@
   <div class="updated">最後更新：2026-05-20 07:00 (UTC+8) · <strong>週三盤前主軸：</strong>① <strong>NVDA Q1 FY27 財報今日盤後（5/20 三）揭曉</strong>—共識營收 $78~78.8B (+78.8% YoY)、EPS $1.77、Q2 指引能否突破 $86B 為關鍵（選擇權 implied 8~10% 波動）；② <strong>美股 5/19 二三連跌</strong>：S&P −0.67% 收 7,353.61、Nasdaq −0.84% 收 25,870.71、道瓊 −0.65% 收 49,363.88，<strong>30Y 殖利率衝 5.2% 創 19 年新高、10Y 升 4.67%</strong>；③ <strong>川普宣布取消對伊朗攻擊計畫</strong>—WTI 急跌 1.38% 至 $102.90、Brent −1.82% 至 $110.10；④ <strong>台指期夜盤 5/19 收 40,049 (−191)</strong>，日盤 40,140 (−738 / −1.81%)，外資 5/19 賣超 632億、三大法人合計賣超 784億；⑤ <strong>TSM ADR 5/19 收 $392.61</strong>；⑥ <strong>SOX 費半指數 5/19 收 11,079.50 (−223.02)</strong>；⑦ <strong>NVDA 5/19 收 $221.56 (區間 $217.91~$224.48)</strong>—財報日到來、implied 波動 8~10%。<strong>5/19 二收盤回顧：</strong>S&P −0.67% 收 7,353、Nasdaq −0.84% 收 25,870、道瓊 −0.65% 收 49,363、30Y 殖利率 5.2% 19 年新高、川普喊停伊朗攻擊、油價急跌。</div>
 </header>
 
+<!-- 📅 過去 7 天日期選單 + 🎙️ 股癌 + 🧠 心智圖 樣式 -->
+<style>
+  .date-picker { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; padding: 10px 16px; margin: -4px auto 12px; max-width: 960px; }
+  .date-picker .label { color: var(--text-muted); font-size: 12px; align-self: center; margin-right: 4px; }
+  .date-picker a { display: inline-block; padding: 6px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 99px; color: var(--text-dim); text-decoration: none; font-size: 12px; font-weight: 600; }
+  .date-picker a:hover { color: var(--accent); border-color: var(--accent); }
+  .date-picker a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .date-picker a.weekend { color: var(--orange); }
+  .date-picker a.weekend.active { background: var(--orange); color: #000; border-color: var(--orange); }
+  #gooaye { padding: 1rem; max-width: 1200px; margin: 0 auto; }
+  .gooaye-hero { background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(96,165,250,0.05)); border-left: 4px solid var(--purple); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; }
+  .gooaye-hero .ep-num { display: inline-block; background: var(--purple); color: #fff; padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; margin-right: 8px; }
+  .gooaye-hero .ep-date { color: var(--text-muted); font-size: 0.85rem; }
+  .gooaye-hero h3 { margin: 0.5rem 0; font-size: 1.1rem; }
+  .gooaye-stocks { display: flex; flex-wrap: wrap; gap: 6px; margin: 0.6rem 0; }
+  .gooaye-stocks span { background: rgba(34,197,94,0.15); color: var(--green); padding: 2px 8px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
+  .gooaye-themes { display: flex; flex-wrap: wrap; gap: 6px; margin: 0.4rem 0; }
+  .gooaye-themes span { background: rgba(245,158,11,0.15); color: var(--orange); padding: 2px 8px; border-radius: 99px; font-size: 0.75rem; }
+  .gooaye-quote { border-left: 3px solid var(--purple); padding: 8px 14px; background: rgba(167,139,250,0.06); border-radius: 6px; margin: 8px 0; font-size: 0.88rem; font-style: italic; color: var(--text); }
+  .gooaye-mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .gooaye-mini { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem; font-size: 0.85rem; }
+  .gooaye-mini .ep-num { display: inline-block; background: var(--purple); color: #fff; padding: 2px 7px; border-radius: 5px; font-size: 0.75rem; font-weight: 700; margin-right: 6px; }
+  .map-entry { display: block; background: linear-gradient(135deg, rgba(96,165,250,0.18), rgba(167,139,250,0.10)); border: 1px solid var(--accent); border-radius: 14px; padding: 1.4rem; margin: 1.4rem auto; max-width: 1200px; text-decoration: none; color: var(--text); transition: transform 0.15s; }
+  .map-entry:hover { transform: translateY(-2px); border-color: var(--purple); }
+  .map-entry .icon { font-size: 2rem; }
+  .map-entry h3 { font-size: 1.1rem; margin: 0.4rem 0; color: var(--accent); }
+  .map-entry p { font-size: 0.85rem; color: var(--text-dim); margin: 0.3rem 0; }
+  .map-entry .open-btn { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 99px; font-size: 0.85rem; font-weight: 600; }
+</style>
+
+<div class="date-picker" id="date-picker">
+  <span class="label">📅 切換日報：</span>
+</div>
+<script>
+  (function(){
+    const dp = document.getElementById('date-picker');
+    if (!dp) return;
+    const today = new Date();
+    const tw = new Intl.DateTimeFormat('zh-TW', { month:'numeric', day:'numeric', weekday:'short' });
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(today); d.setDate(d.getDate() - i);
+      const iso = d.toISOString().slice(0,10);
+      const a = document.createElement('a');
+      const isToday = i === 0;
+      const wd = d.getDay();
+      const isWeekend = wd === 0 || wd === 6;
+      a.href = isToday ? './' : `archive/${iso}.html`;
+      a.textContent = isToday ? '今天' : tw.format(d);
+      if (isToday) a.classList.add('active');
+      if (isWeekend) a.classList.add('weekend');
+      if (!isToday) a.title = `archive/${iso}.html`;
+      dp.appendChild(a);
+    }
+  })();
+</script>
+
 <nav class="toc">
   <a href="#premarket">📊 盤前重點</a>
   <a href="#news">📰 焦點新聞</a>
   <a href="#reuters">📡 Reuters</a>
+  <a href="#gooaye">🎙️ 股癌</a>
   <a href="#supply">🔗 供應鏈追蹤</a>
   <a href="#memory">💾 記憶體</a>
   <a href="#cpo">💡 光通訊CPO</a>
   <a href="#chips">📈 籌碼面</a>
   <a href="#calendar">📅 行事曆</a>
   <a href="#relations">🕸️ 關係圖</a>
+  <a href="./gooaye-map/" target="_blank">🧠 心智圖</a>
   <a href="#glossary">📖 名詞</a>
 </nav>
 
@@ -649,6 +707,58 @@
   </div>
 </section>
 
+<!-- 🎙️ 股癌專區 -->
+<section id="gooaye">
+  <h2 class="section-title"><span class="icon">🎙️</span>股癌 Podcast 專區</h2>
+  <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px;">謝孟恭主持，每週三、六下午發新集數。摘錄股市與產業相關重點。本週新集數預計：今日（5/20 三）下午 EP663 釋出，明早 5 點排程自動更新。</p>
+
+  <div class="gooaye-hero">
+    <div>
+      <span class="ep-num">EP662</span>
+      <span class="ep-date">2026-05-16（六）</span>
+    </div>
+    <h3>大盤回檔逢低加碼 · 資金將湧入台積電 · 看好被動／功率／美股資安</h3>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;">謝孟恭分享烏杉資本投資台灣獨立遊戲的進展，並回憶兒子出生前的醫療危機。針對大盤回檔，他因持股成本低並未恐慌，反而逢低加碼。點出資金將湧入台積電，並看好被動元件、功率元件及美股資安股的漲價與復甦趨勢。</p>
+    <div class="gooaye-stocks">
+      <span>台積電 2330</span>
+      <span>國巨 2327</span>
+      <span>華新科 2492</span>
+      <span>奇鋐 3017</span>
+      <span>立隆電 2472</span>
+      <span>PANW</span>
+      <span>CRWD</span>
+      <span>ZS</span>
+    </div>
+    <div class="gooaye-themes">
+      <span>被動元件</span>
+      <span>功率元件</span>
+      <span>美股資安</span>
+      <span>逢低加碼</span>
+      <span>烏杉資本</span>
+    </div>
+    <div class="gooaye-quote">「我持股成本低，回檔反而是加碼機會。資金最終會回到台積電。」</div>
+    <p style="margin-top:8px;"><a href="https://open.spotify.com/show/1zWxx5pKk0XBEzMupVC7UZ" target="_blank" style="color:var(--accent);font-size:0.85rem;">▶ 完整集數 Spotify</a> · <a href="https://www.youtube.com/@Gooaye" target="_blank" style="color:var(--accent);font-size:0.85rem;">YouTube</a></p>
+  </div>
+
+  <div class="gooaye-mini-grid">
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP661</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-13（三）</span></div>
+      <p style="margin:6px 0;">台中看房／追強勢股探索紅酒世界。盤勢小回檔多頭未變，被動元件因 NV Rubin 換代產生排擠效應而強勢。</p>
+      <div class="gooaye-stocks"><span>被動元件</span><span>NV Rubin</span><span>成熟製程補庫存</span></div>
+    </div>
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP660</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-09（六）</span></div>
+      <p style="margin:6px 0;">台股高點瘋狂行情。融資受限控制槓桿。資金從 AI 高位階輪動至被動元件、記憶體、成熟製程（多為庫存回補非終端需求）。</p>
+      <div class="gooaye-stocks"><span>被動元件</span><span>記憶體</span><span>成熟製程</span></div>
+    </div>
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP659</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-06（三）</span></div>
+      <p style="margin:6px 0;">減重與機能訓練。提醒留意槓桿風險與券商「晴天收傘」。AI 伺服器帶動 CPU、ASIC、被動元件。軟體看好 Palantir。</p>
+      <div class="gooaye-stocks"><span>PLTR</span><span>ASIC</span><span>AI 伺服器</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- 台積電供應鏈 -->
 <section id="supply">
   <h2 class="section-title"><span class="icon">🔗</span>台積電供應鏈深度追蹤</h2>
@@ -947,6 +1057,14 @@
     <div class="graph-meta" id="graph-meta"></div>
   </div>
 </section>
+
+<!-- 🧠 股癌心智圖入口 -->
+<a class="map-entry" href="./gooaye-map/" target="_blank" id="gooaye-map-link">
+  <span class="icon">🧠</span>
+  <h3>股癌心智圖（獨立頁面）</h3>
+  <p>從 2026-05-20 開始累積，每集股癌節目提到的個股、產業、人物、事件、題材都會加進心智圖。提供類型篩選、節點拖動、hover 詳情。</p>
+  <span class="open-btn">開啟心智圖 →</span>
+</a>
 
 <section id="glossary">
   <h2 class="section-title"><span class="icon">📖</span>技術名詞解釋</h2>
@@ -1430,78 +1548,41 @@
         key: "IPO",
         titleZh: "首次公開募股",
         titleEn: "Initial Public Offering",
-        body: "公司首次向公眾發行股票並於交易所掛牌。<strong>Cerebras Systems (CBRS) 5/14 Nasdaq 掛牌、IPO 價 $185、首日 +68% 收 $311.07</strong>、估值 $95B、募資 $5.55B；<strong>🆕 5/15 −12% 收 ~$274 典型獲利了結</strong>、估值仍 $83B。為 2026 年第一檔大型科技 IPO、史上最大 AI 純晶片 IPO；訂單超額認購 20 倍。WSE3 為旗艦產品。客戶含 AWS、OpenAI、G42。解禁鎖定期 6 個月 (11/2026)。"
-      },
-      {
-        key: "Oil",
-        titleZh: "原油 / 國際油價",
-        titleEn: "Crude Oil / Brent",
-        body: "<strong>🆕 美伊石油協議外溢推升油價維持 $107~109 / 桶區間</strong>（5/15 衝 $109 為 2024/3 以來最高、5/17~5/18 在 $107.5~108 整理）；高盛將 2026 Brent 預估自 $85 上修至 $98。能源成本年增 17.9%（汽油 +28.4%）為 2022/9 以來最大增幅。<strong>5/18 10Y 殖利率衝 52 週新高、30Y 站穩 5%</strong>；美債曲線陡升。CME FedWatch 顯示 2026 年底升息 25bp 機率維持 35~40%。美伊協議實施細節 5 月底定稿、能源股、塑化股 5/19 結構性催化續發酵。"
-      },
-      {
-        key: "LTA",
-        titleZh: "長期供應合約",
-        titleEn: "Long-Term Agreement",
-        body: "雲端業者 (CSP) 與記憶體廠簽訂的兩年期供應合約，鎖定價格與數量。CSP 兩年 LTA 為 DRAM/HBM 「結構性紅利」起點，徹底改變過去記憶體 6~12 個月一輪的週期性波動。受惠者包括南亞科 (2408)、華邦電 (2344) 等有自有產能 + 利基型 DRAM 雙引擎廠商。HBM 缺料延續至 2027~2028。"
-      },
-      {
-        key: "MI400",
-        titleZh: "AMD MI400 系列",
-        titleEn: "AMD Instinct MI400 Series",
-        body: "AMD 下世代 AI 加速器，採 HBM4 + 432GB（為 Nvidia GB200 的 1.6 倍記憶體）。透過收購 ZT Systems 切入機架級平台 Helios。與 OpenAI 簽訂 6GW 合作協議，首批 1GW MI450 預計 2026 H2 出貨。🆕 BofA 5/13 重申 AMD 為首選晶片股、目標價 $450→$500。SK 海力士為 HBM4 主供應。"
-      },
-      {
-        key: "MTIA",
-        titleZh: "Meta 訓練推論加速器",
-        titleEn: "Meta Training and Inference Accelerator",
-        body: "Meta 自研 AI 加速器，由 Broadcom 設計服務 + 台積電代工。<strong>Reuters / TrendForce 4/16 報導 MTIA 後繼世代將採 TSMC 2nm + CoWoS-L、目標 2027 H1 出貨</strong>。與 OpenAI Jalapeno (推遲至 2027) 構成 AVGO 雙大專案。世芯 / 創意 ASIC 設計服務鏈受惠。"
-      },
-      {
-        key: "PPI",
-        titleZh: "生產者物價指數",
-        titleEn: "Producer Price Index",
-        body: "衡量生產商銷售商品價格變化的關鍵通膨指標、為 CPI 的先行指標。美 4 月 PPI 月 +1.4%（共識 +0.5%、為 2022 年 3 月以來最大）、年 +6.0%（共識 4.9%）。連同 CPI +3.8% 構成「雙鷹」組合，但 5/14 三大指數齊創高（道瓊重返 5 萬）、市場結構性 AI Capex 敘事壓過短線通膨噪音。CME FedWatch 顯示 Fed 2026 降息預期歸零、年底升息機率 30%。"
+        body: "公司首次向公眾發行股票並於交易所掛牌。2025-2026 半導體與 AI 浪潮帶動多家供應鏈廠商 IPO，包括 ASIC 設計服務、CPO 光通訊小廠、AI 伺服器零組件廠。投資人關注鎖定期解禁、初期承銷價合理性與長線供應鏈定位。"
       },
       {
         key: "Rubin",
         titleZh: "Nvidia Rubin 平台",
         titleEn: "Nvidia Vera Rubin Platform",
-        body: "Nvidia 下世代 AI GPU 平台，預計 2026 H2 出貨，搭配 Vera CPU + HBM4 + ConnectX-9 SuperNIC (1.6 Tb/s)。Rubin Ultra 為「銅退光進」轉折點，啟動 CPO 光通訊供應鏈。<strong>🆕 Nvidia 5/18 −1.3% 收 $223.17、市值 $5.47T、BofA 維持目標 $320</strong>。<strong>🆕 5/20 (三) 盤後 Q1 FY27 財報倒數一日</strong>—共識營收 $78~78.8B (+78.8% YoY)、EPS $1.76、Data Center $73B；GS 估 $80.05B；Q2 FY27 共識指引 $86.08B、能否突破為股價反應關鍵；選擇權市場 implied 8~10% 波動。台積電 CoWoS 與 ASE 封裝為主要外包夥伴。"
-      },
-      {
-        key: "Semi $1.5T",
-        titleZh: "2030 半導體 $1.5T 大餅",
-        titleEn: "Global Semi Market $1.5T by 2030",
-        body: "<strong>🆕 台積電 5/15 技術論壇正式上修 2030 全球半導體市場至 $1.5T（原估 $1T）</strong>，AI 與 HPC 占 55%、智慧手機 20%、車用 10%。是 TSMC 自 2021 年「$1T 願景」以來首次大幅上修、反映 AI 算力結構性紅利。Gartner 估全球半導體營收 2026 +64% 至 $1.32T。Nvidia / AMD / AVGO 已將 N3 AI 晶片產能鎖死。台積電 2026 計畫 9 座晶圓廠 + 先進封裝廠新階段。智慧眼鏡被列為「最具潛力 AI 新終端」。"
-      },
-      {
-        key: "Smart Glasses",
-        titleZh: "智慧眼鏡",
-        titleEn: "Smart Glasses",
-        body: "<strong>🆕 5/15 台積電副共同營運長張曉強在技術論壇點名「在 AI 應用中最具潛力的新終端是智慧眼鏡」</strong>，引爆連續多日輪動：<strong>大立光 (3008) 連 3 漲停、5/15 攻上 3,445 元創自 2021/3 以來 5 年新高</strong>、英濟 (3294) 漲停鎖死、揚明光 (3504) 一度漲停 7%、玉晶光 (3406)、亞光 (3019)、佳凌 (4976) 同步攻高。主要驅動：Meta Ray-Ban、Apple Vision Pro Air (2026 H2)、Google AR Glasses。半導體：台積電 N3P SoC 為主供應。法人估 2026 全球出貨 1,000~1,500 萬支、2027 上看 4,000 萬支。為 5/18 大盤殺千點環境下逆勢撐盤主軸、5/19 觀察續攻力道。"
-      },
-      {
-        key: "VIS",
-        titleZh: "世界先進 (台積電子公司)",
-        titleEn: "Vanguard International Semiconductor",
-        body: "<strong>🆕 VIS (5347) 5/18 開盤直摜跌停 159 元、開盤僅 10 分鐘委賣已破 5,200 張、排隊賣單超過 1.3 萬張</strong>—台積電 8.1% 釋股壓力直接反映。台積電持有約 27.1% 股權、釋股後降至 19%。對台積電貢獻一次性處分利益約 NT$200~215 億。<strong>合作關係不變</strong>：VIS 持續代工矽中介層、台積電持續授權氮化鎵 (GaN) 製程技術。釋股原因為「專注核心業務」。<strong>5/19 (二) 觀察：</strong>委賣消化進度、財務投資機構承接時機；估值底部錨定 NT$135~140 元區間、利空有限。"
-      },
-      {
-        key: "SOCAMM",
-        titleZh: "標準小尺寸壓縮記憶體",
-        titleEn: "Small Outline Compression Attached Memory Module",
-        body: "Nvidia 為 AI 伺服器主推的新一代記憶體模組標準，採 LPDDR5X + 客製化壓縮介面。<strong>Samsung 將供應 Nvidia 第二代 SOCAMM 半數記憶體</strong>（2026 開始出貨）；SK Hynix 與 Micron 共同分食另一半。為 Samsung 在記憶體市場戰回失土的關鍵突破口之一。"
+        body: "Nvidia 下世代 AI GPU 平台，預計 2026 H2 出貨，搭配 Vera CPU + HBM4 + ConnectX-9 SuperNIC (1.6 Tb/s)。Rubin Ultra 為「銅退光進」轉折點，啟動 CPO 光通訊供應鏈。台積電 CoWoS 與 ASE 封裝為主要外包夥伴。"
       },
       {
         key: "TPU",
         titleZh: "張量處理器",
         titleEn: "Tensor Processing Unit",
-        body: "Google 自研 AI 加速器，由 Broadcom 設計服務 + 台積電代工。客製 ASIC 代表，已迭代至第 6 代。客製 HBM4E (Google TPU) 由 Samsung 5~6 月設計完成。<strong>聯發科 (2454) 重申 2026 ASIC 營收突破 $1B、2027 上看數十億美元、占公司營收 20%+；Google CSA 客製設計服務為主要驅動力</strong>。GOOGL Cloud Q1 +63% 已成 hyperscaler 成長最快業者。"
+        body: "Google 自研 AI 加速器，由 Broadcom 設計服務 + 台積電代工。客製 ASIC 代表，已迭代至第 6 代。市場關注 OpenAI 「Jalapeno」推遲後是否將部分訂單轉向台廠創意 (3443)、世芯-KY (3661)。"
+      },
+      {
+        key: "Gooaye",
+        titleZh: "股癌（謝孟恭）",
+        titleEn: "Gooaye Podcast",
+        body: "謝孟恭主持的台股 Podcast，週三、六下午發新集數。風格直觀，注重產業循環、籌碼脈絡與生活心法。本儀表板 2026-05-20 起新增股癌專區與心智圖累積，記錄每集提及的個股、產業與題材。"
+      },
+      {
+        key: "被動元件",
+        titleZh: "被動元件",
+        titleEn: "Passive Components",
+        body: "電阻、電容、電感等不具放大功能的基礎零件。AI 伺服器、Rubin 換代與成熟製程補庫存推升需求。國巨(2327)、華新科(2492)、奇鋐(3017)、立隆電(2472) 為主要受惠標的。股癌 EP660-662 多次點名為當前資金輪動主軸。"
+      },
+      {
+        key: "美股資安",
+        titleZh: "美股資安",
+        titleEn: "US Cybersecurity Stocks",
+        body: "Palo Alto Networks (PANW)、CrowdStrike (CRWD)、Zscaler (ZS) 等雲端資安龍頭。在 AI 與雲端轉型下需求穩定，股癌 EP662 點為長線復甦標的之一。"
       }
     ]
   };
 
-  // ── Glossary renderer ─────────────────────────────────────────────────────
   function renderGlossary() {
     if (typeof GLOSSARY_DATA === 'undefined') return;
     const grid = document.getElementById('glossary-grid');
