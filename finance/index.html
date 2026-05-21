@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
 <meta name="description" content="每日科技股深度追蹤 — 台積電供應鏈、AI半導體、記憶體、光通訊、外資動向">
-<title>每日科技股盤前簡報 | 2026-05-21 週四盤前 (NVDA Q1 FY27 大超預期 EPS $1.87 · Q2 指引 $91B · AH -4% 利多出盡 · 台積電供應鏈今日連動)</title>
+<title>每日科技股盤前簡報 | 2026-05-22 週五盤前 (NVDA 財報消化 · 被動元件國巨創歷史新高 572元 · Nasdaq -0.8% · Michigan 消費信心今日公佈)</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
 <style>
   :root {
@@ -38,271 +38,62 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 16px;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-    min-height: 100vh;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 16px; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); min-height: 100vh; }
   .container { max-width: 960px; margin: 0 auto; padding: 16px; }
-
-  /* Header */
-  .hero {
-    text-align: center;
-    padding: 24px 16px 16px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 20px;
-  }
-  .hero .date {
-    font-size: 14px;
-    color: var(--text-dim);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  .hero h1 {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 8px 0 4px;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  .hero { text-align: center; padding: 24px 16px 16px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+  .hero .date { font-size: 14px; color: var(--text-dim); letter-spacing: 0.5px; text-transform: uppercase; }
+  .hero h1 { font-size: 28px; font-weight: 800; margin: 8px 0 4px; background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero .subtitle { color: var(--text-dim); font-size: 14px; }
   .updated { color: var(--text-muted); font-size: 12px; margin-top: 6px; }
-
-  /* Quick stats */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-  .stat-card {
-    background: var(--bg-card);
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-  }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg-card); padding: 14px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
   .stat-card .label { font-size: 12px; color: var(--text-dim); margin-bottom: 4px; }
   .stat-card .value { font-size: 20px; font-weight: 700; }
   .stat-card .change { font-size: 13px; margin-top: 2px; font-weight: 600; }
   .up { color: var(--green); }
   .down { color: var(--red); }
   .neutral { color: var(--orange); }
-
-  /* Section */
   section { margin-bottom: 28px; }
-  .section-title {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent);
-    letter-spacing: 0.3px;
-  }
+  .section-title { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); letter-spacing: 0.3px; }
   .section-title .icon { font-size: 22px; }
-
-  /* Card */
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 12px;
-    box-shadow: var(--shadow);
-    transition: transform 0.15s ease, background 0.15s ease;
-  }
+  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: var(--shadow); transition: transform 0.15s ease, background 0.15s ease; }
   .card:active { transform: scale(0.99); }
-  .card .ticker {
-    display: inline-block;
-    background: var(--accent-strong);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-right: 8px;
-  }
+  .card .ticker { display: inline-block; background: var(--accent-strong); color: white; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; margin-right: 8px; }
   .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
   .card p { font-size: 14px; color: var(--text-dim); margin: 6px 0; }
-  .card .tag {
-    display: inline-block;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 99px;
-    background: rgba(96,165,250,0.15);
-    color: var(--accent);
-    margin-right: 4px;
-    margin-top: 6px;
-  }
+  .card .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(96,165,250,0.15); color: var(--accent); margin-right: 4px; margin-top: 6px; }
   .card .tag.bull { background: rgba(34,197,94,0.15); color: var(--green); }
   .card .tag.bear { background: rgba(239,68,68,0.15); color: var(--red); }
   .card .tag.watch { background: rgba(245,158,11,0.15); color: var(--orange); }
   .card .tag.reuters { background: rgba(255,128,0,0.15); color: #ff8000; font-weight: 700; }
   .card .src { color: var(--text-muted); font-size: 11px; display: block; margin-top: 8px; }
   .card .src a { color: var(--accent); text-decoration: none; }
-
-  /* Calendar */
-  .calendar-item {
-    display: flex;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
+  .calendar-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
   .calendar-item:last-child { border-bottom: none; }
-  .calendar-item .time {
-    font-weight: 700;
-    color: var(--accent);
-    min-width: 70px;
-    font-size: 14px;
-  }
+  .calendar-item .time { font-weight: 700; color: var(--accent); min-width: 70px; font-size: 14px; }
   .calendar-item .event { font-size: 14px; flex: 1; }
   .calendar-item .event small { color: var(--text-muted); display: block; margin-top: 2px; font-size: 12px; }
-
-  /* Supply chain table */
-  .chain-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  @media (min-width: 640px) {
-    .chain-grid { grid-template-columns: 1fr 1fr; }
-  }
-  .chain-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    font-size: 14px;
-  }
+  .chain-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  @media (min-width: 640px) { .chain-grid { grid-template-columns: 1fr 1fr; } }
+  .chain-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; font-size: 14px; }
   .chain-row .name { font-weight: 600; }
   .chain-row .desc { color: var(--text-dim); font-size: 12px; }
-
-  /* Nav */
-  nav.toc {
-    position: sticky;
-    top: 0;
-    background: var(--bg);
-    z-index: 10;
-    padding: 8px 0;
-    margin: -16px -16px 16px;
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  nav.toc a {
-    display: inline-block;
-    padding: 6px 12px;
-    margin: 0 4px;
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 13px;
-    border-radius: 99px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-  }
+  nav.toc { position: sticky; top: 0; background: var(--bg); z-index: 10; padding: 8px 0; margin: -16px -16px 16px; border-bottom: 1px solid var(--border); overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+  nav.toc a { display: inline-block; padding: 6px 12px; margin: 0 4px; color: var(--text-dim); text-decoration: none; font-size: 13px; border-radius: 99px; background: var(--bg-card); border: 1px solid var(--border); }
   nav.toc a:hover, nav.toc a:active { color: var(--accent); border-color: var(--accent); }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 24px 16px;
-    color: var(--text-muted);
-    font-size: 12px;
-    border-top: 1px solid var(--border);
-    margin-top: 32px;
-  }
+  footer { text-align: center; padding: 24px 16px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); margin-top: 32px; }
   footer a { color: var(--accent); text-decoration: none; }
-
-  /* Highlight box */
-  .highlight {
-    background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(167,139,250,0.1));
-    border-left: 3px solid var(--accent);
-    padding: 12px 14px;
-    border-radius: 8px;
-    margin: 10px 0;
-    font-size: 14px;
-  }
+  .highlight { background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(167,139,250,0.1)); border-left: 3px solid var(--accent); padding: 12px 14px; border-radius: 8px; margin: 10px 0; font-size: 14px; }
   .highlight strong { color: var(--accent); }
-
-  /* Relations Graph */
-  #relations .graph-wrap {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: var(--shadow);
-  }
+  #relations .graph-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
   #relations svg { display: block; width: 100%; }
-  .graph-tooltip {
-    position: absolute;
-    background: rgba(10,16,32,0.96);
-    border: 1px solid var(--accent);
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 12px;
-    color: var(--text);
-    pointer-events: none;
-    z-index: 100;
-    max-width: 240px;
-    line-height: 1.6;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-  }
-  .graph-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 14px;
-    padding: 10px 14px;
-    border-top: 1px solid var(--border);
-    background: rgba(0,0,0,0.1);
-  }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    color: var(--text-dim);
-  }
-  .legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    opacity: 0.85;
-  }
-  .graph-meta {
-    font-size: 11px;
-    color: var(--text-muted);
-    text-align: right;
-    padding: 5px 14px;
-    border-top: 1px solid var(--border);
-  }
-
-  /* Rumor ticker */
-  .rumor {
-    border-left: 3px solid var(--orange);
-    padding: 10px 14px;
-    background: rgba(245,158,11,0.05);
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 13px;
-  }
+  .graph-tooltip { position: absolute; background: rgba(10,16,32,0.96); border: 1px solid var(--accent); border-radius: 8px; padding: 8px 12px; font-size: 12px; color: var(--text); pointer-events: none; z-index: 100; max-width: 240px; line-height: 1.6; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+  .graph-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 10px 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.1); }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-dim); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; opacity: 0.85; }
+  .graph-meta { font-size: 11px; color: var(--text-muted); text-align: right; padding: 5px 14px; border-top: 1px solid var(--border); }
+  .rumor { border-left: 3px solid var(--orange); padding: 10px 14px; background: rgba(245,158,11,0.05); border-radius: 8px; margin-bottom: 8px; font-size: 13px; }
   .rumor .src { color: var(--text-muted); font-size: 11px; display: block; margin-top: 4px; }
-
-  /* Glossary */
   #glossary { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
   .glossary-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 0; }
   .glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
@@ -310,20 +101,6 @@
   .glossary-card h3 { color: var(--accent); font-size: 0.95rem; margin: 0 0 0.5rem; letter-spacing: 0.03em; }
   .glossary-card .term-en { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 0.4rem; }
   .glossary-card p { color: var(--text); font-size: 0.82rem; line-height: 1.6; margin: 0; }
-</style>
-</head>
-<body>
-<div class="container">
-
-<header class="hero">
-  <div class="date">2026 / 05 / 20 · 星期三 · 週三盤前簡報（5/19 二台美股三連跌 · NVDA Q1 FY27 財報今日盤後揭曉 · 30Y 殖利率創 19 年新高 · 川普喊停伊朗攻擊油價急跌）</div>
-  <h1>📈 每日科技股深度追蹤</h1>
-  <div class="subtitle">台積電供應鏈 · AI半導體 · 記憶體 · 光通訊 · 外資動向</div>
-  <div class="updated">最後更新：2026-05-20 07:00 (UTC+8) · <strong>週三盤前主軸：</strong>① <strong>NVDA Q1 FY27 財報今日盤後（5/20 三）揭曉</strong>—共識營收 $78~78.8B (+78.8% YoY)、EPS $1.77、Q2 指引能否突破 $86B 為關鍵（選擇權 implied 8~10% 波動）；② <strong>美股 5/19 二三連跌</strong>：S&P −0.67% 收 7,353.61、Nasdaq −0.84% 收 25,870.71、道瓊 −0.65% 收 49,363.88，<strong>30Y 殖利率衝 5.2% 創 19 年新高、10Y 升 4.67%</strong>；③ <strong>川普宣布取消對伊朗攻擊計畫</strong>—WTI 急跌 1.38% 至 $102.90、Brent −1.82% 至 $110.10；④ <strong>台指期夜盤 5/19 收 40,049 (−191)</strong>，日盤 40,140 (−738 / −1.81%)，外資 5/19 賣超 632億、三大法人合計賣超 784億；⑤ <strong>TSM ADR 5/19 收 $392.61</strong>；⑥ <strong>SOX 費半指數 5/19 收 11,079.50 (−223.02)</strong>；⑦ <strong>NVDA 5/19 收 $221.56 (區間 $217.91~$224.48)</strong>—財報日到來、implied 波動 8~10%。<strong>5/19 二收盤回顧：</strong>S&P −0.67% 收 7,353、Nasdaq −0.84% 收 25,870、道瓊 −0.65% 收 49,363、30Y 殖利率 5.2% 19 年新高、川普喊停伊朗攻擊、油價急跌。</div>
-</header>
-
-<!-- 📅 過去 7 天日期選單 + 🎙️ 股癌 + 🧠 心智圖 樣式 -->
-<style>
   .date-picker { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; padding: 10px 16px; margin: -4px auto 12px; max-width: 960px; }
   .date-picker .label { color: var(--text-muted); font-size: 12px; align-self: center; margin-right: 4px; }
   .date-picker a { display: inline-block; padding: 6px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 99px; color: var(--text-dim); text-decoration: none; font-size: 12px; font-weight: 600; }
@@ -351,10 +128,18 @@
   .map-entry p { font-size: 0.85rem; color: var(--text-dim); margin: 0.3rem 0; }
   .map-entry .open-btn { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 99px; font-size: 0.85rem; font-weight: 600; }
 </style>
+</head>
+<body>
+<div class="container">
 
-<div class="date-picker" id="date-picker">
-  <span class="label">📅 切換日報：</span>
-</div>
+<header class="hero">
+  <div class="date">2026 / 05 / 22 · 星期五 · 週五盤前簡報（5/21 四 NVDA 財報消化 · 被動元件創歷史新高 · Nasdaq 期貨 −0.8% · Michigan 消費信心今日公佈）</div>
+  <h1>📈 每日科技股深度追蹤</h1>
+  <div class="subtitle">台積電供應鏈 · AI半導體 · 記憶體 · 光通訊 · 外資動向</div>
+  <div class="updated">最後更新：2026-05-22 07:06 (UTC+8) · <strong>週五盤前主軸：</strong>① <strong>NVDA Q1 FY27 財報消化第 2 天</strong>—EPS $1.87（非 GAAP）、營收 $81.62B (+85.2% YoY)、Q2 指引 $91B（vs 共識 $86B），5/21 美股消化後 NVDA 盤前近平盤；② <strong>Nasdaq 100 期貨 −0.8%、S&P −0.3%</strong>—密歇根消費信心最終值今日公佈（估 52.2）；③ <strong>被動元件：國巨 (2327) 5/21 創歷史新高 572元 (+6%)、Murata 電感跟進漲價、Vishay 書轉比 1.23</strong>；④ <strong>Broadcom Soundfish 討論</strong>—Sami Analysis 報告指 Fish 晶片世代缺口，謝孟恭 EP663 研判更大顆雙晶片拼載板方案，載板族群潛在利多。</div>
+</header>
+
+<div class="date-picker" id="date-picker"><span class="label">📅 切換日報：</span></div>
 <script>
   (function(){
     const dp = document.getElementById('date-picker');
@@ -368,11 +153,10 @@
       const isToday = i === 0;
       const wd = d.getDay();
       const isWeekend = wd === 0 || wd === 6;
-      a.href = isToday ? './' : `archive/${iso}.html`;
+      a.href = isToday ? './' : 'archive/' + iso + '.html';
       a.textContent = isToday ? '今天' : tw.format(d);
       if (isToday) a.classList.add('active');
       if (isWeekend) a.classList.add('weekend');
-      if (!isToday) a.title = `archive/${iso}.html`;
       dp.appendChild(a);
     }
   })();
@@ -393,378 +177,164 @@
   <a href="#glossary">📖 名詞</a>
 </nav>
 
-<!-- Quick Stats -->
 <div class="stats-grid">
   <div class="stat-card">
-    <div class="label">S&P 500 (5/20 收盤)</div>
-    <div class="value">7,353</div>
-    <div class="change neutral">5/20 盤中整理 · NVDA 盤後大超預期</div>
+    <div class="label">Nasdaq 100 期貨 (5/22)</div>
+    <div class="value down">−0.8%</div>
+    <div class="change down">S&amp;P −0.3% · 科技股承壓</div>
   </div>
   <div class="stat-card">
-    <div class="label">NVDA 盤後 (5/20 AH)</div>
-    <div class="value">~$212</div>
-    <div class="change down">AH −4.1% · 利多出盡 · EPS $1.87 大超 · Q2 $91B</div>
+    <div class="label">NVDA (5/22 盤前)</div>
+    <div class="value neutral">~平盤</div>
+    <div class="change neutral">財報消化 · EPS $1.87 · Q2 $91B</div>
   </div>
   <div class="stat-card">
-    <div class="label">NVDA Q1 FY27 財報</div>
-    <div class="value">$81.62B</div>
-    <div class="change up">+85.2% YoY · EPS $1.87 · Q2 指引 $91B ▲ 全面超預期</div>
+    <div class="label">國巨 2327 (5/21)</div>
+    <div class="value up">572元</div>
+    <div class="change up">+6% 歷史新高 · Murata 跟進漲</div>
   </div>
   <div class="stat-card">
-    <div class="label">TSM ADR / 費半 SOX</div>
-    <div class="value">$392.61</div>
-    <div class="change neutral">5/19 收 · 5/21 台積電開盤待 NVDA AH 連動</div>
+    <div class="label">TSM ADR</div>
+    <div class="value">~$392</div>
+    <div class="change neutral">5/21 收盤 · 5/22 開盤參考</div>
   </div>
   <div class="stat-card">
     <div class="label">30Y 美債殖利率</div>
     <div class="value">5.2%</div>
-    <div class="change down">▲ 19 年新高 · 仍為科技股估值壓力來源</div>
+    <div class="change down">高位 · 科技股估值壓力</div>
   </div>
   <div class="stat-card">
-    <div class="label">台指期 (5/20 夜盤)</div>
-    <div class="value">待確認</div>
-    <div class="change neutral">5/20 日盤收 40,140 · NVDA AH 後夜盤方向待定</div>
+    <div class="label">Michigan 信心 (今日)</div>
+    <div class="value neutral">待揭曉</div>
+    <div class="change neutral">估 52.2 · FOMC 前關鍵</div>
   </div>
 </div>
 
-<!-- 盤前重點 -->
 <section id="premarket">
-  <h2 class="section-title"><span class="icon">📊</span>5/21 (週四) 盤前簡報 ⭐ NVDA Q1 FY27 大超預期 · EPS $1.87 · Q2 指引 $91B · 盤後 −4% 利多出盡</h2>
+  <h2 class="section-title"><span class="icon">📊</span>5/22 (週五) 盤前簡報 · NVDA 消化 · 被動元件歷史新高 · Nasdaq −0.8%</h2>
   <div class="highlight">
-    <strong>📍 5/21 (週四) 盤前四大主軸：</strong>① <strong>⭐ NVDA Q1 FY27 財報大幅超預期</strong>—EPS $1.87（vs 估 $1.77、+6.25% 超共識）、營收 $81.62B（vs 估 $78.8B、+85.2% YoY）、<strong>Q2 FY27 指引 $91B（vs 共識 $86B、大超 $5B）</strong>，Data Center $60.4B (+77% YoY)，Blackwell 加速放量；<strong>盤後 (AH) 初始 −4.1%（「利多出盡」再現，近三季財報後股價均下跌）</strong>，短線賣壓不代表基本面轉壞；② <strong>5/21 台積電 / 供應鏈開盤方向待定</strong>—NVDA AH 下跌短線施壓，但 Q2 $91B 強指引確認 AI 資本支出超級週期不變，長線利多確認；③ <strong>Meta 裁員 8,000 人（全員 10%）押注 AI-First 轉型</strong>、Analog Devices $1.5B 收購 Empower Semiconductor（AI 晶片技術）；④ <strong>30Y 殖利率仍在 5.2% 高位</strong>—科技股估值壓力未解。<strong>5/20 三財報回顧：</strong>NVDA 收 ~$221（盤後 ~$212 AH −4%）、S&P / Nasdaq 5/20 整理、SOX 11,079、TSM ADR $392.61。<strong>5/21 (週四) 五大觀察：① NVDA AH −4% 是否能回穩（台積電 / 鴻海 開盤先行指標）、② Q2 $91B 指引長線正面 — 供應鏈 TSMC CoWoS 訂單不變、③ 30Y 殖利率 5.2% 高位能否降溫、④ 台指期夜盤方向（NVDA 消化後）、⑤ Meta AI-First 裁員 + Google I/O 新品影響科技股情緒</strong>。
+    <strong>📍 5/22 (週五) 盤前四大主軸：</strong>① <strong>NVDA Q1 FY27 財報完整確認</strong>—EPS $1.87（非 GAAP，超共識 $1.77）、營收 $81.62B (+85.2% YoY)、Q2 指引 $91B；5/22 盤前近平盤（財報消化第 2 天）；② <strong>Nasdaq 100 期貨 −0.8%、S&P −0.3%</strong>—密歇根消費信心最終值今日公佈（估 52.2）為最重要美國數據；③ <strong>被動元件漲價週期加速</strong>—國巨 (2327) 5/21 創歷史新高 572元 (+6%)，Murata 跟進電感漲價，陸廠風華高科漲 5-30%，Vishay 書轉比 1.23 獨立驗證；④ <strong>Broadcom Soundfish 載板雙晶片討論</strong>—Sami Analysis 指 Fish 世代缺口，謝孟恭 EP663 研判更大顆 Soundfish 雙晶片拼載板方案，欣興/南電為潛在受惠載板族群。
   </div>
   <div class="card">
-    <h3>⭐ NVDA Q1 FY27 財報大超預期 · EPS $1.87 · 營收 $81.62B · Q2 指引 $91B · 盤後 −4.1%</h3>
-    <p>• <strong>Nvidia 5/20 (三) 盤後公佈 Q1 FY27 財報（截至 4/26/2026）</strong>，全面大超預期：<strong>EPS $1.87（vs 共識 $1.77，+6.25%）、營收 $81.62B（vs 共識 $78.8B，+85.2% YoY，去年 Q1 $44.06B）</strong>。</p>
-    <p>• <strong>Q2 FY27 指引 $91B（vs 市場共識 $86.08B，超出 $5B）</strong>—Jensen Huang 表示需求仍在加速，Blackwell 放量不止。<strong>Data Center 營收 $60.4B (+77% YoY, +18% QoQ)</strong>，Data Center 網絡營收 +199% YoY、+35% QoQ，為首席指標。</p>
-    <p>• <strong>盤後 (AH) 下跌 ~4.1%</strong>—初始價格約 $212（5/20 收盤 ~$221）。這是 NVDA 近三季財報後連續下跌模式重演：「結果再好市場都先賣」。分析師指出：股價已提前 price in 高預期，短線賣壓不等於基本面走壞。</p>
-    <p>• <strong>Blackwell 加速放量</strong>：Vera Rubin 平台（Vera CPU + Rubin GPU + NVLink 6）H2 2026 如期出貨；Jensen 稱「我相信 NVDA 2026~2027 兩大旗艦處理器線將合計創造 $1 兆美元營收」。</p>
-    <p>• <strong>China H20 commentary</strong>：$4.5B 沖銷已消化，中國 DC compute 不假設，H200 放行但實際發貨仍需中方監管通過。</p>
-    <span class="tag bull">EPS $1.87 超共識</span>
+    <h3>⭐ NVDA Q1 FY27 財報完整數據（5/20 三盤後）· 消化第 2 天</h3>
+    <p>• <strong>EPS $1.87（非 GAAP）</strong>，超共識 $1.77，+6.25%；GAAP EPS $1.62，超共識 $1.52。<strong>營收 $81.62B</strong>（vs 估 $78.8B，+85.2% YoY）。<strong>Q2 FY27 指引 $91B</strong>（vs 共識 $86B，超出 $5B）。Data Center $60.4B (+77% YoY, +18% QoQ)；Data Center 網絡 +199% YoY。Blackwell 放量加速，Vera Rubin H2 2026 如期。</p>
+    <p>• <strong>5/21 美股消化</strong>：NVDA 盤中逐漸消化，5/22 盤前近平盤。分析師共識：Q2 $91B 確認 AI 算力超級週期，台積電 CoWoS / 2nm 訂單能見度確認不受影響，鴻海 AI 機櫃翻倍目標長線利多不變。</p>
+    <p>• <strong>5/22 台股連動焦點</strong>：Nasdaq −0.8% 期貨施壓，台積電 (2330) 開盤整理機率高。但被動元件族群（國巨、華新科、凱美）有機會因自身題材強勢而獨立走強。</p>
+    <span class="tag bull">EPS $1.87 非 GAAP</span>
     <span class="tag bull">Q2 指引 $91B</span>
     <span class="tag bull">Data Center +77%</span>
-    <span class="tag bear">AH −4.1% 利多出盡</span>
-    <span class="tag bull">Blackwell 加速</span>
+    <span class="tag watch">消化第 2 天</span>
   </div>
   <div class="card">
-    <h3>📍 台股 5/21 (週四) 開盤布局重點 · NVDA AH −4% 短線施壓 · Q2 $91B 長線利多確認</h3>
-    <p><strong>5/21 台股開盤兩難：</strong>NVDA 基本面極強（Q2 $91B 大超共識），但盤後 AH −4.1% 的賣壓將短線施壓台積電 (2330)、鴻海 (2317)、廣達 (2382) 等供應鏈股開盤。然而，<strong>這種「財報超預期 + 股價盤後下跌」的組合，歷史上往往在數日內修復</strong>，因為企業基本面指引才是長線錨。</p>
-    <p><strong>5/21 (四) 五大觀察點：</strong></p>
-    <p>① <strong>TSM ADR / 台積電開盤</strong>：5/20 TSM ADR $392.61 為基準，NVDA AH −4% 施壓，但 CoWoS / 2nm 訂單能見度不受影響。法人估台積電短線 2,200~2,250 區間整理。</p>
-    <p>② <strong>鴻海 (2317)</strong>：AI 伺服器市占 40%、全年機櫃翻倍出貨，NVDA Q2 $91B 確認其最大受益地位，外資連買結構不變，開盤關注是否逆勢抗跌。</p>
-    <p>③ <strong>被動元件鏈</strong>（國巨 2327、華新科 2492、立隆電 2472）：Vera Rubin 用料極多，NVDA 加速放量利多直接，但今日跟跌大盤的可能性更高。</p>
-    <p>④ <strong>30Y 殖利率 5.2%</strong>：仍是最大壓力來源，若今日略回落有助科技股估值喘息。</p>
-    <p>⑤ <strong>Meta 裁員 + AI-First</strong>：Meta 8,000 人 (10%) 裁員重組押寶 AI，帶動 AI 晶片長線訂單不變，短線情緒面略偏負面（大型科技公司普遍緊縮非 AI 部門）。</p>
-    <span class="tag bear">NVDA AH −4%</span>
-    <span class="tag bull">Q2 指引 $91B 長線正面</span>
-    <span class="tag watch">台積電開盤方向</span>
+    <h3>⭐ 被動元件漲價週期全面加速 · 國巨 572元歷史新高 · Murata 電感漲價</h3>
+    <p>• <strong>國巨 (2327) 5/21 收 572元，創上市歷史最高價</strong>，單日 +6%，帶動整個被動元件族群。</p>
+    <p>• <strong>Murata（村田）宣布電感漲價</strong>：磁珠、功率電感、RF 電感均在列，銀等原材料成本 + AI 伺服器需求爆炸雙重驅動，日系第二大廠跟進，漲幅倍數起跳。</p>
+    <p>• <strong>陸廠風華高科（中國最大被動元件廠）調漲 5~30%</strong>，顯示漲價已超越日台廠，全球供應鏈同步收縮。</p>
+    <p>• <strong>Vishay Q1 2026 被動元件書轉比 (Book-to-Bill) 1.23</strong>，需求持續大於供給，為 EP663 漲價論點獨立驗證。</p>
+    <p>• <strong>AI 伺服器 Vera Rubin 機架被動元件用量是傳統伺服器的 3~5 倍</strong>，NVDA Q2 $91B 指引直接確認採購量繼續放大。注意：國巨、凱美、華新科已遭列注意股，短線量能受限。</p>
+    <span class="tag bull">國巨 572元 歷史新高</span>
+    <span class="tag bull">Murata 電感漲價</span>
+    <span class="tag bull">Vishay 書轉比 1.23</span>
+    <span class="tag watch">注意股管制風險</span>
+  </div>
+  <div class="card">
+    <h3>📊 Broadcom Soundfish 載板雙晶片 · Michigan 消費信心今日 · 5/22 觀察重點</h3>
+    <p>• <strong>密歇根大學消費信心 5 月最終值今日公佈</strong>（美東 10 AM），估 52.2（初值 50.8 為 2024 年 11 月以來低點）。若終值低於初值，進一步施壓科技股估值（30Y 殖利率仍 5.2%）。</p>
+    <p>• <strong>Broadcom Soundfish 載板雙晶片討論（EP663 點名）</strong>：Sami Analysis 指 Fish 晶片系列有一代缺口（Soundfish 之後 Icefish 消失），謝孟恭研判接下來出現「更大顆的 Soundfish」，把兩片晶片拼在同一載板 (Substrate) 上，類似蘋果 Ultra 晶片（M4 Ultra = 兩片 M4 Max 拼載板）。對欣興 (3037)、南電 (8046)、景碩 (3189) 等 ABF 載板廠為潛在利多，尚未 price in。</p>
+    <p>• <strong>5/22 五大觀察</strong>：① 被動元件族群注意股限制是否影響量能；② Michigan 最終值是否改善；③ 30Y 殖利率能否降溫；④ 外資 5/21 是否轉淨買超；⑤ 載板雙晶片題材（欣興、南電）是否開始發酵。</p>
+    <span class="tag watch">Michigan 消費信心今日</span>
+    <span class="tag bull">Broadcom 載板雙晶片</span>
     <span class="tag bear">30Y 殖利率 5.2%</span>
-    <span class="tag bull">鴻海 AI 伺服器主軸</span>
-  </div>
-  <div class="card">
-    <h3>🆕 Meta 裁員 8,000 人 (10%) AI-First 轉型 · Google I/O Gemini 3.5 AI 搜尋革命 · ADI 收購 Empower $1.5B</h3>
-    <p>• <strong>Meta 裁員 8,000 人（佔全員工 10%）</strong>，另調配 7,000 人轉 AI 部門，押注成為 AI-first 公司。CEO Zuckerberg 強調：「所有資源集中在 AI 基礎設施與模型訓練」。Meta-Broadcom MTIA 自研晶片（N2 + CoWoS-L，2027 H1 出貨）目標不變，創意 / 世芯供應鏈地位穩固。</p>
-    <p>• <strong>Google I/O 2026</strong>：推出 Gemini Spark（24/7 個人 AI 代理、整合 Gmail/Workspace）、搜尋引擎徹底翻新（支援長查詢 + 圖片/影片上傳 + Gemini 3.5 Flash 自動化搜尋）、新增 AI 生成圖片偵測機制（Chrome + Search）。對 GOOGL TPU 供應鏈（愛普 6531、台積電 N3）短線利多。</p>
-    <p>• <strong>Analog Devices (ADI) 以 $1.5B 現金收購 Empower Semiconductor</strong>（AI 晶片電源管理技術），為 2026 年半導體整併訊號。Empower 的高效能電源 IC 直接應用於 AI 伺服器機架高功率需求（GB300 功耗逼近 600kW）。</p>
-    <span class="tag bear">Meta 裁員 8,000</span>
-    <span class="tag bull">Google Gemini 3.5</span>
-    <span class="tag bull">ADI 收購 Empower</span>
-    <span class="tag bull">AI-First 轉型浪潮</span>
   </div>
 </section>
 
-<!-- 焦點新聞 -->
 <section id="news">
   <h2 class="section-title"><span class="icon">📰</span>個股焦點新聞與謠言</h2>
-
   <div class="card">
-    <h3><span class="ticker">2330</span>🆕 台積電 5/18 −1.77% 至 2,225 · VIS 跌停拋售壓力、智慧眼鏡與 2nm 議題支撐</h3>
-    <p>台積電 (2330) 5/18 跟跌費半，<strong>收 2,225 −40 元 (−1.77%)</strong>；5/18 早盤大盤一度急跌 1,002 點觸 40,170，台積電承壓但中段獲鴻海、智慧眼鏡輪動撐盤、尾盤跌幅收斂。<strong>VIS (5347) 5/18 開盤直摜跌停 159 元、委賣破 5,200 張</strong>—台積電擬釋出約 1.52 億股 (8.1% 股本)、預計對象為財務投資機構，估值區間 NT$135~140 元；釋股後台積電持股自 27.1% 降至 19%。<strong>合作關係不變：</strong>VIS 持續代工矽中介層、台積電持續授權氮化鎵 (GaN) 製程技術。
-    <br>• <strong>2nm + A16 產能 CAGR 70%</strong>（2026~2028）、Apple、Nvidia、AMD、聯發科、Meta-Broadcom 為早期客戶
-    <br>• <strong>CoWoS CAGR 超過 80%</strong>（2022~2027）— Nvidia / AMD / AVGO 已將 N3 AI 晶片全部產能鎖死
-    <br>• 2030 全球半導體市場上修至 <strong>$1.5T</strong>（5/15 技術論壇）、AI/HPC 占 55%
-    <br>• Arizona F2 設備搬入 H2 2026、F3 動工、F4 + 首座先進封裝廠今年啟動
-    <br>• 智慧眼鏡 (Smart Glasses) 主題持續發酵 — N3P SoC 為主供應
-    <br>• 大摩、瑞銀重申「N2 量產為 2026 H2 最強催化」、目標價 3,000~3,200 元
-    <br>• 4 月合併營收 NT$4,107.3 億 (+17.5% YoY) 創史上同期最佳</p>
-    <span class="tag bear">5/18 −1.77%</span>
-    <span class="tag bear">VIS 跌停</span>
-    <span class="tag bull">智慧眼鏡新主題</span>
-    <span class="tag bull">2030 大餅 $1.5T</span>
-    <span class="tag watch">VIS 委賣消化</span>
+    <h3><span class="ticker">2330</span>台積電 · CoWoS 訂單確認 · 2nm 良率 75% 傳言 · NVDA Q2 $91B 利多</h3>
+    <p>• <strong>NVDA Q2 $91B 確認 CoWoS 訂單能見度不變</strong>，台積電為 Blackwell / Rubin 最大受益供應商。<br>• 傳 <strong>2nm 良率已突破 75%</strong>，量產放量加速。CoWoS CAGR 超 80%（2022~2027）。<br>• Arizona F2 量產傳可能提前至 2026 Q4 試產。大摩、瑞銀目標 3,000~3,200 元維持。<br>• 5/22 盤前：Nasdaq 期貨 −0.8%，TSM ADR ~$392 為台股開盤先行指標。</p>
+    <span class="tag bull">CoWoS 訂單確認</span><span class="tag bull">2nm 良率 75%</span><span class="tag watch">Nasdaq −0.8% 壓力</span>
   </div>
-
+  <div class="card">
+    <h3><span class="ticker">2327</span>國巨 5/21 歷史新高 572元 · 被動元件全族群強攻</h3>
+    <p>• 國巨 5/21 收 572元，創上市歷史最高點，為台股 5/21 最強題材。<br>• Murata 電感漲價 + Panasonic SP-Cap 漲 3 成 + 風華高科 5-30%，台廠漲價空間打開。<br>• 外資：Vera Rubin 機架被動元件用量 3~5 倍，NVDA Q2 $91B 確認採購量持續放大。<br>• <strong>注意：國巨、凱美、華新科已遭列注意股</strong>，短線量能受限，進出時需留意處置限制。</p>
+    <span class="tag bull">歷史新高 572</span><span class="tag watch">注意股管制</span><span class="tag bull">日台陸廠三線漲價</span>
+  </div>
   <div class="rumor">
-    <strong>🗣️ 市場傳言（5/21 週四盤前 · NVDA 財報後版）：</strong>⭐ <strong>NVDA Q1 FY27 大超預期後盤後 −4.1%：</strong>EPS $1.87（vs 估 $1.77）、營收 $81.62B（+85.2% YoY）、Q2 指引 $91B（vs 共識 $86B），全面超預期但盤後跌 4.1%。市場解讀：近三季財報後 NVDA 均跌，為「price in 提前」現象。<strong>供應鏈看法：</strong>Q2 $91B 指引長線確認 AI 算力超級週期不變，台積電 CoWoS 訂單、鴻海 AI 伺服器機櫃翻倍目標均不受影響。<strong>VIS 5/18 跌停後估值消化中：</strong>錨定 NT$135~140 元區間，台積電貢獻一次性處分利益 NT$200~215 億，合作關係不變。<strong>🆕 Meta 裁員 8,000 人 AI-First：</strong>Zuckerberg 強調 AI 基礎設施投入不變，MTIA 自研晶片（N2 + CoWoS-L，2027 H1）目標不變，創意 / 世芯設計服務穩固。<strong>🆕 Google I/O Gemini 3.5：</strong>搜尋引擎大改版 + 24/7 AI 代理，Google TPU 需求確認，愛普 (6531) 供應鏈利多。<strong>鴻海 AI 伺服器主軸：</strong>外資連買結構不變，NVDA Q2 $91B 確認最大受益地位，2026 機櫃翻倍目標確認。<strong>被動元件鏈：</strong>Vera Rubin 換代用料超多、NVDA 加速放量確認，但 5/21 隨市場消化可能先跌後穩。<strong>2nm 良率傳已突破 75%、Arizona F2 量產時程傳將自 2027 提前至 2026 Q4 試產。智慧眼鏡主題：</strong>大立光 / 英濟 / 揚明光 / 玉晶光輪動。
-    <span class="src">來源：Reuters、CNBC、Kiplinger、Motley Fool、TrendForce、法人圈轉述 5/21 (四) 盤前整理</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">2454</span>聯發科 ASIC 營收 2026 突破 $1B · 5/18 跟隨大盤震盪整理</h3>
-    <p>聯發科 5/18 隨大盤震盪整理，結構性利多不變：<strong>聯發科重申 2026 ASIC 營收突破 $1B、2027 上看數十億美元、占公司營收 20%+</strong>。3 月單月營收 NT$632 億創 231 個月新高（+62% MoM、+12.9% YoY）。5/13 ETF 00981A 大舉減碼聯發科、世芯、鴻海約 9 億元、改配 Computex 相關股。
-    <br>• 為 NVDA / GOOGL 客製 ASIC 設計服務 (CSA 業務) 訂單能見度大增
-    <br>• Dimensity 9500 + Cristal-Vista AI 邊緣運算平台 2026 H2 出貨
-    <br>• 大摩、瑞銀外資目標價 4,500~5,000 元
-    <br>• 對世芯-KY (3661) 已策略性入股 450 張私募 $7.32 億、N2 共同研發
-    <br>• 「聯發科、世芯、創意」三家分食雲端 CSP 客製 ASIC 訂單金鏟</p>
-    <span class="tag bull">ASIC 營收 $1B+</span>
-    <span class="tag bull">Google TPU CSA</span>
-    <span class="tag watch">5/18 整理</span>
-    <span class="tag watch">ETF 減碼觀察</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">NVDA</span>⭐ Nvidia Q1 FY27 大超預期 · EPS $1.87 · 營收 $81.62B · Q2 指引 $91B · 盤後 AH −4.1%</h3>
-    <p><strong>Nvidia 5/20 (三) 盤後財報全面超預期</strong>：<strong>EPS $1.87（vs 共識 $1.77、+6.25%）、營收 $81.62B（vs 共識 $78.8B、+85.2% YoY，去年 Q1 $44.06B）</strong>。<strong>Q2 FY27 指引 $91B（vs 共識 $86.08B，大超 $5B）</strong>。Data Center 季度紀錄 $60.4B (+77% YoY, +18% QoQ)，Data Center 網絡 +199% YoY。<strong>Blackwell 需求加速，Vera Rubin H2 2026 如期</strong>，Jensen Huang 稱 2026~2027 兩大旗艦處理器線合計估創造 $1 兆美元營收。</p>
-    <p>盤後 AH 初始 <strong>−4.1%（~$212）</strong>，重演近三季「超預期後仍跌」模式——歷史上近三次財報均於報告後下跌，反映股價已超前 price in 高預期。<strong>分析師維持看多</strong>：BofA 目標 $320、Susquehanna $275、Wells Fargo Top Pick。China commentary：H200 美方核准但中方放行仍待，不假設中國 DC compute 貢獻。</p>
-    <span class="tag bull">EPS $1.87 超共識 +6%</span>
-    <span class="tag bull">Q2 指引 $91B 大超</span>
-    <span class="tag bull">Data Center +77%</span>
-    <span class="tag bear">AH −4.1% 利多出盡</span>
-    <span class="tag bull">Blackwell 加速</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">AVGO</span>5/18 震盪整理 · OpenAI 客製晶片 $18B 融資雜音續延燒</h3>
-    <p>AVGO 5/18 跟隨晶片股震盪整理。5/8 The Information 獨家：Broadcom 與 OpenAI 在 10GW 客製 AI 加速器合作首期 $18B 融資出現缺口；Broadcom 要求 Microsoft 同意買下 40% 晶片才願意融資首期；MSFT 偏好標準資料中心架構、與 OpenAI 客製矽方向有歧見，尚未簽訂正式採購協議。</p>
-    <p>FY26 AI 半導體營收原估突破 $30B (YoY 翻倍)。客戶名單仍含 Google TPU、Meta MTIA (2nm + CoWoS-L 2027 H1)、Apple 自研 AI 加速器。市場關注：若 OpenAI 案延後，世芯、創意 ASIC 訂單分流上揚。Cisco AI 訂單翻倍 $9B 指引續為 AVGO 同類業務催化參考。</p>
-    <span class="tag watch">5/18 整理</span>
-    <span class="tag bear">OpenAI 融資雜音</span>
-    <span class="tag watch">創意/世芯訂單分流</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">AMD</span>5/18 震盪 · 2026 YTD 領跑 AI 晶片 · MI400 結構不變</h3>
-    <p>AMD 5/18 跟隨晶片股震盪整理。2026 YTD 仍顯著超越 NVDA / GOOGL，結構性紅利不變。CEO Lisa Su 看好「結構性轉變」、EPYC 伺服器晶片 + MI400 + Helios 機架平台加持。BofA 5/13 維持買進、目標價 $500。
-    <br>• Q1 營收 $10.25B (+38% YoY)、數據中心 +57% YoY
-    <br>• Q2 指引 $11.2B 遠超 $10.52B 共識
-    <br>• MI400 + HBM4 432GB / Helios 機架平台、SK Hynix HBM4 主供應
-    <br>• OpenAI 6GW 合作（1GW MI450 2026 H2 出貨）結構不變
-    <br>• Wall Street AI 晶片愛憎輪動：NVDA → Intel / AMD / Micron 主軸延續</p>
-    <span class="tag watch">5/18 整理</span>
-    <span class="tag bull">BofA 目標 $500</span>
-    <span class="tag bull">YTD 領跑</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">CBRS</span>Cerebras 5/15 −12% 後續整理 · IPO 首日 +68% 後消化</h3>
-    <p>Cerebras Systems (CBRS) 5/14 Nasdaq 掛牌首日 +68% 收 $311.07、5/15 <strong>−12% 收 ~$274</strong>—首日炒高後典型獲利了結。估值仍維持 $83B 區間。Wafer Scale Engine 3 (WSE3) 為公司旗艦產品 — 採整片晶圓單晶片架構（vs Nvidia GPU 小晶片拼接）。
-    <br>• 2025 透過與 Amazon AWS、OpenAI 合作擴大客源
-    <br>• 過往因依賴 G42 (UAE) 單一大客戶被審查、2025 H2 撤回後 2026/4 重提
-    <br>• 解禁後鎖定期：6 個月 (11/2026)、投資人風險偏好觀察
-    <br>• 估值 / 營收倍數高達 28X (vs NVDA 18X)、估值消化壓力大</p>
-    <span class="tag bear">5/15 −12%</span>
-    <span class="tag watch">估值高昂</span>
-    <span class="tag watch">6 個月鎖定期</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">CSCO</span>Cisco AI 訂單 $9B 結構不變 · 5/18 震盪整理</h3>
-    <p><strong>Cisco (CSCO) 5/13 盤後 Q3 法說：EPS $1.06 / 營收 $15.84B 雙超預期</strong>、5/14 +17% 噴出後 5/18 進入震盪整理。產品訂單 +35% YoY、超大規模 (hyperscaler) AI 訂單翻倍、AI 訂單指引由 $5B 上修至 $9B 結構性紅利不變。CEO Robbins 同時宣布裁員 <4,000 人（<5% 員工）以挪移資源至 AI。
-    <br>• 6 家投行齊聲上調目標價、平均目標 $90 (vs 5/15 $77.50)
-    <br>• 高指引轉移至 Q4：營收 $16.7~16.9B / EPS $1.16~$1.18
-    <br>• AI 網通設備為 2026 H2 結構性紅利受惠者
-    <br>• Cisco 升評同步驗證 AVGO、Marvell、Astera Labs 等 AI 網通同業</p>
-    <span class="tag bull">AI 訂單 $9B</span>
-    <span class="tag bull">投行目標 $90</span>
-    <span class="tag watch">5/18 整理</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">AMAT</span>Applied Materials Q2 雙超、上修 2026 設備業務年增至 30%+ · 5/18 震盪</h3>
-    <p><strong>Applied Materials (AMAT) 5/14 盤後法說：Q2 EPS $2.86 / 營收 $7.91B 雙超預期</strong>（共識 $2.66 / $7.65B），5/18 震盪整理。CEO Dickerson <strong>上修 2026 半導體設備業務年增至 30%+（自 20%+）</strong>。HBM、先進製程、CoWoS 設備需求結構性延伸。
-    <br>• 半導體系統營收 $5.86B (+11.5% YoY)
-    <br>• Q3 營收與毛利雙率指引高於預期
-    <br>• $5B EPIC R&D Center 投資為長線護城河
-    <br>• 受惠：HBM4 量產、N2 設備搬入、CoWoS 月產能上修
-    <br>• 台廠設備鏈聯動：家登 (3680)、中砂 (1560)、漢科 (3402) 為 5/18 觀察重點</p>
-    <span class="tag bull">Q2 雙超預期</span>
-    <span class="tag bull">2026 設備 +30%</span>
-    <span class="tag watch">5/18 整理</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">3443</span>創意 特斯拉 AI5 訂單 150 萬顆續發酵 · 5/18 震盪整理</h3>
-    <p>創意 (3443) 5/18 跟隨大盤震盪整理。4 月營收 NT$42.94 億 (+156% YoY) 創歷史；<strong>特斯拉 AI5 ASIC 訂單 150 萬顆、毛利率約 20%</strong>；AI6 為下一波大單，Dojo3 伺服器晶片同步入袋。客戶涵蓋 Google、Microsoft、特斯拉等 5 大 AI 客戶。大摩目標 4,888 元、瑞銀 4,000 元。
-    <br>• 為台積電子公司、ASIC 設計服務雙雄之一
-    <br>• 大摩：特斯拉 AI5 + Google CPU 訂單持續、2026 EPS 估翻倍
-    <br>• OpenAI-AVGO Jalapeno 推遲至 2027，訂單分流到創意
-    <br>• 5/15 ETF 00981A 大舉減碼後續關注、可能造成短期賣壓</p>
-    <span class="tag bull">特斯拉 AI5 150 萬</span>
-    <span class="tag bull">外資升評 4,888</span>
-    <span class="tag watch">5/18 整理</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">3661</span>世芯-KY AWS Trn3 訂單能見度大增 · 5/18 震盪整理</h3>
-    <p>世芯 5/18 跟隨大盤震盪整理，結構性利多不變：<strong>Amazon AWS AI 晶片訂單積壓金額達 $225B</strong>、Q1 AI 晶片業務 +40% QoQ、年化 run-rate 突破 $20B。外資將世芯 <strong>AWS Trainium 3 2026 年營收貢獻由 $12B 上修至 $18B</strong>，Trn3 預計 Q2 進入量產放量。Q1 毛利率突破 50%。下半年 N3 AI 加速器爆發。
-    <br>• AWS Trainium 3 Q2 量產、Trainium 4 規格大幅升級
-    <br>• ADAS 業務 2026 H2 起貢獻顯著
-    <br>• Tesla AI5 訂單失守、市占轉由創意 (3443) 拿下 150 萬顆
-    <br>• 聯發科 (2454) 5/13 公告：認購世芯 450 張私募 NT$7.32 億、N2 共同研發
-    <br>• 5/13 ETF 00981A 大舉減碼後續關注</p>
-    <span class="tag bull">AWS $225B 積壓</span>
-    <span class="tag bull">Q1 毛利 50%+</span>
-    <span class="tag watch">5/18 整理</span>
-  </div>
-
-  <div class="card">
-    <h3><span class="ticker">2317</span>🆕 鴻海 5/18 +2.5 元至 251 抗跌 · 外資連 11 日加碼累計 30 萬+ 張</h3>
-    <p><strong>鴻海 (2317) 5/18 +2.5 元至 251、抗跌結構強</strong>—在台股早盤殺千點環境下逆勢翻紅，本土法人目標上修 305→330 元、Q2 EPS 估 3.9 元、2026 EPS 18.41 元 (+35% YoY) 持續發酵。5/14 召開 Q1 法說會：Q1 EPS NT$3.56 元、淨利 T$49.92B (+19% YoY) 創歷年同期新高、優於 LSEG 共識 T$48.88B。輪值 CEO 蔣尚義公開表示「AI 仍是 2026 最重要成長引擎、CSP 客戶近期再上修 Capex」。
-    <br>• <strong>AI 伺服器機櫃 2026 出貨翻倍以上</strong>（vs 2025 已倍增）
-    <br>• AI 伺服器全球市占約 40%（業界最高）
-    <br>• GPU 伺服器 + ASIC 伺服器需求強勁、一般伺服器隨 AI 資料中心同步擴張
-    <br>• 沿用「strong growth」全年營收指引、董事長劉揚偉重申 9 兆目標
-    <br>• 外資連 10 日加碼、累計買超 30 萬張 (法說前股價 +18%)
-    <br>• 印度 iPhone 25% 占比、新加坡子公司 $1.5B 加碼
-    <br>• 5/13 ETF 00981A 大舉減碼但對全市場影響極小</p>
-    <span class="tag bull">Q1 EPS 創高</span>
-    <span class="tag bull">5/18 +2.5 抗跌</span>
-    <span class="tag bull">外資連 11 買</span>
-  </div>
-
-  <div class="card">
-    <h3>🆕 智慧眼鏡 (Smart Glasses) 5/15 後續攻 · 大立光連 3 漲停攻 3,445 元創 5 年新高</h3>
-    <p><strong>5/15 台積電全球業務資深副總暨副共同營運長張曉強</strong>在技術論壇點名：「在 AI 應用中，最具潛力的新終端是智慧眼鏡 (Smart Glasses)」，引爆連續多日輪動：<strong>大立光 (3008) 連 3 漲停、5/15 攻上 3,445 元創 5 年新高（自 2021/3 以來）</strong>、英濟 (3294) 漲停鎖死、揚明光 (3504) 一度觸及漲停、玉晶光 (3406)、亞光 (3019)、佳凌 (4976) 同步攻高。為 5/18 大盤殺千點環境下逆勢撐盤主軸、5/19 觀察輪動續力。
-    <br>• 主要驅動：Meta Ray-Ban、Apple Vision Pro Air (2026 H2)、Google AR Glasses
-    <br>• 光學鏈：大立光 (3008、鏡頭) / 玉晶光 (3406、鏡頭) / 揚明光 (3504、稜鏡 + AR 模組)
-    <br>• 半導體：台積電 N3P SoC 為主供應、聯發科或為 IC 設計後段服務商
-    <br>• 法人估 2026 智慧眼鏡全球出貨 1,000~1,500 萬支、2027 上看 4,000 萬支</p>
-    <span class="tag bull">大立光連 3 漲停</span>
-    <span class="tag bull">3,445 元 5 年新高</span>
-    <span class="tag bull">2026 H2 主軸</span>
-  </div>
-
-  <div class="rumor">
-    <strong>🗣️ 業界謠言（5/21 四盤前 · 財報後更新）：</strong>⭐ <strong>NVDA 盤後 −4% 後的供應鏈看法：</strong>法人圈普遍認為 AH 下跌為技術性「利多出盡」，Q2 $91B 指引是真正驅動力，CoWoS / HBM4 / 被動元件訂單不受影響。<strong>台積電 2nm 良率傳已突破 75%，Arizona F2 量產時程傳將自 2027 提前至 2026 Q4 試產</strong>，若確認對 2026 下半年業績有顯著貢獻。<strong>鴻海 AI 伺服器主軸：</strong>目標 305→330 元本土法人目標、外資連買結構。NVDA Q2 $91B 確認鴻海 2026 AI 伺服器機櫃翻倍出貨的基本假設。<strong>Vera Rubin 放量：</strong>被動元件（MLCC 47UF 缺貨未解、鋁電容 Panasonic SP-Cap 漲）、Vera Rubin 換代用料超多，國巨 / 華新科 / 立隆電獲益預估不變。<strong>Meta 裁員 AI-First：</strong>Zuckerberg 強調 AI 基礎設施投入不縮減，Meta-Broadcom MTIA 2027 H1 目標確認，世芯 / 創意 ASIC 設計服務訂單無風險。<strong>Custom ASIC 加速：</strong>TrendForce 預估 2026 Custom ASIC 出貨 +44.6%（vs GPU +16.1%），Google TPU / AWS Trainium / Tesla AI5 三大鏈同步確認。<strong>H200 中國</strong>：NVDA 財報未假設中國 DC compute 貢獻，長期不確定性仍在。
-    <span class="src">來源：Reuters、CNBC、Kiplinger、TrendForce、法人圈轉述 5/21 (四) 盤前</span>
+    <strong>🗣️ 市場傳言（5/22 週五盤前整理）：</strong>⭐ <strong>Broadcom Soundfish 雙晶片載板</strong>：Sami Analysis 點出 Fish 世代缺口，謝孟恭 EP663 研判更大顆 Soundfish 把兩片晶片拼在同一 substrate——欣興 (3037)、南電 (8046)、景碩 (3189) 或為載板新題材。<strong>台積電 2nm 良率傳突破 75%</strong>、Arizona F2 量產傳提前至 2026 Q4 試產。<strong>被動元件</strong>：傳某大型通路商在現貨市場一次掃走多個高壓 MLCC、功率電感料號，部分 Tier 2 廠商看不到現貨。<strong>旺宏 NOR Flash</strong>：傳 Q3 合約價已確定漲 15%。<strong>HBM4E</strong>：Samsung 6 月認證傳言尚未確認，良率測試仍進行中。
+    <span class="src">來源：法人圈轉述、股癌 EP663、Reuters、CNBC 5/22 盤前整理</span>
   </div>
 </section>
 
-<!-- 路透社科技股動態 -->
 <section id="reuters">
-  <h2 class="section-title"><span class="icon">📡</span>路透社科技股動態（5/21 週四盤前 · NVDA 財報後）</h2>
-  <div class="highlight">
-    路透社 (Reuters) 與主流外電 5/20~5/21 全球科技股焦點 — <strong>⭐ NVDA Q1 FY27 大超預期（EPS $1.87、營收 $81.62B、Q2 指引 $91B）盤後 AH −4.1%「利多出盡」、Meta 裁員 8,000 人 AI-First 轉型、Google I/O Gemini 3.5 搜尋革命、ADI $1.5B 收購 Empower Semiconductor、30Y 殖利率 5.2% 仍高、台積電 TSM ADR $392.61、SOX 11,079</strong>。<strong>5/21 (週四) 三大開盤主軸：</strong>① <strong>⭐ NVDA AH −4% 短線壓力 vs 長線 Q2 $91B 利多</strong>；② <strong>台積電 / 鴻海供應鏈開盤方向</strong>（CoWoS / AI 伺服器訂單不受影響）；③ <strong>Meta + Google AI-First 浪潮</strong>（AI 算力需求中長線確認）。
-  </div>
-
+  <h2 class="section-title"><span class="icon">📡</span>路透社科技股動態（5/22 週五盤前）</h2>
+  <div class="highlight">Reuters 與主流外電 5/21~5/22 焦點 — <strong>⭐ NVDA Q1 FY27 EPS $1.87、Q2 $91B 消化中、被動元件漲價全面擴大（國巨 572 歷史新高）、密歇根消費信心今日最終值、30Y 殖利率 5.2% 高位、Broadcom 載板雙晶片討論升溫</strong>。</div>
   <div class="card">
-    <h3>🆕 ⭐ NVDA Q1 FY27 大超預期 · EPS $1.87 · Q2 指引 $91B · 盤後 AH −4.1% 利多出盡</h3>
-    <p>Reuters / CNBC / Kiplinger 5/20：<strong>Nvidia Q1 FY27 財報（截至 4/26/2026）全面大超預期</strong>：<strong>EPS $1.87（vs 共識 $1.77、+6.25%）、營收 $81.62B（vs $78.8B 共識、+85.2% YoY）</strong>。<strong>Q2 FY27 指引 $91B（vs 共識 $86.08B，超出 $5B）</strong>。Data Center 創季度紀錄 $60.4B (+77% YoY)，Data Center 網絡 +199% YoY。Jensen Huang 稱 Blackwell 需求加速、Vera Rubin H2 2026 如期。<strong>盤後 (AH) −4.1%（~$212）</strong>—重演近三季「超預期後仍跌」模式，分析師共識：股價已超前 price in，短線賣壓不等於基本面轉壞，Q2 $91B 指引對供應鏈長線確認極強。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bull">EPS $1.87 超共識</span>
-    <span class="tag bull">Q2 指引 $91B</span>
-    <span class="tag bear">AH −4% 利多出盡</span>
-    <span class="src">來源：Reuters / CNBC · <a href="https://www.cnbc.com/2026/05/20/nvidia-nvda-earnings-report-q1-2027.html" target="_blank">Nvidia (NVDA) Q1 FY27 earnings report</a></span>
+    <h3>🆕 ⭐ NVDA Q1 FY27 財報確認 · 5/22 盤前消化趨近平盤</h3>
+    <p>CNBC / Reuters 5/20~5/22：EPS $1.87（非 GAAP）、GAAP $1.62；營收 $81.62B (+85.2% YoY)；Q2 指引 $91B（+5.8% vs 共識 $86B）；Data Center $60.4B (+77% YoY)、網絡 +199% YoY。5/21 消化後 5/22 盤前趨近平盤。分析師共識：Q2 $91B 確認 AI 算力超級週期，供應鏈訂單長線不受 AH 賣壓影響。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">EPS $1.87</span><span class="tag bull">Q2 $91B</span><span class="tag neutral">消化第 2 天</span>
+    <span class="src">來源：CNBC · <a href="https://www.cnbc.com/2026/05/20/nvidia-nvda-earnings-report-q1-2027.html" target="_blank">Nvidia Q1 FY27 earnings report</a></span>
   </div>
-
   <div class="card">
-    <h3>🆕 Meta 裁員 8,000 人 (10%) · AI-First 轉型 · Google I/O Gemini 3.5 搜尋大改版</h3>
-    <p>Reuters / TechStartups 5/20：<strong>Meta 宣布裁員 8,000 人（約全員 10%）</strong>，另調配 7,000 名員工轉 AI 部門，強勢押注 AI-first 戰略。Meta-Broadcom MTIA（N2 + CoWoS-L，2027 H1）設計服務訂單不受影響，創意 / 世芯供應鏈穩固。<strong>Google I/O 2026</strong>：推出 Gemini Spark 24/7 個人 AI 代理（整合 Gmail/Workspace）、Gemini 3.5 Flash 自動化搜尋引擎、AI 生成圖片偵測（Chrome + Search），Google TPU 算力需求持續成長，驗證愛普 (6531) / GOOGL 供應鏈題材。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bear">Meta 裁員 8,000</span>
-    <span class="tag bull">Google Gemini 3.5</span>
-    <span class="src">來源：Reuters / TechStartups · <a href="https://techstartups.com/2026/05/19/top-tech-news-today-may-19-2026/" target="_blank">Top Tech News May 2026</a></span>
+    <h3>🆕 ⭐ 被動元件漲價：Murata 電感漲價 · 國巨歷史新高 · Vishay 書轉比 1.23</h3>
+    <p>Reuters / Digitimes 5/21：① Murata 電感漲價（磁珠、功率電感、RF 電感），日系第二大廠跟進；② 陸廠風華高科調漲 MLCC 等品項 5~30%；③ Vishay Q1 2026 被動元件書轉比 1.23，需求持續大於供給；④ 國巨 (2327) 5/21 創歷史新高 572元。AI 伺服器 Vera Rubin 機架被動元件用量 3~5 倍，NVDA Q2 $91B 直接確認採購量放大。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">Murata 漲價</span><span class="tag bull">Vishay 書轉比 1.23</span><span class="tag bull">漲價全球化</span>
+    <span class="src">來源：Digitimes / ETtoday / Reuters 5/21</span>
   </div>
-
   <div class="card">
-    <h3>🆕 Analog Devices $1.5B 收購 Empower Semiconductor · 2026 半導體整併訊號</h3>
-    <p>Reuters 5/20：<strong>Analog Devices (ADI) 與 Empower Semiconductor 進入收購談判、出價約 $1.5B 現金</strong>。Empower 專注 AI 晶片高效能電源管理 IC，直接應用於 AI 伺服器機架（GB300 功耗逼近 600kW，液冷 + 電源 IC 為必要配件）。這是 2026 年半導體整併潮的最新案例，顯示傳統 Analog 大廠主動切入 AI 周邊。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bull">ADI 收購 Empower</span>
-    <span class="tag bull">AI 電源 IC 整合</span>
-    <span class="src">來源：Reuters · AI Chip Acquisition 2026</span>
+    <h3>🆕 密歇根消費信心今日公佈 · 30Y 殖利率 5.2% 估值壓力</h3>
+    <p>Reuters 5/22：密歇根大學 5 月消費信心最終值今日公佈（估 52.2，初值 50.8 為 2024/11 以來低點）。若終值低於初值，消費信心持續惡化，對 Warsh FOMC（6/16~17）政策路徑有影響。30Y 殖利率 5.2% 高位 + 消費信心疲軟 + NVDA 財報消化三重因素疊加，為 Nasdaq −0.8% 期貨主因。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bear">消費信心低迷</span><span class="tag bear">30Y 5.2%</span>
+    <span class="src">來源：Reuters / CNN Business 5/22</span>
   </div>
-
   <div class="card">
-    <h3>🆕 ⭐ 美股 5/19 二三連跌 · 30Y 殖利率 5.2% 創 19 年新高</h3>
-    <p>Reuters / CNN Business / TheStreet 5/19：<strong>S&P 500 −0.67% 收 7,353.61、Nasdaq −0.84% 收 25,870.71、道瓊 −322 (−0.65%) 收 49,363.88</strong>。S&P 與 Nasdaq 連續第三日收跌，主因 <strong>30Y 美國公債殖利率衝 5.2%，創 2007 年（19 年）以來最高</strong>，10Y 同步升至 4.67% 年內高點。CNN Business 報導：長債拋售源於財政赤字疑慮 + 伊朗戰爭風險 + 持續通膨三重壓力。科技股估值直接受 DCF 折現率上升衝擊，SOX 費半指數跌 223 點至 11,079.50。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bear">三連跌</span>
-    <span class="src">來源：CNN Business / Reuters · <a href="https://www.cnn.com/2026/05/19/business/30-year-treasury-yield-bond-record" target="_blank">30-year US Treasury yield hits highest level in 19 years</a></span>
+    <h3>⚡ Nvidia 砸 $4B 入股 Lumentum + Coherent · 矽光子戰略</h3>
+    <p>Reuters 3/2/2026：Nvidia 對 Lumentum 與 Coherent 各投資 $2B（合計 $4B），加速矽光子與光學互連技術，驗證台股聯亞 (3081)、華星光 (4979)、穩懋 (3105) 長線紅利。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">CPO 矽光子</span>
+    <span class="src">來源：Reuters / Electronics Weekly · <a href="https://www.electronicsweekly.com/news/business/nvidia-invests-in-lumentum-2026-03/" target="_blank">Nvidia invests $4bn in optical interconnect</a></span>
   </div>
-
-  <div class="card">
-    <h3>🆕 川普宣布取消伊朗攻擊計畫 · WTI 急跌至 $102.90</h3>
-    <p>Reuters / CBS News / TheStreet 5/19：<strong>川普 5/19 宣布取消對伊朗「已排定」的攻擊計畫</strong>，稱「認真談判正在進行中，雙方均希望達成協議。」WTI 原油急跌 1.38% 至 <strong>$102.90 / 桶</strong>，Brent −1.82% 至 <strong>$110.10</strong>——這是近一週最大單日下跌。市場解讀：若伊朗局勢緩和，通膨預期或可降溫，對殖利率有向下壓力，有助科技股估值修復。但油價仍在高檔，美伊和談進展不確定性大。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag neutral">油價急跌</span>
-    <span class="src">來源：Reuters / CBS News · <a href="https://www.thestreet.com/stock-market-today/stock-market-today-may-19-2026-updates" target="_blank">Trump called off scheduled Iran attack - TheStreet</a></span>
-  </div>
-
-  <div class="card">
-    <h3>🆕 ⭐ NVDA Q1 FY27 財報今日盤後 · 共識 $78.8B · Q2 指引 $86B 關鍵</h3>
-    <p>Reuters / Kiplinger / Motley Fool 5/19~5/20：<strong>Nvidia 5/20 (三) 盤後（約 4:20 PM ET）公佈 Q1 FY27 財報</strong>，為本週最大事件。分析師共識：<strong>營收 $78.8B (+78.8% YoY)</strong>、EPS $1.77 (non-GAAP)。GS 預估 $80.05B 高於共識。NVDA 5/19 收 $221.56（區間 $217.91~$224.48），選擇權市場 implied 8~10% 波動。三大關注點：① Data Center 毛利率（目標 74.5%）；② <strong>Q2 FY27 指引</strong>（共識 $86B，突破 $88~90B 為強力催化）；③ China H200 commentary（$4.5B H20 庫存沖銷消化狀況）。歷史上 NVDA 在過去 23 季中 21 季超共識。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag watch">⭐ 今日盤後</span>
-    <span class="src">來源：Reuters / Kiplinger · <a href="https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-may-2026" target="_blank">Nvidia Earnings: Live Updates and Commentary May 2026</a></span>
-  </div>
-
-  <div class="card">
-    <h3>🆕 Trump 買賣 Mag7 達 $220M~$750M · NVDA、AAPL、MSFT、TSLA 均在列</h3>
-    <p>Reuters / USA Today 5/19：USA Today 報導，<strong>川普在 2026 年前三個月內買賣「Mag7」股票達 $220M~$750M</strong>，包含 NVIDIA (NVDA)、Apple (AAPL)、Microsoft (MSFT)、Tesla (TSLA)，這些公司的高層均曾出席白宮活動或受惠於政府政策討論。Trump Organization 聲稱賬戶由第三方金融機構管理，「沒有川普或家人的輸入」。市場關注此議題是否影響 AI 晶片股的政策風險（H20 出口管制、關稅豁免等）。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag watch">政策風險</span>
-    <span class="src">來源：Reuters / USA Today · <a href="https://www.thestreet.com/stock-market-today/stock-market-today-may-19-2026-updates" target="_blank">Trump traded up to $750M in Big Tech stocks</a></span>
-  </div>
-
-  <div class="card">
-    <h3>⚡ Nvidia 砸 $4B 入股 Lumentum + Coherent · 矽光子戰略部署</h3>
-    <p>Reuters / Electronics Weekly / HPCwire 3/2/2026：<strong>Nvidia 宣布對 Lumentum 與 Coherent 各投資 $2B（合計 $4B）</strong>，加速矽光子與光學互連技術，為下世代 AI 資料中心基礎設施。Jensen Huang 表示：「台積電 + Lumentum + Coherent = 全球最先進矽光子基礎，將支撐 GW 級 AI 工廠。」這是 CPO 生態系最大單筆投資，驗證台股聯亞 (3081)、華星光 (4979)、穩懋 (3105) 的光通訊供應鏈長線紅利，<strong>聯亞毛利已衝至 48%</strong>，大摩目標價翻倍。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bull">CPO 矽光子</span>
-    <span class="src">來源：Reuters / Electronics Weekly · <a href="https://www.electronicsweekly.com/news/business/nvidia-invests-in-lumentum-2026-03/" target="_blank">Nvidia invests $4bn in Lumentum and Coherent for optical interconnect</a></span>
-  </div>
-
-  <div class="card">
-    <h3>⚡ SK Hynix HBM 市場 62% 份額 · Micron 超越 Samsung 排第二</h3>
-    <p>Reuters / TrendForce / Astute Group 5/2026 更新：<strong>SK Hynix 在 HBM 市場佔 62%，Micron 超越 Samsung 升至 21%（Samsung 降至 17%）</strong>。Samsung 與 SK Hynix 警告 AI 驅動的記憶體短缺可能持續至 2027 以後。客戶已提前預訂多年供應；Micron HBM 產能已全數售罄至 2026 年底。三方競標 16-Hi HBM4 訂單（NVDA Rubin Ultra 用）為下半年最大看點。HBM3E 12 月起漲價近 20%，結構性供不應求格局確立。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bull">HBM 缺貨</span>
-    <span class="src">來源：Reuters / TrendForce · <a href="https://www.trendforce.com/news/2026/03/09/news-samsung-sk%E2%80%AFhynix-reportedly-tapped-as-nvidia-rubin-hbm4-suppliers-shipments-could-start-in-march/" target="_blank">Samsung, SK hynix HBM4 shipments to Nvidia</a></span>
-  </div>
-
   <div class="card">
     <h3>⚡ Amazon AWS AI 晶片積壓 $225B · 世芯訂單上修至 $18B</h3>
-    <p>Reuters / Motley Fool 5/11：Amazon AWS 5/2 法說會揭露 AI 晶片業務 Q1 +40% QoQ、年化 run-rate 突破 $20B。<strong>未交付訂單 (backlog) 達 $225B</strong>，為前一年同期翻倍。世芯-KY (3661) 為 AWS Trainium 3/4 主要設計服務商、外資將 2026 營收貢獻由 $12B 上修至 <strong>$18B</strong>。Trainium 3 預計 Q2 量產放量。世芯 Q1 毛利率突破 50% 創高、下半年 N3 AI 加速器爆發。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bull">AWS ASIC</span>
-    <span class="src">來源：Reuters / Motley Fool · <a href="https://www.fool.com/investing/2026/05/11/amazons-ai-chip-backlog-stands-at-a-massive-225-bi/" target="_blank">Amazon AI Chip Backlog $225 Billion</a></span>
+    <p>Reuters / Motley Fool 5/11：AWS Q1 AI 晶片 +40% QoQ、年化 run-rate $20B+，未交付訂單 $225B（前一年翻倍）。世芯-KY (3661) 為 AWS Trainium 3/4 主要設計服務商，外資將 2026 營收估上修至 $18B。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">AWS ASIC $225B</span>
+    <span class="src">來源：Motley Fool · <a href="https://www.fool.com/investing/2026/05/11/amazons-ai-chip-backlog-stands-at-a-massive-225-bi/" target="_blank">Amazon AI Chip Backlog $225B</a></span>
   </div>
-
   <div class="card">
-    <h3>⚡ 2026 CPO 元年 · 台積電 COUPE 技術領軍 · 聯亞毛利 48%</h3>
-    <p>Reuters / 工商時報 / Digitimes 5/2026：2026 年被業界確認為 CPO（共同封裝光學）商業元年，台積電 COUPE 技術領軍，Nvidia / Broadcom 同步部署。<strong>聯亞 (3081) 毛利率衝至 48%</strong>，為近年最高，Nvidia 砸 $400 億（$4B）入股 Lumentum 與 Coherent 驗證整個生態系。光通訊 7 劍客（聯亞、華星光、光環、穩懋、光聖、波若威、合聖）在 Cisco AI 訂單翻倍 $9B 指引下，2026 進入收割期。CPO 市場規模估將自 2023 年 $800 萬暴增至 2030 年 $93 億（CAGR 172%）。</p>
-    <span class="tag reuters">Reuters</span>
-    <span class="tag bull">CPO 收割元年</span>
-    <span class="src">來源：Digitimes / 工商時報 · <a href="https://www.sinotrade.com.tw/richclub/industry/2026%E5%B9%B4CPO%E5%85%89%E9%80%9A%E8%A8%8A%E5%95%86%E8%BD%89%E5%85%83%E5%B9%B4-%E5%8F%B0%E7%A9%8D%E9%9B%BBCOUPE%E6%8A%80%E8%A1%93%E9%A0%98%E8%BB%8D-%E8%BC%9D%E9%81%94%E5%8D%9A%E9%80%9A%E5%90%8C%E6%AD%A5%E5%8D%A1%E4%BD%8D-%E5%8F%B0%E5%BB%A0%E4%BE%9B%E6%87%89%E9%8F%88%E5%85%A8%E8%A7%A3%E6%9E%90-%E7%94%A2%E6%A5%AD%E7%86%B1%E8%A9%B1-693905de70acc6429c330a23" target="_blank">2026年CPO光通訊商轉元年分析</a></span>
+    <h3>⚡ SK Hynix HBM 62% · Micron 超越 Samsung 排第二 · HBM 缺料至 2027~2028</h3>
+    <p>Reuters / TrendForce：SK Hynix HBM 市占 62%，Micron 超越 Samsung 升至 21%。Samsung HBM4E 6 月認證進度為近期最大催化變數。HBM3E 12 月起漲近 20%，缺料延續至 2027~2028。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">HBM 缺貨</span>
+    <span class="src">來源：Reuters / TrendForce</span>
+  </div>
+  <div class="card">
+    <h3>⚡ 2026 CPO 元年 · 台積電 COUPE 領軍 · 聯亞毛利 48%</h3>
+    <p>Digitimes 5/2026：2026 年 CPO 商業元年，聯亞 (3081) 毛利率衝至 48% 創近年最高，CPO 市場規模估 2030 年 $93 億（CAGR 172%）。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">CPO 收割元年</span>
+    <span class="src">來源：Digitimes · <a href="https://www.sinotrade.com.tw/richclub/industry/2026%E5%B9%B4CPO%E5%85%89%E9%80%9A%E8%A8%8A%E5%95%86%E8%BD%89%E5%85%83%E5%B9%B4-%E5%8F%B0%E7%A9%8D%E9%9B%BBCOUPE%E6%8A%80%E8%A1%93%E9%A0%98%E8%BB%8D-%E8%BC%9D%E9%81%94%E5%8D%9A%E9%80%9A%E5%90%8C%E6%AD%A5%E5%8D%A1%E4%BD%8D-%E5%8F%B0%E5%BB%A0%E4%BE%9B%E6%87%89%E9%8F%88%E5%85%A8%E8%A7%A3%E6%9E%90-%E7%94%A2%E6%A5%AD%E7%86%B1%E8%A9%B1-693905de70acc6429c330a23" target="_blank">2026年CPO分析</a></span>
   </div>
 </section>
 
-<!-- 🎙️ 股癌專區 -->
 <section id="gooaye">
   <h2 class="section-title"><span class="icon">🎙️</span>股癌 Podcast 專區</h2>
-  <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px;">謝孟恭主持，每週三、六下午發新集數。摘錄股市與產業相關重點。<strong>EP663 已於 5/20（三）下午釋出</strong>，socialworkerdaily 完整筆記更新中（通常隔日整理完成）。下一集 EP664 預計 <strong>5/24（六）</strong>下午發出，5/25 晨報自動覆蓋。⚠️ EP663 主章節內容如下，來源為 YouTube 置頂時間戳，完整筆記待 socialworkerdaily 更新後確認。</p>
+  <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px;">謝孟恭主持，每週三、六下午發新集數。<strong>下一集 EP664 預計 5/24（六）下午發出，5/25 晨報自動覆蓋。</strong>本期內容來自本機逐字稿（EP663 完整版，已驗證個股代號）。</p>
 
   <div class="gooaye-hero">
     <div>
       <span class="ep-num">EP663</span>
-      <span class="ep-date">2026-05-20（三）· 今日下午釋出</span>
+      <span class="ep-date">2026-05-20（三）· 本機逐字稿完整版</span>
     </div>
-    <h3>🦘 被動元件大廠現貨掃貨 · 紀律擴產 · Google TPU 鏈 · Astera Labs 看遠方</h3>
-    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;">本集從生活分享（減重、瘦瘦針、網球重訓、機能訓練、喚醒核心肌群）切入，11:07 進入市場話題後深入被動元件供需失衡、AI 半導體 ASIC 客製矽鏈、Google TPU 供應鏈與美股 Astera Labs 長線觀察。資金輪動行情持續、強調「信仰測試」與「持續往前看」。⚠️ 影片才剛釋出，逐字稿與筆記網站尚未更新，以下重點來自網友置頂時間戳章節 + 留言推測；明早 socialworkerdaily 寫出完整筆記後會自動覆蓋。</p>
+    <h3>🦘 被動元件大廠現貨掃貨 · Panasonic 漲價 · Broadcom Soundfish 載板雙晶 · 愛普 Google TPU 復活</h3>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;margin-top:8px;"><strong>主軸（120字）：</strong>以「被動元件供需失衡→漲價循環確立」為核心。Panasonic 已向部分客戶發出漲價通知，通路商在現貨市場大量掃貨高階 MLCC 與電容，高端料號開始出現停供與長交期——手法與 2018 年大缺貨潮如出一轍。Broadcom 的 Fish 晶片世代被 Sami Analysis 指出有一代缺口，謝孟恭研判接下來將出現「更大顆的 Soundfish」，把兩片晶片拼在同一載板上（類蘋果 Ultra 雙晶片架構），對載板族群為潛在利多。愛普 (6531) 因整合被動元件 (IPD) 嵌入 Google TPU 基板，在 Google TPU 成為市場主軸時再度被點名。整體多頭結構不變，強調資金輪動中的信仰測試。</p>
 
-    <p style="font-weight:600;color:var(--accent);font-size:0.9rem;margin-top:10px;">📋 章節重點（依時間戳）</p>
-    <ul style="font-size:0.85rem;color:var(--text-dim);line-height:1.8;padding-left:1.2rem;">
-      <li><b>01:47~10:10 生活段：</b>瘦瘦針、網球、重訓、機能訓練、喚醒核心肌肉「投資健康穩賺不賠」</li>
-      <li><b>11:07 市場話題開場 · 11:34 Panasonic：</b>大廠在現貨市場掃貨被動元件，現象浮現</li>
-      <li><b>13:25 蜜望實（8043）：</b>蜜望實涉電子零組件，本集點名為被動元件鏈相關</li>
-      <li><b>14:10 上升循環邏輯 · 15:15 漲價信實務運作方式：</b>解構漲價機制（成本驅動 vs 需求驅動）</li>
-      <li><b>17:30 紀律擴產 · 台積電：</b>不要 FOMO、紀律擴產才能撐住長期景氣</li>
-      <li><b>18:53 博通 / 聯發科：</b>ASIC 客製矽雙引擎，AI 半導體分頭並進</li>
-      <li><b>21:49 愛普（6531）/ Google TPU：</b>記憶體 IC 設計廠愛普與 Google TPU 供應鏈關聯</li>
-      <li><b>22:27 資金輪動 · 23:27 信仰測試 · 26:00 再一次信仰測試：</b>盤面結構不穩，考驗持股信仰</li>
-      <li><b>29:40 Astera Labs（ALAB）：</b>美股 AI 標的，「看遠方」長線視角</li>
+    <p style="font-weight:600;color:var(--accent);font-size:0.9rem;margin-top:14px;">📋 逐章節重點（8 條）</p>
+    <ul style="font-size:0.87rem;color:var(--text-dim);line-height:1.85;padding-left:1.2rem;margin-top:6px;">
+      <li><b>① 生活段（0:00~11:06）</b>——減重達標 78公斤（瘦瘦針 + 重訓 + 機能訓練 + 物理治療師）；健康投資穩賺不賠；「你覺得舒服的姿勢往往是在害你」——物理治療師重要洞見。</li>
+      <li><b>② Panasonic 漲價通知（11:07~14:00）</b>——Panasonic 已對部分客戶發漲價通知（不是全面發），但訊息已流出→市場衝進去掃貨。蜜望實（通路商 8043）等大廠開始在現貨市場掃料。</li>
+      <li><b>③ 被動元件漲價上升循環（14:00~17:30）</b>——「如果你已知道供需失衡，你不把便宜料掃光嗎？」類似水果商囤貨。高端料號已出現報價停報、交期拉長（蜜望實通路商已表示）。結構性漲價，非一次性。</li>
+      <li><b>④ 台積電紀律擴產 vs 不紀律擴產（17:30~18:50）</b>——台積電「有機率擴產」不大幅超擴，是泡沫緩衝。被動元件目前也沒有大廠大動作擴產（只有部分高壓 MLCC 廠）。下檔防守點：「看到大家共識要擴產才注意」。</li>
+      <li><b>⑤ Broadcom Soundfish 載板雙晶片（18:53~22:00）</b>——Sami Analysis 報告指出 Fish 世代有缺口（Soundfish 之後 Icefish 消失）。謝孟恭補充：自家調查顯示接下來有「更大顆的 Soundfish」，把兩顆晶片用 substrate（載板）雙拼，類蘋果 Ultra 晶片。⚠️ 此資訊與 Sami Analysis 有出入，謝強調最終都會拿到正確答案。</li>
+      <li><b>⑥ 愛普 6531 與 Google TPU 復活邏輯（21:49~23:00）</b>——愛普（AP Memory）的 IPD（整合被動元件）埋在 Google TPU 的 substrate（載板）裡。當 Google TPU 成為舞台中央，資金就回來。啟示：「現在被提款的老 AI 題材，等到輪動時資金會再回來。」</li>
+      <li><b>⑦ 市場結構：多頭信仰測試（23:00~30:00）</b>——只要還有強勢股存在就覺得多頭 OK；資金輪動是健康表現。光通訊「還早」；老 AI 被提款不代表故事結束。</li>
+      <li><b>⑧ QA 精選</b>——台積電技術論壇點到光通訊股價還跌（答：還早，利多出盡是短線）；X 上有沒有推薦帳號？（答：只看產業趨勢，不看爆牌）；小資時期看到別人比你快會不會難受？（答：比較是快樂之賊）；AI 怎麼用整理新聞？（答：模型比 Prompt 重要，OPUS 蒐集用）。</li>
     </ul>
 
     <div class="gooaye-stocks">
@@ -778,18 +348,21 @@
       <span>Google GOOGL</span>
     </div>
     <div class="gooaye-themes">
-      <span>被動元件</span>
+      <span>被動元件漲價循環</span>
+      <span>現貨市場掃貨</span>
+      <span>Broadcom Fish 晶片</span>
+      <span>載板雙晶片</span>
       <span>Google TPU</span>
-      <span>AI 半導體</span>
-      <span>漲價循環</span>
-      <span>大廠掃貨</span>
+      <span>愛普 IPD 復活</span>
       <span>紀律擴產</span>
       <span>資金輪動</span>
       <span>信仰測試</span>
     </div>
-    <div class="gooaye-quote">「大廠在現貨市場掃貨、漲價信號浮現、上升循環邏輯成立。資金輪動下，持續往前看、信仰測試 again。」</div>
-    <p style="margin-top:8px;font-size:0.78rem;color:var(--text-muted);">📍 章節來源：YouTube 置頂留言 @wuchinen · ⚠️ 內文重點為機器整理，建議聽原節目確認上下文</p>
-    <p style="margin-top:4px;"><a href="https://www.youtube.com/watch?v=wgd3AJ3Wuzk" target="_blank" style="color:var(--accent);font-size:0.85rem;">▶ YouTube</a> · <a href="https://open.spotify.com/show/1zWxx5pKk0XBEzMupVC7UZ" target="_blank" style="color:var(--accent);font-size:0.85rem;">Spotify</a></p>
+    <div class="gooaye-quote">「做股票可能心情很好，可是採購心情很差——每個禮拜都有人找你漲價，你還不敢議價，因為你議價東西就跑到別人那了。」</div>
+    <div class="gooaye-quote">「你吃大魚的話就是要這樣子——要看遠方而不是看面前的跑道，過程中強勢股存在就代表多頭結構 OK。」</div>
+    <div class="gooaye-quote">「比較是快樂之賊——你只要知道自己比之前有錢了就好，不要往上比。」</div>
+    <p style="margin-top:10px;font-size:0.82rem;color:var(--text-muted);">📍 逐字稿來源：本機 股癌_EP663_wgd3AJ3Wuzk.txt（5/20 自動下載）· 代號均 WebSearch 驗證：台積電 2330、博通 AVGO、聯發科 2454、愛普 6531（AP Memory，非 IP Memory）、蜜望實 8043、Panasonic 6752.JP、Astera Labs ALAB</p>
+    <p style="margin-top:4px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-663/" target="_blank" style="color:var(--accent);font-size:0.85rem;">📝 socialworkerdaily 完整筆記</a> · <a href="https://www.youtube.com/watch?v=wgd3AJ3Wuzk" target="_blank" style="color:var(--accent);font-size:0.85rem;">▶ YouTube</a> · <a href="https://open.spotify.com/show/1zWxx5pKk0XBEzMupVC7UZ" target="_blank" style="color:var(--accent);font-size:0.85rem;">Spotify</a></p>
   </div>
 
   <div class="gooaye-mini-grid">
@@ -797,33 +370,28 @@
       <div><span class="ep-num">EP662</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-16（六）</span></div>
       <p style="margin:6px 0;font-weight:600;">逢低加碼 · 老 AI 摔 vs 資金轉台積電 · 軟體資安創高</p>
       <ul style="font-size:0.78rem;color:var(--text-dim);line-height:1.65;padding-left:1rem;margin:4px 0;">
-        <li><b>週五跌停反而去接：</b>身邊資產水位類似的人都沒恐慌、分得散就能扛過回檔</li>
-        <li><b>老 AI 跌深 vs 台積電：</b>投信改公發書 2~3 個月、會看到更多投信增持台積電</li>
-        <li><b>軟體股 / 資安股創高：</b>CrowdStrike、figma 開出好成績，族群性出現</li>
-        <li><b>被動元件深化：</b>電阻漲 3 成（成本驅動）、MLCC + 鋁電容更嚴重、Panasonic SP-Cap 傳漲 3 成</li>
-        <li><b>停止接單訊號：</b>「看到有人停止接單就要出大事」</li>
-        <li><b>操作日記：</b>群聯破前低砍出、國巨減碼、健策抄底「抄到大白鯊」</li>
+        <li>週五跌停反而去接：資產水位大的人不恐慌</li>
+        <li>被動元件深化：電阻漲 3 成、Panasonic SP-Cap 傳漲 3 成</li>
+        <li>軟體股 / 資安股創高：CrowdStrike、Figma 族群性浮現</li>
+        <li>操作日記：群聯破前低砍出、國巨減碼、健策抄底「抄到大白鯊」</li>
       </ul>
       <div class="gooaye-stocks"><span>台積電 2330</span><span>國巨 2327</span><span>群聯 8299</span><span>健策 7752</span><span>CRWD</span></div>
-      <p style="font-size:0.75rem;margin-top:6px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-662/" target="_blank" style="color:var(--accent);">📝 socialworkerdaily 完整筆記</a></p>
+      <p style="font-size:0.75rem;margin-top:6px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-662/" target="_blank" style="color:var(--accent);">📝 socialworkerdaily</a></p>
     </div>
     <div class="gooaye-mini">
       <div><span class="ep-num">EP661</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-13（三）</span></div>
       <p style="margin:6px 0;font-weight:600;">MLCC 47UF 缺貨 · Vera Rubin 顆數倍增 · 廠務股聖暉領跑</p>
       <ul style="font-size:0.78rem;color:var(--text-dim);line-height:1.65;padding-left:1rem;margin:4px 0;">
-        <li><b>MLCC 排擠效應：</b>最缺 47UF（Samsung / Murata 才供）、國巨只供 22UF</li>
-        <li><b>鋁電容鏈：</b>日廠 Nichicon、Chemicon 股價好、Panasonic 退 OS-CON</li>
-        <li><b>Vera Rubin 換代：</b>用到的被動元件顆數超級無敵多、Power 廠包產能</li>
-        <li><b>功率半導體漲價：</b>德州儀器、Rohm 都漲</li>
-        <li><b>廠務股：</b>聖暉表現好（non-TSMC ODM）、漢唐毛利不錯但股價不動</li>
-        <li><b>QA：</b>樹脂概念國精化、雙鍵；高通屌炸跟 AI 建設有關</li>
+        <li>MLCC 最缺 47UF（Samsung/Murata 才供）、國巨只供 22UF</li>
+        <li>Vera Rubin 換代：被動元件顆數超級多</li>
+        <li>廠務股：聖暉表現好（non-TSMC ODM）</li>
       </ul>
-      <div class="gooaye-stocks"><span>國巨 2327</span><span>華新科 2492</span><span>立隆電 2472</span><span>聖暉 5536</span><span>漢唐 2404</span></div>
+      <div class="gooaye-stocks"><span>國巨 2327</span><span>華新科 2492</span><span>立隆電 2472</span><span>聖暉 5536</span></div>
       <p style="font-size:0.75rem;margin-top:6px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-661/" target="_blank" style="color:var(--accent);">📝 完整筆記</a></p>
     </div>
     <div class="gooaye-mini">
       <div><span class="ep-num">EP660</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-09（六）</span></div>
-      <p style="margin:6px 0;">台股高點融資受限。資金從 AI 高位階輪動至被動元件、記憶體、成熟製程（庫存回補非終端需求）。</p>
+      <p style="margin:6px 0;">台股高點融資受限。資金從 AI 高位階輪動至被動元件、記憶體、成熟製程。</p>
       <div class="gooaye-stocks"><span>被動元件</span><span>記憶體</span><span>成熟製程</span></div>
     </div>
     <div class="gooaye-mini">
@@ -834,277 +402,119 @@
   </div>
 </section>
 
-<!-- 台積電供應鏈 -->
 <section id="supply">
   <h2 class="section-title"><span class="icon">🔗</span>台積電供應鏈深度追蹤</h2>
-  <div class="highlight">
-    法人鎖定的 <strong>4 檔台積電製程升級受惠股</strong>，N2 量產與 Arizona 第二廠搬機效應啟動。
-  </div>
+  <div class="highlight">法人鎖定的台積電製程升級受惠股，N2 量產與 Arizona 第二廠搬機效應啟動。<strong>🆕 欣興/南電 Broadcom 載板雙晶片潛在題材</strong>。</div>
   <div class="chain-grid">
-    <div class="chain-row">
-      <div>
-        <div class="name">中砂 (1560)</div>
-        <div class="desc">CMP 研磨墊／晶圓製程耗材</div>
-      </div>
-      <span class="tag bull">2nm 受惠</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">家登 (3680)</div>
-        <div class="desc">EUV 光罩盒龍頭</div>
-      </div>
-      <span class="tag bull">EUV 擴增</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">漢科 (3402)</div>
-        <div class="desc">無塵室／廠務統包</div>
-      </div>
-      <span class="tag bull">設備進駐</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">穎崴 (6515)</div>
-        <div class="desc">高速 IC 測試介面</div>
-      </div>
-      <span class="tag bull">先進封測</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">鴻海 (2317)</div>
-        <div class="desc">AI 伺服器 ODM 龍頭</div>
-      </div>
-      <span class="tag">外資連 10 買</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">創意 (3443)</div>
-        <div class="desc">ASIC 設計服務</div>
-      </div>
-      <span class="tag bull">AVGO 替代</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">世芯-KY (3661)</div>
-        <div class="desc">ASIC 客製化矽</div>
-      </div>
-      <span class="tag bull">大客戶放量</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">日月光投控 (3711)</div>
-        <div class="desc">封測龍頭／CoWoS-L</div>
-      </div>
-      <span class="tag">CPO 封測</span>
-    </div>
+    <div class="chain-row"><div><div class="name">中砂 (1560)</div><div class="desc">CMP 研磨墊／晶圓製程耗材</div></div><span class="tag bull">2nm 受惠</span></div>
+    <div class="chain-row"><div><div class="name">家登 (3680)</div><div class="desc">EUV 光罩盒龍頭</div></div><span class="tag bull">EUV 擴增</span></div>
+    <div class="chain-row"><div><div class="name">漢科 (3402)</div><div class="desc">無塵室／廠務統包</div></div><span class="tag bull">設備進駐</span></div>
+    <div class="chain-row"><div><div class="name">穎崴 (6515)</div><div class="desc">高速 IC 測試介面</div></div><span class="tag bull">先進封測</span></div>
+    <div class="chain-row"><div><div class="name">鴻海 (2317)</div><div class="desc">AI 伺服器 ODM 龍頭</div></div><span class="tag">外資連買</span></div>
+    <div class="chain-row"><div><div class="name">創意 (3443)</div><div class="desc">ASIC 設計服務</div></div><span class="tag bull">Tesla AI5 訂單</span></div>
+    <div class="chain-row"><div><div class="name">世芯-KY (3661)</div><div class="desc">ASIC 客製化矽</div></div><span class="tag bull">AWS $18B 上修</span></div>
+    <div class="chain-row"><div><div class="name">日月光投控 (3711)</div><div class="desc">封測龍頭／CoWoS-L</div></div><span class="tag">CPO 封測</span></div>
+    <div class="chain-row"><div><div class="name">欣興 (3037)</div><div class="desc">ABF 載板龍頭</div></div><span class="tag watch">Broadcom 雙晶片潛力</span></div>
+    <div class="chain-row"><div><div class="name">南電 (8046)</div><div class="desc">高階 FC-BGA 載板</div></div><span class="tag watch">AI ASIC 載板受惠</span></div>
   </div>
 </section>
 
-<!-- 記憶體 -->
 <section id="memory">
-  <h2 class="section-title"><span class="icon">💾</span>記憶體：5/18 震盪整理、結構不變</h2>
-  <div class="highlight">
-    記憶體 5/18 震盪整理 — 自 5/15 漲多回吐後、5/18 持續觀察買盤承接，<strong>南亞科 (2408)、華邦電 (2344)、群聯 / 旺宏</strong> 震盪整理。外資 5/14 上調 7 檔記憶體股目標價結構性利多不變。TrendForce 估 Q2 DRAM 漲 58~63%、NAND Flash 漲 70~75% 結構不變。Micron 5/18 隨費半震盪。<strong>5/19 觀察：</strong>① 買盤承接力道與量能變化；② Samsung HBM4E 量產進度（傳將於 6 月通過 Nvidia 認證）；③ NVDA 5/20 (三) 財報對 HBM 需求 commentary 為記憶體類股催化關鍵。
+  <h2 class="section-title"><span class="icon">💾</span>記憶體：HBM 結構缺貨 · DRAM/NAND 漲價週期不變</h2>
+  <div class="highlight">NVDA Q2 $91B 指引確認 HBM4 需求長線不變。TrendForce 估 Q2 DRAM 漲 58~63%、NAND Flash 漲 70~75%。Samsung HBM4E 6 月認證進度為近期最大催化變數。</div>
+  <div class="card">
+    <h3><span class="ticker">2408</span>南亞科 · 外資目標 440 · LTA 結構紅利</h3>
+    <p>外資目標 440 元維持。HBM 產能擠壓 + CSP 兩年長約 (LTA) 紅利。法人推估 2026 脫離虧損、2027 EPS 8 元+。</p>
+    <span class="tag bull">外資目標 440</span><span class="tag bull">LTA 結構</span>
   </div>
   <div class="card">
-    <h3><span class="ticker">2408</span>南亞科 5/18 整理 · 外資目標 440 維持 · LTA 結構紅利不變</h3>
-    <p>南亞科 5/18 隨記憶體族群震盪整理，<strong>外資目標價 440 元維持</strong>。HBM 產能擠壓 + CSP 兩年長約 (LTA) 結構紅利延燒。法人推估 2026 提前脫離虧損、2027 EPS 上看 8 元以上。
-    <br>• 三星罷工風險 + MSCI 調整為短線推升催化劑
-    <br>• 外資、投信仍在累積部位
-    <br>• HBM4 配套需求結構性紅利不變
-    <br>• 5/13 ETF 00981A 減碼但對全市場影響極小</p>
-    <span class="tag bull">外資目標 440</span>
-    <span class="tag bull">LTA 結構紅利</span>
-    <span class="tag watch">5/18 整理</span>
+    <h3><span class="ticker">2344</span>華邦電 · 產能滿載至 2027 · 4 月月增 32%</h3>
+    <p>產能滿載至 2027 確認。4 月營收月增 32%、年增 182%。目標價 130~150 元。HBM4 入列。</p>
+    <span class="tag bull">產能滿載 2027</span><span class="tag bull">HBM4 入列</span>
   </div>
   <div class="card">
-    <h3><span class="ticker">2344</span>華邦電 5/18 震盪整理 · 產能滿載至 2027 不變</h3>
-    <p>華邦電 5/18 隨大盤震盪整理。Q1 法說會點火、產能滿載至 2027 確認、利基型 DRAM 雙引擎啟動。小摩持續點名 HBM4 訂單為短線焦點。投信、外資仍在累積部位。<strong>4 月營收月增 32%、年增 182%</strong>。目標價區間延伸至 130~150 元。</p>
-    <span class="tag bull">產能滿載 2027</span>
-    <span class="tag bull">HBM4 入列</span>
-    <span class="tag watch">5/18 整理</span>
-  </div>
-  <div class="card">
-    <h3><span class="ticker">8299</span>群聯 5/18 震盪整理 · SSD/NAND 結構不變</h3>
-    <p>群聯 5/18 隨記憶體族群震盪整理。SSD 控制晶片龍頭、HBM4 控制器市占穩定。NAND 漲價週期受惠最大，外資估 2026 EPS 80 元+。創見預估 AI 帶動的「超級循環」延續至 2027。</p>
-    <span class="tag bull">SSD/NAND</span>
-    <span class="tag watch">5/18 整理</span>
-  </div>
-  <div class="card">
-    <h3><span class="ticker">2337</span>旺宏 5/18 震盪整理 · NOR Flash 漲價週期</h3>
-    <p>旺宏 5/18 跟隨記憶體族群整理。NOR Flash 漲價週期 + 車用記憶體訂單能見度延伸至 Q3。但外資籌碼面仍相對謹慎、5/19 續攻取決於買盤承接。</p>
-    <span class="tag bull">NOR Flash 漲價</span>
-    <span class="tag watch">外資觀望</span>
-  </div>
-  <div class="card">
-    <h3><span class="ticker">MU</span>Micron 5/18 震盪 · HBM 全部售罄結構不變</h3>
-    <p>Micron 5/18 隨費半震盪整理。市值仍維持 $800B 區間。HBM 全部售罄、HBM 年化營收 run-rate 上看 $8B、2026 HBM4 產能全數預售。Q2 FY26 營收 $23.86B、雲端記憶體 +160%。Q3 指引 $33.5B (YoY +200%+)。Nvidia Rubin CPX 推論型主供應。AMAT 5/14 上修 2026 設備業務 30%+ 對 HBM 設備鏈為利多驗證。</p>
-    <span class="tag bull">市值 $800B+</span>
-    <span class="tag bull">HBM 售罄</span>
-    <span class="tag watch">5/18 震盪</span>
+    <h3><span class="ticker">MU</span>Micron · HBM 全部售罄 · Q3 指引 $33.5B</h3>
+    <p>HBM 全部售罄，年化 run-rate 上看 $8B。Q3 指引 $33.5B (+200%+ YoY)。Nvidia Rubin CPX 推論型主供應。</p>
+    <span class="tag bull">HBM 售罄</span><span class="tag bull">Q3 指引 $33.5B</span>
   </div>
   <div class="rumor">
-    <strong>🗣️ 業界謠言（5/19 開盤前）：</strong>🆕 <strong>Samsung HBM4E 量產進度傳將於 6 月通過 Nvidia 認證</strong>、若按期將進一步壓縮 SK Hynix 領先優勢。<strong>TrendForce Q2 漲價最新預估：DRAM +58~63%、NAND Flash +70~75% 結構不變</strong>。Samsung HBM4 已於 2/2026 通過 Nvidia 認證並開始量產出貨、市占目標 30%+。Nvidia HBM4 分配仍以 SK Hynix 主導 ~70%、Samsung ~30%、Micron 11%。<strong>Samsung 將供應 Nvidia 第二代 SOCAMM 半數記憶體</strong>。三方競標 16-Hi HBM4 訂單為 H2 焦點。<strong>NVDA 5/20 (三) 財報 HBM 需求 commentary 為記憶體類股催化關鍵</strong>。台廠華邦電（產能滿載至 2027）、南亞科 DDR4 庫存水位健康；旺宏因 NOR Flash 漲價受惠。中國長鑫存儲 DDR5 良率仍未到 60%。HBM 缺料延續至 2027~2028。
-    <span class="src">來源：產業鏈接洽消息、Reuters、Bloomberg、TrendForce、外資報告綜整 5/19</span>
+    <strong>🗣️ 記憶體謠言（5/22）：</strong>Samsung HBM4E 6 月認證尚未官方確認；旺宏 NOR Flash Q3 合約價傳漲 15%；TrendForce Q2 DRAM 漲 58~63%、NAND Flash 漲 70~75% 結構不變。
+    <span class="src">來源：業界接洽、TrendForce 5/22</span>
   </div>
 </section>
 
-<!-- CPO 光通訊 -->
 <section id="cpo">
   <h2 class="section-title"><span class="icon">💡</span>光通訊 CPO：2026 收割元年</h2>
-  <div class="highlight">
-    輝達 <strong>Rubin Ultra「銅退光進」轉折點</strong>，台積電 COUPE 技術領軍。專家斷言 2026 是 CPO 收割期，矽光子 7 劍客成新主流。
-  </div>
+  <div class="highlight">Nvidia Rubin Ultra「銅退光進」轉折點，台積電 COUPE 技術領軍。<strong>股癌 EP663：光通訊「還早」</strong>——資金輪動時有望再回頭，但現在等待。</div>
   <div class="chain-grid">
-    <div class="chain-row">
-      <div>
-        <div class="name">聯亞 (3081)</div>
-        <div class="desc">InP 磊晶／CW 雷射</div>
-      </div>
-      <span class="tag bull">大摩目標翻倍</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">華星光 (4979)</div>
-        <div class="desc">800G/1.6T 光元件</div>
-      </div>
-      <span class="tag bull">CW Laser 放量</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">光環 (3234)</div>
-        <div class="desc">CW 晶片代工</div>
-      </div>
-      <span class="tag">SiPh 受惠</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">穩懋 (3105)</div>
-        <div class="desc">化合物半導體代工</div>
-      </div>
-      <span class="tag">CW 晶片</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">光聖 (6442)</div>
-        <div class="desc">FAU／光纖柔性板</div>
-      </div>
-      <span class="tag">封裝關鍵</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">波若威 (3163)</div>
-        <div class="desc">FAU／光被動元件</div>
-      </div>
-      <span class="tag">CPO 概念</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">合聖 (6929)</div>
-        <div class="desc">FAU 模組</div>
-      </div>
-      <span class="tag watch">小型黑馬</span>
-    </div>
-    <div class="chain-row">
-      <div>
-        <div class="name">奇景光電 (HIMX)</div>
-        <div class="desc">FAU／LCoS</div>
-      </div>
-      <span class="tag">ADR 可參考</span>
-    </div>
+    <div class="chain-row"><div><div class="name">聯亞 (3081)</div><div class="desc">InP 磊晶／CW 雷射</div></div><span class="tag bull">大摩目標翻倍</span></div>
+    <div class="chain-row"><div><div class="name">華星光 (4979)</div><div class="desc">800G/1.6T 光元件</div></div><span class="tag bull">CW Laser 放量</span></div>
+    <div class="chain-row"><div><div class="name">光環 (3234)</div><div class="desc">CW 晶片代工</div></div><span class="tag">SiPh 受惠</span></div>
+    <div class="chain-row"><div><div class="name">穩懋 (3105)</div><div class="desc">化合物半導體代工</div></div><span class="tag">CW 晶片</span></div>
+    <div class="chain-row"><div><div class="name">光聖 (6442)</div><div class="desc">FAU／光纖柔性板</div></div><span class="tag">封裝關鍵</span></div>
+    <div class="chain-row"><div><div class="name">波若威 (3163)</div><div class="desc">FAU／光被動元件</div></div><span class="tag">CPO 概念</span></div>
+    <div class="chain-row"><div><div class="name">合聖 (6929)</div><div class="desc">FAU 模組</div></div><span class="tag watch">小型黑馬</span></div>
+    <div class="chain-row"><div><div class="name">奇景光電 (HIMX)</div><div class="desc">FAU／LCoS</div></div><span class="tag">ADR 可參考</span></div>
   </div>
 </section>
 
-<!-- 籌碼面 -->
 <section id="chips">
   <h2 class="section-title"><span class="icon">📈</span>外資與籌碼面快照</h2>
   <div class="card">
-    <h3>三大法人動向（5/20 三 · NVDA 財報日 · 5/19 外資賣超 632 億後 · 5/21 四台股盤前方向）</h3>
-    <p>• <strong>5/19 加權指數 −716.26 點 (−1.75%) 收 40,175.56</strong>，三大法人合計賣超 784.09 億元（外資 632.35 億），為 NVDA 財報前降低風險暴露的典型操作。5/20 日盤（NVDA 財報日）在前夜盤 40,049 基礎上開盤整理。</p>
-    <p>• <strong>NVDA Q1 FY27 財報 5/20 盤後揭曉</strong>：EPS $1.87（+6.25%）、營收 $81.62B (+85.2% YoY)、Q2 指引 $91B（超共識 $86B）。盤後 AH −4.1%，<strong>短線台股 5/21 受 NVDA AH 賣壓連動，開盤偏弱可能，但長線 AI 供應鏈訂單確認</strong>。</p>
-    <p>• <strong>TSM ADR 5/19 收 $392.61</strong>，SOX 11,079.50（5/19）；NVDA AH −4% 後，TSM ADR 在 after-market 短線受壓，估台積電 (2330) 5/21 開盤整理，關注 $2,200 支撐是否守穩。</p>
-    <p>• <strong>外資策略分析：</strong>5/19 大量賣超（避風 NVDA 財報不確定性）+ 5/21 NVDA Q2 $91B 確認後，外資有機會重新增持台積電 / 鴻海供應鏈，但需等待 5/20 台股日盤籌碼數據。</p>
-    <p>• <strong>5/21 (週四) 觀察：</strong>① TSM ADR $392.61 能否受 NVDA 強指引支撐；② 外資 5/20 是否止血回補；③ 鴻海 (2317) 外資連買結構是否持續；④ 被動元件 (國巨、華新科) Vera Rubin 受惠信念是否加強；⑤ 台指期夜盤方向（NVDA 消化後）。</p>
-    <span class="tag bear">5/19 外資賣超 632億</span>
-    <span class="tag bull">NVDA Q2 $91B 確認</span>
-    <span class="tag watch">台積電 5/21 開盤方向</span>
-    <span class="tag bear">NVDA AH −4% 短線施壓</span>
-    <span class="tag bull">長線 AI 供應鏈訂單不變</span>
+    <h3>三大法人動向（5/22 五盤前 · NVDA 消化第 2 天 · 被動元件歷史新高）</h3>
+    <p>• <strong>5/22 盤前基準：</strong>Nasdaq 100 期貨 −0.8%、S&P −0.3%，科技股承壓。TSM ADR ~$392。NVDA 盤前近平盤。</p>
+    <p>• <strong>被動元件強勢主軸：</strong>國巨 5/21 創歷史新高 572元，帶動整個被動元件族群成為本週最強勢族群。5/22 即使大盤偏弱，被動元件鏈有機會獨立走強。</p>
+    <p>• <strong>NVDA Q2 $91B 指引長線確認：</strong>台積電 CoWoS 訂單、鴻海 AI 機櫃翻倍目標均不受 AH 賣壓影響。外資策略：短期消化後預計再度增持 AI 供應鏈。</p>
+    <p>• <strong>5/22 觀察：</strong>① 被動元件注意股管制是否影響量能；② Michigan 消費信心最終值（美東 10 AM）；③ 30Y 殖利率能否降溫；④ 外資 5/21 是否轉淨買超；⑤ 欣興/南電載板雙晶片題材是否發酵。</p>
+    <span class="tag bull">被動元件 572 歷史新高</span>
+    <span class="tag bear">Nasdaq 期貨 −0.8%</span>
+    <span class="tag bull">NVDA Q2 $91B 長線確認</span>
+    <span class="tag watch">Michigan 信心今日</span>
   </div>
   <div class="card">
-    <h3><span class="ticker">2317</span>🆕 鴻海 5/18 +2.5 元抗跌 · 外資連 11 日加碼 30 萬+ 張</h3>
-    <p><strong>鴻海 5/18 +2.5 元至 251 抗跌結構強</strong>—在台股早盤殺千點環境下逆勢收紅。本土法人 5/17 連袂上修目標 305→330 元、Q2 EPS 3.9 元、2026 EPS 18.41 元 (+35% YoY) 持續發酵。Q1 EPS NT$3.56、淨利 NT$49.92B (+19% YoY) 創歷年同期新高、優於 LSEG 共識 NT$48.88B。
-    <br>• <strong>AI 伺服器機櫃 2026 出貨翻倍以上</strong>
-    <br>• AI 伺服器全球市占 40%（業界最高）
-    <br>• 沿用「strong growth」全年指引、董事長劉揚偉重申 9 兆目標
-    <br>• <strong>外資連 11 日加碼、累計買超 30 萬+ 張結構不變</strong>（自 4/20 累計 48 萬張）
-    <br>• 印度 iPhone $1.5B 加碼、占全球 25%
-    <br>• H200 中國分銷商核准但實際出貨延遲</p>
-    <span class="tag bull">EPS 3.56 創高</span>
-    <span class="tag bull">外資連 11 買</span>
-    <span class="tag bull">5/18 +2.5 抗跌</span>
+    <h3><span class="ticker">2317</span>鴻海 · 外資連買 · AI 伺服器市占 40%</h3>
+    <p>外資連買結構不變，NVDA Q2 $91B 確認其最大受益地位。AI 伺服器機櫃 2026 翻倍以上，全球市占 40%。Q1 EPS NT$3.56 創歷年同期新高。目標 305~330 元。</p>
+    <span class="tag bull">EPS 3.56 創高</span><span class="tag bull">外資連買</span><span class="tag bull">AI 機櫃翻倍</span>
   </div>
   <div class="card">
     <h3>外資 2026 年共識台廠 TOP 5</h3>
-    <p>JPMorgan / UBS / Goldman / Morgan Stanley / HSBC 一致看好：</p>
     <p><strong>台積電 (2330) · 鴻海 (2317) · 創意 (3443) · 世芯-KY (3661) · 日月光投控 (3711)</strong></p>
-    <p>記憶體外資目標價：南亞科 (2408) 440、華邦電 (2344) 130~150、群聯 (8299) 1,200、旺宏 (2337) 80 結構不變。</p>
-    <p>🆕 智慧眼鏡新主題候選：大立光 (3008)、玉晶光 (3406)、揚明光 (3504)、英濟 (3294)、亞光 (3019)、佳凌 (4976) — 大立光連 3 漲停 5 年新高已驗證主軸。</p>
-    <span class="tag bull">外資認證</span>
-    <span class="tag bull">智慧眼鏡新主題</span>
+    <p>被動元件：國巨 2327、華新科 2492、立隆電 2472 為 AI 伺服器直接受惠鏈。記憶體：南亞科 440、華邦電 130~150、群聯 1,200。</p>
+    <span class="tag bull">外資認證</span><span class="tag bull">被動元件強勢</span>
   </div>
 </section>
 
-<!-- 行事曆 -->
 <section id="calendar">
   <h2 class="section-title"><span class="icon">📅</span>本月財經行事曆</h2>
   <div class="card">
     <div class="calendar-item">
-      <div class="time">5/15 (五)</div>
-      <div class="event">台積電技術論壇 $1.5T 2030 大餅 · 5/15 創高後爆量收黑 · VIS 釋股 8.1% 公告
-        <small>美股三大指數齊跌（道瓊 −1.07%、Nasdaq −1.54%、費半 −3.92%）；台股 5/15 創高 42,408 後收 41,172 −1.39%；台積電盤後公告擬出售 VIS 8.1% 股權</small>
+      <div class="time">5/20 (三) ✅</div>
+      <div class="event"><strong>⭐ Nvidia Q1 FY27 財報 — EPS $1.87、營收 $81.62B、Q2 指引 $91B</strong>
+        <small>全面大超預期。Data Center $60.4B (+77% YoY)。盤後 AH −4.1%「利多出盡」。Blackwell 加速、Vera Rubin H2 如期。</small>
       </div>
     </div>
     <div class="calendar-item">
-      <div class="time">5/16 (六)</div>
-      <div class="event">Warsh 正式接任 Fed 主席 · 首日談話「依數據判斷」鷹中帶鴿
-        <small>10Y 殖利率自 4.53% 微幅回落、油價自 $109 回測 $107.5、市場短線喘息</small>
+      <div class="time">5/21 (四) ✅</div>
+      <div class="event">台股消化 NVDA · 被動元件創歷史新高 · Murata 電感漲價
+        <small>國巨 (2327) 創歷史新高 572元 (+6%)；Murata 宣布電感漲價；Nasdaq 消化後收跌；NVDA 趨近平盤</small>
       </div>
     </div>
     <div class="calendar-item">
-      <div class="time">5/18 (一)</div>
-      <div class="event">VIS 跌停拋售 · 台股早盤殺千點後尾盤翻紅縮跌幅
-        <small>VIS 5/18 開盤直摜跌停 159 元、委賣破 5,200 張；台積電 −1.77% 至 2,225；鴻海 +2.5 元至 251 抗跌；美 5/18 道瓊 +0.32% 重返 5 萬、Nasdaq −0.51%、NVDA −1.3% 收 $223.17；10Y 殖利率衝 52 週新高</small>
+      <div class="time">5/22 (五) 📍今日</div>
+      <div class="event"><strong>密歇根消費信心最終值 · 被動元件延續強勢 · NVDA 消化第 2 天</strong>
+        <small>① Michigan 5 月最終值（美東 10 AM，估 52.2）；② Nasdaq −0.8% 台股壓力；③ 被動元件注意股限制；④ Broadcom 載板雙晶片題材發酵觀察</small>
       </div>
     </div>
     <div class="calendar-item">
-      <div class="time">5/19 (二)</div>
-      <div class="event">美股三連跌 · 30Y 殖利率 5.2% 創 19 年高 · 川普取消伊朗攻擊
-        <small>S&P −0.67% 收 7,353、Nasdaq −0.84% 收 25,870、道瓊 −0.65% 收 49,363；SOX −223 至 11,079；TSM ADR $392.61；NVDA $221.56；台指期日盤 −738 收 40,140、夜盤 40,049；三大法人賣超 784億、外資賣超 632億；WTI 急跌至 $102.90（川普取消伊朗攻擊）</small>
-      </div>
-    </div>
-    <div class="calendar-item">
-      <div class="time">5/20 (三) ✅已揭曉</div>
-      <div class="event"><strong>⭐ Nvidia Q1 FY27 財報盤後揭曉 — 大超預期，盤後 −4.1%</strong>
-        <small>結果：EPS $1.87（vs 估 $1.77）、營收 $81.62B（vs 估 $78.8B、+85.2% YoY）、Q2 指引 $91B（vs 共識 $86B）。Data Center $60.4B (+77% YoY)。盤後 AH −4.1% 至 ~$212，重演近三季「超預期後仍跌」模式。Blackwell 加速、Vera Rubin H2 如期。</small>
-      </div>
-    </div>
-    <div class="calendar-item">
-      <div class="time">5/21 (四) 📍今日</div>
-      <div class="event"><strong>台股供應鏈消化 NVDA 財報 · Meta 裁員 AI-First · Google I/O 效應</strong>
-        <small>關注：① NVDA AH −4% 能否回穩（台積電 / 鴻海開盤先行指標）；② Q2 $91B 長線利多確認供應鏈訂單；③ 30Y 殖利率 5.2% 是否降溫；④ Meta 裁員 8,000 人 AI 算力需求長線不變；⑤ Google Gemini 3.5 推出（TPU 供應鏈愛普 6531）</small>
-      </div>
-    </div>
-    <div class="calendar-item">
-      <div class="time">5/22 (五)</div>
-      <div class="event">美 Q1 PCE Deflator + Michigan 信心初值
-        <small>PCE 為 Fed 偏好通膨指標、Warsh 6/16-17 FOMC 前最後一份重要數據</small>
+      <div class="time">5/24 (六)</div>
+      <div class="event">股癌 EP664 預計發出
+        <small>5/25 晨報自動更新</small>
       </div>
     </div>
     <div class="calendar-item">
       <div class="time">5/28-29 (三/四)</div>
-      <div class="event">Nvidia GTC Spring 補充活動
-        <small>關注：Rubin Ultra 規格、Blackwell Ultra B300 出貨進度、CPO 平台</small>
+      <div class="event">Nvidia GTC Spring 補充
+        <small>Rubin Ultra 規格、Blackwell Ultra B300 進度、CPO 平台</small>
       </div>
     </div>
     <div class="calendar-item">
@@ -1114,21 +524,20 @@
       </div>
     </div>
     <div class="calendar-item">
-      <div class="time">6/16-17 (二/三) ⭐</div>
+      <div class="time">6/16-17 ⭐</div>
       <div class="event"><strong>Warsh 首場 FOMC 會議</strong>
-        <small>市場關注：新主席首度政策訊號、CPI 3.8% / PPI 6.0% 鷹派情境下、油價 $107~109、10Y 衝 52W 高雙重壓力、降息或維持利率不變的路徑、CME FedWatch 升息機率維持 35~40%</small>
+        <small>新主席首度政策訊號；30Y 殖利率 5.2% + 消費信心低迷 + 通膨壓力三重因素</small>
       </div>
     </div>
     <div class="calendar-item">
       <div class="time">本月</div>
       <div class="event">高人氣 ETF 除息潮（00940、00929 等）
-        <small>留意填息行情；6 月 OpEx 與 Warsh 首場 FOMC</small>
+        <small>留意填息行情；6 月 OpEx 與 Warsh FOMC</small>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 公司關係圖 -->
 <section id="relations">
   <h2 class="section-title"><span class="icon">🕸️</span>公司關係圖</h2>
   <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px;">追蹤清單各公司的供應鏈與商業關係。節點可拖動，hover 查看詳情。</p>
@@ -1140,25 +549,22 @@
   </div>
 </section>
 
-<!-- 🧠 股癌心智圖入口 -->
 <a class="map-entry" href="./gooaye-map/" target="_blank" id="gooaye-map-link">
   <span class="icon">🧠</span>
   <h3>股癌心智圖（獨立頁面）</h3>
-  <p>從 2026-05-20 開始累積，每集股癌節目提到的個股、產業、人物、事件、題材都會加進心智圖。提供類型篩選、節點拖動、hover 詳情。</p>
+  <p>從 EP663 (2026-05-20) 開始累積，每集提到的個股、產業、人物、事件、題材都加進心智圖。提供類型篩選、節點拖動、hover 詳情。</p>
   <span class="open-btn">開啟心智圖 →</span>
 </a>
 
 <section id="glossary">
   <h2 class="section-title"><span class="icon">📖</span>技術名詞解釋</h2>
-  <p class="glossary-meta">依當日文章提及之名詞整理，按字母排列 · 更新：<span id="glossary-date"></span></p>
-  <div class="glossary-grid" id="glossary-grid">
-    <!-- 由 JS 從 GLOSSARY_DATA 渲染 -->
-  </div>
+  <p class="glossary-meta">依當日提及之名詞整理 · 更新：<span id="glossary-date"></span></p>
+  <div class="glossary-grid" id="glossary-grid"></div>
 </section>
 
 <footer>
   <p>📈 每日科技股深度追蹤 · 由 Claude AI 每日自動更新</p>
-  <p>更新時間：每日 07:00 (UTC+8) · 5/20 (三) 週三盤前版 (5/19 二台美股三連跌 · NVDA Q1 FY27 財報今日盤後) · <a href="#" onclick="location.reload();return false;">手動重整</a></p>
+  <p>更新時間：每日 07:06 (UTC+8) · 2026-05-22 (五) 週五盤前版 · <a href="#" onclick="location.reload();return false;">手動重整</a></p>
   <p style="margin-top:8px;">⚠️ 本頁僅供研究參考，不構成投資建議</p>
 </footer>
 
@@ -1166,9 +572,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
-  // ── Stale-page banner ──────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
-    const buildTime = new Date('2026-05-20T07:00:00+08:00');
+    const buildTime = new Date('2026-05-22T07:06:00+08:00');
     const now = new Date();
     const hours = Math.floor((now - buildTime) / 3600000);
     if (hours > 24) {
@@ -1179,9 +584,8 @@
     }
   });
 
-  // ── Relations Data ─────────────────────────────────────────────────────────
   const RELATIONS_DATA = {
-    updatedAt: "2026-05-21",
+    updatedAt: "2026-05-22",
     nodes: [
       { id: "TSMC",    label: "台積電\n2330",  sector: "foundry",     marketCap: "大" },
       { id: "MTK",     label: "聯發科\n2454",  sector: "design" },
@@ -1195,8 +599,8 @@
       { id: "HGST",    label: "華星光\n4979",  sector: "cpo" },
       { id: "PMPD",    label: "穩懋\n3105",    sector: "cpo" },
       { id: "FOXCONN", label: "鴻海\n2317",    sector: "design" },
-      { id: "VIS",     label: "世界先進\n5347", sector: "foundry",    isNew: true },
-      { id: "LARGAN",  label: "大立光\n3008",  sector: "material",    isNew: true },
+      { id: "IAP",     label: "愛普\n6531",    sector: "design",      isNew: true },
+      { id: "LARGAN",  label: "大立光\n3008",  sector: "material" },
       { id: "NVDA",    label: "Nvidia",         sector: "us_ai",       marketCap: "大" },
       { id: "AMD",     label: "AMD",            sector: "us_chip" },
       { id: "AVGO",    label: "Broadcom",       sector: "us_chip" },
@@ -1205,463 +609,147 @@
       { id: "GOOGL",   label: "Google",         sector: "us_ai" },
       { id: "INTC",    label: "Intel",          sector: "us_chip" },
       { id: "MSFT",    label: "Microsoft",      sector: "us_ai" },
-      { id: "OPENAI",  label: "OpenAI",         sector: "us_ai" },
       { id: "SAMS",    label: "Samsung",        sector: "memory" },
       { id: "SKHX",    label: "SK Hynix",       sector: "memory" },
-      { id: "TSLA",    label: "Tesla",          sector: "us_consumer" },
       { id: "META",    label: "Meta",           sector: "us_ai" },
       { id: "AMZN",    label: "Amazon\nAWS",   sector: "us_ai" },
       { id: "CSCO",    label: "Cisco",          sector: "us_chip" },
-      { id: "CBRS",    label: "Cerebras",       sector: "us_chip" },
-      { id: "CHINA",   label: "中國雲端\n(BABA/TCEH/BD/JD)", sector: "us_ai" },
     ],
     links: [
-      { source: "TSMC",   target: "NVDA",  type: "supplier", label: "N4/N3 代工 + CoWoS 50%+", strength: 3 },
-      { source: "TSMC",   target: "AMD",   type: "supplier", label: "N4 代工",            strength: 2 },
-      { source: "TSMC",   target: "AVGO",  type: "supplier", label: "N3 客製 ASIC",       strength: 2 },
-      { source: "TSMC",   target: "AAPL",  type: "supplier", label: "N3E/N2P 獨家代工",   strength: 3 },
-      { source: "TSMC",   target: "MTK",   type: "supplier", label: "N4P/N3 代工",        strength: 2 },
-      { source: "TSMC",   target: "VIS",   type: "partner",  label: "矽中介層 + GaN 製程授權 (5/15 釋股 8.1%、5/18 VIS 跌停拋售但合作不變)", strength: 2, isNew: true, status: "reduce" },
-      { source: "ALCHIP", target: "TSMC",  type: "partner",  label: "ASIC 設計→代工",     strength: 2 },
-      { source: "CKSYS",  target: "TSMC",  type: "partner",  label: "IP/設計服務",        strength: 2 },
-      { source: "MTK",    target: "ALCHIP",type: "partner",  label: "認購世芯 450 張私募 + N2 共同研發 (5/13 公告)", strength: 1, isNew: true },
-      { source: "ASE",    target: "NVDA",  type: "supplier", label: "先進封裝/CoWoS",     strength: 2 },
-      { source: "NVDA",   target: "MU",    type: "customer", label: "Rubin CPX HBM 採購", strength: 2 },
-      { source: "NVDA",   target: "SKHX",  type: "customer", label: "HBM4 主供應 ~70%",   strength: 3 },
-      { source: "NVDA",   target: "SAMS",  type: "customer", label: "HBM4 已認證 2/2026 量產 + SOCAMM 半數", strength: 2 },
-      { source: "NVDA",   target: "CHINA", type: "supplier", label: "H200 解禁但中方觀望 (↓縮減、實際出貨延遲)", strength: 1, status: "reduce" },
-      { source: "AVGO",   target: "AAPL",  type: "partner",  label: "ASIC 設計",          strength: 2 },
-      { source: "AVGO",   target: "GOOGL", type: "partner",  label: "TPU ASIC",           strength: 2 },
-      { source: "AVGO",   target: "META",  type: "partner",  label: "MTIA 後繼世代 ASIC + 2nm CoWoS-L", strength: 2 },
-      { source: "AVGO",   target: "OPENAI",type: "partner",  label: "10GW 客製矽 (融資雜音↓縮減)", strength: 1, status: "reduce" },
-      { source: "MSFT",   target: "OPENAI",type: "partner",  label: "資料中心+晶片採購歧見 (Jalapeno 推遲至 2027)",  strength: 1, status: "reduce" },
-      { source: "INTC",   target: "AAPL",  type: "supplier", label: "5/8 預備代工協議 (18A 試產 iPhone/iPad/Mac 低階晶片、2027~2028 H1 量產)", strength: 2, isNew: true },
-      { source: "CKSYS",  target: "TSLA",  type: "supplier", label: "AI5 訂單 150 萬顆 + AI6 大單", strength: 3 },
-      { source: "ALCHIP", target: "TSLA",  type: "transfer", label: "市占被創意搶單 (轉單)", strength: 1 },
-      { source: "UPI",    target: "NVDA",  type: "supplier", label: "光收發",             strength: 1 },
-      { source: "HGST",   target: "NVDA",  type: "supplier", label: "光模組",             strength: 1 },
-      { source: "PMPD",   target: "UPI",   type: "supplier", label: "PA 晶片",            strength: 1 },
-      { source: "KINSUS", target: "TSMC",  type: "supplier", label: "載板/前段材料",      strength: 1 },
-      { source: "AMD",    target: "MU",    type: "customer", label: "記憶體採購",         strength: 1 },
-      { source: "FOXCONN",target: "AAPL",  type: "supplier", label: "印度 iPhone 組裝 25% + $1.5B 加碼", strength: 3 },
-      { source: "FOXCONN",target: "NVDA",  type: "supplier", label: "GB200/Rubin 機櫃組裝 (5/14 法說 AI 機櫃翻倍、5/17 本土法人上修目標 305→330)", strength: 3, isNew: true },
-      { source: "FOXCONN",target: "CHINA", type: "supplier", label: "H200 中國分銷商核准但出貨延遲 (↓縮減)", strength: 1, status: "reduce" },
-      { source: "TSMC",   target: "INTC",  type: "transfer", label: "Apple 部分代工 (轉單)", strength: 1 },
-      { source: "SKHX",   target: "AMD",   type: "customer", label: "MI400 HBM4 主供應",   strength: 2 },
-      { source: "SAMS",   target: "GOOGL", type: "partner",  label: "客製 HBM4E (Google TPU)", strength: 1 },
-      { source: "TSMC",   target: "META",  type: "supplier", label: "2nm + CoWoS-L 2027 H1 出貨", strength: 2 },
-      { source: "MTK",    target: "GOOGL", type: "partner",  label: "Dimensity / CSA 設計服務", strength: 1 },
-      { source: "ALCHIP", target: "AMZN",  type: "supplier", label: "AWS Trainium 3/4 ASIC (積壓 $225B、營收估上修 $18B)", strength: 3 },
-      { source: "TSMC",   target: "AMZN",  type: "supplier", label: "AWS 自研晶片 N3 代工", strength: 2 },
-      { source: "CSCO",   target: "AVGO",  type: "partner",  label: "AI 網通生態鏈 (5/14 Cisco AI 訂單翻倍 $9B)", strength: 2 },
-      { source: "CSCO",   target: "NVDA",  type: "partner",  label: "AI 資料中心交換器 (5/14 訂單翻倍)", strength: 2 },
-      { source: "CBRS",   target: "AMZN",  type: "partner",  label: "AWS Cerebras WSE3 合作 (5/14 IPO 上市)", strength: 1 },
-      { source: "CBRS",   target: "OPENAI",type: "partner",  label: "OpenAI WSE3 推論合作", strength: 1 },
-      { source: "TSMC",   target: "CBRS",  type: "supplier", label: "WSE3 晶圓代工", strength: 1 },
-      { source: "ASE",    target: "CSCO",  type: "supplier", label: "AI 網通封裝", strength: 1 },
-      { source: "TSMC",   target: "LARGAN",type: "partner",  label: "智慧眼鏡 SoC + 鏡頭模組合作 (5/15 張曉強點名)", strength: 2, isNew: true },
-      { source: "LARGAN", target: "META",  type: "supplier", label: "Meta Ray-Ban 智慧眼鏡鏡頭 (5/15 漲停)", strength: 2, isNew: true },
-      { source: "LARGAN", target: "AAPL",  type: "supplier", label: "Apple Vision Pro Air 智慧眼鏡鏡頭 (2026 H2)", strength: 2, isNew: true },
+      { source: "TSMC",   target: "NVDA",   type: "supplier", label: "N4/N3 + CoWoS 50%+",    strength: 3 },
+      { source: "TSMC",   target: "AMD",    type: "supplier", label: "N4 代工",               strength: 2 },
+      { source: "TSMC",   target: "AVGO",   type: "supplier", label: "N3 客製 ASIC",          strength: 2 },
+      { source: "TSMC",   target: "AAPL",   type: "supplier", label: "N3E/N2P 獨家代工",      strength: 3 },
+      { source: "TSMC",   target: "MTK",    type: "supplier", label: "N4P/N3 代工",           strength: 2 },
+      { source: "ALCHIP", target: "TSMC",   type: "partner",  label: "ASIC 設計→代工",        strength: 2 },
+      { source: "CKSYS",  target: "TSMC",   type: "partner",  label: "Tesla AI5 150萬顆",     strength: 3 },
+      { source: "MTK",    target: "ALCHIP", type: "partner",  label: "認購私募 + N2 共研",    strength: 1 },
+      { source: "ASE",    target: "NVDA",   type: "supplier", label: "先進封裝/CoWoS",        strength: 2 },
+      { source: "NVDA",   target: "MU",     type: "customer", label: "Rubin CPX HBM",         strength: 2 },
+      { source: "NVDA",   target: "SKHX",   type: "customer", label: "HBM4 主供應 ~70%",      strength: 3 },
+      { source: "NVDA",   target: "SAMS",   type: "customer", label: "HBM4 認證 + SOCAMM",    strength: 2 },
+      { source: "AVGO",   target: "AAPL",   type: "partner",  label: "ASIC 設計",             strength: 2 },
+      { source: "AVGO",   target: "GOOGL",  type: "partner",  label: "TPU Fish 系列",         strength: 2 },
+      { source: "AVGO",   target: "META",   type: "partner",  label: "MTIA 2nm CoWoS-L",      strength: 2 },
+      { source: "INTC",   target: "AAPL",   type: "supplier", label: "18A 試產 2027 H1",      strength: 2 },
+      { source: "UPI",    target: "NVDA",   type: "supplier", label: "光收發",                strength: 1 },
+      { source: "HGST",   target: "NVDA",   type: "supplier", label: "光模組",                strength: 1 },
+      { source: "PMPD",   target: "UPI",    type: "supplier", label: "PA 晶片",               strength: 1 },
+      { source: "FOXCONN",target: "AAPL",   type: "supplier", label: "iPhone 25% + $1.5B",    strength: 3 },
+      { source: "FOXCONN",target: "NVDA",   type: "supplier", label: "AI 機櫃 40% 市占",      strength: 3 },
+      { source: "SKHX",   target: "AMD",    type: "customer", label: "MI400 HBM4",            strength: 2 },
+      { source: "SAMS",   target: "GOOGL",  type: "partner",  label: "Google TPU HBM4E",      strength: 1 },
+      { source: "TSMC",   target: "META",   type: "supplier", label: "2nm CoWoS-L 2027 H1",   strength: 2 },
+      { source: "ALCHIP", target: "AMZN",   type: "supplier", label: "Trainium 3/4 $18B",     strength: 3 },
+      { source: "TSMC",   target: "AMZN",   type: "supplier", label: "AWS N3 代工",           strength: 2 },
+      { source: "CSCO",   target: "AVGO",   type: "partner",  label: "AI 網通 $9B",           strength: 2 },
+      { source: "LARGAN", target: "META",   type: "supplier", label: "Ray-Ban 智慧眼鏡鏡頭",  strength: 2 },
+      { source: "IAP",    target: "GOOGL",  type: "supplier", label: "IPD→Google TPU 基板", strength: 2, isNew: true },
     ]
   };
 
-  const SECTOR_COLOR = {
-    foundry:     "#00b4d8",
-    design:      "#22c55e",
-    osat:        "#f59e0b",
-    material:    "#a3a3a3",
-    memory:      "#fb923c",
-    cpo:         "#a78bfa",
-    us_ai:       "#f87171",
-    us_chip:     "#f97316",
-    us_consumer: "#94a3b8",
-  };
+  const SECTOR_COLOR = { foundry:"#00b4d8", design:"#22c55e", osat:"#f59e0b", material:"#a3a3a3", memory:"#fb923c", cpo:"#a78bfa", us_ai:"#f87171", us_chip:"#f97316", us_consumer:"#94a3b8" };
+  const SECTOR_LABEL = { foundry:"晶圓代工", design:"IC設計", osat:"封測", material:"材料/零組件", memory:"記憶體", cpo:"光通訊", us_ai:"美股AI", us_chip:"美股晶片", us_consumer:"美股消費電子" };
+  const LINK_COLOR = { supplier:"#60a5fa", customer:"#22c55e", partner:"#cbd5e1", transfer:"#ef4444" };
+  const LINK_TYPE_LABEL = { supplier:"供應商", customer:"客戶", partner:"合作夥伴", transfer:"轉單" };
 
-  const SECTOR_LABEL = {
-    foundry:     "晶圓代工",
-    design:      "IC設計",
-    osat:        "封測",
-    material:    "材料/零組件",
-    memory:      "記憶體",
-    cpo:         "光通訊",
-    us_ai:       "美股AI",
-    us_chip:     "美股晶片",
-    us_consumer: "美股消費電子",
-  };
-
-  const LINK_COLOR = {
-    supplier: "#60a5fa",
-    customer: "#22c55e",
-    partner:  "#cbd5e1",
-    transfer: "#ef4444",
-    reduce:   "#f97316",
-  };
-
-  const LINK_TYPE_LABEL = {
-    supplier: "供應商",
-    customer: "客戶",
-    partner:  "合作夥伴",
-    transfer: "轉單",
-    reduce:   "縮減",
-  };
-
-  // ── D3 Force Graph ─────────────────────────────────────────────────────────
   function initRelationsGraph() {
     const container = document.getElementById('graph-container');
     if (!container || typeof d3 === 'undefined') return;
-
-    const svgEl   = document.getElementById('relations-svg');
+    const svgEl = document.getElementById('relations-svg');
     const tooltip = document.getElementById('graph-tooltip');
-    const legend  = document.getElementById('graph-legend');
-    const meta    = document.getElementById('graph-meta');
-
-    const width  = container.clientWidth || 800;
+    const legend = document.getElementById('graph-legend');
+    const meta = document.getElementById('graph-meta');
+    const width = container.clientWidth || 800;
     const height = 520;
     svgEl.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
-
-    const svg   = d3.select('#relations-svg');
+    const svg = d3.select('#relations-svg');
     const nodes = RELATIONS_DATA.nodes.map(d => Object.assign({}, d));
     const links = RELATIONS_DATA.links.map(d => Object.assign({}, d));
-
     const simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(links).id(d => d.id).distance(d => 90 + (d.strength || 1) * 22))
       .force('charge', d3.forceManyBody().strength(-380))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('collision', d3.forceCollide(38));
-
-    const linkSel = svg.append('g').attr('class', 'links')
-      .selectAll('line').data(links).join('line')
-      .attr('stroke', d => d.status === 'ended' ? '#475569' : (LINK_COLOR[d.type] || '#94a3b8'))
+    const linkSel = svg.append('g').selectAll('line').data(links).join('line')
+      .attr('stroke', d => LINK_COLOR[d.type] || '#94a3b8')
       .attr('stroke-width', d => d.strength || 1)
-      .attr('stroke-dasharray', d => {
-        if (d.type === 'partner')  return '5,4';
-        if (d.type === 'reduce')   return '4,3';
-        if (d.type === 'transfer') return '8,4';
-        if (d.status === 'ended')  return '3,5';
-        return 'none';
-      })
-      .attr('opacity', d => d.status === 'ended' ? 0.25 : 0.6)
-      .style('cursor', 'pointer');
-
-    const linkLabelSel = svg.append('g').attr('class', 'link-labels')
-      .selectAll('text').data(links).join('text')
-      .attr('fill', '#64748b')
-      .attr('font-size', '8px')
-      .attr('text-anchor', 'middle')
-      .attr('pointer-events', 'none')
-      .text(d => d.label || '');
-
-    const transferSel = svg.append('g').attr('class', 'xfer-labels')
-      .selectAll('text').data(links.filter(l => l.type === 'transfer')).join('text')
-      .attr('fill', '#ef4444')
-      .attr('font-size', '10px')
-      .attr('font-weight', '700')
-      .attr('text-anchor', 'middle')
-      .attr('pointer-events', 'none')
-      .text('⚡轉單');
-
+      .attr('stroke-dasharray', d => d.type === 'partner' ? '5,4' : d.type === 'transfer' ? '8,4' : 'none')
+      .attr('opacity', 0.6).style('cursor', 'pointer');
+    const linkLabelSel = svg.append('g').selectAll('text').data(links).join('text')
+      .attr('fill', '#64748b').attr('font-size', '8px').attr('text-anchor', 'middle').attr('pointer-events', 'none').text(d => d.label || '');
     const drag = d3.drag()
-      .on('start', (event, d) => {
-        if (!event.active) simulation.alphaTarget(0.3).restart();
-        d.fx = d.x; d.fy = d.y;
-      })
-      .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
-      .on('end',  (event, d) => {
-        if (!event.active) simulation.alphaTarget(0);
-        d.fx = null; d.fy = null;
-      });
-
-    const nodeSel = svg.append('g').attr('class', 'nodes')
-      .selectAll('g').data(nodes).join('g')
-      .style('cursor', 'grab')
-      .call(drag);
-
-    nodeSel.append('circle')
-      .attr('r', d => d.marketCap === '大' ? 28 : 20)
-      .attr('fill',         d => SECTOR_COLOR[d.sector] || '#94a3b8')
-      .attr('fill-opacity', 0.18)
-      .attr('stroke',       d => SECTOR_COLOR[d.sector] || '#94a3b8')
-      .attr('stroke-width', 2);
-
-    nodeSel.filter(d => d.isNew).append('circle')
-      .attr('r', d => (d.marketCap === '大' ? 28 : 20) + 6)
-      .attr('fill', 'none')
-      .attr('stroke', '#facc15')
-      .attr('stroke-width', 2)
-      .attr('stroke-dasharray', '4,3');
-
+      .on('start', (ev, d) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+      .on('end',   (ev, d) => { if (!ev.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; });
+    const nodeSel = svg.append('g').selectAll('g').data(nodes).join('g').style('cursor', 'grab').call(drag);
+    nodeSel.append('circle').attr('r', d => d.marketCap === '大' ? 28 : 20)
+      .attr('fill', d => SECTOR_COLOR[d.sector] || '#94a3b8').attr('fill-opacity', 0.18)
+      .attr('stroke', d => SECTOR_COLOR[d.sector] || '#94a3b8').attr('stroke-width', 2);
+    nodeSel.filter(d => d.isNew).append('circle').attr('r', d => (d.marketCap === '大' ? 28 : 20) + 6)
+      .attr('fill', 'none').attr('stroke', '#facc15').attr('stroke-width', 2).attr('stroke-dasharray', '4,3');
     nodeSel.each(function(d) {
-      const g     = d3.select(this);
-      const parts = d.label.split('\n');
-      const col   = SECTOR_COLOR[d.sector] || '#e8eef9';
-      if (parts.length === 1) {
-        g.append('text')
-          .attr('text-anchor', 'middle').attr('dy', '0.35em')
-          .attr('fill', col).attr('font-size', '10px').attr('font-weight', '700')
-          .attr('pointer-events', 'none').text(parts[0]);
-      } else {
-        g.append('text')
-          .attr('text-anchor', 'middle').attr('dy', '-0.25em')
-          .attr('fill', col).attr('font-size', '10px').attr('font-weight', '700')
-          .attr('pointer-events', 'none').text(parts[0]);
-        g.append('text')
-          .attr('text-anchor', 'middle').attr('dy', '0.9em')
-          .attr('fill', col).attr('font-size', '8px').attr('font-weight', '400')
-          .attr('pointer-events', 'none').text(parts[1]);
-      }
+      const g = d3.select(this); const parts = d.label.split('\n'); const col = SECTOR_COLOR[d.sector] || '#e8eef9';
+      if (parts.length === 1) { g.append('text').attr('text-anchor','middle').attr('dy','0.35em').attr('fill',col).attr('font-size','10px').attr('font-weight','700').attr('pointer-events','none').text(parts[0]); }
+      else { g.append('text').attr('text-anchor','middle').attr('dy','-0.25em').attr('fill',col).attr('font-size','10px').attr('font-weight','700').attr('pointer-events','none').text(parts[0]); g.append('text').attr('text-anchor','middle').attr('dy','0.9em').attr('fill',col).attr('font-size','8px').attr('pointer-events','none').text(parts[1]); }
     });
-
-    function positionTooltip(event) {
+    function positionTooltip(ev) {
       const rect = container.getBoundingClientRect();
-      let x = event.clientX - rect.left + 14;
-      let y = event.clientY - rect.top  - 12;
-      if (x + 250 > rect.width) x = event.clientX - rect.left - 254;
-      if (y < 0)                 y = event.clientY - rect.top  + 14;
-      tooltip.style.left = x + 'px';
-      tooltip.style.top  = y + 'px';
+      let x = ev.clientX - rect.left + 14, y = ev.clientY - rect.top - 12;
+      if (x + 250 > rect.width) x = ev.clientX - rect.left - 254;
+      if (y < 0) y = ev.clientY - rect.top + 14;
+      tooltip.style.left = x + 'px'; tooltip.style.top = y + 'px';
     }
-
-    function nodeLabel(idOrObj) {
-      const id = typeof idOrObj === 'object' ? idOrObj.id : idOrObj;
-      const n  = nodes.find(n => n.id === id);
-      return n ? n.label.replace('\n', ' ') : id;
-    }
-
-    nodeSel
-      .on('mouseover', function(event, d) {
-        const col  = SECTOR_COLOR[d.sector] || '#94a3b8';
-        const rels = links.filter(l =>
-          l.source === d || l.source.id === d.id ||
-          l.target === d || l.target.id === d.id
-        );
-        let html = '<strong style="color:' + col + '">' + d.label.replace('\n', ' ') + '</strong>';
-        html    += '<br><span style="color:#94a3b8">產業：' + (SECTOR_LABEL[d.sector] || d.sector) + '</span>';
-        if (rels.length) {
-          html += '<hr style="border:none;border-top:1px solid #1f2a44;margin:5px 0">';
-          rels.forEach(l => {
-            const arrow = l.type === 'customer' ? '←' : '→';
-            html += '<div style="margin-top:2px;font-size:11px;color:#94a3b8">' +
-                    nodeLabel(l.source) + ' ' + arrow + ' ' + nodeLabel(l.target) +
-                    '：' + l.label + '</div>';
-          });
-        }
-        tooltip.innerHTML     = html;
-        tooltip.style.display = 'block';
-        positionTooltip(event);
-        linkSel.attr('opacity', l =>
-          (l.source === d || l.source.id === d.id ||
-           l.target === d || l.target.id === d.id) ? 1 : 0.08
-        );
-      })
-      .on('mousemove', event => positionTooltip(event))
-      .on('mouseout', function() {
-        tooltip.style.display = 'none';
-        linkSel.attr('opacity', d => d.status === 'ended' ? 0.25 : 0.6);
-      });
-
-    linkSel
-      .on('mouseover', function(event, d) {
-        tooltip.innerHTML =
-          '<strong>' + nodeLabel(d.source) + ' → ' + nodeLabel(d.target) + '</strong><br>' +
-          '關係：' + (LINK_TYPE_LABEL[d.type] || d.type) + '<br>' +
-          '說明：' + d.label + '<br>' +
-          '權重：' + '■'.repeat(d.strength || 1);
-        tooltip.style.display = 'block';
-        positionTooltip(event);
-        d3.select(this).attr('opacity', 1).attr('stroke-width', (d.strength || 1) + 1.5);
-      })
-      .on('mousemove', event => positionTooltip(event))
-      .on('mouseout', function(event, d) {
-        tooltip.style.display = 'none';
-        d3.select(this)
-          .attr('opacity', d.status === 'ended' ? 0.25 : 0.6)
-          .attr('stroke-width', d.strength || 1);
-      });
-
+    function nodeLabel(n) { const id = typeof n === 'object' ? n.id : n; const nd = nodes.find(x => x.id === id); return nd ? nd.label.replace('\n', ' ') : id; }
+    nodeSel.on('mouseover', function(ev, d) {
+      const col = SECTOR_COLOR[d.sector] || '#94a3b8';
+      const rels = links.filter(l => l.source === d || l.source.id === d.id || l.target === d || l.target.id === d.id);
+      let html = '<strong style="color:' + col + '">' + d.label.replace('\n', ' ') + '</strong><br><span style="color:#94a3b8">產業：' + (SECTOR_LABEL[d.sector] || d.sector) + '</span>';
+      if (rels.length) { html += '<hr style="border:none;border-top:1px solid #1f2a44;margin:5px 0">'; rels.forEach(l => { html += '<div style="margin-top:2px;font-size:11px;color:#94a3b8">' + nodeLabel(l.source) + ' → ' + nodeLabel(l.target) + '：' + l.label + '</div>'; }); }
+      tooltip.innerHTML = html; tooltip.style.display = 'block'; positionTooltip(ev);
+      linkSel.attr('opacity', l => (l.source === d || l.source.id === d.id || l.target === d || l.target.id === d.id) ? 1 : 0.08);
+    }).on('mousemove', ev => positionTooltip(ev)).on('mouseout', () => { tooltip.style.display = 'none'; linkSel.attr('opacity', 0.6); });
+    linkSel.on('mouseover', function(ev, d) {
+      tooltip.innerHTML = '<strong>' + nodeLabel(d.source) + ' → ' + nodeLabel(d.target) + '</strong><br>關係：' + (LINK_TYPE_LABEL[d.type] || d.type) + '<br>說明：' + d.label;
+      tooltip.style.display = 'block'; positionTooltip(ev); d3.select(this).attr('opacity', 1).attr('stroke-width', (d.strength || 1) + 1.5);
+    }).on('mousemove', ev => positionTooltip(ev)).on('mouseout', function(ev, d) { tooltip.style.display = 'none'; d3.select(this).attr('opacity', 0.6).attr('stroke-width', d.strength || 1); });
     const PAD = 32;
     simulation.on('tick', () => {
-      linkSel
-        .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-      linkLabelSel
-        .attr('x', d => (d.source.x + d.target.x) / 2)
-        .attr('y', d => (d.source.y + d.target.y) / 2 - 3);
-      transferSel
-        .attr('x', d => (d.source.x + d.target.x) / 2)
-        .attr('y', d => (d.source.y + d.target.y) / 2 + 10);
-      nodeSel.attr('transform', d =>
-        'translate(' + Math.max(PAD, Math.min(width - PAD, d.x)) + ',' +
-                       Math.max(PAD, Math.min(height - PAD, d.y)) + ')'
-      );
+      linkSel.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      linkLabelSel.attr('x', d => (d.source.x + d.target.x) / 2).attr('y', d => (d.source.y + d.target.y) / 2 - 3);
+      nodeSel.attr('transform', d => 'translate(' + Math.max(PAD, Math.min(width - PAD, d.x)) + ',' + Math.max(PAD, Math.min(height - PAD, d.y)) + ')');
     });
-
-    const usedSectors = [...new Set(RELATIONS_DATA.nodes.map(n => n.sector))];
-    usedSectors.forEach(key => {
+    [...new Set(RELATIONS_DATA.nodes.map(n => n.sector))].forEach(key => {
       if (!SECTOR_LABEL[key]) return;
-      const item = document.createElement('div');
-      item.className = 'legend-item';
+      const item = document.createElement('div'); item.className = 'legend-item';
       item.innerHTML = '<div class="legend-dot" style="background:' + SECTOR_COLOR[key] + '"></div><span>' + SECTOR_LABEL[key] + '</span>';
       legend.appendChild(item);
     });
-
-    const sep = document.createElement('div');
-    sep.style.cssText = 'width:100%;border-top:1px solid var(--border);margin:2px 0;';
-    legend.appendChild(sep);
-
-    [
-      { color: '#60a5fa', dash: 'none', label: '供應商' },
-      { color: '#22c55e', dash: 'none', label: '客戶' },
-      { color: '#cbd5e1', dash: '5,4',  label: '合作夥伴' },
-      { color: '#ef4444', dash: '8,4',  label: '⚡轉單' },
-      { color: '#f97316', dash: '4,3',  label: '↓縮減' },
-    ].forEach(lt => {
-      const item = document.createElement('div');
-      item.className = 'legend-item';
+    [{ color:'#60a5fa', dash:'none', label:'供應商' }, { color:'#22c55e', dash:'none', label:'客戶' }, { color:'#cbd5e1', dash:'5,4', label:'合作夥伴' }, { color:'#ef4444', dash:'8,4', label:'⚡轉單' }].forEach(lt => {
+      const item = document.createElement('div'); item.className = 'legend-item';
       item.innerHTML = '<svg width="22" height="10" style="flex-shrink:0"><line x1="0" y1="5" x2="22" y2="5" stroke="' + lt.color + '" stroke-width="2" stroke-dasharray="' + lt.dash + '"/></svg><span>' + lt.label + '</span>';
       legend.appendChild(item);
     });
-
     if (meta) meta.textContent = '關係資料更新：' + RELATIONS_DATA.updatedAt;
   }
-
   document.addEventListener('DOMContentLoaded', initRelationsGraph);
 
-  // ── Glossary Data ──────────────────────────────────────────────────────────
   const GLOSSARY_DATA = {
-    updatedAt: "2026-05-21",
+    updatedAt: "2026-05-22",
     terms: [
-      {
-        key: "ADR",
-        titleZh: "美國存託憑證",
-        titleEn: "American Depositary Receipt",
-        body: "外國公司在美國市場掛牌交易的憑證，代表一定數量的原股。<strong>台積電 ADR (TSM) 5/18 區間 $400.88~$417.00</strong>，連動台積電 5/18 −1.77% 至 2,225。台股 5/18 早盤殺千點探 40,170 後尾盤翻紅縮跌幅、收 40,892 (−0.68%)；5/19 (二) 開盤觀察 ADR 連動 + VIS 委賣消化 + 智慧眼鏡輪動。ADR 收盤價常作為台股隔日開盤先行指標、亦反映美系基金對台廠晶片股風險偏好。"
-      },
-      {
-        key: "ASIC",
-        titleZh: "特殊應用積體電路",
-        titleEn: "Application-Specific Integrated Circuit",
-        body: "針對特定用途客製化設計的晶片，相對於 CPU/GPU 等通用型處理器。Apple A/M 系列、Google TPU、Amazon Trainium、Tesla AI5/AI6、Cerebras WSE3 均屬 ASIC。Cerebras 5/14 IPO 首日 +68%、5/15 −12% 獲利了結；Broadcom 是全球最大 ASIC 設計服務商；AWS AI 晶片積壓達 $225B、世芯外資營收估上修至 $18B；創意 (3443) 拿下 Tesla AI5 訂單 150 萬顆。<strong>🆕 5/15 ETF 00981A 大舉減碼 ASIC 三雄 (聯發科 / 世芯 / 鴻海) 共 9 億元、改配 Computex 概念</strong>。"
-      },
-      {
-        key: "AWS",
-        titleZh: "亞馬遜雲端服務",
-        titleEn: "Amazon Web Services",
-        body: "Amazon 旗下雲端服務龍頭、自研 AI 晶片 Trainium / Inferentia 系列為主要算力後盾。<strong>AWS Q1 2026 AI 晶片業務 +40% QoQ、年化 run-rate 突破 $20B、未交付訂單 (backlog) 達 $225B</strong>，為前一年翻倍。世芯-KY 為 Trainium 3/4 主要設計服務商，AWS 為其最大客戶（占營收 70%+），Trainium 3 Q2 量產放量。Cerebras 5/14 IPO 揭露已與 AWS 簽署合作。"
-      },
-      {
-        key: "BSPDN",
-        titleZh: "背面供電網路",
-        titleEn: "Backside Power Delivery Network",
-        body: "下世代電晶體供電架構，將電源傳輸網絡從晶片正面遷移到背面，騰出正面空間給訊號繞線、降低 IR drop。台積電 A16 (1.6nm) 為首個導入 BSPDN 的世代，預計 2026 H2 量產、與 Apple 等客戶合作。Intel 18A 也採類似 PowerVia 技術，是 IFS 想搶單的關鍵賣點。台積電 5/15 技術論壇將揭露 2nm + A16 產能 CAGR 70% 細節。"
-      },
-      {
-        key: "Capex",
-        titleZh: "資本支出",
-        titleEn: "Capital Expenditure",
-        body: "企業用於購置或升級固定資產的長期投資。Cisco AI 訂單指引由 $5B 上修至 $9B、Applied Materials 上修 2026 設備業務年增至 30%+ (自 20%+)。<strong>Big Tech 5 家 (MSFT / GOOGL / AMZN / META / AAPL) 2026 合計 Capex 共識 $725B (年增 +76%)</strong>、Alphabet 上修至 $180~190B、Meta 上修至 $125~145B；台積電 2026 Capex $52~56B (高端) + 5/12 通過 Arizona $20B 增資、總投資 $465B；鴻海、廣達、緯創 ODM 直接受惠。"
-      },
-      {
-        key: "Fed Chair",
-        titleZh: "聯準會主席",
-        titleEn: "Federal Reserve Chair",
-        body: "美國央行最高領導人、主導貨幣政策方向。<strong>🆕 Kevin Warsh 5/16 (六) 正式上任 Fed 主席</strong>、Powell 任期 5/15 結束。<strong>5/16 首日談話「貨幣政策必須依數據動態判斷、目前通膨壓力與經濟韌性並存」</strong>，被市場解讀為鷹中帶鴿；強調首場 FOMC (6/16-17) 將綜合考量 5 月 CPI / PPI 與油價走勢後再做政策訊號釋出。週末 10Y 殖利率自 4.53% 微幅回落至 4.49%、油價自 $109 回測 $107.5、市場短線喘息。"
-      },
-      {
-        key: "CPI",
-        titleZh: "消費者物價指數",
-        titleEn: "Consumer Price Index",
-        body: "衡量一籃子消費商品和服務價格變化的關鍵通膨指標。美 4 月 CPI 月 +0.6% / 年 +3.8%（2023 年 5 月以來最高）、超預期 (3.7%)；核心 CPI 月 +0.4% / 年 +2.8%。<strong>🆕 5/15 美伊石油協議外溢油價衝 $109 / 桶</strong>、能源成本年增 17.9% 為 2022/9 以來最大，使通膨預期再升溫。CME FedWatch 顯示 2026 年底升息 25bp 機率升至 38%、降息預期歸零。連同 PPI +1.4% 月增、+6.0% 年增、構成「雙鷹」格局。"
-      },
-      {
-        key: "CoWoS",
-        titleZh: "晶圓基板封裝",
-        titleEn: "Chip-on-Wafer-on-Substrate",
-        body: "台積電 2.5D 先進封裝技術，將 GPU 晶片和 HBM 記憶體封裝在同一矽中介層上，是 AI GPU 關鍵製程。<strong>TSMC 5/15 技術論壇正式公佈：CoWoS CAGR 超過 80%（2022~2027）</strong>。Nvidia / AMD / AVGO 已將 N3 AI 晶片產能全數鎖死；日月光投控 (3711) 月產能 2026 達 1.5~2 萬片、外包率提升。Meta-Broadcom 2027 H1 自研 ASIC 將採 CoWoS-L (更大尺寸版本)。Applied Materials 上修 2026 設備業務 +30% 也含 CoWoS 設備鏈。"
-      },
-      {
-        key: "CPO",
-        titleZh: "共封裝光學",
-        titleEn: "Co-Packaged Optics",
-        body: "將光學收發器與交換晶片封裝在同一封裝體內的技術，大幅降低 AI 資料中心內部連接功耗與延遲。隨 Nvidia Rubin Ultra 平台啟用「銅退光進」轉折點，台積電 COUPE 技術領軍。台股聯亞(3081)、華星光(4979)、穩懋(3105)等光通訊鏈將 2026 進入收割年。光傳輸元件 2026 年訂單已滿、部分新訂單排至 2027。"
-      },
-      {
-        key: "DRAM",
-        titleZh: "動態隨機存取記憶體",
-        titleEn: "Dynamic Random-Access Memory",
-        body: "電腦和伺服器最主要的工作記憶體，需持續充電才能保存資料。AI 訓練對 DRAM 容量需求持續提升。<strong>🆕 5/15 記憶體三雄漲停後回吐：南亞科 (2408) −4%、華邦電 (2344) −3%、群聯 / 旺宏 −3~−4% 跟跌大盤</strong>；外資目標價結構不變 (南亞科 440 元 / 華邦電 130~150 元)。TrendForce Q2 DRAM 漲幅估 58~63%、NAND Flash +70~75%。Micron 5/15 −5.6% 跟跌費半、市值仍維持 $800B、HBM 全部售罄、HBM 缺料延續至 2027~2028。"
-      },
-      {
-        key: "Foundry",
-        titleZh: "晶圓代工",
-        titleEn: "Semiconductor Foundry",
-        body: "專門為無廠晶片設計公司（IC Design House）製造晶片的廠商。台積電全球市占 72%（2025 年底）、遙遙領先；3nm 月產能 2026 底達 180K 片 (+40% YoY)、2nm 月產能達 100K 片。Intel IFS 與三星試圖搶單，Apple-Intel 合作為 Intel IFS 重大轉折，但台積電仍是 Apple、Nvidia、AMD 主要先進製程供應商。"
-      },
-      {
-        key: "GAA",
-        titleZh: "環繞式閘極",
-        titleEn: "Gate-All-Around",
-        body: "新一代電晶體架構，閘極材料完全環繞通道四面，相對於 FinFET 三面包覆。台積電 N2 (2nm) 為首個採用 GAA 的世代，Apple、AMD、聯發科、Meta-Broadcom 為早期客戶。GAA 帶來更佳的漏電控制與效能，2025 Q4 已開始量產、2026 起 5 座 2nm 廠（新竹 2、高雄 3）將陸續投產。台積電 5/15 技術論壇將揭露 2nm + A16 產能 CAGR 70% 細節。"
-      },
-      {
-        key: "H200",
-        titleZh: "Nvidia H200 AI 晶片",
-        titleEn: "Nvidia H200 AI Accelerator",
-        body: "Nvidia 第二強的 AI 加速器（Hopper 架構升級版，僅次於 Blackwell），配 141GB HBM3e。<strong>🆕 中方對 H200 採購仍呈觀望、實際發貨延遲</strong>—Reuters 報導美核准 ~10 家中企（Alibaba、Tencent、ByteDance、JD.com 等）採購、單家上限 75,000 顆，但中國監管機構放行尚未到位。NVDA 5/18 −1.3% 收 $223.17、市值 $5.47T 維持。<strong>NVDA Q1 FY27 不假設中國 DC compute 營收</strong>。HBM 配套需求短線預估打折 20~30%。"
-      },
-      {
-        key: "HBM",
-        titleZh: "高頻寬記憶體",
-        titleEn: "High Bandwidth Memory",
-        body: "AI GPU 專用 3D 堆疊記憶體，透過 TSV 將多顆 DRAM 垂直疊加。Nvidia Vera Rubin 平台採 HBM4 (16-Hi)。<strong>Samsung HBM4 已於 2/2026 通過 Nvidia 認證並量產出貨</strong>；Nvidia HBM4 訂單分配以 SK Hynix 主導 ~70%、Samsung 30%、Micron 11%。Samsung 與 SK Hynix HBM3E 12 月起漲價近 20%。三方競標 16-Hi HBM4 / HBM4E 為 H2 焦點。<strong>🆕 Samsung HBM4E 量產進度傳將於 6 月通過 Nvidia 認證</strong>、若按期將進一步壓縮 SK Hynix 領先優勢。HBM 缺料延續至 2027~2028。"
-      },
-      {
-        key: "Hyperscaler",
-        titleZh: "超大規模雲端業者",
-        titleEn: "Hyperscaler",
-        body: "指經營全球性大規模資料中心的雲端業者，主要為 Microsoft Azure、Amazon AWS、Google Cloud、Meta、Oracle Cloud。<strong>Cisco 5/13 法說揭露 hyperscaler AI 訂單翻倍、AI 訂單指引由 $5B 上修至 $9B</strong>。2026 合計 Capex 共識 $725B (年增 +76%)；MS Azure Q1 +39%、AI run-rate 突破 $37B (+123% YoY)；GOOGL Cloud +63%、AWS +28%。鴻海 (2317)、廣達、緯創 AI 機櫃 ODM 為直接受惠者。"
-      },
-      {
-        key: "IFS",
-        titleZh: "Intel 代工服務",
-        titleEn: "Intel Foundry Services",
-        body: "Intel 於 2021 年成立的代工事業，欲挑戰台積電與三星。Apple-Intel 達成代工協議是 IFS 重大轉折，Intel 股價單日 +13%、年初至今 +200%。先進製程主推 18A (採 PowerVia 背面供電與 RibbonFET GAA)，2026 上線。市場仍觀望良率與量產進度。"
-      },
-      {
-        key: "IPO",
-        titleZh: "首次公開募股",
-        titleEn: "Initial Public Offering",
-        body: "公司首次向公眾發行股票並於交易所掛牌。2025-2026 半導體與 AI 浪潮帶動多家供應鏈廠商 IPO，包括 ASIC 設計服務、CPO 光通訊小廠、AI 伺服器零組件廠。投資人關注鎖定期解禁、初期承銷價合理性與長線供應鏈定位。"
-      },
-      {
-        key: "Rubin",
-        titleZh: "Nvidia Rubin 平台",
-        titleEn: "Nvidia Vera Rubin Platform",
-        body: "Nvidia 下世代 AI GPU 平台，預計 2026 H2 出貨，搭配 Vera CPU + HBM4 + ConnectX-9 SuperNIC (1.6 Tb/s)。Rubin Ultra 為「銅退光進」轉折點，啟動 CPO 光通訊供應鏈。台積電 CoWoS 與 ASE 封裝為主要外包夥伴。"
-      },
-      {
-        key: "TPU",
-        titleZh: "張量處理器",
-        titleEn: "Tensor Processing Unit",
-        body: "Google 自研 AI 加速器，由 Broadcom 設計服務 + 台積電代工。客製 ASIC 代表，已迭代至第 6 代。市場關注 OpenAI 「Jalapeno」推遲後是否將部分訂單轉向台廠創意 (3443)、世芯-KY (3661)。"
-      },
-      {
-        key: "Gooaye",
-        titleZh: "股癌（謝孟恭）",
-        titleEn: "Gooaye Podcast",
-        body: "謝孟恭主持的台股 Podcast，週三、六下午發新集數。風格直觀，注重產業循環、籌碼脈絡與生活心法。本儀表板 2026-05-20 起新增股癌專區與心智圖累積，記錄每集提及的個股、產業與題材。"
-      },
-      {
-        key: "被動元件",
-        titleZh: "被動元件",
-        titleEn: "Passive Components",
-        body: "電阻、電容、電感等不具放大功能的基礎零件。AI 伺服器、Rubin 換代與成熟製程補庫存推升需求。國巨(2327)、華新科(2492)、奇鋐(3017)、立隆電(2472) 為主要受惠標的。股癌 EP660-662 多次點名為當前資金輪動主軸。"
-      },
-      {
-        key: "美股資安",
-        titleZh: "美股資安",
-        titleEn: "US Cybersecurity Stocks",
-        body: "Palo Alto Networks (PANW)、CrowdStrike (CRWD)、Zscaler (ZS) 等雲端資安龍頭。在 AI 與雲端轉型下需求穩定，股癌 EP662 點為長線復甦標的之一。"
-      }
+      { key: "Book-to-Bill", titleZh: "書轉比", titleEn: "Book-to-Bill Ratio", body: "接單量除以出貨量的比值。大於 1.0 代表需求超過供給，是景氣上升訊號。<strong>Vishay Q1 2026 被動元件書轉比 1.23</strong>，為股癌 EP663 被動元件漲價論點的獨立驗證。" },
+      { key: "CoWoS", titleZh: "晶圓基板封裝", titleEn: "Chip-on-Wafer-on-Substrate", body: "台積電 2.5D 先進封裝技術，將 GPU 晶片和 HBM 記憶體封裝在同一矽中介層上。<strong>CoWoS CAGR 超過 80%（2022~2027）</strong>。NVDA Q2 $91B 指引確認 CoWoS 訂單能見度長線不受影響。" },
+      { key: "CPO", titleZh: "共封裝光學", titleEn: "Co-Packaged Optics", body: "將光學收發器與交換晶片封裝在同一封裝體內，降低 AI 資料中心功耗與延遲。2026 年為 CPO 商業元年，台積電 COUPE 技術領軍。股癌 EP663 稱光通訊「還早」，等待資金輪動。" },
+      { key: "Fish 晶片", titleZh: "Broadcom Fish 系列 ASIC", titleEn: "Broadcom Fish ASIC Codenames", body: "Broadcom 為 Google 設計的 TPU ASIC 系列，代號以魚命名（Zibra Fish → Soundfish → Icefish）。<strong>股癌 EP663 引用 Sami Analysis 報告</strong>：Icefish 這代消失，謝孟恭研判「更大顆的 Soundfish」把兩晶片拼在同一 substrate 上（類蘋果 Ultra 架構）——欣興 (3037)、南電 (8046) 等 ABF 載板廠為潛在受惠股。" },
+      { key: "GLP-1（瘦瘦針）", titleZh: "GLP-1 受體促效劑", titleEn: "GLP-1 Receptor Agonist (Ozempic)", body: "以 Wegovy / Semaglutide 為代表的減重藥物，透過模擬腸泌素抑制食慾。股癌謝孟恭 EP663 分享搭配重訓 + 機能訓練減重至 78 公斤的心得。⚠️ 需醫師處方，個人體質反應不同。" },
+      { key: "Gooaye 股癌", titleZh: "股癌（謝孟恭）", titleEn: "Gooaye Podcast", body: "謝孟恭主持的台股 Podcast，週三、六下午發新集數。EP663（5/20）核心主題：被動元件漲價循環 + Broadcom Fish 晶片載板雙晶片 + 愛普 Google TPU 復活邏輯 + 信仰測試。" },
+      { key: "HBM", titleZh: "高頻寬記憶體", titleEn: "High Bandwidth Memory", body: "AI GPU 專用 3D 堆疊記憶體。NVDA Q1 FY27 確認 Rubin 採 HBM4 (16-Hi)，SK Hynix ~70%、Samsung 30%、Micron 11%。Samsung HBM4E 6 月認證為近期最大催化。缺料延續至 2027~2028。" },
+      { key: "IPD", titleZh: "整合被動元件", titleEn: "Integrated Passive Device", body: "將被動元件整合嵌入晶片基板的技術。<strong>愛普 (6531 AP Memory)</strong> 的 IPD 整合進 Google TPU 基板中。EP663 指出，Google TPU 成為市場焦點時，愛普隨之獲資金關注——是「題材復活」典型案例。" },
+      { key: "MLCC", titleZh: "多層陶瓷電容", titleEn: "Multilayer Ceramic Capacitor", body: "最常見積層電容，AI 伺服器機架用量是傳統伺服器的 3~5 倍。Vera Rubin 平台預估 430 萬顆 / 機架。最缺 47UF 高壓品（僅 Samsung / Murata 供貨）。股癌 EP661~663 三集聚焦被動元件漲價。" },
+      { key: "Substrate 載板", titleZh: "載板（基板）", titleEn: "Advanced Packaging Substrate (ABF)", body: "封裝晶片所用的連接基板。ABF（Ajinomoto Build-up Film）載板為 AI 晶片關鍵材料。<strong>EP663 提到 Broadcom Soundfish 雙晶片方案</strong>：兩顆晶片拼在一個 substrate 上（類蘋果 Ultra）——欣興 (3037)、南電 (8046)、景碩 (3189) 為主要 ABF 載板廠，是此題材潛在受惠股。" },
+      { key: "被動元件", titleZh: "被動元件", titleEn: "Passive Components", body: "電阻、電容、電感等不具放大功能的基礎零件。<strong>國巨 (2327) 5/21 創歷史新高 572元</strong>；Murata 電感跟進漲價；Vishay 書轉比 1.23 獨立驗證。受惠：國巨 2327、華新科 2492、凱美 2375、臺慶科 3357、立隆電 2472、鈺邦 6449。EP663 核心主題。" },
+      { key: "現貨市場掃貨", titleZh: "現貨市場掃貨", titleEn: "Spot Market Sweeping", body: "在現貨市場大量買入特定物料的行為。EP663：「如果你已知道供需失衡，你不把便宜料掃光嗎？」類似水果商囤貨邏輯。此現象出現時往往是漲價週期前期，與 2018 年大缺貨潮類似。蜜望實 (8043) 為 EP663 點名通路商。" },
+      { key: "Hyperscaler", titleZh: "超大規模雲端業者", titleEn: "Hyperscaler", body: "指 Microsoft Azure、Amazon AWS、Google Cloud、Meta、Oracle Cloud 等全球性大規模資料中心業者。2026 合計 Capex 共識 $725B (+76%)，為 AI 半導體需求最大推手。鴻海、廣達、緯創 AI 機櫃 ODM 直接受惠。" },
     ]
   };
 
@@ -1672,25 +760,17 @@
     if (!grid) return;
     if (dateEl) dateEl.textContent = GLOSSARY_DATA.updatedAt || '';
     grid.innerHTML = '';
-    const sorted = [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key));
-    sorted.forEach(t => {
+    [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key)).forEach(t => {
       const card = document.createElement('div');
       card.className = 'glossary-card';
-      card.innerHTML = `
-        <h3>${t.key} · ${t.titleZh || ''}</h3>
-        <div class="term-en">${t.titleEn || ''}</div>
-        <p>${t.body || ''}</p>
-      `;
+      card.innerHTML = '<h3>' + t.key + ' · ' + (t.titleZh || '') + '</h3><div class="term-en">' + (t.titleEn || '') + '</div><p>' + (t.body || '') + '</p>';
       grid.appendChild(card);
     });
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderGlossary);
-  } else {
-    renderGlossary();
-  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', renderGlossary); }
+  else { renderGlossary(); }
 </script>
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
