@@ -108,7 +108,9 @@
   .date-picker a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .date-picker a.weekend { color: var(--orange); }
   .date-picker a.weekend.active { background: var(--orange); color: #000; border-color: var(--orange); }
-  .date-picker a.unavailable { color: var(--text-muted); opacity: 0.4; cursor: not-allowed; pointer-events: none; text-decoration: line-through; }
+  .date-picker a.unavailable { color: var(--text-muted); opacity: 0.45; text-decoration: line-through; }
+  .date-picker a.pending { color: var(--text-muted); opacity: 0.5; cursor: wait; pointer-events: none; }
+  .date-picker a.pending::after { content: " ⋯"; }
   #gooaye { padding: 1rem; max-width: 1200px; margin: 0 auto; }
   .gooaye-hero { background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(96,165,250,0.05)); border-left: 4px solid var(--purple); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; }
   .gooaye-hero .ep-num { display: inline-block; background: var(--purple); color: #fff; padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; margin-right: 8px; }
@@ -155,22 +157,35 @@
       const isToday = i === 0;
       const wd = d.getDay();
       const isWeekend = wd === 0 || wd === 6;
-      a.href = isToday ? './' : 'archive/' + iso + '.html';
       a.textContent = isToday ? '今天' : tw.format(d);
-      if (isToday) a.classList.add('active');
+      if (isToday) {
+        a.href = './';
+        a.classList.add('active');
+      } else {
+        // 先標為「檢查中」(pending) — 不設 href，避免競態下被誤點
+        a.classList.add('pending');
+        a.title = '檢查歷史快照中⋯';
+        a.dataset.iso = iso;
+        a.dataset.targetHref = 'archive/' + iso + '.html';
+      }
       if (isWeekend) a.classList.add('weekend');
       dp.appendChild(a);
       if (!isToday) created.push({a, iso});
     }
-    // 載入後並行檢查每個 archive 是否真的存在；不存在的灰掉並改為「尚未歸檔」
+    // 並行 HEAD 檢查；通過才賦 href、否則永久灰掉
     await Promise.all(created.map(async ({a, iso}) => {
       try {
-        const res = await fetch(a.href, { method: 'HEAD', cache: 'no-store' });
+        const res = await fetch(a.dataset.targetHref, { method: 'HEAD', cache: 'no-store' });
         if (!res.ok) throw new Error('404');
+        a.href = a.dataset.targetHref;
+        a.classList.remove('pending');
+        a.title = '';
       } catch (e) {
+        a.classList.remove('pending');
         a.classList.add('unavailable');
-        a.title = `archive/${iso}.html 尚未歸檔（每天 05:06 自動產生）`;
-        a.removeAttribute('href');
+        a.title = iso + ' 尚未歸檔（首次啟動或排程未跑那天）';
+        // 點下去走友善 404 頁面而非 GitHub 預設
+        a.href = 'archive/missing.html?date=' + iso;
       }
     }));
   })();
@@ -805,11 +820,4 @@
       grid.appendChild(card);
     });
   }
-  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', renderGlossary); }
-  else { renderGlossary(); }
-</script>
-
-</body>
-</html>
-      { key: "被動元件", titleZh: "被動元件", titleEn: "Passive Components", body: "電阻、電容、電感等不具放大功能的基礎零件。<strong>國巨 (2327) 5/21 創歷史新高 572元</strong>；Murata 電感跟進漲價；Vishay 書轉比 1.23 獨立驗證。受惠：國巨 2327、華新科 2492、凱美 2375、臺慶科 3357、立隆電 2472、鈺邦 6449。EP663 核心主題。" },
-      { key: "現貨市場掃貨", titleZh:
+  if (document.readyState === 'loading') { document.addEventLi

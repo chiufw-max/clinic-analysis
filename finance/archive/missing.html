@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f172a">
+<title>尚未歸檔 · 每日科技股深度追蹤</title>
+<style>
+  :root {
+    --bg: #0b1220; --bg-card: #131c2e; --border: #1f2a44;
+    --text: #e8eef9; --text-dim: #94a3b8; --text-muted: #64748b;
+    --accent: #60a5fa; --orange: #f59e0b; --purple: #a78bfa;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg: #f8fafc; --bg-card: #ffffff; --border: #e2e8f0; --text: #0f172a; --text-dim: #475569; --text-muted: #94a3b8; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg); color: var(--text); min-height: 100vh;
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+  }
+  .card {
+    max-width: 480px; width: 100%;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 32px;
+    text-align: center;
+  }
+  .icon { font-size: 48px; margin-bottom: 12px; }
+  h1 {
+    font-size: 22px; font-weight: 700; margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .date-tag {
+    display: inline-block; padding: 6px 14px;
+    background: var(--orange); color: #000;
+    border-radius: 99px; font-weight: 700; font-size: 14px;
+    margin-bottom: 16px;
+  }
+  p { color: var(--text-dim); line-height: 1.7; font-size: 14px; margin: 10px 0; }
+  .reasons { background: rgba(96,165,250,0.08); border-left: 3px solid var(--accent); border-radius: 8px; padding: 12px 16px; margin: 16px 0; text-align: left; font-size: 13px; }
+  .reasons ul { margin-left: 20px; color: var(--text-dim); }
+  .reasons li { margin: 4px 0; }
+  .back {
+    display: inline-block; margin-top: 16px;
+    background: var(--accent); color: #fff;
+    padding: 10px 22px; border-radius: 99px;
+    text-decoration: none; font-weight: 600;
+  }
+  .back:hover { transform: translateY(-1px); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">📅</div>
+  <h1>這一天的快照尚未歸檔</h1>
+  <div class="date-tag" id="date-tag">—</div>
+  <p>主頁的歷史快照系統從 <strong>2026-05-19 (二)</strong> 才正式啟用，更早的日期沒有對應檔案。</p>
+  <div class="reasons">
+    <strong>可能原因：</strong>
+    <ul>
+      <li>📅 歷史快照系統 5/19 才啟用，更早日期沒檔</li>
+      <li>💤 Cowork 那天 05:06 沒開著，排程沒觸發</li>
+      <li>⚠️ 當天排程因驗證失敗中止</li>
+    </ul>
+  </div>
+  <a class="back" href="../">← 回今天主頁</a>
+</div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const date = params.get('date');
+  if (date) {
+    document.getElementById('date-tag').textContent = date;
+    const d = new Date(date);
+    const wd = ['週日','週一','週二','週三','週四','週五','週六'][d.getDay()];
+    document.title = `${date} ${wd} 尚未歸檔`;
+  } else {
+    document.getElementById('date-tag').textContent = '未提供日期';
+  }
+</script>
+</body>
+</html>
