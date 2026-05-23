@@ -206,6 +206,13 @@
   <a href="#glossary">📖 名詞</a>
 </nav>
 
+<!-- 🗓️ 週末資料說明條 -->
+<div style="max-width:1200px;margin:0 auto 16px;padding:14px 18px;background:linear-gradient(135deg,rgba(245,158,11,0.18),rgba(96,165,250,0.06));border-left:4px solid var(--orange);border-radius:12px;font-size:14px;color:var(--text);line-height:1.7;">
+  <strong style="color:var(--orange);font-size:1.05rem;">🗓️ 今天 = 5/23（週六）週末市場休市</strong><br>
+  下方所有「5/22」數字都是<strong>美股上週五最後一次收盤資料</strong>（並非頁面過期）。週六、週日台美股市都不交易、沒新數字。<br>
+  <span style="color:var(--text-dim);font-size:0.9rem;">下次新交易日：<strong>5/26（週二）</strong>美股開盤（5/25 為陣亡將士紀念日休市）· 台股 5/26（二）正常開盤 · 今晚 EP664 股癌新集釋出後，明早 05:06 排程自動更新。</span>
+</div>
+
 <div class="stats-grid">
   <div class="stat-card">
     <div class="label">道瓊 DJIA (5/22 收)</div>
@@ -802,22 +809,4 @@
       { key: "Substrate 載板", titleZh: "載板（基板）", titleEn: "Advanced Packaging Substrate (ABF)", body: "封裝晶片所用的連接基板。ABF（Ajinomoto Build-up Film）載板為 AI 晶片關鍵材料。<strong>EP663 提到 Broadcom Soundfish 雙晶片方案</strong>：兩顆晶片拼在一個 substrate 上（類蘋果 Ultra）——欣興 (3037)、南電 (8046)、景碩 (3189) 為主要 ABF 載板廠，是此題材潛在受惠股。" },
       { key: "被動元件", titleZh: "被動元件", titleEn: "Passive Components", body: "電阻、電容、電感等不具放大功能的基礎零件。<strong>國巨 (2327) 5/21 創歷史新高 572元</strong>；Murata 電感跟進漲價；Vishay 書轉比 1.23 獨立驗證。受惠：國巨 2327、華新科 2492、凱美 2375、臺慶科 3357、立隆電 2472、鈺邦 6449。EP663 核心主題。" },
       { key: "現貨市場掃貨", titleZh: "現貨市場掃貨", titleEn: "Spot Market Sweeping", body: "在現貨市場大量買入特定物料的行為。EP663：「如果你已知道供需失衡，你不把便宜料掃光嗎？」類似水果商囤貨邏輯。此現象出現時往往是漲價週期前期，與 2018 年大缺貨潮類似。蜜望實 (8043) 為 EP663 點名通路商。" },
-      { key: "Hyperscaler", titleZh: "超大規模雲端業者", titleEn: "Hyperscaler", body: "指 Microsoft Azure、Amazon AWS、Google Cloud、Meta、Oracle Cloud 等全球性大規模資料中心業者。2026 合計 Capex 共識 $725B (+76%)，為 AI 半導體需求最大推手。鴻海、廣達、緯創 AI 機櫃 ODM 直接受惠。" },
-    ]
-  };
-
-  function renderGlossary() {
-    if (typeof GLOSSARY_DATA === 'undefined') return;
-    const grid = document.getElementById('glossary-grid');
-    const dateEl = document.getElementById('glossary-date');
-    if (!grid) return;
-    if (dateEl) dateEl.textContent = GLOSSARY_DATA.updatedAt || '';
-    grid.innerHTML = '';
-    [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key)).forEach(t => {
-      const card = document.createElement('div');
-      card.className = 'glossary-card';
-      card.innerHTML = '<h3>' + t.key + ' · ' + (t.titleZh || '') + '</h3><div class="term-en">' + (t.titleEn || '') + '</div><p>' + (t.body || '') + '</p>';
-      grid.appendChild(card);
-    });
-  }
-  if (document.readyState === 'loading') { document.addEventLi
+      { key: "Hyperscaler", titleZh: "超大規模雲端業者", titleEn: "Hyperscaler", body: "指 Microsoft Azure、Amazon AWS、Google Cloud、Meta、Oracle Cloud 等全球性大規模資料中心業者。2026 合計 Capex 共識
