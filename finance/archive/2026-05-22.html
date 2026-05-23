@@ -136,7 +136,7 @@
   <div class="date">2026 / 05 / 22 · 星期五 · 週五盤前簡報（5/21 四 NVDA 財報消化 · 被動元件創歷史新高 · Nasdaq 期貨 −0.8% · Michigan 消費信心今日公佈）</div>
   <h1>📈 每日科技股深度追蹤</h1>
   <div class="subtitle">台積電供應鏈 · AI半導體 · 記憶體 · 光通訊 · 外資動向</div>
-  <div class="updated">最後更新：2026-05-23 20:30 (UTC+8) · <em style="color:var(--orange);">⚠️ 週六晚間補跑（5/23 早上 05:06 排程未觸發）· 美股 5/22 收盤資料延用、5/25 美股 Memorial Day 休市、5/26 (二) 台美同步開盤</em>。<strong>5/23 週六重點：</strong>① 線上版以本機 EP663 完整逐字稿（58.5 KB）重寫股癌專區，修正先前憑章節猜測的內容偏誤；② Broadcom 「雙拼晶片在載板上」載板族群新利多；③ EP664 今日下午尚未釋出，明日 05:06 排程會自動更新。<strong>5/22 (週五) 收盤回顧：</strong>① 道瓊創歷史新高 50,579 (+294)；② S&amp;P 500 收 7,473 (+0.37%) · 連 8 週收漲；③ Nasdaq 26,344 (+0.19%)；④ Kevin Warsh 5/22 正式就職 Fed 主席 · 首場 FOMC 6/16~17；⑤ 美伊談判仍有分歧、油價 WTI $98.05 (+1.8%)。 · <strong>週五盤前主軸：</strong>① <strong>NVDA Q1 FY27 財報消化第 2 天</strong>—EPS $1.87（非 GAAP）、營收 $81.62B (+85.2% YoY)、Q2 指引 $91B（vs 共識 $86B），5/21 美股消化後 NVDA 盤前近平盤；② <strong>Nasdaq 100 期貨 −0.8%、S&P −0.3%</strong>—密歇根消費信心最終值今日公佈（估 52.2）；③ <strong>被動元件：國巨 (2327) 5/21 創歷史新高 572元 (+6%)、Murata 電感跟進漲價、Vishay 書轉比 1.23</strong>；④ <strong>Broadcom Soundfish 討論</strong>—Sami Analysis 報告指 Fish 晶片世代缺口，謝孟恭 EP663 研判更大顆雙晶片拼載板方案，載板族群潛在利多。</div>
+  <div class="updated">最後更新：2026-05-22 07:06 (UTC+8) · <strong>週五盤前主軸：</strong>① <strong>NVDA Q1 FY27 財報消化第 2 天</strong>—EPS $1.87（非 GAAP）、營收 $81.62B (+85.2% YoY)、Q2 指引 $91B（vs 共識 $86B），5/21 美股消化後 NVDA 盤前近平盤；② <strong>Nasdaq 100 期貨 −0.8%、S&P −0.3%</strong>—密歇根消費信心最終值今日公佈（估 52.2）；③ <strong>被動元件：國巨 (2327) 5/21 創歷史新高 572元 (+6%)、Murata 電感跟進漲價、Vishay 書轉比 1.23</strong>；④ <strong>Broadcom Soundfish 討論</strong>—Sami Analysis 報告指 Fish 晶片世代缺口，謝孟恭 EP663 研判更大顆雙晶片拼載板方案，載板族群潛在利多。</div>
 </header>
 
 <div class="date-picker" id="date-picker"><span class="label">📅 切換日報：</span></div>
@@ -347,11 +347,12 @@
     <div class="gooaye-stocks">
       <span>台積電 2330</span>
       <span>博通 AVGO</span>
+      <span>聯發科 2454</span>
       <span>愛普 6531</span>
       <span>蜜望實 8043</span>
       <span>Panasonic 6752.JP</span>
+      <span>Astera Labs ALAB</span>
       <span>Google GOOGL</span>
-      <span style="opacity:0.6">Astera Labs ALAB（被舉例：跌深復活案例）</span>
     </div>
     <div class="gooaye-themes">
       <span>被動元件漲價循環</span>
@@ -803,4 +804,23 @@
     ]
   };
 
-  function renderGlossary() 
+  function renderGlossary() {
+    if (typeof GLOSSARY_DATA === 'undefined') return;
+    const grid = document.getElementById('glossary-grid');
+    const dateEl = document.getElementById('glossary-date');
+    if (!grid) return;
+    if (dateEl) dateEl.textContent = GLOSSARY_DATA.updatedAt || '';
+    grid.innerHTML = '';
+    [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key)).forEach(t => {
+      const card = document.createElement('div');
+      card.className = 'glossary-card';
+      card.innerHTML = '<h3>' + t.key + ' · ' + (t.titleZh || '') + '</h3><div class="term-en">' + (t.titleEn || '') + '</div><p>' + (t.body || '') + '</p>';
+      grid.appendChild(card);
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', renderGlossary); }
+  else { renderGlossary(); }
+</script>
+
+</body>
+</html>
