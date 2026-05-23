@@ -108,6 +108,7 @@
   .date-picker a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
   .date-picker a.weekend { color: var(--orange); }
   .date-picker a.weekend.active { background: var(--orange); color: #000; border-color: var(--orange); }
+  .date-picker a.unavailable { color: var(--text-muted); opacity: 0.4; cursor: not-allowed; pointer-events: none; text-decoration: line-through; }
   #gooaye { padding: 1rem; max-width: 1200px; margin: 0 auto; }
   .gooaye-hero { background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(96,165,250,0.05)); border-left: 4px solid var(--purple); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; }
   .gooaye-hero .ep-num { display: inline-block; background: var(--purple); color: #fff; padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; margin-right: 8px; }
@@ -141,11 +142,12 @@
 
 <div class="date-picker" id="date-picker"><span class="label">📅 切換日報：</span></div>
 <script>
-  (function(){
+  (async function(){
     const dp = document.getElementById('date-picker');
     if (!dp) return;
     const today = new Date();
     const tw = new Intl.DateTimeFormat('zh-TW', { month:'numeric', day:'numeric', weekday:'short' });
+    const created = [];
     for (let i = 0; i < 7; i++) {
       const d = new Date(today); d.setDate(d.getDate() - i);
       const iso = d.toISOString().slice(0,10);
@@ -158,7 +160,19 @@
       if (isToday) a.classList.add('active');
       if (isWeekend) a.classList.add('weekend');
       dp.appendChild(a);
+      if (!isToday) created.push({a, iso});
     }
+    // 載入後並行檢查每個 archive 是否真的存在；不存在的灰掉並改為「尚未歸檔」
+    await Promise.all(created.map(async ({a, iso}) => {
+      try {
+        const res = await fetch(a.href, { method: 'HEAD', cache: 'no-store' });
+        if (!res.ok) throw new Error('404');
+      } catch (e) {
+        a.classList.add('unavailable');
+        a.title = `archive/${iso}.html 尚未歸檔（每天 05:06 自動產生）`;
+        a.removeAttribute('href');
+      }
+    }));
   })();
 </script>
 
@@ -798,9 +812,4 @@
 </body>
 </html>
       { key: "被動元件", titleZh: "被動元件", titleEn: "Passive Components", body: "電阻、電容、電感等不具放大功能的基礎零件。<strong>國巨 (2327) 5/21 創歷史新高 572元</strong>；Murata 電感跟進漲價；Vishay 書轉比 1.23 獨立驗證。受惠：國巨 2327、華新科 2492、凱美 2375、臺慶科 3357、立隆電 2472、鈺邦 6449。EP663 核心主題。" },
-      { key: "現貨市場掃貨", titleZh: "現貨市場掃貨", titleEn: "Spot Market Sweeping", body: "在現貨市場大量買入特定物料的行為。EP663：「如果你已知道供需失衡，你不把便宜料掃光嗎？」類似水果商囤貨邏輯。此現象出現時往往是漲價週期前期，與 2018 年大缺貨潮類似。蜜望實 (8043) 為 EP663 點名通路商。" },
-      { key: "Hyperscaler", titleZh: "超大規模雲端業者", titleEn: "Hyperscaler", body: "指 Microsoft Azure、Amazon AWS、Google Cloud、Meta、Oracle Cloud 等全球性大規模資料中心業者。2026 合計 Capex 共識 $725B (+76%)，為 AI 半導體需求最大推手。鴻海、廣達、緯創 AI 機櫃 ODM 直接受惠。" },
-    ]
-  };
-
-  function re
+      { key: "現貨市場掃貨", titleZh:
