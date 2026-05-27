@@ -1,67 +1,642 @@
 {
-  "updatedAt": "2026-05-27",
+  "updatedAt": "2026-05-28",
   "startDate": "2026-05-20",
   "episodesCount": 3,
   "episodes": [
-    {"ep": 663, "date": "2026-05-20", "title": "被動元件大廠掃貨 · 台積電紀律擴產 · 愛普 Google TPU", "url": "https://www.youtube.com/watch?v=wgd3AJ3Wuzk"},
-    {"ep": 664, "date": "2026-05-23", "title": "AI 高密度機櫃換代：被動元件迎來長線大潮 · Power Rack", "url": "https://www.youtube.com/watch?v=ag-5hqHbqZo"},
-    {"ep": 665, "date": "2026-05-27", "title": "EP665 今日發出（Micron 破兆 · MRVL 財報前瞻 · 被動元件資金輪動）", "url": "https://www.youtube.com/@Gooaye/videos"}
+    {
+      "ep": 663,
+      "date": "2026-05-20",
+      "title": "被動元件大廠掃貨 · 台積電紀律擴產 · 愛普 Google TPU",
+      "url": "https://www.youtube.com/watch?v=wgd3AJ3Wuzk"
+    },
+    {
+      "ep": 664,
+      "date": "2026-05-23",
+      "title": "AI 高密度機櫃換代：被動元件迎來長線大潮 · Power Rack",
+      "url": "https://www.youtube.com/watch?v=ag-5hqHbqZo"
+    },
+    {
+      "ep": 665,
+      "date": "2026-05-27",
+      "title": "Micron 破兆 · MRVL 財報大亮眼 · 被動元件資金輪動",
+      "url": "https://www.youtube.com/@Gooaye/videos"
+    }
   ],
   "nodes": [
-    {"id": "tsmc",     "label": "台積電 2330",         "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "avgo",     "label": "博通 AVGO",           "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "mtk",      "label": "聯發科 2454",         "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "iap",      "label": "愛普 6531",           "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "mvi",      "label": "蜜望實 8043",         "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "panasonic","label": "Panasonic 6752.JP",   "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "alab",     "label": "Astera Labs ALAB",    "type": "stock",    "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "googl",    "label": "Google GOOGL",        "type": "stock",    "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "llt",      "label": "立隆電 2472",         "type": "stock",    "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "ksd",      "label": "金山電 8042",         "type": "stock",    "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "yageo",    "label": "國巨 2327",           "type": "stock",    "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "murata",   "label": "Murata 6981.T",       "type": "stock",    "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "micron",   "label": "Micron MU",           "type": "stock",    "lastSeen": "2026-05-27", "episodes": [665]},
-    {"id": "passive",  "label": "被動元件",            "type": "industry", "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "ai-semi",  "label": "AI 半導體",           "type": "industry", "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "g-tpu",    "label": "Google TPU",          "type": "industry", "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "asic",     "label": "ASIC",                "type": "industry", "lastSeen": "2026-05-20", "episodes": [663]},
-    {"id": "p-rack",   "label": "Power Rack",          "type": "industry", "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "al-cap",   "label": "鋁電容（牛角型）",    "type": "industry", "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "hbm",      "label": "HBM 高頻寬記憶體",    "type": "industry", "lastSeen": "2026-05-27", "episodes": [665]},
-    {"id": "menggon",  "label": "謝孟恭",              "type": "person",   "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "price-rise","label": "漲價循環",           "type": "theme",    "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "rotation", "label": "資金輪動",            "type": "theme",    "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "uptrend",  "label": "上升循環邏輯",        "type": "theme",    "lastSeen": "2026-05-23", "episodes": [663, 664]},
-    {"id": "capex",    "label": "AI 資本支出大潮",     "type": "theme",    "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "supply-war","label": "搶貨戰全鏈條蔓延",  "type": "theme",    "lastSeen": "2026-05-23", "episodes": [664]},
-    {"id": "trillion", "label": "AI 晶片兆元俱樂部",  "type": "theme",    "lastSeen": "2026-05-27", "episodes": [665]}
+    {
+      "id": "tsmc",
+      "label": "台積電 2330",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        665
+      ]
+    },
+    {
+      "id": "avgo",
+      "label": "博通 AVGO",
+      "type": "stock",
+      "lastSeen": "2026-05-20",
+      "episodes": [
+        663
+      ]
+    },
+    {
+      "id": "mtk",
+      "label": "聯發科 2454",
+      "type": "stock",
+      "lastSeen": "2026-05-20",
+      "episodes": [
+        663
+      ]
+    },
+    {
+      "id": "iap",
+      "label": "愛普 6531",
+      "type": "stock",
+      "lastSeen": "2026-05-20",
+      "episodes": [
+        663
+      ]
+    },
+    {
+      "id": "mvi",
+      "label": "蜜望實 8043",
+      "type": "stock",
+      "lastSeen": "2026-05-20",
+      "episodes": [
+        663
+      ]
+    },
+    {
+      "id": "panasonic",
+      "label": "Panasonic 6752.JP",
+      "type": "stock",
+      "lastSeen": "2026-05-20",
+      "episodes": [
+        663
+      ]
+    },
+    {
+      "id": "alab",
+      "label": "Astera Labs ALAB",
+      "type": "stock",
+      "lastSeen": "2026-05-20",
+      "episodes": [
+        663
+      ]
+    },
+    {
+      "id": "googl",
+      "label": "Google GOOGL",
+      "type": "stock",
+      "lastSeen": "2026-05-23",
+      "episodes": [
+        663,
+        664
+      ]
+    },
+    {
+      "id": "llt",
+      "label": "立隆電 2472",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        664,
+        665
+      ]
+    },
+    {
+      "id": "ksd",
+      "label": "金山電 8042",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        664,
+        665
+      ]
+    },
+    {
+      "id": "yageo",
+      "label": "國巨 2327",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        664,
+        665
+      ]
+    },
+    {
+      "id": "murata",
+      "label": "Murata 6981.T",
+      "type": "stock",
+      "lastSeen": "2026-05-23",
+      "episodes": [
+        664
+      ]
+    },
+    {
+      "id": "micron",
+      "label": "Micron MU",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "mrvl",
+      "label": "Marvell MRVL",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "nvidia",
+      "label": "Nvidia NVDA",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "id": "passive",
+      "label": "被動元件",
+      "type": "industry",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "id": "ai-semi",
+      "label": "AI 半導體",
+      "type": "industry",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "id": "g-tpu",
+      "label": "Google TPU",
+      "type": "industry",
+      "lastSeen": "2026-05-23",
+      "episodes": [
+        663,
+        664
+      ]
+    },
+    {
+      "id": "asic",
+      "label": "ASIC",
+      "type": "industry",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        665
+      ]
+    },
+    {
+      "id": "p-rack",
+      "label": "Power Rack",
+      "type": "industry",
+      "lastSeen": "2026-05-23",
+      "episodes": [
+        664
+      ]
+    },
+    {
+      "id": "al-cap",
+      "label": "鋁電容（牛角型）",
+      "type": "industry",
+      "lastSeen": "2026-05-23",
+      "episodes": [
+        664
+      ]
+    },
+    {
+      "id": "hbm",
+      "label": "HBM 高頻寬記憶體",
+      "type": "industry",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "menggon",
+      "label": "謝孟恭",
+      "type": "person",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "id": "jensen",
+      "label": "黃仁勳",
+      "type": "person",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "price-rise",
+      "label": "漲價循環",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "id": "rotation",
+      "label": "資金輪動",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        663,
+        664,
+        665
+      ]
+    },
+    {
+      "id": "uptrend",
+      "label": "上升循環邏輯",
+      "type": "theme",
+      "lastSeen": "2026-05-23",
+      "episodes": [
+        663,
+        664
+      ]
+    },
+    {
+      "id": "capex",
+      "label": "AI 資本支出大潮",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        664,
+        665
+      ]
+    },
+    {
+      "id": "supply-war",
+      "label": "搶貨戰全鏈條蔓延",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        664,
+        665
+      ]
+    },
+    {
+      "id": "trillion",
+      "label": "AI 晶片兆元俱樂部",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "tw-epicentre",
+      "label": "台灣 AI 震央",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    }
   ],
   "links": [
-    {"source": "menggon",  "target": "passive",   "label": "主推題材",        "episodes": [663, 664], "type": "advocate"},
-    {"source": "menggon",  "target": "p-rack",    "label": "EP664 揭密",      "episodes": [664],      "type": "advocate"},
-    {"source": "panasonic","target": "passive",   "label": "漲價龍頭",        "episodes": [663],      "type": "industry-of"},
-    {"source": "murata",   "target": "passive",   "label": "47uF 缺爆",       "episodes": [664],      "type": "industry-of"},
-    {"source": "llt",      "target": "al-cap",    "label": "高階鋁電台廠",    "episodes": [664],      "type": "industry-of"},
-    {"source": "ksd",      "target": "al-cap",    "label": "固態高壓鋁電",    "episodes": [664],      "type": "industry-of"},
-    {"source": "yageo",    "target": "passive",   "label": "高壓 MLCC 龍頭", "episodes": [664],      "type": "industry-of"},
-    {"source": "price-rise","target": "passive",  "label": "漲價循環",        "episodes": [663, 664], "type": "theme-of"},
-    {"source": "p-rack",   "target": "passive",   "label": "驅動需求",        "episodes": [664],      "type": "drives"},
-    {"source": "p-rack",   "target": "al-cap",    "label": "牛角電容爆量",    "episodes": [664],      "type": "drives"},
-    {"source": "al-cap",   "target": "passive",   "label": "子類",            "episodes": [664],      "type": "category"},
-    {"source": "supply-war","target": "passive",  "label": "搶貨蔓延",        "episodes": [664],      "type": "drives"},
-    {"source": "supply-war","target": "hbm",      "label": "HBM 搶貨",        "episodes": [664, 665], "type": "drives"},
-    {"source": "capex",    "target": "p-rack",    "label": "算力→Power Rack", "episodes": [664],      "type": "drives"},
-    {"source": "capex",    "target": "ai-semi",   "label": "Capex 驅動半導體","episodes": [664],      "type": "drives"},
-    {"source": "uptrend",  "target": "price-rise","label": "上升循環=漲價",   "episodes": [663, 664], "type": "related"},
-    {"source": "tsmc",     "target": "ai-semi",   "label": "供應鏈核心",      "episodes": [663],      "type": "industry-of"},
-    {"source": "avgo",     "target": "asic",      "label": "ASIC 龍頭",       "episodes": [663],      "type": "industry-of"},
-    {"source": "iap",      "target": "g-tpu",     "label": "IPD 主供應商",    "episodes": [663],      "type": "supplier"},
-    {"source": "googl",    "target": "g-tpu",     "label": "TPU 客戶",        "episodes": [663, 664], "type": "customer"},
-    {"source": "g-tpu",    "target": "ai-semi",   "label": "TPU 屬 AI 半導體","episodes": [663, 664], "type": "category"},
-    {"source": "asic",     "target": "ai-semi",   "label": "ASIC 屬 AI 半導體","episodes": [663],     "type": "category"},
-    {"source": "rotation", "target": "passive",   "label": "輪動受惠",        "episodes": [663, 664], "type": "benefit"},
-    {"source": "micron",   "target": "hbm",       "label": "HBM3E 主力",      "episodes": [665],      "type": "industry-of"},
-    {"source": "hbm",      "target": "ai-semi",   "label": "HBM 屬 AI 半導體","episodes": [665],      "type": "category"},
-    {"source": "micron",   "target": "trillion",  "label": "MU 破兆",         "episodes": [665],      "type": "embodies"}
+    {
+      "source": "menggon",
+      "target": "passive",
+      "label": "主推題材",
+      "episodes": [
+        663,
+        664,
+        665
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "p-rack",
+      "label": "EP664 揭密",
+      "episodes": [
+        664
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "trillion",
+      "label": "MU 破兆觀察",
+      "episodes": [
+        665
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "jensen",
+      "target": "tsmc",
+      "label": "$150B/年台灣",
+      "episodes": [
+        665
+      ],
+      "type": "partner"
+    },
+    {
+      "source": "jensen",
+      "target": "tw-epicentre",
+      "label": "稱台灣AI震央",
+      "episodes": [
+        665
+      ],
+      "type": "embodies"
+    },
+    {
+      "source": "nvidia",
+      "target": "tsmc",
+      "label": "最大客戶+$150B",
+      "episodes": [
+        665
+      ],
+      "type": "customer"
+    },
+    {
+      "source": "nvidia",
+      "target": "tw-epicentre",
+      "label": "帶動台灣戰略",
+      "episodes": [
+        665
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "panasonic",
+      "target": "passive",
+      "label": "漲價龍頭",
+      "episodes": [
+        663
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "murata",
+      "target": "passive",
+      "label": "47uF 缺爆",
+      "episodes": [
+        664
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "llt",
+      "target": "al-cap",
+      "label": "高階鋁電台廠",
+      "episodes": [
+        664
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "ksd",
+      "target": "al-cap",
+      "label": "固態高壓鋁電",
+      "episodes": [
+        664
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "yageo",
+      "target": "passive",
+      "label": "高壓 MLCC 龍頭",
+      "episodes": [
+        664,
+        665
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "price-rise",
+      "target": "passive",
+      "label": "漲價循環",
+      "episodes": [
+        663,
+        664,
+        665
+      ],
+      "type": "theme-of"
+    },
+    {
+      "source": "p-rack",
+      "target": "passive",
+      "label": "驅動需求",
+      "episodes": [
+        664
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "p-rack",
+      "target": "al-cap",
+      "label": "牛角電容爆量",
+      "episodes": [
+        664
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "al-cap",
+      "target": "passive",
+      "label": "子類",
+      "episodes": [
+        664
+      ],
+      "type": "category"
+    },
+    {
+      "source": "supply-war",
+      "target": "passive",
+      "label": "搶貨蔓延",
+      "episodes": [
+        664,
+        665
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "supply-war",
+      "target": "hbm",
+      "label": "HBM 搶貨",
+      "episodes": [
+        664,
+        665
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "capex",
+      "target": "p-rack",
+      "label": "算力→Power Rack",
+      "episodes": [
+        664
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "capex",
+      "target": "ai-semi",
+      "label": "Capex 驅動半導體",
+      "episodes": [
+        664,
+        665
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "uptrend",
+      "target": "price-rise",
+      "label": "上升循環=漲價",
+      "episodes": [
+        663,
+        664
+      ],
+      "type": "related"
+    },
+    {
+      "source": "tsmc",
+      "target": "ai-semi",
+      "label": "供應鏈核心",
+      "episodes": [
+        663,
+        665
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "avgo",
+      "target": "asic",
+      "label": "ASIC 龍頭",
+      "episodes": [
+        663
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "mrvl",
+      "target": "asic",
+      "label": "AWS Trainium 設計",
+      "episodes": [
+        665
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "iap",
+      "target": "g-tpu",
+      "label": "IPD 主供應商",
+      "episodes": [
+        663
+      ],
+      "type": "supplier"
+    },
+    {
+      "source": "googl",
+      "target": "g-tpu",
+      "label": "TPU 客戶",
+      "episodes": [
+        663,
+        664
+      ],
+      "type": "customer"
+    },
+    {
+      "source": "g-tpu",
+      "target": "ai-semi",
+      "label": "TPU 屬 AI 半導體",
+      "episodes": [
+        663,
+        664
+      ],
+      "type": "category"
+    },
+    {
+      "source": "asic",
+      "target": "ai-semi",
+      "label": "ASIC 屬 AI 半導體",
+      "episodes": [
+        663,
+        665
+      ],
+      "type": "category"
+    },
+    {
+      "source": "rotation",
+      "target": "passive",
+      "label": "輪動受惠",
+      "episodes": [
+        663,
+        664,
+        665
+      ],
+      "type": "benefit"
+    },
+    {
+      "source": "micron",
+      "target": "hbm",
+      "label": "HBM3E 主力",
+      "episodes": [
+        665
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "hbm",
+      "target": "ai-semi",
+      "label": "HBM 屬 AI 半導體",
+      "episodes": [
+        665
+      ],
+      "type": "category"
+    },
+    {
+      "source": "micron",
+      "target": "trillion",
+      "label": "MU 破兆",
+      "episodes": [
+        665
+      ],
+      "type": "embodies"
+    },
+    {
+      "source": "mrvl",
+      "target": "trillion",
+      "label": "ASIC 龍頭兆元",
+      "episodes": [
+        665
+      ],
+      "type": "embodies"
+    }
   ]
 }
