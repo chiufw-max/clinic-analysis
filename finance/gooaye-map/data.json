@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-28",
+  "updatedAt": "2026-05-29",
   "startDate": "2026-05-20",
   "episodesCount": 3,
   "episodes": [
@@ -18,8 +18,8 @@
     {
       "ep": 665,
       "date": "2026-05-27",
-      "title": "Micron 破兆 · MRVL 財報大亮眼 · 被動元件資金輪動",
-      "url": "https://www.youtube.com/@Gooaye/videos"
+      "title": "SpaceX IPO · 衛星 AI 算力護城河 · 不管估值多少先上車",
+      "url": "https://www.threads.com/@alphamemo.ai/post/DY15dOiD3xV/"
     }
   ],
   "nodes": [
@@ -318,6 +318,96 @@
     {
       "id": "tw-epicentre",
       "label": "台灣 AI 震央",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "spacex",
+      "label": "SpaceX（IPO 6/12）",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "qct",
+      "label": "啟碁 6285",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "sji",
+      "label": "昇達科 3491",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "tg-pcb",
+      "label": "華通 2313",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "wywn",
+      "label": "緯穎 6669",
+      "type": "stock",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "musk",
+      "label": "Elon Musk",
+      "type": "person",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "sat-ai-compute",
+      "label": "衛星 AI 算力（Starshield）",
+      "type": "industry",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "leo-sat",
+      "label": "低軌衛星",
+      "type": "industry",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "rocket-moat",
+      "label": "火箭可回收（最強護城河）",
+      "type": "theme",
+      "lastSeen": "2026-05-27",
+      "episodes": [
+        665
+      ]
+    },
+    {
+      "id": "max-ipo",
+      "label": "史上最大 IPO（$2T）",
       "type": "theme",
       "lastSeen": "2026-05-27",
       "episodes": [
@@ -637,6 +727,132 @@
         665
       ],
       "type": "embodies"
+    },
+    {
+      "source": "menggon",
+      "target": "spacex",
+      "label": "不管估值多少先上車",
+      "episodes": [
+        665
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "sat-ai-compute",
+      "label": "被嚴重低估的故事",
+      "episodes": [
+        665
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "rocket-moat",
+      "label": "最強護城河論述",
+      "episodes": [
+        665
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "musk",
+      "target": "spacex",
+      "label": "創辦人 + 85.1% 投票權",
+      "episodes": [
+        665
+      ],
+      "type": "owns"
+    },
+    {
+      "source": "spacex",
+      "target": "max-ipo",
+      "label": "6/12 上市 $2T",
+      "episodes": [
+        665
+      ],
+      "type": "embodies"
+    },
+    {
+      "source": "spacex",
+      "target": "sat-ai-compute",
+      "label": "Starshield + xAI",
+      "episodes": [
+        665
+      ],
+      "type": "drives"
+    },
+    {
+      "source": "spacex",
+      "target": "rocket-moat",
+      "label": "唯一能頻繁回收",
+      "episodes": [
+        665
+      ],
+      "type": "embodies"
+    },
+    {
+      "source": "spacex",
+      "target": "leo-sat",
+      "label": "Starlink 龍頭",
+      "episodes": [
+        665
+      ],
+      "type": "industry-of"
+    },
+    {
+      "source": "qct",
+      "target": "leo-sat",
+      "label": "Starlink Router 主力",
+      "episodes": [
+        665
+      ],
+      "type": "supplier"
+    },
+    {
+      "source": "sji",
+      "target": "leo-sat",
+      "label": "微波/RF 元件",
+      "episodes": [
+        665
+      ],
+      "type": "supplier"
+    },
+    {
+      "source": "tg-pcb",
+      "target": "leo-sat",
+      "label": "低軌衛星 PCB 龍頭",
+      "episodes": [
+        665
+      ],
+      "type": "supplier"
+    },
+    {
+      "source": "wywn",
+      "target": "leo-sat",
+      "label": "衛星地面站",
+      "episodes": [
+        665
+      ],
+      "type": "supplier"
+    },
+    {
+      "source": "leo-sat",
+      "target": "ai-semi",
+      "label": "衛星 AI 接邊緣算力",
+      "episodes": [
+        665
+      ],
+      "type": "category"
+    },
+    {
+      "source": "sat-ai-compute",
+      "target": "ai-semi",
+      "label": "衛星算力屬 AI 半導體",
+      "episodes": [
+        665
+      ],
+      "type": "category"
     }
   ]
 }
