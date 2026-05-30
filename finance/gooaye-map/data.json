@@ -413,6 +413,42 @@
       "episodes": [
         665
       ]
+    },
+    {
+      "id": "robot-stocks",
+      "label": "機器人類股",
+      "type": "theme",
+      "episodes": [
+        665
+      ],
+      "firstSeen": 665,
+      "lastSeen": 665,
+      "desc": "EP665 謝孟恭：若手上不是一堆處置股，說不定會想介入機器人類股。若 2~3 年內狂推，發酵時間點更早。直得/仁寶/上銀 Computex 展出。"
+    },
+    {
+      "id": "xc-elec",
+      "label": "信昌電 6173",
+      "type": "stock",
+      "ticker": "6173.TW",
+      "episodes": [
+        664,
+        665
+      ],
+      "firstSeen": 664,
+      "lastSeen": 665,
+      "desc": "高壓 MLCC 台廠。EP664 socialworkerdaily 點名「應該就是信昌電了」（跌停反而加碼），EP665 預估被動元件最硬頸三強之一。4月EPS 0.44元（年增1000%）。"
+    },
+    {
+      "id": "fsemi",
+      "label": "功率半導體",
+      "type": "theme",
+      "episodes": [
+        664,
+        665
+      ],
+      "firstSeen": 664,
+      "lastSeen": 665,
+      "desc": "EP664 提到 AI 伺服器功耗越大，功率元件規格提升價格變好。Power Rack 隔壁有很多賺錢機會。英飛凌/意法半導體強勢。EP665 延伸。"
     }
   ],
   "links": [
@@ -853,6 +889,43 @@
         665
       ],
       "type": "category"
+    },
+    {
+      "source": "robot-stocks",
+      "target": "spacex",
+      "type": "theme_overlap",
+      "label": "Computex 2026 共同題材"
+    },
+    {
+      "source": "robot-stocks",
+      "target": "nvidia",
+      "type": "customer",
+      "label": "Jetson Thor 平台"
+    },
+    {
+      "source": "xc-elec",
+      "target": "passive",
+      "type": "sub_sector",
+      "label": "高壓 MLCC 龍頭"
+    },
+    {
+      "source": "xc-elec",
+      "target": "price-rise",
+      "type": "driven_by",
+      "label": "訂單能見度 H2"
+    },
+    {
+      "source": "fsemi",
+      "target": "p-rack",
+      "type": "component_of",
+      "label": "Power Rack 關鍵元件"
+    },
+    {
+      "source": "fsemi",
+      "target": "ai-semi",
+      "type": "sub_sector",
+      "label": "AI 伺服器功耗增"
     }
-  ]
+  ],
+  "lastUpdated": "2026-05-31"
 }
