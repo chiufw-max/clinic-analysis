@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-05-30",
+  "updatedAt": "2026-06-01",
   "startDate": "2026-05-20",
-  "episodesCount": 3,
+  "episodesCount": 4,
   "episodes": [
     {
       "ep": 663,
@@ -20,6 +20,12 @@
       "date": "2026-05-27",
       "title": "SpaceX IPO · 衛星 AI 算力護城河 · 不管估值多少先上車",
       "url": "https://www.threads.com/@alphamemo.ai/post/DY15dOiD3xV/"
+    },
+    {
+      "ep": 666,
+      "date": "2026-05-31",
+      "title": "鋁電容「房間裡的大象」缺口 20% · 軟體股 Token-based 轉型全面爆發 · 老 AI ODM 輪迴",
+      "url": "https://vocus.cc/article/6a1aa1befd89780001080e34"
     }
   ],
   "nodes": [
@@ -101,10 +107,11 @@
       "id": "llt",
       "label": "立隆電 2472",
       "type": "stock",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         664,
-        665
+        665,
+        666
       ]
     },
     {
@@ -121,10 +128,11 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         664,
-        665
+        665,
+        666
       ]
     },
     {
@@ -169,11 +177,12 @@
       "id": "passive",
       "label": "被動元件",
       "type": "industry",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         663,
         664,
-        665
+        665,
+        666
       ]
     },
     {
@@ -211,18 +220,20 @@
       "id": "p-rack",
       "label": "Power Rack",
       "type": "industry",
-      "lastSeen": "2026-05-23",
+      "lastSeen": "2026-05-31",
       "episodes": [
-        664
+        664,
+        666
       ]
     },
     {
       "id": "al-cap",
       "label": "鋁電容（牛角型）",
       "type": "industry",
-      "lastSeen": "2026-05-23",
+      "lastSeen": "2026-05-31",
       "episodes": [
-        664
+        664,
+        666
       ]
     },
     {
@@ -238,11 +249,12 @@
       "id": "menggon",
       "label": "謝孟恭",
       "type": "person",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         663,
         664,
-        665
+        665,
+        666
       ]
     },
     {
@@ -258,22 +270,24 @@
       "id": "price-rise",
       "label": "漲價循環",
       "type": "theme",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         663,
         664,
-        665
+        665,
+        666
       ]
     },
     {
       "id": "rotation",
       "label": "資金輪動",
       "type": "theme",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         663,
         664,
-        665
+        665,
+        666
       ]
     },
     {
@@ -290,20 +304,22 @@
       "id": "capex",
       "label": "AI 資本支出大潮",
       "type": "theme",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         664,
-        665
+        665,
+        666
       ]
     },
     {
       "id": "supply-war",
       "label": "搶貨戰全鏈條蔓延",
       "type": "theme",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-05-31",
       "episodes": [
         664,
-        665
+        665,
+        666
       ]
     },
     {
@@ -449,6 +465,78 @@
       "firstSeen": 664,
       "lastSeen": 665,
       "desc": "EP664 提到 AI 伺服器功耗越大，功率元件規格提升價格變好。Power Rack 隔壁有很多賺錢機會。英飛凌/意法半導體強勢。EP665 延伸。"
+    },
+    {
+      "id": "kyb",
+      "label": "凱美 2375",
+      "type": "stock",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
+    },
+    {
+      "id": "snow",
+      "label": "Snowflake SNOW",
+      "type": "stock",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
+    },
+    {
+      "id": "crm",
+      "label": "Salesforce CRM",
+      "type": "stock",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
+    },
+    {
+      "id": "now",
+      "label": "ServiceNow NOW",
+      "type": "stock",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
+    },
+    {
+      "id": "al-gap",
+      "label": "鋁電容缺口 20%（房間裡的大象）",
+      "type": "theme",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
+    },
+    {
+      "id": "token-based",
+      "label": "Token-based 商模轉型",
+      "type": "theme",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
+    },
+    {
+      "id": "software-ai",
+      "label": "軟體股 AI 加分期",
+      "type": "theme",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
+    },
+    {
+      "id": "wsc",
+      "label": "華新科 2492",
+      "type": "stock",
+      "lastSeen": "2026-05-31",
+      "episodes": [
+        666
+      ]
     }
   ],
   "links": [
@@ -925,6 +1013,54 @@
       "target": "ai-semi",
       "type": "sub_sector",
       "label": "AI 伺服器功耗增"
+    },
+    {
+      "source": "al-gap",
+      "target": "kyb",
+      "label": "受惠",
+      "strength": 2
+    },
+    {
+      "source": "al-gap",
+      "target": "llt",
+      "label": "受惠",
+      "strength": 2
+    },
+    {
+      "source": "al-gap",
+      "target": "wsc",
+      "label": "受惠",
+      "strength": 2
+    },
+    {
+      "source": "token-based",
+      "target": "snow",
+      "label": "轉型成功",
+      "strength": 2
+    },
+    {
+      "source": "token-based",
+      "target": "software-ai",
+      "label": "驅動",
+      "strength": 1
+    },
+    {
+      "source": "passive",
+      "target": "al-gap",
+      "label": "最被低估",
+      "strength": 2
+    },
+    {
+      "source": "rotation",
+      "target": "software-ai",
+      "label": "資金輪動",
+      "strength": 1
+    },
+    {
+      "source": "menggon",
+      "target": "al-gap",
+      "label": "揭露",
+      "strength": 2
     }
   ],
   "lastUpdated": "2026-05-31"
