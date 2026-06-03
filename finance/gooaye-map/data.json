@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-03",
+  "updatedAt": "2026-06-04",
   "startDate": "2026-05-20",
-  "episodesCount": 4,
+  "episodesCount": 5,
   "episodes": [
     {
       "ep": 663,
@@ -26,6 +26,12 @@
       "date": "2026-05-31",
       "title": "鋁電容「房間裡的大象」缺口 20% · 軟體股 Token-based 轉型全面爆發 · 老 AI ODM 輪迴",
       "url": "https://vocus.cc/article/6a1aa1befd89780001080e34"
+    },
+    {
+      "ep": 667,
+      "date": "2026-06-03",
+      "title": "老黃喊單點石成金 · Marvell 從大牛車變飛天神牛 · ASIC 警語：MRVL 不如 MTK/AVGO 明確",
+      "url": "https://vocus.cc/tags/%E8%82%A1%E7%99%8C"
     }
   ],
   "nodes": [
@@ -43,18 +49,20 @@
       "id": "avgo",
       "label": "博通 AVGO",
       "type": "stock",
-      "lastSeen": "2026-05-20",
+      "lastSeen": "2026-06-03",
       "episodes": [
-        663
+        663,
+        667
       ]
     },
     {
       "id": "mtk",
       "label": "聯發科 2454",
       "type": "stock",
-      "lastSeen": "2026-05-20",
+      "lastSeen": "2026-06-03",
       "episodes": [
-        663
+        663,
+        667
       ]
     },
     {
@@ -107,32 +115,35 @@
       "id": "llt",
       "label": "立隆電 2472",
       "type": "stock",
-      "lastSeen": "2026-05-31",
+      "lastSeen": "2026-06-03",
       "episodes": [
         664,
         665,
-        666
+        666,
+        667
       ]
     },
     {
       "id": "ksd",
-      "label": "金山電 8042",
+      "label": "凱美 2375",
       "type": "stock",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-06-03",
       "episodes": [
         664,
-        665
+        665,
+        667
       ]
     },
     {
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-05-31",
+      "lastSeen": "2026-06-03",
       "episodes": [
         664,
         665,
-        666
+        666,
+        667
       ]
     },
     {
@@ -157,20 +168,22 @@
       "id": "mrvl",
       "label": "Marvell MRVL",
       "type": "stock",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-06-03",
       "episodes": [
-        665
+        665,
+        667
       ]
     },
     {
       "id": "nvidia",
-      "label": "Nvidia NVDA",
+      "label": "NVIDIA NVDA",
       "type": "stock",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-06-03",
       "episodes": [
         663,
         664,
-        665
+        665,
+        667
       ]
     },
     {
@@ -208,12 +221,13 @@
     },
     {
       "id": "asic",
-      "label": "ASIC",
-      "type": "industry",
-      "lastSeen": "2026-05-27",
+      "label": "ASIC 客製矽",
+      "type": "theme",
+      "lastSeen": "2026-06-03",
       "episodes": [
         663,
-        665
+        665,
+        667
       ]
     },
     {
@@ -228,12 +242,13 @@
     },
     {
       "id": "al-cap",
-      "label": "鋁電容（牛角型）",
-      "type": "industry",
-      "lastSeen": "2026-05-31",
+      "label": "鋁電容 (房間裡的大象)",
+      "type": "theme",
+      "lastSeen": "2026-06-03",
       "episodes": [
         664,
-        666
+        666,
+        667
       ]
     },
     {
@@ -249,21 +264,23 @@
       "id": "menggon",
       "label": "謝孟恭",
       "type": "person",
-      "lastSeen": "2026-05-31",
+      "lastSeen": "2026-06-03",
       "episodes": [
         663,
         664,
         665,
-        666
+        666,
+        667
       ]
     },
     {
       "id": "jensen",
-      "label": "黃仁勳",
+      "label": "黃仁勳 Jensen Huang",
       "type": "person",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-06-03",
       "episodes": [
-        665
+        665,
+        667
       ]
     },
     {
@@ -479,9 +496,10 @@
       "id": "snow",
       "label": "Snowflake SNOW",
       "type": "stock",
-      "lastSeen": "2026-05-31",
+      "lastSeen": "2026-06-03",
       "episodes": [
-        666
+        666,
+        667
       ]
     },
     {
@@ -513,11 +531,12 @@
     },
     {
       "id": "token-based",
-      "label": "Token-based 商模轉型",
+      "label": "Token-based 商業模式",
       "type": "theme",
-      "lastSeen": "2026-05-31",
+      "lastSeen": "2026-06-03",
       "episodes": [
-        666
+        666,
+        667
       ]
     },
     {
@@ -536,6 +555,132 @@
       "lastSeen": "2026-05-31",
       "episodes": [
         666
+      ]
+    },
+    {
+      "id": "crwd",
+      "label": "CrowdStrike CRWD",
+      "type": "stock",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "okta",
+      "label": "Okta OKTA",
+      "type": "stock",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "alc-3661",
+      "label": "世芯 3661 (ASIC)",
+      "type": "stock",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "alc-3443",
+      "label": "創意 3443 (ASIC)",
+      "type": "stock",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "nvlink-fusion",
+      "label": "NVLink Fusion 客製矽合作",
+      "type": "theme",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "teralynx",
+      "label": "Marvell Teralynx T100 102.4Tbps",
+      "type": "product",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "asic-clarity",
+      "label": "ASIC 明確度（MTK / AVGO vs MRVL）",
+      "type": "theme",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "ai-doomsday-debunked",
+      "label": "AI 末日論被軟體股推翻",
+      "type": "theme",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "biz-capability",
+      "label": "商務能力（決勝點）",
+      "type": "theme",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "private-data",
+      "label": "封閉式專有資料掌握度",
+      "type": "theme",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "trillion-nod",
+      "label": "「下一個兆元股」口頭加持事件",
+      "type": "event",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "avgo-q2-result",
+      "label": "AVGO Q2 結果 + Q3 指引上修",
+      "type": "event",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "crwd-split",
+      "label": "CrowdStrike 1 拆 4 股票分割",
+      "type": "event",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
+      ]
+    },
+    {
+      "id": "nordvpn",
+      "label": "NordVPN（贊助）",
+      "type": "sponsor",
+      "lastSeen": "2026-06-03",
+      "episodes": [
+        667
       ]
     }
   ],
@@ -1061,7 +1206,214 @@
       "target": "al-gap",
       "label": "揭露",
       "strength": 2
+    },
+    {
+      "source": "jensen",
+      "target": "mrvl",
+      "label": "Computex 點名兆元股",
+      "episodes": [
+        667
+      ],
+      "type": "event"
+    },
+    {
+      "source": "jensen",
+      "target": "trillion-nod",
+      "label": "「下一個兆元股」加持",
+      "episodes": [
+        667
+      ],
+      "type": "event"
+    },
+    {
+      "source": "trillion-nod",
+      "target": "mrvl",
+      "label": "點石成金 +25% / +$47B",
+      "episodes": [
+        667
+      ],
+      "type": "catalyst"
+    },
+    {
+      "source": "mrvl",
+      "target": "nvlink-fusion",
+      "label": "客製矽合作 / $2B NVIDIA 投資",
+      "episodes": [
+        667
+      ],
+      "type": "partner"
+    },
+    {
+      "source": "nvidia",
+      "target": "mrvl",
+      "label": "$2B 入股 + NVLink Fusion",
+      "episodes": [
+        667
+      ],
+      "type": "partner"
+    },
+    {
+      "source": "mrvl",
+      "target": "teralynx",
+      "label": "102.4Tbps 交換機",
+      "episodes": [
+        667
+      ],
+      "type": "product"
+    },
+    {
+      "source": "menggon",
+      "target": "mrvl",
+      "label": "ASIC 警語：不如 MTK/AVGO 明確",
+      "episodes": [
+        667
+      ],
+      "type": "caution"
+    },
+    {
+      "source": "mrvl",
+      "target": "asic-clarity",
+      "label": "ASIC 佈局明確度待觀察",
+      "episodes": [
+        667
+      ],
+      "type": "caution"
+    },
+    {
+      "source": "mtk",
+      "target": "asic-clarity",
+      "label": "ASIC 明確度勝 MRVL",
+      "episodes": [
+        667
+      ],
+      "type": "compare"
+    },
+    {
+      "source": "avgo",
+      "target": "asic-clarity",
+      "label": "ASIC 市占約 70% 最明確",
+      "episodes": [
+        667
+      ],
+      "type": "compare"
+    },
+    {
+      "source": "crwd",
+      "target": "token-based",
+      "label": "Q1 FY27 beat 驗證",
+      "episodes": [
+        667
+      ],
+      "type": "evidence"
+    },
+    {
+      "source": "snow",
+      "target": "token-based",
+      "label": "財報跳躍式驚喜",
+      "episodes": [
+        667
+      ],
+      "type": "evidence"
+    },
+    {
+      "source": "okta",
+      "target": "token-based",
+      "label": "財報轉型成功",
+      "episodes": [
+        667
+      ],
+      "type": "evidence"
+    },
+    {
+      "source": "token-based",
+      "target": "ai-doomsday-debunked",
+      "label": "證明 AI 是加分項",
+      "episodes": [
+        667
+      ],
+      "type": "consequence"
+    },
+    {
+      "source": "crwd",
+      "target": "crwd-split",
+      "label": "1 拆 4 股票分割",
+      "episodes": [
+        667
+      ],
+      "type": "event"
+    },
+    {
+      "source": "avgo",
+      "target": "avgo-q2-result",
+      "label": "Q3 指引 $29.4B / AI $16B",
+      "episodes": [
+        667
+      ],
+      "type": "event"
+    },
+    {
+      "source": "menggon",
+      "target": "al-cap",
+      "label": "鋁電容續強觀察",
+      "episodes": [
+        667
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "al-cap",
+      "target": "llt",
+      "label": "受惠",
+      "episodes": [
+        667
+      ],
+      "type": "beneficiary"
+    },
+    {
+      "source": "al-cap",
+      "target": "ksd",
+      "label": "受惠",
+      "episodes": [
+        667
+      ],
+      "type": "beneficiary"
+    },
+    {
+      "source": "al-cap",
+      "target": "yageo",
+      "label": "受惠",
+      "episodes": [
+        667
+      ],
+      "type": "beneficiary"
+    },
+    {
+      "source": "menggon",
+      "target": "biz-capability",
+      "label": "企業 AI 應用決勝點",
+      "episodes": [
+        667
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "biz-capability",
+      "target": "private-data",
+      "label": "加上封閉資料掌握度",
+      "episodes": [
+        667
+      ],
+      "type": "combine"
+    },
+    {
+      "source": "menggon",
+      "target": "nordvpn",
+      "label": "本集贊助",
+      "episodes": [
+        667
+      ],
+      "type": "sponsor"
     }
   ],
-  "lastUpdated": "2026-06-03T05:06:00+08:00"
+  "lastUpdated": "2026-06-04T05:06:00+08:00"
 }
