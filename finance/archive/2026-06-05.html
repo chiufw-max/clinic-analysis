@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="每日科技股深度追蹤 — 台積電供應鏈、AI半導體、記憶體、光通訊、外資動向">
+<title>每日科技股盤前簡報 | 2026-06-05 週五 (🔻 AVGO 收盤 -12~14% 觸發半導體賣壓 AI Q3 指引低於預期 · Dow +1.73% 創高資金大轉向 · 台股 6/4 回檔 -0.93% · 盤後 LULU -9% / RBRK +2% · 今晚非農)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0b1220;
+    --bg-card: #131c2e;
+    --bg-card-hover: #1a2540;
+    --border: #1f2a44;
+    --text: #e8eef9;
+    --text-dim: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #60a5fa;
+    --accent-strong: #3b82f6;
+    --green: #22c55e;
+    --red: #ef4444;
+    --orange: #f59e0b;
+    --purple: #a78bfa;
+    --shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-dim: #475569;
+      --text-muted: #94a3b8;
+      --shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 16px; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); min-height: 100vh; }
+  .container { max-width: 960px; margin: 0 auto; padding: 16px; }
+  .hero { text-align: center; padding: 24px 16px 16px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+  .hero .date { font-size: 14px; color: var(--text-dim); letter-spacing: 0.5px; text-transform: uppercase; }
+  .hero h1 { font-size: 28px; font-weight: 800; margin: 8px 0 4px; background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero .subtitle { color: var(--text-dim); font-size: 14px; }
+  .updated { color: var(--text-muted); font-size: 12px; margin-top: 6px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg-card); padding: 14px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+  .stat-card .label { font-size: 12px; color: var(--text-dim); margin-bottom: 4px; }
+  .stat-card .value { font-size: 20px; font-weight: 700; }
+  .stat-card .change { font-size: 13px; margin-top: 2px; font-weight: 600; }
+  .up { color: var(--green); }
+  .down { color: var(--red); }
+  .neutral { color: var(--orange); }
+  section { margin-bottom: 28px; }
+  .section-title { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); letter-spacing: 0.3px; }
+  .section-title .icon { font-size: 22px; }
+  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: var(--shadow); transition: transform 0.15s ease, background 0.15s ease; }
+  .card:active { transform: scale(0.99); }
+  .card .ticker { display: inline-block; background: var(--accent-strong); color: white; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+  .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .card p { font-size: 14px; color: var(--text-dim); margin: 6px 0; }
+  .card .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(96,165,250,0.15); color: var(--accent); margin-right: 4px; margin-top: 6px; }
+  .card .tag.bull { background: rgba(34,197,94,0.15); color: var(--green); }
+  .card .tag.bear { background: rgba(239,68,68,0.15); color: var(--red); }
+  .card .tag.watch { background: rgba(245,158,11,0.15); color: var(--orange); }
+  .card .tag.reuters { background: rgba(255,128,0,0.15); color: #ff8000; font-weight: 700; }
+  .card .src { color: var(--text-muted); font-size: 11px; display: block; margin-top: 8px; }
+  .card .src a { color: var(--accent); text-decoration: none; }
+  .calendar-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .calendar-item:last-child { border-bottom: none; }
+  .calendar-item .time { font-weight: 700; color: var(--accent); min-width: 70px; font-size: 14px; }
+  .calendar-item .event { font-size: 14px; flex: 1; }
+  .calendar-item .event small { color: var(--text-muted); display: block; margin-top: 2px; font-size: 12px; }
+  .chain-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  @media (min-width: 640px) { .chain-grid { grid-template-columns: 1fr 1fr; } }
+  .chain-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; font-size: 14px; }
+  .chain-row .name { font-weight: 600; }
+  .chain-row .desc { color: var(--text-dim); font-size: 12px; }
+  nav.toc { position: sticky; top: 0; background: var(--bg); z-index: 10; padding: 8px 0; margin: -16px -16px 16px; border-bottom: 1px solid var(--border); overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+  nav.toc a { display: inline-block; padding: 6px 12px; margin: 0 4px; color: var(--text-dim); text-decoration: none; font-size: 13px; border-radius: 99px; background: var(--bg-card); border: 1px solid var(--border); }
+  nav.toc a:hover, nav.toc a:active { color: var(--accent); border-color: var(--accent); }
+  footer { text-align: center; padding: 24px 16px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); margin-top: 32px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  .highlight { background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(167,139,250,0.1)); border-left: 3px solid var(--accent); padding: 12px 14px; border-radius: 8px; margin: 10px 0; font-size: 14px; }
+  .highlight strong { color: var(--accent); }
+  #relations .graph-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
+  #relations svg { display: block; width: 100%; }
+  .graph-tooltip { position: absolute; background: rgba(10,16,32,0.96); border: 1px solid var(--accent); border-radius: 8px; padding: 8px 12px; font-size: 12px; color: var(--text); pointer-events: none; z-index: 100; max-width: 240px; line-height: 1.6; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+  .graph-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 10px 14px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.1); }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-dim); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; opacity: 0.85; }
+  .graph-meta { font-size: 11px; color: var(--text-muted); text-align: right; padding: 5px 14px; border-top: 1px solid var(--border); }
+  .rumor { border-left: 3px solid var(--orange); padding: 10px 14px; background: rgba(245,158,11,0.05); border-radius: 8px; margin-bottom: 8px; font-size: 13px; }
+  .rumor .src { color: var(--text-muted); font-size: 11px; display: block; margin-top: 4px; }
+  #glossary { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
+  .glossary-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 0; }
+  .glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .glossary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; }
+  .glossary-card h3 { color: var(--accent); font-size: 0.95rem; margin: 0 0 0.5rem; letter-spacing: 0.03em; }
+  .glossary-card .term-en { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 0.4rem; }
+  .glossary-card p { color: var(--text); font-size: 0.82rem; line-height: 1.6; margin: 0; }
+  .date-picker { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; padding: 10px 16px; margin: -4px auto 12px; max-width: 960px; }
+  .date-picker .label { color: var(--text-muted); font-size: 12px; align-self: center; margin-right: 4px; }
+  .date-picker a { display: inline-block; padding: 6px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 99px; color: var(--text-dim); text-decoration: none; font-size: 12px; font-weight: 600; }
+  .date-picker a:hover { color: var(--accent); border-color: var(--accent); }
+  .date-picker a.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .date-picker a.weekend { color: var(--orange); }
+  .date-picker a.weekend.active { background: var(--orange); color: #000; border-color: var(--orange); }
+  .date-picker a.unavailable { color: var(--text-muted); opacity: 0.45; text-decoration: line-through; }
+  .date-picker a.pending { color: var(--text-muted); opacity: 0.5; cursor: wait; pointer-events: none; }
+  .date-picker a.pending::after { content: " ⋯"; }
+  #gooaye { padding: 1rem; max-width: 1200px; margin: 0 auto; }
+  .gooaye-hero { background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(96,165,250,0.05)); border-left: 4px solid var(--purple); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; }
+  .gooaye-hero .ep-num { display: inline-block; background: var(--purple); color: #fff; padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; margin-right: 8px; }
+  .gooaye-hero .ep-date { color: var(--text-muted); font-size: 0.85rem; }
+  .gooaye-hero h3 { margin: 0.5rem 0; font-size: 1.1rem; }
+  .gooaye-stocks { display: flex; flex-wrap: wrap; gap: 6px; margin: 0.6rem 0; }
+  .gooaye-stocks span { background: rgba(34,197,94,0.15); color: var(--green); padding: 2px 8px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
+  .gooaye-themes { display: flex; flex-wrap: wrap; gap: 6px; margin: 0.4rem 0; }
+  .gooaye-themes span { background: rgba(245,158,11,0.15); color: var(--orange); padding: 2px 8px; border-radius: 99px; font-size: 0.75rem; }
+  .gooaye-quote { border-left: 3px solid var(--purple); padding: 8px 14px; background: rgba(167,139,250,0.06); border-radius: 6px; margin: 8px 0; font-size: 0.88rem; font-style: italic; color: var(--text); }
+  .gooaye-mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .gooaye-mini { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem; font-size: 0.85rem; }
+  .gooaye-mini .ep-num { display: inline-block; background: var(--purple); color: #fff; padding: 2px 7px; border-radius: 5px; font-size: 0.75rem; font-weight: 700; margin-right: 6px; }
+  .map-entry { display: block; background: linear-gradient(135deg, rgba(96,165,250,0.18), rgba(167,139,250,0.10)); border: 1px solid var(--accent); border-radius: 14px; padding: 1.4rem; margin: 1.4rem auto; max-width: 1200px; text-decoration: none; color: var(--text); transition: transform 0.15s; }
+  .map-entry:hover { transform: translateY(-2px); border-color: var(--purple); }
+  .map-entry .icon { font-size: 2rem; }
+  .map-entry h3 { font-size: 1.1rem; margin: 0.4rem 0; color: var(--accent); }
+  .map-entry p { font-size: 0.85rem; color: var(--text-dim); margin: 0.3rem 0; }
+  .map-entry .open-btn { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 99px; font-size: 0.85rem; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hero">
+  <div class="date">2026 / 06 / 05 · 星期五 · 🔻 AVGO 收盤重挫 -12~14%（AI Q3 指引 $16B 低於預期、全年 AI 目標未上修）觸發半導體全面賣壓 MU -7% · 💪 Dow +874 點（+1.73%）創歷史新高＝資金大轉向非科技 · 台股 6/4 回檔 -433 點 · 盤後 LULU -9% / RBRK +2% / DOCU -2% · 今晚美國 5 月非農</div>
+  <h1>📈 每日科技股深度追蹤</h1>
+  <div class="subtitle">台積電供應鏈 · AI半導體 · 記憶體 · 光通訊 · 外資動向</div>
+  <div class="updated">最後更新：2026-06-05 05:06 (UTC+8) · 看的是昨天（6/4 週四）收盤資料。<br><br><strong>📌 今天 3 件大事</strong>，挑你最關心的看：<br><br>① <strong>博通昨晚被砍 -12~14%</strong>——重點：<em>不是公司爛、是市場太貪心</em>。博通成績單其實還不錯（AI 收入 +143%），但市場期待「神級表現」，它給的是「優等生」，所以被失望性殺出。連帶 Micron -7%、ARM、Intel 也被拖累。<br><br>② <strong>但同一天 Dow 大漲 874 點創歷史新高！</strong>——錢沒跑掉，只是<em>從晶片股搬到醫療、金融、消費</em>（聯合健康 +5%、JPMorgan +3%）。簡單講：派對沒結束，只是換桌坐。<br><br>③ <strong>台股昨天先軟一波</strong>（-433 點收 46,026），今天開盤要看 ASIC 鏈（世芯 3661、創意 3443）會不會被博通的賣壓掃到。<br><br>⭐ <strong>晚上 20:30 美國公布 5 月失業數據</strong>，這是 Fed 6/16 開會前最後一份重要參考——數字太熱（找工作太容易）= Fed 不會降息，股市可能不開心。<br>🎙️ 股癌 EP668 明天下午出，週六晨報會自動整理進來。</div>
+</header>
+
+<div class="date-picker" id="date-picker"><span class="label">📅 切換日報：</span></div>
+<script>
+  (async function(){
+    const dp = document.getElementById('date-picker');
+    if (!dp) return;
+    const today = new Date();
+    const tw = new Intl.DateTimeFormat('zh-TW', { month:'numeric', day:'numeric', weekday:'short' });
+    const created = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(today); d.setDate(d.getDate() - i);
+      const iso = d.toISOString().slice(0,10);
+      const a = document.createElement('a');
+      const isToday = i === 0;
+      const wd = d.getDay();
+      const isWeekend = wd === 0 || wd === 6;
+      a.textContent = isToday ? '今天' : tw.format(d);
+      if (isToday) {
+        a.href = './';
+        a.classList.add('active');
+      } else {
+        // 先標為「檢查中」(pending) — 不設 href，避免競態下被誤點
+        a.classList.add('pending');
+        a.title = '檢查歷史快照中⋯';
+        a.dataset.iso = iso;
+        a.dataset.targetHref = 'archive/' + iso + '.html';
+      }
+      if (isWeekend) a.classList.add('weekend');
+      dp.appendChild(a);
+      if (!isToday) created.push({a, iso});
+    }
+    // 並行 HEAD 檢查；通過才賦 href、否則永久灰掉
+    await Promise.all(created.map(async ({a, iso}) => {
+      try {
+        const res = await fetch(a.dataset.targetHref, { method: 'HEAD', cache: 'no-store' });
+        if (!res.ok) throw new Error('404');
+        a.href = a.dataset.targetHref;
+        a.classList.remove('pending');
+        a.title = '';
+      } catch (e) {
+        a.classList.remove('pending');
+        a.classList.add('unavailable');
+        a.title = iso + ' 尚未歸檔（首次啟動或排程未跑那天）';
+        // 點下去走友善 404 頁面而非 GitHub 預設
+        a.href = 'archive/missing.html?date=' + iso;
+      }
+    }));
+  })();
+</script>
+
+<nav class="toc">
+  <a href="#premarket">📊 盤前重點</a>
+  <a href="#news">📰 焦點新聞</a>
+  <a href="#reuters">📡 Reuters</a>
+  <a href="#gooaye">🎙️ 股癌</a>
+  <a href="#supply">🔗 供應鏈追蹤</a>
+  <a href="#memory">💾 記憶體</a>
+  <a href="#cpo">💡 光通訊CPO</a>
+  <a href="#chips">📈 籌碼面</a>
+  <a href="#calendar">📅 行事曆</a>
+  <a href="#relations">🕸️ 關係圖</a>
+  <a href="./gooaye-map/" target="_blank">🧠 心智圖</a>
+  <a href="#glossary">📖 名詞</a>
+</nav>
+
+<!-- 🗓️ 節假日資料說明條 -->
+<div style="max-width:1200px;margin:0 auto 16px;padding:14px 18px;background:linear-gradient(135deg,rgba(96,165,250,0.15),rgba(167,139,250,0.06));border-left:4px solid var(--accent);border-radius:12px;font-size:14px;color:var(--text);line-height:1.7;">
+  <strong style="color:var(--accent);font-size:1.05rem;">📅 今天 = 6/5（週五）台股開盤 · 🔻 AVGO 收盤 -12~14% 觸發半導體賣壓（AI Q3 指引 $16B 低於預期 / 全年 AI 目標未上修）· 💪 Dow +1.73% 創高＝資金大轉向 · 今晚美國 5 月非農</strong><br>
+  下方數字為 6/4（週四）盤後資料。美股 6/4 劇烈分化：<strong>Dow +874.86（+1.73%）收 51,561.93 創歷史新高</strong>（UNH +5% / JPM +3% / WMT +1%）、S&P +0.41% 收 7,584.31、Nasdaq -0.09% 收 26,830.96；<strong>AVGO 收盤 -12~14%、Micron -7%、ARM / Intel 走弱</strong>＝半導體獨弱、資金轉進醫療與金融。台股 6/4 加權 <strong>-433.59（-0.93%）收 46,025.57</strong>、台積電 2330 收 2,405（-0.82%）。盤後：LULU -9%（指引砍）、RBRK +2%（beat + 上修）、DOCU -2%。<br>
+  <span style="color:var(--text-dim);font-size:0.9rem;">🔑 本週焦點：🔻 <strong>AVGO 裁決日後續——AI Q3 $16B vs 買方預期 $16.4~17.2B、FY26 AI 目標 $56B 未上修（共識 $57.6B）、Google 分散供應商疑慮</strong> · 魏哲家：「晶片供給連續數年趕不上 AI 需求」 · 今晚 20:30 美國 5 月非農（FOMC 6/16 前最後重磅）· 🎙️ 股癌 EP668 明日 6/6 釋出 · 6/11 SpaceX 定價、6/12 Nasdaq 掛牌 · 7/2 CRWD 拆後交易</span>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="label">台股加權 (6/4 收)</div>
+    <div class="value down">46,026</div>
+    <div class="change down">-433.59 (-0.93%) · AVGO 賣壓消化</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">Dow Jones (6/4 收)</div>
+    <div class="value up">51,562</div>
+    <div class="change up">+874.86 (+1.73%) · 歷史新高</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">S&amp;P 500 (6/4 收)</div>
+    <div class="value up">7,584</div>
+    <div class="change up">+0.41% · 資金轉向非科技</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">Nasdaq (6/4 收)</div>
+    <div class="value down">26,831</div>
+    <div class="change down">-0.09% · 晶片股獨弱</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">AVGO (6/4 收)</div>
+    <div class="value down">-12~14%</div>
+    <div class="change down">AI Q3 $16B 低於預期 · MU -7%</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">台積電 2330 (6/4 收)</div>
+    <div class="value down">$2,405</div>
+    <div class="change down">-20 (-0.82%) · 魏哲家：供給缺口數年</div>
+  </div>
+</div>
+
+<section id="premarket">
+  <h2 class="section-title"><span class="icon">📊</span>6/5 (週五) 盤前焦點 · 🔻 AVGO 收盤 -12~14% 半導體賣壓 · 💪 Dow 創高資金大轉向 · 盤後 LULU -9% / RBRK +2% · 今晚非農</h2>
+  <div class="highlight">
+    <strong>📍 今天 3 個重點，挑你關心的看：</strong><br><br>
+    <strong>① 博通昨晚被砍 -12~14%，但故事被誤讀了：</strong>博通其實考了 85 分（成績很好，AI 收入 +143%），但市場想要 95 分，所以失望性大賣。連帶 Micron、ARM、Intel 都被掃到。<br><br>
+    <strong>② 同一天 Dow 大漲 874 點創歷史新高（51,561）：</strong>錢沒跑掉，只是從晶片股搬到了醫療、金融、消費——派對沒結束，只是換桌坐。「AI 泡沫破了」vs「健康輪動」兩派吵翻天。<br><br>
+    <strong>③ 台股昨天 -433 點先軟一波：</strong>今天開盤要看世芯 3661、創意 3443 這些 ASIC 股會不會被博通連累。台積電老闆魏哲家昨天說「<strong>晶片供應未來幾年都會不夠</strong>」——這對多頭是定心丸。<br><br>
+    <strong>🌙 今晚 20:30 美國公布 5 月失業數據</strong>——這是 Fed 6/16 開會前最後一份大數據。<em>翻譯：數字太熱（工作太好找）= Fed 不會降息，股市可能不開心。</em><br>
+    <strong>🎙️ 股癌 EP668</strong> 明天下午出，週六晨報會自動整理進來。
+  </div>
+
+  <div class="card">
+    <h3>🔻 博通 AVGO 為什麼會跌 12~14%？簡單講就是「考太好但市場要它考更好」</h3>
+    <p><strong>👋 白話總結：</strong>博通成績單其實還不錯（Q2 營收 $221.87 億、年增 48%、AI 部門年增 143%），但市場期待「神蹟」，它給的是「優等生」，於是被失望性殺出。</p>
+    <p><strong>市場到底在不爽什麼？三件事：</strong></p>
+    <p>📌 <strong>下季財測(Q3 Guidance)的 AI 收入只給 $160 億</strong>——分析師期望 $164 億、買方圈悄悄話有人喊到 $172 億。聽起來差不多？但對 AI 股來說，「達標」≠「超標」，股價要漲就要超標。</p>
+    <p>📌 <strong>2026 會計年度(FY26)的全年 AI 目標還是 $560 億，沒往上加</strong>——市場已經偷偷把 $576 億寫進股價，老闆沒給就被失望。</p>
+    <p>📌 <strong>Google 開始找博通以外的供應商</strong>（傳聯發科切入、其他客製化晶片(ASIC)設計商搶單）。博通靠 Google 吃飯一直是它的賣點，現在這條護城河被質疑。</p>
+    <p><strong>📲 對你影響：</strong>台股的 <strong>世芯 3661</strong>、<strong>創意 3443</strong>（都是台積電的客製化晶片(ASIC)設計夥伴）今天開盤會被掃到。高階載板(ABF Substrate) 相關的欣興 3037、南電 8046 也要小心。<em>歷史經驗：之前 Nvidia 財報後也是「利多出盡」3 天內復原，這次博通會不會也這樣，看週末美股 5 月非農。</em></p>
+    <span class="tag bear">AVGO -12~14%</span>
+    <span class="tag bear">MU -7%</span>
+    <span class="tag watch">Google 找新供應商</span>
+  </div>
+
+  <div class="card">
+    <h3>✅ CrowdStrike CRWD 財報超漂亮 · 1 股拆 4 股 · 資安股龍頭重回神壇</h3>
+    <p><strong>👋 白話總結：</strong>之前他們系統大當機（去年那次全球藍屏記得吧）後復原狀況一直被擔心，這次財報直接打臉所有擔憂：每股盈餘(EPS) $1.10、預期只有 $0.88，超標 25%。客戶簽約年金額(ARR) 新增 $2.56 億、年增 32%，創 Q1 歷史新高。</p>
+    <p>📌 <strong>1 拆 4 股票分割</strong>：6/25 為記錄日、7/2 起用拆後價格交易。<em>白話：原本一股 $500 變成一股 $125，散戶更容易買得起。</em></p>
+    <p>📌 <strong>現金流也創高</strong>：營運現金流(Cash from Operations) $5.91 億、自由現金流(Free Cash Flow) $4.68 億——簡單講就是這家公司現在賺錢機器全速運轉。</p>
+    <p>📌 <strong>全年財測上修</strong>：FY27（2027 會計年度）客戶簽約年金額(ARR) 成長預期從原本 22.5% 上修到 27.7%，比上一個年度還加速。</p>
+    <p><strong>📲 對你影響：</strong>資安股族群被帶旺——美股 Cloudflare (NET)、Zscaler (ZS)、SentinelOne (S) 連帶受惠；台股的資安代理商可以追蹤。<em>股癌孟恭幾集前就點到「軟體跟資安股出現族群性」，這次 CRWD 算驗證。</em></p>
+    <span class="tag bull">EPS $1.10 超標 25%</span>
+    <span class="tag bull">ARR +32%</span>
+    <span class="tag bull">1 拆 4 散戶可進場</span>
+  </div>
+  <div class="card">
+    <h3>⭐ 🍽️ 兆元晚宴 5/28 晚落幕 · 16+ 科技董座座上賓 · 供應鏈合計 >NT$80 兆 (續看)</h3>
+    <p>• <strong>受邀名單空前華麗</strong>：台積電魏哲家(2330)、鴻海劉揚偉(2317)、廣達林百里、和碩童子賢、宏碁陳俊聖、英業達葉力誠、台達電鄭平(2308)、華碩施崇棠、仁寶陳瑞聰、研華劉克振、聯發科蔡力行(2454)、京元電張高薰、光寶科邱森彬(2301)、緯創林憲銘+林建勳、奇鋐沈慶行(3017)、永擎電子許隆倫等 16+ 位董/總座到齊。</p>
+    <p>• <strong>晚宴亮點</strong>：黃仁勳脫黑外套穿短袖合影、帶蘋果西打 + 香腸炒飯便當分送媒體、永擎許隆倫贈黃仁勳人像油畫（黃笑揪魏哲家比像誰）。涵蓋產業：晶圓代工、IC 設計、晶圓封測、ODM 伺服器組裝、電源、散熱、網通、載板及板卡。</p>
+    <p>• <strong>戰略訊號</strong>：Vera Rubin 量產時程與分工確認、CoWoS 產能配置、Nvidia $150B/年台灣承諾的具體執行細節。Computex 5/29 開幕後可能有正式合作公告。</p>
+    <p>• <strong>今日盤面關注</strong>：晚宴出席公司全面追蹤（鴻海 2317、廣達、台達電 2308、奇鋐 3017、光寶科 2301）、台積電 2330、AI 機櫃 ODM 連動。</p>
+    <span class="tag bull">兆元晚宴落幕</span>
+    <span class="tag bull">16+ 董座到齊</span>
+    <span class="tag bull">市值 >NT$80 兆</span>
+  </div>
+  <div class="card">
+    <h3>⭐ Marvell MRVL 6/2 大漲 +25% 至 $273 · Jensen Huang 公開點名「下一個兆元美元公司」</h3>
+    <p>• <strong>事件本體</strong>：Computex 2026 Jensen Huang 6/2 與 Marvell CEO Matt Murphy 同台對談 AI 資料中心互連未來，當場以六個英文字「The next trillion-dollar company」公開點名 Marvell。6/2 美股 MRVL 盤前一度漲 25% 至約 $273 區間，盤中市值單日加 ~$47B。</p>
+    <p>• <strong>背景關係</strong>：NVIDIA 已投資 $2B 入股 Marvell；雙方深化 NVLink Fusion 客製矽合作，Marvell 定位為 NVIDIA AI 基礎設施「優先客製矽夥伴」；資料中心互連、PAM4 DSP、Co-Packaged Optics、高速 SERDES 為 Marvell 核心競爭力。</p>
+    <p>• <strong>台股連動</strong>：客製矽 ASIC—<strong>世芯 3661</strong>、<strong>創意 3443</strong>（AWS Trainium / Microsoft / Meta 共生鏈）；高速光學/光通訊—<strong>聯亞 3081</strong>、<strong>華星光 4979</strong>、<strong>穩懋 3105</strong>；高速網通—<strong>智邦 2345</strong>。</p>
+    <p>• <strong>視角</strong>：MRVL Q1 FY27 已超預期（$2.418B/+28%、EPS $0.80 vs 預期 $0.75），Jensen 公開背書進一步驗證 AI ASIC 估值上修空間；今日 AVGO 財報後若 AI 半導體加速，預期形成「ASIC 雙引擎拉抬」格局。</p>
+    <span class="tag bull">MRVL +25%</span>
+    <span class="tag bull">Jensen 點名兆元股</span>
+    <span class="tag bull">NVLink Fusion 客製矽</span>
+  </div>
+  <div class="card">
+    <h3>⭐ 🚀 SpaceX IPO 6/12 掛牌定案 · 估值上看 $2T · 史上最大 IPO 倒數</h3>
+    <p>• <strong>SpaceX 5/28 公告時程</strong>：路演 6/4 開跑、6/12 Nasdaq 掛牌（代號傳為 SPCX），估值 $1.75T~$2T，募資規模可能達 $750~800B。1 拆 5 股後每股約 $105.32（原 $526.59）。</p>
+    <p>• <strong>三題材鎖定</strong>：火箭發射（Starship + Starlink）、衛星寬頻（Starlink 訂閱 >5,000 萬）、衛星 AI 算力（Starshield / xAI 整合）。Elon Musk 投票權 85.1%。</p>
+    <p>• <strong>台廠衛星供應鏈受惠</strong>：⚡<strong>啟碁 (6285)</strong>（Starlink Router 印 logo 主力，股癌 EP64 首推）、<strong>昇達科 (3491)</strong>（微波 / RF 元件）、<strong>華通 (2313)</strong>（低軌衛星 PCB 龍頭、現增溢價）、緯穎 (6669)（衛星地面站設備潛在）。</p>
+    <p>• <strong>股癌 EP665 同步論述</strong>：謝孟恭指「衛星 AI 算力可能是 SpaceX 下一個被嚴重低估的故事，最強護城河 = 唯一能頻繁打上去又拉回來的公司」——不管估值多少先上車。</p>
+    <span class="tag bull">SpaceX 6/12 上市</span>
+    <span class="tag bull">估值 $2T 史上最大</span>
+    <span class="tag bull">台廠：啟碁/昇達科/華通</span>
+  </div>
+  <div class="card">
+    <h3>⭐ 台股昨天 -433 點 · 今天開盤要過 AVGO 第二關</h3>
+    <p><strong>👋 白話總結：</strong>昨天台股先軟一波（加權 46,026、-0.93%、台積電 2,405、-0.82%）。盤中已經反應了博通盤後 -3% 那部分，但博通美股後來在正常盤跌到 -12~14%——所以今天開盤還要消化第二波。</p>
+    <p><strong>📲 三類股要分別看：</strong></p>
+    <p>📌 <strong>承壓最重 → ASIC 鏈：</strong>世芯 3661、創意 3443、智邦 2345。這幾檔等於是「博通在台灣的小老弟」，老大跌它們跑不掉。</p>
+    <p>📌 <strong>觀察就好 → 被動元件：</strong>國巨 2327、立隆電 2472、凱美 2375、華新科 2492。股癌孟恭 EP667 的看法是：「橫盤整理本來就是健康，<em>跌破月線站不回再減碼、被大盤帶下去反而是上月線加碼的機會</em>」——意思是別自己嚇自己。</p>
+    <p>📌 <strong>下一波可能起來 → 功率半導體：</strong>EP667 QA 提到「電源櫃拉貨 + 基本面顯著改善」可能是新題材匯聚點。</p>
+    <p><strong>🧘 定心丸：</strong>台積電老闆魏哲家昨天說「<strong>晶片供應未來幾年都會不夠</strong>」。股癌 EP667 也說：「台積電明顯轉強有補漲味道」，加上投信法規鬆綁的資金即將進場——<em>白話：法人錢進來會把台積電再推一波。</em></p>
+    <span class="tag bear">加權 -0.93%</span>
+    <span class="tag bear">台積電 -0.82%</span>
+    <span class="tag watch">AVGO 第二波</span>
+    <span class="tag bull">魏哲家：供應數年不夠</span>
+  </div>
+  <div class="card">
+    <h3>⭐ 今日 6/5 重大事件 · 盤後財報結果出爐 LULU -9% / RBRK +2% / DOCU -2% · 今晚 20:30 美國 5 月非農 · 明日股癌 EP668</h3>
+    <p>• <strong>盤後財報結果（6/4 美股盤後）</strong>：<strong>LULU -9%</strong>——Q1 EPS $1.69 in-line、營收 $2.5B beat，但 Q2 指引 EPS $1.76~1.81、全年 $10.95~11.15 大幅低於共識，YTD 已 -41% 雪上加霜；<strong>RBRK +2%</strong>——EPS $0.16 beat、營收 $387.1M（+39% YoY）、FY27 營收指引上修至 $1.64~1.65B；<strong>DOCU -2%</strong>——EPS $1.09 / 營收 $830.2M 雙 beat、FY27 指引 $3.49~3.502B 貼共識。軟體股 Token-based 轉型敘事：RBRK 加分、DOCU 中性。</p>
+    <p>• <strong>今晚台北 20:30 美國 5 月非農就業報告</strong>：FOMC（6/16~17，Warsh 首場）前最後重磅數據。在 WTI $96 / 殖利率上行背景下，數據過熱 = 強化「不降息」壓力；過冷 = 衰退擔憂。對 AVGO 賣壓後的脆弱半導體情緒為放大器。</p>
+    <p>• <strong>🎙️ 股癌 EP668 明日（6/6 週六）釋出</strong>：本週焦點預期圍繞 AVGO 大跌後的 AI 估值辯論、被動元件月線攻防、功率半導體試單進度。</p>
+    <p>• <strong>下週催化</strong>：6/11 SpaceX 定價、6/12 Nasdaq 掛牌（估值 $1.75T~2T 史上最大 IPO）；6/11 台積電除息（$0.95）；6/16~17 FOMC；7/2 CRWD 拆股後交易。</p>
+    <span class="tag bear">LULU -9% 指引砍</span>
+    <span class="tag bull">RBRK beat + 上修</span>
+    <span class="tag watch">今晚非農 20:30</span>
+    <span class="tag watch">明日 EP668</span>
+  </div>
+</section>
+
+<section id="news">
+  <h2 class="section-title"><span class="icon">📰</span>個股焦點新聞與謠言（6/5 週五盤前整理 · 反映 AVGO -12~14% 半導體賣壓 + Dow 創高大轉向 + 盤後 LULU/RBRK/DOCU）</h2>
+  <div class="card">
+    <h3><span class="ticker">6285</span>啟碁 · SpaceX IPO 6/12 倒數 · Starlink Router 印 Logo 主力 · 衛星概念股龍頭</h3>
+    <p>• <strong>SpaceX 確認 6/12 Nasdaq 掛牌</strong>，估值 $1.75T~$2T，募資 $750~800B。啟碁 Q1 法說 Starlink 終端訂單持續放大，台廠衛星概念股龍頭地位確立。<br>• 股癌 EP64 即點名「啟碁是台灣目前最純的 SpaceX 概念股之一」（FCC 公布的 router 設計圖直接印上 logo）。EP665 (5/27) 再次重申衛星 + AI 算力護城河。<br>• 連動族群：昇達科 (3491) 微波 / RF、華通 (2313) 低軌衛星 PCB、緯穎 (6669) 衛星地面站。</p>
+    <span class="tag bull">SpaceX 6/12 上市</span><span class="tag bull">Starlink 終端龍頭</span><span class="tag bull">EP665 股癌再點名</span>
+  </div>
+  <div class="card">
+    <h3><span class="ticker">2330</span>台積電 · 兆元晚宴落幕 · Nvidia $150B 承諾延續 · TSMC ADR $424 ATH 區間</h3>
+    <p>• <strong>魏哲家 5/28 晚宴座上賓</strong>，與黃仁勳、劉揚偉共同前排合影。晚宴後 Vera Rubin 量產時程與 CoWoS 產能分配確認。<br>• <strong>TSMC ADR 5/27 收 $424，維持歷史新高區間</strong>。Nvidia 預計今年超越 Apple 成為台積電最大客戶。$150B/年台灣投資承諾配套：Nvidia 在台北北部新辦公園區「Constellation」年底動工。<br>• 2nm 量產進度、A14（2028）、Arizona F2 提前至 2026 Q4。除息日 6/11（$0.95）。</p>
+    <span class="tag bull">兆元晚宴座上賓</span><span class="tag bull">TSMC ADR $424 ATH</span><span class="tag bull">CoWoS 受惠</span>
+  </div>
+  <div class="card">
+    <h3><span class="ticker">2317</span>鴻海 · 兆元晚宴 Vera Rubin 量產主力 · AI 機櫃 40% 全球市占</h3>
+    <p>• <strong>劉揚偉 5/28 晚宴與魏哲家、林百里、黃仁勳同框</strong>，外電稱「全球 AI 硬體國家隊」展示鴻海垂直整合一體化機櫃的關鍵角色。<br>• 鴻海 AI 伺服器市占 40%、Vera Rubin H2 量產爬坡為核心受惠，Q1 EPS NT$3.56 創歷年同期新高，外資連買結構穩固。<br>• 連動：廣達 ODM、奇鋐 (3017) 散熱、台達電 (2308) 電源、緯穎 (6669) CSP 機櫃。</p>
+    <span class="tag bull">兆元晚宴座上賓</span><span class="tag bull">Vera Rubin 主力 ODM</span><span class="tag bull">AI 機櫃 40% 市占</span>
+  </div>
+  <div class="card">
+    <h3><span class="ticker">2327</span>國巨 · 5/28 漲勢後續觀察 · GB200 需 3 萬顆 MLCC · Power Rack 題材延續</h3>
+    <p>• <strong>5/27 +6.56% 收 325 元、5/28 延續強勢</strong>。被動元件族群（華新科 2492、華容 5328、立隆電 2472、金山電 8042）持續活躍。<br>• 結構性催化：Nvidia GB200 伺服器需 3 萬顆 MLCC（傳統伺服器 14 倍）；Samsung MLCC +5~10%、Taiyo Yuden +6~13%；通路商議價從「殺價」轉向「保供」。<br>• 股癌 EP664 點名「市場過度聚焦 GPU，忽略隔壁 Power Rack 商機」——高壓 MLCC、牛角電容 (Snapping)、功率半導體用量翻倍，立隆電 / 金山電為直接受惠股。</p>
+    <span class="tag bull">5/27 +6.56%</span><span class="tag bull">GB200 需 3 萬顆 MLCC</span><span class="tag bull">Power Rack 題材</span>
+  </div>
+  <div class="card">
+    <h3><span class="ticker">MRVL</span>Marvell · Q1 FY27 超預期 $2.418B · EPS $0.80 · AI ASIC 能見度延續</h3>
+    <p>• <strong>5/27 盤後 Q1 FY27</strong>：淨收入 $2.418B (+28% YoY)，高於指引中點 $18M；Non-GAAP EPS $0.80 超預期 $0.75（+6.7%）；毛利率 58.9% Non-GAAP。<br>• <strong>資料中心主力</strong>：AWS Trainium 3/4 設計服務為最大客戶，佔比 74%。AI ASIC 成長能見度確立。台股卡位股世芯 (3661)、創意 (3443) 連動觀察。<br>• MRVL 2026 YTD 已 +179%，財報超預期支撐 AI ASIC 生態估值。</p>
+    <span class="tag bull">Q1 $2.418B +28%</span><span class="tag bull">EPS $0.80 超預期</span><span class="tag bull">AWS Trainium 74%</span>
+  </div>
+  <div class="rumor">
+    <strong>🗣️ 盤前市場傳言（6/5 整理）：</strong>⭐ <strong>AVGO -12~14% 是 AI 泡沫戳破還是健康輪動</strong>：空方——AI Q3 指引首見「不夠驚喜」、Google 分散供應商、SOX 高位估值脆弱；多方——魏哲家「供給連續數年趕不上需求」、Dow 創高顯示資金仍在股市僅換板塊、Q2 AI +143% 基本面未變。法人共識：觀察三日內能否複製 NVDA「利多出盡→快速收復」模式。⭐ <strong>Google 分散 ASIC 供應商傳聞</strong>：傳 MediaTek（聯發科 2454）切入 TPU 後段設計、其他設計服務商分食，AVGO ASIC 市占 70% 故事鬆動——台系 ASIC 鏈（世芯 3661、創意 3443）短空長多之辯。⭐ <strong>股癌 EP667 功率半導體預告發酵</strong>：謝孟恭「電源櫃拉貨 + 基本面顯著改善、可能是下一波題材匯聚點、先打試單插眼」——盤面傳功率元件族群買單湧現，留意是否複製被動元件劇本。⭐ <strong>投信資金活水</strong>：EP667 QA 提及監管放寬投信、公發書修改這一兩個月內完成，台積電 2330 補漲行情的潛在推手。⭐ <strong>今晚非農</strong>：數據過熱將疊加 WTI $96 推升殖利率，FOMC 6/16 前成長股最大宏觀變數。
+    <span class="src">來源：Reuters / CNBC / TheStreet 6/4 · 股癌 EP667 socialworkerdaily · 法人圈轉述 · TWSE</span>
+  </div>
+</section>
+
+<section id="reuters">
+  <h2 class="section-title"><span class="icon">📡</span>路透社科技股動態（6/5 週五 · 🔻 AVGO 收盤 -12~14% 觸發半導體賣壓 · 💪 Dow +1.73% 創高資金大轉向 · 魏哲家：供給缺口數年 · 盤後 LULU/RBRK/DOCU）</h2>
+  <div class="highlight">Reuters 與主流外電 6/4~6/5 焦點 — <strong>🔻 Broadcom AVGO 6/4 收盤重挫 -12~14%（Reuters：AI Q3 指引 $16B 低於預期、FY26 AI 目標 $56B 未上修 vs 共識 $57.6B、Google 分散供應商疑慮）；Micron -7%、ARM / Intel 走弱，半導體全面賣壓 · 💪 Dow +874.86（+1.73%）收 51,561.93 歷史新高（UNH +5% / JPM +3%）＝資金自 AI 鏈轉向醫療金融；S&P +0.41% 收 7,584.31、Nasdaq -0.09% 收 26,830.96 · 🏭 TSMC 魏哲家：「全球晶片供給將連續數年趕不上 AI 需求」 · 📉 台股 6/4 加權 -433.59（-0.93%）收 46,025.57、台積電 2330 收 2,405（-0.82%） · 📊 盤後：LULU -9%（指引砍）、RBRK +2%（beat+上修）、DOCU -2%（雙 beat） · 📅 今晚 20:30 美國 5 月非農</strong>。</div>
+  <div class="card">
+    <h3>🆕 🔻 Broadcom AVGO 6/4 收盤 -12~14% · Reuters：AI 晶片指引低於預期、全年目標未上修 · 半導體類股全面賣壓</h3>
+    <p>Reuters / CNBC / 鉅亨 6/4：Broadcom 6/4 正常盤收盤重挫 12~14%（盤後原僅 -3%），為 6/4 美股最大焦點。Reuters 指出賣壓三主因：① <strong>AI Q3 指引 $16B 低於市場預期</strong>（賣方共識 $16.36B、部分買方上看 $17.2B）；② CEO Hock Tan <strong>重申 FY26 AI 半導體銷售 $56B 目標而未上修</strong>，低於市場已 price-in 的 $57.6B；③ 最大 ASIC 客戶 <strong>Google 開始分散晶片供應商</strong>的擔憂。連鎖效應：<strong>Micron -7%、ARM / Intel 同步下挫</strong>，科技為 6/4 唯一明顯收跌板塊。CNBC：「Broadcom、Micron、ARM 領跌晶片股」。台股 ASIC 鏈（世芯 3661、創意 3443）、ABF 載板（欣興 3037、南電 8046）今日承壓。</p>
+    <span class="tag reuters">Reuters/CNBC</span><span class="tag bear">AVGO -12~14%</span><span class="tag bear">MU -7%</span><span class="tag bear">AI 指引預期差</span>
+    <span class="src">來源：<a href="https://www.investing.com/news/stock-market-news/broadcom-forecasts-quarterly-revenue-above-estimates-4725166" target="_blank">Reuters (via Investing) – Broadcom AI 晶片指引低於預期 股價重挫</a> · <a href="https://www.cnbc.com/2026/06/04/chipmaker-equities-micron-marvell-broadcom-intel.html" target="_blank">CNBC – Broadcom / Micron / ARM 領跌晶片股</a> · <a href="https://news.cnyes.com/news/id/6483091" target="_blank">鉅亨 – 博通重申 AI 晶片目標未加碼 重挫 13%</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 💪 Dow 6/4 大漲 +874.86（+1.73%）收 51,561.93 歷史新高 · 資金自 AI 晶片股大轉向 · S&P +0.41% / Nasdaq -0.09%</h3>
+    <p>CNBC / TheStreet / Schwab 6/4：Dow Jones 6/4 大漲 874.86 點（+1.73%）收 <strong>51,561.93 創歷史新高</strong>，同日 Nasdaq -0.09% 收 26,830.96、S&P 500 +0.41% 收 7,584.31——<strong>AVGO 重挫觸發投資人削減 AI 連動部位、轉進非科技板塊</strong>的典型大輪動日。領漲：UnitedHealth +5%、JPMorgan +3%、Walmart +1%；醫療與金融吸金最多。Schwab：「晶片股終於撞上減速丘」。多空辯論升溫：空方視為 AI 泡沫首道裂縫；多方視為健康輪動（指數結構未壞、Dow / S&P 同創高或近高）。今晚 5 月非農為下一個方向催化。</p>
+    <span class="tag reuters">CNBC/Schwab</span><span class="tag bull">Dow 51,562 ATH</span><span class="tag watch">AI→非科技輪動</span>
+    <span class="src">來源：<a href="https://www.cnbc.com/2026/06/03/stock-market-today-live-updates.html" target="_blank">CNBC – Dow 大漲近 900 點創高 資金撤出科技</a> · <a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">Schwab – Broadcom 重挫衝擊長線漲勢</a> · <a href="https://www.thestreet.com/stock-market-today/stock-market-today-june-4-2026-nasdaq-futures-slide-amid-iran-war-concerns" target="_blank">TheStreet – 6/4 盤勢：AVGO 觸發半導體賣壓與板塊輪動</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 🏭 TSMC 魏哲家：全球晶片供給將「連續數年」趕不上 AI 需求 · AVGO 賣壓日的多方定錨</h3>
+    <p>Yahoo Finance / 外電 6/4：台積電 CEO 魏哲家公開表示，<strong>全球晶片供給將在未來數年持續落後 AI 驅動的需求</strong>，凸顯 AI 基礎建設擴張中的長期產能緊張。此談話恰逢 AVGO 重挫日，成為多方最重要的基本面反駁論據——需求未變、僅單一公司指引「不夠驚喜」。對台股意義：台積電先進製程（N2 量產、CoWoS 擴產）長單能見度不受單日情緒影響；股癌 EP667 亦指台積電「明顯轉強、有補漲味道」，疊加投信監管放寬資金活水可期。</p>
+    <span class="tag reuters">Yahoo/外電</span><span class="tag bull">供給缺口數年</span><span class="tag bull">台積電定錨</span>
+    <span class="src">來源：<a href="https://finance.yahoo.com/markets/stocks/articles/micron-drops-7-broadcom-disappointing-151544845.html" target="_blank">Yahoo Finance – Micron -7% 半導體賣壓 + 魏哲家供給談話</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 📊 盤後財報三連發（6/4 AH）· LULU -9% 指引大砍 · RBRK +2% beat + 上修 · DOCU -2% 雙 beat</h3>
+    <p>Investing.com / TheStreet 6/4 盤後：① <strong>Lululemon LULU -9%</strong>——Q1 EPS $1.69 in-line、營收 $2.5B beat，但 Q2 EPS 指引 $1.76~1.81、全年 $10.95~11.15 均大幅低於共識，YTD -41% 的跌勢未獲財報拯救；② <strong>Rubrik RBRK +2%</strong>——EPS $0.16 beat、營收 $387.1M（+39% YoY），FY27 營收指引上修至 $1.64~1.65B 高於共識，資安 / 資料管理軟體動能延續（呼應 CRWD 強財報）；③ <strong>DocuSign DOCU -2%</strong>——EPS $1.09 / 營收 $830.2M 雙 beat，FY27 指引 $3.49~3.502B 僅貼共識，市場要求更多。軟體股 Token-based 轉型敘事中性偏多，零售消費股（LULU）持續示警。</p>
+    <span class="tag reuters">Investing/TheStreet</span><span class="tag bear">LULU -9%</span><span class="tag bull">RBRK +2%</span><span class="tag neutral">DOCU -2%</span>
+    <span class="src">來源：<a href="https://www.investing.com/news/stock-market-news/afterhours-stock-movers-lulu-rbrk-docu-iot-pl-ttan-432SI-4727433" target="_blank">Investing.com – 盤後異動 LULU / RBRK / DOCU</a> · <a href="https://www.thestreet.com/latest-news/lulu-lululemon-earnings-call-updates-q1-2026" target="_blank">TheStreet – LULU 財報 liveblog：下修展望</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ✅ Broadcom AVGO Q2 FY26 實際結果（6/3 盤後）· 營收 $22.19B / EPS $2.44 beat · Q3 指引 $29.4B 大幅上修</h3>
+    <p>Reuters / US News / Stocktitan / 247WallSt 6/3：Broadcom 6/3 盤後公布 Q2 FY2026 結果：營收 <strong>$22.187B（+48% YoY）</strong>，略低於共識 $22.27B 約 0.4%；Non-GAAP EPS <strong>$2.44 beat $2.40</strong>；<strong>AI 半導體 $10.8B（+143% YoY）創新高</strong>。Q3 指引大幅上修：營收 <strong>$29.4B（+84% YoY）</strong>遠超共識 $26B；<strong>AI Q3 指引 $16B（+200% YoY）</strong>，自 Q2 +143% 進一步加速；Q3 Non-GAAP op income margin ~67%、Adj EBITDA margin ~68%。股價 AH -2~3%（市場 over-rotated 於 0.4% 營收微 miss，本質為大利多）。Wall Street 預期目標價上修潮。台股 ASIC 連動：世芯 3661（AWS Trainium 3/4 74%）、創意 3443、AI Networking 智邦 2345、ABF 載板欣興 3037、南電 8046。</p>
+    <span class="tag reuters">Reuters/US News</span><span class="tag bull">EPS $2.44 beat</span><span class="tag bull">AI Q2 $10.8B +143%</span><span class="tag bull">Q3 指引 $29.4B +84%</span><span class="tag bull">AI Q3 +200%</span>
+    <span class="src">來源：<a href="https://money.usnews.com/investing/news/articles/2026-06-03/broadcom-forecasts-quarterly-revenue-above-estimates" target="_blank">US News – Broadcom 上修 Q3 指引 AI 強勁</a> · <a href="https://www.stocktitan.net/news/AVGO/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial-if4yrbje8hq6.html" target="_blank">Stocktitan – Q2 FY26 結果 / AI $10.8B / Q3 $16B</a> · <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-03-2026" target="_blank">TheStreet – 6/3 收盤 / 財報 liveblog</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ✅ CrowdStrike CRWD Q1 FY27 大勝（6/3 盤後）· EPS $1.10 beat $0.88 · Net new ARR $256M (+32%) · 宣布 1 拆 4 股票分割</h3>
+    <p>SEC 8-K / Public.com 6/3：CrowdStrike Holdings 6/3 盤後發布 Q1 FY27 結果：Non-GAAP <strong>EPS $1.10 beat 共識 $0.88（+25% beat）</strong>。<strong>Net new ARR $256M（+32% YoY）</strong>創 Q1 歷史新高（超出 Falcon 故障後復原預期）。<strong>Cash from Operations $591M 創高、Free Cash Flow $468M 創高</strong>。FY27 全年 net new ARR 成長預期上修 520bps 至 27.7%（較前一財年加速）。同步宣布 <strong>1 拆 4 股票分割</strong>，記錄日 2026/6/25 收盤、2026/7/2 起以拆後價格交易。Falcon 平台重啟動能確認，資安股龍頭地位再強化。連動：Cloudflare NET、Zscaler ZS、SentinelOne S、Palo Alto Networks PANW。</p>
+    <span class="tag reuters">SEC 8-K / Public</span><span class="tag bull">EPS $1.10 beat 25%</span><span class="tag bull">ARR $256M +32%</span><span class="tag bull">1 拆 4 股票分割</span>
+    <span class="src">來源：<a href="https://www.sec.gov/Archives/edgar/data/0001535527/000153552726000022/crwd-20260603xex991.htm" target="_blank">SEC 8-K – CRWD Q1 FY27</a> · <a href="https://public.com/stocks/crwd/earnings" target="_blank">Public.com – CRWD 財報摘要</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 🛢️ 美股 6/3 中東地緣回檔 · Dow -1.21% / S&P -0.74% / Nasdaq -0.89% · WTI 油價 +2.51% 至 $96.11</h3>
+    <p>Yahoo Finance / TheStreet 6/3：美股 6/3 全面回檔。Dow Jones 收 50,687（-1.21%）、S&P 500 7,553（-0.74%）、Nasdaq Composite 26,852（-0.89%）、Russell 2000 -1.25%。回檔主因：報導<strong>伊朗攻擊巴林 / 科威特主要基礎設施、美方反擊伊朗境內目標</strong>，地緣風險上升推動 <strong>WTI 原油 +2.51% 至 $96.11</strong>、美債殖利率上揚（10Y 上行壓抑科技股估值）。<strong>個股表現</strong>：Marvell MRVL +5~7%（Computex Jensen 點名兆元股餘溫、自家 Teralynx T100 102.4 Tbps 交換機題材）、GameStop +9.4%、Datadog -7.1%；軟體股大幅承壓。Broadcom AVGO 盤後因營收微 miss -2~3%。市場視角：地緣風險主導，AI 基本面長線不變。</p>
+    <span class="tag reuters">Yahoo Finance / TheStreet</span><span class="tag bear">三大指數回檔</span><span class="tag bull">MRVL +5~7%</span><span class="tag bear">WTI +2.51%</span>
+    <span class="src">來源：<a href="https://finance.yahoo.com/markets/live/stock-market-today-wednesday-june-3-dow-sp-500-nasdaq-fall-oil-rises-224803128.html" target="_blank">Yahoo Finance – 6/3 收盤回檔 油價上揚</a> · <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-03-2026" target="_blank">TheStreet – 6/3 收盤紀錄與 earnings liveblog</a> · <a href="https://stockstotrade.com/news/marvell-technology-inc-mrvl-news-2026_06_03/" target="_blank">StocksToTrade – MRVL +5.57% Teralynx T100</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ✅ 台股 6/3 強漲 +864.77（+1.90%）收 46,422 · 台積電 2330 收 $2,425 (+1.89%) · TSMC ADR $446 (+2.44%)</h3>
+    <p>TWSE / Goodinfo / Vocus EcoBeat 6/3：台股加權指數 6/3 開盤即跳空，收 <strong>46,422.08（+864.77 / +1.90%）</strong>；成交量 8.23 兆股、成交金額 6,596 億元。台積電 2330 收 <strong>$2,425（+45 / +1.89%）</strong>，TSMC ADR 同步 +2.44% 至 $446.25。<strong>類股輪動</strong>：① 被動元件延續強勢（國巨 2327、立隆電 2472、華新科 2492、凱美 2375）；② AI ASIC 卡位股（世芯 3661、創意 3443）受 Computex Jensen 點名 Marvell + AVGO 即將公布利多預期推升；③ CoWoS / Vera Rubin（鴻海 2317、奇鋐 3017、台達電 2308）；④ Nasdaq 27,000 點 / TSMC ADR ATH 推力。市場視角：TSMC ADR 對 2330 溢價降至 13.7%、本週 ADR 率先突破前高為資金重新定價訊號；台積電 H2 2026 可能大幅調漲先進製程報價的傳聞為今日股東會法人焦點。</p>
+    <span class="tag reuters">TWSE / Vocus</span><span class="tag bull">加權 46,422 +1.90%</span><span class="tag bull">台積電 +1.89%</span><span class="tag bull">TSMC ADR +2.44%</span>
+    <span class="src">來源：<a href="https://vocus.cc/article/6a1ee6b2fd89780001b484f4" target="_blank">Vocus EcoBeat – 那指破 27,000 / TSMC ADR 狂飆引領</a> · <a href="https://goodinfo.tw/tw/ShowK_Chart.asp?STOCK_ID=%E5%8A%A0%E6%AC%8A%E6%8C%87%E6%95%B8&CHT_CAT=DATE" target="_blank">Goodinfo – 加權指數 6/3</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ Marvell MRVL 6/2 +25% 至 $273 · Jensen Huang Computex 公開點名「下一個兆元股」· 市值單日 +$47B</h3>
+    <p>Seoul Economic Daily / Yahoo Finance / Startup Fortune 6/2：Computex 2026 Jensen Huang 與 Marvell CEO Matt Murphy 同台，當場以六個英文字「The next trillion-dollar company」公開點名 Marvell。MRVL 盤前一度漲 25% 至 ~$273（前收盤 ~$219），市值單日增 ~$47B。背景：NVIDIA 已投資 $2B 入股 Marvell；雙方深化 NVLink Fusion 客製矽合作，Marvell 被視為 NVIDIA AI 基礎設施「優先客製矽夥伴」，涵蓋資料中心互連、PAM4 DSP、Co-Packaged Optics、高速 SERDES。台股 ASIC 連動股：<strong>世芯 3661</strong>（AWS Trainium 3/4 主設計，佔比 74%）、<strong>創意 3443</strong>（Tesla AI5 / 多家 CSP），光通訊：<strong>聯亞 3081</strong>、<strong>華星光 4979</strong>、<strong>穩懋 3105</strong>。Wall Street 普遍上修 MRVL 目標價。</p>
+    <span class="tag reuters">Seoul ED / Yahoo</span><span class="tag bull">MRVL +25%</span><span class="tag bull">Jensen 點名兆元股</span><span class="tag bull">NVLink Fusion</span>
+    <span class="src">來源：<a href="https://en.sedaily.com/finance/2026/06/02/marvell-technology-surges-23-percent-after-jensen-huangs-1" target="_blank">Seoul Economic Daily – MRVL +23~25% Jensen 點名</a> · <a href="https://finance.yahoo.com/video/jensen-huang-explains-why-marvell-165703864.html" target="_blank">Yahoo Finance – Jensen 解釋 Marvell 為下一個兆元股</a> · <a href="https://startupfortune.com/jensen-huang-called-marvell-the-next-trillion-dollar-company-and-the-market-believed-him-immediately/" target="_blank">Startup Fortune – 市場立刻買單</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 🔥 Broadcom AVGO Q2 FY26 今日盤後財報 · 共識營收 $22.12B / EPS $2.40 / AI 半導體 $10.7B（+140%）</h3>
+    <p>StockTitan / Alphastreet / Seeking Alpha / TipRanks 6/1~6/2：Broadcom 將於 6/3（週三）盤後（PT 14:00 / ET 17:00）發布 Q2 FY2026 財報。市場共識：營收 $22.12B（+47% YoY、區間 $21.88~22.85B）、Non-GAAP EPS $2.40（區間 $2.36~$2.54、37 位分析師參與）；公司 Q1 guidance：合併營收約 $22.0B（+47% YoY）、半導體營收 $14.8B（+76% YoY）、AI 半導體營收 $10.7B（+140% YoY）、毛利率約 77%。選擇權隱含波動 ±10.65%。Q1 已創歷史新高—營收 $19.3B（+29% YoY），其中 AI 半導體 $8.4B（+106% YoY）。觀察要點：(a) AI ASIC—Google TPU / Meta MTIA 訂單進度、新客戶 Anthropic / OpenAI 是否官宣；(b) AI Networking—Tomahawk 6 / Jericho；(c) VMware 整合與軟體部門毛利率；(d) Q3 指引能否再加速。Wall Street 26 買進 / 4 持有共識。台股連動：世芯 3661、創意 3443、智邦 2345、智易 3596、ABF 載板（欣興 3037、南電 8046、景碩 3189）。</p>
+    <span class="tag reuters">StockTitan / TipRanks</span><span class="tag bull">共識 $22.12B</span><span class="tag bull">AI 晶片 $10.7B +140%</span><span class="tag watch">±10.65% 波動</span>
+    <span class="src">來源：<a href="https://www.stocktitan.net/news/AVGO/broadcom-inc-to-announce-second-quarter-fiscal-year-2026-financial-04if2lwax8o1.html" target="_blank">StockTitan – AVGO Q2 FY26 6/3</a> · <a href="https://news.alphastreet.com/broadcom-avgo-q2-2026-preview-eps-est-2-40-reports-june-3/amp/" target="_blank">Alphastreet – EPS Est. $2.40</a> · <a href="https://seekingalpha.com/news/4599887-broadcom-q2-2026-earnings-preview" target="_blank">Seeking Alpha – Q2 2026 Preview</a> · <a href="https://www.tipranks.com/stocks/avgo/earnings"  target="_blank">TipRanks – AVGO Earnings</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 美股 6/2 雙 ATH · S&P 500 收 7,609.78（+0.13%）· Nasdaq 27,093.90（+0.03%）· Dow +0.45%</h3>
+    <p>CNBC / TheStreet 6/2：S&P 500 收 7,609.78（+0.13%）改寫 ATH；Dow Jones +228.91 點（+0.45%）收 51,307.79；Nasdaq Composite 27,093.90（+0.03%）盤中破萬高、收盤改寫 ATH。Microchip Technology MCHP 暴漲 +12%（揭露資料中心解決方案 2025 年營收 $302.7M、2026 年成長預估 +65%）。Alphabet GOOGL 重挫近 4%（公告增發 $80B 募 AI 資本支出）為當日權值拖累。AI / 半導體類股延續強勢。Bloomberg 報導 6/2 半導體（PHLX SOX）指數單日 +4.5%，iShares Expanded Tech-Software（IGV）反向 -4%，兩者差距 8.4 個百分點，為 2021 中以來最大單日落差。AMD 5 月 +40% 創新高；Qualcomm 5 月 +40% 創新高；PHLX 半導體指數 YTD +60%+。</p>
+    <span class="tag reuters">CNBC / Bloomberg</span><span class="tag bull">S&P / Nasdaq ATH</span><span class="tag bull">SOX +4.5%</span><span class="tag bear">GOOG -4%</span>
+    <span class="src">來源：<a href="https://www.cnbc.com/2026/06/01/stock-market-today-live-updates.html" target="_blank">CNBC – Market 6/2</a> · <a href="https://www.bloomberg.com/news/articles/2026-06-02/chipmakers-outperform-software-stocks-by-most-on-record" target="_blank">Bloomberg – Chipmakers vs Software 差距創 2021 以來最大</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 三星 HBM4E 通過 NVIDIA 認證進入量產 · 16Gbps / 4.0TB/s · Vera Rubin 主供應之一</h3>
+    <p>Samsung Newsroom / UDN / TechNews / XFastest 5/29~6/2：三星電子已將業界首批 12 層 48GB HBM4E 樣品交付主要客戶；HBM4E 規格：每腳位 16Gbps（HBM4 為 14Gbps）、頻寬 4.0TB/s、每堆疊容量 48GB（較前代 +30%），整體效能較 HBM4 提升 >20%。三星表示 HBM4E 已通過 NVIDIA 品質認證並獲訂單，生產計畫已根據 NVIDIA Vera Rubin 推出計畫進行調整；Samsung HBM4 量產，設計用於 NVIDIA Vera Rubin 平台，傳輸速度 11.7 Gbps（超過業界標準 8Gbps，並可增強至 13Gbps）。台股 HBM 連動：南亞科 2408、群聯 8299；產業意義：SK Hynix 龍頭地位再受挑戰，HBM 市占可能重新洗牌。</p>
+    <span class="tag reuters">Samsung / UDN</span><span class="tag bull">HBM4E 認證量產</span><span class="tag bull">Vera Rubin 主供應</span>
+    <span class="src">來源：<a href="https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026" target="_blank">Samsung Newsroom – HBM4E + NVIDIA 合作</a> · <a href="https://technews.tw/2026/05/29/samsung-electronics-begins-shipment-of-industry-first-hbm4e-samples" target="_blank">TechNews – 首批 12 層 HBM4E 樣品出貨</a> · <a href="https://money.udn.com/money/story/5599/9534549" target="_blank">UDN – 三星 12 層 HBM4E 送樣</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ ✅ Nvidia GTC Taipei keynote 6/1 落幕 · RTX Spark Superchip 發表 · Vera Rubin NVL72 全面量產 · Jetson Thor 機器人平台</h3>
+    <p>NVIDIA Blog / Reuters / Tom's Hardware 6/1：黃仁勳 GTC Taipei 2026 keynote（台北流行音樂中心 11am，現場兩小時）正式發表三大重磅產品：① <strong>RTX Spark Superchip</strong>——Nvidia 首款 PC ARM SoC，雙 chiplet 架構：Blackwell GPU chiplet（6,144 CUDA cores、等同 RTX 5070 級別）+ <strong>聯發科 2454</strong> 設計的 20 核 Grace CPU/IO chiplet，矽橋 600GB/s 互連、128GB LPDDR5X 統一記憶體、1 PFLOPS AI；台積電 3nm 製造、秋季出貨。合作客戶：Microsoft Surface Ultra、Dell、HP、Lenovo、ASUS、MSI。聯發科正式進軍高階 Windows PC 市場。② <strong>Vera Rubin NVL72</strong>——72 顆 Rubin GPU + 36 顆 Vera CPU，全面進入量產，已獲 COMPUTEX BCA 雙金獎（Sustainable Tech 特別獎），<strong>鴻海 2317</strong> 為 compute tray 主要代工。③ <strong>Jetson Thor + Isaac GR00T</strong>——Blackwell 邊緣 AI 模組 2,070 FP4 TFLOPS（7.5x vs Orin），開放 Unitree H2 Plus + Sharpa 五指手機器人 reference design。NVIDIA Constellation 台北新總部（Beitou-Shilin Tech Park，4,000 員工）動土；AMD Lisa Su（Helios 機架）、Intel 陳立武（Panther Lake）同場。</p>
+    <span class="tag reuters">Reuters/NVIDIA</span><span class="tag bull">RTX Spark 發表</span><span class="tag bull">Vera Rubin 量產</span><span class="tag bull">聯發科 2454 ✓</span><span class="tag bull">鴻海 2317 ✓</span>
+    <span class="src">來源：<a href="https://blogs.nvidia.com/blog/nvidia-gtc-taipei-computex-2026-news/" target="_blank">NVIDIA Blog – GTC Taipei 直播紀錄</a> · <a href="https://www.tomshardware.com/laptops/nvidia-unveils-rtx-spark-superchip-at-computex-2026-new-platform-promises-to-turn-windows-into-an-agentic-ai-os-with-arm-cpu-blackwell-gpu-and-128gb-unified-memory" target="_blank">Tom's Hardware – RTX Spark Superchip 規格</a> · <a href="https://technews.tw/2026/06/01/nvidia-computex-2026-rtx-spark/" target="_blank">TechNews – 黃仁勳發表 RTX Spark</a> · <a href="https://www.prnewswire.com/news-releases/mediatek-collaborates-with-nvidia-on-the-rtx-spark-to-power-the-next-wave-of-windows-pc-experiences-302786739.html" target="_blank">PRNewswire – MediaTek + NVIDIA RTX Spark</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 三星 HBM4E 首批樣品出貨 · 三星電子 6/1 股價 +6.51% · AI 記憶體競賽白熱化</h3>
+    <p>Reuters / Sammy Fans 6/1：三星電子（005930.KS）週一股價盤中飆升 6.51%、終場 +3.67% 收 KRW 310,500，主因為三星已開始向全球客戶出貨 HBM4E 樣品。三星規劃 HBM4E 多種版本：8 層 32GB 與 16 層 64GB，讓 AI 客戶可彈性選擇容量/效能。Trendforce 早前報導三星 2026 年 HBM 產能將年增 50%，HBM4E 為其重新挑戰 SK Hynix 龍頭地位的核心籌碼。Samsung Display 同日於 Computex 2026 發表 16 款新 OLED 產品（含超薄筆電 OLED、360Hz QD-OLED 顯示器）。台股 HBM 連動股：南亞科（2408）、群聯（8299）受惠 AI 記憶體需求溢出效應。</p>
+    <span class="tag reuters">Reuters/Sammy Fans</span><span class="tag bull">三星 +6.51%</span><span class="tag bull">HBM4E 出貨</span><span class="tag bull">AI 記憶體</span>
+    <span class="src">來源：<a href="https://www.sammyfans.com/2026/05/31/samsung-stock-june-1-2026/" target="_blank">Sammy Fans – Samsung HBM4E AI Memory 6/1</a> · <a href="https://finance.yahoo.com/news/samsung-electronics-highlights-progress-hbm4-000428574.html" target="_blank">Yahoo Finance – Samsung HBM4 progress</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ Broadcom AVGO 6/3 Q2 財報倒數 · 共識 $22.12B（+47% YoY）· AI 晶片 $10.7B · 選擇權隱含 ±10.65%</h3>
+    <p>TipRanks / TradingKey / Motley Fool 5/30~6/1：Broadcom 將於明日 6/3（週三）盤後發布 Q2 FY26 財報。市場共識：營收 $22.12B（+47% YoY，較 Q1 $19.3B/+29% 加速）、Non-GAAP EPS $1.73~$2.46（區間因模型不一）、AI 半導體營收 $10.7B（+140% YoY）。重點關注：AI ASIC（Google TPU / Meta MTIA）與 AI Networking（Tomahawk 6 / Jericho）雙引擎更新、與 Anthropic / OpenAI 潛在新訂單、毛利率與 VMware 整合進度。期權交易員預期 AVGO 財報後波動 ±10.65%。台股 ASIC 連動：世芯 3661、創意 3443；AI Networking：智邦 2345、智易 3596。Wall Street 26 買進 / 4 持有 共識。</p>
+    <span class="tag reuters">Reuters/TipRanks</span><span class="tag bull">共識 $22.1B</span><span class="tag bull">AI 晶片 $10.7B</span><span class="tag watch">±10.65% 波動</span>
+    <span class="src">來源：<a href="https://www.tipranks.com/news/heres-what-top-analysts-expect-from-broadcom-stock-avgo-ahead-of-q2-earnings-on-june-3" target="_blank">TipRanks – AVGO Q2 預期</a> · <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/261937612-broadcom-avgp-q2-google-meta-anthropic-openai-chip-asic-tradingkey" target="_blank">TradingKey – Broadcom Q2 Preview</a> · <a href="https://www.fool.com/investing/2026/05/30/prediction-this-artificial-intelligence-ai-inferen/" target="_blank">Motley Fool – AI Inference 6/3 預測</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 美股 6/1 開門紅 · Nasdaq 27,086（+0.42%）新高 · NVDA +4.86% / MU +6.8% / ORCL +8.4%</h3>
+    <p>TheStreet / Motley Fool 6/1：美股 6 月首個交易日創新高。Nasdaq Composite +0.42% 收 27,086.81 首破 27K，S&P 500 +0.26% 收 7,599.96 盤中突破 7,600 點，Dow 持平。AI 概念股領漲：<strong>Nvidia +4.86%（GTC Taipei keynote 加持）</strong>、Micron +6.8%（HBM4 樂觀情緒擴散）、Oracle +8.4%（雲端 AI 訂單）。能源類股因油價跳升 +2%（美伊地緣風險再起）。10Y 美債殖利率小幅回升。市場主軸：AI 樂觀情緒 vs 地緣與升息風險拉鋸。</p>
+    <span class="tag reuters">Reuters/TheStreet</span><span class="tag bull">Nasdaq +0.42% ATH</span><span class="tag bull">NVDA +4.86%</span><span class="tag bull">ORCL +8.4%</span>
+    <span class="src">來源：<a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-01-2026" target="_blank">TheStreet – Markets 6/1 收盤紀錄</a> · <a href="https://www.fool.com/coverage/stock-market-today/2026/06/01/stock-market-today-june-1-markets-flat-as-oil-spike-offsets-new-nvidia-chip/" target="_blank">Motley Fool – Nvidia 新晶片 vs 油價跳升</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 台股 6/1 加權 45,337（+1.35%）· 被動元件電容族群續強 · 凱美 / 立隆電 / 華新科 接近漲停</h3>
+    <p>Yahoo TW / CMoney 6/1：台股加權指數 6/1 收 45,337.91（+604.97 / +1.35%），延續 5 月強勢（5 月加權月漲逾 4,700 點挑戰最強 5 月）。盤中被動元件電容族群類股漲幅達 8.49%，國巨 2327、凱美 2375、金山電 8042、華新科 2492 漲停或接近漲停，立隆電 2472 因首度切入 Nvidia Vera Rubin 板端電源用高漣波 / 長壽命固態鋁電容供應鏈獲外資點名。Computex Day 1 機器人類股延續：上銀 2049、直得 3236、所羅門 2359、仁寶 2324 接力強勢。三大法人連續買超台股。</p>
+    <span class="tag reuters">Reuters/CMoney</span><span class="tag bull">加權 45,337 ATH</span><span class="tag bull">電容族群 +8.49%</span><span class="tag bull">立隆電 切入 Rubin</span>
+    <span class="src">來源：<a href="https://tw.stock.yahoo.com/news/2%E8%A1%A8%E7%9C%8B-%E5%87%B1%E7%BE%8E-%E7%A6%BE%E4%BC%B8%E5%A0%82-%E5%A0%A1%E9%81%94-%E7%AB%8B%E9%9A%86%E9%9B%BB-045035002.html" target="_blank">Yahoo TW – 被動元件全線噴發 立隆電攻進 Rubin</a> · <a href="https://cmnews.com.tw/article/cmoneyairesearcher-33b697ad-5d5b-11f1-8fdf-f18b30825bc8" target="_blank">CMoney – 06/01 電容族群強勢表態</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ Dell Q1 FY27 炸裂 · $43.8B (+88% YoY) · AI 訂單 $24.4B · FY27 全年指引 $165~169B</h3>
+    <p>SEC 8-K / Reuters 5/28 盤後：Dell Technologies Q1 FY27 收入 $43.8B（+88% YoY），Non-GAAP EPS $4.86（+214%）；AI 伺服器訂單達 $24.4B，AI 伺服器收入 $16.1B；全年 FY27 收入指引上修至 $165~169B（原 $138~142B），AI 伺服器 FY27 目標 $60B。Q1 營運現金流 $4.1B 創歷史新高。Dell 強調企業 AI 算力需求加速、AI PC 換機潮帶動邊緣 AI 部署。台股連帶供應鏈：廣達(2382)、英業達(2356)、仁寶(2324)（AI 伺服器 ODM）、緯創(3231) 受惠。</p>
+    <span class="tag reuters">Reuters/SEC</span><span class="tag bull">Dell +88%</span><span class="tag bull">AI 訂單 $24.4B</span><span class="tag bull">全年指引大幅上修</span>
+    <span class="src">來源：<a href="https://www.sec.gov/Archives/edgar/data/0001571996/000157199626000021/exhibit991earnings8kq1fy27.htm" target="_blank">SEC 8-K – Dell Q1 FY27</a> · <a href="https://247wallst.com/investing/2026/05/28/live-can-dell-technologies-extend-its-158-ytd-run-with-q1-earnings-tonight/" target="_blank">247 Wall St – Dell Q1 Preview/Live</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ Computex 2026 機器人狂潮 · 首設 AI Robotics 展區 · 台股機器人族群亮燈</h3>
+    <p>Yahoo Finance TW / Reuters 5/29：Computex 2026（6/2~6/5，南港展覽館）今年首設 AI 機器人（AI ROBOTICS）專區，上銀(2049)、宇隆、所羅門(2359)、直得(3236)、仁寶(2324)等工具機暨零組件大廠組團參展。台股 5/29 機器人概念股引爆：直得(3236)、仁寶(2324) 亮燈；6 檔漲停、5 檔預備軍。Jensen Huang 6/1 主題演講（台北流行音樂中心，11am）預期展示 Jetson Thor 機器人平台（Nvidia 機器人 AI 邊緣運算）、Physical AI Days 議程。台廠機器人供應鏈：上銀(2049)（減速機/線性模組）、直得(3236)（線性滑軌）、所羅門(2359)（機器視覺）。</p>
+    <span class="tag reuters">Reuters/Yahoo TW</span><span class="tag bull">機器人亮燈</span><span class="tag bull">Jetson Thor</span>
+    <span class="src">來源：<a href="https://tw.stock.yahoo.com/news/computex%E5%BC%95%E7%88%86%E6%A9%9F%E5%99%A8%E4%BA%BA%E7%8B%82%E6%BD%AE-6%E6%AA%94%E6%BC%B2%E5%81%9C5%E6%AA%94%E4%BA%AE%E7%87%88%E9%A0%90%E5%82%99%E8%BB%8D-%E7%9B%B4%E5%BE%97-%E4%BB%81%E5%AF%B6%E9%83%BD%E4%BA%AE%E7%87%88-%E7%B6%B2%E5%97%A8-030000061.html" target="_blank">Yahoo TW – Computex 機器人狂潮</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 4 月核心 PCE +3.3% YoY · 月率 +0.2%（溫和）· 儲蓄率降至 2.6% 低位</h3>
+    <p>BEA / CNN 5/29：4 月核心 PCE 物價指數年率 +3.3%（前 3.2%），月率 +0.2%（前 +0.3%，符合預期或略溫和）；整體 PCE 年率 +3.8%（前 3.5%）。個人儲蓄率降至 2.6%，為 2022 年 6 月以來最低，顯示消費者動用儲蓄因應物價壓力。Warsh FOMC 6/16 前最後通膨參考數據：年率偏高（3.3% 遠超 2% 目標）但月率溫和，市場解讀為「暫不降息、也不急升息」。美股 5/29 對 PCE 數據反應平靜，科技股仍上漲。</p>
+    <span class="tag reuters">Reuters/BEA</span><span class="tag watch">PCE 3.3%</span><span class="tag neutral">月率溫和</span>
+    <span class="src">來源：<a href="https://www.cnn.com/2026/05/28/economy/us-pce-inflation-april" target="_blank">CNN Business – PCE April 2026</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 兆元晚宴 5/28 晚落幕 · Jensen Huang 宴請 16+ 台廠董座 · 供應鏈市值 >NT$80 兆</h3>
+    <p>Reuters / TVBS / UDN 5/28：黃仁勳第五度在台北磚窯古早味懷舊餐廳舉辦兆元晚宴，受邀董/總座包括台積電魏哲家、鴻海劉揚偉、廣達林百里、和碩童子賢、宏碁陳俊聖、英業達葉力誠、台達電鄭平、華碩施崇棠、仁寶陳瑞聰、研華劉克振、聯發科蔡力行、京元電張高薰、光寶科邱森彬、緯創林憲銘+林建勳、奇鋐沈慶行、永擎電子許隆倫等 16+ 人。受邀供應鏈合計市值突破 NT$80 兆。亮點：黃仁勳脫黑外套穿短袖合影、帶蘋果西打+香腸炒飯便當分送媒體、永擎許隆倫贈油畫像。涵蓋產業：晶圓代工、IC 設計、晶圓封測、ODM 伺服器組裝、電源、散熱、網通、載板及板卡。</p>
+    <span class="tag reuters">Reuters/TVBS</span><span class="tag bull">16+ 董座到齊</span><span class="tag bull">供應鏈 >NT$80 兆</span>
+    <span class="src">來源：<a href="https://news.tvbs.com.tw/money/3216101" target="_blank">TVBS – 兆元宴巨頭名單市值破 80 兆</a> · <a href="https://udn.com/news/story/7240/9532112" target="_blank">UDN – 兆元宴登場（許隆倫贈畫像）</a> · <a href="https://tw.stock.yahoo.com/news/%E9%BB%83%E4%BB%81%E5%8B%B3%E5%85%86%E5%85%83%E5%AE%B4%E4%BB%8A%E7%99%BB%E5%A0%B4%EF%BC%8120%E6%AA%94%E6%A6%82%E5%BF%B5%E8%82%A1%E9%96%8B%E7%B4%85%E8%8A%B1-%E5%85%89%E5%AF%B6%E7%A7%91%E5%8F%B0%E9%81%94%E9%9B%BB4%E6%AA%94%E9%80%86%E5%8B%A2%E8%B5%B0%E5%BC%B1-015013765.html" target="_blank">Yahoo Finance – 20 檔概念股表現</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ SpaceX IPO 6/12 Nasdaq 掛牌定案 · 估值 $2T · 史上最大 IPO · 6/4 路演開跑</h3>
+    <p>Reuters / Wall Street CN / Bloomberg 5/27~28：SpaceX 確認 6/12 於 Nasdaq 掛牌，估值區間 $1.75T~$2T，募資規模 $750~800B，將為人類史上最大 IPO。SpaceX 通知股東 1 拆 5 股，每股公允價值由 $526.59 調至約 $105.32。三大營收引擎：火箭發射（Starship + Starlink 部署）、衛星寬頻（Starlink 訂閱 >5,000 萬戶）、衛星 AI 算力（Starshield + xAI 整合）。Elon Musk 持有 85.1% 投票權。台廠衛星概念股啟碁 (6285)、昇達科 (3491)、華通 (2313)、緯穎 (6669) 預期受惠。</p>
+    <span class="tag reuters">Reuters/WSJ</span><span class="tag bull">6/12 上市</span><span class="tag bull">估值 $2T 史上最大</span>
+    <span class="src">來源：<a href="https://wallstreetcn.com/articles/3772398" target="_blank">Wall Street CN – SpaceX 6/12 上市目標</a> · <a href="https://www.tmtpost.com/7996366.html" target="_blank">鈦媒體 – 史上最大 IPO 定檔 6 月</a> · <a href="https://unwire.hk/2026/05/23/spacex-ipo-valuation-xai/" target="_blank">unwire – Musk 萬億富翁、估值 $2T</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ Nvidia $150B/年台灣投資 · 稱台灣「AI 革命震央」 · TSMC ADR ATH 區間</h3>
+    <p>Reuters / CNBC / BNN Bloomberg 5/27：Nvidia CEO 黃仁勳宣布每年在台灣投入 $1,500 億美元，稱台灣為「AI 革命的震央（epicentre of excellence）」，預測台灣將長期是全球科技製造中心。Nvidia 預計今年超越 Apple 成為台積電（TSMC）最大客戶。此前 AMD CEO Lisa Su 於 5/21 宣布逾 $100 億台灣投入，大廠搶佔台積電先進製程產能態勢明確。TSMC ADR 5/27 收 $424，維持 ATH 區間。Nvidia 新辦公園區「Constellation」年底台北北部動工、2030 完工、容納 4,000 員工。</p>
+    <span class="tag reuters">Reuters/CNBC</span><span class="tag bull">$150B/年台灣</span><span class="tag bull">TSMC ADR $424 ATH</span>
+    <span class="src">來源：<a href="https://www.cnbc.com/2026/05/27/nvidia-taiwan-investment-150-billion-spending.html" target="_blank">CNBC – Taiwan chip stocks climb after Nvidia announces $150B</a> · <a href="https://www.bnnbloomberg.ca/business/technology/2026/05/27/nvidia-to-spend-us150-billion-a-year-in-taiwan-epicenter-of-ai-revolution-says-ceo/" target="_blank">BNN Bloomberg – Nvidia $150B Taiwan</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ MRVL Q1 FY27 超預期 · $2.418B (+28%) · EPS $0.80 vs 預期 $0.75</h3>
+    <p>SEC 8-K / Reuters 5/27：Marvell Technology Q1 FY27 淨收入 $2.418B (+28% YoY)，高於指引中點 $18M；Non-GAAP EPS $0.80，超過市場預期 $0.75（+6.7%）；Non-GAAP 毛利率 58.9%。資料中心收入 FY26 全年 $6.1B (+46% YoY)，AWS Trainium 3/4 設計服務佔比 74%。AI ASIC 成長能見度驗證，台股世芯 (3661)、創意 (3443) 受惠。</p>
+    <span class="tag reuters">Reuters/SEC</span><span class="tag bull">MRVL $2.418B +28%</span><span class="tag bull">EPS 超預期</span>
+    <span class="src">來源：<a href="https://www.sec.gov/Archives/edgar/data/0001835632/000183563226000014/q127_8kx522026ex-991.htm" target="_blank">SEC 8-K – MRVL Q1 FY27</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ 被動元件噴發 · 國巨 +6.56% · 台廠議價能力提升 · GB200 需 3 萬顆 MLCC</h3>
+    <p>CMoney / Yahoo Finance Taiwan 5/27：國巨 (2327) 強漲 6.56%，華新科 (2492)、華容 (5328) 漲停。Nvidia GB200 伺服器需 3 萬顆 MLCC（傳統伺服器 14 倍），客戶談判已從「殺價」轉向「保供」，台廠議價空間大幅提升。國巨 Q1 AI 相關營收 14~15%，高階產品佔比升至 80%。Samsung MLCC 5~10%、Taiyo Yuden 6~13% 漲價確立。</p>
+    <span class="tag reuters">Reuters/CMoney</span><span class="tag bull">國巨 +6.56%</span><span class="tag bull">GB200 被動元件爆量</span>
+    <span class="src">來源：<a href="https://tw.stock.yahoo.com/news/%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6%E5%BC%B7%E5%8B%A2%E9%80%B2%E6%94%BB-%E5%9C%8B%E5%B7%A8%E5%BC%B7%E6%BC%B26-%E9%A0%98%E9%A0%AD-%E8%8F%AF%E6%96%B0%E7%A7%914%E6%AA%94%E6%94%BB%E9%A0%82%E8%A1%A8%E6%85%8B-%E6%99%B6%E7%89%87%E9%9B%BB%E9%98%BB%E5%BB%A0-033000416.html" target="_blank">Yahoo Finance TW – 被動元件族群噴發</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ SpaceX IPO 熱潮 · ASTS +13% · $2T 估值傳聞 · 衛星族群集體拉升</h3>
+    <p>Reuters / 247WallSt 5/27：SpaceX 傳聞估值衝向 $2T（此前 $350B），為全球史上最大可能 IPO。AST SpaceMobile (ASTS) +13% 至 $119.70；Intuitive Machines (LUNR) +11%；Rocket Lab、Virgin Galactic 跟漲。ASTS 被列為 SpaceX IPO 文件中的直接競爭對手。Starlink 訂閱用戶超過 5,000 萬。台廠緯穎 (6669) 在 SpaceX 衛星地面站設備供應鏈中有潛在受惠機會。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">SpaceX $2T 估值傳聞</span><span class="tag bull">ASTS +13%</span>
+    <span class="src">來源：<a href="https://247wallst.com/investing/2026/05/27/ast-spacemobile-surges-8-virgin-galactic-rocket-lab-ride-the-spacex-ipo-wave/" target="_blank">247WallSt – Space stocks rally on SpaceX IPO</a></span>
+  </div>
+  <div class="card">
+    <h3>🆕 ⭐ Warsh 就任 Fed 主席 · 利率可能升息、先維持不動 · PCE 今日公布</h3>
+    <p>Schwab / Reuters 5/22：Kevin Warsh 就職聯準會主席。首場 FOMC 6/16~17。今日 PCE 物價為 Warsh FOMC 前最後核心通膨數據。面對 30Y 殖利率近 19 年新高（5.2%+）、WTI $96~98 油價、消費信心低迷，Schwab 策略師：「下一步更可能升息而非降息。」今日 PCE 若超預期恐壓抑科技股估值。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bear">升息風險</span><span class="tag watch">PCE 今日公布</span>
+    <span class="src">來源：<a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">Schwab Market Update 5/22</a></span>
+  </div>
+  <div class="card">
+    <h3>⚡ MLCC/鋁電容漲價循環持續：Samsung 5~10%、Taiyo Yuden 6~13%</h3>
+    <p>passive-components.eu / Digitimes 5/2026：Samsung MLCC 上調 5~10%；Taiyo Yuden 對消費級和車用 MLCC 生效 6~13% 漲價。AI 伺服器 MLCC 需求密度為傳統伺服器的數倍，高規 MLCC 交期超過 20 周。Silver（MLCC 成本 42~58%）現貨 $76.2/oz 高位維持。大廠採購在現貨市場掃貨鎖料，通路缺貨加劇。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">MLCC 漲價</span><span class="tag bull">被動元件缺料</span>
+    <span class="src">來源：<a href="https://passive-components.eu/mlcc-manufacturers-consider-price-increase-as-ai-demand-outpaces-supply/" target="_blank">passive-components.eu – MLCC 漲價</a> · <a href="https://www.digitimes.com/news/a20260429VL222/semco-price-mlcc-demand-murata.html" target="_blank">Digitimes – SEMCO</a></span>
+  </div>
+  <div class="card">
+    <h3>⚡ Computex 2026：Vera Rubin 台灣史上最大供應鏈 · $2000 億 CPU 市場 · CoWoS 鎖定</h3>
+    <p>TechTimes / CNBC 5/23~24：黃仁勳抵達台北，赴台積電拜會魏哲家鎖定 Vera Rubin CoWoS 產能。Vera Rubin 訓練 3.5×、推論 5×、成本 1/7；NVIDIA 預測 CPU 市場 $2,000 億，Vera Rubin 6 款晶片 H2 2026 量產爬坡。</p>
+    <span class="tag reuters">外電</span><span class="tag bull">Vera Rubin</span><span class="tag bull">CoWoS</span>
+    <span class="src">來源：<a href="https://www.techtimes.com/articles/317079/20260524/nvidia-computex-2026-jensen-huang-flies-tsmc-vera-rubin-ramp-strains-taiwan-supply-chain.htm" target="_blank">TechTimes 5/24</a> · <a href="https://www.cnbc.com/2026/05/23/nvidia-forecast-for-200-billion-cpu-market-includes-china.html" target="_blank">CNBC 5/23</a></span>
+  </div>
+  <div class="card">
+    <h3>⚡ NVIDIA Q1 FY27：$81.6B (+85%)、Q2 $91B · 股利大漲 25 倍</h3>
+    <p>CNBC / Reuters 5/20 盤後：資料中心 $75.2B (+92% YoY)；Q2 指引 $91B（不含中國資料中心）；宣布 $80B 回購授權，股利從 $0.01 升至 $0.25（+25 倍）。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">Q2 $91B</span><span class="tag neutral">零中國數據中心</span>
+    <span class="src">來源：<a href="https://www.cnbc.com/2026/05/20/nvidia-nvda-earnings-report-q1-2027.html" target="_blank">CNBC – Nvidia Q1 FY27</a></span>
+  </div>
+  <div class="card">
+    <h3>⚡ Nvidia 砸 $4B 入股 Lumentum + Coherent · 矽光子戰略</h3>
+    <p>Reuters 3/2/2026：Nvidia 對 Lumentum 與 Coherent 各投資 $2B（合計 $4B），加速矽光子與光學互連技術，驗證台股聯亞 (3081)、華星光 (4979)、穩懋 (3105) 長線紅利。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">CPO 矽光子</span>
+    <span class="src">來源：Reuters / Electronics Weekly · <a href="https://www.electronicsweekly.com/news/business/nvidia-invests-in-lumentum-2026-03/" target="_blank">Nvidia invests $4bn in optical interconnect</a></span>
+  </div>
+  <div class="card">
+    <h3>⚡ Amazon AWS AI 晶片積壓 $225B · 世芯訂單上修至 $18B</h3>
+    <p>Reuters / Motley Fool 5/11：AWS Q1 AI 晶片 +40% QoQ、年化 run-rate $20B+，未交付訂單 $225B（前一年翻倍）。世芯-KY (3661) 為 AWS Trainium 3/4 主要設計服務商，外資將 2026 營收估上修至 $18B。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">AWS ASIC $225B</span>
+    <span class="src">來源：Motley Fool · <a href="https://www.fool.com/investing/2026/05/11/amazons-ai-chip-backlog-stands-at-a-massive-225-bi/" target="_blank">Amazon AI Chip Backlog $225B</a></span>
+  </div>
+  <div class="card">
+    <h3>⚡ SK Hynix HBM 62% · Micron 超越 Samsung 排第二 · HBM 缺料至 2027~2028</h3>
+    <p>Reuters / TrendForce：SK Hynix HBM 市占 62%，Micron 超越 Samsung 升至 21%。Samsung HBM4E 6 月認證進度為近期最大催化變數。HBM3E 12 月起漲近 20%，缺料延續至 2027~2028。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">HBM 缺貨</span>
+    <span class="src">來源：Reuters / TrendForce</span>
+  </div>
+  <div class="card">
+    <h3>⚡ 2026 CPO 元年 · 台積電 COUPE 領軍 · 聯亞毛利 48%</h3>
+    <p>Digitimes 5/2026：2026 年 CPO 商業元年，聯亞 (3081) 毛利率衝至 48% 創近年最高，CPO 市場規模估 2030 年 $93 億（CAGR 172%）。</p>
+    <span class="tag reuters">Reuters</span><span class="tag bull">CPO 收割元年</span>
+    <span class="src">來源：Digitimes · <a href="https://www.sinotrade.com.tw/richclub/industry/2026%E5%B9%B4CPO%E5%85%89%E9%80%9A%E8%A8%8A%E5%95%86%E8%BD%89%E5%85%83%E5%B9%B4-%E5%8F%B0%E7%A9%8D%E9%9B%BBCOUPE%E6%8A%80%E8%A1%93%E9%A0%98%E8%BB%8D-%E8%BC%9D%E9%81%94%E5%8D%9A%E9%80%9A%E5%90%8C%E6%AD%A5%E5%8D%A1%E4%BD%8D-%E5%8F%B0%E5%BB%A0%E4%BE%9B%E6%87%89%E9%8F%88%E5%85%A8%E8%A7%A3%E6%9E%90-%E7%94%A2%E6%A5%AD%E7%86%B1%E8%A9%B1-693905de70acc6429c330a23" target="_blank">2026年CPO分析</a></span>
+  </div>
+</section>
+
+<section id="gooaye">
+  <h2 class="section-title"><span class="icon">🎙️</span>股癌 Podcast 專區</h2>
+  <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px;">謝孟恭主持，每週三、六下午發新集數。<strong>EP667（2026-06-03 三）socialworkerdaily 完整筆記已出（6/4 上稿）</strong>，本卡已依完整筆記校正：Marvell 警語 + 光通訊勢在必行、Computex DGX Spark（=N1X）AI PC 二次挑戰、開源模型地端化趨勢、功率半導體下一波題材試單、被動元件「橫盤是好事 / 月線攻防」操作框架。<strong>EP668 明日（6/6 週六）釋出</strong>。代號均 WebSearch 查證。</p>
+  <div style="background:linear-gradient(135deg,rgba(167,139,250,0.22),rgba(96,165,250,0.08));border-left:4px solid var(--purple);border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:13px;line-height:1.75;">
+    <strong style="font-size:1rem;">🎙️ EP667（2026-06-03 三 · socialworkerdaily 完整筆記版）· 老黃喊單點石成金 Marvell 飛天神牛 · 光是勢在必行 · DGX Spark = N1X：AI PC 二次挑戰 · 開源模型地端化 · 功率半導體試單插眼 · 被動元件月線攻防</strong>
+    <p style="margin-top:6px;color:var(--text-dim);"><strong>主軸（140字）：</strong>老黃喊盤能力依舊強大——點名 Marvell 可能是下一個兆元企業後，「原本像大牛車的 Marvell 突然噴出去」。謝孟恭：MRVL 的 DSP 不錯，但 ASIC 發展不如發哥（聯發科）、博通明確；真正核心是 <strong>Marvell 演講中的光通訊佈局——Rack 內 / 跨 Rack / Data center 之間的資料共通，「光是勢在必行的發展方向」</strong>，即便輝達不停強調用銅線，光的成長速率持續拉大，資金後面可能再次回到光通上。Computex 亮點 DGX Spark（=N1X 遞延產品）開啟 AI PC 二次挑戰；開源模型落後巨頭約半年，爬到甜蜜點後地端設備放量契機成熟。</p>
+    <p style="margin-top:8px;color:var(--accent);font-weight:600;font-size:0.9rem;">📋 逐章節重點（8 條 · 依 socialworkerdaily 完整筆記）</p>
+    <ul style="font-size:0.87rem;color:var(--text-dim);line-height:1.85;padding-left:1.2rem;margin-top:4px;">
+      <li><b>① Marvell 飛天神牛 · 自己看不懂在噴什麼</b>——老黃喊單後大牛車變飛天神牛。謝孟恭坦言「相關討論都見報、本來覺得已反應，意外靠老黃加持噴出去」；本集啟發直白：「<strong>不知道 Marvell 在噴什麼，可以減碼了</strong>，去摸頭不知道會不會被嘎爛就是了」。DSP 不錯，但 ASIC 不如發哥、博通明確。</li>
+      <li><b>② 光是勢在必行 · 資金可能回流光通</b>——Marvell 演講核心：Rack 資料共通 → 跨 Rack → Data center 對 Data center 連線。即便輝達不停強調盡可能用銅線，<strong>光的成長速率跟未來發展可能性持續拉大，資金後面可能再次回到光通上</strong>。台股光通訊族群（聯亞 3081、華星光 4979、上詮 3363 等）留意輪動。</li>
+      <li><b>③ Computex 最特別：DGX Spark = N1X 遞延產品</b>——嚴格來說是遞延的 N1X（當年三條產線：高階筆電 / 初階筆電 / 車用），算是 <strong>AI PC 的二次挑戰</strong>（前兩年雷聲大雨點小）。經過一兩年算力堆疊 + 軟體優化，AI PC 有沒有新可能性？AI PC 主軸：<strong>輝達、聯發科 2454</strong>。金句式提醒：「看到老黃手上的筆電是哪一牌就衝進去鎖漲停」；能否帶動筆電 OEM 還須觀察，但可能光一個題材就做 Rerate，高單價 AI PC 若賣得好可抵銷貧弱的傳統 PC。</li>
+      <li><b>④ 開源模型地端化 · 邊緣運算契機</b>——現行開源模型落後科技巨頭約半年，爬到甜蜜點後即可滿足絕大多數個人/企業需求，用地端模型可省大量 Token fee 與傳輸費：「買地端伺服器或 AI PC 就可以完成任務，不用高度仰賴 Data Center」。高階仍需資料中心、簡單應用落地端——一起成長，帶動 AI PC 銷量。中間軟體層原先付給 LLM 的錢變自己純益。</li>
+      <li><b>⑤ 未來趨勢：比拚整體解決方案</b>——關鍵是「如何獲得用戶把單接進來」：比拚誰能把服務做好、滿足需求，而非模型本身的競爭（最高階模型仍會蓬勃競爭）。</li>
+      <li><b>⑥ 熱門題材修正 · 被動元件橫盤是好事</b>——一直噴被處置很難加減碼、繼續噴回檔會很重，<strong>拉回整理是好事</strong>。今年可能還是走多，過程中一定有修正盤整，以這個斜率直接終結比較困難。一直有新題材出現，對多頭市場是滿好的事情。</li>
+      <li><b>⑦ QA：功率元件 / 功率半導體 · 下一波題材匯聚點？</b>——基本面顯著改善中，功率元件也在漲價，但光芒沒有 CPU 或被動元件那樣全面、還沒看到「全面性屌缺」；或許後面<strong>電源櫃表現很好產生大量拉貨</strong>，不排除可能性。本集啟發：「<strong>先打試單插眼看看</strong>」，看功率半導體有沒有機會複製被動元件的狀況。</li>
+      <li><b>⑧ QA：輝達 / 台積電補漲味道 + 操作紀律</b>——台積電明顯轉強，搭配監管放寬投信、公發書改完（這一兩個月內），投信資金進來後搞不好可以推上去。持股操作：CPU + 被動元件回檔連 10 日線都沒破、沒必要出去，<strong>想凹到月線看看——大波段最終都會踩到月線再繼續往上；碰月線幾天站不回才減碼</strong>。不會沒事做再平衡，想買東西時才找東西壓低部位。</li>
+    </ul>
+    <div class="gooaye-stocks" style="margin-top:8px;">
+      <span>Marvell MRVL（看不懂在噴什麼 · 可減碼）</span>
+      <span>聯發科 2454（AI PC 主軸）</span>
+      <span>輝達 NVDA（AI PC / 補漲）</span>
+      <span>台積電 2330（轉強 · 投信活水）</span>
+      <span>博通 AVGO（ASIC 明確度標竿）</span>
+      <span>光通訊族群（資金可能回流）</span>
+      <span>功率半導體（試單插眼）</span>
+      <span>被動元件（月線攻防）</span>
+    </div>
+    <div class="gooaye-themes" style="margin-top:6px;">
+      <span>老黃喊盤點石成金</span>
+      <span>光是勢在必行</span>
+      <span>DGX Spark = N1X</span>
+      <span>AI PC 二次挑戰</span>
+      <span>開源模型地端化</span>
+      <span>整體解決方案決勝</span>
+      <span>功率半導體電源櫃</span>
+      <span>橫盤是好事</span>
+      <span>月線攻防紀律</span>
+    </div>
+    <div class="gooaye-quote" style="margin-top:8px;">「不知道 Marvell 在噴什麼，可以減碼了——去摸頭不知道會不會被嘎爛就是了。」（本集啟發）</div>
+    <div class="gooaye-quote">「光是勢在必行的發展方向，即便輝達不停強調盡可能使用銅線，光的成長速率跟未來發展的可能性持續拉大——資金後面可能會再次回到光通上。」</div>
+    <div class="gooaye-quote">「回到過去你比較年輕、沒有方法，老實講就是忍耐；這些人某個程度是你生命中的一種刺，可是某個程度，也是推了你一把——化悲憤為力量。」（人生 QA）</div>
+    <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:0.82rem;">📓 <strong>持股備忘（QA 中揭露）：</strong>手上一堆 CPU 跟被動元件，回檔連 10 日線都沒破、不出場，想凹到月線；碰月線幾天站不回再減碼。功率半導體先打試單插眼。被動元件若被大盤帶下去，月線附近反而想加碼。</div>
+    <p style="margin-top:6px;font-size:0.78rem;color:var(--text-muted);">📍 來源：socialworkerdaily EP667 完整筆記（2026-06-04 上稿）· 代號 WebSearch 查證：Marvell MRVL ✅、聯發科 2454 ✅、台積電 2330 ✅、博通 AVGO ✅、輝達 NVDA ✅；功率半導體 / 光通訊個股本集未具體點名、不標代號</p>
+    <p style="margin-top:4px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-667/" target="_blank" style="color:var(--accent);font-size:0.85rem;">📝 socialworkerdaily EP667 完整筆記</a> · <a href="https://www.threads.com/@read_gooaye" target="_blank" style="color:var(--accent);font-size:0.85rem;">📝 Threads @閱讀股癌</a> · <a href="https://open.spotify.com/show/1zWxx5pKk0XBEzMupVC7UZ" target="_blank" style="color:var(--accent);font-size:0.85rem;">Spotify</a></p>
+  </div>
+  <div style="background:linear-gradient(135deg,rgba(96,165,250,0.10),rgba(167,139,250,0.04));border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:13px;line-height:1.75;">
+    <strong style="font-size:1rem;">🎙️ EP666（2026-05-30 六，socialworkerdaily 5/31 發布）· 鋁電容「房間裡的大象」缺口 20%+ · 軟體股 Saleforce 自家股回購 / SNOW/NOW/OKTA 證明 AI 加分 · 老 AI ODM 資金輪迴 · 未來決勝點：掌握資料＋業務商務能力＋可歸責性</strong>
+    <p style="margin-top:6px;color:var(--text-dim);"><strong>主軸（120字）：</strong>當前市場處於資金極度充沛、百花齊放的多頭格局。AI 產業從基礎建設期跨入軟硬體雙軌實質營收兌現期。被動元件中鋁電容（SPC/OSC/牛角型）全球缺口高達 20%+，是比 MLCC 更缺、討論度卻更低的「房間裡的大象」。軟體股全面從 Seat-based 轉向 Token-based，SNOW/OKTA 財報驚喜跳升。老 AI ODM 硬體端營收落地，資金輪迴回補。核心結論：投資人應尊重資金的輪動，並在市場表態最有效率的地方布局。</p>
+    <p style="margin-top:8px;color:var(--accent);font-weight:600;font-size:0.9rem;">📋 逐章節重點（8 條）</p>
+    <ul style="font-size:0.87rem;color:var(--text-dim);line-height:1.85;padding-left:1.2rem;margin-top:4px;">
+      <li><b>① 槓桿控管與市場健康度</b>——90% 資金鎖在 20 分鐘處置股，銀行收攏不限用途借款，近 1 個月原地踏步。視為「老天幫忙做的風險控管」，避免在未來潛在大幅回檔中一次吐回。熱門股偶發跌停 = 健康的壓力測試，釋放崩盤動能。</li>
+      <li><b>② 被動元件供需本質扭轉</b>——已從「成本驅動」正式轉化為「需求驅動（Demand-driven）」漲價。日本同業技術線圖全數大漲做壞。市場派（能接觸到甲方下單者）通常領先保守的公司派。部分業內人在初升段因不敢置信過早賣出。</li>
+      <li><b>③ 鋁電容：房間裡的大象</b>——市場過度聚焦 MLCC，但鋁電容（SPC/OSC/牛角型）缺口更嚴重。最新市場報告（MO）：全球缺口 20%+，包含疊層式 SPC、日常工業牛角電容，是討論度最低但未來具備最大漲價空間的標的。台廠受惠：<strong>凱美 2375</strong>（高階固態鋁電容/SPC，隸屬國巨集團）、<strong>立隆電 2472</strong>（牛角/高壓 SMD 鋁電容，泰國新廠開出）、<strong>華新科 2492</strong>（被動元件指標，需求驅動長價潮）。</li>
+      <li><b>④ 大擴產時序鑑別</b>——村田（Murata）宣布工程線擴產、華新科法說宣布擴產後股價不跌反漲。需求初升段擴產 = 「未來缺貨高峰期你料最多你最賺錢」，與高位擴產本質不同。目前為初升段，擴產是基本面利多。</li>
+      <li><b>⑤ 軟體股 Token-based 轉型全面爆發</b>——美股軟體 ETF 全面表態。Snowflake (SNOW)、OKTA 財報跳躍式驚喜，營收成長幀數超預期。Seat-based→Token-based 模式轉型成功，Founder-mode 公司破釜沉舟帶動獲利跳升。</li>
+      <li><b>⑥ 老 AI ODM 資金輪迴</b>——台股 AI 伺服器代工（ODM/EMS）大廠基本面強勁，實質營收落地打破估值壓力。驗證科技演變週期：「基礎建設期→應用軟體期→老 AI 重估」。資金從光通訊等题材撤回，老 AI 再度迎來輪迴。</li>
+      <li><b>⑦ 停損紀律彈性</b>——Q&A：停損不應機械式。台積電這類權值股嚴格停損是自殺；小型妖股才需嚴守停損。主力常故意洗到月線下方再強拉，機械式停損容易被雙巴。</li>
+      <li><b>⑧ AI 模型核心鑑別度</b>——Q&A：未來贏家在於「商務能力」+「封閉式專有資料掌握度」，而非模型技術本身。企業導入最在乎：資安 / 合規 / AI 幻覺控制 / 法律責任承擔，有在地公司的廠商具備明顯優勢。</li>
+    </ul>
+    <div class="gooaye-stocks" style="margin-top:8px;">
+      <span>國巨 2327（操作：減碼）</span>
+      <span>凱美 2375</span>
+      <span>立隆電 2472</span>
+      <span>華新科 2492</span>
+      <span>Snowflake SNOW</span>
+      <span>Salesforce CRM</span>
+      <span>ServiceNow NOW</span>
+      <span>Okta OKTA</span>
+      <span>PLTR / NET / CRWD</span>
+      <span>Apple iCloud</span>
+      <span>Google Drive</span>
+      <span>MSFT OneDrive</span>
+      <span>AMZN AWS</span>
+    </div>
+    <div class="gooaye-themes" style="margin-top:6px;">
+      <span>鋁電容缺口 20%+</span>
+      <span>需求驅動漲價</span>
+      <span>軟體 Token-based 轉型</span>
+      <span>老 AI ODM 輪迴</span>
+      <span>掌握資料的贏家</span>
+      <span>業務商務能力</span>
+      <span>可歸責性</span>
+      <span>融資增加要警惕</span>
+    </div>
+    <div class="gooaye-quote" style="margin-top:8px;">「投資人無需浪費時間與市場爭辯基本面優劣，應尊重資金的輪動，並在市場表態最有效率的地方進行布局。」</div>
+    <div class="gooaye-quote">「目前市況屬於百花齊放的典型多頭，硬體端營收落地，軟體端模式轉型表態——只要國際市場未爆發瘋狂升息或地緣政治黑天鵝，具備實質基本面支撐的優質標的將持續獲得資金推升。」</div>
+    <div class="gooaye-quote">「他就是要痛過就會知道說下次不可以這樣子。」（EP666 socialworkerdaily 摘錄）</div>
+    <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:0.82rem;">📓 <strong>操作日記：</strong>國巨 (2327) 繼續減碼一點點（噴多調節，不代表看空）</div>
+    <p style="margin-top:6px;font-size:0.78rem;color:var(--text-muted);">📍 來源：socialworkerdaily EP666（2026-05-31 發布）· 代號 WebSearch 查證：國巨 2327 ✅、凱美 2375 ✅、立隆電 2472 ✅、華新科 2492 ✅、SNOW/CRM/NOW/OKTA 美股、AAPL iCloud / GOOG Drive / MSFT OneDrive / AMZN AWS</p>
+    <p style="margin-top:4px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-666/" target="_blank" style="color:var(--accent);font-size:0.85rem;">📝 socialworkerdaily EP666</a> · <a href="https://vocus.cc/article/6a1aa74efd8978000109dbfe" target="_blank" style="color:var(--accent);font-size:0.85rem;">📝 vocus.cc EP666</a> · <a href="https://open.spotify.com/show/1zWxx5pKk0XBEzMupVC7UZ" target="_blank" style="color:var(--accent);font-size:0.85rem;">Spotify</a></p>
+  </div>
+
+  <div class="gooaye-hero">
+    <div>
+      <span class="ep-num">EP665</span>
+      <span class="ep-date">2026-05-27（三）· socialworkerdaily 完整版</span>
+    </div>
+    <h3>SpaceX IPO 衛星護城河 · 被動元件 B/B ratio 上升 · 國巨 90% 稼動率 · 操作日記：慢慢減碼</h3>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;margin-top:8px;"><strong>主軸：</strong>SpaceX 確定 6/12 IPO，謝孟恭「不管估值多少先上車，卡一半後找機會加碼，降低 TSLA——都算押注馬斯克故事。」衛星 AI 算力是 SpaceX 下一個被嚴重低估的故事，最強護城河 = 唯一能頻繁打上去又拉回來的公司。被動元件國巨特規品 90% 稼動率，B/B ratio 上升，對照 2018 年毛利 6X% 類比推算。操作日記：國巨慢慢減碼（噴多調節，不代表看空）。</p>
+    <div class="gooaye-stocks">
+      <span>SpaceX（IPO 6/12）</span>
+      <span>啟碁 6285</span>
+      <span>昇達科 3491</span>
+      <span>華通 2313</span>
+      <span>緯穎 6669</span>
+      <span>國巨 2327（慢慢減碼）</span>
+      <span>Tesla TSLA（降持）</span>
+    </div>
+    <div class="gooaye-themes">
+      <span>SpaceX IPO</span><span>衛星 AI 算力</span><span>Neo Cloud</span><span>B/B ratio 上升</span><span>被動元件 2018 類比</span><span>機器人類股</span>
+    </div>
+    <div class="gooaye-quote">「不管估值多少先上車——衛星 AI 算力可能是 SpaceX 下一個被嚴重低估的故事，最強護城河 = 唯一能頻繁打上去又拉回來的公司。」</div>
+    <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:8px 12px;margin-top:8px;font-size:0.82rem;">📓 <strong>操作日記：</strong>國巨 (2327) 慢慢減碼（噴多後正常調節，不代表看空）</div>
+    <p style="margin-top:6px;font-size:0.78rem;color:var(--text-muted);">📍 來源：socialworkerdaily EP665（2026-05-27）· 代號查證：啟碁 6285 ✅、昇達科 3491 ✅、華通 2313 ✅、緯穎 6669 ✅、國巨 2327 ✅</p>
+    <p style="margin-top:4px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-665/" target="_blank" style="color:var(--accent);font-size:0.85rem;">📝 socialworkerdaily EP665</a> · <a href="https://open.spotify.com/show/1zWxx5pKk0XBEzMupVC7UZ" target="_blank" style="color:var(--accent);font-size:0.85rem;">Spotify</a></p>
+  </div>
+
+  <div class="gooaye-mini-grid">
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP664</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-23（六）· vocus.cc 筆記</span></div>
+      <p style="margin:6px 0;font-weight:600;">Power Rack 獨立電力控制櫃 · 牛角電容缺爆 · Google TPU 外銷 3:1 · Anthropic 轉獲利</p>
+      <ul style="font-size:0.78rem;color:var(--text-dim);line-height:1.65;padding-left:1rem;margin:4px 0;">
+        <li>Power Rack 商機：GPU 旁邊的電力控制櫃元件用量翻倍，高毛利</li>
+        <li>Snapping 牛角電容全球產能完全無法滿足資料中心建置需求</li>
+        <li>Google TPU 外銷規劃 3:1（自用:外銷反轉）遠超市場預期</li>
+        <li>金句：「市場過度聚焦 GPU，忽略隔壁 Power Rack」</li>
+      </ul>
+      <div class="gooaye-stocks"><span>立隆電 2472</span><span>金山電 8042</span><span>國巨 2327</span><span>Google GOOGL</span></div>
+      <p style="font-size:0.75rem;margin-top:6px;"><a href="https://vocus.cc/article/6a11af6cfd89780001e13d8c" target="_blank" style="color:var(--accent);">📝 vocus.cc EP664</a></p>
+    </div>
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP663</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-20（三）· 本機逐字稿</span></div>
+      <p style="margin:6px 0;font-weight:600;">被動元件現貨掃貨 · Panasonic 漲價 · Broadcom Soundfish 載板雙晶 · 愛普 Google TPU 復活</p>
+      <ul style="font-size:0.78rem;color:var(--text-dim);line-height:1.65;padding-left:1rem;margin:4px 0;">
+        <li>Panasonic 對部分客戶發漲價通知，通路商現貨市場大量掃料</li>
+        <li>Sami Analysis 指 Fish 世代有缺口，謝孟恭研判「更大顆 Soundfish 雙晶片拼載板」</li>
+        <li>愛普 (6531) IPD 埋在 Google TPU substrate，Google TPU 成焦點→資金回流</li>
+        <li>金句：「比較是快樂之賊，只要知道自己比之前有錢了就好」</li>
+      </ul>
+      <div class="gooaye-stocks"><span>台積電 2330</span><span>博通 AVGO</span><span>愛普 6531</span><span>蜜望實 8043</span></div>
+      <p style="font-size:0.75rem;margin-top:6px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-663/" target="_blank" style="color:var(--accent);">📝 socialworkerdaily</a></p>
+    </div>
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP662</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-16（六）</span></div>
+      <p style="margin:6px 0;font-weight:600;">逢低加碼 · 老 AI 摔 vs 資金轉台積電 · 軟體資安創高</p>
+      <ul style="font-size:0.78rem;color:var(--text-dim);line-height:1.65;padding-left:1rem;margin:4px 0;">
+        <li>週五跌停反而去接：資產水位大的人不恐慌</li>
+        <li>被動元件深化：電阻漲 3 成、Panasonic SP-Cap 傳漲 3 成</li>
+        <li>軟體股 / 資安股創高：CrowdStrike、Figma 族群性浮現</li>
+      </ul>
+      <div class="gooaye-stocks"><span>台積電 2330</span><span>國巨 2327</span><span>群聯 8299</span><span>CRWD</span></div>
+      <p style="font-size:0.75rem;margin-top:6px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-662/" target="_blank" style="color:var(--accent);">📝 socialworkerdaily</a></p>
+    </div>
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP661</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-13（三）</span></div>
+      <p style="margin:6px 0;font-weight:600;">MLCC 47UF 缺貨 · Vera Rubin 顆數倍增 · 廠務股聖暉領跑</p>
+      <ul style="font-size:0.78rem;color:var(--text-dim);line-height:1.65;padding-left:1rem;margin:4px 0;">
+        <li>MLCC 最缺 47UF（Samsung/Murata 才供）、國巨只供 22UF</li>
+        <li>Vera Rubin 換代：被動元件顆數超級多</li>
+      </ul>
+      <div class="gooaye-stocks"><span>國巨 2327</span><span>華新科 2492</span><span>立隆電 2472</span><span>聖暉 5536</span></div>
+      <p style="font-size:0.75rem;margin-top:6px;"><a href="https://socialworkerdaily.com/notes-of-gooaye-ep-661/" target="_blank" style="color:var(--accent);">📝 完整筆記</a></p>
+    </div>
+    <div class="gooaye-mini">
+      <div><span class="ep-num">EP660</span><span style="color:var(--text-muted);font-size:0.75rem;">2026-05-09（六）</span></div>
+      <p style="margin:6px 0;">台股高點融資受限。資金從 AI 高位階輪動至被動元件、記憶體、成熟製程。</p>
+      <div class="gooaye-stocks"><span>被動元件</span><span>記憶體</span><span>成熟製程</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="supply">
+  <h2 class="section-title"><span class="icon">🔗</span>台積電供應鏈深度追蹤</h2>
+  <div class="highlight">法人鎖定的台積電製程升級受惠股，N2 量產與 Arizona 第二廠搬機效應啟動。<strong>🆕 欣興/南電 Broadcom 載板雙晶片潛在題材</strong>。</div>
+  <div class="chain-grid">
+    <div class="chain-row"><div><div class="name">中砂 (1560)</div><div class="desc">CMP 研磨墊／晶圓製程耗材</div></div><span class="tag bull">2nm 受惠</span></div>
+    <div class="chain-row"><div><div class="name">家登 (3680)</div><div class="desc">EUV 光罩盒龍頭</div></div><span class="tag bull">EUV 擴增</span></div>
+    <div class="chain-row"><div><div class="name">漢科 (3402)</div><div class="desc">無塵室／廠務統包</div></div><span class="tag bull">設備進駐</span></div>
+    <div class="chain-row"><div><div class="name">穎崴 (6515)</div><div class="desc">高速 IC 測試介面</div></div><span class="tag bull">先進封測</span></div>
+    <div class="chain-row"><div><div class="name">鴻海 (2317)</div><div class="desc">AI 伺服器 ODM 龍頭</div></div><span class="tag">外資連買</span></div>
+    <div class="chain-row"><div><div class="name">創意 (3443)</div><div class="desc">ASIC 設計服務</div></div><span class="tag bull">Tesla AI5 訂單</span></div>
+    <div class="chain-row"><div><div class="name">世芯-KY (3661)</div><div class="desc">ASIC 客製化矽</div></div><span class="tag bull">AWS $18B 上修</span></div>
+    <div class="chain-row"><div><div class="name">日月光投控 (3711)</div><div class="desc">封測龍頭／CoWoS-L</div></div><span class="tag">CPO 封測</span></div>
+    <div class="chain-row"><div><div class="name">欣興 (3037)</div><div class="desc">ABF 載板龍頭</div></div><span class="tag watch">Broadcom 雙晶片潛力</span></div>
+    <div class="chain-row"><div><div class="name">南電 (8046)</div><div class="desc">高階 FC-BGA 載板</div></div><span class="tag watch">AI ASIC 載板受惠</span></div>
+  </div>
+</section>
+
+<section id="memory">
+  <h2 class="section-title"><span class="icon">💾</span>記憶體：HBM 結構缺貨 · DRAM/NAND 漲價週期不變</h2>
+  <div class="highlight">NVDA Q2 $91B 指引確認 HBM4 需求長線不變。TrendForce 估 Q2 DRAM 漲 58~63%、NAND Flash 漲 70~75%。Samsung HBM4E 6 月認證進度為近期最大催化變數。</div>
+  <div class="card">
+    <h3><span class="ticker">2408</span>南亞科 · 外資目標 440 · LTA 結構紅利</h3>
+    <p>外資目標 440 元維持。HBM 產能擠壓 + CSP 兩年長約 (LTA) 紅利。法人推估 2026 脫離虧損、2027 EPS 8 元+。</p>
+    <span class="tag bull">外資目標 440</span><span class="tag bull">LTA 結構</span>
+  </div>
+  <div class="card">
+    <h3><span class="ticker">2344</span>華邦電 · 產能滿載至 2027 · 4 月月增 32%</h3>
+    <p>產能滿載至 2027 確認。4 月營收月增 32%、年增 182%。目標價 130~150 元。HBM4 入列。</p>
+    <span class="tag bull">產能滿載 2027</span><span class="tag bull">HBM4 入列</span>
+  </div>
+  <div class="card">
+    <h3><span class="ticker">MU</span>Micron · HBM 全部售罄 · Q3 指引 $33.5B</h3>
+    <p>HBM 全部售罄，年化 run-rate 上看 $8B。Q3 指引 $33.5B (+200%+ YoY)。Nvidia Rubin CPX 推論型主供應。</p>
+    <span class="tag bull">HBM 售罄</span><span class="tag bull">Q3 指引 $33.5B</span>
+  </div>
+  <div class="rumor">
+    <strong>🗣️ 記憶體謠言（5/22）：</strong>Samsung HBM4E 6 月認證尚未官方確認；旺宏 NOR Flash Q3 合約價傳漲 15%；TrendForce Q2 DRAM 漲 58~63%、NAND Flash 漲 70~75% 結構不變。
+    <span class="src">來源：業界接洽、TrendForce 5/22</span>
+  </div>
+</section>
+
+<section id="cpo">
+  <h2 class="section-title"><span class="icon">💡</span>光通訊 CPO：2026 收割元年</h2>
+  <div class="highlight">Nvidia Rubin Ultra「銅退光進」轉折點，台積電 COUPE 技術領軍。<strong>股癌 EP663：光通訊「還早」</strong>——資金輪動時有望再回頭，但現在等待。</div>
+  <div class="chain-grid">
+    <div class="chain-row"><div><div class="name">聯亞 (3081)</div><div class="desc">InP 磊晶／CW 雷射</div></div><span class="tag bull">大摩目標翻倍</span></div>
+    <div class="chain-row"><div><div class="name">華星光 (4979)</div><div class="desc">800G/1.6T 光元件</div></div><span class="tag bull">CW Laser 放量</span></div>
+    <div class="chain-row"><div><div class="name">光環 (3234)</div><div class="desc">CW 晶片代工</div></div><span class="tag">SiPh 受惠</span></div>
+    <div class="chain-row"><div><div class="name">穩懋 (3105)</div><div class="desc">化合物半導體代工</div></div><span class="tag">CW 晶片</span></div>
+    <div class="chain-row"><div><div class="name">光聖 (6442)</div><div class="desc">FAU／光纖柔性板</div></div><span class="tag">封裝關鍵</span></div>
+    <div class="chain-row"><div><div class="name">波若威 (3163)</div><div class="desc">FAU／光被動元件</div></div><span class="tag">CPO 概念</span></div>
+    <div class="chain-row"><div><div class="name">合聖 (6929)</div><div class="desc">FAU 模組</div></div><span class="tag watch">小型黑馬</span></div>
+    <div class="chain-row"><div><div class="name">奇景光電 (HIMX)</div><div class="desc">FAU／LCoS</div></div><span class="tag">ADR 可參考</span></div>
+  </div>
+</section>
+
+<section id="chips">
+  <h2 class="section-title"><span class="icon">📈</span>外資與籌碼面快照</h2>
+  <div class="card">
+    <h3>市場快照（5/31 週日 · 台股明日開盤 · 6/1 黃仁勳 GTC 主題演講倒數）</h3>
+    <p>• <strong>最後交易日（5/29 週五）收盤：</strong>台股加權 <strong>44,732.94（+1,096.50 / +2.51%）史上收盤新高</strong>；S&amp;P 500 <strong>7,580.06（+0.22%）</strong>；Nasdaq <strong>26,972.62（+0.20%）</strong>；Dow <strong>51,032.46（+0.72%）</strong>；5 月 Nasdaq 月漲 +8%。Nvidia 光子技術投資 $6.5B（Lumentum / Coherent / Corning 協議），Broadcom Q2 財報 6/3。</p>
+    <p>• <strong>明日（6/1 一）台股開盤重點族群：</strong>① 黃仁勳 GTC 演講受惠（台積電 2330、鴻海 2317、廣達、日月光 3711，Vera Rubin 量產 / N1X 首秀）；② 被動元件（國巨 2327、信昌電 6173、立隆電 2472、金山電 8042，B/B ratio 上升 + 高稼動率）；③ 機器人（直得 1522、仁寶 2324、上銀 2049，Computex 現場展示）；④ 衛星概念（啟碁 6285，SpaceX IPO 6/12 倒數）；⑤ 功率半導體（健策 3653、台達電 2308）。</p>
+    <p>• <strong>本週重點事件：</strong>① 6/1（一）11am 黃仁勳 GTC Taipei 主題演講（Physical AI / Vera Rubin / 機器人）；② 6/2~6/5 Computex 2026 正式展（南港）；③ 6/3（三）Broadcom Q2 財報（AI ASIC > $100B FY27 展望）；④ 6/4（四）SpaceX IPO 路演開跑（估值 $1.75T）+ 台積電股東會。</p>
+    <p>• <strong>操作邏輯：</strong>EP665 操作日記：國巨慢慢減碼（噴多調節）。黃仁勳演講具體承諾（Vera Rubin / 機器人平台）是本週最大催化。機器人題材是 EP665 新觀察標的。Broadcom 6/3 財報 AI ASIC 展望若超預期，載板（欣興 / 南電）將受惠。</p>
+    <span class="tag bull">台股 44,732 史上新高</span>
+    <span class="tag bull">6/1 黃仁勳 GTC 演講</span>
+    <span class="tag bull">Broadcom 6/3 財報</span>
+    <span class="tag bull">SpaceX IPO 6/12 倒數</span>
+  </div>
+  <div class="card">
+    <h3><span class="ticker">2317</span>鴻海 · 外資連買 · AI 伺服器市占 40%</h3>
+    <p>外資連買結構不變，NVDA Q2 $91B 確認其最大受益地位。AI 伺服器機櫃 2026 翻倍以上，全球市占 40%。Q1 EPS NT$3.56 創歷年同期新高。目標 305~330 元。</p>
+    <span class="tag bull">EPS 3.56 創高</span><span class="tag bull">外資連買</span><span class="tag bull">AI 機櫃翻倍</span>
+  </div>
+  <div class="card">
+    <h3>外資 2026 年共識台廠 TOP 5</h3>
+    <p><strong>台積電 (2330) · 鴻海 (2317) · 創意 (3443) · 世芯-KY (3661) · 日月光投控 (3711)</strong></p>
+    <p>被動元件：國巨 2327、華新科 2492、立隆電 2472 為 AI 伺服器直接受惠鏈。記憶體：南亞科 440、華邦電 130~150、群聯 1,200。</p>
+    <span class="tag bull">外資認證</span><span class="tag bull">被動元件強勢</span>
+  </div>
+</section>
+
+<section id="calendar">
+  <h2 class="section-title"><span class="icon">📅</span>本月財經行事曆</h2>
+  <div class="card">
+    <div class="calendar-item">
+      <div class="time">5/20 (三) ✅</div>
+      <div class="event"><strong>⭐ Nvidia Q1 FY27 財報 — EPS $1.87、營收 $81.62B、Q2 指引 $91B</strong>
+        <small>全面大超預期。Data Center $60.4B (+77% YoY)。盤後 AH −4.1%「利多出盡」。Blackwell 加速、Vera Rubin H2 如期。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/21 (四) ✅</div>
+      <div class="event">台股消化 NVDA · 被動元件創歷史新高 · Murata 電感漲價
+        <small>國巨 (2327) 創歷史新高 572元 (+6%)；Murata 宣布電感漲價；Nasdaq 消化後收跌；NVDA 趨近平盤</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/22 (五) ✅</div>
+      <div class="event"><strong>⭐ 道瓊創歷史新高 50,579 · Kevin Warsh 就職 Fed 主席 · 連 8 週收漲</strong>
+        <small>收盤：Dow +294 (+0.58%)、S&P +0.37%、Nasdaq +0.19%。Michigan 最終值 52.6 略升。WTI $98 反彈。被動元件族群本週最強。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/23 (六) ✅</div>
+      <div class="event"><strong>週末特輯版 · 股癌 EP664 已更新至儀表板</strong>
+        <small>台股休市。EP664（5/23 六）主題：AI 高密度機櫃換代，Power Rack 成核心商機，牛角電容缺爆。黃仁勳抵達台北，拜會台積電魏哲家。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/25 (一) ✅</div>
+      <div class="event"><strong>台股開盤（美股 Memorial Day 休市）· Computex 2026 Vera Rubin 概念股焦點</strong>
+        <small>美國國殤紀念日，NYSE/Nasdaq 全日休市。台股正常交易，Computex 2026 概念股（台積電 CoWoS、被動元件、鴻海 AI 機櫃）為盤面重心。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/26 (二) ✅</div>
+      <div class="event"><strong>台美同步開盤 · S&amp;P 500 / Nasdaq 歷史新高 · Micron MU +19% 破兆美元市值</strong>
+        <small>S&amp;P 500 收 7,519.12（+0.61%）、Nasdaq 26,656.18（+1.19%）雙歷史新高，科技板塊 +2.8%。MU 股價衝 $886.6，市值首破 $1 兆（UBS 目標 $1,625）。美伊停火談判進展降低地緣風險。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/27 (三) ✅</div>
+      <div class="event"><strong>MRVL Q1 FY27 超預期 $2.418B (+28%) · EP665 股癌 SpaceX 護城河 · Nvidia $150B/年台灣宣言</strong>
+        <small>MRVL EPS $0.80 超預期 $0.75；Nvidia 宣布每年 $150B 台灣投入，稱台灣「AI 震央」。被動元件族群（國巨 +6.56%、華新科/華容漲停）。EP665 股癌：SpaceX IPO + 衛星 AI 算力護城河 + 啟碁/昇達科/華通卡位。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/28 (四) ✅</div>
+      <div class="event"><strong>⭐ 兆元晚宴 5/28 晚落幕 · 16+ 董座到齊 · 供應鏈市值 >NT$80 兆 · 台股 +1.40%</strong>
+        <small>Jensen Huang 第五度兆元晚宴：魏哲家(2330)/劉揚偉(2317)/林百里/蔡力行(2454)/鄭平(2308)/童子賢/施崇棠/陳俊聖/葉力誠/陳瑞聰/劉克振 等 16+ 董座；許隆倫贈油畫像。Vera Rubin 量產分工確認。台股加權 43,636.44（+620.36 / +1.40%）。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/29 (五) ✅</div>
+      <div class="event"><strong>⭐ Computex 2026 開幕 · 台股收 44,732（+2.51%）史上新高 · Dell Q1 +88% · PCE 核心 3.3%</strong>
+        <small>Computex 開幕引爆機器人狂潮（直得/仁寶/上銀亮燈），台股創收盤新高 44,732.94。Dell Q1 FY27 炸裂 $43.8B (+88%)，AI 訂單 $24.4B；全年指引 $165~169B 大幅上修。4 月核心 PCE +3.3% YoY (月率 +0.2% 溫和)。美股 S&amp;P +0.6% 至 7,563，Nasdaq +0.9% 至 26,917；5 月 Nasdaq 月漲 8%。SpaceX 6/4 路演確認（估值 $1.75T）。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/30 (六) ✅</div>
+      <div class="event"><strong>台股休市 · 股癌 EP666 發出（socialworkerdaily 筆記明日整理）· Nvidia 宣布 $6.5B 光子技術投資</strong>
+        <small>EP666 主軸（待 socialworkerdaily 筆記釋出後更新）。Nvidia 與 Lumentum、Coherent、Corning 簽多年戰略協議，光子技術投資總額 $6.5B。Computex 2026 第 2 天，各展館科技巨頭正式展出。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">5/31 (日) ✅</div>
+      <div class="event"><strong>EP666 完整版 vocus.cc 筆記發布 · 鋁電容房間裡的大象 · Computex 開幕日</strong>
+        <small>EP666 vocus.cc 完整筆記已更新：鋁電容「房間裡的大象」缺口 20%+、軟體股 Token-based 全面爆發、老 AI ODM 輪迴回補。黃仁勳 11am GTC Taipei 主題演講：Vera Rubin NVL72 / N1X ARM 首秀 / Jetson Thor / 「驚喜新產品」。Computex 2026 今開幕（6/1~6/5）。AMD Lisa Su（Helios 機架）、Intel 陳立武（Panther Lake）同場亮相。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">6/1 (一) ✅</div>
+      <div class="event"><strong>✅ 黃仁勳 GTC Taipei keynote 落幕 · 發表 RTX Spark / Vera Rubin NVL72 量產 / Jetson Thor · 台股 +1.35% / Nasdaq +0.42% 新高</strong>
+        <small>RTX Spark 雙 chiplet（Blackwell + 聯發科 2454 Grace），TSMC 3nm，秋季上市；Vera Rubin NVL72 全面量產（鴻海 2317 代工）；Jetson Thor + Isaac GR00T 機器人平台。台股收 45,337.91（+1.35%），美股 Nasdaq 收 27,086.81（+0.42%）首破 27K，NVDA +4.86% / MU +6.8% / ORCL +8.4%。三星 +6.51% (HBM4E 出貨)。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">6/2 (二) ✅</div>
+      <div class="event"><strong>✅ Computex Day 2 · ⭐ Marvell +25% Jensen 公開點名「下一個兆元股」· 美股雙 ATH · SOX vs IGV 創 2021 以來最大落差</strong>
+        <small>Jensen Huang 與 Marvell CEO Matt Murphy 同台，當場喊「The next trillion-dollar company」，MRVL 6/2 大漲約 +25% 至 ~$273，市值單日 +$47B。美股 S&P 7,609.78（+0.13%）/ Nasdaq 27,093.90（+0.03%）雙 ATH；Dow +228.91（+0.45%）51,307.79。SOX +4.5% vs IGV -4%（差距 8.4pp 創 2021 以來最大）。Microchip MCHP +12%；Alphabet -4%（公告 $80B 募 AI 資本支出）。台股加權收 45,476.42（+138.51 / +0.31%）。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">6/3 (三) ✅</div>
+      <div class="event"><strong>✅ Broadcom Q2 FY26 結果：營收 $22.19B (+48%) EPS $2.44 beat · Q3 指引 $29.4B (+84%) 大幅上修 · ✅ CRWD Beat + 1 拆 4 · 🎙️ EP667 釋出 · 台股 +1.90% / 美股回檔</strong>
+        <small>AVGO 實際：Q2 營收 $22.187B（+48% YoY、微 miss 共識 $22.27B 約 0.4%），EPS $2.44 beat $2.40，AI 半導體 $10.8B（+143%）。Q3 指引 $29.4B（+84%）、AI Q3 $16B（+200%），AH -2~3%。CRWD Q1 FY27：EPS $1.10 beat $0.88、Net new ARR $256M（+32%）、FCF $468M 創高、宣布 1 拆 4 股票分割（6/25 記錄日、7/2 拆後交易）。股癌 EP667 釋出：「老黃喊單點石成金 Marvell 飛天神牛」+ MRVL ASIC 警語（不如 MTK/AVGO 明確）。美股 6/3 中東地緣回檔：Dow -1.21% 50,687 / S&P -0.74% 7,553 / Nasdaq -0.89% 26,852；WTI +2.51% 至 $96.11。台股加權 +864.77（+1.90%）收 46,422、台積電 +1.89%、TSMC ADR +2.44%。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">6/4 (四) ✅</div>
+      <div class="event"><strong>🔻 AVGO 收盤 -12~14% 半導體賣壓 · Dow +1.73% 創高大轉向 · 台股 -0.93% · 盤後 LULU -9% / RBRK +2% / DOCU -2%</strong>
+        <small>AVGO 正常盤殺至 -12~14% 收盤（AI Q3 $16B 低於預期、FY26 AI 目標 $56B 未上修、Google 分散供應商疑慮）；Micron -7%、ARM / Intel 走弱。Dow +874.86（+1.73%）收 51,561.93 歷史新高（UNH +5% / JPM +3%）、S&P +0.41% 收 7,584.31、Nasdaq -0.09% 收 26,830.96。魏哲家：「全球晶片供給將連續數年趕不上 AI 需求」。台股加權 -433.59（-0.93%）收 46,025.57、台積電收 2,405（-0.82%）。台積電股東會落幕、SpaceX 路演開跑。盤後：LULU -9%（全年指引 $10.95~11.15 大砍）、RBRK +2%（beat + FY27 上修）、DOCU -2%（雙 beat 指引貼共識）。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">6/5 (五) 📍今日</div>
+      <div class="event"><strong>📍 台股消化 AVGO 第二波賣壓 · 今晚 20:30 美國 5 月非農 · 明日股癌 EP668</strong>
+        <small>ASIC 鏈（世芯 3661、創意 3443）與 ABF 載板防守戰；被動元件月線攻防（EP667 框架）；功率半導體題材初動。今晚台北 20:30 美國 5 月非農就業報告 = FOMC（6/16~17）前最後重磅數據。明日（6/6 六）股癌 EP668 釋出。下週：6/11 SpaceX 定價 + 台積電除息（$0.95）、6/12 SpaceX Nasdaq 掛牌。</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">6/16-17 ⭐</div>
+      <div class="event"><strong>Warsh 首場 FOMC 會議</strong>
+        <small>新主席首度政策訊號；30Y 殖利率 5.2% + 消費信心低迷 + 通膨壓力三重因素</small>
+      </div>
+    </div>
+    <div class="calendar-item">
+      <div class="time">本月</div>
+      <div class="event">高人氣 ETF 除息潮（00940、00929 等）
+        <small>留意填息行情；6 月 OpEx 與 Warsh FOMC</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="relations">
+  <h2 class="section-title"><span class="icon">🕸️</span>公司關係圖</h2>
+  <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px;">追蹤清單各公司的供應鏈與商業關係。節點可拖動，hover 查看詳情。</p>
+  <div class="graph-wrap" id="graph-container">
+    <svg id="relations-svg" height="520"></svg>
+    <div class="graph-tooltip" id="graph-tooltip" style="display:none;"></div>
+    <div class="graph-legend" id="graph-legend"></div>
+    <div class="graph-meta" id="graph-meta"></div>
+  </div>
+</section>
+
+<a class="map-entry" href="./gooaye-map/" target="_blank" id="gooaye-map-link">
+  <span class="icon">🧠</span>
+  <h3>股癌心智圖（獨立頁面）</h3>
+  <p>從 EP663 (2026-05-20) 累積至 EP667 (2026-06-03)，已收錄 5 集。本日新增節點：Marvell NVLink Fusion 客製矽、聯發科 vs 博通 ASIC 明確度對照、CrowdStrike 1 拆 4 + Token-based 軟體股驗證、Computex Jensen 點名兆元股事件。</p>
+  <span class="open-btn">開啟心智圖 →</span>
+</a>
+
+<section id="glossary">
+  <h2 class="section-title"><span class="icon">📖</span>技術名詞解釋</h2>
+  <p class="glossary-meta">依當日提及之名詞整理 · 更新：<span id="glossary-date"></span></p>
+  <div class="glossary-grid" id="glossary-grid"></div>
+</section>
+
+<footer>
+  <p>📈 每日科技股深度追蹤 · 由 Claude AI 每日自動更新</p>
+  <p>更新時間：每日 05:06 (UTC+8) · 2026-06-05 (五) · <a href="#" onclick="location.reload();return false;">手動重整</a></p>
+  <p style="margin-top:8px;">⚠️ 本頁僅供研究參考，不構成投資建議</p>
+</footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buildTime = new Date('2026-06-05T05:06:00+08:00');
+    const now = new Date();
+    const hours = Math.floor((now - buildTime) / 3600000);
+    if (hours > 24) {
+      const banner = document.createElement('div');
+      banner.style.cssText = 'background:var(--orange);color:#000;padding:8px;text-align:center;font-size:13px;border-radius:8px;margin-bottom:16px;';
+      banner.textContent = '⚠️ 此頁已超過 24 小時未更新';
+      document.querySelector('.container').insertBefore(banner, document.querySelector('.hero').nextSibling);
+    }
+  });
+
+  const RELATIONS_DATA = {
+    updatedAt: "2026-06-05",
+    nodes: [
+      { id: "TSMC",    label: "台積電\n2330",  sector: "foundry",     marketCap: "大" },
+      { id: "MTK",     label: "聯發科\n2454",  sector: "design" },
+      { id: "CKSYS",   label: "創意\n3443",    sector: "design" },
+      { id: "ALCHIP",  label: "世芯\n3661",    sector: "design" },
+      { id: "ASE",     label: "日月光\n3711",  sector: "osat" },
+      { id: "KINSUS",  label: "家登\n3680",    sector: "material" },
+      { id: "NANYA",   label: "南亞科\n2408",  sector: "memory" },
+      { id: "WINBOND", label: "華邦電\n2344",  sector: "memory" },
+      { id: "UPI",     label: "聯亞\n3081",    sector: "cpo" },
+      { id: "HGST",    label: "華星光\n4979",  sector: "cpo" },
+      { id: "PMPD",    label: "穩懋\n3105",    sector: "cpo" },
+      { id: "FOXCONN", label: "鴻海\n2317",    sector: "design" },
+      { id: "IAP",     label: "愛普\n6531",    sector: "design",      isNew: true },
+      { id: "LARGAN",  label: "大立光\n3008",  sector: "material" },
+      { id: "NVDA",    label: "Nvidia",         sector: "us_ai",       marketCap: "大" },
+      { id: "AMD",     label: "AMD",            sector: "us_chip" },
+      { id: "AVGO",    label: "Broadcom",       sector: "us_chip" },
+      { id: "MU",      label: "Micron",         sector: "memory" },
+      { id: "AAPL",    label: "Apple",          sector: "us_consumer", marketCap: "大" },
+      { id: "GOOGL",   label: "Google",         sector: "us_ai" },
+      { id: "INTC",    label: "Intel",          sector: "us_chip" },
+      { id: "MSFT",    label: "Microsoft",      sector: "us_ai" },
+      { id: "SAMS",    label: "Samsung",        sector: "memory" },
+      { id: "SKHX",    label: "SK Hynix",       sector: "memory" },
+      { id: "META",    label: "Meta",           sector: "us_ai" },
+      { id: "AMZN",    label: "Amazon\nAWS",   sector: "us_ai" },
+      { id: "CSCO",    label: "Cisco",          sector: "us_chip" },
+    ],
+    links: [
+      { source: "TSMC",   target: "NVDA",   type: "supplier", label: "N4/N3 + CoWoS 50%+",    strength: 3 },
+      { source: "TSMC",   target: "AMD",    type: "supplier", label: "N4 代工",               strength: 2 },
+      { source: "TSMC",   target: "AVGO",   type: "supplier", label: "N3 客製 ASIC",          strength: 2 },
+      { source: "TSMC",   target: "AAPL",   type: "supplier", label: "N3E/N2P 獨家代工",      strength: 3 },
+      { source: "TSMC",   target: "MTK",    type: "supplier", label: "N4P/N3 代工",           strength: 2 },
+      { source: "ALCHIP", target: "TSMC",   type: "partner",  label: "ASIC 設計→代工",        strength: 2 },
+      { source: "CKSYS",  target: "TSMC",   type: "partner",  label: "Tesla AI5 150萬顆",     strength: 3 },
+      { source: "MTK",    target: "ALCHIP", type: "partner",  label: "認購私募 + N2 共研",    strength: 1 },
+      { source: "ASE",    target: "NVDA",   type: "supplier", label: "先進封裝/CoWoS",        strength: 2 },
+      { source: "NVDA",   target: "MU",     type: "customer", label: "Rubin CPX HBM",         strength: 2 },
+      { source: "NVDA",   target: "SKHX",   type: "customer", label: "HBM4 主供應 ~70%",      strength: 3 },
+      { source: "NVDA",   target: "SAMS",   type: "customer", label: "HBM4 認證 + SOCAMM",    strength: 2 },
+      { source: "AVGO",   target: "AAPL",   type: "partner",  label: "ASIC 設計",             strength: 2 },
+      { source: "AVGO",   target: "GOOGL",  type: "partner",  label: "TPU Fish 系列",         strength: 2 },
+      { source: "AVGO",   target: "META",   type: "partner",  label: "MTIA 2nm CoWoS-L",      strength: 2 },
+      { source: "INTC",   target: "AAPL",   type: "supplier", label: "18A 試產 2027 H1",      strength: 2 },
+      { source: "UPI",    target: "NVDA",   type: "supplier", label: "光收發",                strength: 1 },
+      { source: "HGST",   target: "NVDA",   type: "supplier", label: "光模組",                strength: 1 },
+      { source: "PMPD",   target: "UPI",    type: "supplier", label: "PA 晶片",               strength: 1 },
+      { source: "FOXCONN",target: "AAPL",   type: "supplier", label: "iPhone 25% + $1.5B",    strength: 3 },
+      { source: "FOXCONN",target: "NVDA",   type: "supplier", label: "AI 機櫃 40% 市占",      strength: 3 },
+      { source: "SKHX",   target: "AMD",    type: "customer", label: "MI400 HBM4",            strength: 2 },
+      { source: "SAMS",   target: "GOOGL",  type: "partner",  label: "Google TPU HBM4E",      strength: 1 },
+      { source: "TSMC",   target: "META",   type: "supplier", label: "2nm CoWoS-L 2027 H1",   strength: 2 },
+      { source: "ALCHIP", target: "AMZN",   type: "supplier", label: "Trainium 3/4 $18B",     strength: 3 },
+      { source: "TSMC",   target: "AMZN",   type: "supplier", label: "AWS N3 代工",           strength: 2 },
+      { source: "CSCO",   target: "AVGO",   type: "partner",  label: "AI 網通 $9B",           strength: 2 },
+      { source: "LARGAN", target: "META",   type: "supplier", label: "Ray-Ban 智慧眼鏡鏡頭",  strength: 2 },
+      { source: "IAP",    target: "GOOGL",  type: "supplier", label: "IPD→Google TPU 基板", strength: 2, isNew: true },
+    ]
+  };
+
+  const SECTOR_COLOR = { foundry:"#00b4d8", design:"#22c55e", osat:"#f59e0b", material:"#a3a3a3", memory:"#fb923c", cpo:"#a78bfa", us_ai:"#f87171", us_chip:"#f97316", us_consumer:"#94a3b8" };
+  const SECTOR_LABEL = { foundry:"晶圓代工", design:"IC設計", osat:"封測", material:"材料/零組件", memory:"記憶體", cpo:"光通訊", us_ai:"美股AI", us_chip:"美股晶片", us_consumer:"美股消費電子" };
+  const LINK_COLOR = { supplier:"#60a5fa", customer:"#22c55e", partner:"#cbd5e1", transfer:"#ef4444" };
+  const LINK_TYPE_LABEL = { supplier:"供應商", customer:"客戶", partner:"合作夥伴", transfer:"轉單" };
+
+  function initRelationsGraph() {
+    const container = document.getElementById('graph-container');
+    if (!container || typeof d3 === 'undefined') return;
+    const svgEl = document.getElementById('relations-svg');
+    const tooltip = document.getElementById('graph-tooltip');
+    const legend = document.getElementById('graph-legend');
+    const meta = document.getElementById('graph-meta');
+    const width = container.clientWidth || 800;
+    const height = 520;
+    svgEl.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+    const svg = d3.select('#relations-svg');
+    const nodes = RELATIONS_DATA.nodes.map(d => Object.assign({}, d));
+    const links = RELATIONS_DATA.links.map(d => Object.assign({}, d));
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(d => 90 + (d.strength || 1) * 22))
+      .force('charge', d3.forceManyBody().strength(-380))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide(38));
+    const linkSel = svg.append('g').selectAll('line').data(links).join('line')
+      .attr('stroke', d => LINK_COLOR[d.type] || '#94a3b8')
+      .attr('stroke-width', d => d.strength || 1)
+      .attr('stroke-dasharray', d => d.type === 'partner' ? '5,4' : d.type === 'transfer' ? '8,4' : 'none')
+      .attr('opacity', 0.6).style('cursor', 'pointer');
+    const linkLabelSel = svg.append('g').selectAll('text').data(links).join('text')
+      .attr('fill', '#64748b').attr('font-size', '8px').attr('text-anchor', 'middle').attr('pointer-events', 'none').text(d => d.label || '');
+    const drag = d3.drag()
+      .on('start', (ev, d) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+      .on('end',   (ev, d) => { if (!ev.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; });
+    const nodeSel = svg.append('g').selectAll('g').data(nodes).join('g').style('cursor', 'grab').call(drag);
+    nodeSel.append('circle').attr('r', d => d.marketCap === '大' ? 28 : 20)
+      .attr('fill', d => SECTOR_COLOR[d.sector] || '#94a3b8').attr('fill-opacity', 0.18)
+      .attr('stroke', d => SECTOR_COLOR[d.sector] || '#94a3b8').attr('stroke-width', 2);
+    nodeSel.filter(d => d.isNew).append('circle').attr('r', d => (d.marketCap === '大' ? 28 : 20) + 6)
+      .attr('fill', 'none').attr('stroke', '#facc15').attr('stroke-width', 2).attr('stroke-dasharray', '4,3');
+    nodeSel.each(function(d) {
+      const g = d3.select(this); const parts = d.label.split('\n'); const col = SECTOR_COLOR[d.sector] || '#e8eef9';
+      if (parts.length === 1) { g.append('text').attr('text-anchor','middle').attr('dy','0.35em').attr('fill',col).attr('font-size','10px').attr('font-weight','700').attr('pointer-events','none').text(parts[0]); }
+      else { g.append('text').attr('text-anchor','middle').attr('dy','-0.25em').attr('fill',col).attr('font-size','10px').attr('font-weight','700').attr('pointer-events','none').text(parts[0]); g.append('text').attr('text-anchor','middle').attr('dy','0.9em').attr('fill',col).attr('font-size','8px').attr('pointer-events','none').text(parts[1]); }
+    });
+    function positionTooltip(ev) {
+      const rect = container.getBoundingClientRect();
+      let x = ev.clientX - rect.left + 14, y = ev.clientY - rect.top - 12;
+      if (x + 250 > rect.width) x = ev.clientX - rect.left - 254;
+      if (y < 0) y = ev.clientY - rect.top + 14;
+      tooltip.style.left = x + 'px'; tooltip.style.top = y + 'px';
+    }
+    function nodeLabel(n) { const id = typeof n === 'object' ? n.id : n; const nd = nodes.find(x => x.id === id); return nd ? nd.label.replace('\n', ' ') : id; }
+    nodeSel.on('mouseover', function(ev, d) {
+      const col = SECTOR_COLOR[d.sector] || '#94a3b8';
+      const rels = links.filter(l => l.source === d || l.source.id === d.id || l.target === d || l.target.id === d.id);
+      let html = '<strong style="color:' + col + '">' + d.label.replace('\n', ' ') + '</strong><br><span style="color:#94a3b8">產業：' + (SECTOR_LABEL[d.sector] || d.sector) + '</span>';
+      if (rels.length) { html += '<hr style="border:none;border-top:1px solid #1f2a44;margin:5px 0">'; rels.forEach(l => { html += '<div style="margin-top:2px;font-size:11px;color:#94a3b8">' + nodeLabel(l.source) + ' → ' + nodeLabel(l.target) + '：' + l.label + '</div>'; }); }
+      tooltip.innerHTML = html; tooltip.style.display = 'block'; positionTooltip(ev);
+      linkSel.attr('opacity', l => (l.source === d || l.source.id === d.id || l.target === d || l.target.id === d.id) ? 1 : 0.08);
+    }).on('mousemove', ev => positionTooltip(ev)).on('mouseout', () => { tooltip.style.display = 'none'; linkSel.attr('opacity', 0.6); });
+    linkSel.on('mouseover', function(ev, d) {
+      tooltip.innerHTML = '<strong>' + nodeLabel(d.source) + ' → ' + nodeLabel(d.target) + '</strong><br>關係：' + (LINK_TYPE_LABEL[d.type] || d.type) + '<br>說明：' + d.label;
+      tooltip.style.display = 'block'; positionTooltip(ev); d3.select(this).attr('opacity', 1).attr('stroke-width', (d.strength || 1) + 1.5);
+    }).on('mousemove', ev => positionTooltip(ev)).on('mouseout', function(ev, d) { tooltip.style.display = 'none'; d3.select(this).attr('opacity', 0.6).attr('stroke-width', d.strength || 1); });
+    const PAD = 32;
+    simulation.on('tick', () => {
+      linkSel.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      linkLabelSel.attr('x', d => (d.source.x + d.target.x) / 2).attr('y', d => (d.source.y + d.target.y) / 2 - 3);
+      nodeSel.attr('transform', d => 'translate(' + Math.max(PAD, Math.min(width - PAD, d.x)) + ',' + Math.max(PAD, Math.min(height - PAD, d.y)) + ')');
+    });
+    [...new Set(RELATIONS_DATA.nodes.map(n => n.sector))].forEach(key => {
+      if (!SECTOR_LABEL[key]) return;
+      const item = document.createElement('div'); item.className = 'legend-item';
+      item.innerHTML = '<div class="legend-dot" style="background:' + SECTOR_COLOR[key] + '"></div><span>' + SECTOR_LABEL[key] + '</span>';
+      legend.appendChild(item);
+    });
+    [{ color:'#60a5fa', dash:'none', label:'供應商' }, { color:'#22c55e', dash:'none', label:'客戶' }, { color:'#cbd5e1', dash:'5,4', label:'合作夥伴' }, { color:'#ef4444', dash:'8,4', label:'⚡轉單' }].forEach(lt => {
+      const item = document.createElement('div'); item.className = 'legend-item';
+      item.innerHTML = '<svg width="22" height="10" style="flex-shrink:0"><line x1="0" y1="5" x2="22" y2="5" stroke="' + lt.color + '" stroke-width="2" stroke-dasharray="' + lt.dash + '"/></svg><span>' + lt.label + '</span>';
+      legend.appendChild(item);
+    });
+    if (meta) meta.textContent = '關係資料更新：' + RELATIONS_DATA.updatedAt;
+  }
+  document.addEventListener('DOMContentLoaded', initRelationsGraph);
+
+  const GLOSSARY_DATA = {
+    updatedAt: "2026-06-05",
+    terms: [
+      { key: "DGX Spark（= N1X）", titleZh: "Nvidia DGX Spark / N1X AI PC 平台", titleEn: "Nvidia DGX Spark (deferred N1X)", body: "<strong>股癌 EP667：Computex 上「比較特別的東西」</strong>。嚴格來說是遞延的 N1X 產品（當年規劃三條產線：高階筆電 / 初階筆電 / 車用），代表 <strong>AI PC 的二次挑戰</strong>——前兩年雷聲大雨點小，經過一兩年算力堆疊、技術加強與軟體優化後再戰。AI PC 雙主軸：<strong>輝達 NVDA + 聯發科 2454</strong>。謝孟恭：能否帶動筆電 OEM 還須觀察，但可能光一個題材就做 Rerate；高單價 AI PC 賣得好可抵銷貧弱的傳統 PC 銷售。" },
+      { key: "地端模型（On-prem AI）", titleZh: "開源模型地端化 / 邊緣運算放量契機", titleEn: "On-premises / Edge AI Model Deployment", body: "<strong>股癌 EP667 核心趨勢判斷</strong>：現行開源模型落後科技巨頭模型約半年；當開源爬到甜蜜點、足以滿足絕大多數個人與企業需求時，<strong>用地端模型（本地伺服器 / AI PC）跑任務可省下大量 Token fee 與傳輸費用</strong>，「買地端伺服器或 AI PC 就可以完成任務，不用高度仰賴 Data Center」。高階運算仍需資料中心、簡單應用落地端，兩者一起成長。中間軟體層原先付給 LLM 的成本將變成自己的純益。屆時<strong>邊緣運算裝置、地端伺服器與 AI PC 的放量爆發契機成熟</strong>。" },
+      { key: "功率半導體（試單插眼）", titleZh: "功率元件 / 功率半導體 · 下一波題材匯聚點？", titleEn: "Power Semiconductor / Power Components", body: "<strong>股癌 EP667 QA</strong>：功率元件、功率半導體相關公司基本面顯著改善中，<strong>可能是下一波題材的匯聚點</strong>；功率元件也在漲價，但光芒沒有 CPU 或被動元件那樣全面、尚未看到「全面性屌缺」。催化路徑：若後面<strong>電源櫃（Power Rack）表現很好產生大量拉貨</strong>，不排除複製被動元件「戴維斯雙擊」劇本。謝孟恭操作：「先打試單插眼看看」。市場喜歡缺貨 + 漲價 + 獲利上修的雙擊組合。" },
+      { key: "AVGO 裁決日（6/4）", titleZh: "Broadcom 收盤 -12~14% 半導體賣壓事件", titleEn: "Broadcom Verdict Day Selloff (Jun 4, 2026)", body: "AVGO 6/3 盤後僅 -3%，但 6/4 正常盤收盤重挫 <strong>-12~14%</strong>，觸發半導體全面賣壓（Micron -7%、ARM / Intel 走弱）。三主因：① AI Q3 指引 $16B 低於買方預期（共識 $16.36B、whisper $17.2B）；② <strong>FY26 全年 AI 半導體目標維持 $56B 未上修</strong>（市場 price-in $57.6B+）；③ 最大客戶 Google 分散晶片供應商疑慮。同日 <strong>Dow +1.73% 創歷史新高</strong>＝資金大轉向而非離場，「AI 泡沫 vs 健康輪動」之辯的代表性事件。魏哲家同日「供給連續數年趕不上 AI 需求」為多方定錨。" },
+      { key: "Broadcom Q3 指引上修", titleZh: "Broadcom Q3 FY26 指引 $29.4B / AI $16B", titleEn: "Broadcom Q3 FY26 Guidance Hike", body: "Broadcom 6/3 盤後公布 Q2 結果同時釋出 Q3 指引：<strong>Q3 營收 $29.4B（+84% YoY）</strong>遠超共識 $26B、<strong>AI Q3 指引 $16B（+200% YoY）</strong>，從 Q2 的 +143% 進一步加速。Q3 Non-GAAP op income margin ~67% / Adj EBITDA margin ~68%。儘管 Q2 營收 $22.187B 略低於共識 $22.27B（差 0.4%），但 Q3 指引大幅上修對 AI ASIC 供應鏈為實質長線利多。台股連動：世芯 3661、創意 3443、智邦 2345、欣興 3037、南電 8046。" },
+      { key: "CrowdStrike 1 拆 4 股票分割", titleZh: "CrowdStrike 4-for-1 Stock Split", titleEn: "CRWD 4-for-1 Stock Split", body: "CrowdStrike Holdings 6/3 盤後與 Q1 FY27 財報（EPS $1.10 beat $0.88、Net new ARR $256M +32%、FCF $468M 創新高）同時宣布 <strong>1 拆 4 股票分割</strong>，<strong>記錄日 2026/6/25 收盤</strong>、<strong>2026/7/2 起以拆後價格交易</strong>。每位股東於記錄日持有 1 股將額外獲得 3 股。歷史經驗：股票分割本身不改變估值，但常被視為公司對長期前景信心的訊號，也降低散戶買進門檻。CrowdStrike 是 Falcon 故障事件後第一次明確展示業績全面復原。" },
+      { key: "Marvell ASIC 警語", titleZh: "Marvell ASIC 估值警語（vs MTK / AVGO）", titleEn: "Marvell ASIC Valuation Caution", body: "<strong>股癌 EP667（6/3）核心警語</strong>：Computex Jensen Huang 公開點名 Marvell 為「下一個兆元美元公司」後 MRVL 單日 +25%。謝孟恭觀點：Marvell 在 PAM4 DSP / 高速互連 / Co-Packaged Optics / SERDES 表現確實強勁（Teralynx T100 102.4 Tbps 交換機剛推出），但<strong>ASIC 客製矽佈局仍在發展，明確度不如 MediaTek（2454）或 Broadcom（AVGO ASIC 市占約 70%，客戶含 Google TPU / Meta MTIA / Microsoft / OpenAI）</strong>。「老黃口頭加持」具備即時點石成金的力量，但 ASIC 故事估值已超前 fundamentals，投資人需保持理性。" },
+      { key: "中東地緣 / WTI 油價", titleZh: "美伊衝突 / 油價 WTI $96", titleEn: "US-Iran Geopolitics & WTI Oil $96", body: "<strong>6/3 美股回檔催化</strong>：報導伊朗攻擊巴林與科威特主要基礎設施、美方反擊伊朗境內目標，<strong>WTI 原油單日 +2.51% 至 $96.11</strong>、10Y 殖利率上揚。美股三大指數同步回檔：Dow -1.21% / S&P -0.74% / Nasdaq -0.89% / Russell -1.25%。地緣風險推升能源與避險資產，壓抑科技 / 成長股估值；FOMC 6/16~17 之前若油價持續上行可能影響 Warsh 政策訊號。長線 AI 基本面不變。" },
+      { key: "Marvell NVLink Fusion", titleZh: "Marvell × NVIDIA NVLink Fusion 客製矽合作", titleEn: "Marvell NVLink Fusion (Custom Silicon for NVIDIA)", body: "Marvell 與 NVIDIA 深化 NVLink Fusion 客製矽合作框架，Marvell 被定位為 NVIDIA AI 基礎設施<strong>「優先客製矽夥伴」</strong>，涵蓋資料中心互連、PAM4 DSP、Co-Packaged Optics、高速 SERDES。NVIDIA 已投資 $2B 入股 Marvell。<strong>2026-06-02 事件</strong>：Computex Jensen Huang 與 Marvell CEO Matt Murphy 同台，當場公開點名 Marvell 為「下一個兆元美元公司（The next trillion-dollar company）」，MRVL 單日漲 +25% 至 ~$273，市值單日 +$47B。台股 ASIC 連動：世芯 3661 ✅、創意 3443 ✅；光通訊鏈：聯亞 3081 ✅、華星光 4979 ✅、穩懋 3105 ✅。" }, { key: "Constellation（Nvidia 台北園區）", titleZh: "Nvidia 台北辦公園區", titleEn: "Nvidia Constellation Campus, Taipei", body: "Nvidia 宣布在台北北部興建新辦公園區「Constellation」，年底動工，2030 年完工，可容納 4,000 名員工。<strong>5/27 黃仁勳 $150B/年台灣投資宣言</strong>的具體配套，Nvidia 確認台灣長期戰略布局，供應鏈（台積電/鴻海等）受惠。" },
+      { key: "兆元晚宴", titleZh: "台灣 AI 供應鏈兆元晚宴", titleEn: "Trillion-Dollar Dinner, Taiwan AI Supply Chain", body: "2026 年 Computex 週間，Nvidia CEO 黃仁勳宴請台灣 AI 供應鏈各大廠一把手（鴻海劉揚偉、台積電魏哲家、日月光張虔生等），討論 Vera Rubin 量產時程與分工協作。<strong>5/28 今日登場</strong>，為本週台股最大催化事件。每年 Computex 前後的「黃仁勳晚宴」是業界觀察供應鏈動向的重要窗口。" },
+      { key: "Book-to-Bill", titleZh: "書轉比", titleEn: "Book-to-Bill Ratio", body: "接單量除以出貨量的比值。大於 1.0 代表需求超過供給，是景氣上升訊號。<strong>Vishay Q1 2026 被動元件書轉比 1.23</strong>，為股癌 EP663 被動元件漲價論點的獨立驗證。" },
+      { key: "Power Rack（獨立電力控制櫃）", titleZh: "獨立電力控制櫃", titleEn: "Power Rack / Power Distribution Unit Cabinet", body: "AI 高密度機櫃因整體功耗暴增，部分電力供應模組被獨立拉出，形成獨立的高密度電力控制櫃。<strong>股癌 EP664 核心揭密</strong>：市場過度聚焦 GPU，忽略 Power Rack 內的高壓 MLCC + 鋁電容 + 功率半導體商機。Power Rack 規格翻倍，高毛利元件需求大量移轉至此。受惠：立隆電 (2472)、金山電 (8042)、國巨 (2327)。" },
+      { key: "Snapping（牛角電容）", titleZh: "牛角型鋁電解電容", titleEn: "Snapping Aluminum Electrolytic Capacitor", body: "長條型（Snap-in）鋁電解電容，因外形似牛角得名。大容量、耐高壓，為資料中心電力穩壓核心零件。<strong>股癌 EP664 揭露</strong>：Snapping 全球產能——日商 + 全球大廠加總——仍完全無法滿足資料中心建置需求，屬較少人看懂的電力基礎設施核心瓶頸。受惠：立隆電 (2472)、金山電 (8042)。" },
+      { key: "CoWoS", titleZh: "晶圓基板封裝", titleEn: "Chip-on-Wafer-on-Substrate", body: "台積電 2.5D 先進封裝技術，將 GPU 晶片和 HBM 記憶體封裝在同一矽中介層上。<strong>CoWoS CAGR 超過 80%（2022~2027）</strong>。NVDA Q2 $91B 指引確認 CoWoS 訂單能見度長線不受影響。" },
+      { key: "CPO", titleZh: "共封裝光學", titleEn: "Co-Packaged Optics", body: "將光學收發器與交換晶片封裝在同一封裝體內，降低 AI 資料中心功耗與延遲。2026 年為 CPO 商業元年，台積電 COUPE 技術領軍。股癌 EP663 稱光通訊「還早」，等待資金輪動。" },
+      { key: "Fish 晶片", titleZh: "Broadcom Fish 系列 ASIC", titleEn: "Broadcom Fish ASIC Codenames", body: "Broadcom 為 Google 設計的 TPU ASIC 系列，代號以魚命名（Zibra Fish → Soundfish → Icefish）。<strong>股癌 EP663 引用 Sami Analysis 報告</strong>：Icefish 這代消失，謝孟恭研判「更大顆的 Soundfish」把兩晶片拼在同一 substrate 上（類蘋果 Ultra 架構）——欣興 (3037)、南電 (8046) 等 ABF 載板廠為潛在受惠股。" },
+      { key: "GLP-1（瘦瘦針）", titleZh: "GLP-1 受體促效劑", titleEn: "GLP-1 Receptor Agonist (Ozempic)", body: "以 Wegovy / Semaglutide 為代表的減重藥物，透過模擬腸泌素抑制食慾。股癌謝孟恭 EP663 分享搭配重訓 + 機能訓練減重至 78 公斤的心得。⚠️ 需醫師處方，個人體質反應不同。" },
+      { key: "Gooaye 股癌", titleZh: "股癌（謝孟恭）", titleEn: "Gooaye Podcast", body: "謝孟恭主持的台股 Podcast，週三、六下午發新集數。<strong>EP667（6/3，socialworkerdaily 完整筆記 6/4 上稿）</strong>：Marvell「看不懂在噴什麼可減碼」/ 光是勢在必行資金可能回流光通 / DGX Spark=N1X AI PC 二次挑戰（輝達+聯發科 2454）/ 開源模型地端化 / 功率半導體試單插眼 / 被動元件月線攻防。<strong>EP666（5/30，socialworkerdaily 5/31 發布）</strong>：鋁電容「房間裡的大象」缺口 20%+ / 軟體股 Saleforce 自家回購、SNOW/NOW/OKTA 證明 AI 加分 / 老 AI ODM 資金輪迴 / 未來決勝點＝掌握資料+業務商務能力+可歸責性 → AAPL iCloud, GOOG Drive, MSFT OneDrive, AWS；操作日記：國巨 2327 繼續減碼一點點；國巨 2327 ✅、凱美 2375 ✅、立隆電 2472 ✅、華新科 2492 ✅。<strong>EP665（5/27）</strong>：SpaceX 衛星護城河（不管估值先上車）+ 被動元件 B/B ratio 上升；操作日記：國巨慢慢減碼。<strong>EP664（5/23）</strong>：Power Rack 核心商機，牛角電容缺爆。<strong>EP663（5/20）</strong>：被動元件現貨掃貨 + Broadcom Soundfish 雙晶片載板。" },
+      { key: "信昌電（6173）", titleZh: "信昌電工業", titleEn: "Singlun Technology (6173.TW)", body: "華新科集團旗下電子零組件廠，主產高壓 MLCC、晶片電容電阻電感及介電瓷粉。<strong>股癌 EP665 推算股</strong>：謝孟恭認為高壓 MLCC 供需確認後，國巨、信昌電、金山電「最硬頸」。4 月自結 EPS 0.44 元（年增 1000%）。近期連續漲停，訂單能見度直達 H2。代號 6173 ✅ WebSearch 查證。" },
+      { key: "SpaceX IPO", titleZh: "SpaceX 史上最大 IPO（6/12 Nasdaq）", titleEn: "SpaceX IPO (Nasdaq, Jun 12 2026)", body: "Elon Musk 旗下 SpaceX 確定 2026/6/12 於 Nasdaq 掛牌，估值區間 $1.75T~$2T，募資 $750~800B，為人類史上最大 IPO。6/4 路演開跑。1 拆 5 股後每股約 $105.32（原 $526.59）。三大營收引擎：火箭發射、衛星寬頻（Starlink）、衛星 AI 算力（Starshield + xAI）。Musk 持 85.1% 投票權。<strong>股癌 EP665：</strong>「不管估值多少先上車。」台廠卡位：啟碁 (6285)、昇達科 (3491)、華通 (2313)、緯穎 (6669)。" },
+      { key: "衛星 AI 算力（Starshield）", titleZh: "衛星 AI 算力", titleEn: "Satellite-borne AI Compute / Starshield", body: "在低軌衛星上整合 AI 推論晶片，提供全球無接觸點覆蓋的邊緣算力。SpaceX Starshield（軍用版 Starlink）+ xAI 整合運算為核心題材。<strong>股癌 EP665 揭密：</strong>謝孟恭認為這是 SpaceX 下一個被嚴重低估的故事，市場目前還沒充分定價。最強護城河 = 唯一能頻繁打上去又拉回來的公司，運能輾壓 Blue Origin / Rocket Lab。" },
+      { key: "低軌衛星概念股", titleZh: "台廠低軌衛星概念股", titleEn: "Taiwan LEO Satellite Supply Chain", body: "台廠 SpaceX / Starlink 供應鏈核心股：<strong>啟碁 (6285)</strong>—Starlink router 主力，FCC 公布設計圖印 logo，股癌 EP64 即點名「最純的 SpaceX 概念股」；<strong>昇達科 (3491)</strong>—微波 / RF 元件；<strong>華通 (2313)</strong>—低軌衛星 PCB 龍頭，現增溢價認購；<strong>緯穎 (6669)</strong>—衛星地面站設備。SpaceX IPO 6/12 倒數，題材延續發酵。" },
+      { key: "HBM / HBM4E", titleZh: "高頻寬記憶體（HBM4E 規格更新）", titleEn: "High Bandwidth Memory / HBM4E", body: "AI GPU 專用 3D 堆疊記憶體。Vera Rubin 採 HBM4 起跳；<strong>HBM4E 規格</strong>：每腳位 16Gbps（HBM4 為 14Gbps，提升 >14%）、頻寬 4.0TB/s、每堆疊容量 48GB（較前代 +30%），整體效能 vs HBM4 +20%+。<strong>2026-05~06 進度</strong>：Samsung 已交付業界首批 12 層 48GB HBM4E 樣品給主要客戶，並通過 NVIDIA 品質認證、獲訂單，產線依 Vera Rubin 推出計畫調整；Samsung HBM4 量產用於 Vera Rubin，傳輸速度 11.7 Gbps。SK Hynix HBM 市占 ~62%，Micron 升至 21% 超越 Samsung 排第二。台股 HBM 連動：南亞科 2408、群聯 8299、華邦電 2344。" },
+      { key: "IPD", titleZh: "整合被動元件", titleEn: "Integrated Passive Device", body: "將被動元件整合嵌入晶片基板的技術。<strong>愛普 (6531 AP Memory)</strong> 的 IPD 整合進 Google TPU 基板中。EP663 指出，Google TPU 成為市場焦點時，愛普隨之獲資金關注——是「題材復活」典型案例。" },
+      { key: "Token-based 商業模式", titleZh: "按量計費（Token-based）", titleEn: "Token-based / Consumption-based Billing", body: "軟體公司將傳統按人頭訂閱（Seat-based）改為按 AI 使用量（token 消耗量）計費的商業模式轉型。<strong>股癌 EP666 核心揭密</strong>：Snowflake (SNOW)、Okta (OKTA) 等率先轉型，財報出現跳躍式驚喜，打破「AI 將取代軟體股」末日論。在 AI 使用量爆發期，Token-based 讓軟體公司營收與 AI 採用量正相關。末日論多為科技大老行銷自家 AI 的恐嚇言論，實際軟體大廠財報極佳，AI 是加分項。" },
+      { key: "鋁電容（房間裡的大象）", titleZh: "鋁電容 SPC/OSC/牛角型缺口 20%+", titleEn: "Aluminum Electrolytic Capacitor (The Elephant in the Room)", body: "相較 MLCC，鋁電容（疊層式 SPC、OSC、工業牛角型 Snap-in）的全球產能缺口更高達 20%+，但市場討論度遠低於 MLCC。<strong>股癌 EP666 揭露</strong>：AI 伺服器高密度化後 PSU 高瓦數、高電壓發展使牛角電容消耗量呈倍數暴增；台廠具備泰國廠等產能優勢，將直接迎來歷史級別的轉單紅利。受惠：凱美 (2375)、立隆電 (2472)、華新科 (2492)。" },
+      { key: "MLCC", titleZh: "多層陶瓷電容", titleEn: "Multilayer Ceramic Capacitor", body: "最常見積層電容，AI 伺服器機架用量是傳統伺服器的 3~5 倍。Vera Rubin 平台預估 430 萬顆 / 機架。最缺 47UF 高壓品（僅 Samsung / Murata 供貨）。股癌 EP661~663 三集聚焦被動元件漲價。" },
+      { key: "Substrate 載板", titleZh: "載板（基板）", titleEn: "Advanced Packaging Substrate (ABF)", body: "封裝晶片所用的連接基板。ABF（Ajinomoto Build-up Film）載板為 AI 晶片關鍵材料。<strong>EP663 提到 Broadcom Soundfish 雙晶片方案</strong>：兩顆晶片拼在一個 substrate 上（類蘋果 Ultra）——欣興 (3037)、南電 (8046)、景碩 (3189) 為主要 ABF 載板廠，是此題材潛在受惠股。" },
+      { key: "現貨市場掃貨", titleZh: "現貨市場掃貨", titleEn: "Spot Market Sweeping", body: "在現貨市場大量買入特定物料的行為。EP663：「如果你已知道供需失衡，你不把便宜料掃光嗎？」類似水果商囤貨邏輯。此現象出現時往往是漲價週期前期，與 2018 年大缺貨潮類似。蜜望實 (8043) 為 EP663 點名通路商。" },
+      { key: "Hyperscaler", titleZh: "超大規模雲端業者", titleEn: "Hyperscaler", body: "指 Microsoft Azure、Amazon AWS、Google Cloud、Meta、Oracle Cloud 等全球性大規模資料中心業者。2026 合計 Capex 共識 $725B (+76%)，為 AI 半導體需求最大推手。鴻海、廣達、緯創 AI 機櫃 ODM 直接受惠。" },
+    ]
+  };
+
+  function renderGlossary() {
+    if (typeof GLOSSARY_DATA === 'undefined') return;
+    const grid = document.getElementById('glossary-grid');
+    const dateEl = document.getElementById('glossary-date');
+    if (!grid) return;
+    if (dateEl) dateEl.textContent = GLOSSARY_DATA.updatedAt || '';
+    grid.innerHTML = '';
+    [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key)).forEach(t => {
+      const card = document.createElement('div');
+      card.className = 'glossary-card';
+      card.innerHTML = '<h3>' + t.key + ' · ' + (t.titleZh || '') + '</h3><div class="term-en">' + (t.titleEn || '') + '</div><p>' + (t.body || '') + '</p>';
+      grid.appendChild(card);
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', renderGlossary); }
+  else { renderGlossary(); }
+</script>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
