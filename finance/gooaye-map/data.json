@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-06-05",
+ "updatedAt": "2026-06-07",
  "startDate": "2026-05-20",
- "episodesCount": 5,
+ "episodesCount": 6,
  "episodes": [
   {
    "ep": 663,
@@ -32,6 +32,12 @@
    "date": "2026-06-03",
    "title": "老黃喊單點石成金 Marvell 飛天神牛 · 光是勢在必行 · DGX Spark=N1X AI PC 二次挑戰 · 功率半導體試單",
    "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-667/"
+  },
+  {
+   "ep": 668,
+   "date": "2026-06-06",
+   "title": "COMPUTEX 軟硬整合落地 · 輝達雙引擎（電力櫃 + RTX Spark）· 傑文斯悖論 · 統一記憶體是 AI PC 最強亮點 · brace for impact 洗籌碼是好事",
+   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-668/"
   }
  ],
  "nodes": [
@@ -60,10 +66,11 @@
    "id": "mtk",
    "label": "聯發科 2454",
    "type": "stock",
-   "lastSeen": "2026-06-03",
+   "lastSeen": "2026-06-06",
    "episodes": [
     663,
-    667
+    667,
+    668
    ]
   },
   {
@@ -139,12 +146,13 @@
    "id": "yageo",
    "label": "國巨 2327",
    "type": "stock",
-   "lastSeen": "2026-06-03",
+   "lastSeen": "2026-06-06",
    "episodes": [
     664,
     665,
     666,
-    667
+    667,
+    668
    ]
   },
   {
@@ -179,12 +187,13 @@
    "id": "nvidia",
    "label": "NVIDIA NVDA",
    "type": "stock",
-   "lastSeen": "2026-06-03",
+   "lastSeen": "2026-06-06",
    "episodes": [
     663,
     664,
     665,
-    667
+    667,
+    668
    ]
   },
   {
@@ -266,23 +275,25 @@
    "id": "menggon",
    "label": "謝孟恭",
    "type": "person",
-   "lastSeen": "2026-06-03",
+   "lastSeen": "2026-06-06",
    "episodes": [
     663,
     664,
     665,
     666,
-    667
+    667,
+    668
    ]
   },
   {
    "id": "jensen",
    "label": "黃仁勳 Jensen Huang",
    "type": "person",
-   "lastSeen": "2026-06-03",
+   "lastSeen": "2026-06-06",
    "episodes": [
     665,
-    667
+    667,
+    668
    ]
   },
   {
@@ -698,9 +709,10 @@
    "id": "ai-pc",
    "label": "AI PC 二次挑戰",
    "type": "theme",
-   "lastSeen": "2026-06-03",
+   "lastSeen": "2026-06-06",
    "episodes": [
-    667
+    667,
+    668
    ]
   },
   {
@@ -755,6 +767,99 @@
    "lastSeen": "2026-06-03",
    "episodes": [
     667
+   ]
+  },
+  {
+   "id": "lopo",
+   "label": "光寶科 2301",
+   "type": "stock",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ],
+   "desc": "EP668 操作日記：再進一次，結果被殺爛。電源/光通供應鏈。"
+  },
+  {
+   "id": "asus",
+   "label": "華碩 2357",
+   "type": "stock",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ],
+   "desc": "EP668：ROG 精銳盡出走精緻化、客製化；展出輕量化智慧眼鏡。"
+  },
+  {
+   "id": "adobe",
+   "label": "Adobe ADBE",
+   "type": "stock",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ],
+   "desc": "EP668：人人喊打卻獲輝達深度合作，RTX Spark 剪片快 3~5 倍。"
+  },
+  {
+   "id": "computex-soft-hard",
+   "label": "COMPUTEX 軟硬整合落地",
+   "type": "theme",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ]
+  },
+  {
+   "id": "unified-memory",
+   "label": "統一記憶體 Unified Memory",
+   "type": "theme",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ]
+  },
+  {
+   "id": "agentic-ai",
+   "label": "代理式 AI（Agentic AI）",
+   "type": "theme",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ]
+  },
+  {
+   "id": "jevons",
+   "label": "傑文斯悖論（CPU 多空論戰）",
+   "type": "theme",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ]
+  },
+  {
+   "id": "rtx-spark",
+   "label": "RTX Spark / N1X AI 筆電",
+   "type": "product",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ]
+  },
+  {
+   "id": "smart-glasses",
+   "label": "智慧眼鏡（下一個契機？）",
+   "type": "theme",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
+   ]
+  },
+  {
+   "id": "wash-chips",
+   "label": "brace for impact · 洗籌碼是好事",
+   "type": "strategy",
+   "lastSeen": "2026-06-06",
+   "episodes": [
+    668
    ]
   }
  ],
@@ -1586,7 +1691,142 @@
     667
    ],
    "type": "strategy"
+  },
+  {
+   "source": "menggon",
+   "target": "computex-soft-hard",
+   "label": "看展心得：軟硬整合落地",
+   "episodes": [
+    668
+   ],
+   "type": "advocate"
+  },
+  {
+   "source": "menggon",
+   "target": "yageo",
+   "label": "操作日記：加碼國巨",
+   "episodes": [
+    668
+   ],
+   "type": "position"
+  },
+  {
+   "source": "menggon",
+   "target": "lopo",
+   "label": "操作日記：再進被殺爛",
+   "episodes": [
+    668
+   ],
+   "type": "position"
+  },
+  {
+   "source": "menggon",
+   "target": "wash-chips",
+   "label": "brace for impact·洗籌碼是好事",
+   "episodes": [
+    668
+   ],
+   "type": "strategy"
+  },
+  {
+   "source": "nvidia",
+   "target": "rtx-spark",
+   "label": "COMPUTEX 推出",
+   "episodes": [
+    668
+   ],
+   "type": "product"
+  },
+  {
+   "source": "nvidia",
+   "target": "adobe",
+   "label": "硬軟深度合作·剪片快3~5倍",
+   "episodes": [
+    668
+   ],
+   "type": "partner"
+  },
+  {
+   "source": "rtx-spark",
+   "target": "unified-memory",
+   "label": "最強亮點",
+   "episodes": [
+    668
+   ],
+   "type": "feature"
+  },
+  {
+   "source": "rtx-spark",
+   "target": "ai-pc",
+   "label": "AI PC 落地",
+   "episodes": [
+    668
+   ],
+   "type": "theme"
+  },
+  {
+   "source": "mtk",
+   "target": "rtx-spark",
+   "label": "AI PC 主軸（N1X）",
+   "episodes": [
+    668
+   ],
+   "type": "supply"
+  },
+  {
+   "source": "agentic-ai",
+   "target": "jevons",
+   "label": "CPU 用量多空論戰",
+   "episodes": [
+    668
+   ],
+   "type": "related"
+  },
+  {
+   "source": "jevons",
+   "target": "nvidia",
+   "label": "CPU 整櫃出貨·後面可關注",
+   "episodes": [
+    668
+   ],
+   "type": "watch"
+  },
+  {
+   "source": "computex-soft-hard",
+   "target": "rtx-spark",
+   "label": "落地代表作",
+   "episodes": [
+    668
+   ],
+   "type": "embodies"
+  },
+  {
+   "source": "asus",
+   "target": "smart-glasses",
+   "label": "ROG 展出輕量智慧眼鏡",
+   "episodes": [
+    668
+   ],
+   "type": "product"
+  },
+  {
+   "source": "lopo",
+   "target": "optical",
+   "label": "電源/光通供應鏈",
+   "episodes": [
+    668
+   ],
+   "type": "exposure"
+  },
+  {
+   "source": "unified-memory",
+   "target": "on-prem",
+   "label": "地端跑大模型需大記憶體",
+   "episodes": [
+    668
+   ],
+   "type": "driver"
   }
  ],
- "lastUpdated": "2026-06-05T05:06:00+08:00"
+ "lastUpdated": "2026-06-07T05:06:00+08:00"
 }
