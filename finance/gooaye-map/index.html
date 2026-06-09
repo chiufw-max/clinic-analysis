@@ -246,4 +246,137 @@ function renderGraph() {
   const nodeIds = new Set(nodes.map(n => n.id));
   const links = DATA.links
     .filter(l => nodeIds.has(typeof l.source === 'string' ? l.source : l.source.id)
-              && n
+              && nodeIds.has(typeof l.target === 'string' ? l.target : l.target.id))
+    .map(d => ({...d}));
+
+  // 加 zoom/pan/pinch 行為
+  zoomBehavior = d3.zoom()
+    .scaleExtent([0.3, 4])
+    .on('zoom', (event) => {
+      svgG.attr('transform', event.transform);
+    });
+  svg.call(zoomBehavior);
+  // 雙擊重設視角（mobile 友善）
+  svg.on('dblclick.zoom', () => {
+    svg.transition().duration(300).call(zoomBehavior.transform, d3.zoomIdentity);
+  });
+
+  // 內層 g 包住所有圖形元素
+  svgG = svg.append('g');
+
+  simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(isMobile ? 110 : 90))
+    .force('charge', d3.forceManyBody().strength(isMobile ? -400 : -300))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide(nodeRadius + 8));
+
+  const link = svgG.append('g').attr('stroke-opacity', 0.4)
+    .selectAll('line').data(links).enter().append('line')
+    .attr('stroke', '#94a3b8').attr('stroke-width', d => 0.8 + (d.weight || 1) * 0.5);
+
+  const node = svgG.append('g').selectAll('g').data(nodes).enter().append('g')
+    .attr('class', 'node-g')
+    .call(d3.drag()
+      .on('start', (event, d) => {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+      })
+      .on('drag', (event, d) => {
+        d.fx = event.x; d.fy = event.y;
+      })
+      .on('end', (event, d) => {
+        if (!event.active) simulation.alphaTarget(0);
+        // 拖完保持固定位置（避免又飄走），點兩下可以再釋放
+        // d.fx = null; d.fy = null;  // 註解掉=拖完保持固定
+      }));
+
+  // 節點：更大的觸控目標
+  node.append('circle')
+    .attr('r', d => nodeRadius + Math.min(6, (d.episodes?.length || 1) * 1))
+    .attr('fill', d => TYPE_COLOR[d.type] || '#888')
+    .attr('stroke', '#fff').attr('stroke-width', 2);
+
+  node.append('text')
+    .attr('text-anchor', 'middle').attr('dy', 4)
+    .style('font-size', isMobile ? '11px' : '11px')
+    .style('font-weight', '700')
+    .style('fill', '#fff').style('pointer-events', 'none')
+    .text(d => d.label);
+
+  // 點節點顯示詳情（touch + click 都觸發）
+  const detail = document.getElementById('node-detail');
+  const detailContent = document.getElementById('detail-content');
+  node.on('click', (event, d) => {
+    event.stopPropagation();
+    const eps = d.episodes?.length ? `<br>提及集數：EP${d.episodes.join(', EP')}` : '';
+    const last = d.lastSeen ? `<br>最近一次：${d.lastSeen}` : '';
+    // 找出與此節點相關的連結
+    const related = DATA.links.filter(l =>
+      (typeof l.source === 'string' ? l.source : l.source.id) === d.id ||
+      (typeof l.target === 'string' ? l.target : l.target.id) === d.id
+    ).map(l => {
+      const otherId = (typeof l.source === 'string' ? l.source : l.source.id) === d.id
+        ? (typeof l.target === 'string' ? l.target : l.target.id)
+        : (typeof l.source === 'string' ? l.source : l.source.id);
+      const other = DATA.nodes.find(n => n.id === otherId);
+      return `<li>${other?.label || otherId}：${l.label || ''}</li>`;
+    }).join('');
+    detailContent.innerHTML = `
+      <b>${d.label}</b>（${TYPE_LABEL[d.type] || d.type}）
+      ${eps}${last}
+      ${related ? `<br><br><b>相關：</b><ul style="margin-left:18px;margin-top:4px;color:#94a3b8;">${related}</ul>` : ''}
+    `;
+    detail.style.display = 'block';
+  });
+  document.getElementById('detail-close').addEventListener('click', () => {
+    detail.style.display = 'none';
+  });
+  // 點空白關閉詳情
+  svg.on('click', (event) => {
+    if (event.target.tagName === 'svg') {
+      detail.style.display = 'none';
+    }
+  });
+
+  simulation.on('tick', () => {
+    link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    node.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+}
+
+// 篩選按鈕
+document.querySelectorAll('.ctrl-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.ctrl-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    currentFilter = b.dataset.filter;
+    renderGraph();
+  });
+});
+
+// 重排：重新啟動模擬
+document.getElementById('reset-btn').addEventListener('click', () => {
+  if (simulation) {
+    DATA.nodes.forEach(n => { n.fx = null; n.fy = null; });
+    simulation.alpha(1).restart();
+  }
+});
+
+// 縮放按鈕
+document.getElementById('zoom-in').addEventListener('click', () => {
+  d3.select('#map-svg').transition().duration(200).call(zoomBehavior.scaleBy, 1.4);
+});
+document.getElementById('zoom-out').addEventListener('click', () => {
+  d3.select('#map-svg').transition().duration(200).call(zoomBehavior.scaleBy, 0.7);
+});
+document.getElementById('zoom-fit').addEventListener('click', () => {
+  d3.select('#map-svg').transition().duration(300).call(zoomBehavior.transform, d3.zoomIdentity);
+});
+
+window.addEventListener('resize', () => { if (DATA) renderGraph(); });
+loadData();
+</script>
+
+</body>
+</html>
