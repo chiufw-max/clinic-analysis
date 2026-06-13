@@ -1283,33 +1283,4 @@
       { key: "低軌衛星概念股", titleZh: "台廠低軌衛星概念股", titleEn: "Taiwan LEO Satellite Supply Chain", body: "台廠 SpaceX / Starlink 供應鏈核心股：<strong>啟碁 (6285)</strong>—Starlink router 主力，FCC 公布設計圖印 logo，股癌 EP64 即點名「最純的 SpaceX 概念股」；<strong>昇達科 (3491)</strong>—微波 / RF 元件；<strong>華通 (2313)</strong>—低軌衛星 PCB 龍頭，現增溢價認購；<strong>緯穎 (6669)</strong>—衛星地面站設備。SpaceX IPO 6/12 倒數，題材延續發酵。" },
       { key: "HBM / HBM4E", titleZh: "高頻寬記憶體（HBM4E 規格更新）", titleEn: "High Bandwidth Memory / HBM4E", body: "AI GPU 專用 3D 堆疊記憶體。Vera Rubin 採 HBM4 起跳；<strong>HBM4E 規格</strong>：每腳位 16Gbps（HBM4 為 14Gbps，提升 >14%）、頻寬 4.0TB/s、每堆疊容量 48GB（較前代 +30%），整體效能 vs HBM4 +20%+。<strong>2026-05~06 進度</strong>：Samsung 已交付業界首批 12 層 48GB HBM4E 樣品給主要客戶，並通過 NVIDIA 品質認證、獲訂單，產線依 Vera Rubin 推出計畫調整；Samsung HBM4 量產用於 Vera Rubin，傳輸速度 11.7 Gbps。SK Hynix HBM 市占 ~62%，Micron 升至 21% 超越 Samsung 排第二。台股 HBM 連動：南亞科 2408、群聯 8299、華邦電 2344。" },
       { key: "IPD", titleZh: "整合被動元件", titleEn: "Integrated Passive Device", body: "將被動元件整合嵌入晶片基板的技術。<strong>愛普 (6531 AP Memory)</strong> 的 IPD 整合進 Google TPU 基板中。EP663 指出，Google TPU 成為市場焦點時，愛普隨之獲資金關注——是「題材復活」典型案例。" },
-      { key: "Token-based 商業模式", titleZh: "按量計費（Token-based）", titleEn: "Token-based / Consumption-based Billing", body: "軟體公司將傳統按人頭訂閱（Seat-based）改為按 AI 使用量（token 消耗量）計費的商業模式轉型。<strong>股癌 EP666 核心揭密</strong>：Snowflake (SNOW)、Okta (OKTA) 等率先轉型，財報出現跳躍式驚喜，打破「AI 將取代軟體股」末日論。在 AI 使用量爆發期，Token-based 讓軟體公司營收與 AI 採用量正相關。末日論多為科技大老行銷自家 AI 的恐嚇言論，實際軟體大廠財報極佳，AI 是加分項。" },
-      { key: "鋁電容（房間裡的大象）", titleZh: "鋁電容 SPC/OSC/牛角型缺口 20%+", titleEn: "Aluminum Electrolytic Capacitor (The Elephant in the Room)", body: "相較 MLCC，鋁電容（疊層式 SPC、OSC、工業牛角型 Snap-in）的全球產能缺口更高達 20%+，但市場討論度遠低於 MLCC。<strong>股癌 EP666 揭露</strong>：AI 伺服器高密度化後 PSU 高瓦數、高電壓發展使牛角電容消耗量呈倍數暴增；台廠具備泰國廠等產能優勢，將直接迎來歷史級別的轉單紅利。受惠：凱美 (2375)、立隆電 (2472)、華新科 (2492)。" },
-      { key: "MLCC", titleZh: "多層陶瓷電容", titleEn: "Multilayer Ceramic Capacitor", body: "最常見積層電容，AI 伺服器機架用量是傳統伺服器的 3~5 倍。Vera Rubin 平台預估 430 萬顆 / 機架。最缺 47UF 高壓品（僅 Samsung / Murata 供貨）。股癌 EP661~663 三集聚焦被動元件漲價。" },
-      { key: "Substrate 載板", titleZh: "載板（基板）", titleEn: "Advanced Packaging Substrate (ABF)", body: "封裝晶片所用的連接基板。ABF（Ajinomoto Build-up Film）載板為 AI 晶片關鍵材料。<strong>EP663 提到 Broadcom Soundfish 雙晶片方案</strong>：兩顆晶片拼在一個 substrate 上（類蘋果 Ultra）——欣興 (3037)、南電 (8046)、景碩 (3189) 為主要 ABF 載板廠，是此題材潛在受惠股。" },
-      { key: "現貨市場掃貨", titleZh: "現貨市場掃貨", titleEn: "Spot Market Sweeping", body: "在現貨市場大量買入特定物料的行為。EP663：「如果你已知道供需失衡，你不把便宜料掃光嗎？」類似水果商囤貨邏輯。此現象出現時往往是漲價週期前期，與 2018 年大缺貨潮類似。蜜望實 (8043) 為 EP663 點名通路商。" },
-      { key: "Hyperscaler", titleZh: "超大規模雲端業者", titleEn: "Hyperscaler", body: "指 Microsoft Azure、Amazon AWS、Google Cloud、Meta、Oracle Cloud 等全球性大規模資料中心業者。2026 合計 Capex 共識 $725B (+76%)，為 AI 半導體需求最大推手。鴻海、廣達、緯創 AI 機櫃 ODM 直接受惠。" },
-    ]
-  };
-
-  function renderGlossary() {
-    if (typeof GLOSSARY_DATA === 'undefined') return;
-    const grid = document.getElementById('glossary-grid');
-    const dateEl = document.getElementById('glossary-date');
-    if (!grid) return;
-    if (dateEl) dateEl.textContent = GLOSSARY_DATA.updatedAt || '';
-    grid.innerHTML = '';
-    [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key)).forEach(t => {
-      const card = document.createElement('div');
-      card.className = 'glossary-card';
-      card.innerHTML = '<h3>' + t.key + ' · ' + (t.titleZh || '') + '</h3><div class="term-en">' + (t.titleEn || '') + '</div><p>' + (t.body || '') + '</p>';
-      grid.appendChild(card);
-    });
-  }
-  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', renderGlossary); }
-  else { renderGlossary(); }
-</script>
-
-</body>
-<!-- build 2026-06-10 05:06 UTC+8 r1 -->
-</html>
+      { key: "Token-based 商業模式", titleZh: "按量計費（Token-based）", titleEn: "Token-based / Consumption-

@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-06-07",
+ "updatedAt": "2026-06-14",
  "startDate": "2026-05-20",
- "episodesCount": 6,
+ "episodesCount": 7,
  "episodes": [
   {
    "ep": 663,
@@ -38,6 +38,12 @@
    "date": "2026-06-06",
    "title": "COMPUTEX 軟硬整合落地 · 輝達雙引擎（電力櫃 + RTX Spark）· 傑文斯悖論 · 統一記憶體是 AI PC 最強亮點 · brace for impact 洗籌碼是好事",
    "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-668/"
+  },
+  {
+   "ep": 669,
+   "date": "2026-06-10",
+   "title": "殺戮戰場 vs 流動性壓力測試 · 嚇人但拉長看沒事 · 殺的是槓桿不是基本面 · 等殺破前低再動作",
+   "url": "https://www.threads.com/@read_gooaye"
   }
  ],
  "nodes": [
@@ -764,9 +770,10 @@
    "id": "ma-discipline",
    "label": "月線攻防紀律",
    "type": "strategy",
-   "lastSeen": "2026-06-03",
+   "lastSeen": "2026-06-10",
    "episodes": [
-    667
+    667,
+    669
    ]
   },
   {
@@ -857,9 +864,37 @@
    "id": "wash-chips",
    "label": "brace for impact · 洗籌碼是好事",
    "type": "strategy",
-   "lastSeen": "2026-06-06",
+   "lastSeen": "2026-06-10",
    "episodes": [
-    668
+    668,
+    669
+   ]
+  },
+  {
+   "id": "liquidity-test",
+   "label": "流動性壓力測試",
+   "type": "theme",
+   "lastSeen": "2026-06-10",
+   "episodes": [
+    669
+   ]
+  },
+  {
+   "id": "wash-leverage",
+   "label": "洗槓桿 / 融資斷頭",
+   "type": "theme",
+   "lastSeen": "2026-06-10",
+   "episodes": [
+    669
+   ]
+  },
+  {
+   "id": "break-prevlow",
+   "label": "殺破前低再動作",
+   "type": "strategy",
+   "lastSeen": "2026-06-10",
+   "episodes": [
+    669
    ]
   }
  ],
@@ -1826,7 +1861,43 @@
     668
    ],
    "type": "driver"
+  },
+  {
+   "source": "menggon",
+   "target": "liquidity-test",
+   "label": "本集定調",
+   "episodes": [
+    669
+   ],
+   "type": "advocate"
+  },
+  {
+   "source": "menggon",
+   "target": "break-prevlow",
+   "label": "操作紀律",
+   "episodes": [
+    669
+   ],
+   "type": "advocate"
+  },
+  {
+   "source": "liquidity-test",
+   "target": "wash-leverage",
+   "label": "殺的是槓桿",
+   "episodes": [
+    669
+   ],
+   "type": "related"
+  },
+  {
+   "source": "wash-chips",
+   "target": "liquidity-test",
+   "label": "延續洗籌碼",
+   "episodes": [
+    669
+   ],
+   "type": "related"
   }
  ],
- "lastUpdated": "2026-06-07T05:06:00+08:00"
+ "lastUpdated": "2026-06-14T05:06:00+08:00"
 }
