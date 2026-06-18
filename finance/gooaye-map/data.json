@@ -1,7 +1,7 @@
 {
   "updatedAt": "2026-06-17",
   "startDate": "2026-05-20",
-  "episodesCount": 8,
+  "episodesCount": 9,
   "episodes": [
     {
       "ep": 663,
@@ -50,19 +50,21 @@
       "date": "2026-06-13",
       "title": "SpaceX 上市帶出估值哲學·估在別人前面 · 衛星股題材兌現大逃殺 · 台股壞消息一次出盡不等季線買進 · 被動元件漲價超預期循環更長 · Anthropic 招監管反催化地端 AI",
       "url": "https://vocus.cc/article/6a2d1fe3fd897800010560f4"
-    }
+    },
+    671
   ],
   "nodes": [
     {
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-17",
       "episodes": [
         663,
         665,
         667,
-        670
+        670,
+        671
       ]
     },
     {
@@ -161,14 +163,15 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-17",
       "episodes": [
         664,
         665,
         666,
         667,
         668,
-        670
+        670,
+        671
       ]
     },
     {
@@ -293,7 +296,7 @@
       "id": "menggon",
       "label": "謝孟恭",
       "type": "person",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-17",
       "episodes": [
         663,
         664,
@@ -301,7 +304,8 @@
         666,
         667,
         668,
-        670
+        670,
+        671
       ]
     },
     {
@@ -760,9 +764,10 @@
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-06-17",
       "episodes": [
-        667
+        667,
+        671
       ]
     },
     {
@@ -797,9 +802,10 @@
       "id": "lopo",
       "label": "光寶科 2301",
       "type": "stock",
-      "lastSeen": "2026-06-06",
+      "lastSeen": "2026-06-17",
       "episodes": [
-        668
+        668,
+        671
       ],
       "desc": "EP668 操作日記：再進一次，結果被殺爛。電源/光通供應鏈。"
     },
@@ -954,9 +960,10 @@
       "id": "delta",
       "label": "台達電 2308",
       "type": "stock",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-17",
       "episodes": [
-        670
+        670,
+        671
       ]
     },
     {
@@ -1053,9 +1060,10 @@
       "id": "hvdc-800v",
       "label": "800V HVDC 延後",
       "type": "event",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-17",
       "episodes": [
-        670
+        670,
+        671
       ]
     },
     {
@@ -1065,6 +1073,213 @@
       "lastSeen": "2026-06-13",
       "episodes": [
         670
+      ]
+    },
+    {
+      "id": "fubon",
+      "label": "富邦金 2881",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "jentech",
+      "label": "健策 3653",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "qiangmao",
+      "label": "強茂 2481",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "deway",
+      "label": "德微 3675",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "tw-semi-5425",
+      "label": "台半 5425",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "apec-8261",
+      "label": "富鼎 8261",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "dazhong-6435",
+      "label": "大中 6435",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "infineon",
+      "label": "英飛凌 Infineon",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "onsemi",
+      "label": "安森美 onsemi",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "mps",
+      "label": "MPS",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "renesas",
+      "label": "瑞薩 Renesas",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "ti",
+      "label": "德州儀器 TI",
+      "type": "stock",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "nexperia",
+      "label": "安世半導體 Nexperia",
+      "type": "company",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "discrete-comp",
+      "label": "離散/功率元件",
+      "type": "theme",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "pmic",
+      "label": "PMIC 電源管理晶片",
+      "type": "theme",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "drmos",
+      "label": "DrMOS",
+      "type": "theme",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "sic-mosfet",
+      "label": "SiC MOSFET",
+      "type": "theme",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "chips-messy",
+      "label": "籌碼亂掉",
+      "type": "concept",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "spillover",
+      "label": "高階排擠外溢",
+      "type": "concept",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "tsmc-weight-up",
+      "label": "台積電比重拉高",
+      "type": "concept",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "flee-to-tsmc",
+      "label": "崩壞才灌錢避難",
+      "type": "concept",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "fin-relay",
+      "label": "金融股接棒",
+      "type": "concept",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
+      ]
+    },
+    {
+      "id": "non-china-shift",
+      "label": "去中化轉單",
+      "type": "concept",
+      "lastSeen": "2026-06-17",
+      "episodes": [
+        671
       ]
     }
   ],
@@ -2220,6 +2435,213 @@
       "label": "理論利多",
       "episodes": [
         670
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "menggon",
+      "target": "discrete-comp",
+      "label": "主推下一棒",
+      "episodes": [
+        671
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "tsmc-weight-up",
+      "label": "看好",
+      "episodes": [
+        671
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "discrete-comp",
+      "target": "pmic",
+      "label": "包含",
+      "episodes": [
+        671
+      ],
+      "type": "contains"
+    },
+    {
+      "source": "discrete-comp",
+      "target": "drmos",
+      "label": "包含",
+      "episodes": [
+        671
+      ],
+      "type": "contains"
+    },
+    {
+      "source": "discrete-comp",
+      "target": "sic-mosfet",
+      "label": "包含",
+      "episodes": [
+        671
+      ],
+      "type": "contains"
+    },
+    {
+      "source": "nexperia",
+      "target": "non-china-shift",
+      "label": "制裁催化",
+      "episodes": [
+        671
+      ],
+      "type": "cause"
+    },
+    {
+      "source": "non-china-shift",
+      "target": "discrete-comp",
+      "label": "受惠",
+      "episodes": [
+        671
+      ],
+      "type": "benefit"
+    },
+    {
+      "source": "spillover",
+      "target": "discrete-comp",
+      "label": "驅動",
+      "episodes": [
+        671
+      ],
+      "type": "drive"
+    },
+    {
+      "source": "qiangmao",
+      "target": "discrete-comp",
+      "label": "受惠股",
+      "episodes": [
+        671
+      ],
+      "type": "member"
+    },
+    {
+      "source": "deway",
+      "target": "discrete-comp",
+      "label": "受惠股",
+      "episodes": [
+        671
+      ],
+      "type": "member"
+    },
+    {
+      "source": "tw-semi-5425",
+      "target": "discrete-comp",
+      "label": "受惠股",
+      "episodes": [
+        671
+      ],
+      "type": "member"
+    },
+    {
+      "source": "apec-8261",
+      "target": "discrete-comp",
+      "label": "受惠股",
+      "episodes": [
+        671
+      ],
+      "type": "member"
+    },
+    {
+      "source": "dazhong-6435",
+      "target": "sic-mosfet",
+      "label": "受惠股",
+      "episodes": [
+        671
+      ],
+      "type": "member"
+    },
+    {
+      "source": "delta",
+      "target": "pmic",
+      "label": "電源升級",
+      "episodes": [
+        671
+      ],
+      "type": "benefit"
+    },
+    {
+      "source": "infineon",
+      "target": "pmic",
+      "label": "IDM 漲價",
+      "episodes": [
+        671
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "ti",
+      "target": "pmic",
+      "label": "IDM 漲價",
+      "episodes": [
+        671
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "tsmc",
+      "target": "flee-to-tsmc",
+      "label": "避風港",
+      "episodes": [
+        671
+      ],
+      "type": "benefit"
+    },
+    {
+      "source": "tsmc",
+      "target": "tsmc-weight-up",
+      "label": "主角",
+      "episodes": [
+        671
+      ],
+      "type": "benefit"
+    },
+    {
+      "source": "fubon",
+      "target": "fin-relay",
+      "label": "代表股",
+      "episodes": [
+        671
+      ],
+      "type": "member"
+    },
+    {
+      "source": "hvdc-800v",
+      "target": "discrete-comp",
+      "label": "遞延洗籌碼",
+      "episodes": [
+        671
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "jentech",
+      "target": "power-semi",
+      "label": "操作減碼",
+      "episodes": [
+        671
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "passive",
+      "target": "chips-messy",
+      "label": "炒過頭",
+      "episodes": [
+        671
+      ],
+      "type": "cause"
+    },
+    {
+      "source": "lopo",
+      "target": "delta",
+      "label": "資金挪移",
+      "episodes": [
+        671
       ],
       "type": "relate"
     }
