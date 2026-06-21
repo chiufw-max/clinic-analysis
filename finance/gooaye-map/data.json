@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-17",
+  "updatedAt": "2026-06-22",
   "startDate": "2026-05-20",
-  "episodesCount": 9,
+  "episodesCount": 10,
   "episodes": [
     {
       "ep": 663,
@@ -51,7 +51,18 @@
       "title": "SpaceX 上市帶出估值哲學·估在別人前面 · 衛星股題材兌現大逃殺 · 台股壞消息一次出盡不等季線買進 · 被動元件漲價超預期循環更長 · Anthropic 招監管反催化地端 AI",
       "url": "https://vocus.cc/article/6a2d1fe3fd897800010560f4"
     },
-    671
+    {
+      "ep": 671,
+      "date": "2026-06-17",
+      "title": "被動元件漲價信從半信半疑到全信 · 籌碼亂掉找下一棒（離散/功率元件）· 台積電比重拉高、崩壞才灌錢避難",
+      "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-671/"
+    },
+    {
+      "ep": 672,
+      "date": "2026-06-20",
+      "title": "「缺料就無法出貨」剛性短缺 · 功率半導體/MOSFET 接棒 · 交期99週訂單外溢台廠 · 順大廠料流找第二供應 · 機器人/IPC 初期",
+      "url": "https://vocus.cc/article/6a365820fd89780001bafdd6"
+    }
   ],
   "nodes": [
     {
@@ -220,14 +231,15 @@
       "id": "passive",
       "label": "被動元件",
       "type": "industry",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-20",
       "episodes": [
         663,
         664,
         665,
         666,
         667,
-        670
+        670,
+        672
       ]
     },
     {
@@ -492,10 +504,11 @@
       "label": "機器人類股",
       "type": "theme",
       "episodes": [
-        665
+        665,
+        672
       ],
       "firstSeen": 665,
-      "lastSeen": 665,
+      "lastSeen": "2026-06-20",
       "desc": "EP665 謝孟恭：若手上不是一堆處置股，說不定會想介入機器人類股。若 2~3 年內狂推，發酵時間點更早。直得/仁寶/上銀 Computex 展出。"
     },
     {
@@ -764,10 +777,11 @@
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-20",
       "episodes": [
         667,
-        671
+        671,
+        672
       ]
     },
     {
@@ -1097,27 +1111,30 @@
       "id": "qiangmao",
       "label": "強茂 2481",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-20",
       "episodes": [
-        671
+        671,
+        672
       ]
     },
     {
       "id": "deway",
       "label": "德微 3675",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-20",
       "episodes": [
-        671
+        671,
+        672
       ]
     },
     {
       "id": "tw-semi-5425",
       "label": "台半 5425",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-20",
       "episodes": [
-        671
+        671,
+        672
       ]
     },
     {
@@ -1196,9 +1213,10 @@
       "id": "discrete-comp",
       "label": "離散/功率元件",
       "type": "theme",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-20",
       "episodes": [
-        671
+        671,
+        672
       ]
     },
     {
@@ -1223,9 +1241,10 @@
       "id": "sic-mosfet",
       "label": "SiC MOSFET",
       "type": "theme",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-20",
       "episodes": [
-        671
+        671,
+        672
       ]
     },
     {
@@ -1280,6 +1299,33 @@
       "lastSeen": "2026-06-17",
       "episodes": [
         671
+      ]
+    },
+    {
+      "id": "rigid-shortage",
+      "label": "剛性短缺（缺料無法出貨）",
+      "type": "theme",
+      "lastSeen": "2026-06-20",
+      "episodes": [
+        672
+      ]
+    },
+    {
+      "id": "ipc-robot",
+      "label": "工業電腦 IPC（機器人模組）",
+      "type": "theme",
+      "lastSeen": "2026-06-20",
+      "episodes": [
+        672
+      ]
+    },
+    {
+      "id": "mature-fab",
+      "label": "成熟製程二線晶圓代工",
+      "type": "theme",
+      "lastSeen": "2026-06-20",
+      "episodes": [
+        672
       ]
     }
   ],
@@ -2074,7 +2120,8 @@
       "target": "power-semi",
       "label": "試單插眼",
       "episodes": [
-        667
+        667,
+        672
       ],
       "type": "position"
     },
@@ -2644,7 +2691,70 @@
         671
       ],
       "type": "relate"
+    },
+    {
+      "source": "power-semi",
+      "target": "rigid-shortage",
+      "label": "剛性短缺",
+      "episodes": [
+        672
+      ],
+      "type": "relation"
+    },
+    {
+      "source": "rigid-shortage",
+      "target": "mature-fab",
+      "label": "訂單外溢",
+      "episodes": [
+        672
+      ],
+      "type": "relation"
+    },
+    {
+      "source": "passive",
+      "target": "power-semi",
+      "label": "資金輪動接棒",
+      "episodes": [
+        672
+      ],
+      "type": "relation"
+    },
+    {
+      "source": "robot-stocks",
+      "target": "ipc-robot",
+      "label": "模組訂單",
+      "episodes": [
+        672
+      ],
+      "type": "relation"
+    },
+    {
+      "source": "power-semi",
+      "target": "qiangmao",
+      "label": "台廠對照",
+      "episodes": [
+        672
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "power-semi",
+      "target": "tw-semi-5425",
+      "label": "台廠對照",
+      "episodes": [
+        672
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "power-semi",
+      "target": "deway",
+      "label": "台廠對照",
+      "episodes": [
+        672
+      ],
+      "type": "supply"
     }
   ],
-  "lastUpdated": "2026-06-17"
+  "lastUpdated": "2026-06-22"
 }
