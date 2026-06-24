@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-22",
+  "updatedAt": "2026-06-25",
   "startDate": "2026-05-20",
-  "episodesCount": 10,
+  "episodesCount": 11,
   "episodes": [
     {
       "ep": 663,
@@ -62,6 +62,12 @@
       "date": "2026-06-20",
       "title": "「缺料就無法出貨」剛性短缺 · 功率半導體/MOSFET 接棒 · 交期99週訂單外溢台廠 · 順大廠料流找第二供應 · 機器人/IPC 初期",
       "url": "https://vocus.cc/article/6a365820fd89780001bafdd6"
+    },
+    {
+      "ep": 673,
+      "date": "2026-06-24",
+      "title": "韓國人真的很會玩 · 單一股票兩倍槓桿 ETF · 三星/SK海力士 AI 記憶體狂熱",
+      "url": "https://www.youtube.com/watch?v=YS_nOUjrqAc"
     }
   ],
   "nodes": [
@@ -199,9 +205,10 @@
       "id": "micron",
       "label": "Micron MU",
       "type": "stock",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-06-25",
       "episodes": [
-        665
+        665,
+        673
       ]
     },
     {
@@ -1327,6 +1334,96 @@
       "episodes": [
         672
       ]
+    },
+    {
+      "id": "samsung",
+      "label": "三星電子 005930.KS",
+      "type": "stock",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "skhynix",
+      "label": "SK 海力士 000660.KS",
+      "type": "stock",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "nanya",
+      "label": "南亞科 2408",
+      "type": "stock",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "winbond",
+      "label": "華邦電 2344",
+      "type": "stock",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "macronix",
+      "label": "旺宏 2337",
+      "type": "stock",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "phison",
+      "label": "群聯 8299",
+      "type": "stock",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "lev-etf",
+      "label": "韓國單一股票兩倍槓桿 ETF",
+      "type": "theme",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "retail-mania",
+      "label": "散戶狂熱 (韓國 1400 萬戶)",
+      "type": "theme",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "rebalance",
+      "label": "再平衡效應",
+      "type": "theme",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
+    },
+    {
+      "id": "ai-mem-cycle",
+      "label": "AI 記憶體超級循環",
+      "type": "theme",
+      "lastSeen": "2026-06-25",
+      "episodes": [
+        673
+      ]
     }
   ],
   "links": [
@@ -1612,7 +1709,8 @@
       "target": "hbm",
       "label": "HBM3E 主力",
       "episodes": [
-        665
+        665,
+        673
       ],
       "type": "industry-of"
     },
@@ -2754,7 +2852,133 @@
         672
       ],
       "type": "supply"
+    },
+    {
+      "source": "menggon",
+      "target": "lev-etf",
+      "label": "本集主題",
+      "episodes": [
+        673
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "samsung",
+      "target": "lev-etf",
+      "label": "綁定標的",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "skhynix",
+      "target": "lev-etf",
+      "label": "綁定標的",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "lev-etf",
+      "target": "retail-mania",
+      "label": "散戶瘋押",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "lev-etf",
+      "target": "rebalance",
+      "label": "波動放大",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "samsung",
+      "target": "hbm",
+      "label": "HBM 雙霸主",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "skhynix",
+      "target": "hbm",
+      "label": "HBM 龍頭",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "hbm",
+      "target": "ai-mem-cycle",
+      "label": "需求驅動",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "micron",
+      "target": "ai-mem-cycle",
+      "label": "財報背書",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "nanya",
+      "target": "hbm",
+      "label": "台廠記憶體連動",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "winbond",
+      "target": "hbm",
+      "label": "台廠記憶體連動",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "macronix",
+      "target": "hbm",
+      "label": "台廠記憶體連動",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "phison",
+      "target": "hbm",
+      "label": "台廠記憶體連動",
+      "episodes": [
+        673
+      ],
+      "type": "related"
+    },
+    {
+      "source": "micron",
+      "target": "nanya",
+      "label": "利多連動",
+      "episodes": [
+        673
+      ],
+      "type": "related"
     }
   ],
-  "lastUpdated": "2026-06-22"
+  "lastUpdated": "2026-06-25"
 }
