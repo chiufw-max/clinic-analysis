@@ -1577,17 +1577,4 @@
     if (!grid) return;
     if (dateEl) dateEl.textContent = GLOSSARY_DATA.updatedAt || '';
     grid.innerHTML = '';
-    [...GLOSSARY_DATA.terms].sort((a,b) => a.key.localeCompare(b.key)).forEach(t => {
-      const card = document.createElement('div');
-      card.className = 'glossary-card';
-      card.innerHTML = '<h3>' + t.key + ' · ' + (t.titleZh || '') + '</h3><div class="term-en">' + (t.titleEn || '') + '</div><p>' + (t.body || '') + '</p>';
-      grid.appendChild(card);
-    });
-  }
-  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', renderGlossary); }
-  else { renderGlossary(); }
-</script>
-
-</body>
-<!-- build 2026-06-20 05:06 UTC+8 r1 -->
-</html>
+    [...GLOSSARY_DATA.terms].sort((a,b) => a.key.lo
