@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-25",
+  "updatedAt": "2026-06-29",
   "startDate": "2026-05-20",
-  "episodesCount": 11,
+  "episodesCount": 12,
   "episodes": [
     {
       "ep": 663,
@@ -68,7 +68,8 @@
       "date": "2026-06-24",
       "title": "韓國人真的很會玩 · 單一股票兩倍槓桿 ETF · 三星/SK海力士 AI 記憶體狂熱",
       "url": "https://www.youtube.com/watch?v=YS_nOUjrqAc"
-    }
+    },
+    674
   ],
   "nodes": [
     {
@@ -147,10 +148,11 @@
       "id": "googl",
       "label": "Google GOOGL",
       "type": "stock",
-      "lastSeen": "2026-05-23",
+      "lastSeen": "2026-06-27",
       "episodes": [
         663,
-        664
+        664,
+        674
       ]
     },
     {
@@ -180,7 +182,7 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-27",
       "episodes": [
         664,
         665,
@@ -188,7 +190,8 @@
         667,
         668,
         670,
-        671
+        671,
+        674
       ]
     },
     {
@@ -205,20 +208,22 @@
       "id": "micron",
       "label": "Micron MU",
       "type": "stock",
-      "lastSeen": "2026-06-25",
+      "lastSeen": "2026-06-27",
       "episodes": [
         665,
-        673
+        673,
+        674
       ]
     },
     {
       "id": "mrvl",
       "label": "Marvell MRVL",
       "type": "stock",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-06-27",
       "episodes": [
         665,
-        667
+        667,
+        674
       ]
     },
     {
@@ -621,9 +626,10 @@
       "id": "crwd",
       "label": "CrowdStrike CRWD",
       "type": "stock",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-06-27",
       "episodes": [
-        667
+        667,
+        674
       ]
     },
     {
@@ -945,9 +951,10 @@
       "id": "tsla",
       "label": "Tesla TSLA",
       "type": "stock",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-27",
       "episodes": [
-        670
+        670,
+        674
       ]
     },
     {
@@ -981,10 +988,11 @@
       "id": "delta",
       "label": "台達電 2308",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-06-27",
       "episodes": [
         670,
-        671
+        671,
+        674
       ]
     },
     {
@@ -1045,9 +1053,10 @@
       "id": "edge-ai",
       "label": "地端模型 / 邊緣運算",
       "type": "theme",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-06-27",
       "episodes": [
-        670
+        670,
+        674
       ]
     },
     {
@@ -1411,9 +1420,10 @@
       "id": "rebalance",
       "label": "再平衡效應",
       "type": "theme",
-      "lastSeen": "2026-06-25",
+      "lastSeen": "2026-06-27",
       "episodes": [
-        673
+        673,
+        674
       ]
     },
     {
@@ -1423,6 +1433,87 @@
       "lastSeen": "2026-06-25",
       "episodes": [
         673
+      ]
+    },
+    {
+      "id": "aapl",
+      "label": "蘋果 AAPL",
+      "type": "stock",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "msft",
+      "label": "微軟 MSFT",
+      "type": "stock",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "umc",
+      "label": "聯電 2303",
+      "type": "stock",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "huaxinke",
+      "label": "華新科 2492",
+      "type": "stock",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "xinxing",
+      "label": "欣興 3037",
+      "type": "stock",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "jiance",
+      "label": "健策 3653",
+      "type": "stock",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "spcx",
+      "label": "SpaceX SPCX",
+      "type": "stock",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "catch-knife",
+      "label": "接刀科技巨頭",
+      "type": "theme",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
+      ]
+    },
+    {
+      "id": "apple-pricehike",
+      "label": "蘋果漲價預熱",
+      "type": "event",
+      "lastSeen": "2026-06-27",
+      "episodes": [
+        674
       ]
     }
   ],
@@ -2011,7 +2102,8 @@
       "target": "mrvl",
       "label": "ASIC 警語：不如 MTK/AVGO 明確",
       "episodes": [
-        667
+        667,
+        674
       ],
       "type": "caution"
     },
@@ -2978,7 +3070,115 @@
         673
       ],
       "type": "related"
+    },
+    {
+      "source": "menggon",
+      "target": "rebalance",
+      "label": "解讀近期下殺主因",
+      "episodes": [
+        674
+      ],
+      "type": "view"
+    },
+    {
+      "source": "menggon",
+      "target": "catch-knife",
+      "label": "美股操作策略",
+      "episodes": [
+        674
+      ],
+      "type": "strategy"
+    },
+    {
+      "source": "menggon",
+      "target": "aapl",
+      "label": "接刀看多",
+      "episodes": [
+        674
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "googl",
+      "label": "接刀/降本增效看多",
+      "episodes": [
+        674
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "crwd",
+      "label": "操作:加碼",
+      "episodes": [
+        674
+      ],
+      "type": "operate"
+    },
+    {
+      "source": "menggon",
+      "target": "tsla",
+      "label": "操作:賣出籌SpaceX",
+      "episodes": [
+        674
+      ],
+      "type": "operate"
+    },
+    {
+      "source": "menggon",
+      "target": "umc",
+      "label": "操作:試單",
+      "episodes": [
+        674
+      ],
+      "type": "operate"
+    },
+    {
+      "source": "tsla",
+      "target": "spcx",
+      "label": "賣TSLA換SpaceX",
+      "episodes": [
+        674
+      ],
+      "type": "rotate"
+    },
+    {
+      "source": "aapl",
+      "target": "edge-ai",
+      "label": "邊緣AI領導地位",
+      "episodes": [
+        674
+      ],
+      "type": "theme"
+    },
+    {
+      "source": "aapl",
+      "target": "apple-pricehike",
+      "label": "MacBook漲價10-20%",
+      "episodes": [
+        674
+      ],
+      "type": "event"
+    },
+    {
+      "source": "catch-knife",
+      "target": "googl",
+      "label": "標的",
+      "episodes": [
+        674
+      ],
+      "type": "member"
+    },
+    {
+      "source": "catch-knife",
+      "target": "aapl",
+      "label": "標的",
+      "episodes": [
+        674
+      ],
+      "type": "member"
     }
   ],
-  "lastUpdated": "2026-06-25"
+  "lastUpdated": "2026-06-29"
 }
