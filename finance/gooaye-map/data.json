@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-29",
+  "updatedAt": "2026-07-02",
   "startDate": "2026-05-20",
-  "episodesCount": 12,
+  "episodesCount": 13,
   "episodes": [
     {
       "ep": 663,
@@ -69,20 +69,27 @@
       "title": "韓國人真的很會玩 · 單一股票兩倍槓桿 ETF · 三星/SK海力士 AI 記憶體狂熱",
       "url": "https://www.youtube.com/watch?v=YS_nOUjrqAc"
     },
-    674
+    674,
+    {
+      "ep": 675,
+      "date": "2026-07-01",
+      "title": "上半年作帳行情落幕 · 只買「需求導向」漲價 · IC 設計三雄轉強 · 汰弱留強",
+      "url": "https://vocus.cc/article/6a44fff9fd8978000106a2da"
+    }
   ],
   "nodes": [
     {
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-01",
       "episodes": [
         663,
         665,
         667,
         670,
-        671
+        671,
+        675
       ]
     },
     {
@@ -99,12 +106,13 @@
       "id": "mtk",
       "label": "聯發科 2454",
       "type": "stock",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-07-01",
       "episodes": [
         663,
         667,
         668,
-        670
+        670,
+        675
       ]
     },
     {
@@ -182,7 +190,7 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-06-27",
+      "lastSeen": "2026-07-01",
       "episodes": [
         664,
         665,
@@ -191,7 +199,8 @@
         668,
         670,
         671,
-        674
+        674,
+        675
       ]
     },
     {
@@ -243,7 +252,7 @@
       "id": "passive",
       "label": "被動元件",
       "type": "industry",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-07-01",
       "episodes": [
         663,
         664,
@@ -251,7 +260,8 @@
         666,
         667,
         670,
-        672
+        672,
+        675
       ]
     },
     {
@@ -279,11 +289,12 @@
       "id": "asic",
       "label": "ASIC 客製矽",
       "type": "theme",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-07-01",
       "episodes": [
         663,
         665,
-        667
+        667,
+        675
       ]
     },
     {
@@ -645,18 +656,20 @@
       "id": "alc-3661",
       "label": "世芯 3661 (ASIC)",
       "type": "stock",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-07-01",
       "episodes": [
-        667
+        667,
+        675
       ]
     },
     {
       "id": "alc-3443",
       "label": "創意 3443 (ASIC)",
       "type": "stock",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-07-01",
       "episodes": [
-        667
+        667,
+        675
       ]
     },
     {
@@ -790,11 +803,12 @@
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-07-01",
       "episodes": [
         667,
         671,
-        672
+        672,
+        675
       ]
     },
     {
@@ -1229,10 +1243,11 @@
       "id": "discrete-comp",
       "label": "離散/功率元件",
       "type": "theme",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-07-01",
       "episodes": [
         671,
-        672
+        672,
+        675
       ]
     },
     {
@@ -1257,10 +1272,11 @@
       "id": "sic-mosfet",
       "label": "SiC MOSFET",
       "type": "theme",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-07-01",
       "episodes": [
         671,
-        672
+        672,
+        675
       ]
     },
     {
@@ -1420,10 +1436,11 @@
       "id": "rebalance",
       "label": "再平衡效應",
       "type": "theme",
-      "lastSeen": "2026-06-27",
+      "lastSeen": "2026-07-01",
       "episodes": [
         673,
-        674
+        674,
+        675
       ]
     },
     {
@@ -1466,9 +1483,10 @@
       "id": "huaxinke",
       "label": "華新科 2492",
       "type": "stock",
-      "lastSeen": "2026-06-27",
+      "lastSeen": "2026-07-01",
       "episodes": [
-        674
+        674,
+        675
       ]
     },
     {
@@ -1514,6 +1532,69 @@
       "lastSeen": "2026-06-27",
       "episodes": [
         674
+      ]
+    },
+    {
+      "id": "gud-3035",
+      "label": "智原 3035 (ASIC)",
+      "type": "stock",
+      "lastSeen": "2026-07-01",
+      "episodes": [
+        675
+      ]
+    },
+    {
+      "id": "etf-0050",
+      "label": "0050 元大台灣50",
+      "type": "stock",
+      "lastSeen": "2026-07-01",
+      "episodes": [
+        675
+      ]
+    },
+    {
+      "id": "demand-driven-rise",
+      "label": "需求導向的漲價",
+      "type": "concept",
+      "lastSeen": "2026-07-01",
+      "episodes": [
+        675
+      ]
+    },
+    {
+      "id": "window-dressing-end",
+      "label": "作帳行情/季底再平衡落幕",
+      "type": "concept",
+      "lastSeen": "2026-07-01",
+      "episodes": [
+        675
+      ]
+    },
+    {
+      "id": "survivorship",
+      "label": "汰弱留強·有些東西不會回來",
+      "type": "concept",
+      "lastSeen": "2026-07-01",
+      "episodes": [
+        675
+      ]
+    },
+    {
+      "id": "design-strong",
+      "label": "IC 設計三雄轉強站上均線",
+      "type": "theme",
+      "lastSeen": "2026-07-01",
+      "episodes": [
+        675
+      ]
+    },
+    {
+      "id": "consensus-trap",
+      "label": "社群共識的陷阱",
+      "type": "concept",
+      "lastSeen": "2026-07-01",
+      "episodes": [
+        675
       ]
     }
   ],
@@ -3178,7 +3259,124 @@
         674
       ],
       "type": "member"
+    },
+    {
+      "source": "menggon",
+      "target": "demand-driven-rise",
+      "label": "只買需求導向漲價",
+      "episodes": [
+        675
+      ],
+      "type": "view"
+    },
+    {
+      "source": "menggon",
+      "target": "window-dressing-end",
+      "label": "上半年作帳落幕",
+      "episodes": [
+        675
+      ],
+      "type": "view"
+    },
+    {
+      "source": "menggon",
+      "target": "survivorship",
+      "label": "汰弱留強",
+      "episodes": [
+        675
+      ],
+      "type": "view"
+    },
+    {
+      "source": "menggon",
+      "target": "design-strong",
+      "label": "IC設計三雄轉強",
+      "episodes": [
+        675
+      ],
+      "type": "watch"
+    },
+    {
+      "source": "menggon",
+      "target": "consensus-trap",
+      "label": "別把社群當唯一情報",
+      "episodes": [
+        675
+      ],
+      "type": "view"
+    },
+    {
+      "source": "design-strong",
+      "target": "mtk",
+      "label": "聯發科轉強",
+      "episodes": [
+        675
+      ],
+      "type": "member"
+    },
+    {
+      "source": "design-strong",
+      "target": "alc-3661",
+      "label": "世芯轉強",
+      "episodes": [
+        675
+      ],
+      "type": "member"
+    },
+    {
+      "source": "design-strong",
+      "target": "alc-3443",
+      "label": "創意轉強",
+      "episodes": [
+        675
+      ],
+      "type": "member"
+    },
+    {
+      "source": "design-strong",
+      "target": "gud-3035",
+      "label": "智原對照",
+      "episodes": [
+        675
+      ],
+      "type": "member"
+    },
+    {
+      "source": "design-strong",
+      "target": "tsmc",
+      "label": "資金可能回流台積電",
+      "episodes": [
+        675
+      ],
+      "type": "rotate"
+    },
+    {
+      "source": "survivorship",
+      "target": "etf-0050",
+      "label": "被動投資靠成分股汰換凹單",
+      "episodes": [
+        675
+      ],
+      "type": "contrast"
+    },
+    {
+      "source": "demand-driven-rise",
+      "target": "passive",
+      "label": "被動元件漲價需檢驗需求",
+      "episodes": [
+        675
+      ],
+      "type": "apply"
+    },
+    {
+      "source": "demand-driven-rise",
+      "target": "power-semi",
+      "label": "功率漲價屬剛性需求",
+      "episodes": [
+        675
+      ],
+      "type": "apply"
     }
   ],
-  "lastUpdated": "2026-06-29"
+  "lastUpdated": "2026-07-01"
 }
