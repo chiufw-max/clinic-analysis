@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-02",
+  "updatedAt": "2026-07-05",
   "startDate": "2026-05-20",
-  "episodesCount": 13,
+  "episodesCount": 14,
   "episodes": [
     {
       "ep": 663,
@@ -75,6 +75,12 @@
       "date": "2026-07-01",
       "title": "上半年作帳行情落幕 · 只買「需求導向」漲價 · IC 設計三雄轉強 · 汰弱留強",
       "url": "https://vocus.cc/article/6a44fff9fd8978000106a2da"
+    },
+    {
+      "ep": 676,
+      "date": "2026-07-04",
+      "title": "別以為 AI 只剩台積電 · 資金往外溢受惠零組件走 · 需求導向漲價 > 成本轉嫁 · 被動/功率/封測接棒",
+      "url": "https://www.threads.com/@28kylef_/post/DaXauskFGIv/"
     }
   ],
   "nodes": [
@@ -82,14 +88,15 @@
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-07-04",
       "episodes": [
         663,
         665,
         667,
         670,
         671,
-        675
+        675,
+        676
       ]
     },
     {
@@ -190,7 +197,7 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-07-04",
       "episodes": [
         664,
         665,
@@ -200,7 +207,8 @@
         670,
         671,
         674,
-        675
+        675,
+        676
       ]
     },
     {
@@ -252,7 +260,7 @@
       "id": "passive",
       "label": "被動元件",
       "type": "industry",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-07-04",
       "episodes": [
         663,
         664,
@@ -261,7 +269,8 @@
         667,
         670,
         672,
-        675
+        675,
+        676
       ]
     },
     {
@@ -331,7 +340,7 @@
       "id": "menggon",
       "label": "謝孟恭",
       "type": "person",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-04",
       "episodes": [
         663,
         664,
@@ -340,7 +349,8 @@
         667,
         668,
         670,
-        671
+        671,
+        676
       ]
     },
     {
@@ -803,12 +813,13 @@
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-07-04",
       "episodes": [
         667,
         671,
         672,
-        675
+        675,
+        676
       ]
     },
     {
@@ -1141,48 +1152,53 @@
       "id": "qiangmao",
       "label": "強茂 2481",
       "type": "stock",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-07-04",
       "episodes": [
         671,
-        672
+        672,
+        676
       ]
     },
     {
       "id": "deway",
       "label": "德微 3675",
       "type": "stock",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-07-04",
       "episodes": [
         671,
-        672
+        672,
+        676
       ]
     },
     {
       "id": "tw-semi-5425",
       "label": "台半 5425",
       "type": "stock",
-      "lastSeen": "2026-06-20",
+      "lastSeen": "2026-07-04",
       "episodes": [
         671,
-        672
+        672,
+        676
       ]
     },
     {
       "id": "apec-8261",
       "label": "富鼎 8261",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-04",
       "episodes": [
-        671
+        671,
+        676
       ]
     },
     {
       "id": "dazhong-6435",
       "label": "大中 6435",
       "type": "stock",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-04",
       "episodes": [
-        671
+        671,
+        676
       ]
     },
     {
@@ -1243,11 +1259,12 @@
       "id": "discrete-comp",
       "label": "離散/功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-07-04",
       "episodes": [
         671,
         672,
-        675
+        675,
+        676
       ]
     },
     {
@@ -1292,9 +1309,10 @@
       "id": "spillover",
       "label": "高階排擠外溢",
       "type": "concept",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-04",
       "episodes": [
-        671
+        671,
+        676
       ]
     },
     {
@@ -1483,10 +1501,11 @@
       "id": "huaxinke",
       "label": "華新科 2492",
       "type": "stock",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-07-04",
       "episodes": [
         674,
-        675
+        675,
+        676
       ]
     },
     {
@@ -1556,9 +1575,10 @@
       "id": "demand-driven-rise",
       "label": "需求導向的漲價",
       "type": "concept",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-07-04",
       "episodes": [
-        675
+        675,
+        676
       ]
     },
     {
@@ -1595,6 +1615,87 @@
       "lastSeen": "2026-07-01",
       "episodes": [
         675
+      ]
+    },
+    {
+      "id": "pengcheng-8255",
+      "label": "朋程 8255",
+      "type": "stock",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "nexen-3317",
+      "label": "尼克森 3317",
+      "type": "stock",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "ase-3711",
+      "label": "日月光投控 3711",
+      "type": "stock",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "kingyuan-2449",
+      "label": "京元電 2449",
+      "type": "stock",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "packaging-test",
+      "label": "封測（封裝測試）",
+      "type": "industry",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "pricing-power",
+      "label": "報價權",
+      "type": "concept",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "ai-mainline-spillover",
+      "label": "AI 主線外溢",
+      "type": "concept",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "survive-bear",
+      "label": "活過空頭",
+      "type": "strategy",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
+      ]
+    },
+    {
+      "id": "averaging-discipline",
+      "label": "攤平的紀律",
+      "type": "strategy",
+      "lastSeen": "2026-07-04",
+      "episodes": [
+        676
       ]
     }
   ],
@@ -3376,7 +3477,115 @@
         675
       ],
       "type": "apply"
+    },
+    {
+      "source": "menggon",
+      "target": "ai-mainline-spillover",
+      "label": "本集主軸：別只買台積電",
+      "episodes": [
+        676
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "ai-mainline-spillover",
+      "target": "passive",
+      "label": "外溢受惠：被動元件",
+      "episodes": [
+        676
+      ],
+      "type": "apply"
+    },
+    {
+      "source": "ai-mainline-spillover",
+      "target": "power-semi",
+      "label": "外溢受惠：功率元件",
+      "episodes": [
+        676
+      ],
+      "type": "apply"
+    },
+    {
+      "source": "ai-mainline-spillover",
+      "target": "packaging-test",
+      "label": "外溢受惠：封測接棒",
+      "episodes": [
+        676
+      ],
+      "type": "apply"
+    },
+    {
+      "source": "demand-driven-rise",
+      "target": "pricing-power",
+      "label": "有報價權＝需求導向漲價",
+      "episodes": [
+        676
+      ],
+      "type": "apply"
+    },
+    {
+      "source": "pricing-power",
+      "target": "yageo",
+      "label": "被動龍頭有報價權",
+      "episodes": [
+        676
+      ],
+      "type": "apply"
+    },
+    {
+      "source": "power-semi",
+      "target": "pengcheng-8255",
+      "label": "功率元件對照",
+      "episodes": [
+        676
+      ],
+      "type": "related"
+    },
+    {
+      "source": "power-semi",
+      "target": "nexen-3317",
+      "label": "功率元件對照",
+      "episodes": [
+        676
+      ],
+      "type": "related"
+    },
+    {
+      "source": "packaging-test",
+      "target": "ase-3711",
+      "label": "封測對照",
+      "episodes": [
+        676
+      ],
+      "type": "related"
+    },
+    {
+      "source": "packaging-test",
+      "target": "kingyuan-2449",
+      "label": "封測對照",
+      "episodes": [
+        676
+      ],
+      "type": "related"
+    },
+    {
+      "source": "menggon",
+      "target": "survive-bear",
+      "label": "QA：能不能活過空頭",
+      "episodes": [
+        676
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "averaging-discipline",
+      "label": "QA：別賭氣攤平",
+      "episodes": [
+        676
+      ],
+      "type": "advocate"
     }
   ],
-  "lastUpdated": "2026-07-01"
+  "lastUpdated": "2026-07-04"
 }
