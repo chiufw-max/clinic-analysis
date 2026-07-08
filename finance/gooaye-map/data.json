@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-06",
+  "updatedAt": "2026-07-08",
   "startDate": "2026-05-20",
-  "episodesCount": 14,
+  "episodesCount": 15,
   "episodes": [
     {
       "ep": 663,
@@ -81,6 +81,12 @@
       "date": "2026-07-04",
       "title": "別以為 AI 只剩台積電 · 資金往外溢受惠零組件走 · 需求導向漲價 > 成本轉嫁 · 被動/功率/封測接棒",
       "url": "https://www.threads.com/@28kylef_/post/DaXauskFGIv/"
+    },
+    {
+      "ep": 677,
+      "date": "2026-07-08",
+      "title": "拆解 SemiAnalysis：800VDC/Kyber 遞延只是短期壓力測試 · DrMOS 高毛利外溢台廠 · 題材終將收斂回權值 · 提醒少年股民別玩高槓桿",
+      "url": "https://vocus.cc/tags/%E8%82%A1%E7%99%8C"
     }
   ],
   "nodes": [
@@ -88,7 +94,7 @@
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-08",
       "episodes": [
         663,
         665,
@@ -96,7 +102,8 @@
         670,
         671,
         675,
-        676
+        676,
+        677
       ]
     },
     {
@@ -958,9 +965,10 @@
       "id": "wash-leverage",
       "label": "洗槓桿 / 融資斷頭",
       "type": "theme",
-      "lastSeen": "2026-06-10",
+      "lastSeen": "2026-07-08",
       "episodes": [
-        669
+        669,
+        677
       ]
     },
     {
@@ -1115,10 +1123,11 @@
       "id": "hvdc-800v",
       "label": "800V HVDC 延後",
       "type": "event",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-08",
       "episodes": [
         670,
-        671
+        671,
+        677
       ]
     },
     {
@@ -1259,30 +1268,33 @@
       "id": "discrete-comp",
       "label": "離散/功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-08",
       "episodes": [
         671,
         672,
         675,
-        676
+        676,
+        677
       ]
     },
     {
       "id": "pmic",
       "label": "PMIC 電源管理晶片",
       "type": "theme",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-08",
       "episodes": [
-        671
+        671,
+        677
       ]
     },
     {
       "id": "drmos",
       "label": "DrMOS",
       "type": "theme",
-      "lastSeen": "2026-06-17",
+      "lastSeen": "2026-07-08",
       "episodes": [
-        671
+        671,
+        677
       ]
     },
     {
@@ -1697,6 +1709,96 @@
       "episodes": [
         676
       ]
+    },
+    {
+      "id": "semianalysis",
+      "label": "SemiAnalysis 報告",
+      "type": "event",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 拆解：800VDC/Kyber 遞延是短期壓力測試、長線不變"
+    },
+    {
+      "id": "kyber-delay",
+      "label": "輝達 Kyber 機櫃遞延",
+      "type": "event",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 短期壓力測試"
+    },
+    {
+      "id": "tw-replace",
+      "label": "台系替代",
+      "type": "theme",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 高階排擠→中低階外溢台廠"
+    },
+    {
+      "id": "ccl",
+      "label": "載板 CCL 銅箔基板",
+      "type": "theme",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 資金輪動族群之一"
+    },
+    {
+      "id": "maoda",
+      "label": "茂達 6138",
+      "type": "stock",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 DrMOS/PMIC 產業對照(代號查證)"
+    },
+    {
+      "id": "zhixin",
+      "label": "致新 8081",
+      "type": "stock",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 PMIC 產業對照(代號查證)"
+    },
+    {
+      "id": "silergy",
+      "label": "矽力-KY 6415",
+      "type": "stock",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 Power IC 產業對照(代號查證)"
+    },
+    {
+      "id": "leadtrend",
+      "label": "力智 6719",
+      "type": "stock",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 PMIC 產業對照(代號查證)"
+    },
+    {
+      "id": "tgpc",
+      "label": "台光電 2383",
+      "type": "stock",
+      "lastSeen": "2026-07-08",
+      "episodes": [
+        677
+      ],
+      "desc": "EP677 CCL 載板龍頭 產業對照(代號查證)"
     }
   ],
   "links": [
@@ -3585,7 +3687,124 @@
         676
       ],
       "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "semianalysis",
+      "label": "EP677 拆解報告",
+      "episodes": [
+        677
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "semianalysis",
+      "target": "hvdc-800v",
+      "label": "遞延=短期壓測",
+      "episodes": [
+        677
+      ],
+      "type": "relation"
+    },
+    {
+      "source": "semianalysis",
+      "target": "kyber-delay",
+      "label": "遞延=短期壓測",
+      "episodes": [
+        677
+      ],
+      "type": "relation"
+    },
+    {
+      "source": "menggon",
+      "target": "drmos",
+      "label": "EP677 點名高毛利",
+      "episodes": [
+        677
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "drmos",
+      "target": "maoda",
+      "label": "DrMOS/PMIC 產業對照",
+      "episodes": [
+        677
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "drmos",
+      "target": "zhixin",
+      "label": "PMIC 產業對照",
+      "episodes": [
+        677
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "drmos",
+      "target": "silergy",
+      "label": "Power IC 產業對照",
+      "episodes": [
+        677
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "pmic",
+      "target": "leadtrend",
+      "label": "PMIC 產業對照",
+      "episodes": [
+        677
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "ccl",
+      "target": "tgpc",
+      "label": "CCL 龍頭",
+      "episodes": [
+        677
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "menggon",
+      "target": "tw-replace",
+      "label": "高階外溢台廠",
+      "episodes": [
+        677
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "drmos",
+      "target": "tw-replace",
+      "label": "中低階外溢",
+      "episodes": [
+        677
+      ],
+      "type": "relation"
+    },
+    {
+      "source": "menggon",
+      "target": "tsmc",
+      "label": "題材收斂回權值",
+      "episodes": [
+        677
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "wash-leverage",
+      "label": "提醒少年股民別玩高槓桿",
+      "episodes": [
+        677
+      ],
+      "type": "advocate"
     }
   ],
-  "lastUpdated": "2026-07-04"
+  "lastUpdated": "2026-07-08"
 }
