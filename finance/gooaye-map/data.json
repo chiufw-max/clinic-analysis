@@ -1,7 +1,7 @@
 {
   "updatedAt": "2026-07-08",
   "startDate": "2026-05-20",
-  "episodesCount": 15,
+  "episodesCount": 16,
   "episodes": [
     {
       "ep": 663,
@@ -94,7 +94,7 @@
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-07-08",
+      "lastSeen": "2026-07-11",
       "episodes": [
         663,
         665,
@@ -103,7 +103,8 @@
         671,
         675,
         676,
-        677
+        677,
+        678
       ]
     },
     {
@@ -204,7 +205,7 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-11",
       "episodes": [
         664,
         665,
@@ -215,7 +216,8 @@
         671,
         674,
         675,
-        676
+        676,
+        678
       ]
     },
     {
@@ -267,7 +269,7 @@
       "id": "passive",
       "label": "被動元件",
       "type": "industry",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-11",
       "episodes": [
         663,
         664,
@@ -277,7 +279,8 @@
         670,
         672,
         675,
-        676
+        676,
+        678
       ]
     },
     {
@@ -338,9 +341,10 @@
       "id": "hbm",
       "label": "HBM 高頻寬記憶體",
       "type": "industry",
-      "lastSeen": "2026-05-27",
+      "lastSeen": "2026-07-11",
       "episodes": [
-        665
+        665,
+        678
       ]
     },
     {
@@ -375,13 +379,14 @@
       "id": "price-rise",
       "label": "漲價循環",
       "type": "theme",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-07-11",
       "episodes": [
         663,
         664,
         665,
         666,
-        670
+        670,
+        678
       ]
     },
     {
@@ -811,22 +816,24 @@
       "id": "optical",
       "label": "光通訊（光是勢在必行）",
       "type": "theme",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-07-11",
       "episodes": [
-        667
+        667,
+        678
       ]
     },
     {
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-11",
       "episodes": [
         667,
         671,
         672,
         675,
-        676
+        676,
+        678
       ]
     },
     {
@@ -1268,13 +1275,14 @@
       "id": "discrete-comp",
       "label": "離散/功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-08",
+      "lastSeen": "2026-07-11",
       "episodes": [
         671,
         672,
         675,
         676,
-        677
+        677,
+        678
       ]
     },
     {
@@ -1439,9 +1447,10 @@
       "id": "phison",
       "label": "群聯 8299",
       "type": "stock",
-      "lastSeen": "2026-06-25",
+      "lastSeen": "2026-07-11",
       "episodes": [
-        673
+        673,
+        678
       ]
     },
     {
@@ -1477,9 +1486,10 @@
       "id": "ai-mem-cycle",
       "label": "AI 記憶體超級循環",
       "type": "theme",
-      "lastSeen": "2026-06-25",
+      "lastSeen": "2026-07-11",
       "episodes": [
-        673
+        673,
+        678
       ]
     },
     {
@@ -1587,10 +1597,11 @@
       "id": "demand-driven-rise",
       "label": "需求導向的漲價",
       "type": "concept",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-11",
       "episodes": [
         675,
-        676
+        676,
+        678
       ]
     },
     {
@@ -1669,9 +1680,10 @@
       "id": "packaging-test",
       "label": "封測（封裝測試）",
       "type": "industry",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-11",
       "episodes": [
-        676
+        676,
+        678
       ]
     },
     {
@@ -1799,6 +1811,78 @@
         677
       ],
       "desc": "EP677 CCL 載板龍頭 產業對照(代號查證)"
+    },
+    {
+      "id": "jiemin",
+      "label": "捷敏-KY 6525",
+      "type": "stock",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
+    },
+    {
+      "id": "adi",
+      "label": "ADI 亞德諾（美股類比IC）",
+      "type": "company",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
+    },
+    {
+      "id": "meta-rent-compute",
+      "label": "Meta 出租算力",
+      "type": "event",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
+    },
+    {
+      "id": "neocloud",
+      "label": "算力租賃新創 NeoCloud",
+      "type": "industry",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
+    },
+    {
+      "id": "silicon-photonics",
+      "label": "矽光子 Silicon Photonics",
+      "type": "industry",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
+    },
+    {
+      "id": "slow-wide-vcsel",
+      "label": "Slow-and-Wide / VCSEL",
+      "type": "concept",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
+    },
+    {
+      "id": "optical-copper-swap",
+      "label": "光進銅退 / 屌賣舊名字",
+      "type": "concept",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
+    },
+    {
+      "id": "leadframe",
+      "label": "導線架漲價、交期拉長",
+      "type": "event",
+      "lastSeen": "2026-07-11",
+      "episodes": [
+        678
+      ]
     }
   ],
   "links": [
@@ -1921,7 +2005,8 @@
       "episodes": [
         663,
         664,
-        665
+        665,
+        678
       ],
       "type": "theme-of"
     },
@@ -3804,6 +3889,114 @@
         677
       ],
       "type": "advocate"
+    },
+    {
+      "source": "jiemin",
+      "target": "power-semi",
+      "label": "功率封測受惠（加碼）",
+      "episodes": [
+        678
+      ],
+      "type": "belongs"
+    },
+    {
+      "source": "jiemin",
+      "target": "packaging-test",
+      "label": "後段封裝獲利跳增",
+      "episodes": [
+        678
+      ],
+      "type": "belongs"
+    },
+    {
+      "source": "yageo",
+      "target": "power-semi",
+      "label": "國巨減碼轉功率",
+      "episodes": [
+        678
+      ],
+      "type": "rotate"
+    },
+    {
+      "source": "price-rise",
+      "target": "power-semi",
+      "label": "漲價循環擴到功率",
+      "episodes": [
+        678
+      ],
+      "type": "drive"
+    },
+    {
+      "source": "price-rise",
+      "target": "hbm",
+      "label": "記憶體續漲",
+      "episodes": [
+        678
+      ],
+      "type": "drive"
+    },
+    {
+      "source": "adi",
+      "target": "power-semi",
+      "label": "類比IC發漲價信",
+      "episodes": [
+        678
+      ],
+      "type": "signal"
+    },
+    {
+      "source": "meta-rent-compute",
+      "target": "neocloud",
+      "label": "算力出租不利",
+      "episodes": [
+        678
+      ],
+      "type": "impact"
+    },
+    {
+      "source": "silicon-photonics",
+      "target": "optical-copper-swap",
+      "label": "可能被屌賣",
+      "episodes": [
+        678
+      ],
+      "type": "risk"
+    },
+    {
+      "source": "slow-wide-vcsel",
+      "target": "optical",
+      "label": "光通內部輪動轉強",
+      "episodes": [
+        678
+      ],
+      "type": "rotate"
+    },
+    {
+      "source": "silicon-photonics",
+      "target": "optical",
+      "label": "放量卻被賣",
+      "episodes": [
+        678
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "leadframe",
+      "target": "power-semi",
+      "label": "缺料交期3~4→7~8月",
+      "episodes": [
+        678
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "phison",
+      "target": "ai-mem-cycle",
+      "label": "記憶體搶反彈",
+      "episodes": [
+        678
+      ],
+      "type": "relate"
     }
   ],
   "lastUpdated": "2026-07-08"
