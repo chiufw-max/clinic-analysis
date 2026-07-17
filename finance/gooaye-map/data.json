@@ -1,7 +1,7 @@
 {
   "updatedAt": "2026-07-08",
   "startDate": "2026-05-20",
-  "episodesCount": 16,
+  "episodesCount": 17,
   "episodes": [
     {
       "ep": 663,
@@ -94,7 +94,7 @@
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-07-15",
       "episodes": [
         663,
         665,
@@ -104,7 +104,8 @@
         675,
         676,
         677,
-        678
+        678,
+        679
       ]
     },
     {
@@ -205,7 +206,7 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-07-15",
       "episodes": [
         664,
         665,
@@ -217,7 +218,8 @@
         674,
         675,
         676,
-        678
+        678,
+        679
       ]
     },
     {
@@ -393,13 +395,14 @@
       "id": "rotation",
       "label": "資金輪動",
       "type": "theme",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-07-15",
       "episodes": [
         663,
         664,
         665,
         666,
-        670
+        670,
+        679
       ]
     },
     {
@@ -575,10 +578,11 @@
       "type": "theme",
       "episodes": [
         664,
-        665
+        665,
+        679
       ],
       "firstSeen": 664,
-      "lastSeen": 665,
+      "lastSeen": "2026-07-15",
       "desc": "EP664 提到 AI 伺服器功耗越大，功率元件規格提升價格變好。Power Rack 隔壁有很多賺錢機會。英飛凌/意法半導體強勢。EP665 延伸。"
     },
     {
@@ -826,14 +830,15 @@
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-07-15",
       "episodes": [
         667,
         671,
         672,
         675,
         676,
-        678
+        678,
+        679
       ]
     },
     {
@@ -972,10 +977,11 @@
       "id": "wash-leverage",
       "label": "洗槓桿 / 融資斷頭",
       "type": "theme",
-      "lastSeen": "2026-07-08",
+      "lastSeen": "2026-07-15",
       "episodes": [
         669,
-        677
+        677,
+        679
       ]
     },
     {
@@ -1680,10 +1686,11 @@
       "id": "packaging-test",
       "label": "封測（封裝測試）",
       "type": "industry",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-07-15",
       "episodes": [
         676,
-        678
+        678,
+        679
       ]
     },
     {
@@ -1756,9 +1763,10 @@
       "id": "ccl",
       "label": "載板 CCL 銅箔基板",
       "type": "theme",
-      "lastSeen": "2026-07-08",
+      "lastSeen": "2026-07-15",
       "episodes": [
-        677
+        677,
+        679
       ],
       "desc": "EP677 資金輪動族群之一"
     },
@@ -1882,6 +1890,87 @@
       "lastSeen": "2026-07-11",
       "episodes": [
         678
+      ]
+    },
+    {
+      "id": "psmc",
+      "label": "力積電 6770",
+      "type": "stock",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "xintec",
+      "label": "精材 3374",
+      "type": "stock",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "silicon-wafer",
+      "label": "矽晶圓",
+      "type": "industry",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "kill-heart-wash",
+      "label": "沙人誅心盤",
+      "type": "theme",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "kr-deleverage",
+      "label": "韓國去槓桿拖累全球",
+      "type": "event",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "fund-over-fundamental",
+      "label": "資金面＞基本面",
+      "type": "concept",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "ai-cost-sweetspot",
+      "label": "AI 甜蜜點·開始算成本",
+      "type": "theme",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "preorder-correction",
+      "label": "預約下一波修正",
+      "type": "concept",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
+      ]
+    },
+    {
+      "id": "quant-arb",
+      "label": "量化套利資金（Jane Street）",
+      "type": "stock",
+      "lastSeen": "2026-07-15",
+      "episodes": [
+        679
       ]
     }
   ],
@@ -3995,6 +4084,132 @@
       "label": "記憶體搶反彈",
       "episodes": [
         678
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "kr-deleverage",
+      "target": "kill-heart-wash",
+      "label": "引爆",
+      "episodes": [
+        679
+      ],
+      "type": "cause"
+    },
+    {
+      "source": "kr-deleverage",
+      "target": "wash-leverage",
+      "label": "韓股十幾倍槓桿",
+      "episodes": [
+        679
+      ],
+      "type": "cause"
+    },
+    {
+      "source": "kill-heart-wash",
+      "target": "fund-over-fundamental",
+      "label": "本質是資金面洗盤",
+      "episodes": [
+        679
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "quant-arb",
+      "target": "kr-deleverage",
+      "label": "賺韭菜錢",
+      "episodes": [
+        679
+      ],
+      "type": "benefit"
+    },
+    {
+      "source": "tsmc",
+      "target": "fund-over-fundamental",
+      "label": "神級財報卻利多失效",
+      "episodes": [
+        679
+      ],
+      "type": "case"
+    },
+    {
+      "source": "rotation",
+      "target": "silicon-wafer",
+      "label": "這波輪到",
+      "episodes": [
+        679
+      ],
+      "type": "rotate"
+    },
+    {
+      "source": "rotation",
+      "target": "ccl",
+      "label": "這波輪到",
+      "episodes": [
+        679
+      ],
+      "type": "rotate"
+    },
+    {
+      "source": "ccl",
+      "target": "preorder-correction",
+      "label": "籌碼純但修正明顯",
+      "episodes": [
+        679
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "psmc",
+      "target": "packaging-test",
+      "label": "功率封裝很緊",
+      "episodes": [
+        679
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "xintec",
+      "target": "packaging-test",
+      "label": "後段封測瘋狂表態",
+      "episodes": [
+        679
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "power-semi",
+      "target": "packaging-test",
+      "label": "功率封裝滿載",
+      "episodes": [
+        679
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "yageo",
+      "target": "tsmc",
+      "label": "盤不好資金甩去台積電",
+      "episodes": [
+        679
+      ],
+      "type": "operation"
+    },
+    {
+      "source": "preorder-correction",
+      "target": "rotation",
+      "label": "強勢股回檔更兇",
+      "episodes": [
+        679
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "ai-cost-sweetspot",
+      "target": "fund-over-fundamental",
+      "label": "AI 邊際遞減·重成本",
+      "episodes": [
+        679
       ],
       "type": "relate"
     }
