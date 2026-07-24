@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-07-20",
+ "updatedAt": "2026-07-25",
  "startDate": "2026-05-20",
- "episodesCount": 17,
+ "episodesCount": 19,
  "episodes": [
   {
    "ep": 663,
@@ -69,7 +69,12 @@
    "title": "韓國人真的很會玩 · 單一股票兩倍槓桿 ETF · 三星/SK海力士 AI 記憶體狂熱",
    "url": "https://www.youtube.com/watch?v=YS_nOUjrqAc"
   },
-  674,
+  {
+   "ep": 674,
+   "date": "2026-06-27",
+   "title": "",
+   "url": ""
+  },
   {
    "ep": 675,
    "date": "2026-07-01",
@@ -105,6 +110,12 @@
    "date": "2026-07-18",
    "title": "別笑韓國人台灣人也不會做股票 · 聖盔谷台積電自己炸 6% · 正式進防守模式 · 不選個股改用台指期/0050 · 往業績股不碰高 Beta",
    "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-680/"
+  },
+  {
+   "ep": 681,
+   "date": "2026-07-22",
+   "title": "反彈是人道走廊 · CPU 換代 AMD 概念股(socket) · 老 AI ODM 轉強 · Google Frozen V2=Marvell TPU",
+   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-681/"
   }
  ],
  "nodes": [
@@ -112,7 +123,7 @@
    "id": "tsmc",
    "label": "台積電 2330",
    "type": "stock",
-   "lastSeen": "2026-07-18",
+   "lastSeen": "2026-07-22",
    "episodes": [
     663,
     665,
@@ -124,7 +135,8 @@
     677,
     678,
     679,
-    680
+    680,
+    681
    ]
   },
   {
@@ -191,11 +203,12 @@
    "id": "googl",
    "label": "Google GOOGL",
    "type": "stock",
-   "lastSeen": "2026-06-27",
+   "lastSeen": "2026-07-22",
    "episodes": [
     663,
     664,
-    674
+    674,
+    681
    ]
   },
   {
@@ -225,7 +238,7 @@
    "id": "yageo",
    "label": "國巨 2327",
    "type": "stock",
-   "lastSeen": "2026-07-18",
+   "lastSeen": "2026-07-22",
    "episodes": [
     664,
     665,
@@ -239,7 +252,8 @@
     676,
     678,
     679,
-    680
+    680,
+    681
    ]
   },
   {
@@ -267,11 +281,12 @@
    "id": "mrvl",
    "label": "Marvell MRVL",
    "type": "stock",
-   "lastSeen": "2026-06-27",
+   "lastSeen": "2026-07-22",
    "episodes": [
     665,
     667,
-    674
+    674,
+    681
    ]
   },
   {
@@ -588,10 +603,11 @@
    "ticker": "6173.TW",
    "episodes": [
     664,
-    665
+    665,
+    681
    ],
    "firstSeen": 664,
-   "lastSeen": 665,
+   "lastSeen": "2026-07-22",
    "desc": "高壓 MLCC 台廠。EP664 socialworkerdaily 點名「應該就是信昌電了」（跌停反而加碼），EP665 預估被動元件最硬頸三強之一。4月EPS 0.44元（年增1000%）。"
   },
   {
@@ -1197,11 +1213,12 @@
    "id": "qiangmao",
    "label": "強茂 2481",
    "type": "stock",
-   "lastSeen": "2026-07-04",
+   "lastSeen": "2026-07-22",
    "episodes": [
     671,
     672,
-    676
+    676,
+    681
    ]
   },
   {
@@ -1230,10 +1247,11 @@
    "id": "apec-8261",
    "label": "富鼎 8261",
    "type": "stock",
-   "lastSeen": "2026-07-04",
+   "lastSeen": "2026-07-22",
    "episodes": [
     671,
-    676
+    676,
+    681
    ]
   },
   {
@@ -1847,9 +1865,10 @@
    "id": "jiemin",
    "label": "捷敏-KY 6525",
    "type": "stock",
-   "lastSeen": "2026-07-11",
+   "lastSeen": "2026-07-22",
    "episodes": [
-    678
+    678,
+    681
    ]
   },
   {
@@ -2000,9 +2019,10 @@
    "id": "etf0050",
    "label": "元大台灣50 0050",
    "type": "stock",
-   "lastSeen": "2026-07-18",
+   "lastSeen": "2026-07-22",
    "episodes": [
-    680
+    680,
+    681
    ]
   },
   {
@@ -2018,9 +2038,10 @@
    "id": "intc",
    "label": "英特爾 INTC",
    "type": "stock",
-   "lastSeen": "2026-07-18",
+   "lastSeen": "2026-07-22",
    "episodes": [
-    680
+    680,
+    681
    ]
   },
   {
@@ -2036,9 +2057,10 @@
    "id": "humanitarian-corridor",
    "label": "人道走廊（反彈逃命波）",
    "type": "theme",
-   "lastSeen": "2026-07-18",
+   "lastSeen": "2026-07-22",
    "episodes": [
-    680
+    680,
+    681
    ]
   },
   {
@@ -2102,6 +2124,69 @@
    "lastSeen": "2026-07-18",
    "episodes": [
     680
+   ]
+  },
+  {
+   "id": "amd",
+   "label": "超微 AMD",
+   "type": "stock",
+   "lastSeen": "2026-07-22",
+   "episodes": [
+    681
+   ]
+  },
+  {
+   "id": "venice-cpu",
+   "label": "超微 Venice SP7 CPU",
+   "type": "product",
+   "lastSeen": "2026-07-22",
+   "episodes": [
+    681
+   ]
+  },
+  {
+   "id": "cpu-socket",
+   "label": "CPU 換代 · socket 股",
+   "type": "theme",
+   "lastSeen": "2026-07-22",
+   "episodes": [
+    681
+   ]
+  },
+  {
+   "id": "old-ai-odm",
+   "label": "老 AI 代工 ODM 轉強",
+   "type": "theme",
+   "lastSeen": "2026-07-22",
+   "episodes": [
+    681
+   ]
+  },
+  {
+   "id": "frozen-v2",
+   "label": "Google Frozen V2（= Marvell TPU 推論晶片）",
+   "type": "product",
+   "lastSeen": "2026-07-22",
+   "episodes": [
+    681
+   ]
+  },
+  {
+   "id": "trainium-ep681",
+   "label": "ASIC Trainium 系列放量",
+   "type": "product",
+   "lastSeen": "2026-07-22",
+   "episodes": [
+    681
+   ]
+  },
+  {
+   "id": "vera-rubin",
+   "label": "輝達 Vera Rubin 放量出貨",
+   "type": "product",
+   "lastSeen": "2026-07-22",
+   "episodes": [
+    681
    ]
   }
  ],
@@ -4469,7 +4554,70 @@
     680
    ],
    "type": "related"
+  },
+  {
+   "source": "menggon",
+   "target": "cpu-socket",
+   "label": "主推題材",
+   "episodes": [
+    681
+   ],
+   "type": "advocate"
+  },
+  {
+   "source": "amd",
+   "target": "cpu-socket",
+   "label": "帶動換代",
+   "episodes": [
+    681
+   ],
+   "type": "drives"
+  },
+  {
+   "source": "amd",
+   "target": "venice-cpu",
+   "label": "發表產品",
+   "episodes": [
+    681
+   ],
+   "type": "product"
+  },
+  {
+   "source": "menggon",
+   "target": "humanitarian-corridor",
+   "label": "定調盤勢",
+   "episodes": [
+    681
+   ],
+   "type": "advocate"
+  },
+  {
+   "source": "googl",
+   "target": "frozen-v2",
+   "label": "自研晶片",
+   "episodes": [
+    681
+   ],
+   "type": "develops"
+  },
+  {
+   "source": "frozen-v2",
+   "target": "mrvl",
+   "label": "由其供應",
+   "episodes": [
+    681
+   ],
+   "type": "supplies"
+  },
+  {
+   "source": "menggon",
+   "target": "old-ai-odm",
+   "label": "關注轉強",
+   "episodes": [
+    681
+   ],
+   "type": "watch"
   }
  ],
- "lastUpdated": "2026-07-20"
+ "lastUpdated": "2026-07-25"
 }
