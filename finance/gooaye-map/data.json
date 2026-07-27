@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25",
+  "updatedAt": "2026-07-28",
   "startDate": "2026-05-20",
   "episodesCount": 20,
   "episodes": [
@@ -120,7 +120,7 @@
     {
       "ep": 682,
       "date": "2026-07-25",
-      "title": "科技股「無差別修正」＋AI 基建成本邏輯 · 台積電/Google 財報言外之意 · 記憶體報價 · 德儀(TXN)展望 · 功率半導體＋鋁電容 · 獨立遊戲《紅眼露比》",
+      "title": "市場像魂系遊戲·等催化劑 · Google雲端證實AI能賺錢 · 記憶體漲幅Q4收斂 · 功率400V→800V · 操作日記買0050/嘉澤·嘉基試單",
       "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-682/"
     }
   ],
@@ -1046,11 +1046,12 @@
       "id": "tsla",
       "label": "Tesla TSLA",
       "type": "stock",
-      "lastSeen": "2026-07-18",
+      "lastSeen": "2026-07-25",
       "episodes": [
         670,
         674,
-        680
+        680,
+        682
       ]
     },
     {
@@ -2032,10 +2033,11 @@
       "id": "etf0050",
       "label": "元大台灣50 0050",
       "type": "stock",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-07-25",
       "episodes": [
         680,
-        681
+        681,
+        682
       ]
     },
     {
@@ -2143,9 +2145,10 @@
       "id": "amd",
       "label": "超微 AMD",
       "type": "stock",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-07-25",
       "episodes": [
-        681
+        681,
+        682
       ]
     },
     {
@@ -2200,6 +2203,60 @@
       "lastSeen": "2026-07-22",
       "episodes": [
         681
+      ]
+    },
+    {
+      "id": "jiaze",
+      "label": "嘉澤 3533",
+      "type": "stock",
+      "lastSeen": "2026-07-25",
+      "episodes": [
+        682
+      ]
+    },
+    {
+      "id": "jiaji",
+      "label": "嘉基 6715",
+      "type": "stock",
+      "lastSeen": "2026-07-25",
+      "episodes": [
+        682
+      ]
+    },
+    {
+      "id": "nichicon",
+      "label": "Nichicon (被動元件)",
+      "type": "stock",
+      "lastSeen": "2026-07-25",
+      "episodes": [
+        682
+      ]
+    },
+    {
+      "id": "soulslike",
+      "label": "魂系遊戲市場 (等催化劑)",
+      "type": "theme",
+      "lastSeen": "2026-07-25",
+      "episodes": [
+        682
+      ]
+    },
+    {
+      "id": "circular-fin",
+      "label": "AI 循環融資疑慮",
+      "type": "theme",
+      "lastSeen": "2026-07-25",
+      "episodes": [
+        682
+      ]
+    },
+    {
+      "id": "mem-converge",
+      "label": "記憶體漲幅 Q4 收斂→介入點",
+      "type": "theme",
+      "lastSeen": "2026-07-25",
+      "episodes": [
+        682
       ]
     }
   ],
@@ -4630,7 +4687,97 @@
         681
       ],
       "type": "watch"
+    },
+    {
+      "source": "menggon",
+      "target": "soulslike",
+      "label": "本集比喻",
+      "episodes": [
+        682
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "jiaze",
+      "label": "操作日記試單",
+      "episodes": [
+        682
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "jiaji",
+      "label": "操作日記試單",
+      "episodes": [
+        682
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "jiaze",
+      "target": "jiaji",
+      "label": "母子公司·連接器",
+      "episodes": [
+        682
+      ],
+      "type": "related"
+    },
+    {
+      "source": "menggon",
+      "target": "amd",
+      "label": "避難往AMD概念股",
+      "episodes": [
+        682
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "etf0050",
+      "label": "功率減碼挪0050",
+      "episodes": [
+        682
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "nichicon",
+      "target": "al-cap",
+      "label": "被動元件九月漲價",
+      "episodes": [
+        682
+      ],
+      "type": "related"
+    },
+    {
+      "source": "circular-fin",
+      "target": "amd",
+      "label": "AI循環融資疑慮",
+      "episodes": [
+        682
+      ],
+      "type": "related"
+    },
+    {
+      "source": "mem-converge",
+      "target": "ai-mem-cycle",
+      "label": "漲幅收斂反成介入點",
+      "episodes": [
+        682
+      ],
+      "type": "related"
+    },
+    {
+      "source": "menggon",
+      "target": "ti",
+      "label": "德儀展望正向·財報好也被殺",
+      "episodes": [
+        682
+      ],
+      "type": "advocate"
     }
   ],
-  "lastUpdated": "2026-07-27"
+  "lastUpdated": "2026-07-28 05:06 (UTC+8)"
 }
