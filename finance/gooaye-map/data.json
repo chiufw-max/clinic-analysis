@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-28",
+  "updatedAt": "2026-07-29",
   "startDate": "2026-05-20",
-  "episodesCount": 20,
+  "episodesCount": 21,
   "episodes": [
     {
       "ep": 663,
@@ -122,6 +122,12 @@
       "date": "2026-07-25",
       "title": "市場像魂系遊戲·等催化劑 · Google雲端證實AI能賺錢 · 記憶體漲幅Q4收斂 · 功率400V→800V · 操作日記買0050/嘉澤·嘉基試單",
       "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-682/"
+    },
+    {
+      "ep": 683,
+      "date": "2026-07-29",
+      "title": "2026中小/AI大屠殺 · 台積電是多軍最後堡壘「神龜股」 · 估值錨反轉別人要殺更低 · 記憶體照樣被殺最不安 · CPU:GPU算進一般伺服器才1:1 · 中國自製DUV看美國政府 · 便宜不代表不會更便宜",
+      "url": "https://vocus.cc/article/6a69d83ffd897800015896e1"
     }
   ],
   "nodes": [
@@ -129,7 +135,7 @@
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-07-29",
       "episodes": [
         663,
         665,
@@ -143,7 +149,8 @@
         679,
         680,
         681,
-        682
+        682,
+        683
       ]
     },
     {
@@ -302,13 +309,14 @@
       "id": "nvidia",
       "label": "NVIDIA NVDA",
       "type": "stock",
-      "lastSeen": "2026-06-06",
+      "lastSeen": "2026-07-29",
       "episodes": [
         663,
         664,
         665,
         667,
-        668
+        668,
+        683
       ]
     },
     {
@@ -398,7 +406,7 @@
       "id": "menggon",
       "label": "謝孟恭",
       "type": "person",
-      "lastSeen": "2026-07-18",
+      "lastSeen": "2026-07-29",
       "episodes": [
         663,
         664,
@@ -409,7 +417,8 @@
         670,
         671,
         676,
-        680
+        680,
+        683
       ]
     },
     {
@@ -971,9 +980,10 @@
       "id": "agentic-ai",
       "label": "代理式 AI（Agentic AI）",
       "type": "theme",
-      "lastSeen": "2026-06-06",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        668
+        668,
+        683
       ]
     },
     {
@@ -1026,11 +1036,12 @@
       "id": "wash-leverage",
       "label": "洗槓桿 / 融資斷頭",
       "type": "theme",
-      "lastSeen": "2026-07-15",
+      "lastSeen": "2026-07-29",
       "episodes": [
         669,
         677,
-        679
+        679,
+        683
       ]
     },
     {
@@ -1114,9 +1125,10 @@
       "id": "valuation-art",
       "label": "估值是藝術·估在別人前面",
       "type": "theme",
-      "lastSeen": "2026-06-13",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        670
+        670,
+        683
       ]
     },
     {
@@ -1462,18 +1474,20 @@
       "id": "samsung",
       "label": "三星電子 005930.KS",
       "type": "stock",
-      "lastSeen": "2026-06-25",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        673
+        673,
+        683
       ]
     },
     {
       "id": "skhynix",
       "label": "SK 海力士 000660.KS",
       "type": "stock",
-      "lastSeen": "2026-06-25",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        673
+        673,
+        683
       ]
     },
     {
@@ -1546,11 +1560,12 @@
       "id": "ai-mem-cycle",
       "label": "AI 記憶體超級循環",
       "type": "theme",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-07-29",
       "episodes": [
         673,
         678,
-        682
+        682,
+        683
       ]
     },
     {
@@ -1818,10 +1833,11 @@
       "id": "ccl",
       "label": "載板 CCL 銅箔基板",
       "type": "theme",
-      "lastSeen": "2026-07-15",
+      "lastSeen": "2026-07-29",
       "episodes": [
         677,
-        679
+        679,
+        683
       ],
       "desc": "EP677 資金輪動族群之一"
     },
@@ -1970,9 +1986,10 @@
       "id": "silicon-wafer",
       "label": "矽晶圓",
       "type": "industry",
-      "lastSeen": "2026-07-15",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        679
+        679,
+        683
       ]
     },
     {
@@ -2033,11 +2050,12 @@
       "id": "etf0050",
       "label": "元大台灣50 0050",
       "type": "stock",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-07-29",
       "episodes": [
         680,
         681,
-        682
+        682,
+        683
       ]
     },
     {
@@ -2053,10 +2071,11 @@
       "id": "intc",
       "label": "英特爾 INTC",
       "type": "stock",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-07-29",
       "episodes": [
         680,
-        681
+        681,
+        683
       ]
     },
     {
@@ -2109,18 +2128,20 @@
       "id": "davis-reverse",
       "label": "戴維斯雙擊反轉·殺估值倍數",
       "type": "theme",
-      "lastSeen": "2026-07-18",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        680
+        680,
+        683
       ]
     },
     {
       "id": "kimi-k3",
       "label": "Kimi K3（新版 DeepSeek 事件）",
       "type": "event",
-      "lastSeen": "2026-07-18",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        680
+        680,
+        683
       ]
     },
     {
@@ -2145,10 +2166,11 @@
       "id": "amd",
       "label": "超微 AMD",
       "type": "stock",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-07-29",
       "episodes": [
         681,
-        682
+        682,
+        683
       ]
     },
     {
@@ -2254,9 +2276,73 @@
       "id": "mem-converge",
       "label": "記憶體漲幅 Q4 收斂→介入點",
       "type": "theme",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-07-29",
       "episodes": [
-        682
+        682,
+        683
+      ]
+    },
+    {
+      "id": "massacre-2026",
+      "label": "2026 中小/AI 科技大屠殺",
+      "type": "event",
+      "lastSeen": "2026-07-29",
+      "episodes": [
+        683
+      ]
+    },
+    {
+      "id": "tsmc-god-turtle",
+      "label": "台積電「神龜股」(多軍最後堡壘/停車場)",
+      "type": "concept",
+      "lastSeen": "2026-07-29",
+      "episodes": [
+        683
+      ]
+    },
+    {
+      "id": "cxmt",
+      "label": "CXMT 長鑫存儲 (中國記憶體)",
+      "type": "company",
+      "lastSeen": "2026-07-29",
+      "episodes": [
+        683
+      ]
+    },
+    {
+      "id": "china-duv",
+      "label": "中國自製 DUV (重複曝光土法煉鋼)",
+      "type": "event",
+      "lastSeen": "2026-07-29",
+      "episodes": [
+        683
+      ]
+    },
+    {
+      "id": "gp-server",
+      "label": "一般伺服器 general purpose (CPU 成長來源)",
+      "type": "theme",
+      "lastSeen": "2026-07-29",
+      "episodes": [
+        683
+      ]
+    },
+    {
+      "id": "cheap-can-be-cheaper",
+      "label": "便宜不代表不會更便宜·活著等反轉",
+      "type": "strategy",
+      "lastSeen": "2026-07-29",
+      "episodes": [
+        683
+      ]
+    },
+    {
+      "id": "anchor-reverse",
+      "label": "估值錨反轉·龍頭是公定價別人殺更低",
+      "type": "theme",
+      "lastSeen": "2026-07-29",
+      "episodes": [
+        683
       ]
     }
   ],
@@ -4777,7 +4863,97 @@
         682
       ],
       "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "massacre-2026",
+      "label": "命名這波",
+      "episodes": [
+        683
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "cheap-can-be-cheaper",
+      "label": "核心心法",
+      "episodes": [
+        683
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "tsmc",
+      "target": "tsmc-god-turtle",
+      "label": "被當神龜股/停車場",
+      "episodes": [
+        683
+      ],
+      "type": "related"
+    },
+    {
+      "source": "china-duv",
+      "target": "cxmt",
+      "label": "風險在政府放行",
+      "episodes": [
+        683
+      ],
+      "type": "related"
+    },
+    {
+      "source": "china-duv",
+      "target": "silicon-wafer",
+      "label": "鬼故事殺設備股",
+      "episodes": [
+        683
+      ],
+      "type": "related"
+    },
+    {
+      "source": "agentic-ai",
+      "target": "gp-server",
+      "label": "推論卸載帶動",
+      "episodes": [
+        683
+      ],
+      "type": "related"
+    },
+    {
+      "source": "amd",
+      "target": "gp-server",
+      "label": "EPYC CPU 受惠",
+      "episodes": [
+        683
+      ],
+      "type": "related"
+    },
+    {
+      "source": "intc",
+      "target": "gp-server",
+      "label": "CPU 加總才1:1",
+      "episodes": [
+        683
+      ],
+      "type": "related"
+    },
+    {
+      "source": "skhynix",
+      "target": "massacre-2026",
+      "label": "記憶體照樣被殺",
+      "episodes": [
+        683
+      ],
+      "type": "related"
+    },
+    {
+      "source": "massacre-2026",
+      "target": "anchor-reverse",
+      "label": "估值往下收斂",
+      "episodes": [
+        683
+      ],
+      "type": "related"
     }
   ],
-  "lastUpdated": "2026-07-28 05:06 (UTC+8)"
+  "lastUpdated": "2026-08-01 05:06 (UTC+8)"
 }
