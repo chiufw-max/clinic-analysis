@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-29",
+  "updatedAt": "2026-08-01",
   "startDate": "2026-05-20",
-  "episodesCount": 21,
+  "episodesCount": 22,
   "episodes": [
     {
       "ep": 663,
@@ -128,6 +128,12 @@
       "date": "2026-07-29",
       "title": "2026中小/AI大屠殺 · 台積電是多軍最後堡壘「神龜股」 · 估值錨反轉別人要殺更低 · 記憶體照樣被殺最不安 · CPU:GPU算進一般伺服器才1:1 · 中國自製DUV看美國政府 · 便宜不代表不會更便宜",
       "url": "https://vocus.cc/article/6a69d83ffd897800015896e1"
+    },
+    {
+      "ep": 684,
+      "date": "2026-08-01",
+      "title": "史詩級大反彈是去槓桿不是基本面 · AI 對沖基金 Situational Awareness 爆倉(類 Archegos) · 機構砍好股票換現金 · 處置股制度是流動性殺手 · FCN 是 Sell Put 陷阱買原型0050 · FIRE 支出高峰期陷阱 · 下週看聯發科展望",
+      "url": "https://yasac.substack.com/p/ep684"
     }
   ],
   "nodes": [
@@ -167,13 +173,14 @@
       "id": "mtk",
       "label": "聯發科 2454",
       "type": "stock",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-08-01",
       "episodes": [
         663,
         667,
         668,
         670,
-        675
+        675,
+        684
       ]
     },
     {
@@ -286,23 +293,25 @@
       "id": "micron",
       "label": "Micron MU",
       "type": "stock",
-      "lastSeen": "2026-06-27",
+      "lastSeen": "2026-08-01",
       "episodes": [
         665,
         673,
-        674
+        674,
+        684
       ]
     },
     {
       "id": "mrvl",
       "label": "Marvell MRVL",
       "type": "stock",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-08-01",
       "episodes": [
         665,
         667,
         674,
-        681
+        681,
+        684
       ]
     },
     {
@@ -1036,12 +1045,13 @@
       "id": "wash-leverage",
       "label": "洗槓桿 / 融資斷頭",
       "type": "theme",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-08-01",
       "episodes": [
         669,
         677,
         679,
-        683
+        683,
+        684
       ]
     },
     {
@@ -1484,10 +1494,11 @@
       "id": "skhynix",
       "label": "SK 海力士 000660.KS",
       "type": "stock",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-08-01",
       "episodes": [
         673,
-        683
+        683,
+        684
       ]
     },
     {
@@ -2050,12 +2061,13 @@
       "id": "etf0050",
       "label": "元大台灣50 0050",
       "type": "stock",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-08-01",
       "episodes": [
         680,
         681,
         682,
-        683
+        683,
+        684
       ]
     },
     {
@@ -2343,6 +2355,78 @@
       "lastSeen": "2026-07-29",
       "episodes": [
         683
+      ]
+    },
+    {
+      "id": "situational-awareness",
+      "label": "Situational Awareness 基金爆倉",
+      "type": "event",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
+      ]
+    },
+    {
+      "id": "aschenbrenner",
+      "label": "Leopold Aschenbrenner",
+      "type": "person",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
+      ]
+    },
+    {
+      "id": "citadel",
+      "label": "Citadel（接管方）",
+      "type": "company",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
+      ]
+    },
+    {
+      "id": "archegos",
+      "label": "Archegos 爆倉（2021 對照）",
+      "type": "event",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
+      ]
+    },
+    {
+      "id": "deleverage-crisis",
+      "label": "去槓桿／流動性危機",
+      "type": "concept",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
+      ]
+    },
+    {
+      "id": "fcn-note",
+      "label": "FCN 股權連結商品（Sell Put 陷阱）",
+      "type": "theme",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
+      ]
+    },
+    {
+      "id": "disposal-stock",
+      "label": "處置股制度（流動性殺手）",
+      "type": "theme",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
+      ]
+    },
+    {
+      "id": "fire-retire",
+      "label": "FIRE 提早退休陷阱",
+      "type": "theme",
+      "lastSeen": "2026-08-01",
+      "episodes": [
+        684
       ]
     }
   ],
@@ -4953,7 +5037,97 @@
         683
       ],
       "type": "related"
+    },
+    {
+      "source": "aschenbrenner",
+      "target": "situational-awareness",
+      "label": "經理人",
+      "episodes": [
+        684
+      ],
+      "type": "manage"
+    },
+    {
+      "source": "citadel",
+      "target": "situational-awareness",
+      "label": "接管清算",
+      "episodes": [
+        684
+      ],
+      "type": "takeover"
+    },
+    {
+      "source": "situational-awareness",
+      "target": "archegos",
+      "label": "性質類比",
+      "episodes": [
+        684
+      ],
+      "type": "analogy"
+    },
+    {
+      "source": "situational-awareness",
+      "target": "micron",
+      "label": "多單持股",
+      "episodes": [
+        684
+      ],
+      "type": "long"
+    },
+    {
+      "source": "situational-awareness",
+      "target": "skhynix",
+      "label": "多單持股",
+      "episodes": [
+        684
+      ],
+      "type": "long"
+    },
+    {
+      "source": "situational-awareness",
+      "target": "mrvl",
+      "label": "多單持股",
+      "episodes": [
+        684
+      ],
+      "type": "long"
+    },
+    {
+      "source": "deleverage-crisis",
+      "target": "situational-awareness",
+      "label": "核心事件",
+      "episodes": [
+        684
+      ],
+      "type": "cause"
+    },
+    {
+      "source": "menggon",
+      "target": "deleverage-crisis",
+      "label": "本集主軸",
+      "episodes": [
+        684
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "mtk",
+      "label": "點名下週動能",
+      "episodes": [
+        684
+      ],
+      "type": "mention"
+    },
+    {
+      "source": "fcn-note",
+      "target": "etf0050",
+      "label": "別碰FCN買原型",
+      "episodes": [
+        684
+      ],
+      "type": "relate"
     }
   ],
-  "lastUpdated": "2026-08-01 05:06 (UTC+8)"
+  "lastUpdated": "2026-08-02 05:06 (UTC+8)"
 }
