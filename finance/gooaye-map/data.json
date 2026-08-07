@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-01",
+  "updatedAt": "2026-08-08",
   "startDate": "2026-05-20",
-  "episodesCount": 22,
+  "episodesCount": 23,
   "episodes": [
     {
       "ep": 663,
@@ -134,6 +134,12 @@
       "date": "2026-08-01",
       "title": "史詩級大反彈是去槓桿不是基本面 · AI 對沖基金 Situational Awareness 爆倉(類 Archegos) · 機構砍好股票換現金 · 處置股制度是流動性殺手 · FCN 是 Sell Put 陷阱買原型0050 · FIRE 支出高峰期陷阱 · 下週看聯發科展望",
       "url": "https://yasac.substack.com/p/ep684"
+    },
+    {
+      "ep": 685,
+      "date": "2026-08-05",
+      "title": "被動元件從半信半疑到全民相信·技術面權重>基本面 · 聯發科接Google自研AI晶片(TPU)大單估3~4年貢獻逾半EPS · ASIC商業模式博通vs聯發科 · OpenAI找立訊做AI手機 · Intel先進封裝EMIB良率破九成 · 記憶體被動報價反撲",
+      "url": "https://socialworkerdaily.com/index/invest/notes-of-gooaye/ep-600-to-700/"
     }
   ],
   "nodes": [
@@ -141,7 +147,7 @@
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-08-05",
       "episodes": [
         663,
         665,
@@ -156,31 +162,34 @@
         680,
         681,
         682,
-        683
+        683,
+        685
       ]
     },
     {
       "id": "avgo",
       "label": "博通 AVGO",
       "type": "stock",
-      "lastSeen": "2026-06-03",
+      "lastSeen": "2026-08-05",
       "episodes": [
         663,
-        667
+        667,
+        685
       ]
     },
     {
       "id": "mtk",
       "label": "聯發科 2454",
       "type": "stock",
-      "lastSeen": "2026-08-01",
+      "lastSeen": "2026-08-05",
       "episodes": [
         663,
         667,
         668,
         670,
         675,
-        684
+        684,
+        685
       ]
     },
     {
@@ -224,13 +233,14 @@
       "id": "googl",
       "label": "Google GOOGL",
       "type": "stock",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-08-05",
       "episodes": [
         663,
         664,
         674,
         681,
-        682
+        682,
+        685
       ]
     },
     {
@@ -261,7 +271,7 @@
       "id": "yageo",
       "label": "國巨 2327",
       "type": "stock",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-08-05",
       "episodes": [
         664,
         665,
@@ -276,7 +286,8 @@
         678,
         679,
         680,
-        681
+        681,
+        685
       ]
     },
     {
@@ -332,7 +343,7 @@
       "id": "passive",
       "label": "被動元件",
       "type": "industry",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-08-05",
       "episodes": [
         663,
         664,
@@ -343,7 +354,8 @@
         672,
         675,
         676,
-        678
+        678,
+        685
       ]
     },
     {
@@ -361,10 +373,11 @@
       "id": "g-tpu",
       "label": "Google TPU",
       "type": "industry",
-      "lastSeen": "2026-05-23",
+      "lastSeen": "2026-08-05",
       "episodes": [
         663,
-        664
+        664,
+        685
       ]
     },
     {
@@ -405,10 +418,11 @@
       "id": "hbm",
       "label": "HBM 高頻寬記憶體",
       "type": "industry",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-08-05",
       "episodes": [
         665,
-        678
+        678,
+        685
       ]
     },
     {
@@ -720,9 +734,10 @@
       "id": "wsc",
       "label": "華新科 2492",
       "type": "stock",
-      "lastSeen": "2026-05-31",
+      "lastSeen": "2026-08-05",
       "episodes": [
-        666
+        666,
+        685
       ]
     },
     {
@@ -1571,12 +1586,13 @@
       "id": "ai-mem-cycle",
       "label": "AI 記憶體超級循環",
       "type": "theme",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-08-05",
       "episodes": [
         673,
         678,
         682,
-        683
+        683,
+        685
       ]
     },
     {
@@ -1610,11 +1626,12 @@
       "id": "huaxinke",
       "label": "華新科 2492",
       "type": "stock",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-08-05",
       "episodes": [
         674,
         675,
-        676
+        676,
+        685
       ]
     },
     {
@@ -2083,11 +2100,12 @@
       "id": "intc",
       "label": "英特爾 INTC",
       "type": "stock",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-08-05",
       "episodes": [
         680,
         681,
-        683
+        683,
+        685
       ]
     },
     {
@@ -2427,6 +2445,51 @@
       "lastSeen": "2026-08-01",
       "episodes": [
         684
+      ]
+    },
+    {
+      "id": "luxshare",
+      "label": "立訊精密 002475（陸股）",
+      "type": "stock",
+      "lastSeen": "2026-08-05",
+      "episodes": [
+        685
+      ]
+    },
+    {
+      "id": "qcom",
+      "label": "高通 QCOM",
+      "type": "stock",
+      "lastSeen": "2026-08-05",
+      "episodes": [
+        685
+      ]
+    },
+    {
+      "id": "emib",
+      "label": "Intel 先進封裝 EMIB",
+      "type": "tech",
+      "lastSeen": "2026-08-05",
+      "episodes": [
+        685
+      ]
+    },
+    {
+      "id": "ai-phone",
+      "label": "AI 手機（OpenAI×立訊）",
+      "type": "theme",
+      "lastSeen": "2026-08-05",
+      "episodes": [
+        685
+      ]
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "type": "company",
+      "lastSeen": "2026-08-05",
+      "episodes": [
+        685
       ]
     }
   ],
@@ -5127,7 +5190,97 @@
         684
       ],
       "type": "relate"
+    },
+    {
+      "source": "mtk",
+      "target": "g-tpu",
+      "label": "接Google TPU大單",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "avgo",
+      "target": "g-tpu",
+      "label": "ASIC商業模式",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "openai",
+      "target": "luxshare",
+      "label": "AI手機代工",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "openai",
+      "target": "ai-phone",
+      "label": "主導",
+      "episodes": [
+        685
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "luxshare",
+      "target": "ai-phone",
+      "label": "代工",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "qcom",
+      "target": "ai-phone",
+      "label": "供晶片",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "mtk",
+      "target": "ai-phone",
+      "label": "供晶片",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "intc",
+      "target": "emib",
+      "label": "自研先進封裝",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "mtk",
+      "target": "emib",
+      "label": "EMIB供應鏈受惠",
+      "episodes": [
+        685
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "passive",
+      "target": "ai-mem-cycle",
+      "label": "報價反撲",
+      "episodes": [
+        685
+      ],
+      "type": "advocate"
     }
   ],
-  "lastUpdated": "2026-08-02 05:06 (UTC+8)"
+  "lastUpdated": "2026-08-08"
 }
