@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-08",
+  "updatedAt": "2026-08-10",
   "startDate": "2026-05-20",
-  "episodesCount": 23,
+  "episodesCount": 24,
   "episodes": [
     {
       "ep": 663,
@@ -140,6 +140,12 @@
       "date": "2026-08-05",
       "title": "被動元件從半信半疑到全民相信·技術面權重>基本面 · 聯發科接Google自研AI晶片(TPU)大單估3~4年貢獻逾半EPS · ASIC商業模式博通vs聯發科 · OpenAI找立訊做AI手機 · Intel先進封裝EMIB良率破九成 · 記憶體被動報價反撲",
       "url": "https://socialworkerdaily.com/index/invest/notes-of-gooaye/ep-600-to-700/"
+    },
+    {
+      "ep": 686,
+      "date": "2026-08-08",
+      "title": "父親節暖場 · 近期修正是籌碼清算不是基本面壞 · 美台股軟體/光通訊/散熱/電源板塊輪動 · 風控適度配置保本平滑收益 · 回歸理性基本面",
+      "url": "https://vocus.cc/article/6a772c26fd89780001696623"
     }
   ],
   "nodes": [
@@ -725,9 +731,10 @@
       "id": "software-ai",
       "label": "軟體股 AI 加分期",
       "type": "theme",
-      "lastSeen": "2026-05-31",
+      "lastSeen": "2026-08-08",
       "episodes": [
-        666
+        666,
+        686
       ]
     },
     {
@@ -901,17 +908,18 @@
       "id": "optical",
       "label": "光通訊（光是勢在必行）",
       "type": "theme",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-08-08",
       "episodes": [
         667,
-        678
+        678,
+        686
       ]
     },
     {
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-25",
+      "lastSeen": "2026-08-08",
       "episodes": [
         667,
         671,
@@ -920,7 +928,8 @@
         676,
         678,
         679,
-        682
+        682,
+        686
       ]
     },
     {
@@ -1372,14 +1381,15 @@
       "id": "discrete-comp",
       "label": "離散/功率元件",
       "type": "theme",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-08-08",
       "episodes": [
         671,
         672,
         675,
         676,
         677,
-        678
+        678,
+        686
       ]
     },
     {
@@ -2415,9 +2425,10 @@
       "id": "deleverage-crisis",
       "label": "去槓桿／流動性危機",
       "type": "concept",
-      "lastSeen": "2026-08-01",
+      "lastSeen": "2026-08-08",
       "episodes": [
-        684
+        684,
+        686
       ]
     },
     {
@@ -2490,6 +2501,42 @@
       "lastSeen": "2026-08-05",
       "episodes": [
         685
+      ]
+    },
+    {
+      "id": "thermal-ai",
+      "label": "散熱（AI 機櫃功耗跳升）",
+      "type": "theme",
+      "lastSeen": "2026-08-08",
+      "episodes": [
+        686
+      ]
+    },
+    {
+      "id": "sector-rotation",
+      "label": "板塊輪動：軟體/光通訊/散熱/電源",
+      "type": "concept",
+      "lastSeen": "2026-08-08",
+      "episodes": [
+        686
+      ]
+    },
+    {
+      "id": "chip-liquidation",
+      "label": "籌碼清算非基本面轉弱",
+      "type": "concept",
+      "lastSeen": "2026-08-08",
+      "episodes": [
+        686
+      ]
+    },
+    {
+      "id": "risk-control-alloc",
+      "label": "風控·適度配置保本平滑收益",
+      "type": "strategy",
+      "lastSeen": "2026-08-08",
+      "episodes": [
+        686
       ]
     }
   ],
@@ -5280,7 +5327,79 @@
         685
       ],
       "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "sector-rotation",
+      "label": "點出輪動",
+      "episodes": [
+        686
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "sector-rotation",
+      "target": "software-ai",
+      "label": "輪動成員",
+      "episodes": [
+        686
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "sector-rotation",
+      "target": "optical",
+      "label": "輪動成員",
+      "episodes": [
+        686
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "sector-rotation",
+      "target": "thermal-ai",
+      "label": "輪動成員",
+      "episodes": [
+        686
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "sector-rotation",
+      "target": "power-semi",
+      "label": "輪動成員",
+      "episodes": [
+        686
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "menggon",
+      "target": "chip-liquidation",
+      "label": "研判",
+      "episodes": [
+        686
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "chip-liquidation",
+      "target": "deleverage-crisis",
+      "label": "延續",
+      "episodes": [
+        686
+      ],
+      "type": "relate"
+    },
+    {
+      "source": "menggon",
+      "target": "risk-control-alloc",
+      "label": "心法",
+      "episodes": [
+        686
+      ],
+      "type": "advocate"
     }
   ],
-  "lastUpdated": "2026-08-08"
+  "lastUpdated": "2026-08-10"
 }
