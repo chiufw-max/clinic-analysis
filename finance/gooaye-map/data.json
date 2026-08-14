@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-10",
+  "updatedAt": "2026-08-15",
   "startDate": "2026-05-20",
-  "episodesCount": 24,
+  "episodesCount": 25,
   "episodes": [
     {
       "ep": 663,
@@ -146,6 +146,12 @@
       "date": "2026-08-08",
       "title": "父親節暖場 · 近期修正是籌碼清算不是基本面壞 · 美台股軟體/光通訊/散熱/電源板塊輪動 · 風控適度配置保本平滑收益 · 回歸理性基本面",
       "url": "https://vocus.cc/article/6a772c26fd89780001696623"
+    },
+    {
+      "ep": 687,
+      "date": "2026-08-12",
+      "title": "峇里島錄音·知足 · 處置股新制博弈/宙斯法則暫失靈 · Google大搬風=算力當包租公(DeepMind換帥/Jeff Dean出走/巴菲特狂買) · 這波布局設備/光通訊/AIpower/散熱 · 操作日記台達電/捷敏/正2",
+      "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-687/"
     }
   ],
   "nodes": [
@@ -239,14 +245,15 @@
       "id": "googl",
       "label": "Google GOOGL",
       "type": "stock",
-      "lastSeen": "2026-08-05",
+      "lastSeen": "2026-08-12",
       "episodes": [
         663,
         664,
         674,
         681,
         682,
-        685
+        685,
+        687
       ]
     },
     {
@@ -335,14 +342,15 @@
       "id": "nvidia",
       "label": "NVIDIA NVDA",
       "type": "stock",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-08-12",
       "episodes": [
         663,
         664,
         665,
         667,
         668,
-        683
+        683,
+        687
       ]
     },
     {
@@ -770,10 +778,11 @@
       "id": "alc-3661",
       "label": "世芯 3661 (ASIC)",
       "type": "stock",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-08-12",
       "episodes": [
         667,
-        675
+        675,
+        687
       ]
     },
     {
@@ -908,18 +917,19 @@
       "id": "optical",
       "label": "光通訊（光是勢在必行）",
       "type": "theme",
-      "lastSeen": "2026-08-08",
+      "lastSeen": "2026-08-12",
       "episodes": [
         667,
         678,
-        686
+        686,
+        687
       ]
     },
     {
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-08-08",
+      "lastSeen": "2026-08-12",
       "episodes": [
         667,
         671,
@@ -929,7 +939,8 @@
         678,
         679,
         682,
-        686
+        686,
+        687
       ]
     },
     {
@@ -1130,11 +1141,12 @@
       "id": "delta",
       "label": "台達電 2308",
       "type": "stock",
-      "lastSeen": "2026-06-27",
+      "lastSeen": "2026-08-12",
       "episodes": [
         670,
         671,
-        674
+        674,
+        687
       ]
     },
     {
@@ -1609,9 +1621,10 @@
       "id": "aapl",
       "label": "蘋果 AAPL",
       "type": "stock",
-      "lastSeen": "2026-06-27",
+      "lastSeen": "2026-08-12",
       "episodes": [
-        674
+        674,
+        687
       ]
     },
     {
@@ -1933,10 +1946,11 @@
       "id": "jiemin",
       "label": "捷敏-KY 6525",
       "type": "stock",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-08-12",
       "episodes": [
         678,
-        681
+        681,
+        687
       ]
     },
     {
@@ -1952,18 +1966,20 @@
       "id": "meta-rent-compute",
       "label": "Meta 出租算力",
       "type": "event",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-08-12",
       "episodes": [
-        678
+        678,
+        687
       ]
     },
     {
       "id": "neocloud",
       "label": "算力租賃新創 NeoCloud",
       "type": "industry",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-08-12",
       "episodes": [
-        678
+        678,
+        687
       ]
     },
     {
@@ -2444,9 +2460,10 @@
       "id": "disposal-stock",
       "label": "處置股制度（流動性殺手）",
       "type": "theme",
-      "lastSeen": "2026-08-01",
+      "lastSeen": "2026-08-12",
       "episodes": [
-        684
+        684,
+        687
       ]
     },
     {
@@ -2507,27 +2524,30 @@
       "id": "thermal-ai",
       "label": "散熱（AI 機櫃功耗跳升）",
       "type": "theme",
-      "lastSeen": "2026-08-08",
+      "lastSeen": "2026-08-12",
       "episodes": [
-        686
+        686,
+        687
       ]
     },
     {
       "id": "sector-rotation",
       "label": "板塊輪動：軟體/光通訊/散熱/電源",
       "type": "concept",
-      "lastSeen": "2026-08-08",
+      "lastSeen": "2026-08-12",
       "episodes": [
-        686
+        686,
+        687
       ]
     },
     {
       "id": "chip-liquidation",
       "label": "籌碼清算非基本面轉弱",
       "type": "concept",
-      "lastSeen": "2026-08-08",
+      "lastSeen": "2026-08-12",
       "episodes": [
-        686
+        686,
+        687
       ]
     },
     {
@@ -2537,6 +2557,69 @@
       "lastSeen": "2026-08-08",
       "episodes": [
         686
+      ]
+    },
+    {
+      "id": "google-landlord",
+      "label": "Google 算力當包租公（出租算力）",
+      "type": "concept",
+      "lastSeen": "2026-08-12",
+      "episodes": [
+        687
+      ]
+    },
+    {
+      "id": "compute-infra",
+      "label": "算力＝數位基礎建設（鐵路/電網）",
+      "type": "theme",
+      "lastSeen": "2026-08-12",
+      "episodes": [
+        687
+      ]
+    },
+    {
+      "id": "deepmind-shuffle",
+      "label": "Google 大搬風：DeepMind 換帥/Jeff Dean 出走",
+      "type": "event",
+      "lastSeen": "2026-08-12",
+      "episodes": [
+        687
+      ]
+    },
+    {
+      "id": "discovery-loop",
+      "label": "Jeff Dean 新創 Discovery Loop",
+      "type": "event",
+      "lastSeen": "2026-08-12",
+      "episodes": [
+        687
+      ]
+    },
+    {
+      "id": "buffett-google",
+      "label": "波克夏/巴菲特狂買 Google（含私募）",
+      "type": "event",
+      "lastSeen": "2026-08-12",
+      "episodes": [
+        687
+      ]
+    },
+    {
+      "id": "zeus-law",
+      "label": "宙斯法則失靈（開好營收也被出貨）",
+      "type": "concept",
+      "lastSeen": "2026-08-12",
+      "episodes": [
+        687
+      ]
+    },
+    {
+      "id": "t50l-00631l",
+      "label": "元大台灣50正2 00631L",
+      "type": "stock",
+      "lastSeen": "2026-08-12",
+      "episodes": [
+        687
       ]
     }
   ],
@@ -5399,7 +5482,151 @@
         686
       ],
       "type": "advocate"
+    },
+    {
+      "source": "googl",
+      "target": "google-landlord",
+      "label": "轉當算力房東",
+      "episodes": [
+        687
+      ],
+      "type": "strategy"
+    },
+    {
+      "source": "google-landlord",
+      "target": "compute-infra",
+      "label": "算力＝基礎建設",
+      "episodes": [
+        687
+      ],
+      "type": "concept"
+    },
+    {
+      "source": "googl",
+      "target": "deepmind-shuffle",
+      "label": "人事大搬風",
+      "episodes": [
+        687
+      ],
+      "type": "event"
+    },
+    {
+      "source": "deepmind-shuffle",
+      "target": "discovery-loop",
+      "label": "Jeff Dean 出走",
+      "episodes": [
+        687
+      ],
+      "type": "event"
+    },
+    {
+      "source": "buffett-google",
+      "target": "googl",
+      "label": "巴菲特狂買/私募",
+      "episodes": [
+        687
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "buffett-google",
+      "target": "compute-infra",
+      "label": "重資產長約寡占",
+      "episodes": [
+        687
+      ],
+      "type": "concept"
+    },
+    {
+      "source": "aapl",
+      "target": "google-landlord",
+      "label": "蘋果示範不自燒錢也贏",
+      "episodes": [
+        687
+      ],
+      "type": "analogy"
+    },
+    {
+      "source": "menggon",
+      "target": "google-landlord",
+      "label": "反市場解讀=正面",
+      "episodes": [
+        687
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "zeus-law",
+      "label": "點出盤面失靈",
+      "episodes": [
+        687
+      ],
+      "type": "observe"
+    },
+    {
+      "source": "disposal-stock",
+      "target": "zeus-law",
+      "label": "制度博弈→互相算計",
+      "episodes": [
+        687
+      ],
+      "type": "concept"
+    },
+    {
+      "source": "menggon",
+      "target": "optical",
+      "label": "這波布局：光通訊",
+      "episodes": [
+        687
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "power-semi",
+      "label": "這波布局：AI power",
+      "episodes": [
+        687
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "thermal-ai",
+      "label": "這波布局：散熱",
+      "episodes": [
+        687
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "delta",
+      "label": "操作日記：分批買",
+      "episodes": [
+        687
+      ],
+      "type": "trade"
+    },
+    {
+      "source": "menggon",
+      "target": "jiemin",
+      "label": "操作日記：蹲季線",
+      "episodes": [
+        687
+      ],
+      "type": "trade"
+    },
+    {
+      "source": "menggon",
+      "target": "t50l-00631l",
+      "label": "操作日記：指數轉個股",
+      "episodes": [
+        687
+      ],
+      "type": "trade"
     }
   ],
-  "lastUpdated": "2026-08-10"
+  "lastUpdated": "2026-08-15"
 }
