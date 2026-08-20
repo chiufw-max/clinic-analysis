@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20",
+  "updatedAt": "2026-08-21",
   "startDate": "2026-05-20",
   "episodesCount": 27,
   "episodes": [
@@ -162,8 +162,8 @@
     {
       "ep": 689,
       "date": "2026-08-19",
-      "title": "多頭回檔下的AI投資迷霧 · 殖利率是地心引力但別全推給它 · 水下3兆隱形債務(表外租約/採購承諾)=大象 · ⭐記憶體是零組件風向球(報價只是穩住就要警戒) · 瓶頸交易:輝達買設備給封測廠+超額下單光通訊卡競爭者 · Components/Bottleneck/ValueAdd三種交易輪動 · 誰先突破前高誰定調主流 · 好報告vs爛報告悖論",
-      "url": "https://vocus.cc/article/6a856fc6fd8978000165b03b"
+      "title": "多頭回檔下的AI投資迷霧 · 殖利率是地心引力但別全推給它 · 水下3兆隱形債務(表外租約/採購承諾)=大象 · ⭐記憶體是零組件風向球(報價只是穩住就要警戒) · 瓶頸交易:輝達買設備給封測廠+超額下單光通訊卡競爭者 · Components/Bottleneck/ValueAdd三種交易輪動 · 誰先突破前高誰定調主流 · 好報告vs爛報告悖論 · 🆕泡泡與泡沫必然論 · 回吐程度當停損指標 · ValueAdd可能先站回來 · 操作日記群聯8299/捷敏KY6525/正2 00631L/晶技3042",
+      "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-689/"
     }
   ],
   "nodes": [
@@ -1587,10 +1587,11 @@
       "id": "phison",
       "label": "群聯 8299",
       "type": "stock",
-      "lastSeen": "2026-07-11",
+      "lastSeen": "2026-08-21",
       "episodes": [
         673,
-        678
+        678,
+        689
       ]
     },
     {
@@ -3012,6 +3013,96 @@
       "episodes": [
         689
       ]
+    },
+    {
+      "id": "gem-ky",
+      "label": "捷敏-KY 6525",
+      "type": "stock",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "EP688、EP689 連兩集操作日記：加碼等突破季線。功率半導體封測 OSAT"
+    },
+    {
+      "id": "txc-3042",
+      "label": "晶技 3042",
+      "type": "stock",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "EP689 操作日記：看線買。石英／頻率元件"
+    },
+    {
+      "id": "t50-2x",
+      "label": "元大台灣50正2 00631L",
+      "type": "stock",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "EP689 操作日記：波動太大，降槓桿挪去現股"
+    },
+    {
+      "id": "bubble-participation",
+      "label": "泡泡與泡沫（必然論）",
+      "type": "concept",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "每次多頭最後都會變泡沫；想完美閃掉就會錯過資產增長"
+    },
+    {
+      "id": "drawdown-tolerance",
+      "label": "回吐程度（停損指標）",
+      "type": "strategy",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "用今年獲利被吃掉多少決定要不要休息，不是用跌幾%"
+    },
+    {
+      "id": "valueadd-first-back",
+      "label": "Value Add 可能先站回來",
+      "type": "strategy",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "若 Components 與 Bottleneck 都休息，資金可能回到附加價值族群"
+    },
+    {
+      "id": "wsj-3t",
+      "label": "WSJ〈Why Big Tech's AI Spending Is $3 Trillion Higher Than It Seems〉",
+      "type": "event",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "EP689 引用的原始報導，孟恭稱之為「鬼故事」"
+    },
+    {
+      "id": "ai-debt-repackaged",
+      "label": "AI 債務被層層包裝成理財商品",
+      "type": "concept",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "孟恭的爆炸倒數訊號：當地方大媽都買得到資料中心債券時就不遠了"
+    },
+    {
+      "id": "deleverage-to-cash",
+      "label": "降槓桿→挪回現股",
+      "type": "strategy",
+      "lastSeen": "2026-08-21",
+      "episodes": [
+        689
+      ],
+      "note": "EP689 操作日記實際動作，與「回吐程度」框架一致"
     }
   ],
   "links": [
@@ -6450,7 +6541,115 @@
         689
       ],
       "type": "example"
+    },
+    {
+      "source": "menggon",
+      "target": "phison",
+      "label": "EP689 操作日記·搶反彈失利",
+      "episodes": [
+        689
+      ],
+      "type": "trade"
+    },
+    {
+      "source": "menggon",
+      "target": "gem-ky",
+      "label": "EP688/689 連兩集加碼",
+      "episodes": [
+        689
+      ],
+      "type": "trade"
+    },
+    {
+      "source": "menggon",
+      "target": "txc-3042",
+      "label": "EP689 操作日記·看線買",
+      "episodes": [
+        689
+      ],
+      "type": "trade"
+    },
+    {
+      "source": "menggon",
+      "target": "t50-2x",
+      "label": "EP689 降槓桿挪現股",
+      "episodes": [
+        689
+      ],
+      "type": "trade"
+    },
+    {
+      "source": "menggon",
+      "target": "bubble-participation",
+      "label": "EP689 核心態度",
+      "episodes": [
+        689
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "drawdown-tolerance",
+      "label": "EP689 停損框架",
+      "episodes": [
+        689
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "drawdown-tolerance",
+      "target": "deleverage-to-cash",
+      "label": "框架→實際動作",
+      "episodes": [
+        689
+      ],
+      "type": "causal"
+    },
+    {
+      "source": "t50-2x",
+      "target": "deleverage-to-cash",
+      "label": "降槓桿標的",
+      "episodes": [
+        689
+      ],
+      "type": "causal"
+    },
+    {
+      "source": "wsj-3t",
+      "target": "ai-debt-repackaged",
+      "label": "報導→擔憂的終局",
+      "episodes": [
+        689
+      ],
+      "type": "causal"
+    },
+    {
+      "source": "bubble-participation",
+      "target": "drawdown-tolerance",
+      "label": "與其猜頂不如訂規則",
+      "episodes": [
+        689
+      ],
+      "type": "causal"
+    },
+    {
+      "source": "valueadd-first-back",
+      "target": "phison",
+      "label": "記憶體族群仍屬 Components",
+      "episodes": [
+        689
+      ],
+      "type": "related"
+    },
+    {
+      "source": "gem-ky",
+      "target": "txc-3042",
+      "label": "同屬 EP689 操作日記",
+      "episodes": [
+        689
+      ],
+      "type": "related"
     }
   ],
-  "lastUpdated": "2026-08-20"
+  "lastUpdated": "2026-08-21"
 }
