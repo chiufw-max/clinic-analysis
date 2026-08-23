@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-21",
+  "updatedAt": "2026-08-24",
   "startDate": "2026-05-20",
-  "episodesCount": 27,
+  "episodesCount": 28,
   "episodes": [
     {
       "ep": 663,
@@ -164,6 +164,12 @@
       "date": "2026-08-19",
       "title": "多頭回檔下的AI投資迷霧 · 殖利率是地心引力但別全推給它 · 水下3兆隱形債務(表外租約/採購承諾)=大象 · ⭐記憶體是零組件風向球(報價只是穩住就要警戒) · 瓶頸交易:輝達買設備給封測廠+超額下單光通訊卡競爭者 · Components/Bottleneck/ValueAdd三種交易輪動 · 誰先突破前高誰定調主流 · 好報告vs爛報告悖論 · 🆕泡泡與泡沫必然論 · 回吐程度當停損指標 · ValueAdd可能先站回來 · 操作日記群聯8299/捷敏KY6525/正2 00631L/晶技3042",
       "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-689/"
+    },
+    {
+      "ep": 690,
+      "date": "2026-08-22",
+      "title": "Google 走 COT 自己做晶片 · 邁威爾拿下 TPU 周邊 · 盤「黏」但不錯是大家太貪心",
+      "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-690/"
     }
   ],
   "nodes": [
@@ -171,7 +177,7 @@
       "id": "tsmc",
       "label": "台積電 2330",
       "type": "stock",
-      "lastSeen": "2026-08-05",
+      "lastSeen": "2026-08-22",
       "episodes": [
         663,
         665,
@@ -187,25 +193,27 @@
         681,
         682,
         683,
-        685
+        685,
+        690
       ]
     },
     {
       "id": "avgo",
       "label": "博通 AVGO",
       "type": "stock",
-      "lastSeen": "2026-08-05",
+      "lastSeen": "2026-08-22",
       "episodes": [
         663,
         667,
-        685
+        685,
+        690
       ]
     },
     {
       "id": "mtk",
       "label": "聯發科 2454",
       "type": "stock",
-      "lastSeen": "2026-08-05",
+      "lastSeen": "2026-08-22",
       "episodes": [
         663,
         667,
@@ -213,7 +221,8 @@
         670,
         675,
         684,
-        685
+        685,
+        690
       ]
     },
     {
@@ -257,7 +266,7 @@
       "id": "googl",
       "label": "Google GOOGL",
       "type": "stock",
-      "lastSeen": "2026-08-12",
+      "lastSeen": "2026-08-22",
       "episodes": [
         663,
         664,
@@ -265,7 +274,8 @@
         681,
         682,
         685,
-        687
+        687,
+        690
       ]
     },
     {
@@ -341,13 +351,14 @@
       "id": "mrvl",
       "label": "Marvell MRVL",
       "type": "stock",
-      "lastSeen": "2026-08-01",
+      "lastSeen": "2026-08-22",
       "episodes": [
         665,
         667,
         674,
         681,
-        684
+        684,
+        690
       ]
     },
     {
@@ -455,7 +466,7 @@
       "id": "menggon",
       "label": "謝孟恭",
       "type": "person",
-      "lastSeen": "2026-08-19",
+      "lastSeen": "2026-08-22",
       "episodes": [
         663,
         664,
@@ -469,7 +480,8 @@
         680,
         683,
         688,
-        689
+        689,
+        690
       ]
     },
     {
@@ -793,11 +805,12 @@
       "id": "alc-3661",
       "label": "世芯 3661 (ASIC)",
       "type": "stock",
-      "lastSeen": "2026-08-12",
+      "lastSeen": "2026-08-22",
       "episodes": [
         667,
         675,
-        687
+        687,
+        690
       ]
     },
     {
@@ -2243,12 +2256,13 @@
       "id": "amd",
       "label": "超微 AMD",
       "type": "stock",
-      "lastSeen": "2026-08-15",
+      "lastSeen": "2026-08-22",
       "episodes": [
         681,
         682,
         683,
-        688
+        688,
+        690
       ]
     },
     {
@@ -2282,9 +2296,10 @@
       "id": "frozen-v2",
       "label": "Google Frozen V2（= Marvell TPU 推論晶片）",
       "type": "product",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-08-22",
       "episodes": [
-        681
+        681,
+        690
       ]
     },
     {
@@ -3018,9 +3033,10 @@
       "id": "gem-ky",
       "label": "捷敏-KY 6525",
       "type": "stock",
-      "lastSeen": "2026-08-21",
+      "lastSeen": "2026-08-22",
       "episodes": [
-        689
+        689,
+        690
       ],
       "note": "EP688、EP689 連兩集操作日記：加碼等突破季線。功率半導體封測 OSAT"
     },
@@ -3028,9 +3044,10 @@
       "id": "txc-3042",
       "label": "晶技 3042",
       "type": "stock",
-      "lastSeen": "2026-08-21",
+      "lastSeen": "2026-08-22",
       "episodes": [
-        689
+        689,
+        690
       ],
       "note": "EP689 操作日記：看線買。石英／頻率元件"
     },
@@ -3103,6 +3120,96 @@
         689
       ],
       "note": "EP689 操作日記實際動作，與「回吐程度」框架一致"
+    },
+    {
+      "id": "cot-model",
+      "label": "COT 客戶自帶工具",
+      "type": "concept",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "turnkey-model",
+      "label": "Turnkey 整包代工",
+      "type": "concept",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "mrvl-goog-warrant",
+      "label": "邁威爾送 Google 122 億美元認股權證",
+      "type": "event",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "nre-fee",
+      "label": "設計服務費 NRE",
+      "type": "concept",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "near-compute",
+      "label": "近運算 Near Compute",
+      "type": "tech",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "mem-controller",
+      "label": "記憶體控制器",
+      "type": "tech",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "whitebox-server",
+      "label": "白牌伺服器／白牌交換器",
+      "type": "theme",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "range-trading",
+      "label": "區間盤／反動能操作",
+      "type": "strategy",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "ten-day-ma",
+      "label": "十日線出場法",
+      "type": "strategy",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
+    },
+    {
+      "id": "momentum-beatdown",
+      "label": "專扁動能仔的盤",
+      "type": "concept",
+      "lastSeen": "2026-08-22",
+      "episodes": [
+        690
+      ]
     }
   ],
   "links": [
@@ -6556,7 +6663,8 @@
       "target": "gem-ky",
       "label": "EP688/689 連兩集加碼",
       "episodes": [
-        689
+        689,
+        690
       ],
       "type": "trade"
     },
@@ -6565,7 +6673,8 @@
       "target": "txc-3042",
       "label": "EP689 操作日記·看線買",
       "episodes": [
-        689
+        689,
+        690
       ],
       "type": "trade"
     },
@@ -6649,7 +6758,160 @@
         689
       ],
       "type": "related"
+    },
+    {
+      "source": "mrvl",
+      "target": "googl",
+      "label": "EP690 客製晶片協議＋122 億美元權證",
+      "episodes": [
+        690
+      ],
+      "type": "partner"
+    },
+    {
+      "source": "googl",
+      "target": "cot-model",
+      "label": "EP690 Google 轉向自己做晶片",
+      "episodes": [
+        690
+      ],
+      "type": "adopt"
+    },
+    {
+      "source": "avgo",
+      "target": "turnkey-model",
+      "label": "EP690 舊模式：整包加價",
+      "episodes": [
+        690
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "cot-model",
+      "target": "avgo",
+      "label": "EP690 統包毛利被拆解",
+      "episodes": [
+        690
+      ],
+      "type": "risk"
+    },
+    {
+      "source": "cot-model",
+      "target": "nre-fee",
+      "label": "EP690 設計商改收 NRE 與 IP 授權",
+      "episodes": [
+        690
+      ],
+      "type": "concept"
+    },
+    {
+      "source": "cot-model",
+      "target": "alc-3661",
+      "label": "EP690 客戶會慢慢走 COT",
+      "episodes": [
+        690
+      ],
+      "type": "risk"
+    },
+    {
+      "source": "mrvl",
+      "target": "near-compute",
+      "label": "EP690 拿到周邊晶片非主晶片",
+      "episodes": [
+        690
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "mrvl",
+      "target": "mem-controller",
+      "label": "EP690 記憶體介面與控制器",
+      "episodes": [
+        690
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "mrvl",
+      "target": "frozen-v2",
+      "label": "EP690 frozen 供 AI 搜尋摘要、百萬顆級",
+      "episodes": [
+        690
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "mtk",
+      "target": "googl",
+      "label": "EP690 提供 I/O、SerDes、記憶體介面",
+      "episodes": [
+        690
+      ],
+      "type": "supply"
+    },
+    {
+      "source": "cot-model",
+      "target": "tsmc",
+      "label": "EP690 少被品牌廠賺一手、台積電與材料廠受惠",
+      "episodes": [
+        690
+      ],
+      "type": "benefit"
+    },
+    {
+      "source": "googl",
+      "target": "whitebox-server",
+      "label": "EP690 跳過品牌商直接找台廠",
+      "episodes": [
+        690
+      ],
+      "type": "adopt"
+    },
+    {
+      "source": "amd",
+      "target": "googl",
+      "label": "EP690 也切入 Google 晶片供應",
+      "episodes": [
+        690
+      ],
+      "type": "partner"
+    },
+    {
+      "source": "menggon",
+      "target": "range-trading",
+      "label": "EP690 建議當區間盤反動能做",
+      "episodes": [
+        690
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "ten-day-ma",
+      "label": "EP690 不會賣就用十日線出場",
+      "episodes": [
+        690
+      ],
+      "type": "advocate"
+    },
+    {
+      "source": "menggon",
+      "target": "momentum-beatdown",
+      "label": "EP690 現在的盤專扁動能仔",
+      "episodes": [
+        690
+      ],
+      "type": "observe"
+    },
+    {
+      "source": "mrvl-goog-warrant",
+      "target": "mrvl",
+      "label": "EP690 行使價 $206.58、7% 股份",
+      "episodes": [
+        690
+      ],
+      "type": "event"
     }
   ],
-  "lastUpdated": "2026-08-21"
+  "lastUpdated": "2026-08-24"
 }
