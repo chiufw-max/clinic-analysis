@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-09-07",
+ "updatedAt": "2026-08-30",
  "startDate": "2026-05-20",
- "episodesCount": 32,
+ "episodesCount": 30,
  "episodes": [
   {
    "ep": 663,
@@ -182,18 +182,6 @@
    "date": "2026-08-29",
    "title": "財報後首次完整解讀 · 盤勢震盪但有資格發展下一波多頭 · ⭐最缺貨的環節在載板 · 輝達採購地位極強搶不到料就被擠出去 · 光通訊修正很久終於醒來多檔進新高 · 邁威爾上修靠XPU(Google案)+Scale-up光通互聯交換晶片 · OpenAI Jalapeño推論勝GB300但訓練仍倚重輝達、已迭代Vera Rubin · 開源模型開不了ASIC所以GPU護城河仍在 · GPU與ASIC搶料台股光通/板材/伺服器零組件受惠但ASIC公司不一定受惠 · Anthropic×Salesforce Claudeforce「誰有數據誰是贏家」 · 操作日記國巨2327減碼轉台達電2308、結果國巨屌V",
    "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-692/"
-  },
-  {
-   "ep": 693,
-   "date": "2026-09-02",
-   "title": "盤震盪還好、別幹動能 · 輝達認聯發科 ECB＝賣方融資＋0% 票息選擇權 · 輝達賭 MTK 在 Google 練兵後搶 XPU 市占 · NVHBM 特規記憶體從記憶體廠與台積電拿回價值 · 「輝達想吃博通的肉」但博通不會掉東西（光銅之爭類比）· 法人看到事件就狂賣 · 美股單一部位上限三成、台股看流動性 · 操作日記：賣微台換發哥、欣興爆量買一點、砍捷敏晶技去欣興",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-693/"
-  },
-  {
-   "ep": 694,
-   "date": "2026-09-05",
-   "title": "震盪盤：動能仔賠慘、傻抱淨值墊高，他把槓桿再縮小等表態 · 博通財報：六客戶只有 OpenAI、Anthropic 要幫忙搞錢、博通很有動機扶持 Anthropic · 第一次把 MTK 拿出來「被王者認知到你的存在」· 公司本來就低報高 Beat · 股價不漲因翻倍再翻倍、做 big names 要有耐心 · AI 橫盤往外圍找（特斯拉無稀土馬達、軟體）· Snowflake 上調、AI 協作＋前線部署工程師(FDE) · 信任時代好內容更值錢 · 操作日記：聯發科 2454 補到最大倉位、捷敏-KY 6525／晶技 3042 清倉停損錢進南亞科 2408",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-694/"
   }
  ],
  "nodes": [
@@ -237,7 +225,7 @@
    "id": "mtk",
    "label": "聯發科 2454",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-22",
    "episodes": [
     663,
     667,
@@ -246,11 +234,8 @@
     675,
     684,
     685,
-    690,
-    693,
-    694
-   ],
-   "note": "EP694：砍指數部位補到最大倉位；博通財報首次點名"
+    690
+   ]
   },
   {
    "id": "iap",
@@ -394,7 +379,7 @@
    "id": "nvidia",
    "label": "NVIDIA NVDA",
    "type": "stock",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-08-29",
    "episodes": [
     663,
     664,
@@ -403,8 +388,7 @@
     668,
     683,
     687,
-    692,
-    693
+    692
    ]
   },
   {
@@ -453,14 +437,13 @@
    "id": "asic",
    "label": "ASIC 客製矽",
    "type": "theme",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-08-29",
    "episodes": [
     663,
     665,
     667,
     675,
-    692,
-    693
+    692
    ]
   },
   {
@@ -489,19 +472,18 @@
    "id": "hbm",
    "label": "HBM 高頻寬記憶體",
    "type": "industry",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-08-05",
    "episodes": [
     665,
     678,
-    685,
-    693
+    685
    ]
   },
   {
    "id": "menggon",
    "label": "謝孟恭",
    "type": "person",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-29",
    "episodes": [
     663,
     664,
@@ -518,9 +500,7 @@
     689,
     690,
     691,
-    692,
-    693,
-    694
+    692
    ]
   },
   {
@@ -758,13 +738,11 @@
    "id": "snow",
    "label": "Snowflake SNOW",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-06-03",
    "episodes": [
     666,
-    667,
-    694
-   ],
-   "note": "EP694：財測上調、AI 協作＋FDE"
+    667
+   ]
   },
   {
    "id": "crm",
@@ -868,10 +846,9 @@
    "id": "nvlink-fusion",
    "label": "NVLink Fusion 客製矽合作",
    "type": "theme",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-06-03",
    "episodes": [
-    667,
-    693
+    667
    ]
   },
   {
@@ -1173,15 +1150,13 @@
    "id": "tsla",
    "label": "Tesla TSLA",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-07-25",
    "episodes": [
     670,
     674,
     680,
-    682,
-    694
-   ],
-   "note": "EP694：馬達不用稀土、供應鏈有機會但只是次題材"
+    682
+   ]
   },
   {
    "id": "rklb",
@@ -1229,11 +1204,10 @@
    "id": "anthropic",
    "label": "Anthropic（未上市）",
    "type": "company",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-29",
    "episodes": [
     670,
-    692,
-    694
+    692
    ]
   },
   {
@@ -1621,12 +1595,10 @@
    "id": "nanya",
    "label": "南亞科 2408",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-06-25",
    "episodes": [
-    673,
-    694
-   ],
-   "note": "EP694：大黑K後殺不下去、補票上車；8月營收446.9億年增561%"
+    673
+   ]
   },
   {
    "id": "winbond",
@@ -1650,12 +1622,11 @@
    "id": "phison",
    "label": "群聯 8299",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-21",
    "episodes": [
     673,
     678,
-    689,
-    694
+    689
    ]
   },
   {
@@ -1715,12 +1686,10 @@
    "id": "msft",
    "label": "微軟 MSFT",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-06-27",
    "episodes": [
-    674,
-    694
-   ],
-   "note": "EP694：謠傳明年 CapEx 開很高"
+    674
+   ]
   },
   {
    "id": "umc",
@@ -1747,12 +1716,10 @@
    "id": "xinxing",
    "label": "欣興 3037",
    "type": "stock",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-06-27",
    "episodes": [
-    674,
-    693
-   ],
-   "note": "EP693 操作日記：搜索案後爆量買一點；砍捷敏、晶技去欣興"
+    674
+   ]
   },
   {
    "id": "jiance",
@@ -2609,11 +2576,10 @@
    "id": "openai",
    "label": "OpenAI",
    "type": "company",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-29",
    "episodes": [
     685,
-    692,
-    694
+    692
    ]
   },
   {
@@ -3092,27 +3058,23 @@
    "id": "gem-ky",
    "label": "捷敏-KY 6525",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-22",
    "episodes": [
     689,
-    690,
-    693,
-    694
+    690
    ],
-   "note": "EP694：清倉停損、錢進南亞科"
+   "note": "EP688、EP689 連兩集操作日記：加碼等突破季線。功率半導體封測 OSAT"
   },
   {
    "id": "txc-3042",
    "label": "晶技 3042",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-22",
    "episodes": [
     689,
-    690,
-    693,
-    694
+    690
    ],
-   "note": "EP694：清倉停損、錢進南亞科"
+   "note": "EP689 操作日記：看線買。石英／頻率元件"
   },
   {
    "id": "t50-2x",
@@ -3381,42 +3343,36 @@
    "id": "marvell",
    "label": "邁威爾 MRVL",
    "type": "stock",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-08-29",
    "episodes": [
-    692,
-    693
+    692
    ]
   },
   {
    "id": "broadcom",
    "label": "博通 AVGO",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-29",
    "episodes": [
-    692,
-    693,
-    694
-   ],
-   "note": "EP694：需求千真萬確、股價不漲因翻倍再翻倍"
+    692
+   ]
   },
   {
    "id": "google",
    "label": "Google GOOGL",
    "type": "stock",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-08-29",
    "episodes": [
-    692,
-    693
+    692
    ]
   },
   {
    "id": "salesforce",
    "label": "Salesforce CRM",
    "type": "company",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-08-29",
    "episodes": [
-    692,
-    694
+    692
    ]
   },
   {
@@ -3477,10 +3433,9 @@
    "id": "xpu",
    "label": "XPU 自研加速器",
    "type": "tech",
-   "lastSeen": "2026-09-04",
+   "lastSeen": "2026-08-29",
    "episodes": [
-    692,
-    693
+    692
    ]
   },
   {
@@ -3589,266 +3544,6 @@
    "lastSeen": "2026-08-29",
    "episodes": [
     692
-   ]
-  },
-  {
-   "id": "alchip-3661",
-   "label": "世芯-KY 3661",
-   "type": "stock",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "EP693：輝達把世芯、發哥、MRVL 納入麾下"
-  },
-  {
-   "id": "micro-taiex",
-   "label": "微型台指期（微台）",
-   "type": "product",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "EP693：賣微台換發哥"
-  },
-  {
-   "id": "mtk-ecb",
-   "label": "聯發科 39 億美元 ECB（輝達認 35 億、Alphabet 跟投）",
-   "type": "event",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "2026-08-31 訂價，台灣史上最大海外可轉債；票息 0%、溢價十幾 %"
-  },
-  {
-   "id": "seller-financing",
-   "label": "賣方融資 Seller financing",
-   "type": "concept",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "EP693：輝達投聯發科有點賣方融資味道，但發哥本身很賺錢不像自體循環"
-  },
-  {
-   "id": "nvhbm",
-   "label": "NVHBM 輝達特規記憶體",
-   "type": "tech",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "比 HBM4E 頻寬 +30%、功耗 −15%；控制器搬到 base die；可從記憶體廠與台積電拿回價值"
-  },
-  {
-   "id": "google-ici-ocs",
-   "label": "Google ICI 互聯／OCS 光交換",
-   "type": "tech",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "EP693：輝達在互聯領域最大的對手"
-  },
-  {
-   "id": "nvidia-grocery",
-   "label": "輝達＝萬能雜貨店（賣整體解決方案）",
-   "type": "concept",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "Groq 3、Vera CPU rack、BlueField-4 STX、Spectrum rack、MGX 機櫃綁定 XPU"
-  },
-  {
-   "id": "eat-broadcom",
-   "label": "輝達想吃博通的肉",
-   "type": "theme",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "EP693：把世芯、發哥、MRVL 納入麾下；結局會像光銅之爭"
-  },
-  {
-   "id": "optical-vs-copper",
-   "label": "光銅之爭",
-   "type": "event",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "EP693 類比：銅類股股價被打爆但營收沒掉，最終股價公道"
-  },
-  {
-   "id": "position-cap",
-   "label": "部位上限風控（美股三成／台股看流動性）",
-   "type": "strategy",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "EP693 QA：美股越漲越減壓在固定趴數；台股有跌停機制敢拉大，只在意能不能砍"
-  },
-  {
-   "id": "no-momentum",
-   "label": "別幹動能、等創高再做",
-   "type": "strategy",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    693,
-    694
-   ],
-   "note": "EP693：震盪盤抱著不動；筆記啟發：最近股票沒延續性"
-  },
-  {
-   "id": "running-10k",
-   "label": "跑步 10 公里備賽",
-   "type": "event",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ],
-   "note": "閒聊：8/31 一次跑完 10K，「倒下或跑下去兩種結論」"
-  },
-  {
-   "id": "tam-grows",
-   "label": "市場總量變大：ASIC 出貨增不代表輝達少賺",
-   "type": "concept",
-   "lastSeen": "2026-09-04",
-   "episodes": [
-    693
-   ]
-  },
-  {
-   "id": "shrink-leverage-wait",
-   "label": "震盪盤縮槓桿等表態",
-   "type": "strategy",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ],
-   "note": "EP694：把槓桿再縮小一點再等，等明確再做"
-  },
-  {
-   "id": "momentum-vs-hold",
-   "label": "動能仔賠慘 vs 傻抱淨值墊高",
-   "type": "concept",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "ai-lab-financing",
-   "label": "博通／輝達幫 OpenAI、Anthropic 搞錢",
-   "type": "event",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ],
-   "note": "EP694：六客戶只兩家未上市、融資 Deal 不好"
-  },
-  {
-   "id": "mtk-named-by-avgo",
-   "label": "博通財報首次點名聯發科",
-   "type": "event",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ],
-   "note": "EP694：被王者認知到你的存在"
-  },
-  {
-   "id": "sandbagging",
-   "label": "低報高 Beat（財測保守）",
-   "type": "concept",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "peripheral-themes",
-   "label": "AI 橫盤→往外圍題材找",
-   "type": "concept",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "no-rare-earth-motor",
-   "label": "無稀土馬達供應鏈",
-   "type": "theme",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "fde",
-   "label": "前線部署工程師(FDE)",
-   "type": "concept",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ],
-   "note": "EP694：PM＋工程師合體，進客戶公司解痛點"
-  },
-  {
-   "id": "model-routing",
-   "label": "平台代選模型（省錢＋高毛利）",
-   "type": "concept",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "trust-era",
-   "label": "信任時代／好內容更值錢",
-   "type": "concept",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "startsphere-forum",
-   "label": "StartSphere AI 科技與娛樂論壇（肖楠資本）",
-   "type": "event",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "primary-value-investing",
-   "label": "初級市場做價值投資、次級做動能",
-   "type": "strategy",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "big-names-patience",
-   "label": "做 big names 要有耐心",
-   "type": "strategy",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
-   ]
-  },
-  {
-   "id": "material-desire",
-   "label": "物慾控制＝財務自由關鍵",
-   "type": "concept",
-   "lastSeen": "2026-09-05",
-   "episodes": [
-    694
    ]
   }
  ],
@@ -7968,467 +7663,8 @@
     692
    ],
    "type": "customer"
-  },
-  {
-   "source": "menggon",
-   "target": "mtk",
-   "label": "操作日記：賣微台換發哥",
-   "episodes": [
-    693
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "menggon",
-   "target": "micro-taiex",
-   "label": "操作日記：賣出微台",
-   "episodes": [
-    693
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "menggon",
-   "target": "xinxing",
-   "label": "操作日記：爆量買一點",
-   "episodes": [
-    693
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "menggon",
-   "target": "gem-ky",
-   "label": "操作日記：砍一部分去欣興",
-   "episodes": [
-    693
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "menggon",
-   "target": "txc-3042",
-   "label": "操作日記：砍一部分去欣興",
-   "episodes": [
-    693
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "nvidia",
-   "target": "mtk",
-   "label": "認購 35 億美元 ECB／深度綁定客製 XPU",
-   "episodes": [
-    693
-   ],
-   "type": "investment"
-  },
-  {
-   "source": "google",
-   "target": "mtk",
-   "label": "參與認購 ECB",
-   "episodes": [
-    693
-   ],
-   "type": "investment"
-  },
-  {
-   "source": "mtk-ecb",
-   "target": "seller-financing",
-   "label": "本質：賣方融資＋選擇權",
-   "episodes": [
-    693
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "mtk",
-   "target": "mtk-ecb",
-   "label": "發行 39 億美元 ECB",
-   "episodes": [
-    693
-   ],
-   "type": "event"
-  },
-  {
-   "source": "nvidia",
-   "target": "nvhbm",
-   "label": "自家特規 HBM",
-   "episodes": [
-    693
-   ],
-   "type": "product"
-  },
-  {
-   "source": "nvhbm",
-   "target": "hbm",
-   "label": "取代標準 HBM4E？",
-   "episodes": [
-    693
-   ],
-   "type": "tech"
-  },
-  {
-   "source": "nvidia",
-   "target": "google-ici-ocs",
-   "label": "互聯領域最大對手",
-   "episodes": [
-    693
-   ],
-   "type": "competitor"
-  },
-  {
-   "source": "nvidia",
-   "target": "nvlink-fusion",
-   "label": "開放平台綁定 XPU",
-   "episodes": [
-    693
-   ],
-   "type": "product"
-  },
-  {
-   "source": "mtk",
-   "target": "nvlink-fusion",
-   "label": "導入設計客製 XPU",
-   "episodes": [
-    693
-   ],
-   "type": "customer"
-  },
-  {
-   "source": "nvidia",
-   "target": "nvidia-grocery",
-   "label": "從賣 GPU 到萬能雜貨店",
-   "episodes": [
-    693
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "nvidia",
-   "target": "eat-broadcom",
-   "label": "想吃博通的肉",
-   "episodes": [
-    693
-   ],
-   "type": "competitor"
-  },
-  {
-   "source": "eat-broadcom",
-   "target": "broadcom",
-   "label": "對象",
-   "episodes": [
-    693
-   ],
-   "type": "competitor"
-  },
-  {
-   "source": "nvidia",
-   "target": "alchip-3661",
-   "label": "納入麾下",
-   "episodes": [
-    693
-   ],
-   "type": "partner"
-  },
-  {
-   "source": "nvidia",
-   "target": "marvell",
-   "label": "納入麾下",
-   "episodes": [
-    693
-   ],
-   "type": "partner"
-  },
-  {
-   "source": "eat-broadcom",
-   "target": "optical-vs-copper",
-   "label": "結局類比",
-   "episodes": [
-    693
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "menggon",
-   "target": "position-cap",
-   "label": "QA 風控規則",
-   "episodes": [
-    693
-   ],
-   "type": "strategy"
-  },
-  {
-   "source": "menggon",
-   "target": "no-momentum",
-   "label": "盤勢心法",
-   "episodes": [
-    693
-   ],
-   "type": "strategy"
-  },
-  {
-   "source": "xpu",
-   "target": "tam-grows",
-   "label": "XPU 市占升但 TAM 變大",
-   "episodes": [
-    693
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "menggon",
-   "target": "shrink-leverage-wait",
-   "label": "EP694 自己作法",
-   "episodes": [
-    694
-   ],
-   "type": "strategy"
-  },
-  {
-   "source": "shrink-leverage-wait",
-   "target": "momentum-vs-hold",
-   "label": "背景",
-   "episodes": [
-    694
-   ],
-   "type": "relate"
-  },
-  {
-   "source": "shrink-leverage-wait",
-   "target": "no-momentum",
-   "label": "延續 EP693",
-   "episodes": [
-    694
-   ],
-   "type": "relate"
-  },
-  {
-   "source": "menggon",
-   "target": "mtk",
-   "label": "補到最大倉位",
-   "episodes": [
-    694
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "menggon",
-   "target": "nanya",
-   "label": "補票上車",
-   "episodes": [
-    694
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "menggon",
-   "target": "gem-ky",
-   "label": "清倉停損",
-   "episodes": [
-    694
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "menggon",
-   "target": "txc-3042",
-   "label": "清倉停損",
-   "episodes": [
-    694
-   ],
-   "type": "trade"
-  },
-  {
-   "source": "gem-ky",
-   "target": "nanya",
-   "label": "資金轉入",
-   "episodes": [
-    694
-   ],
-   "type": "rotate"
-  },
-  {
-   "source": "txc-3042",
-   "target": "nanya",
-   "label": "資金轉入",
-   "episodes": [
-    694
-   ],
-   "type": "rotate"
-  },
-  {
-   "source": "broadcom",
-   "target": "ai-lab-financing",
-   "label": "財報揭露",
-   "episodes": [
-    694
-   ],
-   "type": "event"
-  },
-  {
-   "source": "ai-lab-financing",
-   "target": "anthropic",
-   "label": "受扶持",
-   "episodes": [
-    694
-   ],
-   "type": "benefit"
-  },
-  {
-   "source": "ai-lab-financing",
-   "target": "openai",
-   "label": "受扶持",
-   "episodes": [
-    694
-   ],
-   "type": "benefit"
-  },
-  {
-   "source": "broadcom",
-   "target": "mtk-named-by-avgo",
-   "label": "首次點名",
-   "episodes": [
-    694
-   ],
-   "type": "event"
-  },
-  {
-   "source": "mtk-named-by-avgo",
-   "target": "mtk",
-   "label": "昇華進另一圈子",
-   "episodes": [
-    694
-   ],
-   "type": "signal"
-  },
-  {
-   "source": "broadcom",
-   "target": "sandbagging",
-   "label": "小小暗示",
-   "episodes": [
-    694
-   ],
-   "type": "view"
-  },
-  {
-   "source": "sandbagging",
-   "target": "mtk",
-   "label": "遞延也可能超預期",
-   "episodes": [
-    694
-   ],
-   "type": "view"
-  },
-  {
-   "source": "broadcom",
-   "target": "msft",
-   "label": "謠傳 CapEx 開高",
-   "episodes": [
-    694
-   ],
-   "type": "related"
-  },
-  {
-   "source": "broadcom",
-   "target": "big-names-patience",
-   "label": "翻倍再翻倍",
-   "episodes": [
-    694
-   ],
-   "type": "view"
-  },
-  {
-   "source": "peripheral-themes",
-   "target": "tsla",
-   "label": "次題材",
-   "episodes": [
-    694
-   ],
-   "type": "related"
-  },
-  {
-   "source": "tsla",
-   "target": "no-rare-earth-motor",
-   "label": "供應鏈機會",
-   "episodes": [
-    694
-   ],
-   "type": "theme"
-  },
-  {
-   "source": "snow",
-   "target": "fde",
-   "label": "跟進派 FDE",
-   "episodes": [
-    694
-   ],
-   "type": "adopt"
-  },
-  {
-   "source": "snow",
-   "target": "model-routing",
-   "label": "預設模式高毛利",
-   "episodes": [
-    694
-   ],
-   "type": "product"
-  },
-  {
-   "source": "snow",
-   "target": "salesforce",
-   "label": "AI 協作類似",
-   "episodes": [
-    694
-   ],
-   "type": "compare"
-  },
-  {
-   "source": "fde",
-   "target": "phison",
-   "label": "筆記聯想：潘董合資派專員",
-   "episodes": [
-    694
-   ],
-   "type": "analogy"
-  },
-  {
-   "source": "menggon",
-   "target": "startsphere-forum",
-   "label": "同台 Twitch 共同創辦人 Kevin Lin",
-   "episodes": [
-    694
-   ],
-   "type": "event"
-  },
-  {
-   "source": "startsphere-forum",
-   "target": "primary-value-investing",
-   "label": "初級市場邏輯",
-   "episodes": [
-    694
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "startsphere-forum",
-   "target": "trust-era",
-   "label": "內容爆發時代",
-   "episodes": [
-    694
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "menggon",
-   "target": "material-desire",
-   "label": "QA 金句",
-   "episodes": [
-    694
-   ],
-   "type": "view"
   }
  ],
- "lastUpdated": "2026-09-07 05:06 (UTC+8)",
- "verifiedNote": "2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
+ "lastUpdated": "2026-09-02 05:06 (UTC+8)",
+ "verifiedNote": "2026-09-02：無新集數（EP693 於 9/2 週三下午釋出，明日納入）。目前累積至 EP692（8/29 六），episodesCount 30。EP692 提及個股代號均已查證：國巨 2327、台達電 2308、世芯-KY 3661、創意 3443。"
 }
