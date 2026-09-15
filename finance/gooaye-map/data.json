@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-09-09",
+ "updatedAt": "2026-09-16",
  "startDate": "2026-05-20",
- "episodesCount": 32,
+ "episodesCount": 34,
  "episodes": [
   {
    "ep": 663,
@@ -194,9 +194,171 @@
    "date": "2026-09-05",
    "title": "震盪盤：動能仔賠慘、傻抱淨值墊高，他把槓桿再縮小等表態 · 博通財報：六客戶只有 OpenAI、Anthropic 要幫忙搞錢、博通很有動機扶持 Anthropic · 第一次把 MTK 拿出來「被王者認知到你的存在」· 公司本來就低報高 Beat · 股價不漲因翻倍再翻倍、做 big names 要有耐心 · AI 橫盤往外圍找（特斯拉無稀土馬達、軟體）· Snowflake 上調、AI 協作＋前線部署工程師(FDE) · 信任時代好內容更值錢 · 操作日記：聯發科 2454 補到最大倉位、捷敏-KY 6525／晶技 3042 清倉停損錢進南亞科 2408",
    "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-694/"
+  },
+  {
+   "ep": 695,
+   "date": "2026-09-09",
+   "title": "「原來印這麼快」· 震盪盤想搶快的都被教訓、鎖漲停隔天開低但沒幾天就回來、等大盤創高才改善 · Google Cloud 高盛論壇：新客獲取 2 倍、億元大單倍增、AI 伺服器不到兩年回本、自研晶片再減半＝出租 TPU 一年回本、「可以理解高層把天秤往硬體傾斜」· 自由現金流轉負是 ROIC 比回購好賺 · Google 變水電業者估值降但真金白銀 · AI 模型半衰期兩三個月、API 費用收斂、算力大宗商品化→高 CP 值硬體 · 模型商風險結構：模型商燒股東的錢（股東多是雲商）、晶片商供應鏈扎實賺、循環融資最終像 .com 但週期長、早期訊號前不當末日論者 · 啟發：箱型墊高開高倒開低買、自研晶片回收期減半對台股 IP/IC 強大利多（發哥、創意、世芯）· 肖楠資本 TGS 物色遊戲團隊 · 操作日記：按兵不動",
+   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-695/"
+  },
+  {
+   "ep": 696,
+   "date": "2026-09-12",
+   "title": "「盤面人與人之間的信任不見了」· 宙斯法則不被尊重、鎖漲停隔天就丟、開營收利多出盡搞人「以後這股票沒朋友」· 蘋果發表會：iPhone Duo 定價比共識便宜會賣得比想像好、會第一時間買，但「消費性題材再怎麼成長都打不贏 AI」（蘋概股狗都不碰）、新日興鉸鏈毛利被蘋果壓、蘋果養二供、掌握通路的人 AI 仍分到價值 · 甲骨文「不用出錢的魔術」：客戶預付＋自備硬體(BYOH)＋供應商融資、承平沒事反轉虛胖、不當末日博士 · 舊卡沒高速折舊 · 電力跟許可是 AI 基建政治瓶頸 · 陳福陽說閉源模型贏家是寡頭他打問號偏雙頭 · QA：一早就空的人在多頭路上早被嘎不知幾次 · 操作日記：台達電停損砍掉轉去世芯",
+   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-696/"
   }
  ],
  "nodes": [
+  {
+   "id": "market-trust-lost",
+   "label": "盤面信任不見了／宙斯法則不被尊重",
+   "type": "concept",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：鎖漲停隔天不續跑、開營收利多出盡搞人；「你要開始去猥瑣別人，最終就是大家一起下去」「以後你這個股票就沒有朋友」"
+  },
+  {
+   "id": "byoh-oracle",
+   "label": "甲骨文「不用出錢的魔術」（客戶預付＋BYOH＋供應商融資）",
+   "type": "concept",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：借客戶的錢、借輝達或設備商的錢；承平時期沒問題、反轉時需求被自己的融資放大成虛胖；不當末日博士"
+  },
+  {
+   "id": "orcl",
+   "label": "甲骨文 ORCL",
+   "type": "stock",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：上修全年、狀況很好，但整體市場環境就是利多不漲；四年前舊卡漲 20% 沒高速折舊"
+  },
+  {
+   "id": "iphone-duo",
+   "label": "iPhone Duo 折疊機（定價低於共識）",
+   "type": "event",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：只比 Fold8 貴一點、比市場共識便宜、會第一時間買、銷量會超乎預期；中國消費降級要看；「科技的重點不是誰先做」"
+  },
+  {
+   "id": "szs-3376",
+   "label": "新日興 3376（鉸鏈）",
+   "type": "stock",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：鉸鏈在 iPhone Duo 裡做很大，原以為第一代有不錯毛利，「聽說被蘋果壓制得很慘」"
+  },
+  {
+   "id": "apple-supplychain-squeeze",
+   "label": "蘋概股狗都不碰／蘋果養二供壓價",
+   "type": "concept",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：消費性題材再怎麼成長都打不贏 AI；蘋果把利潤全收回自己身上、供應商價格壓到死、再養二供對付你；特斯拉同款垂直整合；掌握通路的人 AI 後續仍分到價值"
+  },
+  {
+   "id": "power-permit-politics",
+   "label": "電力與許可＝AI 基建的政治瓶頸",
+   "type": "concept",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：管線被否決、選民反對；AI 基建進入地方政治階段；民主黨上台可能有變數；「只有少數人賺錢的話，民主制度就是票多的贏」"
+  },
+  {
+   "id": "closed-model-oligopoly",
+   "label": "閉源模型贏家：寡頭 vs 雙頭",
+   "type": "concept",
+   "lastSeen": "2026-09-12",
+   "episodes": [
+    696
+   ],
+   "note": "EP696：陳福陽說最後贏家是寡頭甚至一人，他打問號、偏向雙頭；會出現特化版模型；硬體成本趨平後開放權重模型價值拉上去；「只要一家爆炸市場就爆炸，所以他講的劇本比較不會發生」"
+  },
+  {
+   "id": "ai-server-payback",
+   "label": "AI 伺服器回收期＜2 年／出租 TPU 一年回本",
+   "type": "concept",
+   "lastSeen": "2026-09-09",
+   "episodes": [
+    695
+   ],
+   "note": "EP695「原來印這麼快」：Google Cloud 在高盛論壇——AI 伺服器整體回收期不到兩年、自研晶片再減半；SpaceX、特斯拉出租算力先驗證過；「可以理解為何高層把天秤往硬體傾斜」"
+  },
+  {
+   "id": "google-cloud-gs2026",
+   "label": "Google Cloud 高盛論壇數字（新客 2 倍、億元大單倍增、超額消費 >50%）",
+   "type": "event",
+   "lastSeen": "2026-09-09",
+   "episodes": [
+    695
+   ],
+   "note": "EP695：一年前講的到現在沒變——全世界 AI 伺服器零組件獨供給 Google 還是不夠；自由現金流轉負是 ROIC 比回購好賺"
+  },
+  {
+   "id": "google-utility",
+   "label": "Google 變水電業者（估值乘數降、真金白銀）",
+   "type": "concept",
+   "lastSeen": "2026-09-09",
+   "episodes": [
+    695
+   ],
+   "note": "EP695：轉型成水電業者而非前緣模型時估值會下調，但賺的是真金白銀、難怪巴菲特投；啟發：下跌時可當防禦股買"
+  },
+  {
+   "id": "compute-commodity",
+   "label": "算力大宗商品化／模型半衰期 2～3 個月",
+   "type": "theme",
+   "lastSeen": "2026-09-09",
+   "episodes": [
+    695
+   ],
+   "note": "EP695：Fable→Astra 很快被超車；溢價權利收縮、API 費用收斂；當算力變大宗商品，高 CP 值硬體（自研晶片）就很吸引人"
+  },
+  {
+   "id": "model-vendor-risk",
+   "label": "模型商風險結構（模型商燒股東的錢、晶片商扎實賺、雲商五年合約收回）",
+   "type": "concept",
+   "lastSeen": "2026-09-09",
+   "episodes": [
+    695
+   ],
+   "note": "EP695：唯一外部流入是終端客戶；循環融資最終像 .com 泡沫但週期可能很長；早期訊號：外部資本進不來、消費者不擴大採用、模型商財測轉差——出現前不當末日論者"
+  },
+  {
+   "id": "box-range-trade",
+   "label": "箱型區間逐漸墊高：開高倒一點、開低買一點",
+   "type": "concept",
+   "lastSeen": "2026-09-09",
+   "episodes": [
+    695
+   ],
+   "note": "EP695 啟發：震盪盤想搶快的都被教訓；鎖漲停隔天開低甚至跌停但沒幾天回來；等大盤創高才改善；持續看多直到早期訊號、寧犧牲部分高點也不被洗掉"
+  },
+  {
+   "id": "xiaonan-capital",
+   "label": "肖楠資本（TGS 東京電玩展物色遊戲團隊）",
+   "type": "company",
+   "lastSeen": "2026-09-09",
+   "episodes": [
+    695
+   ],
+   "note": "EP695 閒聊：遊戲性最重要、團隊 OK 就發支票；很多遺珠礙於各種原因不能投；沒包袱的肖楠反而適合"
+  },
   {
    "id": "tsmc",
    "label": "台積電 2330",
@@ -237,7 +399,7 @@
    "id": "mtk",
    "label": "聯發科 2454",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-09-09",
    "episodes": [
     663,
     667,
@@ -248,9 +410,10 @@
     685,
     690,
     693,
-    694
+    694,
+    695
    ],
-   "note": "EP694：砍指數部位補到最大倉位；博通財報首次點名"
+   "note": "EP695：「發哥依舊猛的」——自研晶片回收期減半對台股 IP/IC 是強大利多；EP694：砍指數部位補到最大倉位；博通財報首次點名"
   },
   {
    "id": "iap",
@@ -293,7 +456,7 @@
    "id": "googl",
    "label": "Google GOOGL",
    "type": "stock",
-   "lastSeen": "2026-08-28",
+   "lastSeen": "2026-09-09",
    "episodes": [
     663,
     664,
@@ -302,8 +465,10 @@
     682,
     685,
     687,
-    690
-   ]
+    690,
+    695
+   ],
+   "note": "EP695：Google Cloud 高盛論壇——AI 伺服器不到兩年回本、TPU 一年回本、變水電業者可當防禦股"
   },
   {
    "id": "llt",
@@ -616,13 +781,15 @@
    "id": "spacex",
    "label": "SpaceX SPCX（已上市）",
    "type": "stock",
-   "lastSeen": "2026-08-15",
+   "lastSeen": "2026-09-09",
    "episodes": [
     665,
     670,
     680,
-    688
-   ]
+    688,
+    695
+   ],
+   "note": "EP695：出租算力早已驗證 AI 伺服器回本快（9/11 又簽年化 130 億美元算力出租）"
   },
   {
    "id": "qct",
@@ -846,23 +1013,28 @@
    "id": "alc-3661",
    "label": "世芯 3661 (ASIC)",
    "type": "stock",
-   "lastSeen": "2026-08-28",
+   "lastSeen": "2026-09-12",
    "episodes": [
     667,
     675,
     687,
-    690
-   ]
+    690,
+    695,
+    696
+   ],
+   "note": "EP696 操作日記：台達電停損的錢轉去世芯（9/11 跌停 3,650 那天）；EP695：「再來大間的大概就是創意跟世芯」（兩天後高通搶 AWS）"
   },
   {
    "id": "alc-3443",
    "label": "創意 3443 (ASIC)",
    "type": "stock",
-   "lastSeen": "2026-07-01",
+   "lastSeen": "2026-09-09",
    "episodes": [
     667,
-    675
-   ]
+    675,
+    695
+   ],
+   "note": "EP695：自研晶片回收期減半→CSP 更願走 ASIC，台股 IP/IC 強大利多"
   },
   {
    "id": "nvlink-fusion",
@@ -1214,7 +1386,7 @@
    "id": "delta",
    "label": "台達電 2308",
    "type": "stock",
-   "lastSeen": "2026-08-29",
+   "lastSeen": "2026-09-12",
    "episodes": [
     670,
     671,
@@ -1222,19 +1394,23 @@
     687,
     688,
     691,
-    692
-   ]
+    692,
+    696
+   ],
+   "note": "EP696 操作日記：停損砍掉、轉去世芯（EP691 才「砍國巨補台達電」，三週認賠）"
   },
   {
    "id": "anthropic",
    "label": "Anthropic（未上市）",
    "type": "company",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-09-09",
    "episodes": [
     670,
     692,
-    694
-   ]
+    694,
+    695
+   ],
+   "note": "EP695：模型商風險結構——燒股東的錢、股東多半是雲商"
   },
   {
    "id": "cursor",
@@ -1705,11 +1881,13 @@
    "id": "aapl",
    "label": "蘋果 AAPL",
    "type": "stock",
-   "lastSeen": "2026-08-12",
+   "lastSeen": "2026-09-12",
    "episodes": [
     674,
-    687
-   ]
+    687,
+    696
+   ],
+   "note": "EP696：iPhone Duo 定價比共識便宜、銷量會超乎預期；大家最低估的是操作直覺＋軟硬整合；垂直整合把利潤收回自己"
   },
   {
    "id": "msft",
@@ -2609,12 +2787,14 @@
    "id": "openai",
    "label": "OpenAI",
    "type": "company",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-09-09",
    "episodes": [
     685,
     692,
-    694
-   ]
+    694,
+    695
+   ],
+   "note": "EP695：Fable 時被懷疑、端出 Astra 大家狂讚；模型半衰期兩三個月；模型商燒股東的錢"
   },
   {
    "id": "thermal-ai",
@@ -3853,6 +4033,230 @@
   }
  ],
  "links": [
+  {
+   "source": "delta",
+   "target": "alc-3661",
+   "label": "EP696 操作日記：台達電停損→轉世芯",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "orcl",
+   "target": "byoh-oracle",
+   "label": "不用出錢的魔術",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "byoh-oracle",
+   "target": "circular-fin",
+   "label": "供應商融資＝循環融資的甲骨文版",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "nvidia",
+   "target": "byoh-oracle",
+   "label": "借輝達的錢買輝達的卡",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "aapl",
+   "target": "iphone-duo",
+   "label": "發表會：定價低於共識",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "iphone-duo",
+   "target": "szs-3376",
+   "label": "鉸鏈供應商、毛利被壓",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "aapl",
+   "target": "apple-supplychain-squeeze",
+   "label": "養二供、利潤全收回",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "tsla",
+   "target": "apple-supplychain-squeeze",
+   "label": "同款垂直整合",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "avgo",
+   "target": "closed-model-oligopoly",
+   "label": "陳福陽：閉源模型贏家是寡頭",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "byoh-oracle",
+   "target": "power-permit-politics",
+   "label": "AI 基建下一個瓶頸",
+   "episodes": [
+    696
+   ]
+  },
+  {
+   "source": "googl",
+   "target": "ai-server-payback",
+   "label": "高盛論壇：不到兩年回本",
+   "episodes": [
+    695
+   ],
+   "type": "evidence"
+  },
+  {
+   "source": "g-tpu",
+   "target": "ai-server-payback",
+   "label": "自研晶片回收期再減半（一年）",
+   "episodes": [
+    695
+   ],
+   "type": "evidence"
+  },
+  {
+   "source": "spacex",
+   "target": "ai-server-payback",
+   "label": "出租算力早已驗證回本快",
+   "episodes": [
+    695
+   ],
+   "type": "evidence"
+  },
+  {
+   "source": "googl",
+   "target": "google-cloud-gs2026",
+   "label": "Google Cloud 數字",
+   "episodes": [
+    695
+   ],
+   "type": "event"
+  },
+  {
+   "source": "googl",
+   "target": "google-utility",
+   "label": "轉型水電業者",
+   "episodes": [
+    695
+   ],
+   "type": "concept"
+  },
+  {
+   "source": "ai-server-payback",
+   "target": "alc-3661",
+   "label": "CSP 更願走 ASIC→台股 IP/IC 利多",
+   "episodes": [
+    695
+   ],
+   "type": "benefit"
+  },
+  {
+   "source": "ai-server-payback",
+   "target": "alc-3443",
+   "label": "CSP 更願走 ASIC→台股 IP/IC 利多",
+   "episodes": [
+    695
+   ],
+   "type": "benefit"
+  },
+  {
+   "source": "ai-server-payback",
+   "target": "mtk",
+   "label": "發哥依舊猛的",
+   "episodes": [
+    695
+   ],
+   "type": "benefit"
+  },
+  {
+   "source": "compute-commodity",
+   "target": "ai-server-payback",
+   "label": "算力變大宗商品→高 CP 值硬體吸引人",
+   "episodes": [
+    695
+   ],
+   "type": "concept"
+  },
+  {
+   "source": "openai",
+   "target": "compute-commodity",
+   "label": "Astra 端出、模型半衰期兩三個月",
+   "episodes": [
+    695
+   ],
+   "type": "evidence"
+  },
+  {
+   "source": "model-vendor-risk",
+   "target": "openai",
+   "label": "模型商燒股東的錢",
+   "episodes": [
+    695
+   ],
+   "type": "risk"
+  },
+  {
+   "source": "model-vendor-risk",
+   "target": "anthropic",
+   "label": "模型商燒股東的錢",
+   "episodes": [
+    695
+   ],
+   "type": "risk"
+  },
+  {
+   "source": "model-vendor-risk",
+   "target": "googl",
+   "label": "雲商既是股東又是供應商",
+   "episodes": [
+    695
+   ],
+   "type": "risk"
+  },
+  {
+   "source": "menggon",
+   "target": "box-range-trade",
+   "label": "盤勢框架",
+   "episodes": [
+    695
+   ],
+   "type": "advocate"
+  },
+  {
+   "source": "menggon",
+   "target": "model-vendor-risk",
+   "label": "早期訊號前不當末日論者",
+   "episodes": [
+    695
+   ],
+   "type": "advocate"
+  },
+  {
+   "source": "menggon",
+   "target": "xiaonan-capital",
+   "label": "創投／TGS",
+   "episodes": [
+    695
+   ],
+   "type": "advocate"
+  },
   {
    "source": "menggon",
    "target": "passive",
@@ -8429,6 +8833,6 @@
    "type": "view"
   }
  ],
- "lastUpdated": "2026-09-09 05:07 (UTC+8)",
- "verifiedNote": "2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
+ "lastUpdated": "2026-09-16 05:15 (UTC+8)",
+ "verifiedNote": "2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
 }
