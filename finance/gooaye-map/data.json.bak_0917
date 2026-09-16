@@ -1,7 +1,7 @@
 {
- "updatedAt": "2026-09-17",
+ "updatedAt": "2026-09-16",
  "startDate": "2026-05-20",
- "episodesCount": 35,
+ "episodesCount": 34,
  "episodes": [
   {
    "ep": 663,
@@ -206,12 +206,6 @@
    "date": "2026-09-12",
    "title": "「盤面人與人之間的信任不見了」· 宙斯法則不被尊重、鎖漲停隔天就丟、開營收利多出盡搞人「以後這股票沒朋友」· 蘋果發表會：iPhone Duo 定價比共識便宜會賣得比想像好、會第一時間買，但「消費性題材再怎麼成長都打不贏 AI」（蘋概股狗都不碰）、新日興鉸鏈毛利被蘋果壓、蘋果養二供、掌握通路的人 AI 仍分到價值 · 甲骨文「不用出錢的魔術」：客戶預付＋自備硬體(BYOH)＋供應商融資、承平沒事反轉虛胖、不當末日博士 · 舊卡沒高速折舊 · 電力跟許可是 AI 基建政治瓶頸 · 陳福陽說閉源模型贏家是寡頭他打問號偏雙頭 · QA：一早就空的人在多頭路上早被嘎不知幾次 · 操作日記：台達電停損砍掉轉去世芯",
    "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-696/"
-  },
-  {
-   "ep": 697,
-   "date": "2026-09-16",
-   "title": "盤面「像死掉一般」但漢測退款活水可能有轉機（他打問號、那斯達克在盤整下緣）· Amodei 3,800 字《Pace the Frontier》→費半 −6%、資安股 +13% · 三個互相賭爛的人（Amodei、Altman、馬斯克）第一次站同一陣線是「天有異象」· 監管捕獲：領跑者用規則擠掉後進者「連雛都孵不出來」、第三方評估球員兼裁判、副總統稱特洛伊木馬 · 馬斯克要的是彎道超車不是安全（xAI 追人、Colossus 十幾天）· OpenAI 延後上市反而保住 AI 的朦朧美 · 驗證與監控是新的算力需求：資料消毒、checkpoint 重考、對齊考試重考一千次、可解釋性掃描＝模型 fMRI，可能吃掉 15～20% 以上算力——「硬體跟著跌反而奇怪」· 大結論：殺的是評價不是實質用量 · 被動元件漲價趨勢仍在（江海 002484）· QA：股票質借 3% 以下難、專業投資人 3 千萬「開一扇不知道出來鬼還是神的門」· 操作日記：筆記未提",
-   "url": "https://vocus.cc/article/6aaa784dfd89780001be298c"
   }
  ],
  "nodes": [
@@ -565,7 +559,7 @@
    "id": "nvidia",
    "label": "NVIDIA NVDA",
    "type": "stock",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-09-04",
    "episodes": [
     663,
     664,
@@ -575,16 +569,14 @@
     683,
     687,
     692,
-    693,
-    697
-   ],
-   "note": "EP697：黃仁勳說別人蓋 Colossus 等級要四年，馬斯克十幾天"
+    693
+   ]
   },
   {
    "id": "passive",
    "label": "被動元件",
    "type": "industry",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-08-26",
    "episodes": [
     663,
     664,
@@ -597,10 +589,8 @@
     676,
     678,
     685,
-    691,
-    697
-   ],
-   "note": "EP697：漲價趨勢仍持續、個股先休息；上半年漲最多的族群"
+    691
+   ]
   },
   {
    "id": "ai-semi",
@@ -676,7 +666,7 @@
    "id": "menggon",
    "label": "謝孟恭",
    "type": "person",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-09-05",
    "episodes": [
     663,
     664,
@@ -695,8 +685,7 @@
     691,
     692,
     693,
-    694,
-    697
+    694
    ]
   },
   {
@@ -842,13 +831,11 @@
    "id": "musk",
    "label": "Elon Musk",
    "type": "person",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-06-13",
    "episodes": [
     665,
-    670,
-    697
-   ],
-   "note": "EP697：附議放慢的算盤是彎道超車不是安全"
+    670
+   ]
   },
   {
    "id": "sat-ai-compute",
@@ -1416,15 +1403,14 @@
    "id": "anthropic",
    "label": "Anthropic（未上市）",
    "type": "company",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-09-09",
    "episodes": [
     670,
     692,
     694,
-    695,
-    697
+    695
    ],
-   "note": "EP697：Dario 發文要管制前沿模型；第三方評估機構有離職員工進駐＝球員兼裁判；租 xAI 資料中心後馬斯克態度 180 度轉"
+   "note": "EP695：模型商風險結構——燒股東的錢、股東多半是雲商"
   },
   {
    "id": "cursor",
@@ -1487,12 +1473,10 @@
    "id": "model-regulation",
    "label": "大模型訴諸恐懼招監管",
    "type": "theme",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-06-13",
    "episodes": [
-    670,
-    697
-   ],
-   "note": "EP697：管制＝更多算力（驗證、監控、對齊重考、可解釋性掃描）"
+    670
+   ]
   },
   {
    "id": "emotion-selloff",
@@ -2803,15 +2787,14 @@
    "id": "openai",
    "label": "OpenAI",
    "type": "company",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-09-09",
    "episodes": [
     685,
     692,
     694,
-    695,
-    697
+    695
    ],
-   "note": "EP697：Altman 附議放慢；今年不上市「其實是好事」——不用交數字、保住朦朧美"
+   "note": "EP695：Fable 時被懷疑、端出 Astra 大家狂讚；模型半衰期兩三個月；模型商燒股東的錢"
   },
   {
    "id": "thermal-ai",
@@ -4047,206 +4030,6 @@
    "episodes": [
     694
    ]
-  },
-  {
-   "id": "hantest-7856",
-   "label": "漢測 7856（興櫃股王、抽籤凍資 8,656 億）",
-   "type": "stock",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：超多人跑去抽、規模比 7769 大很多；朋友回測抽籤錢釋放後市場有活水感，他打問號（那斯達克在盤整下緣）"
-  },
-  {
-   "id": "market-dead-low-vol",
-   "label": "盤面像死掉一般（低波動）",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：「已經像是死掉一般，不太會動了」，但漢測退款後說不定有轉機"
-  },
-  {
-   "id": "ipo-lottery-liquidity",
-   "label": "抽籤資金解凍活水",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：8,656 億凍資 9/17 退款，回測顯示釋放後有活水感；仍要看全球盤面臉色"
-  },
-  {
-   "id": "pace-the-frontier",
-   "label": "Amodei《Pace the Frontier》放慢前沿",
-   "type": "event",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：3,800 字要求管制前沿模型，禮拜一費半 −6%、資安股 +13%；Altman、馬斯克附議"
-  },
-  {
-   "id": "xai",
-   "label": "xAI（未上市，馬斯克）",
-   "type": "company",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：在追人、前期踩錯方向；大家煞車他就能彎道超車；十幾天搞出 Colossus GPU 叢集"
-  },
-  {
-   "id": "altman",
-   "label": "Sam Altman",
-   "type": "person",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：附議放慢；說安全問題讓 OpenAI 今年無法上市"
-  },
-  {
-   "id": "amodei",
-   "label": "Dario Amodei",
-   "type": "person",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：3,800 字《Pace the Frontier》引爆費半 −6%"
-  },
-  {
-   "id": "three-rivals-align",
-   "label": "三個互相賭爛的人站同一陣線＝天有異象",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：Amodei、Altman、馬斯克第一次同陣線，市場才這樣反應"
-  },
-  {
-   "id": "regulatory-capture",
-   "label": "監管捕獲（領跑者用規則擠掉後進者）",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：監管拉高作業成本，領跑者毛利掉一點、新進者「連雛都孵不出來」；「我好強大請監管我」是競爭手段非道德宣示"
-  },
-  {
-   "id": "trojan-horse-regulation",
-   "label": "特洛伊木馬式監管（副總統說法）",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：前沿實驗室跑去華盛頓要求監管像 Trojan Horse"
-  },
-  {
-   "id": "verification-compute",
-   "label": "驗證與監控＝新的算力需求（吃 15～20% 以上）",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：資料消毒、checkpoint 第三方重考、危險能力長任務測試、對齊考試重考一千次、可解釋性掃描＝模型 fMRI、部署後監考沙箱；用 OpenAI 承諾 20% 算力做超級對齊推估"
-  },
-  {
-   "id": "kill-valuation-not-usage",
-   "label": "殺的是評價不是實質用量",
-   "type": "strategy",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697 大結論：情緒受影響、本益比可能再修，但實質用量只會更多——「硬體跟著跌反而奇怪」"
-  },
-  {
-   "id": "openai-no-ipo-blur",
-   "label": "OpenAI 不上市＝保住朦朧美",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：兩家同時遞 S1 數字攤在陽光下，AI 故事可能提早結束"
-  },
-  {
-   "id": "musk-overtake",
-   "label": "馬斯克彎道超車",
-   "type": "strategy",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：xAI 追人；地面＋太空算力建好就能超車；執行力（Colossus 十幾天）是籌碼"
-  },
-  {
-   "id": "sox-index",
-   "label": "費城半導體 SOX",
-   "type": "theme",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：Amodei 文章禮拜一踹掉 6%"
-  },
-  {
-   "id": "cybersecurity-stocks",
-   "label": "資安股",
-   "type": "theme",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：管制論述下逆勢噴 13%"
-  },
-  {
-   "id": "jianghai-002484",
-   "label": "江海股份 002484（A 股鋁電解電容）",
-   "type": "stock",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：半年前提過、噴了幾根；當時是抓到被動元件漲價"
-  },
-  {
-   "id": "stock-pledge-loan",
-   "label": "股票質借 3% 以下資金",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697 QA：現在確實蠻難，房子還有辦法，信貸不評論"
-  },
-  {
-   "id": "pro-investor-30m",
-   "label": "專業投資人（3 千萬門檻）",
-   "type": "concept",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697 QA：懂的人開特殊渠道；菜籃族被理專推奇怪產品套在深處——「開一扇不知道出來鬼還是神的門」"
-  },
-  {
-   "id": "not-a-tip-show",
-   "label": "節目不是報牌台",
-   "type": "strategy",
-   "lastSeen": "2026-09-16",
-   "episodes": [
-    697
-   ],
-   "note": "EP697：不聊單一中小型標的，聽到就衝可能被套，資訊當產業分析渠道"
   }
  ],
  "links": [
@@ -4482,8 +4265,7 @@
     663,
     664,
     665,
-    670,
-    697
+    670
    ],
    "type": "advocate"
   },
@@ -9049,251 +8831,8 @@
     694
    ],
    "type": "view"
-  },
-  {
-   "source": "menggon",
-   "target": "market-dead-low-vol",
-   "label": "EP697 盤勢",
-   "episodes": [
-    697
-   ],
-   "type": "view"
-  },
-  {
-   "source": "hantest-7856",
-   "target": "ipo-lottery-liquidity",
-   "label": "凍資 8,656 億→9/17 退款活水",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "market-dead-low-vol",
-   "target": "ipo-lottery-liquidity",
-   "label": "可能的轉機（他打問號）",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "amodei",
-   "target": "pace-the-frontier",
-   "label": "發文 3,800 字",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "anthropic",
-   "target": "pace-the-frontier",
-   "label": "發起",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "altman",
-   "target": "pace-the-frontier",
-   "label": "附議",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "musk",
-   "target": "pace-the-frontier",
-   "label": "附議",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "pace-the-frontier",
-   "target": "sox-index",
-   "label": "禮拜一 −6%",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "pace-the-frontier",
-   "target": "cybersecurity-stocks",
-   "label": "逆勢 +13%",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "pace-the-frontier",
-   "target": "three-rivals-align",
-   "label": "三人同陣線＝天有異象",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "pace-the-frontier",
-   "target": "regulatory-capture",
-   "label": "真正動機",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "regulatory-capture",
-   "target": "trojan-horse-regulation",
-   "label": "副總統說法",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "anthropic",
-   "target": "regulatory-capture",
-   "label": "第三方評估＝球員兼裁判",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "musk",
-   "target": "musk-overtake",
-   "label": "算盤",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "xai",
-   "target": "musk-overtake",
-   "label": "追人、Colossus 十幾天",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "musk-overtake",
-   "target": "nvidia",
-   "label": "黃仁勳：別人要四年",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "anthropic",
-   "target": "xai",
-   "label": "租資料中心後馬斯克態度 180 度轉",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "openai",
-   "target": "openai-no-ipo-blur",
-   "label": "今年不上市反而好",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "altman",
-   "target": "openai-no-ipo-blur",
-   "label": "安全問題無法上市",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "model-regulation",
-   "target": "verification-compute",
-   "label": "管制＝更多算力",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "verification-compute",
-   "target": "kill-valuation-not-usage",
-   "label": "大結論",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "kill-valuation-not-usage",
-   "target": "sox-index",
-   "label": "硬體跟著跌反而奇怪",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "menggon",
-   "target": "kill-valuation-not-usage",
-   "label": "EP697 核心判讀",
-   "episodes": [
-    697
-   ],
-   "type": "view"
-  },
-  {
-   "source": "passive",
-   "target": "jianghai-002484",
-   "label": "半年前提過的例子",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "jianghai-002484",
-   "target": "not-a-tip-show",
-   "label": "不聊單一中小型標的",
-   "episodes": [
-    697
-   ],
-   "type": "concept"
-  },
-  {
-   "source": "menggon",
-   "target": "stock-pledge-loan",
-   "label": "QA",
-   "episodes": [
-    697
-   ],
-   "type": "view"
-  },
-  {
-   "source": "menggon",
-   "target": "pro-investor-30m",
-   "label": "QA",
-   "episodes": [
-    697
-   ],
-   "type": "view"
   }
  ],
- "lastUpdated": "2026-09-17 05:20 (UTC+8)",
- "verifiedNote": "2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
+ "lastUpdated": "2026-09-16 05:15 (UTC+8)",
+ "verifiedNote": "2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
 }
