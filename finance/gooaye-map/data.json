@@ -1,219 +1,8 @@
 {
- "updatedAt": "2026-09-19",
+ "updatedAt": "2026-09-20",
  "startDate": "2026-05-20",
- "episodesCount": 35,
- "episodes": [
-  {
-   "ep": 663,
-   "date": "2026-05-20",
-   "title": "被動元件大廠掃貨 · 台積電紀律擴產 · 愛普 Google TPU",
-   "url": "https://www.youtube.com/watch?v=wgd3AJ3Wuzk"
-  },
-  {
-   "ep": 664,
-   "date": "2026-05-23",
-   "title": "AI 高密度機櫃換代：被動元件迎來長線大潮 · Power Rack",
-   "url": "https://www.youtube.com/watch?v=ag-5hqHbqZo"
-  },
-  {
-   "ep": 665,
-   "date": "2026-05-27",
-   "title": "SpaceX IPO · 衛星 AI 算力護城河 · 不管估值多少先上車",
-   "url": "https://www.threads.com/@alphamemo.ai/post/DY15dOiD3xV/"
-  },
-  {
-   "ep": 666,
-   "date": "2026-05-31",
-   "title": "鋁電容「房間裡的大象」缺口 20% · 軟體股 Token-based 轉型全面爆發 · 老 AI ODM 輪迴",
-   "url": "https://vocus.cc/article/6a1aa1befd89780001080e34"
-  },
-  {
-   "ep": 667,
-   "date": "2026-06-03",
-   "title": "老黃喊單點石成金 Marvell 飛天神牛 · 光是勢在必行 · DGX Spark=N1X AI PC 二次挑戰 · 功率半導體試單",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-667/"
-  },
-  {
-   "ep": 668,
-   "date": "2026-06-06",
-   "title": "COMPUTEX 軟硬整合落地 · 輝達雙引擎（電力櫃 + RTX Spark）· 傑文斯悖論 · 統一記憶體是 AI PC 最強亮點 · brace for impact 洗籌碼是好事",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-668/"
-  },
-  {
-   "ep": 669,
-   "date": "2026-06-10",
-   "title": "殺戮戰場 vs 流動性壓力測試 · 嚇人但拉長看沒事 · 殺的是槓桿不是基本面 · 等殺破前低再動作",
-   "url": "https://www.threads.com/@read_gooaye"
-  },
-  {
-   "ep": 670,
-   "date": "2026-06-13",
-   "title": "SpaceX 上市帶出估值哲學·估在別人前面 · 衛星股題材兌現大逃殺 · 台股壞消息一次出盡不等季線買進 · 被動元件漲價超預期循環更長 · Anthropic 招監管反催化地端 AI",
-   "url": "https://vocus.cc/article/6a2d1fe3fd897800010560f4"
-  },
-  {
-   "ep": 671,
-   "date": "2026-06-17",
-   "title": "被動元件漲價信從半信半疑到全信 · 籌碼亂掉找下一棒（離散/功率元件）· 台積電比重拉高、崩壞才灌錢避難",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-671/"
-  },
-  {
-   "ep": 672,
-   "date": "2026-06-20",
-   "title": "「缺料就無法出貨」剛性短缺 · 功率半導體/MOSFET 接棒 · 交期99週訂單外溢台廠 · 順大廠料流找第二供應 · 機器人/IPC 初期",
-   "url": "https://vocus.cc/article/6a365820fd89780001bafdd6"
-  },
-  {
-   "ep": 673,
-   "date": "2026-06-24",
-   "title": "韓國人真的很會玩 · 單一股票兩倍槓桿 ETF · 三星/SK海力士 AI 記憶體狂熱",
-   "url": "https://www.youtube.com/watch?v=YS_nOUjrqAc"
-  },
-  {
-   "ep": 674,
-   "date": "2026-06-27",
-   "title": "",
-   "url": ""
-  },
-  {
-   "ep": 675,
-   "date": "2026-07-01",
-   "title": "上半年作帳行情落幕 · 只買「需求導向」漲價 · IC 設計三雄轉強 · 汰弱留強",
-   "url": "https://vocus.cc/article/6a44fff9fd8978000106a2da"
-  },
-  {
-   "ep": 676,
-   "date": "2026-07-04",
-   "title": "別以為 AI 只剩台積電 · 資金往外溢受惠零組件走 · 需求導向漲價 > 成本轉嫁 · 被動/功率/封測接棒",
-   "url": "https://www.threads.com/@28kylef_/post/DaXauskFGIv/"
-  },
-  {
-   "ep": 677,
-   "date": "2026-07-08",
-   "title": "拆解 SemiAnalysis：800VDC/Kyber 遞延只是短期壓力測試 · DrMOS 高毛利外溢台廠 · 題材終將收斂回權值 · 提醒少年股民別玩高槓桿",
-   "url": "https://vocus.cc/tags/%E8%82%A1%E7%99%8C"
-  },
-  {
-   "ep": 678,
-   "date": "2026-07-11",
-   "title": "漲價循環全面展開 · 記憶體/被動/功率『母雞帶小雞』 · Meta 出租算力對 NeoCloud 不利 · 光通小心光進銅退重演",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-678/"
-  },
-  {
-   "ep": 679,
-   "date": "2026-07-15",
-   "title": "沙人誅心盤 · 韓國去槓桿拖累全世界 · 資金面＞基本面 · 台股提早拆彈 · 熱門族群輪到矽晶圓/載板",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-679/"
-  },
-  {
-   "ep": 680,
-   "date": "2026-07-18",
-   "title": "別笑韓國人台灣人也不會做股票 · 聖盔谷台積電自己炸 6% · 正式進防守模式 · 不選個股改用台指期/0050 · 往業績股不碰高 Beta",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-680/"
-  },
-  {
-   "ep": 681,
-   "date": "2026-07-22",
-   "title": "反彈是人道走廊 · CPU 換代 AMD 概念股(socket) · 老 AI ODM 轉強 · Google Frozen V2=Marvell TPU",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-681/"
-  },
-  {
-   "ep": 682,
-   "date": "2026-07-25",
-   "title": "市場像魂系遊戲·等催化劑 · Google雲端證實AI能賺錢 · 記憶體漲幅Q4收斂 · 功率400V→800V · 操作日記買0050/嘉澤·嘉基試單",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-682/"
-  },
-  {
-   "ep": 683,
-   "date": "2026-07-29",
-   "title": "2026中小/AI大屠殺 · 台積電是多軍最後堡壘「神龜股」 · 估值錨反轉別人要殺更低 · 記憶體照樣被殺最不安 · CPU:GPU算進一般伺服器才1:1 · 中國自製DUV看美國政府 · 便宜不代表不會更便宜",
-   "url": "https://vocus.cc/article/6a69d83ffd897800015896e1"
-  },
-  {
-   "ep": 684,
-   "date": "2026-08-01",
-   "title": "史詩級大反彈是去槓桿不是基本面 · AI 對沖基金 Situational Awareness 爆倉(類 Archegos) · 機構砍好股票換現金 · 處置股制度是流動性殺手 · FCN 是 Sell Put 陷阱買原型0050 · FIRE 支出高峰期陷阱 · 下週看聯發科展望",
-   "url": "https://yasac.substack.com/p/ep684"
-  },
-  {
-   "ep": 685,
-   "date": "2026-08-05",
-   "title": "被動元件從半信半疑到全民相信·技術面權重>基本面 · 聯發科接Google自研AI晶片(TPU)大單估3~4年貢獻逾半EPS · ASIC商業模式博通vs聯發科 · OpenAI找立訊做AI手機 · Intel先進封裝EMIB良率破九成 · 記憶體被動報價反撲",
-   "url": "https://socialworkerdaily.com/index/invest/notes-of-gooaye/ep-600-to-700/"
-  },
-  {
-   "ep": 686,
-   "date": "2026-08-08",
-   "title": "父親節暖場 · 近期修正是籌碼清算不是基本面壞 · 美台股軟體/光通訊/散熱/電源板塊輪動 · 風控適度配置保本平滑收益 · 回歸理性基本面",
-   "url": "https://vocus.cc/article/6a772c26fd89780001696623"
-  },
-  {
-   "ep": 687,
-   "date": "2026-08-12",
-   "title": "峇里島錄音·知足 · 處置股新制博弈/宙斯法則暫失靈 · Google大搬風=算力當包租公(DeepMind換帥/Jeff Dean出走/巴菲特狂買) · 這波布局設備/光通訊/AIpower/散熱 · 操作日記台達電/捷敏/正2",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-687/"
-  },
-  {
-   "ep": 688,
-   "date": "2026-08-15",
-   "title": "800VDC白皮書四階段(PSU/Shelf/電容/連接器/BBU→SiC/IGBT→DC UPS→儲能) · Cerebras×AMD解構式推論開啟推論時代 · SpaceX解禁反打底 · GaN超乎想像的缺 · 操作日記台達電加碼/捷敏KY",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-688/"
-  },
-  {
-   "ep": 689,
-   "date": "2026-08-19",
-   "title": "多頭回檔下的AI投資迷霧 · 殖利率是地心引力但別全推給它 · 水下3兆隱形債務(表外租約/採購承諾)=大象 · ⭐記憶體是零組件風向球(報價只是穩住就要警戒) · 瓶頸交易:輝達買設備給封測廠+超額下單光通訊卡競爭者 · Components/Bottleneck/ValueAdd三種交易輪動 · 誰先突破前高誰定調主流 · 好報告vs爛報告悖論 · 🆕泡泡與泡沫必然論 · 回吐程度當停損指標 · ValueAdd可能先站回來 · 操作日記群聯8299/捷敏KY6525/正2 00631L/晶技3042",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-689/"
-  },
-  {
-   "ep": 690,
-   "date": "2026-08-22",
-   "title": "Google 走 COT 自己做晶片 · 邁威爾拿下 TPU 周邊 · 盤「黏」但不錯是大家太貪心",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-690/"
-  },
-  {
-   "ep": 691,
-   "date": "2026-08-26",
-   "title": "AI 回顧：沒讓工時下降反而變長 · 五步驟選股流程(量價→AI速覽→擁擠度→資訊落差→突破買) · 社群資訊價值大於AI · 人多擁擠處漲不動、提早跌完的反而會漲 · 操作日記：國巨2327減碼轉補台達電2308",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-691/"
-  },
-  {
-   "ep": 692,
-   "date": "2026-08-29",
-   "title": "財報後首次完整解讀 · 盤勢震盪但有資格發展下一波多頭 · ⭐最缺貨的環節在載板 · 輝達採購地位極強搶不到料就被擠出去 · 光通訊修正很久終於醒來多檔進新高 · 邁威爾上修靠XPU(Google案)+Scale-up光通互聯交換晶片 · OpenAI Jalapeño推論勝GB300但訓練仍倚重輝達、已迭代Vera Rubin · 開源模型開不了ASIC所以GPU護城河仍在 · GPU與ASIC搶料台股光通/板材/伺服器零組件受惠但ASIC公司不一定受惠 · Anthropic×Salesforce Claudeforce「誰有數據誰是贏家」 · 操作日記國巨2327減碼轉台達電2308、結果國巨屌V",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-692/"
-  },
-  {
-   "ep": 693,
-   "date": "2026-09-02",
-   "title": "盤震盪還好、別幹動能 · 輝達認聯發科 ECB＝賣方融資＋0% 票息選擇權 · 輝達賭 MTK 在 Google 練兵後搶 XPU 市占 · NVHBM 特規記憶體從記憶體廠與台積電拿回價值 · 「輝達想吃博通的肉」但博通不會掉東西（光銅之爭類比）· 法人看到事件就狂賣 · 美股單一部位上限三成、台股看流動性 · 操作日記：賣微台換發哥、欣興爆量買一點、砍捷敏晶技去欣興",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-693/"
-  },
-  {
-   "ep": 694,
-   "date": "2026-09-05",
-   "title": "震盪盤：動能仔賠慘、傻抱淨值墊高，他把槓桿再縮小等表態 · 博通財報：六客戶只有 OpenAI、Anthropic 要幫忙搞錢、博通很有動機扶持 Anthropic · 第一次把 MTK 拿出來「被王者認知到你的存在」· 公司本來就低報高 Beat · 股價不漲因翻倍再翻倍、做 big names 要有耐心 · AI 橫盤往外圍找（特斯拉無稀土馬達、軟體）· Snowflake 上調、AI 協作＋前線部署工程師(FDE) · 信任時代好內容更值錢 · 操作日記：聯發科 2454 補到最大倉位、捷敏-KY 6525／晶技 3042 清倉停損錢進南亞科 2408",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-694/"
-  },
-  {
-   "ep": 695,
-   "date": "2026-09-09",
-   "title": "「原來印這麼快」· 震盪盤想搶快的都被教訓、鎖漲停隔天開低但沒幾天就回來、等大盤創高才改善 · Google Cloud 高盛論壇：新客獲取 2 倍、億元大單倍增、AI 伺服器不到兩年回本、自研晶片再減半＝出租 TPU 一年回本、「可以理解高層把天秤往硬體傾斜」· 自由現金流轉負是 ROIC 比回購好賺 · Google 變水電業者估值降但真金白銀 · AI 模型半衰期兩三個月、API 費用收斂、算力大宗商品化→高 CP 值硬體 · 模型商風險結構：模型商燒股東的錢（股東多是雲商）、晶片商供應鏈扎實賺、循環融資最終像 .com 但週期長、早期訊號前不當末日論者 · 啟發：箱型墊高開高倒開低買、自研晶片回收期減半對台股 IP/IC 強大利多（發哥、創意、世芯）· 肖楠資本 TGS 物色遊戲團隊 · 操作日記：按兵不動",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-695/"
-  },
-  {
-   "ep": 696,
-   "date": "2026-09-12",
-   "title": "「盤面人與人之間的信任不見了」· 宙斯法則不被尊重、鎖漲停隔天就丟、開營收利多出盡搞人「以後這股票沒朋友」· 蘋果發表會：iPhone Duo 定價比共識便宜會賣得比想像好、會第一時間買，但「消費性題材再怎麼成長都打不贏 AI」（蘋概股狗都不碰）、新日興鉸鏈毛利被蘋果壓、蘋果養二供、掌握通路的人 AI 仍分到價值 · 甲骨文「不用出錢的魔術」：客戶預付＋自備硬體(BYOH)＋供應商融資、承平沒事反轉虛胖、不當末日博士 · 舊卡沒高速折舊 · 電力跟許可是 AI 基建政治瓶頸 · 陳福陽說閉源模型贏家是寡頭他打問號偏雙頭 · QA：一早就空的人在多頭路上早被嘎不知幾次 · 操作日記：台達電停損砍掉轉去世芯",
-   "url": "https://socialworkerdaily.com/notes-of-gooaye-ep-696/"
-  },
-  {
-   "ep": 697,
-   "date": "2026-09-16",
-   "title": "盤面「像死掉一般」但漢測退款活水可能有轉機（他打問號、那斯達克在盤整下緣）· Amodei 3,800 字《Pace the Frontier》→費半 −6%、資安股 +13% · 三個互相賭爛的人（Amodei、Altman、馬斯克）第一次站同一陣線是「天有異象」· 監管捕獲：領跑者用規則擠掉後進者「連雛都孵不出來」、第三方評估球員兼裁判、副總統稱特洛伊木馬 · 馬斯克要的是彎道超車不是安全（xAI 追人、Colossus 十幾天）· OpenAI 延後上市反而保住 AI 的朦朧美 · 驗證與監控是新的算力需求：資料消毒、checkpoint 重考、對齊考試重考一千次、可解釋性掃描＝模型 fMRI，可能吃掉 15～20% 以上算力——「硬體跟著跌反而奇怪」· 大結論：殺的是評價不是實質用量 · 被動元件漲價趨勢仍在（江海 002484）· QA：股票質借 3% 以下難、專業投資人 3 千萬「開一扇不知道出來鬼還是神的門」· 操作日記：筆記未提",
-   "url": "https://vocus.cc/article/6aaa784dfd89780001be298c"
-  }
- ],
+ "episodesCount": 36,
+ "episodes": 36,
  "nodes": [
   {
    "id": "market-trust-lost",
@@ -359,17 +148,18 @@
    "id": "xiaonan-capital",
    "label": "肖楠資本（TGS 東京電玩展物色遊戲團隊）",
    "type": "company",
-   "lastSeen": "2026-09-09",
+   "lastSeen": "2026-09-19",
    "episodes": [
-    695
+    695,
+    698
    ],
-   "note": "EP695 閒聊：遊戲性最重要、團隊 OK 就發支票；很多遺珠礙於各種原因不能投；沒包袱的肖楠反而適合"
+   "note": "EP695 閒聊：遊戲性最重要、團隊 OK 就發支票；很多遺珠礙於各種原因不能投；沒包袱的肖楠反而適合；EP698：定位「掏錢＋不囉唆＋不要一堆 cut」，股東資源幫法務簽約發行行銷；資金量體足以往歐美找團隊，先集中亞洲 portfolio"
   },
   {
    "id": "tsmc",
    "label": "台積電 2330",
    "type": "stock",
-   "lastSeen": "2026-08-22",
+   "lastSeen": "2026-09-19",
    "episodes": [
     663,
     665,
@@ -386,8 +176,10 @@
     682,
     683,
     685,
-    690
-   ]
+    690,
+    698
+   ],
+   "note": "EP698：明年漲價非常合理、要漲就大家都漲；AMD 轉嫁漲價只是「補尾刀」"
   },
   {
    "id": "avgo",
@@ -565,7 +357,7 @@
    "id": "nvidia",
    "label": "NVIDIA NVDA",
    "type": "stock",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-09-19",
    "episodes": [
     663,
     664,
@@ -576,9 +368,10 @@
     687,
     692,
     693,
-    697
+    697,
+    698
    ],
-   "note": "EP697：黃仁勳說別人蓋 Colossus 等級要四年，馬斯克十幾天"
+   "note": "EP697：黃仁勳說別人蓋 Colossus 等級要四年，馬斯克十幾天；EP698：GPU 搭 GDDR 當一個 set 賣給板卡廠，漲價隱形、MSRP 失去參考價值"
   },
   {
    "id": "passive",
@@ -676,7 +469,7 @@
    "id": "menggon",
    "label": "謝孟恭",
    "type": "person",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-09-19",
    "episodes": [
     663,
     664,
@@ -696,19 +489,23 @@
     692,
     693,
     694,
-    697
-   ]
+    697,
+    698
+   ],
+   "note": "EP698：東京電玩展出差、拆鬼故事集"
   },
   {
    "id": "jensen",
    "label": "黃仁勳 Jensen Huang",
    "type": "person",
-   "lastSeen": "2026-06-06",
+   "lastSeen": "2026-09-19",
    "episodes": [
     665,
     667,
-    668
-   ]
+    668,
+    698
+   ],
+   "note": "EP698：講過覺得台積電價格太便宜"
   },
   {
    "id": "price-rise",
@@ -842,13 +639,14 @@
    "id": "musk",
    "label": "Elon Musk",
    "type": "person",
-   "lastSeen": "2026-09-16",
+   "lastSeen": "2026-09-19",
    "episodes": [
     665,
     670,
-    697
+    697,
+    698
    ],
-   "note": "EP697：附議放慢的算盤是彎道超車不是安全"
+   "note": "EP697：附議放慢的算盤是彎道超車不是安全；EP698：說打遊戲的人通常比較聰明"
   },
   {
    "id": "sat-ai-compute",
@@ -1358,15 +1156,16 @@
    "id": "tsla",
    "label": "Tesla TSLA",
    "type": "stock",
-   "lastSeen": "2026-09-05",
+   "lastSeen": "2026-09-19",
    "episodes": [
     670,
     674,
     680,
     682,
-    694
+    694,
+    698
    ],
-   "note": "EP694：馬達不用稀土、供應鏈有機會但只是次題材"
+   "note": "EP694：馬達不用稀土、供應鏈有機會但只是次題材；EP698：馬斯克遊戲智商論"
   },
   {
    "id": "rklb",
@@ -2168,13 +1967,15 @@
    "id": "ccl",
    "label": "載板 CCL 銅箔基板",
    "type": "theme",
-   "lastSeen": "2026-07-29",
+   "lastSeen": "2026-09-19",
    "episodes": [
     677,
     679,
-    683
+    683,
+    698
    ],
-   "desc": "EP677 資金輪動族群之一"
+   "desc": "EP677 資金輪動族群之一",
+   "note": "EP698：降規事件是短期利空不是長期敘事終結；PCIe Gen6 要 M6→M7、M4 跑不動"
   },
   {
    "id": "maoda",
@@ -2506,14 +2307,16 @@
    "id": "amd",
    "label": "超微 AMD",
    "type": "stock",
-   "lastSeen": "2026-08-22",
+   "lastSeen": "2026-09-19",
    "episodes": [
     681,
     682,
     683,
     688,
-    690
-   ]
+    690,
+    698
+   ],
+   "note": "EP698：WCCF Tech 報導要把台積電漲的 10% 轉嫁出去，但真正漲最多的是記憶體"
   },
   {
    "id": "venice-cpu",
@@ -4247,6 +4050,206 @@
     697
    ],
    "note": "EP697：不聊單一中小型標的，聽到就衝可能被套，資訊當產業分析渠道"
+  },
+  {
+   "id": "memory-price-culprit",
+   "label": "記憶體才是漲價真兇／台積電補尾刀",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：把晶圓代工廠寫在標題上像漲價民怨四起時找背鍋者；判讀漲價新聞要拆成本結構"
+  },
+  {
+   "id": "msrp-set-pricing",
+   "label": "MSRP 失效／GPU＋GDDR set 出貨",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：板卡上記憶體、GDDR、被動元件、板子、socket 全在漲，MSRP 不即時調；顯示卡漲價才是最重要的環節"
+  },
+  {
+   "id": "tsmc-price-hike-2027",
+   "label": "明年台積電漲價合理預期",
+   "type": "event",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：市場在傳最大 foundry 明年漲價；很缺的情況下調價反映成本合理"
+  },
+  {
+   "id": "ccl-despec-scare",
+   "label": "CCL 降規鬼故事（M8/M9→M4）",
+   "type": "event",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：論壇 CCL 降規言論盤中一堆東西跳水、外資券商發反擊文；只講 CPO 消掉的那段沒講 C2G／CX9／CXL 還跑高速"
+  },
+  {
+   "id": "pcie-gen6-m7",
+   "label": "PCIe Gen6 要 M7、M4 跑不動",
+   "type": "tech",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：M4 只有 10～25G 材料；板材廠說導入 PCIe Gen6 要從 M6 升到 M7"
+  },
+  {
+   "id": "cpo",
+   "label": "共封裝光學 CPO",
+   "type": "tech",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：確實能消除 ASIC 到面板的可插拔光模組籠、ASIC 到背板中板的長距走線"
+  },
+  {
+   "id": "despec-emergency",
+   "label": "非常時期的非常手段（4High／power rack 遞延）",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：記憶體缺貨討論 8High 甚至 4High 就好（TrendForce：適用 edge、AI 伺服器較難）；CSP 朋友說 Rubin 實際功耗沒到 spec 最高值、power rack 換裝不急"
+  },
+  {
+   "id": "shortage-shifts",
+   "label": "缺貨只是從一個環節移到另一個",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：少疊就得多放幾顆、又吃掉更多板材，頭痛醫頭腳痛醫腳"
+  },
+  {
+   "id": "ghost-story-new-high",
+   "label": "鬼故事打下來的族群往往噴回新高",
+   "type": "strategy",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：晶片旁轉光打爆銅纜類股後來一堆噴回新高；短期 rumor 每次都在很短時間被擊敗"
+  },
+  {
+   "id": "no-sell-the-rumor",
+   "label": "部位做長、懶得 sell the rumor 再買回",
+   "type": "strategy",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：那東西不一定會跌，或者跌兩根就直接好幾根拉上去；對長線持有者恐慌大逃殺是雜訊"
+  },
+  {
+   "id": "momentum-trap-near-high",
+   "label": "大盤新高附近一堆人轉空＝動能盤陷阱",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：盤面沒連續性，今天突破明天跌破；拉一個月越墊越高但每天盯盤的人淨值往下；朋友的朋友做動能跌破 7 月低點"
+  },
+  {
+   "id": "choppy-market-is-normal",
+   "label": "沒有連續性的彆扭盤才是常態",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698 引財報狗 Jeff：熱鬧盤才是例外；AI 大炒告一段落後市場有更長時間長這樣；別過度聚焦取消、delay 短線消息"
+  },
+  {
+   "id": "statementdog-jeff",
+   "label": "財報狗 Jeff",
+   "type": "person",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：「沒有連續性的盤其實是常態」"
+  },
+  {
+   "id": "gb200-rack-count",
+   "label": "GB200 機櫃數字市場自己喊上去喊下來（從頭到尾 2 萬）",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：上漲喊 3 萬、5 萬、7 萬，下跌自己修成 5 萬、4 萬、砍單遞延；roadmap 最終還是會出現"
+  },
+  {
+   "id": "tgs-indie-games",
+   "label": "東京電玩展：大 IP 攤位沒互動、獨立遊戲最有生命力",
+   "type": "event",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698：第一次去 TGS 出差、訂房失誤臨時印名片"
+  },
+  {
+   "id": "take-two",
+   "label": "Take-Two TTWO（GTA）",
+   "type": "stock",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698 QA：遊戲事件交易經驗——Take-Two 有賺"
+  },
+  {
+   "id": "cd-projekt",
+   "label": "CD Projekt（華沙 CDR）",
+   "type": "stock",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698 QA：波蘭蠢驢投資虧損"
+  },
+  {
+   "id": "gamania-6180",
+   "label": "遊戲橘子 6180",
+   "type": "stock",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698 QA：遊戲橘子事件交易沒賺到"
+  },
+  {
+   "id": "fun-for-joy",
+   "label": "trading fun for joy／被需要的感覺",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698 QA：財富到一定規模後物質邊際效用遞減，追求「被需要的感覺」"
+  },
+  {
+   "id": "games-and-cognition",
+   "label": "遊戲與投資認知（GTA／艾爾登法環）",
+   "type": "concept",
+   "lastSeen": "2026-09-19",
+   "episodes": [
+    698
+   ],
+   "note": "EP698 QA：遊戲形塑世界觀與風險認知；鼓勵孩子玩遊戲；整天看網路喇叭不會讓交易進步"
   }
  ],
  "links": [
@@ -9292,8 +9295,208 @@
     697
    ],
    "type": "view"
+  },
+  {
+   "source": "menggon",
+   "target": "tgs-indie-games",
+   "label": "EP698 出差心得",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "tgs-indie-games",
+   "target": "xiaonan-capital",
+   "label": "EP698 確立定位",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "amd",
+   "target": "tsmc-price-hike-2027",
+   "label": "EP698 轉嫁台積電漲 10%",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "amd",
+   "target": "memory-price-culprit",
+   "label": "EP698 真正漲最多的是記憶體",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "memory-price-culprit",
+   "target": "tsmc",
+   "label": "EP698 台積電只是補尾刀",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "nvidia",
+   "target": "msrp-set-pricing",
+   "label": "EP698 GPU＋GDDR set 出貨",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "msrp-set-pricing",
+   "target": "memory-price-culprit",
+   "label": "EP698 顯示卡漲價最重要",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "jensen",
+   "target": "tsmc-price-hike-2027",
+   "label": "EP698 台積電太便宜",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "tsmc",
+   "target": "tsmc-price-hike-2027",
+   "label": "EP698 明年漲價合理",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "ccl-despec-scare",
+   "target": "ccl",
+   "label": "EP698 短期利空",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "cpo",
+   "target": "ccl-despec-scare",
+   "label": "EP698 CPO 消掉長距走線",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "pcie-gen6-m7",
+   "target": "ccl-despec-scare",
+   "label": "EP698 反駁：C2G／CX9／CXL 還跑高速",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "ccl-despec-scare",
+   "target": "ghost-story-new-high",
+   "label": "EP698 鬼故事會被擊敗",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "despec-emergency",
+   "target": "shortage-shifts",
+   "label": "EP698 缺貨換環節",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "despec-emergency",
+   "target": "hbm",
+   "label": "EP698 4High",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "ghost-story-new-high",
+   "target": "no-sell-the-rumor",
+   "label": "EP698 部位做長",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "momentum-trap-near-high",
+   "target": "choppy-market-is-normal",
+   "label": "EP698 常態",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "statementdog-jeff",
+   "target": "choppy-market-is-normal",
+   "label": "EP698 引述",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "menggon",
+   "target": "gb200-rack-count",
+   "label": "EP698 從頭到尾 2 萬",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "menggon",
+   "target": "take-two",
+   "label": "EP698 QA 遊戲投資",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "menggon",
+   "target": "cd-projekt",
+   "label": "EP698 QA 遊戲投資",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "menggon",
+   "target": "gamania-6180",
+   "label": "EP698 QA 遊戲投資",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "musk",
+   "target": "games-and-cognition",
+   "label": "EP698 遊戲智商論",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "menggon",
+   "target": "fun-for-joy",
+   "label": "EP698 QA",
+   "episodes": [
+    698
+   ]
+  },
+  {
+   "source": "tsla",
+   "target": "musk",
+   "label": "EP698",
+   "episodes": [
+    698
+   ]
   }
  ],
- "lastUpdated": "2026-09-19 05:15 (UTC+8)",
- "verifiedNote": "2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
+ "lastUpdated": "2026-09-20 05:12 (UTC+8)",
+ "verifiedNote": "2026-09-20：納入 EP698（9/19 六，來源：方格子癌粉重點整理＋凱文馬拉穆筆記＋TinBoker 摘要；社工日常尚未釋出），episodesCount 36。EP698 提及個股代號已查證：台積電 2330、超微 AMD、輝達 NVDA、特斯拉 TSLA、Take-Two TTWO、CD Projekt（華沙 CDR）、遊戲橘子 6180；CCL 板材股他未點名個股（頁面補註台光電 2383／台燿 6274／聯茂 6213 為市場指標）。下一集 EP699 預計 9/23 (三)。 | 2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
 }
