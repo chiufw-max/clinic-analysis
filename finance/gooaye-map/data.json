@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-23",
+  "updatedAt": "2026-09-24",
   "startDate": "2026-05-20",
-  "episodesCount": 36,
-  "episodes": 36,
+  "episodesCount": 37,
+  "episodes": 37,
   "nodes": [
     {
       "id": "market-trust-lost",
@@ -469,7 +469,7 @@
       "id": "menggon",
       "label": "謝孟恭",
       "type": "person",
-      "lastSeen": "2026-09-19",
+      "lastSeen": "2026-09-23",
       "episodes": [
         663,
         664,
@@ -490,9 +490,10 @@
         693,
         694,
         697,
-        698
+        698,
+        699
       ],
-      "note": "EP698：東京電玩展出差、拆鬼故事集"
+      "note": "EP699：新高附近轉空＝摸頭、隨時維持八九成部位"
     },
     {
       "id": "jensen",
@@ -983,7 +984,7 @@
       "id": "power-semi",
       "label": "功率半導體 / 功率元件",
       "type": "theme",
-      "lastSeen": "2026-08-12",
+      "lastSeen": "2026-09-23",
       "episodes": [
         667,
         671,
@@ -994,8 +995,10 @@
         679,
         682,
         686,
-        687
-      ]
+        687,
+        699
+      ],
+      "note": "EP699：七月大逃殺後躺平的功率元件慢慢站回來"
     },
     {
       "id": "power-rack-pull",
@@ -1078,11 +1081,13 @@
       "id": "agentic-ai",
       "label": "代理式 AI（Agentic AI）",
       "type": "theme",
-      "lastSeen": "2026-07-29",
+      "lastSeen": "2026-09-23",
       "episodes": [
         668,
-        683
-      ]
+        683,
+        699
+      ],
+      "note": "EP699：Meta Muse 讓代理式 AI 二度催化 CPU 族群"
     },
     {
       "id": "jevons",
@@ -2307,16 +2312,17 @@
       "id": "amd",
       "label": "超微 AMD",
       "type": "stock",
-      "lastSeen": "2026-09-19",
+      "lastSeen": "2026-09-23",
       "episodes": [
         681,
         682,
         683,
         688,
         690,
-        698
+        698,
+        699
       ],
-      "note": "EP698：WCCF Tech 報導要把台積電漲的 10% 轉嫁出去，但真正漲最多的是記憶體"
+      "note": "EP699：AMD 說 CPU:GPU 從 1:8、1:4 往 1:1 收斂"
     },
     {
       "id": "venice-cpu",
@@ -3381,11 +3387,13 @@
       "id": "marvell",
       "label": "邁威爾 MRVL",
       "type": "stock",
-      "lastSeen": "2026-09-04",
+      "lastSeen": "2026-09-23",
       "episodes": [
         692,
-        693
-      ]
+        693,
+        699
+      ],
+      "note": "EP699：DSP 確定漲價 15～20%，建議追蹤 Marvell 後續說法"
     },
     {
       "id": "broadcom",
@@ -3496,10 +3504,12 @@
       "id": "optical-comm",
       "label": "光通訊族群",
       "type": "industry",
-      "lastSeen": "2026-08-29",
+      "lastSeen": "2026-09-23",
       "episodes": [
-        692
-      ]
+        692,
+        699
+      ],
+      "note": "EP699：過去狗都不要的光通訊跑第一棒"
     },
     {
       "id": "server-components",
@@ -4085,11 +4095,12 @@
       "id": "ccl-despec-scare",
       "label": "CCL 降規鬼故事（M8/M9→M4）",
       "type": "event",
-      "lastSeen": "2026-09-19",
+      "lastSeen": "2026-09-23",
       "episodes": [
-        698
+        698,
+        699
       ],
-      "note": "EP698：論壇 CCL 降規言論盤中一堆東西跳水、外資券商發反擊文；只講 CPO 消掉的那段沒講 C2G／CX9／CXL 還跑高速"
+      "note": "EP699：DSP 多空爭議跟 CCL 降規是同一個零和模式"
     },
     {
       "id": "pcie-gen6-m7",
@@ -4105,11 +4116,12 @@
       "id": "cpo",
       "label": "共封裝光學 CPO",
       "type": "tech",
-      "lastSeen": "2026-09-19",
+      "lastSeen": "2026-09-23",
       "episodes": [
-        698
+        698,
+        699
       ],
-      "note": "EP698：確實能消除 ASIC 到面板的可插拔光模組籠、ASIC 到背板中板的長距走線"
+      "note": "EP699：CPO 取代 DSP 是幾年後的事，零和思維會誤判"
     },
     {
       "id": "despec-emergency",
@@ -4135,11 +4147,12 @@
       "id": "ghost-story-new-high",
       "label": "鬼故事打下來的族群往往噴回新高",
       "type": "strategy",
-      "lastSeen": "2026-09-19",
+      "lastSeen": "2026-09-23",
       "episodes": [
-        698
+        698,
+        699
       ],
-      "note": "EP698：晶片旁轉光打爆銅纜類股後來一堆噴回新高；短期 rumor 每次都在很短時間被擊敗"
+      "note": "EP699：被宣告要死的東西通常持續放量、賺得比想像久"
     },
     {
       "id": "no-sell-the-rumor",
@@ -4155,11 +4168,12 @@
       "id": "momentum-trap-near-high",
       "label": "大盤新高附近一堆人轉空＝動能盤陷阱",
       "type": "concept",
-      "lastSeen": "2026-09-19",
+      "lastSeen": "2026-09-23",
       "episodes": [
-        698
+        698,
+        699
       ],
-      "note": "EP698：盤面沒連續性，今天突破明天跌破；拉一個月越墊越高但每天盯盤的人淨值往下；朋友的朋友做動能跌破 7 月低點"
+      "note": "EP699：指數新高附近一堆人轉空＝摸頭"
     },
     {
       "id": "choppy-market-is-normal",
@@ -4250,6 +4264,136 @@
         698
       ],
       "note": "EP698 QA：遊戲形塑世界觀與風險認知；鼓勵孩子玩遊戲；整天看網路喇叭不會讓交易進步"
+    },
+    {
+      "id": "meta-muse",
+      "label": "Meta Muse（AI 代理）",
+      "type": "product",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：可建 AI 代理完成數位任務、App Store 下載冠軍，串 Gmail／訂位／行事曆"
+    },
+    {
+      "id": "meta",
+      "label": "Meta META",
+      "type": "stock",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：推出 Muse，CPU 股隔天被拉"
+    },
+    {
+      "id": "maxlinear",
+      "label": "MaxLinear MXL",
+      "type": "stock",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：DSP 漲價，建議追蹤後續說法"
+    },
+    {
+      "id": "acer-2353",
+      "label": "宏碁 2353",
+      "type": "stock",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：AI 時代落隊玩家，從股價與產品線看得出來"
+    },
+    {
+      "id": "jason-chen",
+      "label": "陳俊聖（宏碁董事長）",
+      "type": "person",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：喊部分元件、記憶體不缺——判斷要打折"
+    },
+    {
+      "id": "optical-dsp",
+      "label": "光模組 DSP",
+      "type": "tech",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：400G 常見、800G 標配、1.6T 必需；速率越高越需要 DSP"
+    },
+    {
+      "id": "dsp-price-hike",
+      "label": "DSP 漲價 15～20%",
+      "type": "event",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：主要 DSP 廠在美國漲價 15～20%，大客戶漲幅較小"
+    },
+    {
+      "id": "cpu-gpu-ratio",
+      "label": "CPU:GPU 1:4～1:2",
+      "type": "concept",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：市場共識 1:4～1:2；網傳 40:1 查無機構或分析師出處"
+    },
+    {
+      "id": "cpu-count-fomo",
+      "label": "158 萬顆 CPU 算法瑕疵",
+      "type": "concept",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：假設 100% 用戶同時上線；10% 活躍僅 15.8 萬顆——恨天高數字是過熱訊號"
+    },
+    {
+      "id": "curse-law-break",
+      "label": "詛咒法則破裂",
+      "type": "concept",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：鎖漲停隔天被砍爛的現象好轉，族群開始輪動"
+    },
+    {
+      "id": "stay-invested-80-90",
+      "label": "隨時八九成部位",
+      "type": "strategy",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：模仿超大型資金；換現金少吃回檔，卻可能錯過整段上漲"
+    },
+    {
+      "id": "old-player-reinvent",
+      "label": "老玩家轉生",
+      "type": "concept",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：台灣連接線、銅線廠跟光通訊廠合作轉型"
+    },
+    {
+      "id": "laggard-caller",
+      "label": "落隊玩家喊不缺",
+      "type": "concept",
+      "lastSeen": "2026-09-23",
+      "episodes": [
+        699
+      ],
+      "note": "EP699：跟摸頭一樣，總有一天會喊中但意義不大"
     }
   ],
   "links": [
@@ -9495,8 +9639,176 @@
       "episodes": [
         698
       ]
+    },
+    {
+      "source": "menggon",
+      "target": "momentum-trap-near-high",
+      "label": "EP699 新高轉空＝摸頭",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "menggon",
+      "target": "stay-invested-80-90",
+      "label": "EP699 部位心法",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "momentum-trap-near-high",
+      "target": "stay-invested-80-90",
+      "label": "EP699 不空手",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "curse-law-break",
+      "target": "power-semi",
+      "label": "EP699 輪動",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "curse-law-break",
+      "target": "optical-comm",
+      "label": "EP699 輪動",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "meta",
+      "target": "meta-muse",
+      "label": "EP699 推出",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "meta-muse",
+      "target": "agentic-ai",
+      "label": "EP699 二度催化",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "agentic-ai",
+      "target": "cpu-gpu-ratio",
+      "label": "EP699 CPU 比例上升",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "amd",
+      "target": "cpu-gpu-ratio",
+      "label": "EP699 1:8→1:1",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "cpu-gpu-ratio",
+      "target": "cpu-count-fomo",
+      "label": "EP699 恨天高數字",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "dsp-price-hike",
+      "target": "optical-dsp",
+      "label": "EP699 漲價",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "optical-dsp",
+      "target": "marvell",
+      "label": "EP699 追蹤",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "optical-dsp",
+      "target": "maxlinear",
+      "label": "EP699 追蹤",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "cpo",
+      "target": "optical-dsp",
+      "label": "EP699 取代是未來式",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "ccl-despec-scare",
+      "target": "optical-dsp",
+      "label": "EP699 同一種零和思維",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "ghost-story-new-high",
+      "target": "optical-dsp",
+      "label": "EP699 被宣告要死的東西",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "old-player-reinvent",
+      "target": "optical-comm",
+      "label": "EP699 轉型",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "jason-chen",
+      "target": "acer-2353",
+      "label": "EP699 董事長",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "jason-chen",
+      "target": "laggard-caller",
+      "label": "EP699 喊不缺",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "laggard-caller",
+      "target": "momentum-trap-near-high",
+      "label": "EP699 跟摸頭一樣",
+      "episodes": [
+        699
+      ]
+    },
+    {
+      "source": "agentic-ai",
+      "target": "laggard-caller",
+      "label": "EP699 代理式 CPU 改變供需",
+      "episodes": [
+        699
+      ]
     }
   ],
-  "lastUpdated": "2026-09-23 05:25 (UTC+8)",
-  "verifiedNote": "2026-09-23：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記已釋出並補進主頁來源——操作日記「無」；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-22：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-21：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-20：納入 EP698（9/19 六，來源：方格子癌粉重點整理＋凱文馬拉穆筆記＋TinBoker 摘要；社工日常尚未釋出），episodesCount 36。EP698 提及個股代號已查證：台積電 2330、超微 AMD、輝達 NVDA、特斯拉 TSLA、Take-Two TTWO、CD Projekt（華沙 CDR）、遊戲橘子 6180；CCL 板材股他未點名個股（頁面補註台光電 2383／台燿 6274／聯茂 6213 為市場指標）。下一集 EP699 預計 9/23 (三)。 | 2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
+  "lastUpdated": "2026-09-24 05:40 (UTC+8)",
+  "verifiedNote": "2026-09-24：新增 EP699（9/23 三，「🪻」；來源方格子癌粉重點整理，社工日常筆記截稿前未釋出）；episodesCount 37；新增節點 13 個、連結 21 條；代號查證：宏碁 2353、邁威爾 MRVL、MaxLinear MXL。 | 2026-09-23：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記已釋出並補進主頁來源——操作日記「無」；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-22：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-21：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-20：納入 EP698（9/19 六，來源：方格子癌粉重點整理＋凱文馬拉穆筆記＋TinBoker 摘要；社工日常尚未釋出），episodesCount 36。EP698 提及個股代號已查證：台積電 2330、超微 AMD、輝達 NVDA、特斯拉 TSLA、Take-Two TTWO、CD Projekt（華沙 CDR）、遊戲橘子 6180；CCL 板材股他未點名個股（頁面補註台光電 2383／台燿 6274／聯茂 6213 為市場指標）。下一集 EP699 預計 9/23 (三)。 | 2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
 }
