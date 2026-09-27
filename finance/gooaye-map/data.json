@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-09-26",
+  "updatedAt": "2026-09-28",
   "startDate": "2026-05-20",
-  "episodesCount": 37,
+  "episodesCount": 38,
   "episodes": 37,
   "nodes": [
     {
@@ -4394,6 +4394,116 @@
         699
       ],
       "note": "EP699：跟摸頭一樣，總有一天會喊中但意義不大"
+    },
+    {
+      "id": "muse-charm",
+      "label": "Meta Muse Charm（AI 穿戴裝置）",
+      "type": "concept",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700：Meta Connect 發表，鑰匙圈大小、OLED、5G、前後鏡頭，主打鏡頭掃商品→AI代理比價下單；合作Walmart/Best Buy/Sephora/PayPal/Expedia。"
+    },
+    {
+      "id": "ai-wearable-graveyard",
+      "label": "AI 穿戴裝置前車之鑑（AI Pin／R1／Pendant）",
+      "type": "concept",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700：Humane AI Pin(699美元)資產被HP買走停機、Rabbit R1(199美元)雨點小、Limitless Pendant(99美元)被Meta收購後停售——共同問題是手機太難被取代。"
+    },
+    {
+      "id": "agentic-commerce",
+      "label": "代理式購物／小型收銀台商業模式",
+      "type": "concept",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700：Muse Charm先免費送token吸引用戶、長期在交易中抽小額費用，變成小型gateway/收銀台，延伸自代理式AI(Agentic AI)帶動CPU需求的同一條線。"
+    },
+    {
+      "id": "momentum-trading-attrition",
+      "label": "動能盤大家互相凌遲",
+      "type": "concept",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700：7-9月盤面專門殺追高的人，孟恭建議「強中帶弱、買綠不追紅」；判斷依據是身邊超強動能交易朋友的回饋。"
+    },
+    {
+      "id": "glw",
+      "label": "康寧 GLW（Corning）",
+      "type": "company",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700 Q6：聽眾前十大持股之一。"
+    },
+    {
+      "id": "ter",
+      "label": "Teradyne TER",
+      "type": "company",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700 Q6：聽眾前十大持股之一。"
+    },
+    {
+      "id": "lite",
+      "label": "Lumentum LITE",
+      "type": "company",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700 Q6：聽眾前十大持股之一（光通訊組合）。"
+    },
+    {
+      "id": "cohr",
+      "label": "Coherent COHR",
+      "type": "company",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700 Q6：聽眾前十大持股之一（光通訊組合）。"
+    },
+    {
+      "id": "be",
+      "label": "Bloom Energy BE",
+      "type": "company",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700 Q6：聽眾前十大持股之一，表後供電押注。"
+    },
+    {
+      "id": "wangxi",
+      "label": "旺矽 6223",
+      "type": "company",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700 Q7 聽眾投稿：7月後莫名下殺（非孟恭本人操作）。"
+    },
+    {
+      "id": "yingwei",
+      "label": "穎崴 6515",
+      "type": "company",
+      "lastSeen": "2026-09-26",
+      "episodes": [
+        700
+      ],
+      "note": "EP700 Q7 聽眾投稿：7月後莫名下殺（非孟恭本人操作）。"
     }
   ],
   "links": [
@@ -9807,8 +9917,128 @@
       "episodes": [
         699
       ]
+    },
+    {
+      "source": "meta",
+      "target": "muse-charm",
+      "label": "EP700：Meta Connect 發表",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "muse-charm",
+      "target": "ai-wearable-graveyard",
+      "label": "EP700：前代裝置全部失敗的對照",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "muse-charm",
+      "target": "agentic-commerce",
+      "label": "EP700：商業模式延伸",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "agentic-commerce",
+      "target": "googl",
+      "label": "EP700 Q6：聽眾持股",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "agentic-commerce",
+      "target": "amd",
+      "label": "EP700 Q6：聽眾持股",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "googl",
+      "target": "glw",
+      "label": "EP700 Q6：同一份聽眾持股清單",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "glw",
+      "target": "ter",
+      "label": "EP700 Q6：同一份聽眾持股清單",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "ter",
+      "target": "lite",
+      "label": "EP700 Q6：同一份聽眾持股清單（光通訊組合）",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "lite",
+      "target": "cohr",
+      "label": "EP700 Q6：同一份聽眾持股清單（光通訊組合）",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "cohr",
+      "target": "be",
+      "label": "EP700 Q6：同一份聽眾持股清單",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "be",
+      "target": "infineon",
+      "label": "EP700 Q6：同一份聽眾持股清單",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "xinxing",
+      "target": "wangxi",
+      "label": "EP700 Q7 聽眾投稿：7月後同批莫名下殺",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "wangxi",
+      "target": "yingwei",
+      "label": "EP700 Q7 聽眾投稿：7月後同批莫名下殺",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "yingwei",
+      "target": "delta",
+      "label": "EP700 Q7 聽眾投稿：同批被雷（台達電停滯）",
+      "episodes": [
+        700
+      ]
+    },
+    {
+      "source": "momentum-trading-attrition",
+      "target": "muse-charm",
+      "label": "EP700：同集不同段落主題",
+      "episodes": [
+        700
+      ]
     }
   ],
-  "lastUpdated": "2026-09-26 05:30 (UTC+8)",
-  "verifiedNote": "2026-09-26：無新集（EP699 9/23 三仍為最新、episodesCount 維持 37；EP700 預計今天稍晚釋出，截稿時尚未上架）。 | 2026-09-24：新增 EP699（9/23 三，「🪻」；來源方格子癌粉重點整理，社工日常筆記截稿前未釋出）；episodesCount 37；新增節點 13 個、連結 21 條；代號查證：宏碁 2353、邁威爾 MRVL、MaxLinear MXL。 | 2026-09-23：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記已釋出並補進主頁來源——操作日記「無」；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-22：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-21：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-20：納入 EP698（9/19 六，來源：方格子癌粉重點整理＋凱文馬拉穆筆記＋TinBoker 摘要；社工日常尚未釋出），episodesCount 36。EP698 提及個股代號已查證：台積電 2330、超微 AMD、輝達 NVDA、特斯拉 TSLA、Take-Two TTWO、CD Projekt（華沙 CDR）、遊戲橘子 6180；CCL 板材股他未點名個股（頁面補註台光電 2383／台燿 6274／聯茂 6213 為市場指標）。下一集 EP699 預計 9/23 (三)。 | 2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
+  "lastUpdated": "2026-09-28 05:15 (UTC+8)",
+  "verifiedNote": "2026-09-28：無新集（EP700 9/26 六仍為最新、episodesCount 維持 38；下一集 EP701 預計 9/30 三）。 | 2026-09-26：納入 EP700（9/26 六，主題 Meta Connect／Muse Charm 穿戴裝置發表會；來源：pathfindernote 聽筆記），episodesCount 38，新增節點 8 個、連結約 10 條。EP700 提及個股代號已查證：Google GOOGL、超微 AMD、康寧 GLW、Teradyne TER、Lumentum LITE、Coherent COHR、Bloom Energy BE、英飛凌 IFX（無台股代號，德股/OTC）；聽眾投稿提及台股（非孟恭本人操作）：欣興 3037、台達電 2308、旺矽 6223、穎崴 6515（均已查證）。 | 2026-09-24：新增 EP699（9/23 三，「🪻」；來源方格子癌粉重點整理，社工日常筆記截稿前未釋出）；episodesCount 37；新增節點 13 個、連結 21 條；代號查證：宏碁 2353、邁威爾 MRVL、MaxLinear MXL。 | 2026-09-23：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記已釋出並補進主頁來源——操作日記「無」；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-22：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-21：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-20：納入 EP698（9/19 六，來源：方格子癌粉重點整理＋凱文馬拉穆筆記＋TinBoker 摘要；社工日常尚未釋出），episodesCount 36。EP698 提及個股代號已查證：台積電 2330、超微 AMD、輝達 NVDA、特斯拉 TSLA、Take-Two TTWO、CD Projekt（華沙 CDR）、遊戲橘子 6180；CCL 板材股他未點名個股（頁面補註台光電 2383／台燿 6274／聯茂 6213 為市場指標）。下一集 EP699 預計 9/23 (三)。 | 2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
 }
