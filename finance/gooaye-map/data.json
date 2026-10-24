@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-24",
+  "updatedAt": "2026-10-25",
   "startDate": "2026-05-20",
-  "episodesCount": 45,
+  "episodesCount": 46,
   "episodes": 39,
   "nodes": [
     {
@@ -810,13 +810,14 @@
       "id": "software-ai",
       "label": "軟體股 AI 加分期",
       "type": "theme",
-      "lastSeen": "2026-10-17",
+      "lastSeen": "2026-10-24",
       "episodes": [
         666,
         686,
-        706
+        706,
+        708
       ],
-      "note": "EP706：資金可能從硬體轉向應用軟體。"
+      "note": "EP706：資金可能從硬體轉向應用軟體。 | EP708：美股軟體 ETF 轉強。"
     },
     {
       "id": "wsc",
@@ -1123,10 +1124,12 @@
       "id": "jevons",
       "label": "傑文斯悖論（CPU 多空論戰）",
       "type": "theme",
-      "lastSeen": "2026-06-06",
+      "lastSeen": "2026-10-24",
       "episodes": [
-        668
-      ]
+        668,
+        708
+      ],
+      "note": "EP708：再度引用於 GPU 算力價格。"
     },
     {
       "id": "rtx-spark",
@@ -1838,10 +1841,12 @@
       "id": "etf-0050",
       "label": "0050 元大台灣50",
       "type": "stock",
-      "lastSeen": "2026-07-01",
+      "lastSeen": "2026-10-24",
       "episodes": [
-        675
-      ]
+        675,
+        708
+      ],
+      "note": "EP708：一年漲幅大，與半導體權重高度相關。"
     },
     {
       "id": "demand-driven-rise",
@@ -2562,10 +2567,12 @@
       "id": "citadel",
       "label": "Citadel（接管方）",
       "type": "company",
-      "lastSeen": "2026-08-01",
+      "lastSeen": "2026-10-24",
       "episodes": [
-        684
-      ]
+        684,
+        708
+      ],
+      "note": "EP708：Ken Griffin 所屬機構，孟恭分享其訪談。"
     },
     {
       "id": "archegos",
@@ -2580,11 +2587,13 @@
       "id": "deleverage-crisis",
       "label": "去槓桿／流動性危機",
       "type": "concept",
-      "lastSeen": "2026-08-08",
+      "lastSeen": "2026-10-24",
       "episodes": [
         684,
-        686
-      ]
+        686,
+        708
+      ],
+      "note": "EP708：去槓桿只是加速器。"
     },
     {
       "id": "fcn-note",
@@ -3591,12 +3600,13 @@
       "id": "substrate-shortage",
       "label": "載板缺貨（最缺環節）",
       "type": "theme",
-      "lastSeen": "2026-10-21",
+      "lastSeen": "2026-10-24",
       "episodes": [
         692,
-        707
+        707,
+        708
       ],
-      "note": "EP707：TPCA 展會消息，載板缺貨，但部分受惠股仍破底，分歧主因是資金。"
+      "note": "EP707：TPCA 展會消息，載板缺貨，但部分受惠股仍破底，分歧主因是資金。 | EP708：載板與記憶體是最缺貨的環節，若撐不住其他缺貨股更難。"
     },
     {
       "id": "procurement-power",
@@ -4075,11 +4085,12 @@
       "id": "cybersecurity-stocks",
       "label": "資安股",
       "type": "theme",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-10-24",
       "episodes": [
-        697
+        697,
+        708
       ],
-      "note": "EP697：管制論述下逆勢噴 13%"
+      "note": "EP697：管制論述下逆勢噴 13% | EP708：資安事件帶動，資安與軟體走勢較半導體穩。"
     },
     {
       "id": "jianghai-002484",
@@ -4330,21 +4341,23 @@
       "id": "meta-muse",
       "label": "Meta Muse（AI 代理）",
       "type": "product",
-      "lastSeen": "2026-09-23",
+      "lastSeen": "2026-10-24",
       "episodes": [
-        699
+        699,
+        708
       ],
-      "note": "EP699：可建 AI 代理完成數位任務、App Store 下載冠軍，串 Gmail／訂位／行事曆"
+      "note": "EP699：可建 AI 代理完成數位任務、App Store 下載冠軍，串 Gmail／訂位／行事曆 | EP708：Muse 日活下滑，視為AI產品熱度來得快去得快。"
     },
     {
       "id": "meta",
       "label": "Meta META",
       "type": "stock",
-      "lastSeen": "2026-09-23",
+      "lastSeen": "2026-10-24",
       "episodes": [
-        699
+        699,
+        708
       ],
-      "note": "EP699：推出 Muse，CPU 股隔天被拉"
+      "note": "EP699：推出 Muse，CPU 股隔天被拉 | EP708：Meta 方向仍被看好；Muse 日活下滑他視為產品迭代太快，非失敗；財報後先漲再跌可接受，完全不漲就重挫才是危險訊號。"
     },
     {
       "id": "maxlinear",
@@ -5085,12 +5098,13 @@
       "id": "memory-scarce-weak",
       "label": "記憶體最缺卻最弱",
       "type": "concept",
-      "lastSeen": "2026-10-17",
+      "lastSeen": "2026-10-24",
       "episodes": [
         705,
-        706
+        706,
+        708
       ],
-      "note": "EP705：記憶體理論上最缺最漲但股價相對弱，等財報；漲價題材要小心。 | EP706：記憶體族群持續弱，只剩美光。"
+      "note": "EP705：記憶體理論上最缺最漲但股價相對弱，等財報；漲價題材要小心。 | EP706：記憶體族群持續弱，只剩美光。 | EP708：同樣提醒主流缺貨股若撐不住的風險。"
     },
     {
       "id": "largan",
@@ -5156,22 +5170,24 @@
       "id": "alert-mode",
       "label": "警覺模式：砍轉弱、收動能、留現金",
       "type": "strategy",
-      "lastSeen": "2026-10-21",
+      "lastSeen": "2026-10-24",
       "episodes": [
         706,
-        707
+        707,
+        708
       ],
-      "note": "EP706：維持六七成以上在市場，砍型態轉弱的、收回動能題材與非長投部位。 | EP707：延續轉保守，稱「不舒服，但還不到惡夢」。"
+      "note": "EP706：維持六七成以上在市場，砍型態轉弱的、收回動能題材與非長投部位。 | EP707：延續轉保守，稱「不舒服，但還不到惡夢」。 | EP708：延續，提早調節、不追反彈。"
     },
     {
       "id": "margin-light-cut",
       "label": "融資只減約 50 億（預期 150~200 億）",
       "type": "concept",
-      "lastSeen": "2026-10-17",
+      "lastSeen": "2026-10-24",
       "episodes": [
-        706
+        706,
+        708
       ],
-      "note": "EP706：洗盤可能沒洗完、可能再殺一次（節目說法，未核對官方數字）。"
+      "note": "EP706：洗盤可能沒洗完、可能再殺一次（節目說法，未核對官方數字）。 | EP708：融資大幅減少後才可能出現率先轉強的族群。"
     },
     {
       "id": "hw-to-sw-rotation",
@@ -5352,6 +5368,136 @@
         707
       ],
       "note": "EP707 操作日記（社工日常筆記）：買少量「超價外葡萄」作為多單保險；『葡萄』疑為 put 的口語轉寫，屬推測。"
+    },
+    {
+      "id": "ep708-no-chase",
+      "label": "EP708 不追反彈、提早調節",
+      "type": "strategy",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：不妙感疊到上限、反彈應該不遠，但他不打算參與；這次已比7月提早調節，趁盤面不好多做研究。"
+    },
+    {
+      "id": "anchoring-trap",
+      "label": "前高錨定：跌深不等於便宜",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：不要被前高錨定而無腦買進；舉台股部分測試介面概念股為例（未點名），前高可能要數年才再碰到；已夠便宜可小量布局但不加碼。"
+    },
+    {
+      "id": "rate-gravity",
+      "label": "利率像地心引力（估值下拉）",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：發債成本升高、資金不願碰高估值；轉述巴菲特——利率像地心引力，短期無大幅降息，部分高點未必回得去。"
+    },
+    {
+      "id": "bottleneck-caution",
+      "label": "缺貨漲價交易要提高警覺",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：最缺的是記憶體與載板，若主流缺貨股撐不住，其他缺貨股更難漲；純缺貨漲價推本益比風險高，偏好有量增與價值提升者。"
+    },
+    {
+      "id": "ken-griffin",
+      "label": "Ken Griffin（Citadel 創辦人）",
+      "type": "person",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：孟恭分享其訪談——市場變挑剔，DRAM／MLCC 高毛利能否再撐兩三年被質疑；GPU 與航空業類比（邊際成本低、產品同質、庫存會過期）。"
+    },
+    {
+      "id": "gpu-airline",
+      "label": "GPU 像航空業的類比",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：Griffin 的比喻，蓋太多價格可能快速下滑、挑戰 GPU 使用年限假設；孟恭反駁以傑文斯悖論，認為只能部分類比。"
+    },
+    {
+      "id": "jevons-gpu",
+      "label": "傑文斯悖論 vs GPU 價格",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：算力變便宜會帶動更多使用（如 Agentic AI），支撐價格；目前算力價格仍在高檔。"
+    },
+    {
+      "id": "compute-price-indicator",
+      "label": "算力價格＝最直接的指標（股價領先營收）",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：算力價格仍高；真正大跌時股價通常提前半年到一兩年反映，等報價跌了才行動往往太晚；守住成果、做好停損停利。"
+    },
+    {
+      "id": "dram-mlcc-margin-doubt",
+      "label": "DRAM／MLCC 高毛利能撐多久？",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：市場開始質疑兩三年後毛利；毛利已極高、難再提升的族群可能只能持平或走下。"
+    },
+    {
+      "id": "deleverage-not-cause",
+      "label": "下跌別都怪去槓桿（只是加速器）",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：避險基金去槓桿或融資過多只會加速下跌，不是根本原因；應思考為什麼下跌。"
+    },
+    {
+      "id": "margin-cleanse-leader",
+      "label": "融資清洗後率先轉強的族群",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：台股要再往上需要新硬體題材；可留意融資大幅減少後率先轉強者。資訊服務類股轉好但權重小。"
+    },
+    {
+      "id": "software-rotation",
+      "label": "軟體／資安可能是下一個輪動方向",
+      "type": "theme",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：美股軟體 ETF 型態轉強加上資安事件，走勢比半導體穩；他承認2023、2024年談得太早。"
+    },
+    {
+      "id": "qa-spend-experience",
+      "label": "QA：捨不得花錢，經驗比錢長久",
+      "type": "concept",
+      "lastSeen": "2026-10-24",
+      "episodes": [
+        708
+      ],
+      "note": "EP708：理性上要儲蓄、投資指數、做資產配置；夢想與值得的體驗不必一再延後，錢可以再賺、經驗留一輩子。"
     }
   ],
   "links": [
@@ -11725,8 +11871,184 @@
       "episodes": [
         707
       ]
+    },
+    {
+      "source": "ep708-no-chase",
+      "target": "alert-mode",
+      "label": "EP708：延續警覺",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "ep708-no-chase",
+      "target": "anchoring-trap",
+      "label": "不追、不被前高錨定",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "ep708-no-chase",
+      "target": "keep-dry-powder",
+      "label": "留彈性、多做研究",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "rate-gravity",
+      "target": "anchoring-trap",
+      "label": "利率壓估值→高點難回",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "bottleneck-caution",
+      "target": "substrate-shortage",
+      "label": "載板缺貨撐不住風險",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "bottleneck-caution",
+      "target": "memory-scarce-weak",
+      "label": "記憶體最缺卻最弱",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "bottleneck-caution",
+      "target": "nand-demand-cut",
+      "label": "NAND 需求下修呼應",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "ken-griffin",
+      "target": "citadel",
+      "label": "所屬機構",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "ken-griffin",
+      "target": "gpu-airline",
+      "label": "GPU 像航空業",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "ken-griffin",
+      "target": "dram-mlcc-margin-doubt",
+      "label": "質疑高毛利",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "gpu-airline",
+      "target": "jevons-gpu",
+      "label": "孟恭反駁：傑文斯悖論",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "jevons-gpu",
+      "target": "jevons",
+      "label": "同一概念",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "jevons-gpu",
+      "target": "compute-price-indicator",
+      "label": "看算力價格",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "compute-price-indicator",
+      "target": "ep708-no-chase",
+      "label": "守成果、停損停利",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "deleverage-not-cause",
+      "target": "deleverage-crisis",
+      "label": "去槓桿只是加速器",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "margin-cleanse-leader",
+      "target": "margin-light-cut",
+      "label": "融資瘦身後的領頭族群",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "software-rotation",
+      "target": "software-ai",
+      "label": "軟體輪動",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "software-rotation",
+      "target": "cybersecurity-stocks",
+      "label": "資安事件",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "ep708-no-chase",
+      "target": "software-rotation",
+      "label": "下一個輪動候選",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "ep708-no-chase",
+      "target": "meta",
+      "label": "Meta 財報後反應",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "etf-0050",
+      "target": "tsmc",
+      "label": "權重與半導體高度相關",
+      "episodes": [
+        708
+      ]
+    },
+    {
+      "source": "qa-spend-experience",
+      "target": "ep708-no-chase",
+      "label": "心態：守成果也要生活",
+      "episodes": [
+        708
+      ]
     }
   ],
-  "lastUpdated": "2026-10-24 05:13 (UTC+8)",
-  "verifiedNote": "2026-10-24 05:13：無新集（EP707 10/21 三仍為最新、episodesCount 維持 45；EP708 預計 10/24 六下午釋出、10/25 排程納入）；社工日常 EP707 筆記已釋出並與方格子癌粉文交叉對照，補入操作日記（減碼聯發科 2454、世芯 3661、降槓桿，少量價外賣權避險；「葡萄」疑為 put，屬推測），新增節點 1 個、連結 3 條。 | 2026-10-23 05:13：無新集（EP707 10/21 三仍為最新、episodesCount 維持 45、未新增節點；方格子與社工日常皆無 EP708、社工日常 EP707 筆記亦未出；EP708 預計 10/24 六下午釋出、10/25 排程納入）。 | 2026-10-22 05:14：新增 EP707（10/21 三，轉保守換股／SpaceX 財報／NAND 需求下修／載板良率與無塵室；單一來源：方格子癌粉整理文，社工日常尚未釋出），episodesCount 45，新增節點 13 個、連結 19 條。個股代號：欣興 3037 沿用既有並與 10/21 台股報導對照；Ibiden 原文未附代號、不補猜；Intel INTC、ASML 為美股／既有標示。下一集 EP708 預計 10/24 六。 | 2026-10-21 05:12：無新集（EP706 10/17 六仍為最新、episodesCount 維持 44、未新增節點；EP707 預計 10/21 三下午）。 | 2026-10-20 05:12：無新集（EP706 10/17 六仍為最新、episodesCount 維持 44、未新增節點；EP707 預計 10/21 三）。 | 2026-10-19 05:12：無新集（EP706 10/17 六仍為最新、episodesCount 維持 44、未新增節點；EP707 預計 10/21 三）；社工日常 EP706 筆記已出並對照（聯發科減碼、世芯加碼、攤平檢討標的 Lumentum vs Astera Labs 三份摘要不一致，未改動節點）。 | 2026-10-18：新增 EP706（10/17 六，路徑筆記＋呀沙係雙來源）→ episodesCount 44，新增 9 個節點、13 條連結；社工日常尚無 EP706。 | 2026-10-17 05:20：無新集（EP705 10/14 三仍為最新、episodesCount 維持 43、未新增節點；已查呀沙係、方格子、Spotify 搜尋皆無 EP706；EP706 預計 10/17 六下午釋出、10/18 排程納入）。 | 2026-10-16 05:10：無新集（EP705 10/14 三仍為最新、episodesCount 維持 43；EP706 預計 10/17 六下午釋出、10/18 排程納入）。 | 2026-10-16：新增 EP705（10/14 三，呀沙係自動筆記；無第二來源）→ episodesCount 43，新增 7 個節點、10 條連結；10/15 排程未執行、本次補跑。 | 2026-10-14：無新集（EP704 10/10 六仍為最新、episodesCount 維持 42，未新增節點；EP705 預計 10/14 三下午釋出、10/15 排程納入）。 | 2026-10-13：無新集（EP704 10/10 六仍為最新、episodesCount 維持 42，未新增節點；EP705 預計 10/14 三下午釋出、10/15 排程納入）。 | 2026-10-12：無新集（EP704 10/10 六仍為最新、episodesCount 維持 42，未新增節點；EP705 預計 10/14 三下午釋出、10/15 排程納入）。 | 2026-10-11：新增 EP704（10/10 六，數字是 noise／OpenAI 營收爭議／Marvell 投資人日；來源 pathfindernote＋方格子，社工日常未取得），episodesCount 41→42，新增節點 12 個、連結 18 條。個股代號已查證（Yahoo 股市）：信驊 5274、新唐 4919、聯電 2303、華星光 4979、上詮 3363；AOI 原文僅寫簡稱不寫代號。下一集 EP705 預計 10/14 三。 | 2026-10-10：無新集（EP703 10/7 三仍為最新、EP704 預計 10/10 六下午），未新增節點，episodesCount 維持 41。 | 2026-10-09：新增 EP703（10/7 三），來源為方格子兩篇癌粉筆記（pathfindernote 原頁仍無法開啟）；新增 10 節點、12 連結。 | 2026-10-08：EP703（10/7 三）已釋出，但筆記內文本次抓取被限流（429）未取得，故未新增節點、episodesCount 維持 40；待 10/9 補。 | 2026-10-07：無新集（EP702 10/3 六仍為最新、episodesCount 維持不變；EP703 預計 10/7 三下午釋出、10/8 排程納入）。 | 2026-10-06：無新集（EP702 10/3 六仍為最新、episodesCount 維持不變；EP703 預計 10/7 三下午釋出、10/8 排程納入）。 | 2026-10-05：無新集（EP702 10/3 六仍為最新、episodesCount 維持 40；EP703 預計 10/7 三下午釋出、10/8 排程納入）。 | 2026-10-04：納入 EP702（10/3 六，主題「光輝十月」／光通禁令報告重申現狀／聯發科限縮員工 AI 額度；來源 pathfindernote 聽筆記，社工日常尚未見釋出，episodesCount 39→40，新增節點 14 個、連結 19 條）。個股代號已查證：聯發科 2454、台積電 2330、達發 6526、中際旭創 300308（深交所）；東芝無代號；Broadcom AVGO、Marvell MRVL、Lumentum LITE、Coherent COHR 沿用既有節點。下一集 EP703 預計 10/7 三。 | 2026-10-03：無新集（EP701 9/30 三仍為最新、episodesCount 維持 39；EP702 預計 10/3 六下午釋出、10/4 排程納入）。 | 2026-10-02：無新集（EP701 9/30 三仍為最新、episodesCount 維持 39；EP702 預計 10/3 六下午釋出、10/4 排程納入）。 | 2026-10-01：納入 EP701（9/30 三，第三季回顧／小型 IC 設計／台積電德州傳聞／稍微放慢；據 pathfindernote 聽筆記，社工日常尚未釋出，episodesCount 38→39）。 | 2026-09-30：無新集（EP700 9/26 六仍為最新、episodesCount 維持 38；下一集 EP701 預計 9/30 三下午釋出、10/1 早上補上）。 | 2026-09-29：無新集（EP700 9/26 六仍為最新、episodesCount 維持 38；下一集 EP701 預計 9/30 三）。 | 2026-09-28：無新集（EP700 9/26 六仍為最新、episodesCount 維持 38；下一集 EP701 預計 9/30 三）。 | 2026-09-26：納入 EP700（9/26 六，主題 Meta Connect／Muse Charm 穿戴裝置發表會；來源：pathfindernote 聽筆記），episodesCount 38，新增節點 8 個、連結約 10 條。EP700 提及個股代號已查證：Google GOOGL、超微 AMD、康寧 GLW、Teradyne TER、Lumentum LITE、Coherent COHR、Bloom Energy BE、英飛凌 IFX（無台股代號，德股/OTC）；聽眾投稿提及台股（非孟恭本人操作）：欣興 3037、台達電 2308、旺矽 6223、穎崴 6515（均已查證）。 | 2026-09-24：新增 EP699（9/23 三，「🪻」；來源方格子癌粉重點整理，社工日常筆記截稿前未釋出）；episodesCount 37；新增節點 13 個、連結 21 條；代號查證：宏碁 2353、邁威爾 MRVL、MaxLinear MXL。 | 2026-09-23：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記已釋出並補進主頁來源——操作日記「無」；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-22：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-21：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-20：納入 EP698（9/19 六，來源：方格子癌粉重點整理＋凱文馬拉穆筆記＋TinBoker 摘要；社工日常尚未釋出），episodesCount 36。EP698 提及個股代號已查證：台積電 2330、超微 AMD、輝達 NVDA、特斯拉 TSLA、Take-Two TTWO、CD Projekt（華沙 CDR）、遊戲橘子 6180；CCL 板材股他未點名個股（頁面補註台光電 2383／台燿 6274／聯茂 6213 為市場指標）。下一集 EP699 預計 9/23 (三)。 | 2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
+  "lastUpdated": "2026-10-25 05:13 (UTC+8)",
+  "verifiedNote": "2026-10-25 05:13：新集 EP708（10/24 六）納入，episodesCount 46；來源為路徑筆記（Substack）與方格子癌粉文交叉對照，社工日常 EP708 筆記抓不到；新增節點 13 個與多條連結，並更新既有節點（Meta、Muse、元大台灣50、Citadel、軟體、資安、載板缺貨、傑文斯悖論等）的 EP708 提及。EP709 預計 10/28（三）。 | 2026-10-24 05:13：無新集（EP707 10/21 三仍為最新、episodesCount 維持 45；EP708 預計 10/24 六下午釋出、10/25 排程納入）；社工日常 EP707 筆記已釋出並與方格子癌粉文交叉對照，補入操作日記（減碼聯發科 2454、世芯 3661、降槓桿，少量價外賣權避險；「葡萄」疑為 put，屬推測），新增節點 1 個、連結 3 條。 | 2026-10-23 05:13：無新集（EP707 10/21 三仍為最新、episodesCount 維持 45、未新增節點；方格子與社工日常皆無 EP708、社工日常 EP707 筆記亦未出；EP708 預計 10/24 六下午釋出、10/25 排程納入）。 | 2026-10-22 05:14：新增 EP707（10/21 三，轉保守換股／SpaceX 財報／NAND 需求下修／載板良率與無塵室；單一來源：方格子癌粉整理文，社工日常尚未釋出），episodesCount 45，新增節點 13 個、連結 19 條。個股代號：欣興 3037 沿用既有並與 10/21 台股報導對照；Ibiden 原文未附代號、不補猜；Intel INTC、ASML 為美股／既有標示。下一集 EP708 預計 10/24 六。 | 2026-10-21 05:12：無新集（EP706 10/17 六仍為最新、episodesCount 維持 44、未新增節點；EP707 預計 10/21 三下午）。 | 2026-10-20 05:12：無新集（EP706 10/17 六仍為最新、episodesCount 維持 44、未新增節點；EP707 預計 10/21 三）。 | 2026-10-19 05:12：無新集（EP706 10/17 六仍為最新、episodesCount 維持 44、未新增節點；EP707 預計 10/21 三）；社工日常 EP706 筆記已出並對照（聯發科減碼、世芯加碼、攤平檢討標的 Lumentum vs Astera Labs 三份摘要不一致，未改動節點）。 | 2026-10-18：新增 EP706（10/17 六，路徑筆記＋呀沙係雙來源）→ episodesCount 44，新增 9 個節點、13 條連結；社工日常尚無 EP706。 | 2026-10-17 05:20：無新集（EP705 10/14 三仍為最新、episodesCount 維持 43、未新增節點；已查呀沙係、方格子、Spotify 搜尋皆無 EP706；EP706 預計 10/17 六下午釋出、10/18 排程納入）。 | 2026-10-16 05:10：無新集（EP705 10/14 三仍為最新、episodesCount 維持 43；EP706 預計 10/17 六下午釋出、10/18 排程納入）。 | 2026-10-16：新增 EP705（10/14 三，呀沙係自動筆記；無第二來源）→ episodesCount 43，新增 7 個節點、10 條連結；10/15 排程未執行、本次補跑。 | 2026-10-14：無新集（EP704 10/10 六仍為最新、episodesCount 維持 42，未新增節點；EP705 預計 10/14 三下午釋出、10/15 排程納入）。 | 2026-10-13：無新集（EP704 10/10 六仍為最新、episodesCount 維持 42，未新增節點；EP705 預計 10/14 三下午釋出、10/15 排程納入）。 | 2026-10-12：無新集（EP704 10/10 六仍為最新、episodesCount 維持 42，未新增節點；EP705 預計 10/14 三下午釋出、10/15 排程納入）。 | 2026-10-11：新增 EP704（10/10 六，數字是 noise／OpenAI 營收爭議／Marvell 投資人日；來源 pathfindernote＋方格子，社工日常未取得），episodesCount 41→42，新增節點 12 個、連結 18 條。個股代號已查證（Yahoo 股市）：信驊 5274、新唐 4919、聯電 2303、華星光 4979、上詮 3363；AOI 原文僅寫簡稱不寫代號。下一集 EP705 預計 10/14 三。 | 2026-10-10：無新集（EP703 10/7 三仍為最新、EP704 預計 10/10 六下午），未新增節點，episodesCount 維持 41。 | 2026-10-09：新增 EP703（10/7 三），來源為方格子兩篇癌粉筆記（pathfindernote 原頁仍無法開啟）；新增 10 節點、12 連結。 | 2026-10-08：EP703（10/7 三）已釋出，但筆記內文本次抓取被限流（429）未取得，故未新增節點、episodesCount 維持 40；待 10/9 補。 | 2026-10-07：無新集（EP702 10/3 六仍為最新、episodesCount 維持不變；EP703 預計 10/7 三下午釋出、10/8 排程納入）。 | 2026-10-06：無新集（EP702 10/3 六仍為最新、episodesCount 維持不變；EP703 預計 10/7 三下午釋出、10/8 排程納入）。 | 2026-10-05：無新集（EP702 10/3 六仍為最新、episodesCount 維持 40；EP703 預計 10/7 三下午釋出、10/8 排程納入）。 | 2026-10-04：納入 EP702（10/3 六，主題「光輝十月」／光通禁令報告重申現狀／聯發科限縮員工 AI 額度；來源 pathfindernote 聽筆記，社工日常尚未見釋出，episodesCount 39→40，新增節點 14 個、連結 19 條）。個股代號已查證：聯發科 2454、台積電 2330、達發 6526、中際旭創 300308（深交所）；東芝無代號；Broadcom AVGO、Marvell MRVL、Lumentum LITE、Coherent COHR 沿用既有節點。下一集 EP703 預計 10/7 三。 | 2026-10-03：無新集（EP701 9/30 三仍為最新、episodesCount 維持 39；EP702 預計 10/3 六下午釋出、10/4 排程納入）。 | 2026-10-02：無新集（EP701 9/30 三仍為最新、episodesCount 維持 39；EP702 預計 10/3 六下午釋出、10/4 排程納入）。 | 2026-10-01：納入 EP701（9/30 三，第三季回顧／小型 IC 設計／台積電德州傳聞／稍微放慢；據 pathfindernote 聽筆記，社工日常尚未釋出，episodesCount 38→39）。 | 2026-09-30：無新集（EP700 9/26 六仍為最新、episodesCount 維持 38；下一集 EP701 預計 9/30 三下午釋出、10/1 早上補上）。 | 2026-09-29：無新集（EP700 9/26 六仍為最新、episodesCount 維持 38；下一集 EP701 預計 9/30 三）。 | 2026-09-28：無新集（EP700 9/26 六仍為最新、episodesCount 維持 38；下一集 EP701 預計 9/30 三）。 | 2026-09-26：納入 EP700（9/26 六，主題 Meta Connect／Muse Charm 穿戴裝置發表會；來源：pathfindernote 聽筆記），episodesCount 38，新增節點 8 個、連結約 10 條。EP700 提及個股代號已查證：Google GOOGL、超微 AMD、康寧 GLW、Teradyne TER、Lumentum LITE、Coherent COHR、Bloom Energy BE、英飛凌 IFX（無台股代號，德股/OTC）；聽眾投稿提及台股（非孟恭本人操作）：欣興 3037、台達電 2308、旺矽 6223、穎崴 6515（均已查證）。 | 2026-09-24：新增 EP699（9/23 三，「🪻」；來源方格子癌粉重點整理，社工日常筆記截稿前未釋出）；episodesCount 37；新增節點 13 個、連結 21 條；代號查證：宏碁 2353、邁威爾 MRVL、MaxLinear MXL。 | 2026-09-23：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記已釋出並補進主頁來源——操作日記「無」；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-22：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-21：無新集（EP698 9/19 六仍為最新、episodesCount 維持 36；社工日常 EP698 筆記尚未釋出；EP699 預計 9/23 三下午釋出、9/24 排程納入）。 | 2026-09-20：納入 EP698（9/19 六，來源：方格子癌粉重點整理＋凱文馬拉穆筆記＋TinBoker 摘要；社工日常尚未釋出），episodesCount 36。EP698 提及個股代號已查證：台積電 2330、超微 AMD、輝達 NVDA、特斯拉 TSLA、Take-Two TTWO、CD Projekt（華沙 CDR）、遊戲橘子 6180；CCL 板材股他未點名個股（頁面補註台光電 2383／台燿 6274／聯茂 6213 為市場指標）。下一集 EP699 預計 9/23 (三)。 | 2026-09-19：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-18：無新集（EP697 9/16 三仍為最新、episodesCount 維持 35；社工日常 EP697 筆記尚未釋出；EP698 預計 9/19 六下午釋出、9/20 排程納入）。 | 2026-09-17：納入 EP697（9/16 三，來源：方格子癌粉重點整理＋pathfindernote 筆記；社工日常尚未釋出），episodesCount 35。EP697 提及個股代號已查證：漢測 7856（興櫃）、江海股份 002484（深交所）；Anthropic、OpenAI、xAI 未上市；輝達 NVDA。下一集 EP698 預計 9/19 (六)。 | 2026-09-16：無新集（EP696 9/12 六仍為最新、episodesCount 維持 34；EP697 預計 9/16 三下午釋出＝Fed 決議當天、9/17 早上補上）。 | 2026-09-09：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-08：無新集（EP694 9/5 六仍為最新、episodesCount 維持 32；EP695 預計 9/9 三下午釋出、9/10 早上補上）。 | 2026-09-07：納入 EP694（9/5 六），episodesCount 32。EP694 提及個股代號均已查證：聯發科 2454、南亞科 2408、捷敏-KY 6525、晶技 3042；美股 AVGO/SNOW/TSLA/MSFT；Anthropic、OpenAI 未上市。下一集 EP695 預計 9/9 (三)。 | 2026-09-05：無新集（EP694 預計 9/5 六下午釋出，9/6 排程納入），episodesCount 維持 31、節點/關係未變。 | 2026-09-04：納入 EP693（9/2 三），episodesCount 31。EP693 提及個股代號均已查證：聯發科 2454、欣興 3037、捷敏-KY 6525、晶技 3042、世芯-KY 3661；「微台」為微型台指期貨非個股。下一集 EP694 預計 9/6 (六)。"
 }
